@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BookingSync API documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc <%= Nanoc::VERSION %>">
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">BookingSync API Docs</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+<!--             <li class="active"><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li> -->
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://www.bookingsync.com">bookingsync.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-md-push-9">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Table of Contents</h3>
+            </div>
+            <div class="list-group">
+              <a href="/" class="list-group-item">Introduction</a>
+              <a href="/requirements" class="list-group-item">Requirements</a>
+              <a href="/authorization" class="list-group-item">Authorization</a>
+              <a href="/endpoints" class="list-group-item">Endpoints</a>
+              <a href="/search" class="list-group-item">Search</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9 col-md-pull-3">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
