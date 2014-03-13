@@ -17,17 +17,36 @@ compile '/stylesheet/' do
   # don’t filter or layout
 end
 
+compile '/static/*' do
+end
+
+compile '/CNAME/' do
+end
+
+compile '/reference/*' do
+  filter :erb
+  filter :kramdown, toc_levels: [2]
+  filter :colorize_syntax, colorizers: {javascript: :pygmentsrb}
+  layout item[:layout] || 'reference'
+end
+
 compile '*' do
-  if item.binary?
-    # don’t filter binary items
-  else
-    filter :erb
-    layout 'default'
-  end
+  filter :erb
+  filter :kramdown, toc_levels: [2]
+  filter :colorize_syntax, colorizers: {javascript: :pygmentsrb}
+  layout item[:layout] || 'default'
 end
 
 route '/stylesheet/' do
   '/style.css'
+end
+
+route '/CNAME' do
+  '/CNAME'
+end
+
+route '/static/*' do
+  item.identifier[7..-2]
 end
 
 route '*' do
