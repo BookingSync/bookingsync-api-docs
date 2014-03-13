@@ -21,14 +21,14 @@ end
 
 compile '/reference/*' do
   filter :erb
-  filter :kramdown, toc_levels: [2]
+  filter :kramdown, toc_levels: [2], header_offset: 1
   filter :colorize_syntax, colorizers: {javascript: :pygmentsrb}
   layout item[:layout] || 'reference'
 end
 
 compile '*' do
   filter :erb
-  filter :kramdown, toc_levels: [2]
+  filter :kramdown, toc_levels: [2], header_offset: 1
   filter :colorize_syntax, colorizers: {javascript: :pygmentsrb}
   layout item[:layout] || 'default'
 end
