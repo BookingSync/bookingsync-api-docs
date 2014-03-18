@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/highlight.css">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
@@ -31,8 +32,9 @@
           <ul class="nav navbar-nav">
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="/reference/">reference</a></li>
-            <li><a href="/libraries/">libraries</a></li>
+            <li class="active">
+              <a href="/reference/">reference</a>
+            </li>
             <li><a href="https://www.bookingsync.com">bookingsync.com</a></li>
           </ul>
         </div>
@@ -60,40 +62,118 @@
       </div>
     </div>
     <div class="col-md-9 col-md-pull-3">
-      <h2 id="authorization">Authorization</h2>
+      <div id="content">
+        <h2 id="authorization">Authorization</h2>
 
 <ol id="markdown-toc">
 <li><a href="#oauth">OAuth</a></li>
-  <li><a href="#scopes">Scopes</a></li>
   <li><a href="#libraries">Libraries</a></li>
+  <li><a href="#embedded-application">Embedded Application</a></li>
+  <li><a href="#scopes">Scopes</a></li>
+  <li><a href="#client-credentials-flow">Client credentials flow</a></li>
 </ol><h3 id="oauth">OAuth</h3>
 
 <p>The BookingSync API uses <a href="http://oauth.net/2/">OAuth 2.0</a> for authorization.</p>
 
-<p>todo:</p>
+<p>OAuth2 is a protocol that lets external apps request authorization to private
+details in a user’s GitHub account without getting their password.</p>
+
+<p>All applications that want to use the API
+<a href="/reference/requirements/">must be registered on the BookinSync website</a>.</p>
+
+<p>Each registered application is assigned a unique Client ID and Client Secret.
+It is important that the Client Secret is not shared with anyone and not
+accessible by users.</p>
+
+<h3 id="libraries">Libraries</h3>
+
+<p>We recommend using an existing OAuth 2.0 library instead of implementing
+the protocol by hand. There are many edge cases, and using a well-tested
+library is the best way to cover them all.</p>
+
+<h4 id="ruby">Ruby</h4>
 
 <ul>
-<li>describe how oauth works</li>
-  <li>describe authorized resource and client credentials flows</li>
-  <li>mention which flow has access to which resources</li>
-</ul><h3 id="scopes">Scopes</h3>
+<li>
+<a href="https://github.com/intridea/oauth2">oauth2</a> provides a basic abstraction
+for interacting with OAuth 2.0.</li>
+  <li>
+<a href="https://github.com/intridea/omniauth">omniauth</a> with the
+<a href="https://github.com/bookingsync/omniauth-bookingsync">omniauth-bookingsync</a>
+strategy provide an easy to use framework for integrating applications
+with the API.</li>
+  <li>
+<a href="https://github.com/BookingSync/bookingsync-engine">bookingsync-engine</a>
+is a complete solution for Ruby on Rails applications that handles
+authorization and provides convenience methods for accessing the API.</li>
+</ul><h4 id="php">PHP</h4>
 
 <ul>
-<li>introduction</li>
-  <li>public scope</li>
-  <li>accounts read / write</li>
-  <li>bookings read / write</li>
-  <li>rentals read / write</li>
-</ul><h3 id="libraries">Libraries</h3>
+<li><a href="https://github.com/adoy/PHP-OAuth2">PHP-OAuth2</a></li>
+  <li><a href="https://github.com/Lusitanian/PHPoAuthLib">PHPoAuthLib</a></li>
+</ul><h4 id="python">Python</h4>
 
-<h4 id="php">PHP</h4>
 <ul>
-<li>I have no idea :)</li>
-</ul><h4 id="ruby">Ruby</h4>
+<li><a href="https://github.com/litl/rauth">rauth</a></li>
+  <li><a href="https://github.com/demianbrecht/sanction">sanction</a></li>
+</ul><h3 id="embedded-application">Embedded Application</h3>
+
+<p>When building applications that are meant to be embedded in the
+BookingSync App Store, keep in mind that the authorization redirect
+can’t be done with a simple 301 redirect.</p>
+
+<p>The BookingSync website serves the <code>X-Frame-Options: DENY</code> header, which
+prevents it from being embedded in any iframe. Therefore, browsers won’t be
+able to show the authorization prompt within an iframe.</p>
+
+<p>Instead, embedded applications must use javascript to redirect to the auth
+screen:</p>
+
+<pre><code class="language-html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span><span class="nt">&gt;</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="s1">'https://www.bookingsync.com/oauth/authorize'</span><span class="p">;</span>
+<span class="nt">&lt;/script&gt;</span></code></pre>
+
+<h3 id="scopes">Scopes</h3>
+
+<p>Scopes let the application request access to a subset of the API. Requested
+scopes are displayed to the user with the authorization prompt.</p>
+
+<p>By default, all requests include the <code>public</code> scope, which allows readonly
+access to public information.</p>
+
+<p>Additionally, the following scopes are available:</p>
+
 <ul>
-<li><a href="https://github.com/intridea/oauth2">oauth2</a></li>
-  <li><a href="https://github.com/bookingsync/omniauth-bookingsync">omniauth-bookingsync</a></li>
-</ul>
+<li><code>rentals_read</code></li>
+  <li><code>clients_read</code></li>
+  <li><code>bookings_read</code></li>
+  <li><code>reviews_read</code></li>
+  <li><code>payments_read</code></li>
+  <li><code>inquiries_read</code></li>
+  <li><code>rates_read</code></li>
+  <li><code>rentals_write</code></li>
+  <li><code>clients_write</code></li>
+  <li><code>bookings_write</code></li>
+  <li><code>reviews_write</code></li>
+  <li><code>payments_write</code></li>
+  <li><code>inquiries_write</code></li>
+  <li><code>rates_write</code></li>
+  <li><code>bookings_public_write</code></li>
+</ul><h3 id="client-credentials-flow">Client credentials flow</h3>
+
+<p>Application can also use the
+<a href="http://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-1.3.4">OAuth Client Credentials flow</a>
+to access the API.</p>
+
+<p>Requests using a token obtained using the Client Credentials flow are limited
+to using only the <code>public</code> scope, but can access resources of all BookingSync
+Accounts that authorized the given Application.</p>
+
+<p>This is useful for bulk access, for example in a rental listing application.
+Instead of iterating over each authorized Account and fetching their rentals,
+the application can use the Client Credentials flow and fetch all rentals
+at once.</p>
+      </div>
     </div>
   </div>
     </div>

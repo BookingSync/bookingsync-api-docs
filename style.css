@@ -5,3 +5,11 @@ body {
 html, body {
   font-family: 'Open Sans', sans-serif;
 }
+
+#content h3, #content h4, #content h5, #content h6 {
+  margin-top: 2em;
+}
+
+#content h3+h4 {
+  margin-top: 1em;
+}
