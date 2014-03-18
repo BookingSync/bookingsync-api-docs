@@ -19,17 +19,21 @@ end
 compile '/CNAME/' do
 end
 
+compile '/highlight/' do
+  filter :erb
+end
+
 compile '/reference/*' do
   filter :erb
-  filter :kramdown, toc_levels: [2], header_offset: 1
-  filter :colorize_syntax, colorizers: {javascript: :pygmentsrb}
+  filter :kramdown, toc_levels: [2], header_offset: 1, enable_coderay: false
+  filter :colorize_syntax, default_colorizer: :pygmentsrb
   layout item[:layout] || 'reference'
 end
 
 compile '*' do
   filter :erb
-  filter :kramdown, toc_levels: [2], header_offset: 1
-  filter :colorize_syntax, colorizers: {javascript: :pygmentsrb}
+  filter :kramdown, toc_levels: [2], header_offset: 1, enable_coderay: false
+  filter :colorize_syntax, default_colorizer: :pygmentsrb
   layout item[:layout] || 'default'
 end
 
@@ -40,6 +44,10 @@ end
 route '/static/*' do
   # /static/foo.html/ → /foo.html
   item.identifier[7..-2]
+end
+
+route '/highlight' do
+  '/highlight.css'
 end
 
 route '*' do
