@@ -1,0 +1,5 @@
+{"bookings":
+  [
+    {"id":1,"account_id":1,"rental_id":2,"start_at":"2014-04-28T10:55:13Z","end_at":"2014-12-28T10:55:34Z"}
+  ]
+}
