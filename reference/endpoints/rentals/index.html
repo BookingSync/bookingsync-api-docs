@@ -58,6 +58,7 @@
         <div class="list-group">
           <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
+          <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
           <a class="list-group-item active" href="/reference/endpoints/rentals/">Rentals</a>
         </div>
       </div>
@@ -69,7 +70,78 @@
       </div>
 
       <div id="content">
-        
+        <h2 id="rentals">Rentals</h2>
+
+<ol id="markdown-toc">
+<li><a href="#list-rentals">List rentals</a></li>
+  <li><a href="#get-a-single-rental">Get a single rental</a></li>
+</ol><h3 id="list-rentals">List rentals</h3>
+
+<p>List all rentals for given account(s).</p>
+
+<pre><code>GET /rentals
+</code></pre>
+
+<p>Response:</p>
+
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Test"</span><span class="p">,</span>
+      <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Super Headline"</span>
+      <span class="p">},</span>
+      <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Supersummary"</span>
+      <span class="p">},</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Complete description"</span>
+      <span class="p">},</span>
+      <span class="s2">"rental_type"</span><span class="o">:</span> <span class="s2">"villa"</span><span class="p">,</span>
+      <span class="s2">"units"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"bedrooms"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+      <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"min_price"</span><span class="o">:</span> <span class="mi">700</span><span class="p">,</span>
+      <span class="s2">"max_price"</span><span class="o">:</span> <span class="mi">700</span><span class="p">,</span>
+      <span class="s2">"price_kind"</span><span class="o">:</span> <span class="s2">"weekly"</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
+      <span class="s2">"rates_public_notes"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="kc">null</span>
+      <span class="p">},</span>
+      <span class="s2">"lat"</span><span class="o">:</span> <span class="mf">45.02</span><span class="p">,</span>
+      <span class="s2">"lng"</span><span class="o">:</span> <span class="mf">6.6</span><span class="p">,</span>
+      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Nevache"</span><span class="p">,</span>
+      <span class="s2">"state"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"country"</span><span class="o">:</span> <span class="s2">"France"</span><span class="p">,</span>
+      <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"ContactFullname"</span><span class="p">,</span>
+      <span class="s2">"amenities"</span><span class="o">:</span> <span class="p">[</span>
+
+      <span class="p">],</span>
+      <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="get-a-single-rental">Get a single rental</h3>
+
+<p>Display a single rental identified by ID. Response format is the same as in
+<a href="#list-rentals">list rentals</a> action, but it only shows a single rental.</p>
+
+<pre><code>GET /rentals/ID
+</code></pre>
       </div>
     </div>
   </div>

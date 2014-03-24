@@ -58,6 +58,7 @@
         <div class="list-group">
           <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
           <a class="list-group-item active" href="/reference/endpoints/bookings/">Bookings</a>
+          <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
         </div>
       </div>
@@ -69,7 +70,114 @@
       </div>
 
       <div id="content">
-        
+        <h2 id="bookings">Bookings</h2>
+
+<ol id="markdown-toc">
+<li><a href="#scopes">Scopes</a></li>
+  <li><a href="#list-bookings">List bookings</a></li>
+  <li><a href="#search-bookings">Search bookings</a></li>
+  <li><a href="#get-a-single-booking">Get a single booking</a></li>
+</ol><h3 id="scopes">Scopes</h3>
+
+<p>Based on the OAuth token scopes bookings listing will be limited to a
+certain range.</p>
+
+<ol>
+<li>
+<code>:public</code>, <code>:bookings_public_write</code> - Display only future, not canceled
+bookings for given account(s).</li>
+  <li>
+<code>:bookings_read</code>, <code>:bookings_write</code> - Display all bookings for given account.</li>
+</ol><h3 id="list-bookings">List bookings</h3>
+
+<p>Returns a list of all bookings for current account(s) starting after now.</p>
+
+<pre><code>GET /bookings
+</code></pre>
+
+<p>Response</p>
+
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-04-28T10:55:13Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-12-28T10:55:34Z"</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-04-28T10:55:13Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-12-28T10:55:34Z"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="search-bookings">Search bookings</h3>
+
+<p>Search parameters allow to filter bookings by specified fields.</p>
+
+<p>Example:</p>
+
+<pre><code>GET /bookings?status=booked,unavailable&amp;from=20140324
+</code></pre>
+
+<h4 id="parameters">Parameters</h4>
+
+<table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>from</td>
+      <td>Time</td>
+      <td>Bookings ending after given date. Format <code>yyyymmdd</code> in UTC. Default is now.</td>
+    </tr>
+<tr>
+<td>until</td>
+      <td>Time</td>
+      <td>Bookings starting before given date. Format <code>yyyymmdd</code> in UTC.</td>
+    </tr>
+<tr>
+<td>months</td>
+      <td>Integer</td>
+      <td>Bookings starting before <code>:from</code> + <code>:months</code>.</td>
+    </tr>
+<tr>
+<td>status</td>
+      <td>String</td>
+      <td>List of comma separated statuses. Possible values: booked,unavailable,tentative.</td>
+    </tr>
+<tr>
+<td>include_canceled</td>
+      <td>Boolean</td>
+      <td>Show also canceled bookings (requires <code>:bookings_read</code> or <code>:bookings_write</code> scope).</td>
+    </tr>
+</tbody>
+</table><h3 id="get-a-single-booking">Get a single booking</h3>
+
+<pre><code>GET /bookings/ID
+</code></pre>
+
+<p>Returns a single booking identified by ID</p>
+
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-04-28T10:55:13Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-12-28T10:55:34Z"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
       </div>
     </div>
   </div>
