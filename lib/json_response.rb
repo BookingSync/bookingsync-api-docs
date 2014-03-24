@@ -1,3 +1,5 @@
+require 'json'
+
 module JsonResponse
   def json_response(name)
     response = File.read("responses/#{name}.json")
