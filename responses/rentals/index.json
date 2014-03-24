@@ -1,0 +1,50 @@
+{
+  "rentals": [
+    {
+      "links": {
+        "photos": [
+
+        ]
+      },
+      "account_id": 1,
+      "id": 2,
+      "name": "Test",
+      "headline": {
+        "en": "Super Headline"
+      },
+      "summary": {
+        "en": "Supersummary"
+      },
+      "description": {
+        "en": "Complete description"
+      },
+      "rental_type": "villa",
+      "units": 1,
+      "bedrooms": null,
+      "sleeps": 7,
+      "sleeps_max": null,
+      "bathrooms": 3,
+      "surface": 120,
+      "bookable_online": false,
+      "min_price": 700,
+      "max_price": 700,
+      "price_kind": "weekly",
+      "currency": "EUR",
+      "rates_public_notes": {
+        "en": null
+      },
+      "lat": 45.02,
+      "lng": 6.6,
+      "city": "Nevache",
+      "state": null,
+      "country": "France",
+      "contact_name": "ContactFullname",
+      "amenities": [
+
+      ],
+      "reviews_count": 0,
+      "reviews_average_rating": null,
+      "updated_at": "2014-02-11T09:13:20Z"
+    }
+  ]
+}
