@@ -38,13 +38,13 @@ GET /bookings?status=booked,unavailable&from=20140324
 
 ### Parameters
 
-Name             | Type    | Description
+Name             | Type    | Default | Description
 -----------------|---------|--------------
-from             | Time    | Bookings ending after given date. Format `yyyymmdd` in UTC. Default is now.
-until            | Time    | Bookings starting before given date. Format `yyyymmdd` in UTC.
-months           | Integer | Bookings starting before `:from` + `:months`.
-status           | String  | List of comma separated statuses. Possible values: booked,unavailable,tentative.
-include_canceled | Boolean | Show also canceled bookings (requires `:bookings_read` or `:bookings_write` scope).
+from             | Time    | now     | Bookings ending after given date. Format `yyyymmdd` in UTC. Default is now.
+until            | Time    |         | Bookings starting before given date. Format `yyyymmdd` in UTC.
+months           | Integer |         | Bookings starting before `:from` + `:months`.
+status           | String  |         | List of comma separated statuses. Possible values: booked,unavailable,tentative.
+include_canceled | Boolean | false   | Show also canceled bookings (requires `:bookings_read` or `:bookings_write` scope).
 {: class="table table-bordered"}
 
 ## Get a single booking
