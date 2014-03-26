@@ -52,10 +52,12 @@ include_canceled | Boolean | Show also canceled bookings (requires `:bookings_re
 Required OAuth scope: `:public`, `:bookings_public_write`, `:bookings_read`
 or `:bookings_write`
 
+Returns a single booking identified by ID
+
 ~~~
 GET /bookings/ID
 ~~~
 
-Returns a single booking identified by ID
+Response:
 
 <%= json_response 'bookings/show' %>

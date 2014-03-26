@@ -22,10 +22,12 @@ Response:
 
 Required OAuth scope: `:inquiries_read` or `:inquiries_write`.
 
-
-Returns a single inquiry identified by ID. Response format is the same as in
-[list inquiries](#list-inquiries) action, but it only shows a single inquiry.
+Returns a single inquiry identified by ID.
 
 ~~~
 GET /inquiries/ID
 ~~~
+
+Response:
+
+<%= json_response 'inquiries/index' %>

@@ -21,9 +21,10 @@ Response:
 
 Required OAuth scope: `:public`, `:rentals_read` or `:rentals_write`
 
-Display a single rental identified by ID. Response format is the same as in
-[list rentals](#list-rentals) action, but it only shows a single rental.
+Returns a single rental identified by ID.
 
 ~~~
 GET /rentals/ID
 ~~~
+
+<%= json_response 'rentals/index' %>

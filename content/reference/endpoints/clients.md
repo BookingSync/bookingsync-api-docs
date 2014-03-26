@@ -28,5 +28,6 @@ Returns a single client identified by ID.
 GET /clients/id
 ~~~
 
-Response format is the same as in
-[list clients](#list-clients) action, but it only shows a single client.
+Response:
+
+<%= json_response 'clients/index' %>
