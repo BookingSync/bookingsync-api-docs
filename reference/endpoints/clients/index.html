@@ -59,6 +59,7 @@
           <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item active" href="/reference/endpoints/clients/">Clients</a>
+          <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
         </div>
       </div>
@@ -73,14 +74,11 @@
         <h2 id="clients">Clients</h2>
 
 <ol id="markdown-toc">
-<li><a href="#scopes">Scopes</a></li>
-  <li><a href="#list-clients">List clients</a></li>
+<li><a href="#list-clients">List clients</a></li>
   <li><a href="#get-a-single-client">Get a single client</a></li>
-</ol><h3 id="scopes">Scopes</h3>
+</ol><h3 id="list-clients">List clients</h3>
 
-<p>Client endpoint requires <code>:clients_read</code> or <code>:clients_write</code> scope.</p>
-
-<h3 id="list-clients">List clients</h3>
+<p>Required scope: <code>:clients_read</code> or <code>:clients_write</code>.</p>
 
 <p>List all clients for given account.</p>
 
@@ -114,13 +112,37 @@
 
 <h3 id="get-a-single-client">Get a single client</h3>
 
+<p>Required scope: <code>:clients_read</code> or <code>:clients_write</code>.</p>
+
 <p>Returns a single client identified by ID.</p>
 
 <pre><code>GET /clients/id
 </code></pre>
 
-<p>Response format is the same as in
-<a href="#list-clients">list clients</a> action, but it only shows a single client.</p>
+<p>Response:</p>
+
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span>
+      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Bernhard Creek"</span><span class="p">,</span>
+      <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
+      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:14:35Z"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"dwight_schiller@reilly.us"</span><span class="p">,</span>
+      <span class="s2">"fax"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Nelson McDermott"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">19</span><span class="p">,</span>
+      <span class="s2">"mobile"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1-060-021-4277 73823"</span><span class="p">,</span>
+      <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Montana"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-02-28T11:00:58Z"</span><span class="p">,</span>
+      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
       </div>
     </div>
   </div>
