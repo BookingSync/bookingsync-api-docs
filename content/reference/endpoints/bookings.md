@@ -3,16 +3,18 @@
 1. TOC
 {:toc}
 
-## Scopes
+## List bookings
 
 Based on the OAuth token scopes bookings listing will be limited to a
 certain range.
 
-1. `:public`, `:bookings_public_write` - Display only future, not canceled
-bookings for given account(s).
-2. `:bookings_read`, `:bookings_write` - Display all bookings for given account.
-
-## List bookings
+Scope                    | Read Permissions
+-------------------------|------------
+`:public`                | Display only future, not canceled bookings
+`:bookings_public_write` | Display only future, not canceled bookings
+`:bookings_read`         | Display all bookings
+`:bookings_write`        | Display all bookings
+{: class="table table-bordered"}
 
 Returns a list of all bookings for current account(s) starting after now.
 
@@ -36,21 +38,26 @@ GET /bookings?status=booked,unavailable&from=20140324
 
 ### Parameters
 
-Name             | Type    | Description
+Name             | Type    | Default | Description
 -----------------|---------|--------------
-from             | Time    | Bookings ending after given date. Format `yyyymmdd` in UTC. Default is now.
-until            | Time    | Bookings starting before given date. Format `yyyymmdd` in UTC.
-months           | Integer | Bookings starting before `:from` + `:months`.
-status           | String  | List of comma separated statuses. Possible values: booked,unavailable,tentative.
-include_canceled | Boolean | Show also canceled bookings (requires `:bookings_read` or `:bookings_write` scope).
+from             | Time    | now     | Bookings ending after given date. Format `yyyymmdd` in UTC. Default is now.
+until            | Time    |         | Bookings starting before given date. Format `yyyymmdd` in UTC.
+months           | Integer |         | Bookings starting before `:from` + `:months`.
+status           | String  |         | List of comma separated statuses. Possible values: booked,unavailable,tentative.
+include_canceled | Boolean | false   | Show also canceled bookings (requires `:bookings_read` or `:bookings_write` scope).
 {: class="table table-bordered"}
 
 ## Get a single booking
+
+Required OAuth scope: `:public`, `:bookings_public_write`, `:bookings_read`
+or `:bookings_write`
+
+Returns a single booking identified by ID
 
 ~~~
 GET /bookings/ID
 ~~~
 
-Returns a single booking identified by ID
+Response:
 
 <%= json_response 'bookings/show' %>
