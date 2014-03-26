@@ -6,7 +6,7 @@
 
 ## List inquiries
 
-Required scope: `:inquiries_read` or `:inquiries_write`.
+Required OAuth scope: `:inquiries_read` or `:inquiries_write`.
 
 Returns a list of all inquiries for current account(s).
 
@@ -20,7 +20,8 @@ Response:
 
 ## Get a single inquiry
 
-Required scope: `:inquiries_read` or `:inquiries_write`.
+Required OAuth scope: `:inquiries_read` or `:inquiries_write`.
+
 
 Returns a single inquiry identified by ID. Response format is the same as in
 [list inquiries](#list-inquiries) action, but it only shows a single inquiry.

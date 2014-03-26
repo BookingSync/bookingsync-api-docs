@@ -3,11 +3,9 @@
 1. TOC
 {:toc}
 
-## Scopes
-
-Client endpoint requires `:clients_read` or `:clients_write` scope.
-
 ## List clients
+
+Required scope: `:clients_read` or `:clients_write`.
 
 List all clients for given account.
 
@@ -21,6 +19,8 @@ Response:
 
 
 ## Get a single client
+
+Required scope: `:clients_read` or `:clients_write`.
 
 Returns a single client identified by ID.
 

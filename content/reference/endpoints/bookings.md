@@ -3,16 +3,18 @@
 1. TOC
 {:toc}
 
-## Scopes
+## List bookings
 
 Based on the OAuth token scopes bookings listing will be limited to a
 certain range.
 
-1. `:public`, `:bookings_public_write` - Display only future, not canceled
-bookings for given account(s).
-2. `:bookings_read`, `:bookings_write` - Display all bookings for given account.
-
-## List bookings
+Scope                    | Read Permissions
+-------------------------|------------
+`:public`                | Display only future, not canceled bookings
+`:bookings_public_write` | Display only future, not canceled bookings
+`:bookings_read`         | Display all bookings
+`:bookings_write`        | Display all bookings
+{: class="table table-bordered"}
 
 Returns a list of all bookings for current account(s) starting after now.
 
@@ -46,6 +48,9 @@ include_canceled | Boolean | Show also canceled bookings (requires `:bookings_re
 {: class="table table-bordered"}
 
 ## Get a single booking
+
+Required OAuth scope: `:public`, `:bookings_public_write`, `:bookings_read`
+or `:bookings_write`
 
 ~~~
 GET /bookings/ID
