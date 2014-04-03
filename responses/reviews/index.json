@@ -1,0 +1,11 @@
+{
+  "reviews": [
+    {
+      "id": 1,
+      "rating": 5,
+      "comment": "It was awesome!",
+      "name":"John Smith",
+      "updated_at":"2014-02-11T09:13:20Z"
+    }
+  ]
+}
