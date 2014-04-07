@@ -24,7 +24,7 @@ Required OAuth scope: `:public`
 Returns a single review identified by ID.
 
 ~~~
-GET /review/ID
+GET /reviews/ID
 ~~~
 
 <%= json_response 'reviews/index' %>
