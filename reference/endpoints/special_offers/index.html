@@ -56,13 +56,13 @@
           <h3 class="panel-title">Endpoints</h3>
         </div>
         <div class="list-group">
-          <a class="list-group-item active" href="/reference/endpoints/accounts/">Accounts</a>
+          <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
           <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
-          <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
+          <a class="list-group-item active" href="/reference/endpoints/special_offers/">Special Offers</a>
         </div>
       </div>
     </div>
@@ -73,7 +73,56 @@
       </div>
 
       <div id="content">
-        
+        <h2 id="special-offers">Special Offers</h2>
+
+<ol id="markdown-toc">
+<li><a href="#list-special-offers">List special offers</a></li>
+  <li><a href="#get-a-single-special-offer">Get a single special offer</a></li>
+</ol><h3 id="list-special-offers">List special offers</h3>
+
+<p>Required OAuth scope: <code>:public</code></p>
+
+<p>List all special offers for given account(s).</p>
+
+<pre><code>GET /special_offers
+</code></pre>
+
+<p>Response:</p>
+
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Spring discount -10%"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-03-21"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-05-01"</span><span class="p">,</span>
+      <span class="s2">"discount"</span><span class="o">:</span> <span class="mi">10</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="get-a-single-special-offer">Get a single special offer</h3>
+
+<p>Required OAuth scope: <code>:public</code></p>
+
+<p>Returns a single special offer identified by ID.</p>
+
+<pre><code>GET /special_offers/ID
+</code></pre>
+
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Spring discount -10%"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-03-21"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-05-01"</span><span class="p">,</span>
+      <span class="s2">"discount"</span><span class="o">:</span> <span class="mi">10</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
       </div>
     </div>
   </div>
