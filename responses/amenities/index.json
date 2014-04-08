@@ -1,0 +1,9 @@
+{
+ "amenities":[
+   { 
+     "id": 1,
+     "rental_id": 3,
+     "title":"internet"
+   }
+ ] 
+}
