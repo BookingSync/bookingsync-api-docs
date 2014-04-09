@@ -2,6 +2,7 @@
   "rentals": [
     {
       "links": {
+        "destination": 1,
         "photos": [
 
         ]
