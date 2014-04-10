@@ -1,0 +1,13 @@
+{ "seasons": [
+    {
+      "id": 12,
+      "rates_table_id": 1,
+      "name": "Season 2",
+      "ratio": "1.0",
+      "minimum_stay": 7,
+      "color_ratio": "1.0",
+      "created_at": "2014-04-11T09:14:35Z",
+      "updated_at": "2014-04-12T09:14:35Z"
+    }
+  ]
+}
