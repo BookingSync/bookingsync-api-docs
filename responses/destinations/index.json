@@ -1,19 +1,19 @@
 {
- "destinations":[
-   { 
-     "id": 3212,
-     "name":{
-       "en": "Europe"
-     },
-     "fullname": {
-       "en": "Europe, World"
-     },
-     "permalink": {
-       "en": "world/europe"
-     },
-     "aliases": {
-       "en": null
-     }
-   }
- ] 
+  "destinations": [
+    {
+      "id": 3212,
+      "name": {
+        "en": "Europe"
+      },
+      "fullname": {
+        "en": "Europe, World"
+      },
+      "permalink": {
+        "en": "world/europe"
+      },
+      "aliases": {
+        "en": null
+      }
+    }
+  ]
 }
