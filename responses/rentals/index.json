@@ -1,11 +1,13 @@
 {
+  "links": {
+    "rentals.destination": "https://www.bookingsync.com/api/v3/destinations/{rentals.destination}",
+    "rentals.photos": "https://www.bookingsync.com/api/v3/photos/{photos.photos}"
+  },
   "rentals": [
     {
       "links": {
         "destination": 1,
-        "photos": [
-
-        ]
+        "photos": []
       },
       "account_id": 1,
       "id": 2,
@@ -40,9 +42,7 @@
       "state": null,
       "country": "France",
       "contact_name": "ContactFullname",
-      "amenities": [
-
-      ],
+      "amenities": [],
       "reviews_count": 0,
       "reviews_average_rating": null,
       "updated_at": "2014-02-11T09:13:20Z"

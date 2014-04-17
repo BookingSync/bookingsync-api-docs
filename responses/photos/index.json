@@ -1,15 +1,17 @@
 {
-  "photos": [{
-    "id": 1,
-    "rental_id": 3,
-    "description": {
-      "en": "Wonderful living room"
-    },
-    "kind": "livingroom",
-    "large_url": "http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/large_1c4a6fb74004bb654fbb7972e4c78625.jpg",
-    "normal_url": "http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/normal_1c4a6fb74004bb654fbb7972e4c78625.jpg",
-    "thumb_url": "http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg",
-    "micro_url": "http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg",
-    "position": 1
-  }]
+  "photos": [
+    {
+      "id": 1,
+      "rental_id": 3,
+      "description": {
+        "en": "Wonderful living room"
+      },
+      "kind": "livingroom",
+      "large_url": "http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/large_1c4a6fb74004bb654fbb7972e4c78625.jpg",
+      "normal_url": "http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/normal_1c4a6fb74004bb654fbb7972e4c78625.jpg",
+      "thumb_url": "http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg",
+      "micro_url": "http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg",
+      "position": 1
+    }
+  ]
 }
