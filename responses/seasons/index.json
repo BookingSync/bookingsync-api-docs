@@ -1,6 +1,14 @@
 {
   "seasons": [
     {
+      "links": {
+        "rates_rules": [
+
+        ],
+        "periods": [
+
+        ]
+      },
       "id": 12,
       "rates_table_id": 1,
       "name": "Season 2",
