@@ -5,9 +5,9 @@
 
 ## List seasons
 
-Required OAuth scope: `:rates_read`
+Required OAuth scope: `:rates_read` or `:rates_write`
 
-List all seasons for given account(s).
+List all seasons for given account.
 
 ~~~
 GET /seasons
@@ -19,7 +19,7 @@ Response:
 
 ## Get a single season
 
-Required OAuth scope: `:rates_read`
+Required OAuth scope: `:rates_read` or `:rates_write`
 
 Returns a single season identified by ID.
 

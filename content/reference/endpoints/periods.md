@@ -5,9 +5,9 @@
 
 ## List periods
 
-Required OAuth scope: `:rates_read`
+Required OAuth scope: `:rates_read` or `:rates_write`
 
-List all periods for given account(s).
+List all periods for given account.
 
 ~~~
 GET /periods
@@ -19,7 +19,7 @@ Response:
 
 ## Get a single period
 
-Required OAuth scope: `:rates_read`
+Required OAuth scope: `:rates_read` or `:rates_write`
 
 Returns a single period identified by ID.
 
