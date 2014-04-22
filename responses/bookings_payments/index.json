@@ -1,0 +1,14 @@
+{
+  "bookings_payments": [
+    {
+      "id": 2,
+      "account_id": 44,
+      "booking_id": 22,
+      "payment_id": 11,
+      "amount": 1000,
+      "currency": "USD",
+      "created_at": "2014-04-11T13:42:33Z",
+      "updated_at": "2014-04-11T13:42:33Z"
+    }
+  ]
+}
