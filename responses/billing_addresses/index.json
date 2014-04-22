@@ -1,0 +1,16 @@
+{
+  "billing_addresses": [
+    {
+      "id": 12,
+      "payment_id": 33,
+      "address1": "Bernhard Creek",
+      "address2": null,
+      "zip": "07671-8254",
+      "city": "East Winifred",
+      "state": "Monatana",
+      "country_code": "US",
+      "created_at": "2014-04-11T13:42:33Z",
+      "updated_at":"2014-04-11T13:42:33Z"
+    }
+  ]
+}
