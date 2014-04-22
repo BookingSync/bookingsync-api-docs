@@ -1,0 +1,26 @@
+{
+  "rates_rules": [
+    {
+      "links": {
+        "seasons": [
+
+        ]
+      },
+      "id": 23,
+      "rates_table_id": 12,
+      "always_applied": false,
+      "percentage": -20,
+      "period_name": "Late Spring",
+      "kind": "late_booking",
+      "variables": {
+        "days": [1],
+        "length": 5,
+        "unit":"days"
+      },
+      "start_at": "2014-04-22",
+      "end_at": "2014-04-30",
+      "created_at": "2014-04-11T09:13:20Z",
+      "updated_at": "2014-04-11T09:13:20Z"
+    }
+  ]
+}
