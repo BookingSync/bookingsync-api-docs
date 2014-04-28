@@ -28,3 +28,55 @@ GET /rates_tables/ID
 ~~~
 
 <%= json_response 'rates_tables/index' %>
+
+## Create a new rates table
+
+Required OAuth scope: `:rates_write`
+
+Returns a newly created rates table.
+
+~~~
+POST /rates_tables
+~~~
+
+### Parameters
+
+Name             | Type    | Description
+-----------------|---------|-----------
+name             | String  | **Required**. Rates table's name.
+{: class="table table-bordered"}
+
+Response:
+
+<%= json_response 'rates_tables/index' %>
+
+## Update a rates table
+
+Required OAuth scope: `:rates_write`
+
+Returns an updated rates table identified by ID.
+
+~~~
+PUT /rates_tables/ID
+~~~
+
+### Parameters
+
+Name             | Type    | Description
+-----------------|---------|-----------
+name             | String  | **Required**. Rates table's name.
+{: class="table table-bordered"}
+
+Response:
+
+<%= json_response 'rates_tables/index' %>
+
+## Destroy a rates table
+
+Required OAuth scope: `:rates_write`
+
+Returns an empty Array on success.
+
+~~~~~~
+DELETE /rates_tables/ID
+~~~~~~
