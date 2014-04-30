@@ -1,0 +1,36 @@
+{
+  "payments": [
+    {
+      "links": {
+        "billing_address": [
+          
+        ],
+        "bookings": [
+          21
+        ],
+        "bookings_payments": [
+          3
+        ]
+      },
+      "id": 2,
+      "account_id": 33,
+      "transaction_id": null,
+      "order_id": null,
+      "card": null,
+      "amount": 1000,
+      "currency": "GBP",
+      "kind": "cash",
+      "fullname": null,
+      "email": null,
+      "locale": null,
+      "ip": null,
+      "test":null, 
+      "notes": null,
+      "paid_at": "2014-04-25T15:10:28Z",
+      "created_at": "2014-04-25T15:10:28Z",
+      "updated_at": "2014-04-25T15:10:28Z",
+      "rejected_at": null,
+      "canceled_at":null
+    }
+  ]
+}
