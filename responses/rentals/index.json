@@ -45,7 +45,9 @@
       "amenities": [],
       "reviews_count": 0,
       "reviews_average_rating": null,
-      "updated_at": "2014-02-11T09:13:20Z"
+      "updated_at": "2014-02-11T09:13:20Z",
+      "checkin_time": 10,
+      "checkout_time": 16
     }
   ]
 }
