@@ -58,12 +58,21 @@
         <div class="list-group">
           <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
           <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/billing_addresses/">Billing Addresses</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
           <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
+          <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
           <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
+          <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
           <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item active" href="/reference/endpoints/reviews/">Reviews</a>
+          <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
         </div>
       </div>
@@ -80,6 +89,7 @@
 <ol id="markdown-toc">
 <li><a href="#list-reviews">List reviews</a></li>
   <li><a href="#get-a-single-review">Get a single review</a></li>
+  <li><a href="#create-a-new-review">Create a new review</a></li>
 </ol><h3 id="list-reviews">List reviews</h3>
 
 <p>Required OAuth scope: <code>:public</code></p>
@@ -111,6 +121,52 @@
 
 <pre><code>GET /reviews/ID
 </code></pre>
+
+<p>Response:</p>
+
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"reviews"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"rating"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"comment"</span><span class="o">:</span> <span class="s2">"It was awesome!"</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"John Smith"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="create-a-new-review">Create a new review</h3>
+
+<p>Required OAuth scope: <code>:reviews_write</code></p>
+
+<p>Returns a newly created review.</p>
+
+<pre><code>POST /reviews
+</code></pre>
+
+<h4 id="parameters">Parameters</h4>
+
+<table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>comment</td>
+      <td>String</td>
+      <td>Client’s opinion.</td>
+    </tr>
+<tr>
+<td>rating</td>
+      <td>Integer</td>
+      <td>
+<strong>Required</strong>. Client’s rating.</td>
+    </tr>
+</tbody>
+</table><p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"reviews"</span><span class="o">:</span> <span class="p">[</span>

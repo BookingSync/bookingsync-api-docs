@@ -1,0 +1,413 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BookingSync API documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/highlight.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.6.7">
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">BookingSync API Documentation</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active">
+              <a href="/reference/">reference</a>
+            </li>
+            <li><a href="https://www.bookingsync.com">bookingsync.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+  <div class="row">
+    <div class="col-md-3 col-md-push-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Overview</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="/reference/">Introduction</a>
+          <a class="list-group-item" href="/reference/changelog/">Changelog</a>
+          <a class="list-group-item" href="/reference/requirements/">Requirements</a>
+          <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+        </div>
+        <div class="panel-heading">
+          <h3 class="panel-title">Endpoints</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
+          <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/billing_addresses/">Billing Addresses</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
+          <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
+          <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
+          <a class="list-group-item active" href="/reference/endpoints/payments/">Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
+          <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
+          <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
+          <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 col-md-pull-3">
+      <div class="alert alert-warning">
+        We're still in the process of building the API. If you notice any
+        problems, please contact <a href="mailto:support@bookingsync.com">support</a>.
+      </div>
+
+      <div id="content">
+        <h2 id="payments">Payments</h2>
+
+<ol id="markdown-toc">
+<li><a href="#list-payments">List payments</a></li>
+  <li><a href="#get-a-single-payment">Get a single payment</a></li>
+  <li><a href="#create-a-new-payment">Create a new payment</a></li>
+  <li><a href="#update-a-payment">Update a payment</a></li>
+  <li><a href="#cancel-a-payment">Cancel a payment</a></li>
+</ol><h3 id="list-payments">List payments</h3>
+
+<p>Required OAuth scope: <code>:payments_read</code> or <code>:payments_write</code></p>
+
+<p>List all payments for given account.</p>
+
+<pre><code>GET /payments
+</code></pre>
+
+<p>Response:</p>
+
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"billing_address"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">21</span>
+        <span class="p">],</span>
+        <span class="s2">"bookings_payments"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">3</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
+      <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"order_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"card"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"GBP"</span><span class="p">,</span>
+      <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"cash"</span><span class="p">,</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"locale"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"ip"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2014-04-25T15:10:28Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-25T15:10:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-25T15:10:28Z"</span><span class="p">,</span>
+      <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="get-a-single-payment">Get a single payment</h3>
+
+<p>Required OAuth scope: <code>:payments_read</code> or <code>:payments_write</code></p>
+
+<p>Returns a single payment identified by ID.</p>
+
+<pre><code>GET /payments/ID
+</code></pre>
+
+<p>Response:</p>
+
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"billing_address"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">21</span>
+        <span class="p">],</span>
+        <span class="s2">"bookings_payments"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">3</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
+      <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"order_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"card"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"GBP"</span><span class="p">,</span>
+      <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"cash"</span><span class="p">,</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"locale"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"ip"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2014-04-25T15:10:28Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-25T15:10:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-25T15:10:28Z"</span><span class="p">,</span>
+      <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="create-a-new-payment">Create a new payment</h3>
+
+<p>Required OAuth scope: <code>:payments_write</code></p>
+
+<p>Returns a newly created payment.</p>
+
+<pre><code>POST /payments
+</code></pre>
+
+<h4 id="parameters">Parameters</h4>
+
+<table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>amount</td>
+      <td>Integer</td>
+      <td>
+<strong>Required</strong>. Payment’s value.</td>
+    </tr>
+<tr>
+<td>booking_id</td>
+      <td>Integer</td>
+      <td>
+<strong>Required</strong>. Booking’s id related to the payment.</td>
+    </tr>
+<tr>
+<td>currency</td>
+      <td>String</td>
+      <td>
+<strong>Required</strong>. Payment’s currency code, list of codes described in <a href="/reference/enums">enums section</a>.</td>
+    </tr>
+<tr>
+<td>kind</td>
+      <td>String</td>
+      <td>
+<strong>Required</strong>. Payment’s kind, list of kinds described in <a href="/reference/enums">enums section</a>.</td>
+    </tr>
+<tr>
+<td>fullname</td>
+      <td>String</td>
+      <td>Payer’s fullname.</td>
+    </tr>
+<tr>
+<td>email</td>
+      <td>String</td>
+      <td>Payer’s email.</td>
+    </tr>
+<tr>
+<td>locale</td>
+      <td>String</td>
+      <td>Payer’s preferred locale, list of locales described in <a href="/reference/enums">enums section</a>.</td>
+    </tr>
+<tr>
+<td>notes</td>
+      <td>String</td>
+      <td>Payment’s additional information.</td>
+    </tr>
+<tr>
+<td>paid_at</td>
+      <td><a href="/reference/formats">Time</a></td>
+      <td>Payment’s date.</td>
+    </tr>
+</tbody>
+</table><p>Response:</p>
+
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"billing_address"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">21</span>
+        <span class="p">],</span>
+        <span class="s2">"bookings_payments"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">3</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
+      <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"order_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"card"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"GBP"</span><span class="p">,</span>
+      <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"cash"</span><span class="p">,</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"locale"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"ip"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2014-04-25T15:10:28Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-25T15:10:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-25T15:10:28Z"</span><span class="p">,</span>
+      <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="update-a-payment">Update a payment</h3>
+
+<p>Required OAuth scope: <code>:payments_write</code></p>
+
+<p>Returns an updated payment identified by ID.</p>
+
+<pre><code>PUT /payments/ID
+</code></pre>
+
+<h4 id="parameters-1">Parameters</h4>
+
+<table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>amount</td>
+      <td>Integer</td>
+      <td>
+<strong>Required</strong>. Payment’s value.</td>
+    </tr>
+<tr>
+<td>currency</td>
+      <td>String</td>
+      <td>
+<strong>Required</strong>. Payment’s currency code, list of codes described in <a href="/reference/enums">enums section</a>.</td>
+    </tr>
+<tr>
+<td>kind</td>
+      <td>String</td>
+      <td>
+<strong>Required</strong>. Payment’s kind, list of kinds described in <a href="/reference/enums">enums section</a>.</td>
+    </tr>
+<tr>
+<td>fullname</td>
+      <td>String</td>
+      <td>Payer’s fullname.</td>
+    </tr>
+<tr>
+<td>email</td>
+      <td>String</td>
+      <td>Payer’s email.</td>
+    </tr>
+<tr>
+<td>locale</td>
+      <td>String</td>
+      <td>Payer’s preferred locale, list of locales described in <a href="/reference/enums">enums section</a>.</td>
+    </tr>
+<tr>
+<td>notes</td>
+      <td>String</td>
+      <td>Payment’s additional information.</td>
+    </tr>
+<tr>
+<td>paid_at</td>
+      <td><a href="/reference/formats">Time</a></td>
+      <td>Payment’s date.</td>
+    </tr>
+</tbody>
+</table><p>Response:</p>
+
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"billing_address"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">21</span>
+        <span class="p">],</span>
+        <span class="s2">"bookings_payments"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">3</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
+      <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"order_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"card"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"GBP"</span><span class="p">,</span>
+      <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"cash"</span><span class="p">,</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"locale"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"ip"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2014-04-25T15:10:28Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-25T15:10:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-25T15:10:28Z"</span><span class="p">,</span>
+      <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="cancel-a-payment">Cancel a payment</h3>
+
+<p>Required OAuth scope: <code>:payments_write</code></p>
+
+<p>Returns an empty Array on success.</p>
+
+<pre><code>DELETE /payments/ID
+</code></pre>
+      </div>
+    </div>
+  </div>
+    </div>
+  </body>
+</html>
+

@@ -61,7 +61,7 @@
           <a class="list-group-item" href="/reference/endpoints/billing_addresses/">Billing Addresses</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
-          <a class="list-group-item active" href="/reference/endpoints/clients/">Clients</a>
+          <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
           <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
           <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
           <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
@@ -72,7 +72,7 @@
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
-          <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
+          <a class="list-group-item active" href="/reference/endpoints/seasons/">Seasons</a>
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
         </div>
       </div>
@@ -84,75 +84,73 @@
       </div>
 
       <div id="content">
-        <h2 id="clients">Clients</h2>
+        <h2 id="seasons">Seasons</h2>
 
 <ol id="markdown-toc">
-<li><a href="#list-clients">List clients</a></li>
-  <li><a href="#get-a-single-client">Get a single client</a></li>
-</ol><h3 id="list-clients">List clients</h3>
+<li><a href="#list-seasons">List seasons</a></li>
+  <li><a href="#get-a-single-season">Get a single season</a></li>
+</ol><h3 id="list-seasons">List seasons</h3>
 
-<p>Required scope: <code>:clients_read</code> or <code>:clients_write</code>.</p>
+<p>Required OAuth scope: <code>:rates_read</code> or <code>:rates_write</code></p>
 
-<p>List all clients for given account.</p>
+<p>List all seasons for given account.</p>
 
-<pre><code>GET /clients
+<pre><code>GET /seasons
 </code></pre>
 
 <p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span>
-      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Bernhard Creek"</span><span class="p">,</span>
-      <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
-      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:14:35Z"</span><span class="p">,</span>
-      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"dwight_schiller@reilly.us"</span><span class="p">,</span>
-      <span class="s2">"fax"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Nelson McDermott"</span><span class="p">,</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">19</span><span class="p">,</span>
-      <span class="s2">"mobile"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"notes"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1-060-021-4277 73823"</span><span class="p">,</span>
-      <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Montana"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-02-28T11:00:58Z"</span><span class="p">,</span>
-      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rates_rules"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
+      <span class="s2">"rates_table_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Season 2"</span><span class="p">,</span>
+      <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
+      <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+      <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-12T09:14:35Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="get-a-single-client">Get a single client</h3>
+<h3 id="get-a-single-season">Get a single season</h3>
 
-<p>Required scope: <code>:clients_read</code> or <code>:clients_write</code>.</p>
+<p>Required OAuth scope: <code>:rates_read</code> or <code>:rates_write</code></p>
 
-<p>Returns a single client identified by ID.</p>
+<p>Returns a single season identified by ID.</p>
 
-<pre><code>GET /clients/id
+<pre><code>GET /seasons/ID
 </code></pre>
 
-<p>Response:</p>
-
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span>
-      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Bernhard Creek"</span><span class="p">,</span>
-      <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
-      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:14:35Z"</span><span class="p">,</span>
-      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"dwight_schiller@reilly.us"</span><span class="p">,</span>
-      <span class="s2">"fax"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Nelson McDermott"</span><span class="p">,</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">19</span><span class="p">,</span>
-      <span class="s2">"mobile"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"notes"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1-060-021-4277 73823"</span><span class="p">,</span>
-      <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Montana"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-02-28T11:00:58Z"</span><span class="p">,</span>
-      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rates_rules"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
+      <span class="s2">"rates_table_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Season 2"</span><span class="p">,</span>
+      <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
+      <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+      <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-12T09:14:35Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>

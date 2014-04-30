@@ -67,13 +67,13 @@
           <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
           <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
-          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
+          <a class="list-group-item active" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
           <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
-          <a class="list-group-item active" href="/reference/endpoints/special_offers/">Special Offers</a>
+          <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
         </div>
       </div>
     </div>
@@ -84,67 +84,81 @@
       </div>
 
       <div id="content">
-        <h2 id="special-offers">Special Offers</h2>
+        <h2 id="rates-tables">Rates Tables</h2>
 
 <ol id="markdown-toc">
-<li><a href="#list-special-offers">List special offers</a></li>
-  <li><a href="#get-a-single-special-offer">Get a single special offer</a></li>
-  <li><a href="#create-a-new-special-offer">Create a new special offer</a></li>
-  <li><a href="#update-a-special-offer">Update a special offer</a></li>
-  <li><a href="#destroy-a-special-offer">Destroy a special offer</a></li>
-</ol><h3 id="list-special-offers">List special offers</h3>
+<li><a href="#list-rates-tables">List rates tables</a></li>
+  <li><a href="#get-a-single-rates-table">Get a single rates table</a></li>
+  <li><a href="#create-a-new-rates-table">Create a new rates table</a></li>
+  <li><a href="#update-a-rates-table">Update a rates table</a></li>
+  <li><a href="#destroy-a-rates-table">Destroy a rates table</a></li>
+</ol><h3 id="list-rates-tables">List rates tables</h3>
 
-<p>Required OAuth scope: <code>:public</code></p>
+<p>Required OAuth scope: <code>:rates_read</code> or <code>:rates_write</code></p>
 
-<p>List all special offers for given account(s).</p>
+<p>List all rates tables for given account.</p>
 
-<pre><code>GET /special_offers
+<pre><code>GET /rates_tables
 </code></pre>
 
 <p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"rates_tables"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Spring discount -10%"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-03-21"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-05-01"</span><span class="p">,</span>
-      <span class="s2">"discount"</span><span class="o">:</span> <span class="mi">10</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"rates_rules"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="get-a-single-special-offer">Get a single special offer</h3>
+<h3 id="get-a-single-rates-table">Get a single rates table</h3>
 
-<p>Required OAuth scope: <code>:public</code></p>
+<p>Required OAuth scope: <code>:rates_read</code> or <code>:rates_write</code></p>
 
-<p>Returns a single special offer identified by ID.</p>
+<p>Returns a single rates table identified by ID.</p>
 
-<pre><code>GET /special_offers/ID
+<pre><code>GET /rates_tables/ID
 </code></pre>
 
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"rates_tables"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Spring discount -10%"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-03-21"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-05-01"</span><span class="p">,</span>
-      <span class="s2">"discount"</span><span class="o">:</span> <span class="mi">10</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"rates_rules"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="create-a-new-special-offer">Create a new special offer</h3>
+<h3 id="create-a-new-rates-table">Create a new rates table</h3>
 
 <p>Required OAuth scope: <code>:rates_write</code></p>
 
-<p>Returns a newly created special offer.</p>
+<p>Returns a newly created rates table.</p>
 
-<pre><code>POST /special_offers
+<pre><code>POST /rates_tables
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
@@ -155,54 +169,41 @@
       <th>Type</th>
       <th>Description</th>
     </tr></thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>name</td>
       <td>String</td>
       <td>
-<strong>Required</strong>. Special Offer’s name.</td>
-    </tr>
-<tr>
-<td>start_at</td>
-      <td><a href="/reference/formats">Date</a></td>
-      <td>
-<strong>Required</strong>. Special Offer’s start date.</td>
-    </tr>
-<tr>
-<td>end_at</td>
-      <td><a href="/reference/formats">Date</a></td>
-      <td>
-<strong>Required</strong>. Special Offer’s end date.</td>
-    </tr>
-<tr>
-<td>discount</td>
-      <td>Integer</td>
-      <td>
-<strong>Required</strong>. Special Offer’s discount value, e.g. use 20 for 20% discount.</td>
-    </tr>
-</tbody>
+<strong>Required</strong>. Rates table’s name.</td>
+    </tr></tbody>
 </table><p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"rates_tables"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Spring discount -10%"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-03-21"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-05-01"</span><span class="p">,</span>
-      <span class="s2">"discount"</span><span class="o">:</span> <span class="mi">10</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"rates_rules"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="update-a-special-offer">Update a special offer</h3>
+<h3 id="update-a-rates-table">Update a rates table</h3>
 
 <p>Required OAuth scope: <code>:rates_write</code></p>
 
-<p>Returns an updated special offer identified by ID.</p>
+<p>Returns an updated rates table identified by ID.</p>
 
-<pre><code>PUT /special_offers/ID
+<pre><code>PUT /rates_tables/ID
 </code></pre>
 
 <h4 id="parameters-1">Parameters</h4>
@@ -213,54 +214,41 @@
       <th>Type</th>
       <th>Description</th>
     </tr></thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>name</td>
       <td>String</td>
       <td>
-<strong>Required</strong>. Special Offer’s name.</td>
-    </tr>
-<tr>
-<td>start_at</td>
-      <td><a href="/reference/formats">Date</a></td>
-      <td>
-<strong>Required</strong>. Special Offer’s start date.</td>
-    </tr>
-<tr>
-<td>end_at</td>
-      <td><a href="/reference/formats">Date</a></td>
-      <td>
-<strong>Required</strong>. Special Offer’s end date.</td>
-    </tr>
-<tr>
-<td>discount</td>
-      <td>Integer</td>
-      <td>
-<strong>Required</strong>. Special Offer’s discount value, e.g. use 20 for 20% discount.</td>
-    </tr>
-</tbody>
+<strong>Required</strong>. Rates table’s name.</td>
+    </tr></tbody>
 </table><p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"rates_tables"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Spring discount -10%"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-03-21"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-05-01"</span><span class="p">,</span>
-      <span class="s2">"discount"</span><span class="o">:</span> <span class="mi">10</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"rates_rules"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="destroy-a-special-offer">Destroy a special offer</h3>
+<h3 id="destroy-a-rates-table">Destroy a rates table</h3>
 
 <p>Required OAuth scope: <code>:rates_write</code></p>
 
 <p>Returns an empty Array on success.</p>
 
-<pre><code>DELETE /special_offers/ID
+<pre><code>DELETE /rates_tables/ID
 </code></pre>
       </div>
     </div>

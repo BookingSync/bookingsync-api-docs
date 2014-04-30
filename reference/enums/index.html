@@ -47,7 +47,7 @@
           <h3 class="panel-title">Overview</h3>
         </div>
         <div class="list-group">
-          <a class="list-group-item active" href="/reference/">Introduction</a>
+          <a class="list-group-item" href="/reference/">Introduction</a>
           <a class="list-group-item" href="/reference/changelog/">Changelog</a>
           <a class="list-group-item" href="/reference/requirements/">Requirements</a>
           <a class="list-group-item" href="/reference/authorization/">Authorization</a>
@@ -84,75 +84,7 @@
       </div>
 
       <div id="content">
-        <h2 id="api-reference">API Reference</h2>
-
-<ol id="markdown-toc">
-<li><a href="#accessing-the-api">Accessing the API</a></li>
-  <li><a href="#json">JSON</a></li>
-  <li><a href="#request-options">Request Options</a></li>
-  <li><a href="#https">HTTPS</a></li>
-  <li><a href="#rate-limiting">Rate limiting</a></li>
-</ol><h3 id="accessing-the-api">Accessing the API</h3>
-
-<p>The BookingSync API can be accessed over HTTPS at
-<code>https://www.bookingsync.com/api/v3/</code>.</p>
-
-<h3 id="json">JSON</h3>
-
-<p>All data is sent and received as JSON.</p>
-
-<p>Regardless whether the response returns a single resource or a collection,
-the body is expected to be in the following format:</p>
-
-<pre><code class="language-json"><span class="p">{</span>
-  <span class="nt">"plural_resource_name"</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="nt">"id"</span><span class="p">:</span> <span class="s2">"1"</span><span class="p">,</span>
-      <span class="nt">"attribute_name"</span><span class="p">:</span> <span class="s2">"attribute_value"</span>
-    <span class="p">}</span>
-  <span class="p">]</span>
-<span class="p">}</span></code></pre>
-
-<h3 id="request-options">Request Options</h3>
-
-<h4 id="pagination">Pagination</h4>
-
-<p>Large collections are paginated, meaning the response will include only
-a subset of resources and links to other pages.</p>
-
-<p>The links are sent in the <code>Link</code> header, e.g.:</p>
-
-<pre><code>Link: &lt;https://www.bookingsync.com/api/v3/accounts.json?page=1&gt;; rel="first", &lt;https://www.bookingsync.com/api/v3/accounts.json?page=2&gt;; rel="next", &lt;https://www.bookingsync.com/api/v3/accounts.json?page=3&gt;; rel="last"
-X-Total-Pages: 3
-</code></pre>
-
-<h4 id="limiting-fields">Limiting Fields</h4>
-
-<p>For retrieving collection of large resources, it is sometimes useful to limit
-the attributes returned by the API. For example, if we wanted to get only the
-<code>id</code> and <code>business_name</code> fields of the Accounts, we could specify that in the
-request:</p>
-
-<pre><code>GET https://www.bookingsync.com/api/v3/accounts.json?fields=id,business_name
-</code></pre>
-
-<h3 id="https">HTTPS</h3>
-
-<p>Every request to the API must use HTTPS. When the API is accessed over HTTP,
-a 302 redirect will be returned with the correct HTTPS url.</p>
-
-<h3 id="rate-limiting">Rate limiting</h3>
-
-<p>Each application accessing the API has a limit of 1000 requests per hour.</p>
-
-<p>Rate limiting information will be returned in the headers:</p>
-
-<pre><code>X-RateLimit-Limit: 1000
-X-RateLimit-Remaining: 999
-X-RateLimit-Reset: 1395140400
-</code></pre>
-
-<p><code>X-RateLimit-Reset</code> is the UNIX time at which the next limit reset happens.</p>
+        <h2 id="enumerables">Enumerables</h2>
       </div>
     </div>
   </div>
