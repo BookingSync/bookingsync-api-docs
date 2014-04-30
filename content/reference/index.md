@@ -36,7 +36,7 @@ a subset of resources and links to other pages.
 The links are sent in the `Link` header, e.g.:
 
 ~~~
-Link: <https://www.bookingsync.com/api/v3/accounts.json?page=1>; rel="first", <https://www.bookingsync.com/api/v3/accounts.json?page=2>; rel="next", <https://www.bookingsync.com/api/v3/accounts.json?page=3>; rel="last"
+Link: <https://www.bookingsync.com/api/v3/accounts?page=1>; rel="first", <https://www.bookingsync.com/api/v3/accounts?page=2>; rel="next", <https://www.bookingsync.com/api/v3/accounts?page=3>; rel="last"
 X-Total-Pages: 3
 ~~~
 
@@ -48,7 +48,7 @@ the attributes returned by the API. For example, if we wanted to get only the
 request:
 
 ~~~
-GET https://www.bookingsync.com/api/v3/accounts.json?fields=id,business_name
+GET https://www.bookingsync.com/api/v3/accounts?fields=id,business_name
 ~~~
 
 ## HTTPS
