@@ -45,7 +45,7 @@ Name             | Type    | Description
 -----------------|---------|------------
 photo            | File    | **Required**. Photo's image.
 description      | String  | Photo's description.
-kind             | String  | Photo's kind, list of kinds described in [enum section](/reference/enums).
+kind             | String  | Photo's kind, list of kinds described in [enum section](/reference/enums/#photo-kinds).
 position         | Integer | Photo's position.
 {: class="table table-bordered"}
 
@@ -67,7 +67,7 @@ Name             | Type    | Description
 -----------------|---------|------------
 photo            | File    | **Required**. Photo's image.
 description      | String  | Photo's description.
-kind             | String  | Photo's kind, list of kinds described in [enum section](/reference/enums).
+kind             | String  | Photo's kind, list of kinds described in [enum section](/reference/enums/#photo-kinds).
 position         | Integer | Photo's position.
 {: class="table table-bordered"}
 

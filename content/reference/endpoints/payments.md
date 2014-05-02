@@ -48,11 +48,11 @@ Name             | Type     | Description
 -----------------|----------|-----------
 amount           | Integer  | **Required**. Payment's value.
 booking_id       | Integer  | **Required**. Booking's id related to the payment.
-currency         | String   | **Required**. Payment's currency code, list of codes described in [enums section](/reference/enums).
-kind             | String   | **Required**. Payment's kind, list of kinds described in [enums section](/reference/enums).
+currency         | String   | **Required**. Payment's currency code, list of codes described in [enums section](/reference/enums/#currencies).
+kind             | String   | **Required**. Payment's kind, list of kinds described in [enums section](/reference/enums/#payment-kinds).
 fullname         | String   | Payer's fullname.
 email            | String   | Payer's email.
-locale           | String   | Payer's preferred locale, list of locales described in [enums section](/reference/enums).  
+locale           | String   | Payer's preferred locale, list of locales described in [enums section](/reference/enums/#locales).  
 notes            | String   | Payment's additional information.
 paid_at          | [Time](/reference/formats) | Payment's date.
 {: class="table table-bordered"}
@@ -77,11 +77,11 @@ PUT /payments/ID
 Name             | Type     | Description
 -----------------|----------|-----------
 amount           | Integer  | **Required**. Payment's value.
-currency         | String   | **Required**. Payment's currency code, list of codes described in [enums section](/reference/enums).
-kind             | String   | **Required**. Payment's kind, list of kinds described in [enums section](/reference/enums).
+currency         | String   | **Required**. Payment's currency code, list of codes described in [enums section](/reference/enums/#currencies).
+kind             | String   | **Required**. Payment's kind, list of kinds described in [enums section](/reference/enums/#payment-kinds).
 fullname         | String   | Payer's fullname.
 email            | String   | Payer's email.
-locale           | String   | Payer's preferred locale, list of locales described in [enums section](/reference/enums).  
+locale           | String   | Payer's preferred locale, list of locales described in [enums section](/reference/enums/#locales).  
 notes            | String   | Payment's additional information.
 paid_at          | [Time](/reference/formats) | Payment's date.
 {: class="table table-bordered"}
