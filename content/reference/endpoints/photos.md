@@ -24,7 +24,7 @@ Required OAuth scope: `:public`
 Returns a single photo identified by ID.
 
 ~~~
-GET /photos/ID
+GET /photos/:photo_id
 ~~~
 
 Response:
@@ -35,10 +35,10 @@ Response:
 
 Required OAuth scope: `:rentals_write`
 
-Returns a newly created photo.
+Creates a photo for given rental.
 
 ~~~~
-POST /photos
+POST /rentals/:rental_id/photos
 ~~~~
 
 Name             | Type    | Description
@@ -60,7 +60,7 @@ Required OAuth scope: `:rentals_write`
 Returns an updated photo identified by ID.
 
 ~~~
-PUT /photos/ID
+PUT /photos/:photo_id
 ~~~
 
 Name             | Type    | Description
@@ -79,9 +79,9 @@ Response:
 
 Required OAuth scope: `:rentals_write`
 
-Returns an empty Array on success.
+Returns an empty response with '204 No Content' status code on success.
 
 ~~~~~~
-DELETE /photos/ID
+DELETE /photos/:photo_id
 ~~~~~~
 

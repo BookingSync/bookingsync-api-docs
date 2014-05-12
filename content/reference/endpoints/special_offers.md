@@ -24,7 +24,7 @@ Required OAuth scope: `:public`
 Returns a single special offer identified by ID.
 
 ~~~
-GET /special_offers/ID
+GET /special_offers/:special_offer_id
 ~~~
 
 <%= json_response 'special_offers/index' %>
@@ -33,10 +33,10 @@ GET /special_offers/ID
 
 Required OAuth scope: `:rates_write`
 
-Returns a newly created special offer.
+Creates a special offer for given rental.
 
 ~~~
-POST /special_offers
+POST /rentals/:rental_id/special_offers
 ~~~
 
 ### Parameters
@@ -46,7 +46,7 @@ Name             | Type    | Description
 name             | String  | **Required**. Special Offer's name.
 start_at         | [Date](/reference/formats) | **Required**. Special Offer's start date.
 end_at           | [Date](/reference/formats) | **Required**. Special Offer's end date.
-discount         | Integer | **Required**. Special Offer's discount value, e.g. use 20 for 20% discount. 
+discount         | Integer | **Required**. Special Offer's discount value, e.g. use 20 for 20% discount.
 {: class="table table-bordered"}
 
 Response:
@@ -60,7 +60,7 @@ Required OAuth scope: `:rates_write`
 Returns an updated special offer identified by ID.
 
 ~~~
-PUT /special_offers/ID
+PUT /special_offers/:special_offer
 ~~~
 
 ### Parameters
@@ -81,9 +81,9 @@ Response:
 
 Required OAuth scope: `:rates_write`
 
-Returns an empty Array on success.
+Returns empty response with '204 No Content' status code on success.
 
 ~~~~~~
-DELETE /special_offers/ID
+DELETE /special_offers/:special_offer_id
 ~~~~~~
 

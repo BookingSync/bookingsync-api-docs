@@ -17,14 +17,14 @@ Response:
 
 <%= json_response 'destinations/index' %>
 
-## Get a single destination 
+## Get a single destination
 
 Required OAuth scope: `:public`
 
 Returns a single destination identified by ID.
 
 ~~~
-GET /destinations/ID
+GET /destinations/:destination_id
 ~~~
 
 <%= json_response 'destinations/index' %>

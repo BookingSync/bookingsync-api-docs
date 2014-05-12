@@ -55,7 +55,7 @@ or `:bookings_write`
 Returns a single booking identified by ID
 
 ~~~
-GET /bookings/ID
+GET /bookings/:booking_id
 ~~~
 
 Response:

@@ -24,7 +24,7 @@ Required OAuth scope: `:rates_read` or `:rates_write`
 Returns a single rates rule identified by ID.
 
 ~~~
-GET /rates_rules/ID
+GET /rates_rules/:rates_rule_id
 ~~~
 
 <%= json_response 'rates_rules/index' %>

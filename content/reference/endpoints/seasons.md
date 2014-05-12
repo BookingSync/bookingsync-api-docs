@@ -24,7 +24,7 @@ Required OAuth scope: `:rates_read` or `:rates_write`
 Returns a single season identified by ID.
 
 ~~~
-GET /seasons/ID
+GET /seasons/:season_id
 ~~~
 
 <%= json_response 'seasons/index' %>
@@ -33,10 +33,10 @@ GET /seasons/ID
 
 Required OAuth scope: `:rates_write`
 
-Returns a newly created season.
+Creates a season for given rates table.
 
 ~~~
-POST /seasons
+POST /rates_tables/:rates_table_id/seasons
 ~~~
 
 ### Parameters
@@ -44,7 +44,7 @@ POST /seasons
 Name             | Type    | Description
 -----------------|---------|-----------
 name             | String  | **Required**. Season's name.
-ratio            | Number  | **Required**. Season's ratio calculated from the rental's reference price. eg: 0.6 means 60% of the rental's reference price.  
+ratio            | Number  | **Required**. Season's ratio calculated from the rental's reference price. eg: 0.6 means 60% of the rental's reference price.
 minimum_stay     | Integer | **Required**. Season's minimum length of stay, a price won't be calculated for a shorter request.
 {: class="table table-bordered"}
 
@@ -59,7 +59,7 @@ Required OAuth scope: `:rates_write`
 Returns an updated season identified by ID.
 
 ~~~
-PUT /seasons/ID
+PUT /seasons/:season_id
 ~~~
 
 ### Parameters
@@ -67,7 +67,7 @@ PUT /seasons/ID
 Name             | Type    | Description
 -----------------|---------|-----------
 name             | String  | Season's name.
-ratio            | Number  | Season's ratio calculated from the rental's reference price. eg: 0.6 means 60% of the rental's reference price.  
+ratio            | Number  | Season's ratio calculated from the rental's reference price. eg: 0.6 means 60% of the rental's reference price.
 minimum_stay     | Integer | Season's minimum length of stay, a price won't be calculated for a shorter request.
 {: class="table table-bordered"}
 
@@ -79,8 +79,8 @@ Response:
 
 Required OAuth scope: `:rates_write`
 
-Returns an empty Array on success.
+Returns empty response with '204 No Content' status code on success.
 
 ~~~~~~
-DELETE /seasons/ID
+DELETE /seasons/:season_id
 ~~~~~~

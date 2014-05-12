@@ -24,7 +24,7 @@ Required OAuth scope: `:public`
 Returns a single amenity identified by ID.
 
 ~~~
-GET /amenities/ID
+GET /amenities/:amenity_id
 ~~~
 
 <%= json_response 'amenities/index' %>

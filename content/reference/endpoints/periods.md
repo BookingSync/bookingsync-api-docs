@@ -24,7 +24,7 @@ Required OAuth scope: `:rates_read` or `:rates_write`
 Returns a single period identified by ID.
 
 ~~~
-GET /periods/ID
+GET /periods/:period_id
 ~~~
 
 Response:
@@ -35,10 +35,10 @@ Response:
 
 Required OAuth scope: `:rates_write`
 
-Returns a newly created period.
+Creates a new period for given season.
 
 ~~~
-POST /periods
+POST /seasons/:season_id/periods
 ~~~
 
 ### Parameters
@@ -60,7 +60,7 @@ Required OAuth scope: `:rates_write`
 Returns an updated period identified by ID.
 
 ~~~
-PUT /periods/ID
+PUT /periods/:period_id
 ~~~
 
 ### Parameters
@@ -79,8 +79,8 @@ Response:
 
 Required OAuth scope: `:rates_write`
 
-Returns an empty Array on success.
+Returns an empty response with '204 No Content' status code on success.
 
 ~~~~~~
-DELETE /periods/ID
+DELETE /periods/:period_id
 ~~~~~~

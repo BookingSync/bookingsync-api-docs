@@ -24,7 +24,7 @@ Required OAuth scope: `:public`
 Returns a single rental agreement identified by ID.
 
 ~~~
-GET /rental_agreements/ID
+GET /rental_agreements/:rental_agreement_id
 ~~~
 
 Response:
@@ -35,7 +35,9 @@ Response:
 
 Required OAuth scope: `:rentals_write`
 
-Create a new rental agreement to be used by default. This rental agreement will be used unless one is defined at rental or booking level.
+Create a new rental agreement to be used by default.
+This rental agreement will be used unless one is defined at rental
+or booking level.
 
 Returns a newly created rental agreement.
 
@@ -63,7 +65,7 @@ Create a new rental agreement to be used exclusivly for this booking.
 Returns a newly created rental agreement.
 
 ~~~~
-POST /bookings/BOOKING_ID/rental_agreements
+POST /bookings/:booking_id/rental_agreements
 ~~~~
 
 ### Parameters
@@ -87,7 +89,7 @@ Create a new rental agreement to be used a default for the given rental.
 Returns a newly created rental agreement.
 
 ~~~~
-POST /rentals/RENTAL_ID/rental_agreements
+POST /rentals/:rental_id/rental_agreements
 ~~~~
 
 ### Parameters

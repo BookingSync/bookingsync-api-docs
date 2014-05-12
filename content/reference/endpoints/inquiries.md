@@ -25,7 +25,7 @@ Required OAuth scope: `:inquiries_read` or `:inquiries_write`.
 Returns a single inquiry identified by ID.
 
 ~~~
-GET /inquiries/ID
+GET /inquiries/:inquiry_id
 ~~~
 
 Response:
