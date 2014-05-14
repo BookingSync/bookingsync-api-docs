@@ -24,7 +24,7 @@ Required OAuth scope: `:public`, `:rentals_read` or `:rentals_write`
 Returns a single rental identified by ID.
 
 ~~~
-GET /rentals/ID
+GET /rentals/:rental_id
 ~~~
 
 <%= json_response 'rentals/index' %>

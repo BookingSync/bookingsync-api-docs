@@ -25,7 +25,7 @@ Required scope: `:clients_read` or `:clients_write`.
 Returns a single client identified by ID.
 
 ~~~
-GET /clients/id
+GET /clients/:client_id
 ~~~
 
 Response:

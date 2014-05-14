@@ -24,7 +24,7 @@ Required OAuth scope: `:public`
 Returns a single review identified by ID.
 
 ~~~
-GET /reviews/ID
+GET /reviews/:review_id
 ~~~
 
 Response:
@@ -35,17 +35,17 @@ Response:
 
 Required OAuth scope: `:reviews_write`
 
-Returns a newly created review.
+Creates a review for given booking.
 
 ~~~
-POST /reviews
+POST /bookings/:booking_id/reviews
 ~~~
 
 ### Parameters
 
 Name             | Type    | Description
 -----------------|---------|-----------
-comment          | String  | Client's opinion. 
+comment          | String  | Client's opinion.
 rating           | Integer | **Required**. Client's rating.
 {: class="table table-bordered"}
 

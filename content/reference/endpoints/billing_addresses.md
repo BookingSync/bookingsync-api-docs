@@ -24,7 +24,7 @@ Required OAuth scope: `:payments_read` or `:payments_write`
 Returns a single billing address identified by ID.
 
 ~~~
-GET /billing_addresses/ID
+GET /billing_addresses/:billing_address_id
 ~~~
 
 <%= json_response 'billing_addresses/index' %>

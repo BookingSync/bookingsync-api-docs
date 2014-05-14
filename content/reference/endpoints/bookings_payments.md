@@ -24,7 +24,7 @@ Required OAuth scope: `:payments_read` or `:payments_write`
 Returns a single bookings payment identified by ID.
 
 ~~~
-GET /bookings_payments/ID
+GET /bookings_payments/:bookings_payment_id
 ~~~
 
 <%= json_response 'bookings_payments/index' %>

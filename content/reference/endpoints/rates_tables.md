@@ -24,7 +24,7 @@ Required OAuth scope: `:rates_read` or `:rates_write`
 Returns a single rates table identified by ID.
 
 ~~~
-GET /rates_tables/ID
+GET /rates_tables/:rates_table_id
 ~~~
 
 <%= json_response 'rates_tables/index' %>
@@ -57,7 +57,7 @@ Required OAuth scope: `:rates_write`
 Returns an updated rates table identified by ID.
 
 ~~~
-PUT /rates_tables/ID
+PUT /rates_tables/:rates_table_id
 ~~~
 
 ### Parameters
@@ -75,8 +75,8 @@ Response:
 
 Required OAuth scope: `:rates_write`
 
-Returns an empty Array on success.
+Returns an empty response with '204 No Content' status code on success.
 
 ~~~~~~
-DELETE /rates_tables/ID
+DELETE /rates_tables/:rates_table_id
 ~~~~~~
