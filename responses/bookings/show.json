@@ -1,9 +1,15 @@
 {
+  "links": {
+    "bookings.account": "https://www.bookingsync.com/api/v3/accounts/{bookings.account}",
+    "bookings.rental": "https://www.bookingsync.com/api/v3/rentals/{bookings.rental}"
+  },
   "bookings": [
     {
+      "links": {
+        "account": 12,
+        "rental": 17
+      },
       "id": 1,
-      "account_id": 1,
-      "rental_id": 2,
       "start_at": "2014-04-28T10:55:13Z",
       "end_at": "2014-12-28T10:55:34Z"
     }

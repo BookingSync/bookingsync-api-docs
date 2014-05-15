@@ -1,6 +1,14 @@
 {
+  "links": {
+    "reviews.booking": "https://www.bookingsync.com/api/v3/bookings/{reviews.booking}",
+    "reviews.rental": "https://www.bookingsync.com/api/v3/rentals/{reviews.rental}"
+  },
   "reviews": [
     {
+      "links": {
+        "rental": 87,
+        "booking": 4
+      },
       "id": 1,
       "rating": 5,
       "comment": "It was awesome!",

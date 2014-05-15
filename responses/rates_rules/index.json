@@ -1,21 +1,28 @@
 {
+  "links": {
+    "rates_rules.rates_table": "https://www.bookingsync.com/api/v3/rates_tables/{rates_rules.rates_table}",
+    "rates_rules.seasons": "https://www.bookingsync.com/api/v3/seasons/{rates_rules.seasons}"
+  },
   "rates_rules": [
     {
       "links": {
+        "rates_table": 12,
         "seasons": [
-
+          1,
+          19
         ]
       },
       "id": 23,
-      "rates_table_id": 12,
       "always_applied": false,
       "percentage": -20,
       "period_name": "Late Spring",
       "kind": "late_booking",
       "variables": {
-        "days": [1],
+        "days": [
+          1
+        ],
         "length": 5,
-        "unit":"days"
+        "unit": "days"
       },
       "start_at": "2014-04-22",
       "end_at": "2014-04-30",

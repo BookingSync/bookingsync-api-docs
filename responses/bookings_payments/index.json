@@ -1,10 +1,17 @@
 {
+  "links": {
+    "bookings_payments.account": "https://www.bookingsync.com/api/v3/accounts/{bookings_payments.account}",
+    "bookings_payments.booking": "https://www.bookingsync.com/api/v3/bookings/{bookings_payments.booking}",
+    "bookings_payments.payment": "https://www.bookingsync.com/api/v3/payments/{bookings_payments.payment}"
+  },
   "bookings_payments": [
     {
+      "links": {
+        "account": 44,
+        "booking": 22,
+        "payment": 11
+      },
       "id": 2,
-      "account_id": 44,
-      "booking_id": 22,
-      "payment_id": 11,
       "amount": 1000,
       "currency": "USD",
       "created_at": "2014-04-11T13:42:33Z",
