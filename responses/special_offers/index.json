@@ -1,8 +1,13 @@
 {
+  "links": {
+    "special_offers.rental": "https://www.bookingsync.com/api/v3/rentals/{special_offers.rental}"
+  },
   "special_offers": [
     {
       "id": 1,
-      "rental_id": 3,
+      "links": {
+        "rental": 3
+      },
       "name": "Spring discount -10%",
       "start_at": "2014-03-21",
       "end_at": "2014-05-01",

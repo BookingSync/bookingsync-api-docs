@@ -1,16 +1,21 @@
 {
+  "links": {
+    "seasons.rates_table": "https://www.bookingsync.com/api/v3/rates_tables/{seasons.rates_table}",
+    "seasons.rates_rules": "https://www.bookingsync.com/api/v3/rates_rules/{seasons.rates_rules}",
+    "seasons.periods": "https://www.bookingsync.com/api/v3/periods/{seasons.periods}"
+  },
   "seasons": [
     {
       "links": {
-        "rates_rules": [
-
-        ],
+        "rates_rules": [],
         "periods": [
-
-        ]
+          4,
+          5,
+          6
+        ],
+        "rates_table": 1
       },
       "id": 12,
-      "rates_table_id": 1,
       "name": "Season 2",
       "ratio": "1.0",
       "minimum_stay": 7,

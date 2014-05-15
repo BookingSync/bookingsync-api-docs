@@ -7,7 +7,8 @@
 
 Required OAuth scope: `:public`
 
-List all amenities for given account(s).
+List all amenities for given account(s). Amenities can repeat because each
+rental has it's own set of amenities.
 
 ~~~
 GET /amenities

@@ -1,6 +1,12 @@
 {
+  "links": {
+    "inquiries.rental": "https://www.bookingsync.com/api/v3/rentals/{inquiries.rental}"
+  },
   "inquiries": [
     {
+      "links": {
+        "rental": 2
+      },
       "id": 1,
       "firstname": "John",
       "lastname": "Smith",
@@ -11,7 +17,6 @@
       "end_at": "2014-03-28T10:00:00Z",
       "adults": null,
       "children": null,
-      "rental_id": 2,
       "message": null,
       "created_at": "2014-03-25T15:10:28Z",
       "updated_at": "2014-03-25T15:10:28Z"

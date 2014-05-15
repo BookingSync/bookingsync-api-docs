@@ -1,16 +1,23 @@
 {
+  "links": {
+    "rates_tables.account": "https://www.bookingsync.com/api/v3/accounts/{rates_tables.account}",
+    "rates_tables.seasons": "https://www.bookingsync.com/api/v3/seasons/{rates_tables.seasons}",
+    "rates_tables.rates_rules": "https://www.bookingsync.com/api/v3/rates_rules/{rates_tables.rates_rules}"
+  },
   "rates_tables": [
     {
-      "links": { 
+      "links": {
         "seasons": [
-        
+          2,
+          34
         ],
         "rates_rules": [
-
-        ]
+          3,
+          7
+        ],
+        "account": 5
       },
       "id": 2,
-      "account_id": 5,
       "name": "Rates Table 2",
       "created_at": "2014-04-11T09:14:35Z",
       "updated_at": "2014-04-11T09:14:35Z"

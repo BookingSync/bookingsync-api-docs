@@ -1,8 +1,13 @@
 {
+  "links": {
+    "billing_addresses.payment": "https://www.bookingsync.com/api/v3/payments/{billing_addresses.payment}"
+  },
   "billing_addresses": [
     {
+      "links": {
+        "payment": 33
+      },
       "id": 12,
-      "payment_id": 33,
       "address1": "Bernhard Creek",
       "address2": null,
       "zip": "07671-8254",
@@ -10,7 +15,7 @@
       "state": "Monatana",
       "country_code": "US",
       "created_at": "2014-04-11T13:42:33Z",
-      "updated_at":"2014-04-11T13:42:33Z"
+      "updated_at": "2014-04-11T13:42:33Z"
     }
   ]
 }

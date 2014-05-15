@@ -1,8 +1,13 @@
 {
+  "links": {
+    "photos.rental": "https://www.bookingsync.com/api/v3/rentals/{photos.rental}"
+  },
   "photos": [
     {
+      "links": {
+        "rental": 3
+      },
       "id": 1,
-      "rental_id": 3,
       "description": {
         "en": "Wonderful living room"
       },

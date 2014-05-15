@@ -1,7 +1,13 @@
 {
+  "links": {
+    "clients.account": "https://www.bookingsync.com/api/v3/accounts/{clients.account}"
+  },
   "clients": [
     {
-      "account_id": 42,
+      "links": {
+        "account": 42
+      },
+      "id": 19,
       "address1": "Bernhard Creek",
       "address2": null,
       "city": "East Winifred",
@@ -10,7 +16,6 @@
       "email": "dwight_schiller@reilly.us",
       "fax": null,
       "fullname": "Nelson McDermott",
-      "id": 19,
       "mobile": null,
       "notes": null,
       "phone": "1-060-021-4277 73823",
