@@ -51,6 +51,7 @@
           <a class="list-group-item" href="/reference/changelog/">Changelog</a>
           <a class="list-group-item" href="/reference/requirements/">Requirements</a>
           <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+          <a class="list-group-item" href="/reference/enums/">Enumerables</a>
         </div>
         <div class="panel-heading">
           <h3 class="panel-title">Endpoints</h3>
@@ -104,18 +105,25 @@
 <p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"rates_tables.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rates_tables.account}"</span><span class="p">,</span>
+    <span class="s2">"rates_tables.seasons"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/seasons/{rates_tables.seasons}"</span><span class="p">,</span>
+    <span class="s2">"rates_tables.rates_rules"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_rules/{rates_tables.rates_rules}"</span>
+  <span class="p">},</span>
   <span class="s2">"rates_tables"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>
-
+          <span class="mi">2</span><span class="p">,</span>
+          <span class="mi">34</span>
         <span class="p">],</span>
         <span class="s2">"rates_rules"</span><span class="o">:</span> <span class="p">[</span>
-
-        <span class="p">]</span>
+          <span class="mi">3</span><span class="p">,</span>
+          <span class="mi">7</span>
+        <span class="p">],</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">5</span>
       <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span>
@@ -129,22 +137,29 @@
 
 <p>Returns a single rates table identified by ID.</p>
 
-<pre><code>GET /rates_tables/ID
+<pre><code>GET /rates_tables/:rates_table_id
 </code></pre>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"rates_tables.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rates_tables.account}"</span><span class="p">,</span>
+    <span class="s2">"rates_tables.seasons"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/seasons/{rates_tables.seasons}"</span><span class="p">,</span>
+    <span class="s2">"rates_tables.rates_rules"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_rules/{rates_tables.rates_rules}"</span>
+  <span class="p">},</span>
   <span class="s2">"rates_tables"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>
-
+          <span class="mi">2</span><span class="p">,</span>
+          <span class="mi">34</span>
         <span class="p">],</span>
         <span class="s2">"rates_rules"</span><span class="o">:</span> <span class="p">[</span>
-
-        <span class="p">]</span>
+          <span class="mi">3</span><span class="p">,</span>
+          <span class="mi">7</span>
+        <span class="p">],</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">5</span>
       <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span>
@@ -178,18 +193,25 @@
 </table><p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"rates_tables.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rates_tables.account}"</span><span class="p">,</span>
+    <span class="s2">"rates_tables.seasons"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/seasons/{rates_tables.seasons}"</span><span class="p">,</span>
+    <span class="s2">"rates_tables.rates_rules"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_rules/{rates_tables.rates_rules}"</span>
+  <span class="p">},</span>
   <span class="s2">"rates_tables"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>
-
+          <span class="mi">2</span><span class="p">,</span>
+          <span class="mi">34</span>
         <span class="p">],</span>
         <span class="s2">"rates_rules"</span><span class="o">:</span> <span class="p">[</span>
-
-        <span class="p">]</span>
+          <span class="mi">3</span><span class="p">,</span>
+          <span class="mi">7</span>
+        <span class="p">],</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">5</span>
       <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span>
@@ -203,7 +225,7 @@
 
 <p>Returns an updated rates table identified by ID.</p>
 
-<pre><code>PUT /rates_tables/ID
+<pre><code>PUT /rates_tables/:rates_table_id
 </code></pre>
 
 <h4 id="parameters-1">Parameters</h4>
@@ -223,18 +245,25 @@
 </table><p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"rates_tables.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rates_tables.account}"</span><span class="p">,</span>
+    <span class="s2">"rates_tables.seasons"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/seasons/{rates_tables.seasons}"</span><span class="p">,</span>
+    <span class="s2">"rates_tables.rates_rules"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_rules/{rates_tables.rates_rules}"</span>
+  <span class="p">},</span>
   <span class="s2">"rates_tables"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>
-
+          <span class="mi">2</span><span class="p">,</span>
+          <span class="mi">34</span>
         <span class="p">],</span>
         <span class="s2">"rates_rules"</span><span class="o">:</span> <span class="p">[</span>
-
-        <span class="p">]</span>
+          <span class="mi">3</span><span class="p">,</span>
+          <span class="mi">7</span>
+        <span class="p">],</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">5</span>
       <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span>
@@ -246,9 +275,9 @@
 
 <p>Required OAuth scope: <code>:rates_write</code></p>
 
-<p>Returns an empty Array on success.</p>
+<p>Returns an empty response with ‘204 No Content’ status code on success.</p>
 
-<pre><code>DELETE /rates_tables/ID
+<pre><code>DELETE /rates_tables/:rates_table_id
 </code></pre>
       </div>
     </div>

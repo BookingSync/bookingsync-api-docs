@@ -51,6 +51,7 @@
           <a class="list-group-item" href="/reference/changelog/">Changelog</a>
           <a class="list-group-item" href="/reference/requirements/">Requirements</a>
           <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+          <a class="list-group-item" href="/reference/enums/">Enumerables</a>
         </div>
         <div class="panel-heading">
           <h3 class="panel-title">Endpoints</h3>
@@ -89,6 +90,9 @@
 <ol id="markdown-toc">
 <li><a href="#list-periods">List periods</a></li>
   <li><a href="#get-a-single-period">Get a single period</a></li>
+  <li><a href="#create-a-new-period">Create a new period</a></li>
+  <li><a href="#update-a-period">Update a period</a></li>
+  <li><a href="#destroy-a-period">Destroy a period</a></li>
 </ol><h3 id="list-periods">List periods</h3>
 
 <p>Required OAuth scope: <code>:rates_read</code> or <code>:rates_write</code></p>
@@ -101,10 +105,15 @@
 <p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"periods.season"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/seasons/{periods.season}"</span>
+  <span class="p">},</span>
   <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"season"</span><span class="o">:</span> <span class="mi">12</span>
+      <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">232</span><span class="p">,</span>
-      <span class="s2">"season_id"</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
       <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-04-11"</span><span class="p">,</span>
       <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-07-11"</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T13:42:33Z"</span><span class="p">,</span>
@@ -119,14 +128,21 @@
 
 <p>Returns a single period identified by ID.</p>
 
-<pre><code>GET /periods/ID
+<pre><code>GET /periods/:period_id
 </code></pre>
 
+<p>Response:</p>
+
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"periods.season"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/seasons/{periods.season}"</span>
+  <span class="p">},</span>
   <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"season"</span><span class="o">:</span> <span class="mi">12</span>
+      <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">232</span><span class="p">,</span>
-      <span class="s2">"season_id"</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
       <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-04-11"</span><span class="p">,</span>
       <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-07-11"</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T13:42:33Z"</span><span class="p">,</span>
@@ -134,6 +150,115 @@
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+
+<h3 id="create-a-new-period">Create a new period</h3>
+
+<p>Required OAuth scope: <code>:rates_write</code></p>
+
+<p>Creates a new period for given season.</p>
+
+<pre><code>POST /seasons/:season_id/periods
+</code></pre>
+
+<h4 id="parameters">Parameters</h4>
+
+<table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>start_at</td>
+      <td><a href="/reference/formats">Date</a></td>
+      <td>
+<strong>Required</strong>. Period’s start date.</td>
+    </tr>
+<tr>
+<td>end_at</td>
+      <td><a href="/reference/formats">Date</a></td>
+      <td>
+<strong>Required</strong>. Period’s end date.</td>
+    </tr>
+</tbody>
+</table><p>Response:</p>
+
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"periods.season"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/seasons/{periods.season}"</span>
+  <span class="p">},</span>
+  <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"season"</span><span class="o">:</span> <span class="mi">12</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">232</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-04-11"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-07-11"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T13:42:33Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T13:42:33Z"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="update-a-period">Update a period</h3>
+
+<p>Required OAuth scope: <code>:rates_write</code></p>
+
+<p>Returns an updated period identified by ID.</p>
+
+<pre><code>PUT /periods/:period_id
+</code></pre>
+
+<h4 id="parameters-1">Parameters</h4>
+
+<table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>start_at</td>
+      <td><a href="/reference/formats">Date</a></td>
+      <td>Period’s start date.</td>
+    </tr>
+<tr>
+<td>end_at</td>
+      <td><a href="/reference/formats">Date</a></td>
+      <td>Period’s end date.</td>
+    </tr>
+</tbody>
+</table><p>Response:</p>
+
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"periods.season"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/seasons/{periods.season}"</span>
+  <span class="p">},</span>
+  <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"season"</span><span class="o">:</span> <span class="mi">12</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">232</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-04-11"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-07-11"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T13:42:33Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T13:42:33Z"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="destroy-a-period">Destroy a period</h3>
+
+<p>Required OAuth scope: <code>:rates_write</code></p>
+
+<p>Returns an empty response with ‘204 No Content’ status code on success.</p>
+
+<pre><code>DELETE /periods/:period_id
+</code></pre>
       </div>
     </div>
   </div>

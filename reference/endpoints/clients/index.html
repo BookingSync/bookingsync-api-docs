@@ -51,6 +51,7 @@
           <a class="list-group-item" href="/reference/changelog/">Changelog</a>
           <a class="list-group-item" href="/reference/requirements/">Requirements</a>
           <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+          <a class="list-group-item" href="/reference/enums/">Enumerables</a>
         </div>
         <div class="panel-heading">
           <h3 class="panel-title">Endpoints</h3>
@@ -101,9 +102,15 @@
 <p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
+  <span class="p">},</span>
   <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">42</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">19</span><span class="p">,</span>
       <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Bernhard Creek"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
@@ -112,7 +119,6 @@
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"dwight_schiller@reilly.us"</span><span class="p">,</span>
       <span class="s2">"fax"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Nelson McDermott"</span><span class="p">,</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">19</span><span class="p">,</span>
       <span class="s2">"mobile"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1-060-021-4277 73823"</span><span class="p">,</span>
@@ -129,15 +135,21 @@
 
 <p>Returns a single client identified by ID.</p>
 
-<pre><code>GET /clients/id
+<pre><code>GET /clients/:client_id
 </code></pre>
 
 <p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
+  <span class="p">},</span>
   <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">42</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">19</span><span class="p">,</span>
       <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Bernhard Creek"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
@@ -146,7 +158,6 @@
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"dwight_schiller@reilly.us"</span><span class="p">,</span>
       <span class="s2">"fax"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Nelson McDermott"</span><span class="p">,</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">19</span><span class="p">,</span>
       <span class="s2">"mobile"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1-060-021-4277 73823"</span><span class="p">,</span>

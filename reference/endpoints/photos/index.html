@@ -51,6 +51,7 @@
           <a class="list-group-item" href="/reference/changelog/">Changelog</a>
           <a class="list-group-item" href="/reference/requirements/">Requirements</a>
           <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+          <a class="list-group-item" href="/reference/enums/">Enumerables</a>
         </div>
         <div class="panel-heading">
           <h3 class="panel-title">Endpoints</h3>
@@ -104,10 +105,15 @@
 <p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
+  <span class="p">},</span>
   <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
+      <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Wonderful living room"</span>
       <span class="p">},</span>
@@ -127,16 +133,21 @@
 
 <p>Returns a single photo identified by ID.</p>
 
-<pre><code>GET /photos/ID
+<pre><code>GET /photos/:photo_id
 </code></pre>
 
 <p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
+  <span class="p">},</span>
   <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
+      <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Wonderful living room"</span>
       <span class="p">},</span>
@@ -154,9 +165,9 @@
 
 <p>Required OAuth scope: <code>:rentals_write</code></p>
 
-<p>Returns a newly created photo.</p>
+<p>Creates a photo for given rental.</p>
 
-<pre><code>POST /photos
+<pre><code>POST /rentals/:rental_id/photos
 </code></pre>
 
 <table class="table table-bordered">
@@ -180,7 +191,7 @@
 <tr>
 <td>kind</td>
       <td>String</td>
-      <td>Photo’s kind, list of kinds described in <a href="/reference/enums">enum section</a>.</td>
+      <td>Photo’s kind, list of kinds described in <a href="/reference/enums/#photo-kinds">enum section</a>.</td>
     </tr>
 <tr>
 <td>position</td>
@@ -191,10 +202,15 @@
 </table><p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
+  <span class="p">},</span>
   <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
+      <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Wonderful living room"</span>
       <span class="p">},</span>
@@ -214,7 +230,7 @@
 
 <p>Returns an updated photo identified by ID.</p>
 
-<pre><code>PUT /photos/ID
+<pre><code>PUT /photos/:photo_id
 </code></pre>
 
 <table class="table table-bordered">
@@ -238,7 +254,7 @@
 <tr>
 <td>kind</td>
       <td>String</td>
-      <td>Photo’s kind, list of kinds described in <a href="/reference/enums">enum section</a>.</td>
+      <td>Photo’s kind, list of kinds described in <a href="/reference/enums/#photo-kinds">enum section</a>.</td>
     </tr>
 <tr>
 <td>position</td>
@@ -249,10 +265,15 @@
 </table><p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
+  <span class="p">},</span>
   <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
+      <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Wonderful living room"</span>
       <span class="p">},</span>
@@ -270,9 +291,9 @@
 
 <p>Required OAuth scope: <code>:rentals_write</code></p>
 
-<p>Returns an empty Array on success.</p>
+<p>Returns an empty response with ‘204 No Content’ status code on success.</p>
 
-<pre><code>DELETE /photos/ID
+<pre><code>DELETE /photos/:photo_id
 </code></pre>
       </div>
     </div>

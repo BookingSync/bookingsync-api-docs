@@ -51,6 +51,7 @@
           <a class="list-group-item" href="/reference/changelog/">Changelog</a>
           <a class="list-group-item" href="/reference/requirements/">Requirements</a>
           <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+          <a class="list-group-item" href="/reference/enums/">Enumerables</a>
         </div>
         <div class="panel-heading">
           <h3 class="panel-title">Endpoints</h3>
@@ -102,8 +103,16 @@
 <p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"reviews.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{reviews.booking}"</span><span class="p">,</span>
+    <span class="s2">"reviews.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{reviews.rental}"</span>
+  <span class="p">},</span>
   <span class="s2">"reviews"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">87</span><span class="p">,</span>
+        <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">4</span>
+      <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"rating"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"comment"</span><span class="o">:</span> <span class="s2">"It was awesome!"</span><span class="p">,</span>
@@ -119,14 +128,22 @@
 
 <p>Returns a single review identified by ID.</p>
 
-<pre><code>GET /reviews/ID
+<pre><code>GET /reviews/:review_id
 </code></pre>
 
 <p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"reviews.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{reviews.booking}"</span><span class="p">,</span>
+    <span class="s2">"reviews.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{reviews.rental}"</span>
+  <span class="p">},</span>
   <span class="s2">"reviews"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">87</span><span class="p">,</span>
+        <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">4</span>
+      <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"rating"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"comment"</span><span class="o">:</span> <span class="s2">"It was awesome!"</span><span class="p">,</span>
@@ -140,9 +157,9 @@
 
 <p>Required OAuth scope: <code>:reviews_write</code></p>
 
-<p>Returns a newly created review.</p>
+<p>Creates a review for given booking.</p>
 
-<pre><code>POST /reviews
+<pre><code>POST /bookings/:booking_id/reviews
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
@@ -169,8 +186,16 @@
 </table><p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"reviews.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{reviews.booking}"</span><span class="p">,</span>
+    <span class="s2">"reviews.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{reviews.rental}"</span>
+  <span class="p">},</span>
   <span class="s2">"reviews"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">87</span><span class="p">,</span>
+        <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">4</span>
+      <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"rating"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"comment"</span><span class="o">:</span> <span class="s2">"It was awesome!"</span><span class="p">,</span>

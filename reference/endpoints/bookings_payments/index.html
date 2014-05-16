@@ -51,6 +51,7 @@
           <a class="list-group-item" href="/reference/changelog/">Changelog</a>
           <a class="list-group-item" href="/reference/requirements/">Requirements</a>
           <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+          <a class="list-group-item" href="/reference/enums/">Enumerables</a>
         </div>
         <div class="panel-heading">
           <h3 class="panel-title">Endpoints</h3>
@@ -101,12 +102,19 @@
 <p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"bookings_payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_payments.account}"</span><span class="p">,</span>
+    <span class="s2">"bookings_payments.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{bookings_payments.booking}"</span><span class="p">,</span>
+    <span class="s2">"bookings_payments.payment"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payments/{bookings_payments.payment}"</span>
+  <span class="p">},</span>
   <span class="s2">"bookings_payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">44</span><span class="p">,</span>
+        <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">22</span><span class="p">,</span>
+        <span class="s2">"payment"</span><span class="o">:</span> <span class="mi">11</span>
+      <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">44</span><span class="p">,</span>
-      <span class="s2">"booking_id"</span><span class="o">:</span> <span class="mi">22</span><span class="p">,</span>
-      <span class="s2">"payment_id"</span><span class="o">:</span> <span class="mi">11</span><span class="p">,</span>
       <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T13:42:33Z"</span><span class="p">,</span>
@@ -121,16 +129,23 @@
 
 <p>Returns a single bookings payment identified by ID.</p>
 
-<pre><code>GET /bookings_payments/ID
+<pre><code>GET /bookings_payments/:bookings_payment_id
 </code></pre>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"bookings_payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_payments.account}"</span><span class="p">,</span>
+    <span class="s2">"bookings_payments.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{bookings_payments.booking}"</span><span class="p">,</span>
+    <span class="s2">"bookings_payments.payment"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payments/{bookings_payments.payment}"</span>
+  <span class="p">},</span>
   <span class="s2">"bookings_payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">44</span><span class="p">,</span>
+        <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">22</span><span class="p">,</span>
+        <span class="s2">"payment"</span><span class="o">:</span> <span class="mi">11</span>
+      <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">44</span><span class="p">,</span>
-      <span class="s2">"booking_id"</span><span class="o">:</span> <span class="mi">22</span><span class="p">,</span>
-      <span class="s2">"payment_id"</span><span class="o">:</span> <span class="mi">11</span><span class="p">,</span>
       <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T13:42:33Z"</span><span class="p">,</span>

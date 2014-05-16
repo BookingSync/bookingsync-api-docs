@@ -51,6 +51,7 @@
           <a class="list-group-item" href="/reference/changelog/">Changelog</a>
           <a class="list-group-item" href="/reference/requirements/">Requirements</a>
           <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+          <a class="list-group-item" href="/reference/enums/">Enumerables</a>
         </div>
         <div class="panel-heading">
           <h3 class="panel-title">Endpoints</h3>
@@ -151,7 +152,9 @@
       <span class="p">],</span>
       <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span><span class="p">,</span>
+      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">16</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -162,7 +165,7 @@
 
 <p>Returns a single rental identified by ID.</p>
 
-<pre><code>GET /rentals/ID
+<pre><code>GET /rentals/:rental_id
 </code></pre>
 
 <pre><code class="language-javascript"><span class="p">{</span>
@@ -216,7 +219,9 @@
       <span class="p">],</span>
       <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span><span class="p">,</span>
+      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">16</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>

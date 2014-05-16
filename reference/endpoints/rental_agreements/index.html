@@ -51,6 +51,7 @@
           <a class="list-group-item" href="/reference/changelog/">Changelog</a>
           <a class="list-group-item" href="/reference/requirements/">Requirements</a>
           <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+          <a class="list-group-item" href="/reference/enums/">Enumerables</a>
         </div>
         <div class="panel-heading">
           <h3 class="panel-title">Endpoints</h3>
@@ -89,6 +90,9 @@
 <ol id="markdown-toc">
 <li><a href="#list-rental-agreements">List rental agreements</a></li>
   <li><a href="#get-a-single-rental-agreement">Get a single rental agreement</a></li>
+  <li><a href="#create-a-new-default-rental-agreement">Create a new default rental agreement</a></li>
+  <li><a href="#create-a-new-rental-agreement-for-a-booking">Create a new rental agreement for a booking</a></li>
+  <li><a href="#create-a-new-rental-agreement-for-a-rental">Create a new rental agreement for a rental</a></li>
 </ol><h3 id="list-rental-agreements">List rental agreements</h3>
 
 <p>Required OAuth scope: <code>:public</code></p>
@@ -117,8 +121,142 @@
 
 <p>Returns a single rental agreement identified by ID.</p>
 
-<pre><code>GET /rental_agreements/ID
+<pre><code>GET /rental_agreements/:rental_agreement_id
 </code></pre>
+
+<p>Response:</p>
+
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="create-a-new-default-rental-agreement">Create a new default rental agreement</h3>
+
+<p>Required OAuth scope: <code>:rentals_write</code></p>
+
+<p>Create a new rental agreement to be used by default.
+This rental agreement will be used unless one is defined at rental
+or booking level.</p>
+
+<p>Returns a newly created rental agreement.</p>
+
+<pre><code>POST /rental_agreements
+</code></pre>
+
+<h4 id="parameters">Parameters</h4>
+
+<table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody><tr>
+<td>body</td>
+      <td>String</td>
+      <td>
+<strong>Required</strong>. Rental agreement’s content.</td>
+    </tr></tbody>
+</table><p>Response:</p>
+
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="create-a-new-rental-agreement-for-a-booking">Create a new rental agreement for a booking</h3>
+
+<p>Required OAuth scope: <code>:rentals_write</code></p>
+
+<p>Create a new rental agreement to be used exclusivly for this booking.</p>
+
+<p>Returns a newly created rental agreement.</p>
+
+<pre><code>POST /bookings/:booking_id/rental_agreements
+</code></pre>
+
+<h4 id="parameters-1">Parameters</h4>
+
+<table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>booking_id</td>
+      <td>Integer</td>
+      <td>
+<strong>Required</strong>. Rental agreement’s booking id.</td>
+    </tr>
+<tr>
+<td>body</td>
+      <td>String</td>
+      <td>
+<strong>Required</strong>. Rental agreement’s content.</td>
+    </tr>
+</tbody>
+</table><p>Response:</p>
+
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h3 id="create-a-new-rental-agreement-for-a-rental">Create a new rental agreement for a rental</h3>
+
+<p>Required OAuth scope: <code>:rentals_write</code></p>
+
+<p>Create a new rental agreement to be used a default for the given rental.</p>
+
+<p>Returns a newly created rental agreement.</p>
+
+<pre><code>POST /rentals/:rental_id/rental_agreements
+</code></pre>
+
+<h4 id="parameters-2">Parameters</h4>
+
+<table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>rental_id</td>
+      <td>Integer</td>
+      <td>
+<strong>Required</strong>. Rental agreement’s rental id.</td>
+    </tr>
+<tr>
+<td>body</td>
+      <td>String</td>
+      <td>
+<strong>Required</strong>. Rental agreement’s content.</td>
+    </tr>
+</tbody>
+</table><p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>

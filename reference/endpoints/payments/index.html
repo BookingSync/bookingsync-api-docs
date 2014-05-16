@@ -51,6 +51,7 @@
           <a class="list-group-item" href="/reference/changelog/">Changelog</a>
           <a class="list-group-item" href="/reference/requirements/">Requirements</a>
           <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+          <a class="list-group-item" href="/reference/enums/">Enumerables</a>
         </div>
         <div class="panel-heading">
           <h3 class="panel-title">Endpoints</h3>
@@ -104,9 +105,16 @@
 <p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
+    <span class="s2">"payments.billing_address"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/billing_addresses/{payments.billing_address}"</span><span class="p">,</span>
+    <span class="s2">"payments.bookings"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{payments.bookings}"</span><span class="p">,</span>
+    <span class="s2">"payments.bookings_payments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings_payments/{payments.bookings_payments}"</span>
+  <span class="p">},</span>
   <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"billing_address"</span><span class="o">:</span> <span class="p">[</span>
 
         <span class="p">],</span>
@@ -118,17 +126,16 @@
         <span class="p">]</span>
       <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"order_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"card"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"GBP"</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"cash"</span><span class="p">,</span>
-      <span class="s2">"fullname"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"email"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"locale"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"ip"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"John Doe"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
+      <span class="s2">"locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"ip"</span><span class="o">:</span> <span class="s2">"192.0.2.1"</span><span class="p">,</span>
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2014-04-25T15:10:28Z"</span><span class="p">,</span>
@@ -146,15 +153,22 @@
 
 <p>Returns a single payment identified by ID.</p>
 
-<pre><code>GET /payments/ID
+<pre><code>GET /payments/:payment_id
 </code></pre>
 
 <p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
+    <span class="s2">"payments.billing_address"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/billing_addresses/{payments.billing_address}"</span><span class="p">,</span>
+    <span class="s2">"payments.bookings"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{payments.bookings}"</span><span class="p">,</span>
+    <span class="s2">"payments.bookings_payments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings_payments/{payments.bookings_payments}"</span>
+  <span class="p">},</span>
   <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"billing_address"</span><span class="o">:</span> <span class="p">[</span>
 
         <span class="p">],</span>
@@ -166,17 +180,16 @@
         <span class="p">]</span>
       <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"order_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"card"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"GBP"</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"cash"</span><span class="p">,</span>
-      <span class="s2">"fullname"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"email"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"locale"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"ip"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"John Doe"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
+      <span class="s2">"locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"ip"</span><span class="o">:</span> <span class="s2">"192.0.2.1"</span><span class="p">,</span>
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2014-04-25T15:10:28Z"</span><span class="p">,</span>
@@ -222,13 +235,13 @@
 <td>currency</td>
       <td>String</td>
       <td>
-<strong>Required</strong>. Payment’s currency code, list of codes described in <a href="/reference/enums">enums section</a>.</td>
+<strong>Required</strong>. Payment’s currency code, list of codes described in <a href="/reference/enums/#currencies">enums section</a>.</td>
     </tr>
 <tr>
 <td>kind</td>
       <td>String</td>
       <td>
-<strong>Required</strong>. Payment’s kind, list of kinds described in <a href="/reference/enums">enums section</a>.</td>
+<strong>Required</strong>. Payment’s kind, list of kinds described in <a href="/reference/enums/#payment-kinds">enums section</a>.</td>
     </tr>
 <tr>
 <td>fullname</td>
@@ -243,7 +256,7 @@
 <tr>
 <td>locale</td>
       <td>String</td>
-      <td>Payer’s preferred locale, list of locales described in <a href="/reference/enums">enums section</a>.</td>
+      <td>Payer’s preferred locale, list of locales described in <a href="/reference/enums/#locales">enums section</a>.</td>
     </tr>
 <tr>
 <td>notes</td>
@@ -259,9 +272,16 @@
 </table><p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
+    <span class="s2">"payments.billing_address"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/billing_addresses/{payments.billing_address}"</span><span class="p">,</span>
+    <span class="s2">"payments.bookings"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{payments.bookings}"</span><span class="p">,</span>
+    <span class="s2">"payments.bookings_payments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings_payments/{payments.bookings_payments}"</span>
+  <span class="p">},</span>
   <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"billing_address"</span><span class="o">:</span> <span class="p">[</span>
 
         <span class="p">],</span>
@@ -273,17 +293,16 @@
         <span class="p">]</span>
       <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"order_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"card"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"GBP"</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"cash"</span><span class="p">,</span>
-      <span class="s2">"fullname"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"email"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"locale"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"ip"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"John Doe"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
+      <span class="s2">"locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"ip"</span><span class="o">:</span> <span class="s2">"192.0.2.1"</span><span class="p">,</span>
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2014-04-25T15:10:28Z"</span><span class="p">,</span>
@@ -301,7 +320,7 @@
 
 <p>Returns an updated payment identified by ID.</p>
 
-<pre><code>PUT /payments/ID
+<pre><code>PUT /payments/:payment_id
 </code></pre>
 
 <h4 id="parameters-1">Parameters</h4>
@@ -323,13 +342,13 @@
 <td>currency</td>
       <td>String</td>
       <td>
-<strong>Required</strong>. Payment’s currency code, list of codes described in <a href="/reference/enums">enums section</a>.</td>
+<strong>Required</strong>. Payment’s currency code, list of codes described in <a href="/reference/enums/#currencies">enums section</a>.</td>
     </tr>
 <tr>
 <td>kind</td>
       <td>String</td>
       <td>
-<strong>Required</strong>. Payment’s kind, list of kinds described in <a href="/reference/enums">enums section</a>.</td>
+<strong>Required</strong>. Payment’s kind, list of kinds described in <a href="/reference/enums/#payment-kinds">enums section</a>.</td>
     </tr>
 <tr>
 <td>fullname</td>
@@ -344,7 +363,7 @@
 <tr>
 <td>locale</td>
       <td>String</td>
-      <td>Payer’s preferred locale, list of locales described in <a href="/reference/enums">enums section</a>.</td>
+      <td>Payer’s preferred locale, list of locales described in <a href="/reference/enums/#locales">enums section</a>.</td>
     </tr>
 <tr>
 <td>notes</td>
@@ -360,9 +379,16 @@
 </table><p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
+    <span class="s2">"payments.billing_address"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/billing_addresses/{payments.billing_address}"</span><span class="p">,</span>
+    <span class="s2">"payments.bookings"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{payments.bookings}"</span><span class="p">,</span>
+    <span class="s2">"payments.bookings_payments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings_payments/{payments.bookings_payments}"</span>
+  <span class="p">},</span>
   <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"billing_address"</span><span class="o">:</span> <span class="p">[</span>
 
         <span class="p">],</span>
@@ -374,17 +400,16 @@
         <span class="p">]</span>
       <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"order_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"card"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"GBP"</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"cash"</span><span class="p">,</span>
-      <span class="s2">"fullname"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"email"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"locale"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"ip"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"John Doe"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
+      <span class="s2">"locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"ip"</span><span class="o">:</span> <span class="s2">"192.0.2.1"</span><span class="p">,</span>
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2014-04-25T15:10:28Z"</span><span class="p">,</span>
@@ -400,9 +425,9 @@
 
 <p>Required OAuth scope: <code>:payments_write</code></p>
 
-<p>Returns an empty Array on success.</p>
+<p>Returns an empty response with ‘204 No Content’ status code on success.</p>
 
-<pre><code>DELETE /payments/ID
+<pre><code>DELETE /payments/:payment_id
 </code></pre>
       </div>
     </div>

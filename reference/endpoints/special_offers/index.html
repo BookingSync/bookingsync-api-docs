@@ -51,6 +51,7 @@
           <a class="list-group-item" href="/reference/changelog/">Changelog</a>
           <a class="list-group-item" href="/reference/requirements/">Requirements</a>
           <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+          <a class="list-group-item" href="/reference/enums/">Enumerables</a>
         </div>
         <div class="panel-heading">
           <h3 class="panel-title">Endpoints</h3>
@@ -104,10 +105,15 @@
 <p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"special_offers.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{special_offers.rental}"</span>
+  <span class="p">},</span>
   <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
+      <span class="p">},</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Spring discount -10%"</span><span class="p">,</span>
       <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-03-21"</span><span class="p">,</span>
       <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-05-01"</span><span class="p">,</span>
@@ -122,14 +128,19 @@
 
 <p>Returns a single special offer identified by ID.</p>
 
-<pre><code>GET /special_offers/ID
+<pre><code>GET /special_offers/:special_offer_id
 </code></pre>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"special_offers.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{special_offers.rental}"</span>
+  <span class="p">},</span>
   <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
+      <span class="p">},</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Spring discount -10%"</span><span class="p">,</span>
       <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-03-21"</span><span class="p">,</span>
       <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-05-01"</span><span class="p">,</span>
@@ -142,9 +153,9 @@
 
 <p>Required OAuth scope: <code>:rates_write</code></p>
 
-<p>Returns a newly created special offer.</p>
+<p>Creates a special offer for given rental.</p>
 
-<pre><code>POST /special_offers
+<pre><code>POST /rentals/:rental_id/special_offers
 </code></pre>
 
 <h4 id="parameters">Parameters</h4>
@@ -184,10 +195,15 @@
 </table><p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"special_offers.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{special_offers.rental}"</span>
+  <span class="p">},</span>
   <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
+      <span class="p">},</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Spring discount -10%"</span><span class="p">,</span>
       <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-03-21"</span><span class="p">,</span>
       <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-05-01"</span><span class="p">,</span>
@@ -202,7 +218,7 @@
 
 <p>Returns an updated special offer identified by ID.</p>
 
-<pre><code>PUT /special_offers/ID
+<pre><code>PUT /special_offers/:special_offer
 </code></pre>
 
 <h4 id="parameters-1">Parameters</h4>
@@ -242,10 +258,15 @@
 </table><p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"special_offers.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{special_offers.rental}"</span>
+  <span class="p">},</span>
   <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
+      <span class="p">},</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Spring discount -10%"</span><span class="p">,</span>
       <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-03-21"</span><span class="p">,</span>
       <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-05-01"</span><span class="p">,</span>
@@ -258,9 +279,9 @@
 
 <p>Required OAuth scope: <code>:rates_write</code></p>
 
-<p>Returns an empty Array on success.</p>
+<p>Returns empty response with ‘204 No Content’ status code on success.</p>
 
-<pre><code>DELETE /special_offers/ID
+<pre><code>DELETE /special_offers/:special_offer_id
 </code></pre>
       </div>
     </div>

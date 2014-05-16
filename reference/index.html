@@ -51,6 +51,7 @@
           <a class="list-group-item" href="/reference/changelog/">Changelog</a>
           <a class="list-group-item" href="/reference/requirements/">Requirements</a>
           <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+          <a class="list-group-item" href="/reference/enums/">Enumerables</a>
         </div>
         <div class="panel-heading">
           <h3 class="panel-title">Endpoints</h3>
@@ -122,7 +123,7 @@ a subset of resources and links to other pages.</p>
 
 <p>The links are sent in the <code>Link</code> header, e.g.:</p>
 
-<pre><code>Link: &lt;https://www.bookingsync.com/api/v3/accounts.json?page=1&gt;; rel="first", &lt;https://www.bookingsync.com/api/v3/accounts.json?page=2&gt;; rel="next", &lt;https://www.bookingsync.com/api/v3/accounts.json?page=3&gt;; rel="last"
+<pre><code>Link: &lt;https://www.bookingsync.com/api/v3/accounts?page=1&gt;; rel="first", &lt;https://www.bookingsync.com/api/v3/accounts?page=2&gt;; rel="next", &lt;https://www.bookingsync.com/api/v3/accounts?page=3&gt;; rel="last"
 X-Total-Pages: 3
 </code></pre>
 
@@ -133,7 +134,7 @@ the attributes returned by the API. For example, if we wanted to get only the
 <code>id</code> and <code>business_name</code> fields of the Accounts, we could specify that in the
 request:</p>
 
-<pre><code>GET https://www.bookingsync.com/api/v3/accounts.json?fields=id,business_name
+<pre><code>GET https://www.bookingsync.com/api/v3/accounts?fields=id,business_name
 </code></pre>
 
 <h3 id="https">HTTPS</h3>

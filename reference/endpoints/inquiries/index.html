@@ -51,6 +51,7 @@
           <a class="list-group-item" href="/reference/changelog/">Changelog</a>
           <a class="list-group-item" href="/reference/requirements/">Requirements</a>
           <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+          <a class="list-group-item" href="/reference/enums/">Enumerables</a>
         </div>
         <div class="panel-heading">
           <h3 class="panel-title">Endpoints</h3>
@@ -101,8 +102,14 @@
 <p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"inquiries.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{inquiries.rental}"</span>
+  <span class="p">},</span>
   <span class="s2">"inquiries"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
       <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"Smith"</span><span class="p">,</span>
@@ -113,7 +120,6 @@
       <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-03-28T10:00:00Z"</span><span class="p">,</span>
       <span class="s2">"adults"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"children"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"message"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-03-25T15:10:28Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-03-25T15:10:28Z"</span>
@@ -127,14 +133,20 @@
 
 <p>Returns a single inquiry identified by ID.</p>
 
-<pre><code>GET /inquiries/ID
+<pre><code>GET /inquiries/:inquiry_id
 </code></pre>
 
 <p>Response:</p>
 
 <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"inquiries.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{inquiries.rental}"</span>
+  <span class="p">},</span>
   <span class="s2">"inquiries"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
       <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"Smith"</span><span class="p">,</span>
@@ -145,7 +157,6 @@
       <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-03-28T10:00:00Z"</span><span class="p">,</span>
       <span class="s2">"adults"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"children"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"message"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-03-25T15:10:28Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-03-25T15:10:28Z"</span>
