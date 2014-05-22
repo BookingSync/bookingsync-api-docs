@@ -90,6 +90,7 @@
 
 <ol id="markdown-toc">
 <li><a href="#oauth">OAuth</a></li>
+  <li><a href="#testing-the-authorization">Testing the Authorization</a></li>
   <li><a href="#libraries">Libraries</a></li>
   <li><a href="#embedded-application">Embedded Application</a></li>
   <li><a href="#scopes">Scopes</a></li>
@@ -99,7 +100,7 @@
 <p>The BookingSync API uses <a href="http://oauth.net/2/">OAuth 2.0</a> for authorization.</p>
 
 <p>OAuth2 is a protocol that lets external apps request authorization to private
-details in a user’s GitHub account without getting their password.</p>
+details in a user’s BookingSync account without getting their password.</p>
 
 <p>All applications that want to use the API
 <a href="/reference/requirements/">must be registered on the BookinSync website</a>.</p>
@@ -107,6 +108,11 @@ details in a user’s GitHub account without getting their password.</p>
 <p>Each registered application is assigned a unique Client ID and Client Secret.
 It is important that the Client Secret is not shared with anyone and not
 accessible by users.</p>
+
+<h3 id="testing-the-authorization">Testing the Authorization</h3>
+
+<p>For testing the authorization process in console or play around the API,
+refer to <a href="/reference/testing_authorization/">Testing BookingSync Authorization</a></p>
 
 <h3 id="libraries">Libraries</h3>
 
@@ -139,6 +145,10 @@ authorization and provides convenience methods for accessing the API.</li>
 <ul>
 <li><a href="https://github.com/litl/rauth">rauth</a></li>
   <li><a href="https://github.com/demianbrecht/sanction">sanction</a></li>
+</ul><h4 id="dotnet">DotNet</h4>
+
+<ul>
+<li><a href="http://dotnetopenauth.net/">DotNetOpenAuth</a></li>
 </ul><h3 id="embedded-application">Embedded Application</h3>
 
 <p>When building applications that are meant to be embedded in the
@@ -167,21 +177,19 @@ access to public information.</p>
 <p>Additionally, the following scopes are available:</p>
 
 <ul>
-<li><code>rentals_read</code></li>
-  <li><code>clients_read</code></li>
+<li><code>bookings_public_write</code></li>
   <li><code>bookings_read</code></li>
-  <li><code>reviews_read</code></li>
-  <li><code>payments_read</code></li>
-  <li><code>inquiries_read</code></li>
-  <li><code>rates_read</code></li>
-  <li><code>rentals_write</code></li>
-  <li><code>clients_write</code></li>
   <li><code>bookings_write</code></li>
-  <li><code>reviews_write</code></li>
-  <li><code>payments_write</code></li>
+  <li><code>clients_read</code></li>
+  <li><code>clients_write</code></li>
+  <li><code>inquiries_read</code></li>
   <li><code>inquiries_write</code></li>
+  <li><code>payments_read</code></li>
+  <li><code>payments_write</code></li>
+  <li><code>rates_read</code></li>
   <li><code>rates_write</code></li>
-  <li><code>bookings_public_write</code></li>
+  <li><code>rentals_read</code></li>
+  <li><code>rentals_write</code></li>
 </ul><h3 id="client-credentials-flow">Client credentials flow</h3>
 
 <p>Application can also use the

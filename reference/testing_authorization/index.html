@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BookingSync API documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/highlight.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.6.7">
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">BookingSync API Documentation</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active">
+              <a href="/reference/">reference</a>
+            </li>
+            <li><a href="https://www.bookingsync.com">bookingsync.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+  <div class="row">
+    <div class="col-md-3 col-md-push-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Overview</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="/reference/">Introduction</a>
+          <a class="list-group-item" href="/reference/changelog/">Changelog</a>
+          <a class="list-group-item" href="/reference/requirements/">Requirements</a>
+          <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+          <a class="list-group-item" href="/reference/enums/">Enumerables</a>
+        </div>
+        <div class="panel-heading">
+          <h3 class="panel-title">Endpoints</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
+          <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/billing_addresses/">Billing Addresses</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
+          <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
+          <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
+          <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
+          <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
+          <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
+          <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
+          <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 col-md-pull-3">
+      <div class="alert alert-warning">
+        We're still in the process of building the API. If you notice any
+        problems, please contact <a href="mailto:support@bookingsync.com">support</a>.
+      </div>
+
+      <div id="content">
+        <h2 id="testing-authorization">Testing Authorization</h2>
+
+<ol id="markdown-toc">
+<li><a href="#console">Console</a></li>
+</ol><p>For testing BookingSync API v3 you
+<a href="/reference/requirements/">must register an application on the BookinSync website</a>.</p>
+
+<p>While creating your test application to use in console,
+make sure to use the following <em>redirect_uri</em>:</p>
+
+<p><code>
+urn:ietf:wg:oauth:2.0:oob
+</code></p>
+
+<h3 id="console">Console</h3>
+
+<h4 id="create-authorization-codes-request-url">Create Authorization Code’s Request URL</h4>
+
+<p>Use the schema below with by replacing:</p>
+
+<ul>
+<li>
+<code>CLIENT ID</code>: Application’s Client ID</li>
+</ul><p><code>
+https://www.bookingsync.com/oauth/authorize?client_id=CLIENT_ID&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=code
+</code></p>
+
+<p><em>Note</em>: To request authorization for <a href="/reference/authorization#scopes">custom scopes</a>,
+add at the end of this URL, a space separated list like:
+<code>&amp;scope=bookings_read%20rentals_read</code> (<code>%20</code> represent a <em>space</em> within URLs)</p>
+
+<h4 id="authorize-this-app-for-a-given-bookingsync-user">Authorize this app for a given BookingSync User</h4>
+
+<p>Visit the generated URL, and authorize access to your test
+Application for a BookingSync user.</p>
+
+<h4 id="use-the-authorization-code-to-get-your-token">Use the Authorization Code to get your Token</h4>
+
+<p>Use the schema below with by replacing:</p>
+
+<ul>
+<li>
+<code>RETURNED_CODE</code>: Displayed Authorization Code</li>
+  <li>
+<code>CLIENT ID</code>: Application’s Client ID</li>
+  <li>
+<code>CLIENT_SECRET</code>: Application’s Client Secret <em>(do not share, same as password)</em>
+</li>
+</ul><p><code>
+https://www.bookingsync.com/oauth/token?client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;code=RETURNED_CODE&amp;grant_type=authorization_code&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob
+</code></p>
+
+<p>Make a POST request to this URL to get your Authentication Token.</p>
+
+<p>Example with CURL:</p>
+
+<p><code>
+curl -X POST -d "client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;code=RETURNED_CODE&amp;grant_type=authorization_code&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob" "https://www.bookingsync.com/oauth/token"
+</code></p>
+
+<p><em>Note</em>: Tokens (<code>access_token</code>) are only <em>valid for 2 hours</em>, you then need to use the
+<em>Refresh Token</em> to regenerate and new <em>Token</em> or restart the flow you just used.</p>
+      </div>
+    </div>
+  </div>
+    </div>
+  </body>
+</html>
+
