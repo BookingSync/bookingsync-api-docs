@@ -94,7 +94,9 @@
   <li><a href="#libraries">Libraries</a></li>
   <li><a href="#embedded-application">Embedded Application</a></li>
   <li><a href="#scopes">Scopes</a></li>
-  <li><a href="#client-credentials-flow">Client credentials flow</a></li>
+  <li><a href="#authorization-code-flow">Authorization Code Flow</a></li>
+  <li><a href="#implicit-flow">Implicit Flow</a></li>
+  <li><a href="#client-credentials-flow">Client Credentials Flow</a></li>
 </ol><h3 id="oauth">OAuth</h3>
 
 <p>The BookingSync API uses <a href="http://oauth.net/2/">OAuth 2.0</a> for authorization.</p>
@@ -190,10 +192,77 @@ access to public information.</p>
   <li><code>rates_write</code></li>
   <li><code>rentals_read</code></li>
   <li><code>rentals_write</code></li>
-</ul><h3 id="client-credentials-flow">Client credentials flow</h3>
+</ul><h3 id="authorization-code-flow">Authorization Code Flow</h3>
 
 <p>Application can also use the
-<a href="http://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-1.3.4">OAuth Client Credentials flow</a>
+<a href="http://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-4.1">OAuth 2.0 Authorization Code flow</a>
+to access the API.
+This is to be used for <strong>Server-Side applications</strong>, with special care taken to <em>never</em> leak <code>client_secret</code>.</p>
+
+<p>The explicit OAuth 2.0 flow consists of the following steps:</p>
+
+<ol>
+<li>Send a user to <code>https://www.bookingsync.com/oauth/authorize</code>, with these query string parameters
+    <ul>
+<li>client_id</li>
+      <li>redirect_uri - must be under an apps registered domain</li>
+      <li>response_type - must be <code>code</code>
+</li>
+      <li>scope - options (<a href="#scopes">details</a>)</li>
+      <li>state - optional</li>
+    </ul>
+</li>
+  <li>The user approves your app</li>
+  <li>The user is redirected to <strong>redirect_uri</strong>, with these query string parameters
+    <ul>
+<li>code</li>
+      <li>state - optional, only returned if provided in the first step</li>
+    </ul>
+</li>
+  <li>POST (application/x-www-form-urlencoded) the following parameters to <code>https://www.bookingsync.com/oauth/token</code>
+    <ul>
+<li>client_id</li>
+      <li>client_secret</li>
+      <li>code - from the previous step</li>
+      <li>grant_type - must use <code>authorization_code</code>
+</li>
+      <li>redirect_uri - must be the same as the provided in the first step</li>
+    </ul>
+</li>
+</ol><p>This request is responded to with either an error (HTTP status code 401) or an access token of the form <code>access_token=...&amp;expires_in=1234</code>.</p>
+
+<h3 id="implicit-flow">Implicit Flow</h3>
+
+<p>Application can also use the
+<a href="http://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-4.2">OAuth 2.0 Implicit flow</a>
+to access the API.
+This is recommended for <strong>Client-Side applications</strong>.</p>
+
+<p>The implicit OAuth 2.0 flow consists of the following steps:</p>
+
+<ol>
+<li>Open a new window at <code>https://www.bookingsync.com/oauth/authorize</code>, with these query string parameters
+    <ul>
+<li>client_id</li>
+      <li>scope (<a href="#scopes">details</a>)</li>
+      <li>redirect_uri - must be under an apps registered domain</li>
+      <li>state - optional</li>
+    </ul>
+</li>
+  <li>The user approves your app</li>
+  <li>The user is redirected to <strong>redirect_uri</strong>, with these parameters in the hash
+    <ul>
+<li>access_token</li>
+      <li>token_type</li>
+      <li>expires_in</li>
+    </ul>
+</li>
+</ol><p>Once you have authenticated a user once, regardless of flow, subsequent re-authorizations will occur without requiring user action. Naturally, should a user revoke an applications permissions then further action will be required to re-authorize.</p>
+
+<h3 id="client-credentials-flow">Client Credentials Flow</h3>
+
+<p>Application can also use the
+<a href="http://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-4.4">OAuth 2.0 Client Credentials flow</a>
 to access the API.</p>
 
 <p>Requests using a token obtained using the Client Credentials flow are limited
