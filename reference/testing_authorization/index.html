@@ -89,16 +89,18 @@
         <h2 id="testing-authorization">Testing Authorization</h2>
 
 <ol id="markdown-toc">
-<li><a href="#console">Console</a></li>
-</ol><p>For testing BookingSync API v3 you
+<li><a href="#preface">Preface</a></li>
+  <li><a href="#console">Console</a></li>
+</ol><h3 id="preface">Preface</h3>
+
+<p>For testing BookingSync API v3 you
 <a href="/reference/requirements/">must register an application on the BookinSync website</a>.</p>
 
 <p>While creating your test application to use in console,
-make sure to use the following <em>redirect_uri</em>:</p>
+make sure to use the following <strong>redirect_uri</strong>:</p>
 
-<p><code>
-urn:ietf:wg:oauth:2.0:oob
-</code></p>
+<pre><code>urn:ietf:wg:oauth:2.0:oob
+</code></pre>
 
 <h3 id="console">Console</h3>
 
@@ -109,13 +111,12 @@ urn:ietf:wg:oauth:2.0:oob
 <ul>
 <li>
 <code>CLIENT ID</code>: Application’s Client ID</li>
-</ul><p><code>
-https://www.bookingsync.com/oauth/authorize?client_id=CLIENT_ID&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=code
-</code></p>
+</ul><pre><code>https://www.bookingsync.com/oauth/authorize?client_id=CLIENT_ID&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=code
+</code></pre>
 
-<p><em>Note</em>: To request authorization for <a href="/reference/authorization#scopes">custom scopes</a>,
+<p><strong>Note</strong>: To request authorization for <a href="/reference/authorization#scopes">custom scopes</a>,
 add at the end of this URL, a space separated list like:
-<code>&amp;scope=bookings_read%20rentals_read</code> (<code>%20</code> represent a <em>space</em> within URLs)</p>
+<code>&amp;scope=bookings_read%20rentals_read</code> (<code>%20</code> represent a <strong>space</strong> within URLs)</p>
 
 <h4 id="authorize-this-app-for-a-given-bookingsync-user">Authorize this app for a given BookingSync User</h4>
 
@@ -134,20 +135,18 @@ Application for a BookingSync user.</p>
   <li>
 <code>CLIENT_SECRET</code>: Application’s Client Secret <em>(do not share, same as password)</em>
 </li>
-</ul><p><code>
-https://www.bookingsync.com/oauth/token?client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;code=RETURNED_CODE&amp;grant_type=authorization_code&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob
-</code></p>
+</ul><pre><code>https://www.bookingsync.com/oauth/token?client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;code=RETURNED_CODE&amp;grant_type=authorization_code&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob
+</code></pre>
 
 <p>Make a POST request to this URL to get your Authentication Token.</p>
 
 <p>Example with CURL:</p>
 
-<p><code>
-curl -X POST -d "client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;code=RETURNED_CODE&amp;grant_type=authorization_code&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob" "https://www.bookingsync.com/oauth/token"
-</code></p>
+<pre><code>curl -X POST -d "client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;code=RETURNED_CODE&amp;grant_type=authorization_code&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob" "https://www.bookingsync.com/oauth/token"
+</code></pre>
 
-<p><em>Note</em>: Tokens (<code>access_token</code>) are only <em>valid for 2 hours</em>, you then need to use the
-<em>Refresh Token</em> to regenerate and new <em>Token</em> or restart the flow you just used.</p>
+<p><strong>Note</strong>: Tokens (<code>access_token</code>) are only <strong>valid for 2 hours</strong>, you then need to use the
+<strong>Refresh Token</strong> to regenerate and new <strong>Token</strong> or restart the flow you just used.</p>
       </div>
     </div>
   </div>
