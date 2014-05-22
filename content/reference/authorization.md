@@ -8,7 +8,7 @@
 The BookingSync API uses [OAuth 2.0](http://oauth.net/2/) for authorization.
 
 OAuth2 is a protocol that lets external apps request authorization to private
-details in a user’s GitHub account without getting their password.
+details in a user’s BookingSync account without getting their password.
 
 All applications that want to use the API
 [must be registered on the BookinSync website](/reference/requirements/).
@@ -16,6 +16,11 @@ All applications that want to use the API
 Each registered application is assigned a unique Client ID and Client Secret.
 It is important that the Client Secret is not shared with anyone and not
 accessible by users.
+
+## Testing the Authorization
+
+For testing the authorization process in console or play around the API,
+refer to [Testing BookingSync Authorization](/reference/testing_authorization/)
 
 ## Libraries
 
@@ -44,6 +49,10 @@ library is the best way to cover them all.
 
 * [rauth](https://github.com/litl/rauth)
 * [sanction](https://github.com/demianbrecht/sanction)
+
+### DotNet
+
+* [DotNetOpenAuth](http://dotnetopenauth.net/)
 
 ## Embedded Application
 
@@ -74,21 +83,19 @@ access to public information.
 
 Additionally, the following scopes are available:
 
-* `rentals_read`
-* `clients_read`
-* `bookings_read`
-* `reviews_read`
-* `payments_read`
-* `inquiries_read`
-* `rates_read`
-* `rentals_write`
-* `clients_write`
-* `bookings_write`
-* `reviews_write`
-* `payments_write`
-* `inquiries_write`
-* `rates_write`
 * `bookings_public_write`
+* `bookings_read`
+* `bookings_write`
+* `clients_read`
+* `clients_write`
+* `inquiries_read`
+* `inquiries_write`
+* `payments_read`
+* `payments_write`
+* `rates_read`
+* `rates_write`
+* `rentals_read`
+* `rentals_write`
 
 ## Client credentials flow
 
