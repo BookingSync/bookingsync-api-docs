@@ -41,9 +41,9 @@ Application for a BookingSync user.
 
 Use the schema below with by replacing:
 
-* `RETURNED_CODE`: Displayed Authorization Code
 * `CLIENT ID`: Application's Client ID
 * `CLIENT_SECRET`: Application's Client Secret _(do not share, same as password)_
+* `RETURNED_CODE`: Displayed Authorization Code
 
 ~~~
 https://www.bookingsync.com/oauth/token?client_id=CLIENT_ID&client_secret=CLIENT_SECRET&code=RETURNED_CODE&grant_type=authorization_code&redirect_uri=urn:ietf:wg:oauth:2.0:oob
