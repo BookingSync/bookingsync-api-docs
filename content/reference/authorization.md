@@ -97,10 +97,60 @@ Additionally, the following scopes are available:
 * `rentals_read`
 * `rentals_write`
 
-## Client credentials flow
+## Authorization Code Flow
 
 Application can also use the
-[OAuth Client Credentials flow](http://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-1.3.4)
+[OAuth 2.0 Authorization Code flow](http://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-4.1)
+to access the API.
+This is to be used for **Server-Side applications**, with special care taken to *never* leak `client_secret`.
+
+The explicit OAuth 2.0 flow consists of the following steps:
+
+1. Send a user to `https://www.bookingsync.com/oauth/authorize`, with these query string parameters
+  * client_id
+  * redirect_uri - must be under an apps registered domain
+  * response_type - must be `code`
+  * scope - options ([details](#scopes))
+  * state - optional
+2. The user approves your app
+3. The user is redirected to **redirect_uri**, with these query string parameters
+  * code
+  * state - optional, only returned if provided in the first step
+4. POST (application/x-www-form-urlencoded) the following parameters to `https://www.bookingsync.com/oauth/token`
+  * client_id
+  * client_secret
+  * code - from the previous step
+  * grant_type - must use `authorization_code`
+  * redirect_uri - must be the same as the provided in the first step
+
+This request is responded to with either an error (HTTP status code 401) or an access token of the form `access_token=...&expires_in=1234`.
+
+## Implicit Flow
+
+Application can also use the
+[OAuth 2.0 Implicit flow](http://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-4.2)
+to access the API.
+This is recommended for **Client-Side applications**.
+
+The implicit OAuth 2.0 flow consists of the following steps:
+
+1. Open a new window at `https://www.bookingsync.com/oauth/authorize`, with these query string parameters
+  * client_id
+  * scope ([details](#scopes))
+  * redirect_uri - must be under an apps registered domain
+  * state - optional
+2. The user approves your app
+3. The user is redirected to **redirect_uri**, with these parameters in the hash
+  * access_token
+    * token_type
+    * expires_in
+
+Once you have authenticated a user once, regardless of flow, subsequent re-authorizations will occur without requiring user action. Naturally, should a user revoke an applications permissions then further action will be required to re-authorize.
+
+## Client Credentials Flow
+
+Application can also use the
+[OAuth 2.0 Client Credentials flow](http://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-4.4)
 to access the API.
 
 Requests using a token obtained using the Client Credentials flow are limited
