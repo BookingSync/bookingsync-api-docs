@@ -45,6 +45,8 @@ until            | Time    |         | Bookings starting before given date. Form
 months           | Integer |         | Bookings starting before `:from` + `:months`.
 status           | String  |         | List of comma separated statuses. Possible values: booked,unavailable,tentative.
 include_canceled | Boolean | false   | Show also canceled bookings (requires `:bookings_read` or `:bookings_write` scope).
+rental_id        | String  |         | List of comma separated IDs. Returns only bookings for this rental(s)
+client_id        | String  |         | List of comma separated IDs. Returns only bookings for this client(s)
 {: class="table table-bordered"}
 
 ## Get a single booking
