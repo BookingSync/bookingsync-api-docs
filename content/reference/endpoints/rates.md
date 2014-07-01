@@ -17,6 +17,21 @@ Response:
 
 <%= json_response 'rates/index' %>
 
+## Search rates
+
+Search parameters allow to filter rates by specified fields.
+
+Example:
+
+~~~
+GET /rates?rental_id=1
+~~~
+
+### Parameters
+
+Name             | Type    | Default | Description
+-----------------|---------|----------------------
+rental_id        | String  |         | List of comma separated IDs. Returns only bookings for this rental(s)
 
 ## Get a single rate
 
