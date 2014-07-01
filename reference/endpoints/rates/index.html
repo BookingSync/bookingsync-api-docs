@@ -90,6 +90,7 @@
 
 <ol id="markdown-toc">
 <li><a href="#list-rates">List rates</a></li>
+  <li><a href="#search-rates">Search rates</a></li>
   <li><a href="#get-a-single-rate">Get a single rate</a></li>
 </ol><h3 id="list-rates">List rates</h3>
 
@@ -127,7 +128,31 @@
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
 
-<h3 id="get-a-single-rate">Get a single rate</h3>
+<h3 id="search-rates">Search rates</h3>
+
+<p>Search parameters allow to filter rates by specified fields.</p>
+
+<p>Example:</p>
+
+<pre><code>GET /rates?rental_id=1
+</code></pre>
+
+<h4 id="parameters">Parameters</h4>
+
+<table>
+<thead><tr>
+<th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody><tr>
+<td>rental_id</td>
+      <td>String</td>
+      <td> </td>
+      <td>List of comma separated IDs. Returns only bookings for this rental(s)</td>
+    </tr></tbody>
+</table><h3 id="get-a-single-rate">Get a single rate</h3>
 
 <p>Required OAuth scope: <code>:public</code>.</p>
 
