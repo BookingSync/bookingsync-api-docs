@@ -32,6 +32,7 @@ GET /rates?rental_id=1
 Name             | Type    | Default | Description
 -----------------|---------|----------------------
 rental_id        | String  |         | List of comma separated IDs. Returns only bookings for this rental(s)
+{: class="table table-bordered"}
 
 ## Get a single rate
 
