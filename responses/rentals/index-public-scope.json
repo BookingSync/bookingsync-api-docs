@@ -1,0 +1,88 @@
+{
+  "links": {
+    "rentals.account": "https://www.bookingsync.com/api/v3/accounts/{rentals.account}",
+    "rentals.availability": "https://www.bookingsync.com/api/v3/availabilities/{rentals.availability}",
+    "rentals.destination": "https://www.bookingsync.com/api/v3/destinations/{rentals.destination}",
+    "rentals.rates_table": "https://www.bookingsync.com/api/v3/rates_tables/{rentals.rates_table}",
+    "rentals.rental_agreement": "https://www.bookingsync.com/api/v3/rental_agreements/{rentals.rental_agreement}",
+    "rentals.photos": "https://www.bookingsync.com/api/v3/photos/{rentals.photos}",
+    "rentals.reviews": "https://www.bookingsync.com/api/v3/reviews/{rentals.reviews}",
+    "rentals.special_offers": "https://www.bookingsync.com/api/v3/special_offers/{rentals.special_offers}",
+    "rentals.rates": "https://www.bookingsync.com/api/v3/rates/{rentals.rates}",
+    "rentals.rentals_amenities": "https://www.bookingsync.com/api/v3/rentals_amenities/{rentals.rentals_amenities}"
+  },
+  "rentals": [
+    {
+      "links": {
+        "account": 1,
+        "availability": 1,
+        "destination": 134,
+        "rates_table": 1,
+        "rental_agreement": 1,
+        "photos": [
+          1
+        ],
+        "reviews": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "special_offers": [
+          1
+        ],
+        "rates": [
+
+        ],
+        "rentals_amenities": [
+          1,
+          2,
+          3
+        ]
+      },
+      "id": 1,
+      "name": "Cottage 1",
+      "headline": {
+        "en": "Super Headline"
+      },
+      "summary": {
+        "en": "Super summary"
+      },
+      "description": {
+        "en": "Complete description"
+      },
+      "rental_type": "villa",
+      "units": 1,
+      "bedrooms_count": null,
+      "sleeps": 7,
+      "sleeps_max": null,
+      "bathrooms_count": 3,
+      "surface": 120,
+      "bookable_online": false,
+      "min_price": 420,
+      "max_price": 600,
+      "price_kind": "weekly",
+      "currency": "EUR",
+      "price_public_notes": {
+        "en": null
+      },
+      "lat": 45.02,
+      "lng": 6.6,
+      "city": "Nevache",
+      "state": null,
+      "country": "France",
+      "contact_name": "Contact Fullname",
+      "reviews_count": 5,
+      "reviews_average_rating": "4.0",
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT",
+      "checkin_time": 16,
+      "checkout_time": 10,
+      "initial_price": null,
+      "final_price": null
+    }
+  ],
+  "meta": {
+  }
+}
