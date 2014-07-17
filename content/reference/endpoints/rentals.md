@@ -13,9 +13,8 @@ List all rentals for given account(s).
 GET /rentals
 ~~~
 
-Response:
-
-<%= json_response 'rentals/index' %>
+<%= render 'json_response', endpoint: "rentals", action: "index",
+  scopes: %w(public rentals_read-rentals_write) %>
 
 ## Get a single rental
 
@@ -27,4 +26,5 @@ Returns a single rental identified by ID.
 GET /rentals/:rental_id
 ~~~
 
-<%= json_response 'rentals/index' %>
+<%= render 'json_response', endpoint: "rentals", action: "index",
+  scopes: %w(public rentals_read-rentals_write) %>
