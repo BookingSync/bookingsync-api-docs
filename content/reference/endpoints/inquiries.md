@@ -6,21 +6,16 @@
 
 ## List inquiries
 
-Required OAuth scope: `:inquiries_read` or `:inquiries_write`.
-
 Returns a list of all inquiries for current account(s).
 
 ~~~
 GET /inquiries
 ~~~
 
-Response:
-
-<%= json_response 'inquiries/index' %>
+<%= render 'json_response', endpoint: "inquiries",
+  scopes: %w(inquiries_read-inquiries_write) %>
 
 ## Get a single inquiry
-
-Required OAuth scope: `:inquiries_read` or `:inquiries_write`.
 
 Returns a single inquiry identified by ID.
 
@@ -28,6 +23,5 @@ Returns a single inquiry identified by ID.
 GET /inquiries/:inquiry_id
 ~~~
 
-Response:
-
-<%= json_response 'inquiries/index' %>
+<%= render 'json_response', endpoint: "inquiries",
+  scopes: %w(inquiries_read-inquiries_write) %>

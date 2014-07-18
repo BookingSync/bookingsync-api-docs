@@ -1,0 +1,40 @@
+{
+  "links": {
+    "payments.account": "https://www.bookingsync.com/api/v3/accounts/{payments.account}",
+    "payments.billing_address": "https://www.bookingsync.com/api/v3/billing_addresses/{payments.billing_address}",
+    "payments.bookings": "https://www.bookingsync.com/api/v3/bookings/{payments.bookings}",
+    "payments.bookings_payments": "https://www.bookingsync.com/api/v3/bookings_payments/{payments.bookings_payments}"
+  },
+  "payments": [
+    {
+      "links": {
+        "account": 33,
+        "billing_address": [],
+        "bookings": [
+          21
+        ],
+        "bookings_payments": [
+          3
+        ]
+      },
+      "id": 2,
+      "transaction_id": null,
+      "order_id": null,
+      "card": null,
+      "amount": 1000,
+      "currency": "GBP",
+      "kind": "cash",
+      "fullname": "John Doe",
+      "email": "john@example.com",
+      "locale": "en",
+      "ip": "192.0.2.1",
+      "test": null,
+      "notes": null,
+      "paid_at": "CREATED_AT",
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT",
+      "rejected_at": null,
+      "canceled_at": null
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "rental_agreements": [
+    {
+      "id": 1,
+      "body": "My Agreement",
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT"
+    }
+  ]
+}

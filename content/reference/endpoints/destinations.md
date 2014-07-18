@@ -5,21 +5,16 @@
 
 ## List destinations
 
-Required OAuth scope: `:public`
-
 List all destinations for given account(s).
 
 ~~~
 GET /destinations
 ~~~
 
-Response:
-
-<%= json_response 'destinations/index' %>
+<%= render 'json_response', endpoint: "destinations",
+  scopes: %w(public) %>
 
 ## Get a single destination
-
-Required OAuth scope: `:public`
 
 Returns a single destination identified by ID.
 
@@ -27,4 +22,5 @@ Returns a single destination identified by ID.
 GET /destinations/:destination_id
 ~~~
 
-<%= json_response 'destinations/index' %>
+<%= render 'json_response', endpoint: "destinations",
+  scopes: %w(public) %>

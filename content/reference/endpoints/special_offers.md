@@ -5,21 +5,16 @@
 
 ## List special offers
 
-Required OAuth scope: `:public`
-
 List all special offers for given account(s).
 
 ~~~
 GET /special_offers
 ~~~
 
-Response:
-
-<%= json_response 'special_offers/index' %>
+<%= render 'json_response', endpoint: "special_offers",
+  scopes: %w(public) %>
 
 ## Get a single special offer
-
-Required OAuth scope: `:public`
 
 Returns a single special offer identified by ID.
 
@@ -27,11 +22,10 @@ Returns a single special offer identified by ID.
 GET /special_offers/:special_offer_id
 ~~~
 
-<%= json_response 'special_offers/index' %>
+<%= render 'json_response', endpoint: "special_offers",
+  scopes: %w(public) %>
 
 ## Create a new special offer
-
-Required OAuth scope: `:rates_write`
 
 Creates a special offer for given rental.
 
@@ -49,13 +43,10 @@ end_at           | [Date](/reference/formats) | **Required**. Special Offer's en
 discount         | Integer | **Required**. Special Offer's discount value, e.g. use 20 for 20% discount.
 {: class="table table-bordered"}
 
-Response:
-
-<%= json_response 'special_offers/index' %>
+<%= render 'json_response', endpoint: "special_offers",
+  scopes: %w(rates_write) %>
 
 ## Update a special offer
-
-Required OAuth scope: `:rates_write`
 
 Returns an updated special offer identified by ID.
 
@@ -73,9 +64,8 @@ end_at           | [Date](/reference/formats) | **Required**. Special Offer's en
 discount         | Integer | **Required**. Special Offer's discount value, e.g. use 20 for 20% discount.
 {: class="table table-bordered"}
 
-Response:
-
-<%= json_response 'special_offers/index' %>
+<%= render 'json_response', endpoint: "special_offers",
+  scopes: %w(rates_write) %>
 
 ## Destroy a special offer
 
@@ -86,4 +76,3 @@ Returns empty response with '204 No Content' status code on success.
 ~~~~~~
 DELETE /special_offers/:special_offer_id
 ~~~~~~
-

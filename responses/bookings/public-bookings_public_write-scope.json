@@ -6,12 +6,16 @@
   "bookings": [
     {
       "links": {
-        "account": 12,
-        "rental": 17
+        "account": 1,
+        "rental": 1
       },
-      "id": 1,
-      "start_at": "2014-04-28T10:55:13Z",
-      "end_at": "2014-12-28T10:55:34Z"
+      "id": 203,
+      "start_at": "START_AT",
+      "end_at": "END_AT",
+      "status": "Booked",
+      "updated_at": "UPDATED_AT"
     }
-  ]
+  ],
+  "meta": {
+  }
 }

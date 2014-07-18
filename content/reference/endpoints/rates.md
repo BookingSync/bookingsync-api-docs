@@ -5,17 +5,14 @@
 
 ## List rates
 
-Required OAuth scope: `:public`.
-
 List all rates for given account(s).
 
 ~~~
 GET /rates
 ~~~
 
-Response:
-
-<%= json_response 'rates/index' %>
+<%= render 'json_response', endpoint: "rates",
+  scopes: %w(public) %>
 
 ## Search rates
 
@@ -36,16 +33,11 @@ rental_id        | String  |         | List of comma separated IDs. Returns only
 
 ## Get a single rate
 
-Required OAuth scope: `:public`.
-
 Returns a single rate identified by ID.
 
 ~~~
 GET /rates/:rate_id
 ~~~
 
-Response:
-
-<%= json_response 'rates/index' %>
-
-
+<%= render 'json_response', endpoint: "rates",
+  scopes: %w(public) %>

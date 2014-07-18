@@ -1,10 +1,10 @@
 <% tag = SecureRandom.hex(6) %>
 
 <ul class="nav nav-pills pull-right" role="tablist">
-  <li class="disabled"><a>Scopes:</a></li>
+  <li class="disabled"><a>OAuth Scopes:</a></li>
   <% scopes.each_with_index do |scope, i| %>
     <li <% if i.zero? %>class="active"<% end %>>
-      <a href="#<%= tag %><%= action %>-<%= scope %>" role="tab" data-toggle="pill">
+      <a href="#<%= tag %><%= scope %>" role="tab" data-toggle="pill">
         <%= scope.gsub('-', ' / ') %>
       </a>
     </li>
@@ -13,9 +13,9 @@
 
 <div class="tab-content">
   <% scopes.each_with_index do |scope, i| %>
-    <div class="tab-pane <%= "active" if i.zero? %>" id="<%= tag %><%= action %>-<%= scope %>">
+    <div class="tab-pane <%= "active" if i.zero? %>" id="<%= tag %><%= scope %>">
       Response:
-      <%= json_response("#{endpoint}/#{action}-#{scope}-scope") %>
+      <%= json_response("#{endpoint}/#{scope}-scope") %>
     </div>
   <% end %>
 </div>
