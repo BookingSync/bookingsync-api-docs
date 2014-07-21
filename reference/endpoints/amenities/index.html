@@ -93,54 +93,72 @@
   <li><a href="#get-a-single-amenity">Get a single amenity</a></li>
 </ol><h3 id="list-amenities">List amenities</h3>
 
-<p>Required OAuth scope: <code>:public</code></p>
-
 <p>List all amenities for given account(s). Amenities can repeat because each
 rental has it’s own set of amenities.</p>
 
 <pre><code>GET /amenities
 </code></pre>
 
-<p>Response:</p>
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#dda5436bf359public" role="tab" data-toggle="pill">
+        public
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"amenities.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{amenities.rental}"</span>
-  <span class="p">},</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="dda5436bf359public">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"amenities"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">10</span>
-      <span class="p">},</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
-      <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"Internet"</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"internet"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="get-a-single-amenity">Get a single amenity</h3>
-
-<p>Required OAuth scope: <code>:public</code></p>
 
 <p>Returns a single amenity identified by ID.</p>
 
 <pre><code>GET /amenities/:amenity_id
 </code></pre>
 
-<pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"amenities.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{amenities.rental}"</span>
-  <span class="p">},</span>
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#c67786324f47public" role="tab" data-toggle="pill">
+        public
+      </a>
+    </li>
+  
+</ul><p><br></p>
+
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="c67786324f47public">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"amenities"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">10</span>
-      <span class="p">},</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
-      <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"Internet"</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"internet"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
       </div>
     </div>
   </div>

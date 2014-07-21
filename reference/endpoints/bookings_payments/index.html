@@ -93,16 +93,27 @@
   <li><a href="#get-a-single-bookings-payment">Get a single bookings payment</a></li>
 </ol><h3 id="list-bookings-payments">List bookings payments</h3>
 
-<p>Required OAuth scope: <code>:payments_read</code> or <code>:payments_write</code></p>
-
 <p>List all bookings payments for given account.</p>
 
 <pre><code>GET /bookings_payments
 </code></pre>
 
-<p>Response:</p>
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#5073a6967da7payments_read-payments_write" role="tab" data-toggle="pill">
+        payments_read / payments_write
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="5073a6967da7payments_read-payments_write">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_payments.account}"</span><span class="p">,</span>
     <span class="s2">"bookings_payments.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{bookings_payments.booking}"</span><span class="p">,</span>
@@ -118,22 +129,38 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T13:42:33Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T13:42:33Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="get-a-single-bookings-payment">Get a single bookings payment</h3>
-
-<p>Required OAuth scope: <code>:payments_read</code> or <code>:payments_write</code></p>
 
 <p>Returns a single bookings payment identified by ID.</p>
 
 <pre><code>GET /bookings_payments/:bookings_payment_id
 </code></pre>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#a6ded69c9390payments_read-payments_write" role="tab" data-toggle="pill">
+        payments_read / payments_write
+      </a>
+    </li>
+  
+</ul><p><br></p>
+
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="a6ded69c9390payments_read-payments_write">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_payments.account}"</span><span class="p">,</span>
     <span class="s2">"bookings_payments.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{bookings_payments.booking}"</span><span class="p">,</span>
@@ -149,11 +176,14 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T13:42:33Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T13:42:33Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
       </div>
     </div>
   </div>

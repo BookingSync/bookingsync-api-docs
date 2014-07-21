@@ -96,16 +96,27 @@
   <li><a href="#destroy-a-photo">Destroy a photo</a></li>
 </ol><h3 id="list-photos">List photos</h3>
 
-<p>Required OAuth scope: <code>:public</code></p>
-
 <p>List all photos for given account(s).</p>
 
 <pre><code>GET /photos
 </code></pre>
 
-<p>Response:</p>
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#2e5bb96bf1b5public" role="tab" data-toggle="pill">
+        public
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="2e5bb96bf1b5public">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
   <span class="p">},</span>
@@ -124,24 +135,38 @@
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"micro_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="get-a-single-photo">Get a single photo</h3>
-
-<p>Required OAuth scope: <code>:public</code></p>
 
 <p>Returns a single photo identified by ID.</p>
 
 <pre><code>GET /photos/:photo_id
 </code></pre>
 
-<p>Response:</p>
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#a98b1800c049public" role="tab" data-toggle="pill">
+        public
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="a98b1800c049public">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
   <span class="p">},</span>
@@ -160,15 +185,16 @@
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"micro_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="create-a-new-photo">Create a new photo</h3>
-
-<p>Required OAuth scope: <code>:rentals_write</code></p>
 
 <p>Creates a photo for given rental.</p>
 
@@ -204,9 +230,22 @@
       <td>Photo’s position.</td>
     </tr>
 </tbody>
-</table><p>Response:</p>
+</table><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#11a049b2b4b8rentals_write" role="tab" data-toggle="pill">
+        rentals_write
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="11a049b2b4b8rentals_write">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
   <span class="p">},</span>
@@ -225,15 +264,16 @@
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"micro_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="update-a-photo">Update a photo</h3>
-
-<p>Required OAuth scope: <code>:rentals_write</code></p>
 
 <p>Returns an updated photo identified by ID.</p>
 
@@ -269,9 +309,22 @@
       <td>Photo’s position.</td>
     </tr>
 </tbody>
-</table><p>Response:</p>
+</table><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#466e5a7a7ab6rentals_write" role="tab" data-toggle="pill">
+        rentals_write
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="466e5a7a7ab6rentals_write">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
   <span class="p">},</span>
@@ -290,11 +343,14 @@
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"micro_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="destroy-a-photo">Destroy a photo</h3>
 

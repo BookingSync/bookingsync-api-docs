@@ -96,51 +96,77 @@
   <li><a href="#create-a-new-rental-agreement-for-a-rental">Create a new rental agreement for a rental</a></li>
 </ol><h3 id="list-rental-agreements">List rental agreements</h3>
 
-<p>Required OAuth scope: <code>:public</code></p>
-
 <p>List all rental agreements for rentals in given account(s).</p>
 
 <pre><code>GET /rental_agreements
 </code></pre>
 
-<p>Response:</p>
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#35502067686epublic" role="tab" data-toggle="pill">
+        public
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="35502067686epublic">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="get-a-single-rental-agreement">Get a single rental agreement</h3>
-
-<p>Required OAuth scope: <code>:public</code></p>
 
 <p>Returns a single rental agreement identified by ID.</p>
 
 <pre><code>GET /rental_agreements/:rental_agreement_id
 </code></pre>
 
-<p>Response:</p>
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#728367c5f265public" role="tab" data-toggle="pill">
+        public
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="728367c5f265public">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="create-a-new-default-rental-agreement">Create a new default rental agreement</h3>
-
-<p>Required OAuth scope: <code>:rentals_write</code></p>
 
 <p>Create a new rental agreement to be used by default.
 This rental agreement will be used unless one is defined at rental
@@ -165,22 +191,36 @@ or booking level.</p>
       <td>
 <strong>Required</strong>. Rental agreement’s content.</td>
     </tr></tbody>
-</table><p>Response:</p>
+</table><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#50d9e746cfe9rentals_write" role="tab" data-toggle="pill">
+        rentals_write
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="50d9e746cfe9rentals_write">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="create-a-new-rental-agreement-for-a-booking">Create a new rental agreement for a booking</h3>
-
-<p>Required OAuth scope: <code>:rentals_write</code></p>
 
 <p>Create a new rental agreement to be used exclusivly for this booking.</p>
 
@@ -211,22 +251,36 @@ or booking level.</p>
 <strong>Required</strong>. Rental agreement’s content.</td>
     </tr>
 </tbody>
-</table><p>Response:</p>
+</table><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#b05173de1ae9rentals_write" role="tab" data-toggle="pill">
+        rentals_write
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="b05173de1ae9rentals_write">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="create-a-new-rental-agreement-for-a-rental">Create a new rental agreement for a rental</h3>
-
-<p>Required OAuth scope: <code>:rentals_write</code></p>
 
 <p>Create a new rental agreement to be used a default for the given rental.</p>
 
@@ -257,18 +311,34 @@ or booking level.</p>
 <strong>Required</strong>. Rental agreement’s content.</td>
     </tr>
 </tbody>
-</table><p>Response:</p>
+</table><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#54ef4030eb56rentals_write" role="tab" data-toggle="pill">
+        rentals_write
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="54ef4030eb56rentals_write">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-14T15:16:42Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
       </div>
     </div>
   </div>

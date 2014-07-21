@@ -96,16 +96,27 @@
   <li><a href="#destroy-a-season">Destroy a season</a></li>
 </ol><h3 id="list-seasons">List seasons</h3>
 
-<p>Required OAuth scope: <code>:rates_read</code> or <code>:rates_write</code></p>
-
 <p>List all seasons for given account.</p>
 
 <pre><code>GET /seasons
 </code></pre>
 
-<p>Response:</p>
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#e94ffd186551rates_read-rates_write" role="tab" data-toggle="pill">
+        rates_read / rates_write
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="e94ffd186551rates_read-rates_write">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{seasons.rates_table}"</span><span class="p">,</span>
     <span class="s2">"seasons.rates_rules"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_rules/{seasons.rates_rules}"</span><span class="p">,</span>
@@ -129,22 +140,38 @@
       <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
       <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-12T09:14:35Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="get-a-single-season">Get a single season</h3>
-
-<p>Required OAuth scope: <code>:rates_read</code> or <code>:rates_write</code></p>
 
 <p>Returns a single season identified by ID.</p>
 
 <pre><code>GET /seasons/:season_id
 </code></pre>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#3b3d3e44537erates_read-rates_write" role="tab" data-toggle="pill">
+        rates_read / rates_write
+      </a>
+    </li>
+  
+</ul><p><br></p>
+
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="3b3d3e44537erates_read-rates_write">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{seasons.rates_table}"</span><span class="p">,</span>
     <span class="s2">"seasons.rates_rules"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_rules/{seasons.rates_rules}"</span><span class="p">,</span>
@@ -168,15 +195,16 @@
       <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
       <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-12T09:14:35Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="create-a-new-season">Create a new season</h3>
-
-<p>Required OAuth scope: <code>:rates_write</code></p>
 
 <p>Creates a season for given rates table.</p>
 
@@ -211,9 +239,22 @@
 <strong>Required</strong>. Season’s minimum length of stay, a price won’t be calculated for a shorter request.</td>
     </tr>
 </tbody>
-</table><p>Response:</p>
+</table><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#bdcedd4776a0rates_write" role="tab" data-toggle="pill">
+        rates_write
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="bdcedd4776a0rates_write">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{seasons.rates_table}"</span><span class="p">,</span>
     <span class="s2">"seasons.rates_rules"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_rules/{seasons.rates_rules}"</span><span class="p">,</span>
@@ -237,15 +278,16 @@
       <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
       <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-12T09:14:35Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="update-a-season">Update a season</h3>
-
-<p>Required OAuth scope: <code>:rates_write</code></p>
 
 <p>Returns an updated season identified by ID.</p>
 
@@ -277,9 +319,22 @@
       <td>Season’s minimum length of stay, a price won’t be calculated for a shorter request.</td>
     </tr>
 </tbody>
-</table><p>Response:</p>
+</table><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#81056c78c9a1rates_write" role="tab" data-toggle="pill">
+        rates_write
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="81056c78c9a1rates_write">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{seasons.rates_table}"</span><span class="p">,</span>
     <span class="s2">"seasons.rates_rules"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_rules/{seasons.rates_rules}"</span><span class="p">,</span>
@@ -303,11 +358,14 @@
       <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
       <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T09:14:35Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-12T09:14:35Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="destroy-a-season">Destroy a season</h3>
 

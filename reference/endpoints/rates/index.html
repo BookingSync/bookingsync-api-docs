@@ -94,16 +94,27 @@
   <li><a href="#get-a-single-rate">Get a single rate</a></li>
 </ol><h3 id="list-rates">List rates</h3>
 
-<p>Required OAuth scope: <code>:public</code>.</p>
-
 <p>List all rates for given account(s).</p>
 
 <pre><code>GET /rates
 </code></pre>
 
-<p>Response:</p>
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#62f6bd9c6a25public" role="tab" data-toggle="pill">
+        public
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="62f6bd9c6a25public">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rates.rental}"</span>
   <span class="p">},</span>
@@ -113,8 +124,9 @@
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">14</span>
       <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-02-11"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-05-10"</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-07-28T11:25:28+03:00"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-08-04T11:25:28+03:00"</span><span class="p">,</span>
       <span class="s2">"initial_nightly_rate"</span><span class="o">:</span> <span class="s2">"100.0"</span><span class="p">,</span>
       <span class="s2">"initial_weekly_rate"</span><span class="o">:</span> <span class="s2">"700.0"</span><span class="p">,</span>
       <span class="s2">"initial_monthly_rate"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
@@ -122,11 +134,14 @@
       <span class="s2">"final_weekly_rate"</span><span class="o">:</span> <span class="s2">"650.0"</span><span class="p">,</span>
       <span class="s2">"final_monthly_rate"</span><span class="o">:</span> <span class="s2">"2500.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-30T22:57:10Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-30T22:57:10Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="search-rates">Search rates</h3>
 
@@ -154,16 +169,27 @@
     </tr></tbody>
 </table><h3 id="get-a-single-rate">Get a single rate</h3>
 
-<p>Required OAuth scope: <code>:public</code>.</p>
-
 <p>Returns a single rate identified by ID.</p>
 
 <pre><code>GET /rates/:rate_id
 </code></pre>
 
-<p>Response:</p>
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#a0cf9276d590public" role="tab" data-toggle="pill">
+        public
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="a0cf9276d590public">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rates.rental}"</span>
   <span class="p">},</span>
@@ -173,8 +199,9 @@
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">14</span>
       <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-02-11"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-05-10"</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-07-28T11:25:28+03:00"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-08-04T11:25:28+03:00"</span><span class="p">,</span>
       <span class="s2">"initial_nightly_rate"</span><span class="o">:</span> <span class="s2">"100.0"</span><span class="p">,</span>
       <span class="s2">"initial_weekly_rate"</span><span class="o">:</span> <span class="s2">"700.0"</span><span class="p">,</span>
       <span class="s2">"initial_monthly_rate"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
@@ -182,11 +209,14 @@
       <span class="s2">"final_weekly_rate"</span><span class="o">:</span> <span class="s2">"650.0"</span><span class="p">,</span>
       <span class="s2">"final_monthly_rate"</span><span class="o">:</span> <span class="s2">"2500.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-30T22:57:10Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-30T22:57:10Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
       </div>
     </div>
   </div>

@@ -93,16 +93,27 @@
   <li><a href="#get-a-single-billing-address">Get a single billing address</a></li>
 </ol><h3 id="list-billing-addresses">List billing addresses</h3>
 
-<p>Required OAuth scope: <code>:payments_read</code> or <code>:payments_write</code></p>
-
 <p>List all billing addresses for given account.</p>
 
 <pre><code>GET /billing_addresss
 </code></pre>
 
-<p>Response:</p>
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#f01da5f2cae2payments_read-payments_write" role="tab" data-toggle="pill">
+        payments_read / payments_write
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="f01da5f2cae2payments_read-payments_write">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"billing_addresses.payment"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payments/{billing_addresses.payment}"</span>
   <span class="p">},</span>
@@ -118,22 +129,38 @@
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Monatana"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T13:42:33Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T13:42:33Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="get-a-single-billing-address">Get a single billing address</h3>
-
-<p>Required OAuth scope: <code>:payments_read</code> or <code>:payments_write</code></p>
 
 <p>Returns a single billing address identified by ID.</p>
 
 <pre><code>GET /billing_addresses/:billing_address_id
 </code></pre>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#ef061bf9c779payments_read-payments_write" role="tab" data-toggle="pill">
+        payments_read / payments_write
+      </a>
+    </li>
+  
+</ul><p><br></p>
+
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="ef061bf9c779payments_read-payments_write">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"billing_addresses.payment"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payments/{billing_addresses.payment}"</span>
   <span class="p">},</span>
@@ -149,11 +176,14 @@
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Monatana"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T13:42:33Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-04-11T13:42:33Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
       </div>
     </div>
   </div>

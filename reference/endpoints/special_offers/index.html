@@ -96,67 +96,99 @@
   <li><a href="#destroy-a-special-offer">Destroy a special offer</a></li>
 </ol><h3 id="list-special-offers">List special offers</h3>
 
-<p>Required OAuth scope: <code>:public</code></p>
-
 <p>List all special offers for given account(s).</p>
 
 <pre><code>GET /special_offers
 </code></pre>
 
-<p>Response:</p>
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#6c5d763b4b8fpublic" role="tab" data-toggle="pill">
+        public
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="6c5d763b4b8fpublic">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"special_offers.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{special_offers.rental}"</span>
   <span class="p">},</span>
   <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">},</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Spring discount -10%"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-03-21"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-05-01"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Special offer for 1"</span>
+      <span class="p">},</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-07-28T11:25:28+03:00"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-08-04T11:25:28+03:00"</span><span class="p">,</span>
       <span class="s2">"discount"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="get-a-single-special-offer">Get a single special offer</h3>
-
-<p>Required OAuth scope: <code>:public</code></p>
 
 <p>Returns a single special offer identified by ID.</p>
 
 <pre><code>GET /special_offers/:special_offer_id
 </code></pre>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#19a3daaf5e2epublic" role="tab" data-toggle="pill">
+        public
+      </a>
+    </li>
+  
+</ul><p><br></p>
+
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="19a3daaf5e2epublic">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"special_offers.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{special_offers.rental}"</span>
   <span class="p">},</span>
   <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">},</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Spring discount -10%"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-03-21"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-05-01"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Special offer for 1"</span>
+      <span class="p">},</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-07-28T11:25:28+03:00"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-08-04T11:25:28+03:00"</span><span class="p">,</span>
       <span class="s2">"discount"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="create-a-new-special-offer">Create a new special offer</h3>
-
-<p>Required OAuth scope: <code>:rates_write</code></p>
 
 <p>Creates a special offer for given rental.</p>
 
@@ -197,31 +229,47 @@
 <strong>Required</strong>. Special Offer’s discount value, e.g. use 20 for 20% discount.</td>
     </tr>
 </tbody>
-</table><p>Response:</p>
+</table><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#25dab2c10cbfrates_write" role="tab" data-toggle="pill">
+        rates_write
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="25dab2c10cbfrates_write">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"special_offers.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{special_offers.rental}"</span>
   <span class="p">},</span>
   <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">},</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Spring discount -10%"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-03-21"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-05-01"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Special offer for 1"</span>
+      <span class="p">},</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-07-28T11:25:28+03:00"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-08-04T11:25:28+03:00"</span><span class="p">,</span>
       <span class="s2">"discount"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="update-a-special-offer">Update a special offer</h3>
-
-<p>Required OAuth scope: <code>:rates_write</code></p>
 
 <p>Returns an updated special offer identified by ID.</p>
 
@@ -262,27 +310,45 @@
 <strong>Required</strong>. Special Offer’s discount value, e.g. use 20 for 20% discount.</td>
     </tr>
 </tbody>
-</table><p>Response:</p>
+</table><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#5bb3a20820ffrates_write" role="tab" data-toggle="pill">
+        rates_write
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="5bb3a20820ffrates_write">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"special_offers.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{special_offers.rental}"</span>
   <span class="p">},</span>
   <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">},</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Spring discount -10%"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-03-21"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-05-01"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Special offer for 1"</span>
+      <span class="p">},</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-07-28T11:25:28+03:00"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-08-04T11:25:28+03:00"</span><span class="p">,</span>
       <span class="s2">"discount"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="destroy-a-special-offer">Destroy a special offer</h3>
 

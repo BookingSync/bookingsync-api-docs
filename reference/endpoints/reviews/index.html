@@ -94,16 +94,27 @@
   <li><a href="#create-a-new-review">Create a new review</a></li>
 </ol><h3 id="list-reviews">List reviews</h3>
 
-<p>Required OAuth scope: <code>:public</code></p>
-
 <p>List all reviews for given account(s).</p>
 
 <pre><code>GET /reviews
 </code></pre>
 
-<p>Response:</p>
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#62c80b410566public" role="tab" data-toggle="pill">
+        public
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="62c80b410566public">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"reviews.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{reviews.booking}"</span><span class="p">,</span>
     <span class="s2">"reviews.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{reviews.rental}"</span>
@@ -118,24 +129,38 @@
       <span class="s2">"rating"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"comment"</span><span class="o">:</span> <span class="s2">"It was awesome!"</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"John Smith"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="get-a-single-review">Get a single review</h3>
-
-<p>Required OAuth scope: <code>:public</code></p>
 
 <p>Returns a single review identified by ID.</p>
 
 <pre><code>GET /reviews/:review_id
 </code></pre>
 
-<p>Response:</p>
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#ece9654d2737public" role="tab" data-toggle="pill">
+        public
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="ece9654d2737public">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"reviews.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{reviews.booking}"</span><span class="p">,</span>
     <span class="s2">"reviews.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{reviews.rental}"</span>
@@ -150,15 +175,16 @@
       <span class="s2">"rating"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"comment"</span><span class="o">:</span> <span class="s2">"It was awesome!"</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"John Smith"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="create-a-new-review">Create a new review</h3>
-
-<p>Required OAuth scope: <code>:reviews_write</code></p>
 
 <p>Creates a review for given booking.</p>
 
@@ -186,9 +212,22 @@
 <strong>Required</strong>. Client’s rating.</td>
     </tr>
 </tbody>
-</table><p>Response:</p>
+</table><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#ae01df66ef30reviews_write" role="tab" data-toggle="pill">
+        reviews_write
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="ae01df66ef30reviews_write">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"reviews.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{reviews.booking}"</span><span class="p">,</span>
     <span class="s2">"reviews.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{reviews.rental}"</span>
@@ -203,11 +242,14 @@
       <span class="s2">"rating"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"comment"</span><span class="o">:</span> <span class="s2">"It was awesome!"</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"John Smith"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
       </div>
     </div>
   </div>

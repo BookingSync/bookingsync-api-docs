@@ -93,36 +93,82 @@
   <li><a href="#get-a-single-rental">Get a single rental</a></li>
 </ol><h3 id="list-rentals">List rentals</h3>
 
-<p>Required OAuth scope: <code>:public</code>, <code>:rentals_read</code> or <code>:rentals_write</code></p>
-
 <p>List all rentals for given account(s).</p>
 
 <pre><code>GET /rentals
 </code></pre>
 
-<p>Response:</p>
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#d561e27d1faapublic" role="tab" data-toggle="pill">
+        public
+      </a>
+    </li>
+  
+    <li>
+      <a href="#d561e27d1faarentals_read-rentals_write" role="tab" data-toggle="pill">
+        rentals_read / rentals_write
+      </a>
+    </li>
+  
+</ul><p><br></p>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="d561e27d1faapublic">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
+    <span class="s2">"rentals.availability"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/availabilities/{rentals.availability}"</span><span class="p">,</span>
     <span class="s2">"rentals.destination"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/destinations/{rentals.destination}"</span><span class="p">,</span>
-    <span class="s2">"rentals.photos"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/photos/{photos.photos}"</span>
+    <span class="s2">"rentals.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{rentals.rates_table}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rental_agreement"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_agreements/{rentals.rental_agreement}"</span><span class="p">,</span>
+    <span class="s2">"rentals.photos"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/photos/{rentals.photos}"</span><span class="p">,</span>
+    <span class="s2">"rentals.reviews"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/reviews/{rentals.reviews}"</span><span class="p">,</span>
+    <span class="s2">"rentals.special_offers"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/special_offers/{rentals.special_offers}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rates"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates/{rentals.rates}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rentals_amenities"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals_amenities/{rentals.rentals_amenities}"</span>
   <span class="p">},</span>
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"destination"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"destination"</span><span class="o">:</span> <span class="mi">134</span><span class="p">,</span>
+        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">1</span>
+        <span class="p">],</span>
+        <span class="s2">"reviews"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">1</span><span class="p">,</span>
+          <span class="mi">2</span><span class="p">,</span>
+          <span class="mi">3</span><span class="p">,</span>
+          <span class="mi">4</span><span class="p">,</span>
+          <span class="mi">5</span>
+        <span class="p">],</span>
+        <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">1</span>
+        <span class="p">],</span>
+        <span class="s2">"rates"</span><span class="o">:</span> <span class="p">[</span>
 
+        <span class="p">],</span>
+        <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">1</span><span class="p">,</span>
+          <span class="mi">2</span><span class="p">,</span>
+          <span class="mi">3</span>
         <span class="p">]</span>
       <span class="p">},</span>
-      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Test"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 1"</span><span class="p">,</span>
       <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Super Headline"</span>
       <span class="p">},</span>
       <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Supersummary"</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Super summary"</span>
       <span class="p">},</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Complete description"</span>
@@ -135,11 +181,11 @@
       <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
       <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"min_price"</span><span class="o">:</span> <span class="mi">700</span><span class="p">,</span>
-      <span class="s2">"max_price"</span><span class="o">:</span> <span class="mi">700</span><span class="p">,</span>
+      <span class="s2">"min_price"</span><span class="o">:</span> <span class="mi">420</span><span class="p">,</span>
+      <span class="s2">"max_price"</span><span class="o">:</span> <span class="mi">600</span><span class="p">,</span>
       <span class="s2">"price_kind"</span><span class="o">:</span> <span class="s2">"weekly"</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
-      <span class="s2">"rates_public_notes"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"price_public_notes"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="kc">null</span>
       <span class="p">},</span>
       <span class="s2">"lat"</span><span class="o">:</span> <span class="mf">45.02</span><span class="p">,</span>
@@ -147,50 +193,191 @@
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Nevache"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"country"</span><span class="o">:</span> <span class="s2">"France"</span><span class="p">,</span>
-      <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"ContactFullname"</span><span class="p">,</span>
-      <span class="s2">"amenities"</span><span class="o">:</span> <span class="p">[</span>
+      <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Contact Fullname"</span><span class="p">,</span>
+      <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="s2">"4.0"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
+      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"initial_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"final_price"</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+    </div>
+  
+    <div class="tab-pane " id="d561e27d1faarentals_read-rentals_write">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
+    <span class="s2">"rentals.availability"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/availabilities/{rentals.availability}"</span><span class="p">,</span>
+    <span class="s2">"rentals.destination"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/destinations/{rentals.destination}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{rentals.rates_table}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rental_agreement"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_agreements/{rentals.rental_agreement}"</span><span class="p">,</span>
+    <span class="s2">"rentals.photos"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/photos/{rentals.photos}"</span><span class="p">,</span>
+    <span class="s2">"rentals.reviews"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/reviews/{rentals.reviews}"</span><span class="p">,</span>
+    <span class="s2">"rentals.special_offers"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/special_offers/{rentals.special_offers}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rates"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates/{rentals.rates}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rentals_amenities"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals_amenities/{rentals.rentals_amenities}"</span>
+  <span class="p">},</span>
+  <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">"destination"</span><span class="o">:</span> <span class="mi">135</span><span class="p">,</span>
+        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">2</span>
+        <span class="p">],</span>
+        <span class="s2">"reviews"</span><span class="o">:</span> <span class="p">[</span>
 
-      <span class="p">],</span>
+        <span class="p">],</span>
+        <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"rates"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">4</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 2"</span><span class="p">,</span>
+      <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Super Headline"</span>
+      <span class="p">},</span>
+      <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Super summary"</span>
+      <span class="p">},</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Complete description"</span>
+      <span class="p">},</span>
+      <span class="s2">"rental_type"</span><span class="o">:</span> <span class="s2">"villa"</span><span class="p">,</span>
+      <span class="s2">"units"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+      <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"min_price"</span><span class="o">:</span> <span class="mi">490</span><span class="p">,</span>
+      <span class="s2">"max_price"</span><span class="o">:</span> <span class="mi">700</span><span class="p">,</span>
+      <span class="s2">"price_kind"</span><span class="o">:</span> <span class="s2">"weekly"</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
+      <span class="s2">"price_public_notes"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="kc">null</span>
+      <span class="p">},</span>
+      <span class="s2">"lat"</span><span class="o">:</span> <span class="mf">45.02</span><span class="p">,</span>
+      <span class="s2">"lng"</span><span class="o">:</span> <span class="mf">6.6</span><span class="p">,</span>
+      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Nevache"</span><span class="p">,</span>
+      <span class="s2">"state"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"country"</span><span class="o">:</span> <span class="s2">"France"</span><span class="p">,</span>
+      <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Contact Fullname"</span><span class="p">,</span>
       <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span><span class="p">,</span>
-      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">16</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"address1"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"zip"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
+      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"initial_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"final_price"</span><span class="o">:</span> <span class="kc">null</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
 
 <h3 id="get-a-single-rental">Get a single rental</h3>
-
-<p>Required OAuth scope: <code>:public</code>, <code>:rentals_read</code> or <code>:rentals_write</code></p>
 
 <p>Returns a single rental identified by ID.</p>
 
 <pre><code>GET /rentals/:rental_id
 </code></pre>
 
-<pre><code class="language-javascript"><span class="p">{</span>
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#6bbf345ab6ebpublic" role="tab" data-toggle="pill">
+        public
+      </a>
+    </li>
+  
+    <li>
+      <a href="#6bbf345ab6ebrentals_read-rentals_write" role="tab" data-toggle="pill">
+        rentals_read / rentals_write
+      </a>
+    </li>
+  
+</ul><p><br></p>
+
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="6bbf345ab6ebpublic">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
+    <span class="s2">"rentals.availability"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/availabilities/{rentals.availability}"</span><span class="p">,</span>
     <span class="s2">"rentals.destination"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/destinations/{rentals.destination}"</span><span class="p">,</span>
-    <span class="s2">"rentals.photos"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/photos/{photos.photos}"</span>
+    <span class="s2">"rentals.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{rentals.rates_table}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rental_agreement"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_agreements/{rentals.rental_agreement}"</span><span class="p">,</span>
+    <span class="s2">"rentals.photos"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/photos/{rentals.photos}"</span><span class="p">,</span>
+    <span class="s2">"rentals.reviews"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/reviews/{rentals.reviews}"</span><span class="p">,</span>
+    <span class="s2">"rentals.special_offers"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/special_offers/{rentals.special_offers}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rates"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates/{rentals.rates}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rentals_amenities"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals_amenities/{rentals.rentals_amenities}"</span>
   <span class="p">},</span>
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"destination"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"destination"</span><span class="o">:</span> <span class="mi">134</span><span class="p">,</span>
+        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">1</span>
+        <span class="p">],</span>
+        <span class="s2">"reviews"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">1</span><span class="p">,</span>
+          <span class="mi">2</span><span class="p">,</span>
+          <span class="mi">3</span><span class="p">,</span>
+          <span class="mi">4</span><span class="p">,</span>
+          <span class="mi">5</span>
+        <span class="p">],</span>
+        <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">1</span>
+        <span class="p">],</span>
+        <span class="s2">"rates"</span><span class="o">:</span> <span class="p">[</span>
 
+        <span class="p">],</span>
+        <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">1</span><span class="p">,</span>
+          <span class="mi">2</span><span class="p">,</span>
+          <span class="mi">3</span>
         <span class="p">]</span>
       <span class="p">},</span>
-      <span class="s2">"account_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Test"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 1"</span><span class="p">,</span>
       <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Super Headline"</span>
       <span class="p">},</span>
       <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Supersummary"</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Super summary"</span>
       <span class="p">},</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Complete description"</span>
@@ -203,11 +390,11 @@
       <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
       <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"min_price"</span><span class="o">:</span> <span class="mi">700</span><span class="p">,</span>
-      <span class="s2">"max_price"</span><span class="o">:</span> <span class="mi">700</span><span class="p">,</span>
+      <span class="s2">"min_price"</span><span class="o">:</span> <span class="mi">420</span><span class="p">,</span>
+      <span class="s2">"max_price"</span><span class="o">:</span> <span class="mi">600</span><span class="p">,</span>
       <span class="s2">"price_kind"</span><span class="o">:</span> <span class="s2">"weekly"</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
-      <span class="s2">"rates_public_notes"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"price_public_notes"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="kc">null</span>
       <span class="p">},</span>
       <span class="s2">"lat"</span><span class="o">:</span> <span class="mf">45.02</span><span class="p">,</span>
@@ -215,19 +402,112 @@
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Nevache"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"country"</span><span class="o">:</span> <span class="s2">"France"</span><span class="p">,</span>
-      <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"ContactFullname"</span><span class="p">,</span>
-      <span class="s2">"amenities"</span><span class="o">:</span> <span class="p">[</span>
+      <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Contact Fullname"</span><span class="p">,</span>
+      <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="s2">"4.0"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
+      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"initial_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"final_price"</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+    </div>
+  
+    <div class="tab-pane " id="6bbf345ab6ebrentals_read-rentals_write">
+      Response:
+      <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
+    <span class="s2">"rentals.availability"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/availabilities/{rentals.availability}"</span><span class="p">,</span>
+    <span class="s2">"rentals.destination"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/destinations/{rentals.destination}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{rentals.rates_table}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rental_agreement"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_agreements/{rentals.rental_agreement}"</span><span class="p">,</span>
+    <span class="s2">"rentals.photos"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/photos/{rentals.photos}"</span><span class="p">,</span>
+    <span class="s2">"rentals.reviews"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/reviews/{rentals.reviews}"</span><span class="p">,</span>
+    <span class="s2">"rentals.special_offers"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/special_offers/{rentals.special_offers}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rates"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates/{rentals.rates}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rentals_amenities"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals_amenities/{rentals.rentals_amenities}"</span>
+  <span class="p">},</span>
+  <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">"destination"</span><span class="o">:</span> <span class="mi">135</span><span class="p">,</span>
+        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">2</span>
+        <span class="p">],</span>
+        <span class="s2">"reviews"</span><span class="o">:</span> <span class="p">[</span>
 
-      <span class="p">],</span>
+        <span class="p">],</span>
+        <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"rates"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">4</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 2"</span><span class="p">,</span>
+      <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Super Headline"</span>
+      <span class="p">},</span>
+      <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Super summary"</span>
+      <span class="p">},</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Complete description"</span>
+      <span class="p">},</span>
+      <span class="s2">"rental_type"</span><span class="o">:</span> <span class="s2">"villa"</span><span class="p">,</span>
+      <span class="s2">"units"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+      <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"min_price"</span><span class="o">:</span> <span class="mi">490</span><span class="p">,</span>
+      <span class="s2">"max_price"</span><span class="o">:</span> <span class="mi">700</span><span class="p">,</span>
+      <span class="s2">"price_kind"</span><span class="o">:</span> <span class="s2">"weekly"</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
+      <span class="s2">"price_public_notes"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="kc">null</span>
+      <span class="p">},</span>
+      <span class="s2">"lat"</span><span class="o">:</span> <span class="mf">45.02</span><span class="p">,</span>
+      <span class="s2">"lng"</span><span class="o">:</span> <span class="mf">6.6</span><span class="p">,</span>
+      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Nevache"</span><span class="p">,</span>
+      <span class="s2">"state"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"country"</span><span class="o">:</span> <span class="s2">"France"</span><span class="p">,</span>
+      <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Contact Fullname"</span><span class="p">,</span>
       <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-02-11T09:13:20Z"</span><span class="p">,</span>
-      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">16</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"address1"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"zip"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
+      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"initial_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"final_price"</span><span class="o">:</span> <span class="kc">null</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
+    </div>
+  
+</div>
       </div>
     </div>
   </div>
