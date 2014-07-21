@@ -5,21 +5,16 @@
 
 ## List rates tables
 
-Required OAuth scope: `:rates_read` or `:rates_write`
-
 List all rates tables for given account.
 
 ~~~
 GET /rates_tables
 ~~~
 
-Response:
-
-<%= json_response 'rates_tables/index' %>
+<%= render 'json_response', endpoint: "rates_tables",
+  scopes: %w(rates_read-rates_write) %>
 
 ## Get a single rates table
-
-Required OAuth scope: `:rates_read` or `:rates_write`
 
 Returns a single rates table identified by ID.
 
@@ -27,11 +22,10 @@ Returns a single rates table identified by ID.
 GET /rates_tables/:rates_table_id
 ~~~
 
-<%= json_response 'rates_tables/index' %>
+<%= render 'json_response', endpoint: "rates_tables",
+  scopes: %w(rates_read-rates_write) %>
 
 ## Create a new rates table
-
-Required OAuth scope: `:rates_write`
 
 Returns a newly created rates table.
 
@@ -46,13 +40,10 @@ Name             | Type    | Description
 name             | String  | **Required**. Rates table's name.
 {: class="table table-bordered"}
 
-Response:
-
-<%= json_response 'rates_tables/index' %>
+<%= render 'json_response', endpoint: "rates_tables",
+  scopes: %w(rates_write) %>
 
 ## Update a rates table
-
-Required OAuth scope: `:rates_write`
 
 Returns an updated rates table identified by ID.
 
@@ -67,9 +58,8 @@ Name             | Type    | Description
 name             | String  | **Required**. Rates table's name.
 {: class="table table-bordered"}
 
-Response:
-
-<%= json_response 'rates_tables/index' %>
+<%= render 'json_response', endpoint: "rates_tables",
+  scopes: %w(rates_write) %>
 
 ## Destroy a rates table
 

@@ -12,7 +12,7 @@
       "address2": null,
       "city": "East Winifred",
       "country_code": "US",
-      "created_at": "2014-02-11T09:14:35Z",
+      "created_at": "CREATED_AT",
       "email": "dwight_schiller@reilly.us",
       "fax": null,
       "fullname": "Nelson McDermott",
@@ -20,7 +20,7 @@
       "notes": null,
       "phone": "1-060-021-4277 73823",
       "state": "Montana",
-      "updated_at": "2014-02-28T11:00:58Z",
+      "updated_at": "UPDATED_AT",
       "zip": "07671-8254"
     }
   ]

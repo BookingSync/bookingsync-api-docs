@@ -5,21 +5,16 @@
 
 ## List periods
 
-Required OAuth scope: `:rates_read` or `:rates_write`
-
 List all periods for given account.
 
 ~~~
 GET /periods
 ~~~
 
-Response:
-
-<%= json_response 'periods/index' %>
+<%= render 'json_response', endpoint: "periods",
+  scopes: %w(rates_read-rates_write) %>
 
 ## Get a single period
-
-Required OAuth scope: `:rates_read` or `:rates_write`
 
 Returns a single period identified by ID.
 
@@ -27,13 +22,10 @@ Returns a single period identified by ID.
 GET /periods/:period_id
 ~~~
 
-Response:
-
-<%= json_response 'periods/index' %>
+<%= render 'json_response', endpoint: "periods",
+  scopes: %w(rates_read-rates_write) %>
 
 ## Create a new period
-
-Required OAuth scope: `:rates_write`
 
 Creates a new period for given season.
 
@@ -49,13 +41,10 @@ start_at         | [Date](/reference/formats) | **Required**. Period's start dat
 end_at           | [Date](/reference/formats) | **Required**. Period's end date.
 {: class="table table-bordered"}
 
-Response:
-
-<%= json_response 'periods/index' %>
+<%= render 'json_response', endpoint: "periods",
+  scopes: %w(rates_write) %>
 
 ## Update a period
-
-Required OAuth scope: `:rates_write`
 
 Returns an updated period identified by ID.
 
@@ -71,9 +60,8 @@ start_at         | [Date](/reference/formats) | Period's start date.
 end_at           | [Date](/reference/formats) | Period's end date.
 {: class="table table-bordered"}
 
-Response:
-
-<%= json_response 'periods/index' %>
+<%= render 'json_response', endpoint: "periods",
+  scopes: %w(rates_write) %>
 
 ## Destroy a period
 

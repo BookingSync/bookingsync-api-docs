@@ -1,0 +1,21 @@
+{
+  "links": {
+    "special_offers.rental": "https://www.bookingsync.com/api/v3/rentals/{special_offers.rental}"
+  },
+  "special_offers": [
+    {
+      "links":{
+        "rental":1
+      },
+      "id":1,
+      "name":{
+        "en":"Special offer for 1"
+      },
+      "start_at": "START_AT",
+      "end_at": "END_AT",
+      "discount": 10,
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT"
+    }
+  ]
+}

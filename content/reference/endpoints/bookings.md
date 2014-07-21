@@ -22,9 +22,8 @@ Returns a list of all bookings for current account(s) starting after now.
 GET /bookings
 ~~~
 
-Response
-
-<%= json_response 'bookings/index' %>
+<%= render 'json_response', endpoint: "bookings",
+  scopes: %w(public-bookings_public_write bookings_read-bookings_write) %>
 
 ## Search bookings
 
@@ -51,15 +50,11 @@ client_id        | String  |         | List of comma separated IDs. Returns only
 
 ## Get a single booking
 
-Required OAuth scope: `:public`, `:bookings_public_write`, `:bookings_read`
-or `:bookings_write`
-
 Returns a single booking identified by ID
 
 ~~~
 GET /bookings/:booking_id
 ~~~
 
-Response:
-
-<%= json_response 'bookings/show' %>
+<%= render 'json_response', endpoint: "bookings",
+  scopes: %w(public-bookings_public_write bookings_read-bookings_write) %>

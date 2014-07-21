@@ -8,10 +8,10 @@
         "season": 12
       },
       "id": 232,
-      "start_at": "2014-04-11",
-      "end_at": "2014-07-11",
-      "created_at": "2014-04-11T13:42:33Z",
-      "updated_at": "2014-04-11T13:42:33Z"
+      "start_at": "START_AT",
+      "end_at": "END_AT",
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT"
     }
   ]
 }

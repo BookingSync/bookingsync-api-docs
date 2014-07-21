@@ -5,21 +5,16 @@
 
 ## List photos
 
-Required OAuth scope: `:public`
-
 List all photos for given account(s).
 
 ~~~
 GET /photos
 ~~~
 
-Response:
-
-<%= json_response 'photos/index' %>
+<%= render 'json_response', endpoint: "photos",
+  scopes: %w(public) %>
 
 ## Get a single photo
-
-Required OAuth scope: `:public`
 
 Returns a single photo identified by ID.
 
@@ -27,13 +22,10 @@ Returns a single photo identified by ID.
 GET /photos/:photo_id
 ~~~
 
-Response:
-
-<%= json_response 'photos/index' %>
+<%= render 'json_response', endpoint: "photos",
+  scopes: %w(public) %>
 
 ## Create a new photo
-
-Required OAuth scope: `:rentals_write`
 
 Creates a photo for given rental.
 
@@ -49,13 +41,10 @@ kind             | String  | Photo's kind, list of kinds described in [enum sect
 position         | Integer | Photo's position.
 {: class="table table-bordered"}
 
-Response:
-
-<%= json_response 'photos/index' %>
+<%= render 'json_response', endpoint: "photos",
+  scopes: %w(rentals_write) %>
 
 ## Update a photo
-
-Required OAuth scope: `:rentals_write`
 
 Returns an updated photo identified by ID.
 
@@ -71,9 +60,8 @@ kind             | String  | Photo's kind, list of kinds described in [enum sect
 position         | Integer | Photo's position.
 {: class="table table-bordered"}
 
-Response:
-
-<%= json_response 'photos/index' %>
+<%= render 'json_response', endpoint: "photos",
+  scopes: %w(rentals_write) %>
 
 ## Destroy a photo
 
@@ -84,4 +72,3 @@ Returns an empty response with '204 No Content' status code on success.
 ~~~~~~
 DELETE /photos/:photo_id
 ~~~~~~
-

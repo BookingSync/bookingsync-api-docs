@@ -14,8 +14,8 @@
       "city": "East Winifred",
       "state": "Monatana",
       "country_code": "US",
-      "created_at": "2014-04-11T13:42:33Z",
-      "updated_at": "2014-04-11T13:42:33Z"
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT"
     }
   ]
 }

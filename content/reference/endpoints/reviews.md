@@ -5,21 +5,16 @@
 
 ## List reviews
 
-Required OAuth scope: `:public`
-
 List all reviews for given account(s).
 
 ~~~
 GET /reviews
 ~~~
 
-Response:
-
-<%= json_response 'reviews/index' %>
+<%= render 'json_response', endpoint: "reviews",
+  scopes: %w(public) %>
 
 ## Get a single review
-
-Required OAuth scope: `:public`
 
 Returns a single review identified by ID.
 
@@ -27,13 +22,10 @@ Returns a single review identified by ID.
 GET /reviews/:review_id
 ~~~
 
-Response:
-
-<%= json_response 'reviews/index' %>
+<%= render 'json_response', endpoint: "reviews",
+  scopes: %w(public) %>
 
 ## Create a new review
-
-Required OAuth scope: `:reviews_write`
 
 Creates a review for given booking.
 
@@ -49,6 +41,5 @@ comment          | String  | Client's opinion.
 rating           | Integer | **Required**. Client's rating.
 {: class="table table-bordered"}
 
-Response:
-
-<%= json_response 'reviews/index' %>
+<%= render 'json_response', endpoint: "reviews",
+  scopes: %w(reviews_write) %>

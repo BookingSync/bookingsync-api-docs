@@ -5,22 +5,16 @@
 
 ## List clients
 
-Required scope: `:clients_read` or `:clients_write`.
-
 List all clients for given account.
 
 ~~~
 GET /clients
 ~~~
 
-Response:
-
-<%= json_response 'clients/index' %>
-
+<%= render 'json_response', endpoint: "clients",
+  scopes: %w(clients_read-clients_write) %>
 
 ## Get a single client
-
-Required scope: `:clients_read` or `:clients_write`.
 
 Returns a single client identified by ID.
 
@@ -28,6 +22,5 @@ Returns a single client identified by ID.
 GET /clients/:client_id
 ~~~
 
-Response:
-
-<%= json_response 'clients/index' %>
+<%= render 'json_response', endpoint: "clients",
+  scopes: %w(clients_read-clients_write) %>

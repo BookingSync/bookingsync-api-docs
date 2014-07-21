@@ -5,21 +5,16 @@
 
 ## List payments
 
-Required OAuth scope: `:payments_read` or `:payments_write`
-
 List all payments for given account.
 
 ~~~
 GET /payments
 ~~~
 
-Response:
-
-<%= json_response 'payments/index' %>
+<%= render 'json_response', endpoint: "payments",
+  scopes: %w(payments_read-payments_write) %>
 
 ## Get a single payment
-
-Required OAuth scope: `:payments_read` or `:payments_write`
 
 Returns a single payment identified by ID.
 
@@ -27,14 +22,10 @@ Returns a single payment identified by ID.
 GET /payments/:payment_id
 ~~~
 
-Response:
-
-<%= json_response 'payments/index' %>
-
+<%= render 'json_response', endpoint: "payments",
+  scopes: %w(payments_read-payments_write) %>
 
 ## Create a new payment
-
-Required OAuth scope: `:payments_write`
 
 Returns a newly created payment.
 
@@ -57,14 +48,10 @@ notes            | String   | Payment's additional information.
 paid_at          | [Time](/reference/formats) | Payment's date.
 {: class="table table-bordered"}
 
-Response:
-
-<%= json_response 'payments/index' %>
-
+<%= render 'json_response', endpoint: "payments",
+  scopes: %w(payments_write) %>
 
 ## Update a payment
-
-Required OAuth scope: `:payments_write`
 
 Returns an updated payment identified by ID.
 
@@ -86,10 +73,8 @@ notes            | String   | Payment's additional information.
 paid_at          | [Time](/reference/formats) | Payment's date.
 {: class="table table-bordered"}
 
-Response:
-
-<%= json_response 'payments/index' %>
-
+<%= render 'json_response', endpoint: "payments",
+  scopes: %w(payments_write) %>
 
 ## Cancel a payment
 

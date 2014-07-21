@@ -5,21 +5,16 @@
 
 ## List billing addresses
 
-Required OAuth scope: `:payments_read` or `:payments_write`
-
 List all billing addresses for given account.
 
 ~~~
 GET /billing_addresss
 ~~~
 
-Response:
-
-<%= json_response 'billing_addresses/index' %>
+<%= render 'json_response', endpoint: "billing_addresses",
+  scopes: %w(payments_read-payments_write) %>
 
 ## Get a single billing address
-
-Required OAuth scope: `:payments_read` or `:payments_write`
 
 Returns a single billing address identified by ID.
 
@@ -27,4 +22,5 @@ Returns a single billing address identified by ID.
 GET /billing_addresses/:billing_address_id
 ~~~
 
-<%= json_response 'billing_addresses/index' %>
+<%= render 'json_response', endpoint: "billing_addresses",
+  scopes: %w(payments_read-payments_write) %>

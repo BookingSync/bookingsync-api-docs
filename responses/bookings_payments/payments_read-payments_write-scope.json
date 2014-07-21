@@ -14,8 +14,8 @@
       "id": 2,
       "amount": 1000,
       "currency": "USD",
-      "created_at": "2014-04-11T13:42:33Z",
-      "updated_at": "2014-04-11T13:42:33Z"
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT"
     }
   ]
 }

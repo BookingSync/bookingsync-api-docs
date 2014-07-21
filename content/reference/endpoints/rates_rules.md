@@ -5,21 +5,16 @@
 
 ## List rates rules
 
-Required OAuth scope: `:rates_read` or `:rates_write`
-
 List all rates rules for given account.
 
 ~~~
 GET /rates_rules
 ~~~
 
-Response:
-
-<%= json_response 'rates_rules/index' %>
+<%= render 'json_response', endpoint: "rates_rules",
+  scopes: %w(rates_read-rates_write) %>
 
 ## Get a single rates rule
-
-Required OAuth scope: `:rates_read` or `:rates_write`
 
 Returns a single rates rule identified by ID.
 
@@ -27,4 +22,5 @@ Returns a single rates rule identified by ID.
 GET /rates_rules/:rates_rule_id
 ~~~
 
-<%= json_response 'rates_rules/index' %>
+<%= render 'json_response', endpoint: "rates_rules",
+  scopes: %w(rates_read-rates_write) %>
