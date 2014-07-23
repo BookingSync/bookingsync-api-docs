@@ -43,7 +43,7 @@ minimum_stay     | Integer | **Required**. Season's minimum length of stay, a pr
 {: class="table table-bordered"}
 
 <%= render 'json_response', endpoint: "seasons",
-  scopes: %w(rates_write) %>
+  scopes: [{rates_write: "rates_read-rates_write"}] %>
 
 ## Update a season
 
@@ -63,7 +63,7 @@ minimum_stay     | Integer | Season's minimum length of stay, a price won't be c
 {: class="table table-bordered"}
 
 <%= render 'json_response', endpoint: "seasons",
-  scopes: %w(rates_write) %>
+  scopes: [{rates_write: "rates_read-rates_write"}] %>
 
 ## Destroy a season
 

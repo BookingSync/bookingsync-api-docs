@@ -12,7 +12,7 @@ GET /rental_agreements
 ~~~
 
 <%= render 'json_response', endpoint: "rental_agreements",
-  scopes: %w(public) %>
+  scopes: [{public: "public-rentals_write"}] %>
 
 ## Get a single rental agreement
 
@@ -23,7 +23,7 @@ GET /rental_agreements/:rental_agreement_id
 ~~~
 
 <%= render 'json_response', endpoint: "rental_agreements",
-  scopes: %w(public) %>
+  scopes: [{public: "public-rentals_write"}] %>
 
 ## Create a new default rental agreement
 
@@ -45,7 +45,7 @@ body             | String  | **Required**. Rental agreement's content.
 {: class="table table-bordered"}
 
 <%= render 'json_response', endpoint: "rental_agreements",
-  scopes: %w(rentals_write) %>
+  scopes: [{rentals_write: "public-rentals_write"}] %>
 
 ## Create a new rental agreement for a booking
 
@@ -66,7 +66,7 @@ body             | String  | **Required**. Rental agreement's content.
 {: class="table table-bordered"}
 
 <%= render 'json_response', endpoint: "rental_agreements",
-  scopes: %w(rentals_write) %>
+  scopes: [{rentals_write: "public-rentals_write"}] %>
 
 ## Create a new rental agreement for a rental
 
@@ -87,4 +87,4 @@ body             | String  | **Required**. Rental agreement's content.
 {: class="table table-bordered"}
 
 <%= render 'json_response', endpoint: "rental_agreements",
-  scopes: %w(rentals_write) %>
+  scopes: [{rentals_write: "public-rentals_write"}] %>

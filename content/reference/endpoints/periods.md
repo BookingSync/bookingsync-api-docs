@@ -42,7 +42,7 @@ end_at           | [Date](/reference/formats) | **Required**. Period's end date.
 {: class="table table-bordered"}
 
 <%= render 'json_response', endpoint: "periods",
-  scopes: %w(rates_write) %>
+  scopes: [{rates_write: "rates_read-rates_write"}] %>
 
 ## Update a period
 
@@ -61,7 +61,7 @@ end_at           | [Date](/reference/formats) | Period's end date.
 {: class="table table-bordered"}
 
 <%= render 'json_response', endpoint: "periods",
-  scopes: %w(rates_write) %>
+  scopes: [{rates_write: "rates_read-rates_write"}] %>
 
 ## Destroy a period
 

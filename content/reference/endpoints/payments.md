@@ -49,7 +49,7 @@ paid_at          | [Time](/reference/formats) | Payment's date.
 {: class="table table-bordered"}
 
 <%= render 'json_response', endpoint: "payments",
-  scopes: %w(payments_write) %>
+  scopes: [{payments_write: "payments_read-payments_write"}] %>
 
 ## Update a payment
 
@@ -74,7 +74,7 @@ paid_at          | [Time](/reference/formats) | Payment's date.
 {: class="table table-bordered"}
 
 <%= render 'json_response', endpoint: "payments",
-  scopes: %w(payments_write) %>
+  scopes: [{payments_write: "payments_read-payments_write"}] %>
 
 ## Cancel a payment
 
@@ -85,4 +85,3 @@ Returns an empty response with '204 No Content' status code on success.
 ~~~~~~
 DELETE /payments/:payment_id
 ~~~~~~
-

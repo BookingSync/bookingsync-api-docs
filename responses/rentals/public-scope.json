@@ -33,7 +33,7 @@
           1
         ],
         "rates": [
-
+          1
         ],
         "rentals_amenities": [
           1,
@@ -44,19 +44,19 @@
       "id": 1,
       "name": "Cottage 1",
       "headline": {
-        "en": "Super Headline"
+        "en": "Villa in Nevache, France"
       },
       "summary": {
-        "en": "Super summary"
+        "en": "Great value. A place to enjoy peace and tranquility, away from mass tourism."
       },
       "description": {
-        "en": "Complete description"
+        "en": "First class Villa for 8 people with private pool. Situated in a pleasant residential area."
       },
       "rental_type": "villa",
       "units": 1,
-      "bedrooms_count": null,
-      "sleeps": 7,
-      "sleeps_max": null,
+      "bedrooms_count": 4,
+      "sleeps": 8,
+      "sleeps_max": 9,
       "bathrooms_count": 3,
       "surface": 120,
       "bookable_online": false,
@@ -72,7 +72,7 @@
       "city": "Nevache",
       "state": null,
       "country": "France",
-      "contact_name": "Contact Fullname",
+      "contact_name": "Betty Reichert",
       "reviews_count": 5,
       "reviews_average_rating": "4.0",
       "created_at": "CREATED_AT",
