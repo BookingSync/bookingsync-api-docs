@@ -65,7 +65,7 @@ destination_id                  | Integer  | Destination id related to the renta
 amenity_ids                     | Array    | Array of amenity ids related to the rental.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "rentals",
+<%= render 'json_response', endpoint: "rentals", request: "request",
   scopes: [{rentals_write: "rentals_read-rentals_write"}] %>
 
 ## Update a rental
@@ -108,7 +108,7 @@ destination_id                  | Integer  | Destination id related to the renta
 amenity_ids                     | Array    | Array of amenity ids related to the rental.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "rentals",
+<%= render 'json_response', endpoint: "rentals", request: "request",
   scopes: [{rentals_write: "rentals_read-rentals_write"}] %>
 
 ## Destroy a rental

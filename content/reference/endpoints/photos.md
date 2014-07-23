@@ -41,7 +41,7 @@ kind             | String  | Photo's kind, list of kinds described in [enum sect
 position         | Integer | Photo's position.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "photos",
+<%= render 'json_response', endpoint: "photos", request: "request",
   scopes: [{rentals_write: "public-rentals_write"}] %>
 
 ## Update a photo
@@ -60,7 +60,7 @@ kind             | String  | Photo's kind, list of kinds described in [enum sect
 position         | Integer | Photo's position.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "photos",
+<%= render 'json_response', endpoint: "photos", request: "request",
   scopes: [{rentals_write: "public-rentals_write"}] %>
 
 ## Destroy a photo

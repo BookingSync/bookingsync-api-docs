@@ -48,7 +48,7 @@ notes            | String   | Payment's additional information.
 paid_at          | [Time](/reference/formats) | Payment's date.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "payments",
+<%= render 'json_response', endpoint: "payments", request: "request",
   scopes: [{payments_write: "payments_read-payments_write"}] %>
 
 ## Update a payment
@@ -73,7 +73,7 @@ notes            | String   | Payment's additional information.
 paid_at          | [Time](/reference/formats) | Payment's date.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "payments",
+<%= render 'json_response', endpoint: "payments", request: "request-update",
   scopes: [{payments_write: "payments_read-payments_write"}] %>
 
 ## Cancel a payment

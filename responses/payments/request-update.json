@@ -1,0 +1,13 @@
+{
+  "payments": [
+    {
+      "amount": 1000,
+      "currency": "GBP",
+      "kind": "cash",
+      "fullname": "John Doe",
+      "email": "john@example.com",
+      "locale": "en",
+      "paid_at": "CREATED_AT"
+    }
+  ]
+}

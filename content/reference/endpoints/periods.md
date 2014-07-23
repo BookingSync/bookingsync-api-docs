@@ -41,7 +41,7 @@ start_at         | [Date](/reference/formats) | **Required**. Period's start dat
 end_at           | [Date](/reference/formats) | **Required**. Period's end date.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "periods",
+<%= render 'json_response', endpoint: "periods", request: "request",
   scopes: [{rates_write: "rates_read-rates_write"}] %>
 
 ## Update a period
@@ -60,7 +60,7 @@ start_at         | [Date](/reference/formats) | Period's start date.
 end_at           | [Date](/reference/formats) | Period's end date.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "periods",
+<%= render 'json_response', endpoint: "periods", request: "request",
   scopes: [{rates_write: "rates_read-rates_write"}] %>
 
 ## Destroy a period

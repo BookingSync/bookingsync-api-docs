@@ -41,5 +41,5 @@ comment          | String  | Client's opinion.
 rating           | Integer | **Required**. Client's rating.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "reviews",
+<%= render 'json_response', endpoint: "reviews", request: "request",
   scopes: [{reviews_write: "public-reviews_write"}] %>

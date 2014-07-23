@@ -1,0 +1,8 @@
+{
+  "rental_agreements": [
+    {
+      "rental_id": 1,
+      "body": "My Agreement"
+    }
+  ]
+}

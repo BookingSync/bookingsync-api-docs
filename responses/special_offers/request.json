@@ -1,0 +1,12 @@
+{
+  "special_offers": [
+    {
+      "name":{
+        "en":"Special offer for 1"
+      },
+      "start_at": "START_AT",
+      "end_at": "END_AT",
+      "discount": 10
+    }
+  ]
+}

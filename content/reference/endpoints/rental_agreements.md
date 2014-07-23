@@ -44,7 +44,7 @@ Name             | Type    | Description
 body             | String  | **Required**. Rental agreement's content.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "rental_agreements",
+<%= render 'json_response', endpoint: "rental_agreements", request: "request",
   scopes: [{rentals_write: "public-rentals_write"}] %>
 
 ## Create a new rental agreement for a booking
@@ -65,7 +65,7 @@ booking_id       | Integer | **Required**. Rental agreement's booking id.
 body             | String  | **Required**. Rental agreement's content.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "rental_agreements",
+<%= render 'json_response', endpoint: "rental_agreements", request: "request-booking",
   scopes: [{rentals_write: "public-rentals_write"}] %>
 
 ## Create a new rental agreement for a rental
@@ -86,5 +86,5 @@ rental_id        | Integer | **Required**. Rental agreement's rental id.
 body             | String  | **Required**. Rental agreement's content.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "rental_agreements",
+<%= render 'json_response', endpoint: "rental_agreements", request: "request-rental",
   scopes: [{rentals_write: "public-rentals_write"}] %>

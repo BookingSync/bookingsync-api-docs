@@ -20,6 +20,6 @@ module JsonResponse
   end
 
   def days_from_now(days)
-    Time.now + 86400 * days
+    Time.now.utc + 86400 * days
   end
 end

@@ -9,12 +9,17 @@
       </a>
     </li>
   <% end %>
-</ul><br>
+</ul>
 
+<% if defined?(request) %>
+  <h4>Example JSON request</h4>
+  <%= json_response("#{endpoint}/#{request}") %>
+<% end %>
+
+### Response
 <div class="tab-content">
   <% scopes.each_with_index do |scope, i| %>
     <div class="tab-pane <%= "active" if i.zero? %>" id="<%= scope.href %>">
-      Response:
       <%= json_response("#{endpoint}/#{scope.path}-scope") %>
     </div>
   <% end %>
