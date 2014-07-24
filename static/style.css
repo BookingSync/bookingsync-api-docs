@@ -13,3 +13,32 @@ html, body {
 #content h3+h4 {
   margin-top: 1em;
 }
+
+.callout {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+}
+
+#content .callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.callout-warning {
+  border-left-color: #f0ad4e;
+}
+
+#content .callout-warning h4 {
+  color: #f0ad4e;
+}
+
+.callout-info {
+  border-left-color: #5bc0de;
+}
+
+#content .callout-info h4 {
+  color: #5bc0de;
+}

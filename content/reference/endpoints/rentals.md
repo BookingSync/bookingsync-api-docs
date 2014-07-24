@@ -27,6 +27,11 @@ GET /rentals/:rental_id
 
 ## Create a new rental
 
+<div class="callout callout-warning">
+  <h4>Price increase</h4>
+  Please note that creating rentals will increase the account monthly fee. For further details, check our <a href="http://www.bookingsync.com/pricing">pricing</a>.
+</div>
+
 Returns a newly created rental.
 
 ~~~~
@@ -112,6 +117,11 @@ amenity_ids                     | Array    | Array of amenity ids related to the
   scopes: [{rentals_write: "rentals_read-rentals_write"}] %>
 
 ## Destroy a rental
+
+<div class="callout callout-info">
+  <h4>Price decrease</h4>
+  Please note that destroying rentals will decrease the account monthly fee. For further details, check our <a href="http://www.bookingsync.com/pricing">pricing</a>.
+</div>
 
 Required OAuth scope: `:rentals_write`
 
