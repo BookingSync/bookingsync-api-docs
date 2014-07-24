@@ -1,0 +1,17 @@
+{
+  "links": {
+    "rentals_amenities.amenity": "https://bookingsync.dev/api/v3/amenities/{rentals_amenities.amenity}",
+    "rentals_amenities.rental": "https://bookingsync.dev/api/v3/rentals/{rentals_amenities.rental}"
+  },
+  "rentals_amenities": [
+    {
+      "links": {
+        "amenity": 82,
+        "rental": 1
+      },
+      "id": 3,
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT"
+    }
+  ]
+}
