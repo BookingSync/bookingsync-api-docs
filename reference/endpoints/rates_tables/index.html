@@ -73,6 +73,7 @@
           <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
           <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
@@ -105,17 +106,15 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#49c425305decrates_read-rates_write" role="tab" data-toggle="pill">
+      <a href="#f09f8c28b19erates_read-rates_write" role="tab" data-toggle="pill">
         rates_read / rates_write
       </a>
     </li>
   
-</ul><p><br></p>
-
+</ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="49c425305decrates_read-rates_write">
-      Response:
+    <div class="tab-pane active" id="f09f8c28b19erates_read-rates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates_tables.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rates_tables.account}"</span><span class="p">,</span>
@@ -137,8 +136,8 @@
       <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -157,17 +156,15 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#869596cca163rates_read-rates_write" role="tab" data-toggle="pill">
+      <a href="#0eb5d612e167rates_read-rates_write" role="tab" data-toggle="pill">
         rates_read / rates_write
       </a>
     </li>
   
-</ul><p><br></p>
-
+</ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="869596cca163rates_read-rates_write">
-      Response:
+    <div class="tab-pane active" id="0eb5d612e167rates_read-rates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates_tables.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rates_tables.account}"</span><span class="p">,</span>
@@ -189,8 +186,8 @@
       <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -223,17 +220,24 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#3755c97df416rates_write" role="tab" data-toggle="pill">
+      <a href="#c0cba67a1288rates_write" role="tab" data-toggle="pill">
         rates_write
       </a>
     </li>
   
-</ul><p><br></p>
+</ul><h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"rates_tables"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
 
+<h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="3755c97df416rates_write">
-      Response:
+    <div class="tab-pane active" id="c0cba67a1288rates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates_tables.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rates_tables.account}"</span><span class="p">,</span>
@@ -255,8 +259,8 @@
       <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -289,17 +293,24 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#f842be986e89rates_write" role="tab" data-toggle="pill">
+      <a href="#b5bba070e64erates_write" role="tab" data-toggle="pill">
         rates_write
       </a>
     </li>
   
-</ul><p><br></p>
+</ul><h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"rates_tables"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
 
+<h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="f842be986e89rates_write">
-      Response:
+    <div class="tab-pane active" id="b5bba070e64erates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates_tables.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rates_tables.account}"</span><span class="p">,</span>
@@ -321,8 +332,8 @@
       <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>

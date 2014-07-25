@@ -73,6 +73,7 @@
           <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item active" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
           <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
@@ -105,24 +106,22 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#35502067686epublic" role="tab" data-toggle="pill">
+      <a href="#37ed4c9a391epublic" role="tab" data-toggle="pill">
         public
       </a>
     </li>
   
-</ul><p><br></p>
-
+</ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="35502067686epublic">
-      Response:
+    <div class="tab-pane active" id="37ed4c9a391epublic">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -141,24 +140,22 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#728367c5f265public" role="tab" data-toggle="pill">
+      <a href="#0629a1764abbpublic" role="tab" data-toggle="pill">
         public
       </a>
     </li>
   
-</ul><p><br></p>
-
+</ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="728367c5f265public">
-      Response:
+    <div class="tab-pane active" id="0629a1764abbpublic">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -195,24 +192,31 @@ or booking level.</p>
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#50d9e746cfe9rentals_write" role="tab" data-toggle="pill">
+      <a href="#c08b6b18202crentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
   
-</ul><p><br></p>
+</ul><h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
 
+<h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="50d9e746cfe9rentals_write">
-      Response:
+    <div class="tab-pane active" id="c08b6b18202crentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -255,24 +259,32 @@ or booking level.</p>
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#b05173de1ae9rentals_write" role="tab" data-toggle="pill">
+      <a href="#e4307fac5e03rentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
   
-</ul><p><br></p>
+</ul><h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"booking_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
 
+<h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="b05173de1ae9rentals_write">
-      Response:
+    <div class="tab-pane active" id="e4307fac5e03rentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -315,24 +327,32 @@ or booking level.</p>
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#54ef4030eb56rentals_write" role="tab" data-toggle="pill">
+      <a href="#cf8fd8cb71e3rentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
   
-</ul><p><br></p>
+</ul><h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
 
+<h4 id="response-4">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="54ef4030eb56rentals_write">
-      Response:
+    <div class="tab-pane active" id="cf8fd8cb71e3rentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>

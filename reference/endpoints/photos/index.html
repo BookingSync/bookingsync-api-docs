@@ -73,6 +73,7 @@
           <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
           <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
@@ -105,17 +106,15 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#2e5bb96bf1b5public" role="tab" data-toggle="pill">
+      <a href="#880a345e4d4dpublic" role="tab" data-toggle="pill">
         public
       </a>
     </li>
   
-</ul><p><br></p>
-
+</ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="2e5bb96bf1b5public">
-      Response:
+    <div class="tab-pane active" id="880a345e4d4dpublic">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
@@ -135,8 +134,8 @@
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"micro_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -155,17 +154,15 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#a98b1800c049public" role="tab" data-toggle="pill">
+      <a href="#e00cd95d15c5public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
   
-</ul><p><br></p>
-
+</ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="a98b1800c049public">
-      Response:
+    <div class="tab-pane active" id="e00cd95d15c5public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
@@ -185,8 +182,8 @@
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"micro_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -234,17 +231,29 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#11a049b2b4b8rentals_write" role="tab" data-toggle="pill">
+      <a href="#3ed0ddd73e9drentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
   
-</ul><p><br></p>
+</ul><h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"photo"</span><span class="o">:</span> <span class="s2">"livingroom.jpg"</span><span class="p">,</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Wonderful living room"</span>
+      <span class="p">},</span>
+      <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"livingroom"</span><span class="p">,</span>
+      <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
 
+<h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="11a049b2b4b8rentals_write">
-      Response:
+    <div class="tab-pane active" id="3ed0ddd73e9drentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
@@ -264,8 +273,8 @@
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"micro_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -313,17 +322,29 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#466e5a7a7ab6rentals_write" role="tab" data-toggle="pill">
+      <a href="#5663843cedacrentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
   
-</ul><p><br></p>
+</ul><h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"photo"</span><span class="o">:</span> <span class="s2">"livingroom.jpg"</span><span class="p">,</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Wonderful living room"</span>
+      <span class="p">},</span>
+      <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"livingroom"</span><span class="p">,</span>
+      <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
 
+<h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="466e5a7a7ab6rentals_write">
-      Response:
+    <div class="tab-pane active" id="5663843cedacrentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
@@ -343,8 +364,8 @@
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"micro_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>

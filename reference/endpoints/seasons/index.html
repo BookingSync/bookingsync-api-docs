@@ -73,6 +73,7 @@
           <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
           <a class="list-group-item active" href="/reference/endpoints/seasons/">Seasons</a>
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
@@ -105,17 +106,15 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#e94ffd186551rates_read-rates_write" role="tab" data-toggle="pill">
+      <a href="#e80f2f19c663rates_read-rates_write" role="tab" data-toggle="pill">
         rates_read / rates_write
       </a>
     </li>
   
-</ul><p><br></p>
-
+</ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="e94ffd186551rates_read-rates_write">
-      Response:
+    <div class="tab-pane active" id="e80f2f19c663rates_read-rates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{seasons.rates_table}"</span><span class="p">,</span>
@@ -140,8 +139,8 @@
       <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
       <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -160,17 +159,15 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#3b3d3e44537erates_read-rates_write" role="tab" data-toggle="pill">
+      <a href="#3312b3718ef1rates_read-rates_write" role="tab" data-toggle="pill">
         rates_read / rates_write
       </a>
     </li>
   
-</ul><p><br></p>
-
+</ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="3b3d3e44537erates_read-rates_write">
-      Response:
+    <div class="tab-pane active" id="3312b3718ef1rates_read-rates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{seasons.rates_table}"</span><span class="p">,</span>
@@ -195,8 +192,8 @@
       <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
       <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -243,17 +240,26 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#bdcedd4776a0rates_write" role="tab" data-toggle="pill">
+      <a href="#adb6b2938c8erates_write" role="tab" data-toggle="pill">
         rates_write
       </a>
     </li>
   
-</ul><p><br></p>
+</ul><h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Season 2"</span><span class="p">,</span>
+      <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
+      <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
 
+<h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="bdcedd4776a0rates_write">
-      Response:
+    <div class="tab-pane active" id="adb6b2938c8erates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{seasons.rates_table}"</span><span class="p">,</span>
@@ -278,8 +284,8 @@
       <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
       <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -323,17 +329,26 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#81056c78c9a1rates_write" role="tab" data-toggle="pill">
+      <a href="#648a2459560arates_write" role="tab" data-toggle="pill">
         rates_write
       </a>
     </li>
   
-</ul><p><br></p>
+</ul><h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Season 2"</span><span class="p">,</span>
+      <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
+      <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
 
+<h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="81056c78c9a1rates_write">
-      Response:
+    <div class="tab-pane active" id="648a2459560arates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{seasons.rates_table}"</span><span class="p">,</span>
@@ -358,8 +373,8 @@
       <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
       <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>

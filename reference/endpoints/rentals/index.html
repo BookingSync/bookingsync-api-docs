@@ -73,6 +73,7 @@
           <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
           <a class="list-group-item active" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
           <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
@@ -91,6 +92,9 @@
 <ol id="markdown-toc">
 <li><a href="#list-rentals">List rentals</a></li>
   <li><a href="#get-a-single-rental">Get a single rental</a></li>
+  <li><a href="#create-a-new-rental">Create a new rental</a></li>
+  <li><a href="#update-a-rental">Update a rental</a></li>
+  <li><a href="#destroy-a-rental">Destroy a rental</a></li>
 </ol><h3 id="list-rentals">List rentals</h3>
 
 <p>List all rentals for given account(s).</p>
@@ -102,23 +106,21 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#d561e27d1faapublic" role="tab" data-toggle="pill">
+      <a href="#ef1da71227f6public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
   
     <li>
-      <a href="#d561e27d1faarentals_read-rentals_write" role="tab" data-toggle="pill">
+      <a href="#2f39939799e5rentals_read-rentals_write" role="tab" data-toggle="pill">
         rentals_read / rentals_write
       </a>
     </li>
   
-</ul><p><br></p>
-
+</ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="d561e27d1faapublic">
-      Response:
+    <div class="tab-pane active" id="ef1da71227f6public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -154,7 +156,7 @@
           <span class="mi">1</span>
         <span class="p">],</span>
         <span class="s2">"rates"</span><span class="o">:</span> <span class="p">[</span>
-
+          <span class="mi">1</span>
         <span class="p">],</span>
         <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
           <span class="mi">1</span><span class="p">,</span>
@@ -165,19 +167,19 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 1"</span><span class="p">,</span>
       <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Super Headline"</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span>
       <span class="p">},</span>
       <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Super summary"</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
       <span class="p">},</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Complete description"</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 8 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
       <span class="s2">"rental_type"</span><span class="o">:</span> <span class="s2">"villa"</span><span class="p">,</span>
       <span class="s2">"units"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
-      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
       <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
       <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
@@ -193,11 +195,11 @@
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Nevache"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"country"</span><span class="o">:</span> <span class="s2">"France"</span><span class="p">,</span>
-      <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Contact Fullname"</span><span class="p">,</span>
+      <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
       <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="s2">"4.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
       <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
       <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
       <span class="s2">"initial_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
@@ -209,8 +211,7 @@
 <span class="p">}</span></code></pre>
     </div>
   
-    <div class="tab-pane " id="d561e27d1faarentals_read-rentals_write">
-      Response:
+    <div class="tab-pane " id="2f39939799e5rentals_read-rentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -236,13 +237,13 @@
           <span class="mi">2</span>
         <span class="p">],</span>
         <span class="s2">"reviews"</span><span class="o">:</span> <span class="p">[</span>
-
+          <span class="mi">2</span>
         <span class="p">],</span>
         <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
-
+          <span class="mi">3</span>
         <span class="p">],</span>
         <span class="s2">"rates"</span><span class="o">:</span> <span class="p">[</span>
-
+          <span class="mi">3</span>
         <span class="p">],</span>
         <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
           <span class="mi">4</span>
@@ -251,19 +252,19 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 2"</span><span class="p">,</span>
       <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Super Headline"</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span>
       <span class="p">},</span>
       <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Super summary"</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
       <span class="p">},</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Complete description"</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 9 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
       <span class="s2">"rental_type"</span><span class="o">:</span> <span class="s2">"villa"</span><span class="p">,</span>
       <span class="s2">"units"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
-      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
+      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
       <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
       <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
@@ -279,14 +280,14 @@
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Nevache"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"country"</span><span class="o">:</span> <span class="s2">"France"</span><span class="p">,</span>
-      <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Contact Fullname"</span><span class="p">,</span>
-      <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"address1"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
+      <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="s2">"4.5"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"58 Ville Haute"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"zip"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
       <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
       <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
       <span class="s2">"initial_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
@@ -311,23 +312,21 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#6bbf345ab6ebpublic" role="tab" data-toggle="pill">
+      <a href="#54e03b475ca4public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
   
     <li>
-      <a href="#6bbf345ab6ebrentals_read-rentals_write" role="tab" data-toggle="pill">
+      <a href="#f8e4b7ccc406rentals_read-rentals_write" role="tab" data-toggle="pill">
         rentals_read / rentals_write
       </a>
     </li>
   
-</ul><p><br></p>
-
+</ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="6bbf345ab6ebpublic">
-      Response:
+    <div class="tab-pane active" id="54e03b475ca4public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -363,7 +362,7 @@
           <span class="mi">1</span>
         <span class="p">],</span>
         <span class="s2">"rates"</span><span class="o">:</span> <span class="p">[</span>
-
+          <span class="mi">1</span>
         <span class="p">],</span>
         <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
           <span class="mi">1</span><span class="p">,</span>
@@ -374,19 +373,19 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 1"</span><span class="p">,</span>
       <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Super Headline"</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span>
       <span class="p">},</span>
       <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Super summary"</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
       <span class="p">},</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Complete description"</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 8 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
       <span class="s2">"rental_type"</span><span class="o">:</span> <span class="s2">"villa"</span><span class="p">,</span>
       <span class="s2">"units"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
-      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
       <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
       <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
@@ -402,11 +401,11 @@
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Nevache"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"country"</span><span class="o">:</span> <span class="s2">"France"</span><span class="p">,</span>
-      <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Contact Fullname"</span><span class="p">,</span>
+      <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
       <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="s2">"4.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
       <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
       <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
       <span class="s2">"initial_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
@@ -418,8 +417,7 @@
 <span class="p">}</span></code></pre>
     </div>
   
-    <div class="tab-pane " id="6bbf345ab6ebrentals_read-rentals_write">
-      Response:
+    <div class="tab-pane " id="f8e4b7ccc406rentals_read-rentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -445,13 +443,13 @@
           <span class="mi">2</span>
         <span class="p">],</span>
         <span class="s2">"reviews"</span><span class="o">:</span> <span class="p">[</span>
-
+          <span class="mi">2</span>
         <span class="p">],</span>
         <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
-
+          <span class="mi">3</span>
         <span class="p">],</span>
         <span class="s2">"rates"</span><span class="o">:</span> <span class="p">[</span>
-
+          <span class="mi">3</span>
         <span class="p">],</span>
         <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
           <span class="mi">4</span>
@@ -460,19 +458,19 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 2"</span><span class="p">,</span>
       <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Super Headline"</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span>
       <span class="p">},</span>
       <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Super summary"</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
       <span class="p">},</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Complete description"</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 9 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
       <span class="s2">"rental_type"</span><span class="o">:</span> <span class="s2">"villa"</span><span class="p">,</span>
       <span class="s2">"units"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
-      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
+      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
       <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
       <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
@@ -488,14 +486,14 @@
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Nevache"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"country"</span><span class="o">:</span> <span class="s2">"France"</span><span class="p">,</span>
-      <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Contact Fullname"</span><span class="p">,</span>
-      <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-21T08:25:28Z"</span><span class="p">,</span>
-      <span class="s2">"address1"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
+      <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="s2">"4.5"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"58 Ville Haute"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"zip"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
       <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
       <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
       <span class="s2">"initial_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
@@ -508,6 +506,567 @@
     </div>
   
 </div>
+
+<h3 id="create-a-new-rental">Create a new rental</h3>
+
+<div class="callout callout-warning">
+  <h4>Price increase</h4>
+  Please note that creating rentals will increase the account monthly fee. For further details, check our <a href="http://www.bookingsync.com/pricing">pricing</a>.
+</div>
+
+<p>Returns a newly created rental.</p>
+
+<pre><code>POST /rentals
+</code></pre>
+
+<h4 id="parameters">Parameters</h4>
+
+<table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>name</td>
+      <td>String</td>
+      <td>
+<strong>Required</strong>. Rental’s name.</td>
+    </tr>
+<tr>
+<td>headline_LOCALE</td>
+      <td>String</td>
+      <td>Rental’s headline, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+    </tr>
+<tr>
+<td>summary_LOCALE</td>
+      <td>String</td>
+      <td>Rental’s summary, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+    </tr>
+<tr>
+<td>description_LOCALE</td>
+      <td>String</td>
+      <td>Rental’s description, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+    </tr>
+<tr>
+<td>rates_table_id</td>
+      <td>Integer</td>
+      <td>Rates table id related to the rental.</td>
+    </tr>
+<tr>
+<td>rate</td>
+      <td>Integer</td>
+      <td>Rental’s rate represents the base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate.</td>
+    </tr>
+<tr>
+<td>rate_kind</td>
+      <td>String</td>
+      <td>Rental’s rate type attached to the rental rate. List of types described in <a href="/reference/enums#rates-types">enums section</a>.</td>
+    </tr>
+<tr>
+<td>currency</td>
+      <td>String</td>
+      <td>Rental’s currency code, list of codes described in <a href="/reference/enums#currencies">enums section</a>.</td>
+    </tr>
+<tr>
+<td>deposit</td>
+      <td>Integer</td>
+      <td>Rental’s default deposit percentage. If none defined, the default deposit percentage of the account will be used.</td>
+    </tr>
+<tr>
+<td>lat</td>
+      <td>Float</td>
+      <td>Rental’s latitude.</td>
+    </tr>
+<tr>
+<td>lng</td>
+      <td>Float</td>
+      <td>Rental’s longitude.</td>
+    </tr>
+<tr>
+<td>address1</td>
+      <td>String</td>
+      <td>Rental’s primary address.</td>
+    </tr>
+<tr>
+<td>address2</td>
+      <td>String</td>
+      <td>Rental’s optional address.</td>
+    </tr>
+<tr>
+<td>state</td>
+      <td>String</td>
+      <td>Rental’s state.</td>
+    </tr>
+<tr>
+<td>zip</td>
+      <td>String</td>
+      <td>Rental’s zip code.</td>
+    </tr>
+<tr>
+<td>city</td>
+      <td>String</td>
+      <td>Rental’s city.</td>
+    </tr>
+<tr>
+<td>country_code</td>
+      <td>String</td>
+      <td>Rental’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+    </tr>
+<tr>
+<td>rentals_contact_id</td>
+      <td>Integer</td>
+      <td>Contact id related to the rental.</td>
+    </tr>
+<tr>
+<td>rental_type</td>
+      <td>String</td>
+      <td>Rental’s type (example: villa, apartment), all types described in <a href="/reference/enums#rental-types">enums section</a>.</td>
+    </tr>
+<tr>
+<td>bedrooms_count</td>
+      <td>Integer</td>
+      <td>Rental’s bedrooms count.</td>
+    </tr>
+<tr>
+<td>sleeps</td>
+      <td>Integer</td>
+      <td>Rental’s number of comfortable sleeps.</td>
+    </tr>
+<tr>
+<td>sleeps_max</td>
+      <td>Integer</td>
+      <td>Rental’s maximum number of sleeps.</td>
+    </tr>
+<tr>
+<td>bathrooms_count</td>
+      <td>Integer</td>
+      <td>Rental’s bathrooms count.</td>
+    </tr>
+<tr>
+<td>surface</td>
+      <td>Integer</td>
+      <td>Rental’s surface area.</td>
+    </tr>
+<tr>
+<td>destination_id</td>
+      <td>Integer</td>
+      <td>Destination id related to the rental.</td>
+    </tr>
+<tr>
+<td>amenity_ids</td>
+      <td>Array</td>
+      <td>Array of amenity ids related to the rental.</td>
+    </tr>
+</tbody>
+</table><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#9d707c40bfb2rentals_write" role="tab" data-toggle="pill">
+        rentals_write
+      </a>
+    </li>
+  
+</ul><h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 1"</span><span class="p">,</span>
+      <span class="s2">"headline_en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span><span class="p">,</span>
+      <span class="s2">"lat"</span><span class="o">:</span> <span class="mf">45.02</span><span class="p">,</span>
+      <span class="s2">"lng"</span><span class="o">:</span> <span class="mf">6.6</span><span class="p">,</span>
+      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+      <span class="s2">"amenity_ids"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="mi">1</span><span class="p">,</span>
+        <span class="mi">2</span><span class="p">,</span>
+        <span class="mi">3</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-2">Response</h4>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="9d707c40bfb2rentals_write">
+      <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
+    <span class="s2">"rentals.availability"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/availabilities/{rentals.availability}"</span><span class="p">,</span>
+    <span class="s2">"rentals.destination"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/destinations/{rentals.destination}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{rentals.rates_table}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rental_agreement"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_agreements/{rentals.rental_agreement}"</span><span class="p">,</span>
+    <span class="s2">"rentals.photos"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/photos/{rentals.photos}"</span><span class="p">,</span>
+    <span class="s2">"rentals.reviews"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/reviews/{rentals.reviews}"</span><span class="p">,</span>
+    <span class="s2">"rentals.special_offers"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/special_offers/{rentals.special_offers}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rates"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates/{rentals.rates}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rentals_amenities"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals_amenities/{rentals.rentals_amenities}"</span>
+  <span class="p">},</span>
+  <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">"destination"</span><span class="o">:</span> <span class="mi">135</span><span class="p">,</span>
+        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">2</span>
+        <span class="p">],</span>
+        <span class="s2">"reviews"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">2</span>
+        <span class="p">],</span>
+        <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">3</span>
+        <span class="p">],</span>
+        <span class="s2">"rates"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">3</span>
+        <span class="p">],</span>
+        <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">4</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 2"</span><span class="p">,</span>
+      <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span>
+      <span class="p">},</span>
+      <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
+      <span class="p">},</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 9 people with private pool. Situated in a pleasant residential area."</span>
+      <span class="p">},</span>
+      <span class="s2">"rental_type"</span><span class="o">:</span> <span class="s2">"villa"</span><span class="p">,</span>
+      <span class="s2">"units"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
+      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+      <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"min_price"</span><span class="o">:</span> <span class="mi">490</span><span class="p">,</span>
+      <span class="s2">"max_price"</span><span class="o">:</span> <span class="mi">700</span><span class="p">,</span>
+      <span class="s2">"price_kind"</span><span class="o">:</span> <span class="s2">"weekly"</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
+      <span class="s2">"price_public_notes"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="kc">null</span>
+      <span class="p">},</span>
+      <span class="s2">"lat"</span><span class="o">:</span> <span class="mf">45.02</span><span class="p">,</span>
+      <span class="s2">"lng"</span><span class="o">:</span> <span class="mf">6.6</span><span class="p">,</span>
+      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Nevache"</span><span class="p">,</span>
+      <span class="s2">"state"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"country"</span><span class="o">:</span> <span class="s2">"France"</span><span class="p">,</span>
+      <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
+      <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="s2">"4.5"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"58 Ville Haute"</span><span class="p">,</span>
+      <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
+      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
+      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"initial_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"final_price"</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+    </div>
+  
+</div>
+
+<h3 id="update-a-rental">Update a rental</h3>
+
+<p>Returns an updated rental identified by ID.</p>
+
+<pre><code>PUT /rentals/:rental_id
+</code></pre>
+
+<h4 id="parameters-1">Parameters</h4>
+
+<table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>name</td>
+      <td>String</td>
+      <td>
+<strong>Required</strong>. Rental’s name.</td>
+    </tr>
+<tr>
+<td>headline_LOCALE</td>
+      <td>String</td>
+      <td>Rental’s headline, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+    </tr>
+<tr>
+<td>summary_LOCALE</td>
+      <td>String</td>
+      <td>Rental’s summary, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+    </tr>
+<tr>
+<td>description_LOCALE</td>
+      <td>String</td>
+      <td>Rental’s description, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+    </tr>
+<tr>
+<td>rates_table_id</td>
+      <td>Integer</td>
+      <td>Rates table id related to the rental.</td>
+    </tr>
+<tr>
+<td>rate</td>
+      <td>Integer</td>
+      <td>Rental’s rate represents the base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate.</td>
+    </tr>
+<tr>
+<td>rate_kind</td>
+      <td>String</td>
+      <td>Rental’s rate type attached to the rental rate. List of types described in <a href="/reference/enums#rates-types">enums section</a>.</td>
+    </tr>
+<tr>
+<td>currency</td>
+      <td>String</td>
+      <td>Rental’s currency code, list of codes described in <a href="/reference/enums#currencies">enums section</a>.</td>
+    </tr>
+<tr>
+<td>deposit</td>
+      <td>Integer</td>
+      <td>Rental’s default deposit percentage. If none defined, the default deposit percentage of the account will be used.</td>
+    </tr>
+<tr>
+<td>lat</td>
+      <td>Float</td>
+      <td>Rental’s latitude.</td>
+    </tr>
+<tr>
+<td>lng</td>
+      <td>Float</td>
+      <td>Rental’s longitude.</td>
+    </tr>
+<tr>
+<td>address1</td>
+      <td>String</td>
+      <td>Rental’s primary address.</td>
+    </tr>
+<tr>
+<td>address2</td>
+      <td>String</td>
+      <td>Rental’s optional address.</td>
+    </tr>
+<tr>
+<td>state</td>
+      <td>String</td>
+      <td>Rental’s state.</td>
+    </tr>
+<tr>
+<td>zip</td>
+      <td>String</td>
+      <td>Rental’s zip code.</td>
+    </tr>
+<tr>
+<td>city</td>
+      <td>String</td>
+      <td>Rental’s city.</td>
+    </tr>
+<tr>
+<td>country_code</td>
+      <td>String</td>
+      <td>Rental’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+    </tr>
+<tr>
+<td>rentals_contact_id</td>
+      <td>Integer</td>
+      <td>Contact id related to the rental.</td>
+    </tr>
+<tr>
+<td>rental_type</td>
+      <td>String</td>
+      <td>Rental’s type (example: villa, apartment), all types described in <a href="/reference/enums#rental-types">enums section</a>.</td>
+    </tr>
+<tr>
+<td>bedrooms_count</td>
+      <td>Integer</td>
+      <td>Rental’s bedrooms count.</td>
+    </tr>
+<tr>
+<td>sleeps</td>
+      <td>Integer</td>
+      <td>Rental’s number of comfortable sleeps.</td>
+    </tr>
+<tr>
+<td>sleeps_max</td>
+      <td>Integer</td>
+      <td>Rental’s maximum number of sleeps.</td>
+    </tr>
+<tr>
+<td>bathrooms_count</td>
+      <td>Integer</td>
+      <td>Rental’s bathrooms count.</td>
+    </tr>
+<tr>
+<td>surface</td>
+      <td>Integer</td>
+      <td>Rental’s surface area.</td>
+    </tr>
+<tr>
+<td>destination_id</td>
+      <td>Integer</td>
+      <td>Destination id related to the rental.</td>
+    </tr>
+<tr>
+<td>amenity_ids</td>
+      <td>Array</td>
+      <td>Array of amenity ids related to the rental.</td>
+    </tr>
+</tbody>
+</table><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#fca22db5f577rentals_write" role="tab" data-toggle="pill">
+        rentals_write
+      </a>
+    </li>
+  
+</ul><h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 1"</span><span class="p">,</span>
+      <span class="s2">"headline_en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span><span class="p">,</span>
+      <span class="s2">"lat"</span><span class="o">:</span> <span class="mf">45.02</span><span class="p">,</span>
+      <span class="s2">"lng"</span><span class="o">:</span> <span class="mf">6.6</span><span class="p">,</span>
+      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+      <span class="s2">"amenity_ids"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="mi">1</span><span class="p">,</span>
+        <span class="mi">2</span><span class="p">,</span>
+        <span class="mi">3</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-3">Response</h4>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="fca22db5f577rentals_write">
+      <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
+    <span class="s2">"rentals.availability"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/availabilities/{rentals.availability}"</span><span class="p">,</span>
+    <span class="s2">"rentals.destination"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/destinations/{rentals.destination}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{rentals.rates_table}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rental_agreement"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_agreements/{rentals.rental_agreement}"</span><span class="p">,</span>
+    <span class="s2">"rentals.photos"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/photos/{rentals.photos}"</span><span class="p">,</span>
+    <span class="s2">"rentals.reviews"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/reviews/{rentals.reviews}"</span><span class="p">,</span>
+    <span class="s2">"rentals.special_offers"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/special_offers/{rentals.special_offers}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rates"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates/{rentals.rates}"</span><span class="p">,</span>
+    <span class="s2">"rentals.rentals_amenities"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals_amenities/{rentals.rentals_amenities}"</span>
+  <span class="p">},</span>
+  <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">"destination"</span><span class="o">:</span> <span class="mi">135</span><span class="p">,</span>
+        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">2</span>
+        <span class="p">],</span>
+        <span class="s2">"reviews"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">2</span>
+        <span class="p">],</span>
+        <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">3</span>
+        <span class="p">],</span>
+        <span class="s2">"rates"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">3</span>
+        <span class="p">],</span>
+        <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">4</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 2"</span><span class="p">,</span>
+      <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span>
+      <span class="p">},</span>
+      <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
+      <span class="p">},</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 9 people with private pool. Situated in a pleasant residential area."</span>
+      <span class="p">},</span>
+      <span class="s2">"rental_type"</span><span class="o">:</span> <span class="s2">"villa"</span><span class="p">,</span>
+      <span class="s2">"units"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
+      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+      <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"min_price"</span><span class="o">:</span> <span class="mi">490</span><span class="p">,</span>
+      <span class="s2">"max_price"</span><span class="o">:</span> <span class="mi">700</span><span class="p">,</span>
+      <span class="s2">"price_kind"</span><span class="o">:</span> <span class="s2">"weekly"</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
+      <span class="s2">"price_public_notes"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="kc">null</span>
+      <span class="p">},</span>
+      <span class="s2">"lat"</span><span class="o">:</span> <span class="mf">45.02</span><span class="p">,</span>
+      <span class="s2">"lng"</span><span class="o">:</span> <span class="mf">6.6</span><span class="p">,</span>
+      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Nevache"</span><span class="p">,</span>
+      <span class="s2">"state"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"country"</span><span class="o">:</span> <span class="s2">"France"</span><span class="p">,</span>
+      <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
+      <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="s2">"4.5"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-07-25T10:25:05Z"</span><span class="p">,</span>
+      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"58 Ville Haute"</span><span class="p">,</span>
+      <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
+      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
+      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"initial_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"final_price"</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+    </div>
+  
+</div>
+
+<h3 id="destroy-a-rental">Destroy a rental</h3>
+
+<div class="callout callout-info">
+  <h4>Price decrease</h4>
+  Please note that destroying rentals will decrease the account monthly fee. For further details, check our <a href="http://www.bookingsync.com/pricing">pricing</a>.
+</div>
+
+<p>Required OAuth scope: <code>:rentals_write</code></p>
+
+<p>Returns an empty response with ‘204 No Content’ status code on success.</p>
+
+<pre><code>DELETE /rentals/:rental_id
+</code></pre>
       </div>
     </div>
   </div>
