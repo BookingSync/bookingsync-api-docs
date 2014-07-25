@@ -1,0 +1,19 @@
+{
+  "rentals": [
+    {
+      "name": "Cottage 1",
+      "headline_en": "Villa in Nevache, France",
+      "lat": 45.02,
+      "lng": 6.6,
+      "bedrooms_count": 4,
+      "sleeps": 8,
+      "bathrooms_count": 3,
+      "surface": 120,
+      "amenity_ids": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}

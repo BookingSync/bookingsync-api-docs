@@ -12,7 +12,7 @@ GET /photos
 ~~~
 
 <%= render 'json_response', endpoint: "photos",
-  scopes: %w(public) %>
+  scopes: [{public: "public-rentals_write"}] %>
 
 ## Get a single photo
 
@@ -23,7 +23,7 @@ GET /photos/:photo_id
 ~~~
 
 <%= render 'json_response', endpoint: "photos",
-  scopes: %w(public) %>
+  scopes: [{public: "public-rentals_write"}] %>
 
 ## Create a new photo
 
@@ -41,8 +41,8 @@ kind             | String  | Photo's kind, list of kinds described in [enum sect
 position         | Integer | Photo's position.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "photos",
-  scopes: %w(rentals_write) %>
+<%= render 'json_response', endpoint: "photos", request: "request",
+  scopes: [{rentals_write: "public-rentals_write"}] %>
 
 ## Update a photo
 
@@ -60,8 +60,8 @@ kind             | String  | Photo's kind, list of kinds described in [enum sect
 position         | Integer | Photo's position.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "photos",
-  scopes: %w(rentals_write) %>
+<%= render 'json_response', endpoint: "photos", request: "request",
+  scopes: [{rentals_write: "public-rentals_write"}] %>
 
 ## Destroy a photo
 

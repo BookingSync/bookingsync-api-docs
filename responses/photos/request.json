@@ -1,0 +1,12 @@
+{
+  "photos": [
+    {
+      "photo": "livingroom.jpg",
+      "description": {
+        "en": "Wonderful living room"
+      },
+      "kind": "livingroom",
+      "position": 1
+    }
+  ]
+}

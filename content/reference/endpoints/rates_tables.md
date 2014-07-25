@@ -40,8 +40,8 @@ Name             | Type    | Description
 name             | String  | **Required**. Rates table's name.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "rates_tables",
-  scopes: %w(rates_write) %>
+<%= render 'json_response', endpoint: "rates_tables", request: "request",
+  scopes: [{rates_write: "rates_read-rates_write"}] %>
 
 ## Update a rates table
 
@@ -58,8 +58,8 @@ Name             | Type    | Description
 name             | String  | **Required**. Rates table's name.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "rates_tables",
-  scopes: %w(rates_write) %>
+<%= render 'json_response', endpoint: "rates_tables", request: "request",
+  scopes: [{rates_write: "rates_read-rates_write"}] %>
 
 ## Destroy a rates table
 

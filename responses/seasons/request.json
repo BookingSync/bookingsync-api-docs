@@ -1,0 +1,9 @@
+{
+  "seasons": [
+    {
+      "name": "Season 2",
+      "ratio": "1.0",
+      "minimum_stay": 7
+    }
+  ]
+}

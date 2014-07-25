@@ -42,8 +42,8 @@ ratio            | Number  | **Required**. Season's ratio calculated from the re
 minimum_stay     | Integer | **Required**. Season's minimum length of stay, a price won't be calculated for a shorter request.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "seasons",
-  scopes: %w(rates_write) %>
+<%= render 'json_response', endpoint: "seasons", request: "request",
+  scopes: [{rates_write: "rates_read-rates_write"}] %>
 
 ## Update a season
 
@@ -62,8 +62,8 @@ ratio            | Number  | Season's ratio calculated from the rental's referen
 minimum_stay     | Integer | Season's minimum length of stay, a price won't be calculated for a shorter request.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "seasons",
-  scopes: %w(rates_write) %>
+<%= render 'json_response', endpoint: "seasons", request: "request",
+  scopes: [{rates_write: "rates_read-rates_write"}] %>
 
 ## Destroy a season
 

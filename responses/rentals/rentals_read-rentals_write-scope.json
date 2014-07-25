@@ -23,13 +23,13 @@
           2
         ],
         "reviews": [
-
+          2
         ],
         "special_offers": [
-
+          3
         ],
         "rates": [
-
+          3
         ],
         "rentals_amenities": [
           4
@@ -38,19 +38,19 @@
       "id": 2,
       "name": "Cottage 2",
       "headline": {
-        "en": "Super Headline"
+        "en": "Villa in Nevache, France"
       },
       "summary": {
-        "en": "Super summary"
+        "en": "Great value. A place to enjoy peace and tranquility, away from mass tourism."
       },
       "description": {
-        "en": "Complete description"
+        "en": "First class Villa for 9 people with private pool. Situated in a pleasant residential area."
       },
       "rental_type": "villa",
       "units": 1,
-      "bedrooms_count": null,
-      "sleeps": 7,
-      "sleeps_max": null,
+      "bedrooms_count": 5,
+      "sleeps": 9,
+      "sleeps_max": 10,
       "bathrooms_count": 3,
       "surface": 120,
       "bookable_online": false,
@@ -66,14 +66,14 @@
       "city": "Nevache",
       "state": null,
       "country": "France",
-      "contact_name": "Contact Fullname",
-      "reviews_count": 0,
-      "reviews_average_rating": null,
+      "contact_name": "Betty Reichert",
+      "reviews_count": 1,
+      "reviews_average_rating": "4.5",
       "created_at": "CREATED_AT",
       "updated_at": "UPDATED_AT",
-      "address1": null,
+      "address1": "58 Ville Haute",
       "address2": null,
-      "zip": null,
+      "zip": "05100",
       "checkin_time": 16,
       "checkout_time": 10,
       "initial_price": null,

@@ -12,7 +12,7 @@ GET /special_offers
 ~~~
 
 <%= render 'json_response', endpoint: "special_offers",
-  scopes: %w(public) %>
+  scopes: [{public: "public-rates_write"}] %>
 
 ## Get a single special offer
 
@@ -23,7 +23,7 @@ GET /special_offers/:special_offer_id
 ~~~
 
 <%= render 'json_response', endpoint: "special_offers",
-  scopes: %w(public) %>
+  scopes: [{public: "public-rates_write"}] %>
 
 ## Create a new special offer
 
@@ -43,8 +43,8 @@ end_at           | [Date](/reference/formats) | **Required**. Special Offer's en
 discount         | Integer | **Required**. Special Offer's discount value, e.g. use 20 for 20% discount.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "special_offers",
-  scopes: %w(rates_write) %>
+<%= render 'json_response', endpoint: "special_offers", request: "request",
+  scopes: [{rates_write: "public-rates_write"}] %>
 
 ## Update a special offer
 
@@ -64,8 +64,8 @@ end_at           | [Date](/reference/formats) | **Required**. Special Offer's en
 discount         | Integer | **Required**. Special Offer's discount value, e.g. use 20 for 20% discount.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "special_offers",
-  scopes: %w(rates_write) %>
+<%= render 'json_response', endpoint: "special_offers", request: "request",
+  scopes: [{rates_write: "public-rates_write"}] %>
 
 ## Destroy a special offer
 

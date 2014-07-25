@@ -12,7 +12,7 @@ GET /reviews
 ~~~
 
 <%= render 'json_response', endpoint: "reviews",
-  scopes: %w(public) %>
+  scopes: [{public: "public-reviews_write"}] %>
 
 ## Get a single review
 
@@ -23,7 +23,7 @@ GET /reviews/:review_id
 ~~~
 
 <%= render 'json_response', endpoint: "reviews",
-  scopes: %w(public) %>
+  scopes: [{public: "public-reviews_write"}] %>
 
 ## Create a new review
 
@@ -41,5 +41,5 @@ comment          | String  | Client's opinion.
 rating           | Integer | **Required**. Client's rating.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "reviews",
-  scopes: %w(reviews_write) %>
+<%= render 'json_response', endpoint: "reviews", request: "request",
+  scopes: [{reviews_write: "public-reviews_write"}] %>

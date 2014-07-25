@@ -1,21 +1,26 @@
-<% tag = SecureRandom.hex(6) %>
+<% scopes.map! { |s| Scope.new(s) } %>
 
 <ul class="nav nav-pills pull-right" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
   <% scopes.each_with_index do |scope, i| %>
     <li <% if i.zero? %>class="active"<% end %>>
-      <a href="#<%= tag %><%= scope %>" role="tab" data-toggle="pill">
-        <%= scope.gsub('-', ' / ') %>
+      <a href="#<%= scope.href %>" role="tab" data-toggle="pill">
+        <%= scope.display_name %>
       </a>
     </li>
   <% end %>
-</ul><br>
+</ul>
 
+<% if defined?(request) %>
+  <h4>Example JSON request</h4>
+  <%= json_response("#{endpoint}/#{request}") %>
+<% end %>
+
+### Response
 <div class="tab-content">
   <% scopes.each_with_index do |scope, i| %>
-    <div class="tab-pane <%= "active" if i.zero? %>" id="<%= tag %><%= scope %>">
-      Response:
-      <%= json_response("#{endpoint}/#{scope}-scope") %>
+    <div class="tab-pane <%= "active" if i.zero? %>" id="<%= scope.href %>">
+      <%= json_response("#{endpoint}/#{scope.path}-scope") %>
     </div>
   <% end %>
 </div>
