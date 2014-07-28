@@ -1,4 +1,4 @@
-# Enumerables 
+# Enumerables
 
 1. TOC
 {:toc}
@@ -7,40 +7,40 @@
 
 Currency         | Code
 -----------------|------------
-€                | EUR 
-$                | USD 
-C $              | CAD 
-£                | GBP 
-CHF              | CHF 
-A$               | AUD 
-NZ$              | NZD 
-R$               | BRL 
+A$               | AUD
+R$               | BRL
+C$               | CAD
+CHF              | CHF
+€                | EUR
+£                | GBP
+NZ$              | NZD
+$                | USD
 {: class="table table-bordered"}
 
 ## Locales
 
 Code             | Name
 -----------------|------------
-en               | English 
-fr               | French
+de               | German
 el               | Greek
-de               | German 
-nl               | Dutch
+en               | English
 es               | Spanish
+fr               | French
 it               | Italian
+nl               | Dutch
 {: class="table table-bordered"}
 
 ## Payment kinds
 
 Name             | Description
 -----------------|------------
-online           | Payment made Online, outside of BookingSync.
 cash             | Payment made by Cash.
-wiretransfer     | Payment made by Wire Transfer.
 cheque           | Payment made by Cheque.
-paypal           | Payment made with PayPal, outside of BookingSync.
 credits          | Payment made using Credits. Credits are money you might have kept from your guest after a cancellation.
+online           | Payment made Online, outside of BookingSync.
+paypal           | Payment made with PayPal, outside of BookingSync.
 travel-cheque    | Payment made by Travel Cheque.
+wiretransfer     | Payment made by Wire Transfer.
 {: class="table table-bordered"}
 
 
@@ -48,11 +48,11 @@ travel-cheque    | Payment made by Travel Cheque.
 
 Name             | Description
 -----------------|------------
-bedroom          | Bedroom's photo.
 bathroom         | Bathroom's photo.
+bedroom          | Bedroom's photo.
+inside           | Inside's photo.
 kitchen          | Kitchen's photo.
 livingroom       | Livingroom's photo.
-inside           | Inside's photo.
 outside          | Outside's photo.
 surroundings     | Surroundings's photo.
 {: class="table table-bordered"}
@@ -69,13 +69,13 @@ weekly           | The reference rate is weekly based.
 
 Name             | Description
 -----------------|------------
-holiday-home     | Holiday Home
-villa            | Villa
 apartment        | Apartment
-studio           | Studio
-private-room     | Private room
-cottage          | Cottage
-castle           | Castle
-farmhouse        | Farmhouse
 boat             | Boat
+castle           | Castle
+cottage          | Cottage
+farmhouse        | Farmhouse
+holiday-home     | Holiday Home
+private-room     | Private room
+studio           | Studio
+villa            | Villa
 {: class="table table-bordered"}
