@@ -59,6 +59,7 @@
       "sleeps_max": 9,
       "bathrooms_count": 3,
       "surface": 120,
+      "surface_unit": "metric",
       "bookable_online": false,
       "min_price": 420,
       "max_price": 600,
