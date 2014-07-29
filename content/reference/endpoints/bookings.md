@@ -46,6 +46,7 @@ status           | String  |         | List of comma separated statuses. Possibl
 include_canceled | Boolean | false   | Show also canceled bookings (requires `:bookings_read` or `:bookings_write` scope).
 rental_id        | String  |         | List of comma separated IDs. Returns only bookings for this rental(s)
 client_id        | String  |         | List of comma separated IDs. Returns only bookings for this client(s)
+updated_since    | Time    |         | Bookings updated after given date. Format `yyyymmdd` in UTC. Also includes ids of bookings canceled after given date.
 {: class="table table-bordered"}
 
 ## Get a single booking
