@@ -1,7 +1,7 @@
 {
   "payments": [
     {
-      "amount": 1000,
+      "amount": 100000,
       "currency": "GBP",
       "kind": "cash",
       "fullname": "John Doe",

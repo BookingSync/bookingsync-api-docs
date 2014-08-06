@@ -5,6 +5,8 @@
 
 ## List payments
 
+<%= render 'amount_callout' %>
+
 List all payments for given account.
 
 ~~~
@@ -15,6 +17,8 @@ GET /payments
   scopes: %w(payments_read-payments_write) %>
 
 ## Get a single payment
+
+<%= render 'amount_callout' %>
 
 Returns a single payment identified by ID.
 
@@ -37,7 +41,7 @@ POST /payments
 
 Name             | Type     | Description
 -----------------|----------|-----------
-amount           | Integer  | **Required**. Payment's value.
+amount           | Integer  | **Required**. Payment's value in cents.
 booking_id       | Integer  | **Required**. Booking's id related to the payment.
 currency         | String   | **Required**. Payment's currency code, list of codes described in [enums section](/reference/enums/#currencies).
 kind             | String   | **Required**. Payment's kind, list of kinds described in [enums section](/reference/enums/#payment-kinds).
@@ -63,7 +67,7 @@ PUT /payments/:payment_id
 
 Name             | Type     | Description
 -----------------|----------|-----------
-amount           | Integer  | **Required**. Payment's value.
+amount           | Integer  | **Required**. Payment's value in cents.
 currency         | String   | **Required**. Payment's currency code, list of codes described in [enums section](/reference/enums/#currencies).
 kind             | String   | **Required**. Payment's kind, list of kinds described in [enums section](/reference/enums/#payment-kinds).
 fullname         | String   | Payer's fullname.

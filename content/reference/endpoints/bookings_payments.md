@@ -5,6 +5,8 @@
 
 ## List bookings payments
 
+<%= render 'amount_callout' %>
+
 List all bookings payments for given account.
 
 ~~~
@@ -15,6 +17,8 @@ GET /bookings_payments
   scopes: %w(payments_read-payments_write) %>
 
 ## Get a single bookings payment
+
+<%= render 'amount_callout' %>
 
 Returns a single bookings payment identified by ID.
 
