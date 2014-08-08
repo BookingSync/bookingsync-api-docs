@@ -72,7 +72,7 @@
       "lng": 6.6,
       "city": "Nevache",
       "state": null,
-      "country": "France",
+      "country_code": "FR",
       "contact_name": "Betty Reichert",
       "reviews_count": 5,
       "reviews_average_rating": "4.0",
