@@ -1,0 +1,16 @@
+{
+  "links": {
+    "sources.account":"https://test.host/api/v3/accounts/{sources.account}"
+  },
+  "sources": [
+    {
+      "links": {
+        "account": 1
+      },
+      "id": 1,
+      "name": "HomeAway.com",
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT"
+    }
+  ]
+}
