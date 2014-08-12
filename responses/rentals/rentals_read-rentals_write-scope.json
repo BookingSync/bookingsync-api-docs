@@ -55,9 +55,10 @@
       "surface": 120,
       "surface_unit": "metric",
       "bookable_online": false,
-      "min_price": 490,
-      "max_price": 700,
-      "price_kind": "weekly",
+      "min_price": "490.0",
+      "max_price": "700.0",
+      "base_rate": "700.0",
+      "base_rate_kind": "weekly",
       "currency": "EUR",
       "price_public_notes": {
         "en": null
@@ -79,7 +80,8 @@
       "checkout_time": 10,
       "initial_price": null,
       "final_price": null,
-      "position": 1
+      "position": 1,
+      "notes": "Private comments."
     }
   ],
   "meta": {

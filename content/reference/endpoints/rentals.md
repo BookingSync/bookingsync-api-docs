@@ -43,12 +43,13 @@ POST /rentals
 Name                            | Type     | Description
 --------------------------------|----------|------------
 name                            | String   | **Required**. Rental's name.
+notes                           | String   | Rental's private notes.
 headline_LOCALE                 | String   | Rental's headline, list of locales described in [enums section](/reference/enums#locales).
 summary_LOCALE                  | String   | Rental's summary, list of locales described in [enums section](/reference/enums#locales).
 description_LOCALE              | String   | Rental's description, list of locales described in [enums section](/reference/enums#locales).
 rates_table_id                  | Integer  | Rates table id related to the rental.
-rate                            | Integer  | Rental's rate represents the base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate.
-rate_kind                       | String   | Rental's rate type attached to the rental rate. List of types described in [enums section](/reference/enums#rates-types).
+base_rate                       | Integer  | Rental's base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate.
+base_rate_kind                  | String   | Rental's rate type attached to the base rate. List of types described in [enums section](/reference/enums#rates-types).
 currency                        | String   | Rental's currency code, list of codes described in [enums section](/reference/enums#currencies).
 deposit                         | Integer  | Rental's default deposit percentage. If none defined, the default deposit percentage of the account will be used.
 lat                             | Float    | Rental's latitude.
@@ -88,12 +89,13 @@ PUT /rentals/:rental_id
 Name                            | Type     | Description
 --------------------------------|----------|------------
 name                            | String   | **Required**. Rental's name.
+notes                           | String   | Rental's private notes.
 headline_LOCALE                 | String   | Rental's headline, list of locales described in [enums section](/reference/enums#locales).
 summary_LOCALE                  | String   | Rental's summary, list of locales described in [enums section](/reference/enums#locales).
 description_LOCALE              | String   | Rental's description, list of locales described in [enums section](/reference/enums#locales).
 rates_table_id                  | Integer  | Rates table id related to the rental.
-rate                            | Integer  | Rental's rate represents the base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate.
-rate_kind                       | String   | Rental's rate type attached to the rental rate. List of types described in [enums section](/reference/enums#rates-types).
+base_rate                       | Integer  | Rental's base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate.
+base_rate_kind                  | String   | Rental's rate type attached to the base rate. List of types described in [enums section](/reference/enums#rates-types).
 currency                        | String   | Rental's currency code, list of codes described in [enums section](/reference/enums#currencies).
 deposit                         | Integer  | Rental's default deposit percentage. If none defined, the default deposit percentage of the account will be used.
 lat                             | Float    | Rental's latitude.
