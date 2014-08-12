@@ -69,6 +69,7 @@ surface                         | Integer  | Rental's surface area.
 surface_unit                    | String   | Rental's surface area unit, either <i>metric</i> or <i>imperial</i>.
 destination_id                  | Integer  | Destination id related to the rental.
 amenity_ids                     | Array    | Array of amenity ids related to the rental.
+position                        | Integer  | Rental's position on the list.
 {: class="table table-bordered"}
 
 <%= render 'json_response', endpoint: "rentals", request: "request",
@@ -113,6 +114,7 @@ surface                         | Integer  | Rental's surface area.
 surface_unit                    | String   | Rental's surface area unit, either <i>metric</i> or <i>imperial</i>.
 destination_id                  | Integer  | Destination id related to the rental.
 amenity_ids                     | Array    | Array of amenity ids related to the rental.
+position                        | Integer  | Rental's position on the list.
 {: class="table table-bordered"}
 
 <%= render 'json_response', endpoint: "rentals", request: "request",

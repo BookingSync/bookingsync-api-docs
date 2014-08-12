@@ -78,7 +78,8 @@
       "checkin_time": 16,
       "checkout_time": 10,
       "initial_price": null,
-      "final_price": null
+      "final_price": null,
+      "position": 1
     }
   ],
   "meta": {
