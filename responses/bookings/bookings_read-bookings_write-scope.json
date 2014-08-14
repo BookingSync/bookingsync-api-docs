@@ -3,7 +3,8 @@
     "bookings.account": "https://www.bookingsync.com/api/v3/accounts/{bookings.account}",
     "bookings.rental": "https://www.bookingsync.com/api/v3/rentals/{bookings.rental}",
     "bookings.client": "https://www.bookingsync.com/api/v3/clients/{bookings.client}",
-    "bookings.rental_agreement": "https://www.bookingsync.com/api/v3/rental_agreements/{bookings.rental_agreement}"
+    "bookings.rental_agreement": "https://www.bookingsync.com/api/v3/rental_agreements/{bookings.rental_agreement}",
+    "bookings.source": "https://www.bookingsync.com/api/v3/sources/{bookings.source}"
   },
   "bookings": [
     {
@@ -11,7 +12,8 @@
         "account": 1,
         "rental": 16,
         "client": 37,
-        "rental_agreement": null
+        "rental_agreement": null,
+        "source": 1
       },
       "id": 80,
       "start_at": "START_AT",
