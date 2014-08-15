@@ -1,8 +1,8 @@
 {
   "periods": [
     {
-      "start_at": "START_AT",
-      "end_at": "END_AT"
+      "start_date": "START_DATE",
+      "end_date": "END_DATE"
     }
   ]
 }

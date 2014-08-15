@@ -53,7 +53,7 @@
         "en": "First class Villa for 8 people with private pool. Situated in a pleasant residential area."
       },
       "rental_type": "villa",
-      "units": 1,
+      "deposit": 30,
       "bedrooms_count": 4,
       "sleeps": 8,
       "sleeps_max": 9,
@@ -77,6 +77,7 @@
       "contact_name": "Betty Reichert",
       "reviews_count": 5,
       "reviews_average_rating": "4.0",
+      "published_at": "PUBLISHED_AT",
       "created_at": "CREATED_AT",
       "updated_at": "UPDATED_AT",
       "checkin_time": 16,

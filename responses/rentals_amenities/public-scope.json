@@ -1,7 +1,7 @@
 {
   "links": {
-    "rentals_amenities.amenity": "https://bookingsync.dev/api/v3/amenities/{rentals_amenities.amenity}",
-    "rentals_amenities.rental": "https://bookingsync.dev/api/v3/rentals/{rentals_amenities.rental}"
+    "rentals_amenities.amenity": "https://www.bookingsync.com/api/v3/amenities/{rentals_amenities.amenity}",
+    "rentals_amenities.rental": "https://www.bookingsync.com/api/v3/rentals/{rentals_amenities.rental}"
   },
   "rentals_amenities": [
     {

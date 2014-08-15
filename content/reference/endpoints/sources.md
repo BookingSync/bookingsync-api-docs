@@ -3,6 +3,41 @@
 1. TOC
 {:toc}
 
+<ul class="nav nav-pills pull-right" role="tablist">
+  <li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="active"><a href="#bookings_read" role="tab" data-toggle="pill">bookings_read</a></li>
+  <li><a href="#bookings_write" role="tab" data-toggle="pill">bookings_write</a></li>
+</ul>
+
+<div class="tab-content" markdown="1">
+  <div class="tab-pane active" id="bookings_read" markdown="1">
+### Parameters
+
+Name             | Type    | Read/Write | Description
+-----------------|---------|------------|------------
+id               | Integer | Read       | Source's id.
+-----------------|---------|------------|------------
+name             | String  | Read       | Source's name.
+-----------------|---------|------------|------------
+created_at       | [Time](/reference/formats#date--time) | Read       | Source's create time.
+updated_at       | [Time](/reference/formats#date--time) | Read       | Source's update time.
+{: class="table table-bordered"}
+  </div>
+  <div class="tab-pane" id="bookings_write" markdown="1">
+### Parameters
+
+Name             | Type    | Read/Write | Description
+-----------------|---------|------------|------------
+id               | Integer | Read       | Source's id.
+-----------------|---------|------------|------------
+name             | String  | Read/Write | **Required**. Source's name.
+-----------------|---------|------------|------------
+created_at       | [Time](/reference/formats#date--time) | Read       | Source's create time.
+updated_at       | [Time](/reference/formats#date--time) | Read       | Source's update time.
+{: class="table table-bordered"}
+  </div>
+</div>
+
 ## List sources
 
 List all sources for given account.
@@ -11,8 +46,7 @@ List all sources for given account.
 GET /sources
 ~~~
 
-<%= render 'json_response', endpoint: "sources",
-  scopes: %w(bookings_read-bookings_write) %>
+<%= render 'json_response', endpoint: "sources", scopes: %w(bookings_read-bookings_write) %>
 
 ## Get a single source
 
@@ -22,8 +56,7 @@ Returns a single source identified by ID.
 GET /sources/:source_id
 ~~~
 
-<%= render 'json_response', endpoint: "sources",
-  scopes: %w(bookings_read-bookings_write) %>
+<%= render 'json_response', endpoint: "sources", scopes: %w(bookings_read-bookings_write) %>
 
 ## Create a new source
 
@@ -33,15 +66,8 @@ Returns a newly created source.
 POST /sources
 ~~~~
 
-### Parameters
-
-Name             | Type     | Description
------------------|----------|-----------
-name             | String   | **Required**. Source's name.
-{: class="table table-bordered"}
-
 <%= render 'json_response', endpoint: "sources", request: "request",
-  scopes: [{bookings_write: "bookings_read-bookings_write"}] %>
+  scopes: [{ bookings_write: "bookings_read-bookings_write" }] %>
 
 ## Update a source
 
@@ -51,12 +77,5 @@ Returns an updated source identified by ID.
 PUT /sources/:source_id
 ~~~
 
-### Parameters
-
-Name             | Type     | Description
------------------|----------|-----------
-name             | String   | **Required**. Source's name.
-{: class="table table-bordered"}
-
 <%= render 'json_response', endpoint: "sources", request: "request",
-  scopes: [{bookings_write: "bookings_read-bookings_write"}] %>
+  scopes: [{ bookings_write: "bookings_read-bookings_write" }] %>

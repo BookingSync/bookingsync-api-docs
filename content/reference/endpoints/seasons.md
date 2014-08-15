@@ -3,6 +3,49 @@
 1. TOC
 {:toc}
 
+<ul class="nav nav-pills pull-right" role="tablist">
+  <li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="active"><a href="#rates_read" role="tab" data-toggle="pill">rates_read</a></li>
+  <li><a href="#rates_write" role="tab" data-toggle="pill">rates_write</a></li>
+</ul>
+
+<div class="tab-content" markdown="1">
+  <div class="tab-pane active" id="rates_read" markdown="1">
+### Parameters
+
+Name             | Type    | Read/Write | Description
+-----------------|---------|------------|------------
+id               | Integer | Read       | Season's id.
+-----------------|---------|------------|------------
+color_ratio      | [Decimal](/reference/enums#formats) | Read       | Season's color_ratio.
+minimum_stay     | Integer | Read       | Season's minimum stay in days.
+name             | String  | Read       | Season's name.
+ratio            | [Decimal](/reference/enums#formats) | Read       | Season's ratio.
+-----------------|---------|------------|------------
+created_at       | [Time](/reference/formats#date--time) | Read       | Season's create time.
+updated_at       | [Time](/reference/formats#date--time) | Read       | Season's update time.
+{: class="table table-bordered"}
+  </div>
+  <div class="tab-pane" id="rates_write" markdown="1">
+### Parameters
+
+Name             | Type    | Read/Write | Description
+-----------------|---------|------------|------------
+id               | Integer | Read       | Season's id.
+-----------------|---------|------------|------------
+color_ratio      | [Decimal](/reference/enums#formats) | Read       | Season's color_ratio.
+minimum_stay     | Integer | Read/Write | **Required**. Season's minimum stay in days. (greater than 0)
+name             | String  | Read/Write | **Required**. Season's name. (50 max characters)
+ratio            | [Decimal](/reference/enums#formats) | Read/Write | **Required**. Season's ratio. (between 1 and 10)
+-----------------|---------|------------|------------
+created_at       | [Time](/reference/formats#date--time) | Read       | Season's create time.
+updated_at       | [Time](/reference/formats#date--time) | Read       | Season's update time.
+{: class="table table-bordered"}
+  </div>
+</div>
+
+
+
 ## List seasons
 
 List all seasons for given account.
@@ -11,8 +54,7 @@ List all seasons for given account.
 GET /seasons
 ~~~
 
-<%= render 'json_response', endpoint: "seasons",
-  scopes: %w(rates_read-rates_write) %>
+<%= render 'json_response', endpoint: "seasons", scopes: %w(rates_read-rates_write) %>
 
 ## Get a single season
 
@@ -22,8 +64,7 @@ Returns a single season identified by ID.
 GET /seasons/:season_id
 ~~~
 
-<%= render 'json_response', endpoint: "seasons",
-  scopes: %w(rates_read-rates_write) %>
+<%= render 'json_response', endpoint: "seasons", scopes: %w(rates_read-rates_write) %>
 
 ## Create a new season
 
@@ -33,17 +74,8 @@ Creates a season for given rates table.
 POST /rates_tables/:rates_table_id/seasons
 ~~~
 
-### Parameters
-
-Name             | Type    | Description
------------------|---------|-----------
-name             | String  | **Required**. Season's name.
-ratio            | Number  | **Required**. Season's ratio calculated from the rental's reference price. eg: 0.6 means 60% of the rental's reference price.
-minimum_stay     | Integer | **Required**. Season's minimum length of stay, a price won't be calculated for a shorter request.
-{: class="table table-bordered"}
-
 <%= render 'json_response', endpoint: "seasons", request: "request",
-  scopes: [{rates_write: "rates_read-rates_write"}] %>
+  scopes: [{ rates_write: "rates_read-rates_write" }] %>
 
 ## Update a season
 
@@ -53,17 +85,8 @@ Returns an updated season identified by ID.
 PUT /seasons/:season_id
 ~~~
 
-### Parameters
-
-Name             | Type    | Description
------------------|---------|-----------
-name             | String  | Season's name.
-ratio            | Number  | Season's ratio calculated from the rental's reference price. eg: 0.6 means 60% of the rental's reference price.
-minimum_stay     | Integer | Season's minimum length of stay, a price won't be calculated for a shorter request.
-{: class="table table-bordered"}
-
 <%= render 'json_response', endpoint: "seasons", request: "request",
-  scopes: [{rates_write: "rates_read-rates_write"}] %>
+  scopes: [{ rates_write: "rates_read-rates_write" }] %>
 
 ## Destroy a season
 

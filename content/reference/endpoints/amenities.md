@@ -3,6 +3,24 @@
 1. TOC
 {:toc}
 
+<ul class="nav nav-pills pull-right" role="tablist">
+  <li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
+</ul>
+
+<div class="tab-content" markdown="1">
+  <div class="tab-pane active" id="public" markdown="1">
+### Parameters
+
+Name             | Type    | Read/Write | Description
+-----------------|---------|------------|------------
+id               | Integer | Read       | Amenity's id.
+-----------------|---------|------------|------------
+title            | String  | Read       | Amenity's title.
+{: class="table table-bordered"}
+  </div>
+</div>
+
 ## List amenities
 
 List all amenities for given account(s). Amenities can repeat because each
@@ -12,8 +30,7 @@ rental has it's own set of amenities.
 GET /amenities
 ~~~
 
-<%= render 'json_response', endpoint: "amenities",
-  scopes: %w(public) %>
+<%= render 'json_response', endpoint: "amenities", scopes: %w(public) %>
 
 ## Get a single amenity
 
@@ -23,5 +40,4 @@ Returns a single amenity identified by ID.
 GET /amenities/:amenity_id
 ~~~
 
-<%= render 'json_response', endpoint: "amenities",
-  scopes: %w(public) %>
+<%= render 'json_response', endpoint: "amenities", scopes: %w(public) %>

@@ -6,8 +6,11 @@ module JsonResponse
     vars = {
       created_at: Time.now.utc,
       updated_at: Time.now.utc,
+      published_at: Time.now.utc,
       start_at: days_from_now(7),
-      end_at: days_from_now(14)
+      end_at: days_from_now(14),
+      start_date: days_from_now(7).strftime("%F"),
+      end_date: days_from_now(256).strftime("%F")
     }
     vars.each do |key, value|
       value = value.iso8601 if value.is_a?(Time)
