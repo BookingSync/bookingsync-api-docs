@@ -96,6 +96,7 @@ Additionally, the following scopes are available:
 * `rates_write`
 * `rentals_read`
 * `rentals_write`
+* `reviews_write`
 
 ## Authorization Code Flow
 
