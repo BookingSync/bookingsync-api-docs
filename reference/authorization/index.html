@@ -247,8 +247,10 @@ This is recommended for <strong>Client-Side applications</strong>.</p>
 <li>Open a new window at <code>https://www.bookingsync.com/oauth/authorize</code>, with these query string parameters
     <ul>
 <li>client_id</li>
-      <li>scope (<a href="#scopes">details</a>)</li>
       <li>redirect_uri - must be under an apps registered domain</li>
+      <li>response_type - must be <code>token</code>
+</li>
+      <li>scope (<a href="#scopes">details</a>)</li>
       <li>state - optional</li>
     </ul>
 </li>
