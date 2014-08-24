@@ -137,8 +137,9 @@ The implicit OAuth 2.0 flow consists of the following steps:
 
 1. Open a new window at `https://www.bookingsync.com/oauth/authorize`, with these query string parameters
   * client_id
-  * scope ([details](#scopes))
   * redirect_uri - must be under an apps registered domain
+  * response_type - must be `token`
+  * scope ([details](#scopes))
   * state - optional
 2. The user approves your app
 3. The user is redirected to **redirect_uri**, with these parameters in the hash
