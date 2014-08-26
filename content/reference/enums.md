@@ -17,6 +17,15 @@ NZ$              | NZD
 $                | USD
 {: class="table table-bordered"}
 
+## Formats
+
+Name             | Description
+-----------------|------------
+date             | [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601#Dates) compatible `%Y-%m-%d` `2014-08-21`
+decimal          | Decimal value returned as a string. Big.js is recommended for Javascript users.
+time             | [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601#UTC) compatible `%Y-%m-%dT%H:%M:%SZ` `2014-08-21T08:40:44Z`
+{: class="table table-bordered"}
+
 ## Locales
 
 Code             | Name
@@ -63,6 +72,21 @@ Name             | Description
 -----------------|------------
 nightly          | The reference rate is nightly based.
 weekly           | The reference rate is weekly based.
+{: class="table table-bordered"}
+
+## Rates Rules types
+
+Name                           | Description
+-------------------------------|------------
+arrival_only                   | Rule applied on arrival.
+departure_only                 | Rule applied on departure.
+early_booking                  | Rule applied on early booking.
+full_period_only               | Rule applied for full period.
+late_booking                   | Rule applied for late booking.
+prevent_if_booked_ahead_of     | Rule applied if booked ahead.
+stay_at_least                  | Rule applied for minimum stay.
+strict_minimum_price_per_night | Rule applied for minimum price per night.
+weekend_night                  | Rule applied for weekend night.
 {: class="table table-bordered"}
 
 ## Rental types

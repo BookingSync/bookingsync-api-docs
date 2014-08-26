@@ -3,6 +3,122 @@
 1. TOC
 {:toc}
 
+<ul class="nav nav-pills pull-right" role="tablist">
+  <li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
+  <li><a href="#bookings_public_write" role="tab" data-toggle="pill">bookings_public_write</a></li>
+  <li><a href="#bookings_read" role="tab" data-toggle="pill">bookings_read</a></li>
+  <li><a href="#bookings_write" role="tab" data-toggle="pill">bookings_write</a></li>
+</ul>
+
+<div class="tab-content" markdown="1">
+  <div class="tab-pane active" id="public" markdown="1">
+### Parameters
+
+Name                    | Type    | Read/Write | Description
+------------------------|---------|------------|------------
+id                      | Integer | Read       | Booking's id.
+------------------------|---------|------------|------------
+status                  | String  | Read       | Booking's status.
+------------------------|---------|------------|------------
+start_at                | [Time](/reference/formats#date--time) | Read       | Booking's start time.
+end_at                  | [Time](/reference/formats#date--time) | Read       | Booking's end time.
+updated_at              | [Time](/reference/formats#date--time) | Read       | Booking's update time.
+{: class="table table-bordered"}
+  </div>
+  <div class="tab-pane" id="bookings_public_write" markdown="1">
+### Parameters
+
+Name                    | Type    | Read/Write | Description
+------------------------|---------|------------|------------
+id                      | Integer | Read       | Booking's id.
+client_id               | Integer | Write      | **Required**. Client id related to the Booking.
+rental_id               | Integer | Write      | **Required**. Rental id related to the Booking.
+source_id               | Integer | Write      | Source id related to the Booking.
+------------------------|---------|------------|------------
+adults                  | Integer | Write      | Booking's number of adults.
+booked                  | Boolean | Write      | Booking's booked status.
+children                | Integer | Write      | Booking's number of children.
+currency                | String  | Write      | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies).
+deposit                 | [Decimal](/reference/enums#formats) | Write      | Booking's deposit.
+discount                | String  | Write      | Booking's discount. (in percents e.g. 10%)
+final_price             | [Decimal](/reference/enums#formats) | Write      | Booking's final price. (after discount)
+initial_price           | [Decimal](/reference/enums#formats) | Write      | Booking's initial price.
+notes                   | Text    | Write      | Booking's notes. (1000 characters max)
+status                  | String  | Read       | Booking's status.
+unavailable             | Boolean | Write      | Booking's unavailable status.
+------------------------|---------|------------|------------
+tentative_expires_at    | [Time](/reference/formats#date--time) | Write      | Booking's tentative expiry time.
+start_at                | [Time](/reference/formats#date--time) | Read/Write | **Required**. Booking's start time.
+end_at                  | [Time](/reference/formats#date--time) | Read/Write | **Required**. Booking's end time.
+updated_at              | [Time](/reference/formats#date--time) | Read       | Booking's update time.
+{: class="table table-bordered"}
+  </div>
+  <div class="tab-pane" id="bookings_read" markdown="1">
+### Parameters
+
+Name                    | Type    | Read/Write | Description
+------------------------|---------|------------|------------
+id                      | Integer | Read       | Booking's id.
+------------------------|---------|------------|------------
+adults                  | Integer | Read       | Booking's number of adults.
+booked                  | Boolean | Read       | Booking's booked status.
+bookings_payments_count | Integer | Read       | Booking's number of payments.
+children                | Integer | Read       | Booking's number of children.
+currency                | String  | Read       | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies).
+deposit                 | [Decimal](/reference/enums#formats) | Read       | Booking's deposit.
+discount                | String  | Read       | Booking's discount. (in percents e.g. 10%)
+final_price             | [Decimal](/reference/enums#formats) | Read       | Booking's final price. (after discount)
+initial_price           | [Decimal](/reference/enums#formats) | Read       | Booking's initial price.
+locked                  | String  | Read       | Booking's locked status.
+notes                   | Text    | Read       | Booking's notes.
+review_requests_count   | Integer | Read       | Booking's number of review requests.
+status                  | String  | Read       | Booking's status.
+unavailable             | Boolean | Read       | Booking's unavailable status.
+------------------------|---------|------------|------------
+canceled_at             | [Time](/reference/formats#date--time) | Read       | Booking's cancel time.
+tentative_expires_at    | [Time](/reference/formats#date--time) | Read       | Booking's tentative expiry time.
+start_at                | [Time](/reference/formats#date--time) | Read       | Booking's start time.
+end_at                  | [Time](/reference/formats#date--time) | Read       | Booking's end time.
+created_at              | [Time](/reference/formats#date--time) | Read       | Booking's create time.
+updated_at              | [Time](/reference/formats#date--time) | Read       | Booking's update time.
+{: class="table table-bordered"}
+  </div>
+  <div class="tab-pane" id="bookings_write" markdown="1">
+### Parameters
+
+Name                    | Type    | Read/Write | Description
+------------------------|---------|------------|------------
+id                      | Integer | Read       | Booking's id.
+client_id               | Integer | Write      | **Required**. Client id related to the Booking.
+rental_id               | Integer | Write      | **Required**. Rental id related to the Booking.
+source_id               | Integer | Write      | Source id related to the Booking.
+------------------------|---------|------------|------------
+adults                  | Integer | Read/Write | Booking's number of adults.
+booked                  | Boolean | Read/Write | Booking's booked status.
+bookings_payments_count | Integer | Read       | Booking's number of payments.
+children                | Integer | Read/Write | Booking's number of children.
+currency                | String  | Read/Write | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies).
+deposit                 | [Decimal](/reference/enums#formats) | Read/Write | Booking's deposit.
+discount                | String  | Read/Write | Booking's discount. (in percents e.g. 10%)
+final_price             | [Decimal](/reference/enums#formats) | Read/Write | Booking's final price. (after discount)
+initial_price           | [Decimal](/reference/enums#formats) | Read/Write | Booking's initial price.
+locked                  | String  | Read/Write | Booking's locked status.
+notes                   | Text    | Read/Write | Booking's notes. (1000 characters max)
+review_requests_count   | Integer | Read       | Booking's number of review requests.
+status                  | String  | Read       | Booking's status.
+unavailable             | Boolean | Read/Write | Booking's unavailable status.
+------------------------|---------|------------|------------
+canceled_at             | [Time](/reference/formats#date--time) | Read       | Booking's cancel time.
+tentative_expires_at    | [Time](/reference/formats#date--time) | Read/Write | Booking's tentative expiry time.
+start_at                | [Time](/reference/formats#date--time) | Read/Write | **Required**. Booking's start time.
+end_at                  | [Time](/reference/formats#date--time) | Read/Write | **Required**. Booking's end time.
+created_at              | [Time](/reference/formats#date--time) | Read       | Booking's create time.
+updated_at              | [Time](/reference/formats#date--time) | Read       | Booking's update time.
+{: class="table table-bordered"}
+  </div>
+</div>
+
 ## List bookings
 
 Based on the OAuth token scopes bookings listing will be limited to a
@@ -35,7 +151,7 @@ Example:
 GET /bookings?status=booked,unavailable&from=20140324
 ~~~
 
-### Parameters
+### Search Parameters
 
 Name             | Type    | Default | Description
 -----------------|---------|--------------
@@ -59,3 +175,41 @@ GET /bookings/:booking_id
 
 <%= render 'json_response', endpoint: "bookings",
   scopes: %w(public-bookings_public_write bookings_read-bookings_write) %>
+
+## Create a new booking
+
+Creates a booking for given rental.
+
+~~~~
+POST /rentals/:rental_id/bookings
+~~~~
+
+<%= render 'json_response', endpoint: "bookings", request: "request",
+  scopes: [
+    { bookings_public_write: "public-bookings_public_write" },
+    { bookings_write: "bookings_read-bookings_write" }
+  ] %>
+
+## Update a booking
+
+Returns an updated booking identified by ID.
+
+~~~
+PUT /bookings/:booking_id
+~~~
+
+<%= render 'json_response', endpoint: "bookings", request: "request",
+  scopes: [
+    { bookings_public_write: "public-bookings_public_write" },
+    { bookings_write: "bookings_read-bookings_write" }
+  ] %>
+
+## Cancel a booking
+
+Required OAuth scope: `:bookings_write` or `:bookings_public_write`
+
+Returns an empty response with '204 No Content' status code on success.
+
+~~~~~~
+DELETE /bookings/:booking_id
+~~~~~~

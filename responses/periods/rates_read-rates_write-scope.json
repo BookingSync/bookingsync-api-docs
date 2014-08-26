@@ -8,8 +8,8 @@
         "season": 12
       },
       "id": 232,
-      "start_at": "START_AT",
-      "end_at": "END_AT",
+      "start_date": "START_DATE",
+      "end_date": "END_DATE",
       "created_at": "CREATED_AT",
       "updated_at": "UPDATED_AT"
     }

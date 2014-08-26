@@ -4,8 +4,8 @@
       "name":{
         "en":"Special offer for 1"
       },
-      "start_at": "START_AT",
-      "end_at": "END_AT",
+      "start_date": "START_DATE",
+      "end_date": "END_DATE",
       "discount": 10
     }
   ]

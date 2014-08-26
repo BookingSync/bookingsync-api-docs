@@ -1,0 +1,11 @@
+{
+  "inquiries": [
+    {
+      "firstname": "John",
+      "lastname": "Smith",
+      "email": "john@example.com",
+      "start_at": "START_AT",
+      "end_at": "END_AT"
+    }
+  ]
+}
