@@ -69,8 +69,8 @@
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
           <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
           <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
-          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
@@ -93,7 +93,63 @@
 <ol id="markdown-toc">
 <li><a href="#list-destinations">List destinations</a></li>
   <li><a href="#get-a-single-destination">Get a single destination</a></li>
-</ol><h3 id="list-destinations">List destinations</h3>
+</ol><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
+</ul><div class="tab-content">
+  <div class="tab-pane active" id="public">
+    <h4 id="parameters">Parameters</h4>
+
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Destination’s id.</td>
+        </tr></tbody>
+<tbody>
+<tr>
+<td>aliases_LOCALE</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Destination’s aliases, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td>counter</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Destination’s use counter for rentals.</td>
+        </tr>
+<tr>
+<td>fullname_LOCALE</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Destination’s fullname, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td>name_LOCALE</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Destination’s name, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td>permalink_LOCALE</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Destination’s permalink, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<h3 id="list-destinations">List destinations</h3>
 
 <p>List all destinations for given account(s).</p>
 
@@ -104,7 +160,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#a906813ca816public" role="tab" data-toggle="pill">
+      <a href="#1e4adee4af22public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -112,7 +168,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="a906813ca816public">
+    <div class="tab-pane active" id="1e4adee4af22public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"destinations"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -148,7 +204,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#4c711de71e13public" role="tab" data-toggle="pill">
+      <a href="#a872addfbd65public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -156,7 +212,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="4c711de71e13public">
+    <div class="tab-pane active" id="a872addfbd65public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"destinations"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>

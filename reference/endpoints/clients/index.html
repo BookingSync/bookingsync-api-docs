@@ -69,8 +69,8 @@
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
           <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
           <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
-          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
@@ -93,7 +93,229 @@
 <ol id="markdown-toc">
 <li><a href="#list-clients">List clients</a></li>
   <li><a href="#get-a-single-client">Get a single client</a></li>
-</ol><h3 id="list-clients">List clients</h3>
+  <li><a href="#create-a-new-client">Create a new client</a></li>
+  <li><a href="#update-a-client">Update a client</a></li>
+</ol><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="active"><a href="#clients_read" role="tab" data-toggle="pill">clients_read</a></li>
+  <li><a href="#clients_write" role="tab" data-toggle="pill">clients_write</a></li>
+</ul><div class="tab-content">
+  <div class="tab-pane active" id="clients_read">
+    <h4 id="parameters">Parameters</h4>
+
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Client’s id.</td>
+        </tr></tbody>
+<tbody>
+<tr>
+<td>address1</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Client’s first address.</td>
+        </tr>
+<tr>
+<td>address2</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Client’s second address.</td>
+        </tr>
+<tr>
+<td>city</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Client’s city.</td>
+        </tr>
+<tr>
+<td>country_code</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Client’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+        </tr>
+<tr>
+<td>email</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Client’s email.</td>
+        </tr>
+<tr>
+<td>fax</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Client’s fax.</td>
+        </tr>
+<tr>
+<td>fullname</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Client’s fullname.</td>
+        </tr>
+<tr>
+<td>mobile</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Client’s mobile.</td>
+        </tr>
+<tr>
+<td>notes</td>
+          <td>Text</td>
+          <td>Read</td>
+          <td>Client’s notes.</td>
+        </tr>
+<tr>
+<td>phone</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Client’s phone.</td>
+        </tr>
+<tr>
+<td>state</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Client’s state.</td>
+        </tr>
+<tr>
+<td>zip</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Client’s zip.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>created_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Client’s create time.</td>
+        </tr>
+<tr>
+<td>updated_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Client’s update time.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+  <div class="tab-pane" id="clients_write">
+    <h4 id="parameters-1">Parameters</h4>
+
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Client’s id.</td>
+        </tr></tbody>
+<tbody>
+<tr>
+<td>address1</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Client’s first address.</td>
+        </tr>
+<tr>
+<td>address2</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Client’s second address.</td>
+        </tr>
+<tr>
+<td>city</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Client’s city.</td>
+        </tr>
+<tr>
+<td>country_code</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Client’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+        </tr>
+<tr>
+<td>email</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Client’s email.</td>
+        </tr>
+<tr>
+<td>fax</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Client’s fax.</td>
+        </tr>
+<tr>
+<td>fullname</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>
+<strong>Required</strong>. Client’s fullname. (150 characters max)</td>
+        </tr>
+<tr>
+<td>mobile</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Client’s mobile.</td>
+        </tr>
+<tr>
+<td>notes</td>
+          <td>Text</td>
+          <td>Read/Write</td>
+          <td>Client’s notes. (1000 characters max)</td>
+        </tr>
+<tr>
+<td>phone</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Client’s phone.</td>
+        </tr>
+<tr>
+<td>state</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Client’s state.</td>
+        </tr>
+<tr>
+<td>zip</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Client’s zip.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>created_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Client’s create time.</td>
+        </tr>
+<tr>
+<td>updated_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Client’s update time.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<h3 id="list-clients">List clients</h3>
 
 <p>List all clients for given account.</p>
 
@@ -104,7 +326,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#bb150195492eclients_read-clients_write" role="tab" data-toggle="pill">
+      <a href="#dbc949122a1cclients_read-clients_write" role="tab" data-toggle="pill">
         clients_read / clients_write
       </a>
     </li>
@@ -112,7 +334,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="bb150195492eclients_read-clients_write">
+    <div class="tab-pane active" id="dbc949122a1cclients_read-clients_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -127,7 +349,7 @@
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"dwight_schiller@reilly.us"</span><span class="p">,</span>
       <span class="s2">"fax"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Nelson McDermott"</span><span class="p">,</span>
@@ -135,7 +357,7 @@
       <span class="s2">"notes"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1-060-021-4277 73823"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Montana"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -155,7 +377,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#c1adc24bf311clients_read-clients_write" role="tab" data-toggle="pill">
+      <a href="#2ad05b57864eclients_read-clients_write" role="tab" data-toggle="pill">
         clients_read / clients_write
       </a>
     </li>
@@ -163,7 +385,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="c1adc24bf311clients_read-clients_write">
+    <div class="tab-pane active" id="2ad05b57864eclients_read-clients_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -178,7 +400,7 @@
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"dwight_schiller@reilly.us"</span><span class="p">,</span>
       <span class="s2">"fax"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Nelson McDermott"</span><span class="p">,</span>
@@ -186,7 +408,141 @@
       <span class="s2">"notes"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1-060-021-4277 73823"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Montana"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+    </div>
+  
+</div>
+
+<h3 id="create-a-new-client">Create a new client</h3>
+
+<p>Returns a newly created client.</p>
+
+<pre><code>POST /clients
+</code></pre>
+
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#721d28647d8fclients_write" role="tab" data-toggle="pill">
+        clients_write
+      </a>
+    </li>
+  
+</ul><h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Bernhard Creek"</span><span class="p">,</span>
+      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
+      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"dwight_schiller@reilly.us"</span><span class="p">,</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Nelson McDermott"</span><span class="p">,</span>
+      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1-060-021-4277 73823"</span><span class="p">,</span>
+      <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Montana"</span><span class="p">,</span>
+      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-2">Response</h4>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="721d28647d8fclients_write">
+      <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
+  <span class="p">},</span>
+  <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">42</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">19</span><span class="p">,</span>
+      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Bernhard Creek"</span><span class="p">,</span>
+      <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
+      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"dwight_schiller@reilly.us"</span><span class="p">,</span>
+      <span class="s2">"fax"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Nelson McDermott"</span><span class="p">,</span>
+      <span class="s2">"mobile"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1-060-021-4277 73823"</span><span class="p">,</span>
+      <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Montana"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+    </div>
+  
+</div>
+
+<h3 id="update-a-client">Update a client</h3>
+
+<p>Returns an updated client identified by ID.</p>
+
+<pre><code>PUT /clients/:client_id
+</code></pre>
+
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#017174107153clients_write" role="tab" data-toggle="pill">
+        clients_write
+      </a>
+    </li>
+  
+</ul><h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Bernhard Creek"</span><span class="p">,</span>
+      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
+      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"dwight_schiller@reilly.us"</span><span class="p">,</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Nelson McDermott"</span><span class="p">,</span>
+      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1-060-021-4277 73823"</span><span class="p">,</span>
+      <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Montana"</span><span class="p">,</span>
+      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-3">Response</h4>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="017174107153clients_write">
+      <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
+  <span class="p">},</span>
+  <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">42</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">19</span><span class="p">,</span>
+      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Bernhard Creek"</span><span class="p">,</span>
+      <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
+      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"dwight_schiller@reilly.us"</span><span class="p">,</span>
+      <span class="s2">"fax"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Nelson McDermott"</span><span class="p">,</span>
+      <span class="s2">"mobile"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1-060-021-4277 73823"</span><span class="p">,</span>
+      <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Montana"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span>
     <span class="p">}</span>
   <span class="p">]</span>

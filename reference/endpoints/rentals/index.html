@@ -69,8 +69,8 @@
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
           <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
           <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
-          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item active" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
@@ -96,7 +96,786 @@
   <li><a href="#create-a-new-rental">Create a new rental</a></li>
   <li><a href="#update-a-rental">Update a rental</a></li>
   <li><a href="#destroy-a-rental">Destroy a rental</a></li>
-</ol><h3 id="list-rentals">List rentals</h3>
+</ol><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
+  <li><a href="#rentals_read" role="tab" data-toggle="pill">rentals_read</a></li>
+  <li><a href="#rentals_write" role="tab" data-toggle="pill">rentals_write</a></li>
+</ul><div class="tab-content">
+  <div class="tab-pane active" id="public">
+    <h4 id="parameters">Parameters</h4>
+
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s id.</td>
+        </tr></tbody>
+<tbody>
+<tr>
+<td>base_rate</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Rental’s base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate.</td>
+        </tr>
+<tr>
+<td>base_rate_kind</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s rate type attached to the base rate. List of types described in <a href="/reference/enums#rates-types">enums section</a>.</td>
+        </tr>
+<tr>
+<td>bathrooms_count</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s bathrooms count.</td>
+        </tr>
+<tr>
+<td>bedrooms_count</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s bedrooms count.</td>
+        </tr>
+<tr>
+<td>bookable_online</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Rental’s online booking status.</td>
+        </tr>
+<tr>
+<td>checkin_time</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s checkin time.</td>
+        </tr>
+<tr>
+<td>checkout_time</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s checkout time.</td>
+        </tr>
+<tr>
+<td>city</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s city.</td>
+        </tr>
+<tr>
+<td>contact_name</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s contact name.</td>
+        </tr>
+<tr>
+<td>country_code</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+        </tr>
+<tr>
+<td>currency</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s currency code, list of codes described in <a href="/reference/enums#currencies">enums section</a>.</td>
+        </tr>
+<tr>
+<td>deposit</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s default deposit percentage. If none defined, the default deposit percentage of the account will be used.</td>
+        </tr>
+<tr>
+<td>description_LOCALE</td>
+          <td>Text</td>
+          <td>Read</td>
+          <td>Rental’s description, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td>final_price</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s final price. (after discount)</td>
+        </tr>
+<tr>
+<td>headline_LOCALE</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s headline, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td>initial_price</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s initial price.</td>
+        </tr>
+<tr>
+<td>lat</td>
+          <td>Float</td>
+          <td>Read</td>
+          <td>Rental’s latitude.</td>
+        </tr>
+<tr>
+<td>lng</td>
+          <td>Float</td>
+          <td>Read</td>
+          <td>Rental’s longitude.</td>
+        </tr>
+<tr>
+<td>max_price</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Rental’s maximum price.</td>
+        </tr>
+<tr>
+<td>min_price</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Rental’s minimum price.</td>
+        </tr>
+<tr>
+<td>name</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s name.</td>
+        </tr>
+<tr>
+<td>position</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s position on the list.</td>
+        </tr>
+<tr>
+<td>price_public_notes</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s price notes for public.</td>
+        </tr>
+<tr>
+<td>rental_type</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s type (example: villa, apartment), all types described in <a href="/reference/enums#rental-types">enums section</a>.</td>
+        </tr>
+<tr>
+<td>reviews_average_rating</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Rental’s overall rating from reviews.</td>
+        </tr>
+<tr>
+<td>reviews_count</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s count of all reviews.</td>
+        </tr>
+<tr>
+<td>sleeps</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s number of comfortable sleeps.</td>
+        </tr>
+<tr>
+<td>sleeps_max</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s maximum number of sleeps.</td>
+        </tr>
+<tr>
+<td>state</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s state.</td>
+        </tr>
+<tr>
+<td>summary_LOCALE</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s summary, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td>surface</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s surface area.</td>
+        </tr>
+<tr>
+<td>surface_unit</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s surface area unit, either <i>metric</i> or <i>imperial</i>.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>published_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Rental’s publish time.</td>
+        </tr>
+<tr>
+<td>created_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Rental’s create time.</td>
+        </tr>
+<tr>
+<td>updated_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Rental’s update time.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+  <div class="tab-pane" id="rentals_read">
+    <h4 id="parameters-1">Parameters</h4>
+
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s id.</td>
+        </tr></tbody>
+<tbody>
+<tr>
+<td>address1</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s primary address.</td>
+        </tr>
+<tr>
+<td>address2</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s optional address.</td>
+        </tr>
+<tr>
+<td>base_rate</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Rental’s base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate.</td>
+        </tr>
+<tr>
+<td>base_rate_kind</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s rate type attached to the base rate. List of types described in <a href="/reference/enums#rates-types">enums section</a>.</td>
+        </tr>
+<tr>
+<td>bathrooms_count</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s bathrooms count.</td>
+        </tr>
+<tr>
+<td>bedrooms_count</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s bedrooms count.</td>
+        </tr>
+<tr>
+<td>bookable_online</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Rental’s online booking status.</td>
+        </tr>
+<tr>
+<td>checkin_time</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s checkin time.</td>
+        </tr>
+<tr>
+<td>checkout_time</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s checkout time.</td>
+        </tr>
+<tr>
+<td>city</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s city.</td>
+        </tr>
+<tr>
+<td>contact_name</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s contact name.</td>
+        </tr>
+<tr>
+<td>country_code</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+        </tr>
+<tr>
+<td>currency</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s currency code, list of codes described in <a href="/reference/enums#currencies">enums section</a>.</td>
+        </tr>
+<tr>
+<td>deposit</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s default deposit percentage. If none defined, the default deposit percentage of the account will be used.</td>
+        </tr>
+<tr>
+<td>description_LOCALE</td>
+          <td>Text</td>
+          <td>Read</td>
+          <td>Rental’s description, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td>final_price</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s final price.</td>
+        </tr>
+<tr>
+<td>headline_LOCALE</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s headline, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td>initial_price</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s initial price.</td>
+        </tr>
+<tr>
+<td>lat</td>
+          <td>Float</td>
+          <td>Read</td>
+          <td>Rental’s latitude.</td>
+        </tr>
+<tr>
+<td>lng</td>
+          <td>Float</td>
+          <td>Read</td>
+          <td>Rental’s longitude.</td>
+        </tr>
+<tr>
+<td>max_price</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Rental’s maximum price.</td>
+        </tr>
+<tr>
+<td>min_price</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Rental’s minimum price.</td>
+        </tr>
+<tr>
+<td>name</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s name.</td>
+        </tr>
+<tr>
+<td>notes</td>
+          <td>Text</td>
+          <td>Read</td>
+          <td>Rental’s private notes.</td>
+        </tr>
+<tr>
+<td>position</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s position on the list.</td>
+        </tr>
+<tr>
+<td>price_public_notes</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s price notes for public.</td>
+        </tr>
+<tr>
+<td>rental_type</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s type (example: villa, apartment), all types described in <a href="/reference/enums#rental-types">enums section</a>.</td>
+        </tr>
+<tr>
+<td>reviews_average_rating</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Rental’s overall rating from reviews.</td>
+        </tr>
+<tr>
+<td>reviews_count</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s count of all reviews.</td>
+        </tr>
+<tr>
+<td>sleeps</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s number of comfortable sleeps.</td>
+        </tr>
+<tr>
+<td>sleeps_max</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s maximum number of sleeps.</td>
+        </tr>
+<tr>
+<td>state</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s state.</td>
+        </tr>
+<tr>
+<td>summary_LOCALE</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s summary, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td>surface</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s surface area.</td>
+        </tr>
+<tr>
+<td>surface_unit</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s surface area unit, either <i>metric</i> or <i>imperial</i>.</td>
+        </tr>
+<tr>
+<td>zip</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s zip code.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>published_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Rental’s publish time.</td>
+        </tr>
+<tr>
+<td>created_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Rental’s create time.</td>
+        </tr>
+<tr>
+<td>updated_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Rental’s update time.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+  <div class="tab-pane" id="rentals_write">
+    <h4 id="parameters-2">Parameters</h4>
+
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody>
+<tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s id.</td>
+        </tr>
+<tr>
+<td>amenity_ids</td>
+          <td>Array</td>
+          <td>Write</td>
+          <td>Amenity ids related to the rental.</td>
+        </tr>
+<tr>
+<td>destination_id</td>
+          <td>Integer</td>
+          <td>Write</td>
+          <td>Destination id related to the rental.</td>
+        </tr>
+<tr>
+<td>rates_table_id</td>
+          <td>Integer</td>
+          <td>Write</td>
+          <td>Rates Table id related to the rental.</td>
+        </tr>
+<tr>
+<td>rentals_contact_id</td>
+          <td>Integer</td>
+          <td>Write</td>
+          <td>Contact id related to the rental.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>address1</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Rental’s primary address.</td>
+        </tr>
+<tr>
+<td>address2</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Rental’s optional address.</td>
+        </tr>
+<tr>
+<td>base_rate</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read/Write</td>
+          <td>Rental’s base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate. (greater than 0)</td>
+        </tr>
+<tr>
+<td>base_rate_kind</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Rental’s rate type attached to the base rate. List of types described in <a href="/reference/enums#rates-types">enums section</a>.</td>
+        </tr>
+<tr>
+<td>bathrooms_count</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>Rental’s bathrooms count. (between 0 and 100)</td>
+        </tr>
+<tr>
+<td>bedrooms_count</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>Rental’s bedrooms count. (between 0 and 100)</td>
+        </tr>
+<tr>
+<td>bookable_online</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Rental’s online booking status.</td>
+        </tr>
+<tr>
+<td>checkin_time</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s checkin time.</td>
+        </tr>
+<tr>
+<td>checkout_time</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s checkout time.</td>
+        </tr>
+<tr>
+<td>city</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Rental’s city.</td>
+        </tr>
+<tr>
+<td>contact_name</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s contact name.</td>
+        </tr>
+<tr>
+<td>country_code</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Rental’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+        </tr>
+<tr>
+<td>currency</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Rental’s currency code, list of codes described in <a href="/reference/enums#currencies">enums section</a>.</td>
+        </tr>
+<tr>
+<td>deposit</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>Rental’s default deposit percentage. If none defined, the default deposit percentage of the account will be used. (between 0 and 100)</td>
+        </tr>
+<tr>
+<td>description_LOCALE</td>
+          <td>Text</td>
+          <td>Read/Write</td>
+          <td>Rental’s description, list of locales described in <a href="/reference/enums#locales">enums section</a>. (5000 characters max)</td>
+        </tr>
+<tr>
+<td>final_price</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s final price. (after discount)</td>
+        </tr>
+<tr>
+<td>headline_LOCALE</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Rental’s headline, list of locales described in <a href="/reference/enums#locales">enums section</a>. (75 characters max)</td>
+        </tr>
+<tr>
+<td>initial_price</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s initial price.</td>
+        </tr>
+<tr>
+<td>lat</td>
+          <td>Float</td>
+          <td>Read/Write</td>
+          <td>Rental’s latitude. (between -90 and 90)</td>
+        </tr>
+<tr>
+<td>lng</td>
+          <td>Float</td>
+          <td>Read/Write</td>
+          <td>Rental’s longitude. (between -180 and 180)</td>
+        </tr>
+<tr>
+<td>max_price</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Rental’s maximum price.</td>
+        </tr>
+<tr>
+<td>min_price</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Rental’s minimum price.</td>
+        </tr>
+<tr>
+<td>name</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>
+<strong>Required</strong>. Rental’s name. (3 min, 40 max characters)</td>
+        </tr>
+<tr>
+<td>notes</td>
+          <td>Text</td>
+          <td>Read/Write</td>
+          <td>Rental’s private notes. (1000 characters max)</td>
+        </tr>
+<tr>
+<td>position</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>Rental’s position on the list.</td>
+        </tr>
+<tr>
+<td>price_public_notes</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s price notes for public.</td>
+        </tr>
+<tr>
+<td>rental_type</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Rental’s type (example: villa, apartment), all types described in <a href="/reference/enums#rental-types">enums section</a>.</td>
+        </tr>
+<tr>
+<td>reviews_average_rating</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Rental’s overall rating from reviews.</td>
+        </tr>
+<tr>
+<td>reviews_count</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s count of all reviews.</td>
+        </tr>
+<tr>
+<td>sleeps</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>Rental’s number of comfortable sleeps. (between 0 and 100)</td>
+        </tr>
+<tr>
+<td>sleeps_max</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>Rental’s maximum number of sleeps. (between 0 and 100)</td>
+        </tr>
+<tr>
+<td>state</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Rental’s state.</td>
+        </tr>
+<tr>
+<td>summary_LOCALE</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Rental’s summary, list of locales described in <a href="/reference/enums#locales">enums section</a>. (150 characters max)</td>
+        </tr>
+<tr>
+<td>surface</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>Rental’s surface area. (greater than 0)</td>
+        </tr>
+<tr>
+<td>surface_unit</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Rental’s surface area unit, either <i>metric</i> or <i>imperial</i>.</td>
+        </tr>
+<tr>
+<td>zip</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Rental’s zip code.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>published_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Rental’s publish time.</td>
+        </tr>
+<tr>
+<td>created_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Rental’s create time.</td>
+        </tr>
+<tr>
+<td>updated_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Rental’s update time.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<h3 id="list-rentals">List rentals</h3>
 
 <p>List all rentals for given account(s).</p>
 
@@ -107,13 +886,13 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#61c4b476d86cpublic" role="tab" data-toggle="pill">
+      <a href="#16c67aa6dee2public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
   
     <li>
-      <a href="#531c16cfaec0rentals_read-rentals_write" role="tab" data-toggle="pill">
+      <a href="#7e51e60173a0rentals_read-rentals_write" role="tab" data-toggle="pill">
         rentals_read / rentals_write
       </a>
     </li>
@@ -121,7 +900,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="61c4b476d86cpublic">
+    <div class="tab-pane active" id="16c67aa6dee2public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -177,7 +956,7 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 8 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
       <span class="s2">"rental_type"</span><span class="o">:</span> <span class="s2">"villa"</span><span class="p">,</span>
-      <span class="s2">"units"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"deposit"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
       <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
       <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
       <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
@@ -201,8 +980,9 @@
       <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
       <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="s2">"4.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
       <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
       <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
       <span class="s2">"initial_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
@@ -215,7 +995,7 @@
 <span class="p">}</span></code></pre>
     </div>
   
-    <div class="tab-pane " id="531c16cfaec0rentals_read-rentals_write">
+    <div class="tab-pane " id="7e51e60173a0rentals_read-rentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -265,7 +1045,7 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 9 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
       <span class="s2">"rental_type"</span><span class="o">:</span> <span class="s2">"villa"</span><span class="p">,</span>
-      <span class="s2">"units"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"deposit"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
       <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
       <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
@@ -289,8 +1069,9 @@
       <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
       <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="s2">"4.5"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
       <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"58 Ville Haute"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
@@ -320,13 +1101,13 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#bf869bd3cabcpublic" role="tab" data-toggle="pill">
+      <a href="#ac6099e56ebfpublic" role="tab" data-toggle="pill">
         public
       </a>
     </li>
   
     <li>
-      <a href="#edab0cfe4e3drentals_read-rentals_write" role="tab" data-toggle="pill">
+      <a href="#246d185d0ac6rentals_read-rentals_write" role="tab" data-toggle="pill">
         rentals_read / rentals_write
       </a>
     </li>
@@ -334,7 +1115,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="bf869bd3cabcpublic">
+    <div class="tab-pane active" id="ac6099e56ebfpublic">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -390,7 +1171,7 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 8 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
       <span class="s2">"rental_type"</span><span class="o">:</span> <span class="s2">"villa"</span><span class="p">,</span>
-      <span class="s2">"units"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"deposit"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
       <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
       <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
       <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
@@ -414,8 +1195,9 @@
       <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
       <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="s2">"4.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
       <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
       <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
       <span class="s2">"initial_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
@@ -428,7 +1210,7 @@
 <span class="p">}</span></code></pre>
     </div>
   
-    <div class="tab-pane " id="edab0cfe4e3drentals_read-rentals_write">
+    <div class="tab-pane " id="246d185d0ac6rentals_read-rentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -478,7 +1260,7 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 9 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
       <span class="s2">"rental_type"</span><span class="o">:</span> <span class="s2">"villa"</span><span class="p">,</span>
-      <span class="s2">"units"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"deposit"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
       <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
       <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
@@ -502,8 +1284,9 @@
       <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
       <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="s2">"4.5"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
       <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"58 Ville Haute"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
@@ -534,167 +1317,11 @@
 <pre><code>POST /rentals
 </code></pre>
 
-<h4 id="parameters">Parameters</h4>
-
-<table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>name</td>
-      <td>String</td>
-      <td>
-<strong>Required</strong>. Rental’s name.</td>
-    </tr>
-<tr>
-<td>notes</td>
-      <td>String</td>
-      <td>Rental’s private notes.</td>
-    </tr>
-<tr>
-<td>headline_LOCALE</td>
-      <td>String</td>
-      <td>Rental’s headline, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
-    </tr>
-<tr>
-<td>summary_LOCALE</td>
-      <td>String</td>
-      <td>Rental’s summary, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
-    </tr>
-<tr>
-<td>description_LOCALE</td>
-      <td>String</td>
-      <td>Rental’s description, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
-    </tr>
-<tr>
-<td>rates_table_id</td>
-      <td>Integer</td>
-      <td>Rates table id related to the rental.</td>
-    </tr>
-<tr>
-<td>base_rate</td>
-      <td>Integer</td>
-      <td>Rental’s base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate.</td>
-    </tr>
-<tr>
-<td>base_rate_kind</td>
-      <td>String</td>
-      <td>Rental’s rate type attached to the base rate. List of types described in <a href="/reference/enums#rates-types">enums section</a>.</td>
-    </tr>
-<tr>
-<td>currency</td>
-      <td>String</td>
-      <td>Rental’s currency code, list of codes described in <a href="/reference/enums#currencies">enums section</a>.</td>
-    </tr>
-<tr>
-<td>deposit</td>
-      <td>Integer</td>
-      <td>Rental’s default deposit percentage. If none defined, the default deposit percentage of the account will be used.</td>
-    </tr>
-<tr>
-<td>lat</td>
-      <td>Float</td>
-      <td>Rental’s latitude.</td>
-    </tr>
-<tr>
-<td>lng</td>
-      <td>Float</td>
-      <td>Rental’s longitude.</td>
-    </tr>
-<tr>
-<td>address1</td>
-      <td>String</td>
-      <td>Rental’s primary address.</td>
-    </tr>
-<tr>
-<td>address2</td>
-      <td>String</td>
-      <td>Rental’s optional address.</td>
-    </tr>
-<tr>
-<td>state</td>
-      <td>String</td>
-      <td>Rental’s state.</td>
-    </tr>
-<tr>
-<td>zip</td>
-      <td>String</td>
-      <td>Rental’s zip code.</td>
-    </tr>
-<tr>
-<td>city</td>
-      <td>String</td>
-      <td>Rental’s city.</td>
-    </tr>
-<tr>
-<td>country_code</td>
-      <td>String</td>
-      <td>Rental’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
-    </tr>
-<tr>
-<td>rentals_contact_id</td>
-      <td>Integer</td>
-      <td>Contact id related to the rental.</td>
-    </tr>
-<tr>
-<td>rental_type</td>
-      <td>String</td>
-      <td>Rental’s type (example: villa, apartment), all types described in <a href="/reference/enums#rental-types">enums section</a>.</td>
-    </tr>
-<tr>
-<td>bedrooms_count</td>
-      <td>Integer</td>
-      <td>Rental’s bedrooms count.</td>
-    </tr>
-<tr>
-<td>sleeps</td>
-      <td>Integer</td>
-      <td>Rental’s number of comfortable sleeps.</td>
-    </tr>
-<tr>
-<td>sleeps_max</td>
-      <td>Integer</td>
-      <td>Rental’s maximum number of sleeps.</td>
-    </tr>
-<tr>
-<td>bathrooms_count</td>
-      <td>Integer</td>
-      <td>Rental’s bathrooms count.</td>
-    </tr>
-<tr>
-<td>surface</td>
-      <td>Integer</td>
-      <td>Rental’s surface area.</td>
-    </tr>
-<tr>
-<td>surface_unit</td>
-      <td>String</td>
-      <td>Rental’s surface area unit, either <i>metric</i> or <i>imperial</i>.</td>
-    </tr>
-<tr>
-<td>destination_id</td>
-      <td>Integer</td>
-      <td>Destination id related to the rental.</td>
-    </tr>
-<tr>
-<td>amenity_ids</td>
-      <td>Array</td>
-      <td>Array of amenity ids related to the rental.</td>
-    </tr>
-<tr>
-<td>position</td>
-      <td>Integer</td>
-      <td>Rental’s position on the list.</td>
-    </tr>
-</tbody>
-</table><ul class="nav nav-pills pull-right" role="tablist">
+<ul class="nav nav-pills pull-right" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#e9ab3d45ad71rentals_write" role="tab" data-toggle="pill">
+      <a href="#226b29481f06rentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
@@ -703,19 +1330,17 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 1"</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 2"</span><span class="p">,</span>
       <span class="s2">"headline_en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span><span class="p">,</span>
       <span class="s2">"lat"</span><span class="o">:</span> <span class="mf">45.02</span><span class="p">,</span>
       <span class="s2">"lng"</span><span class="o">:</span> <span class="mf">6.6</span><span class="p">,</span>
-      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
-      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
       <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span><span class="p">,</span>
       <span class="s2">"amenity_ids"</span><span class="o">:</span> <span class="p">[</span>
-        <span class="mi">1</span><span class="p">,</span>
-        <span class="mi">2</span><span class="p">,</span>
-        <span class="mi">3</span>
+        <span class="mi">4</span>
       <span class="p">]</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -724,7 +1349,7 @@
 <h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="e9ab3d45ad71rentals_write">
+    <div class="tab-pane active" id="226b29481f06rentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -774,7 +1399,7 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 9 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
       <span class="s2">"rental_type"</span><span class="o">:</span> <span class="s2">"villa"</span><span class="p">,</span>
-      <span class="s2">"units"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"deposit"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
       <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
       <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
@@ -798,8 +1423,9 @@
       <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
       <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="s2">"4.5"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
       <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"58 Ville Haute"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
@@ -825,167 +1451,11 @@
 <pre><code>PUT /rentals/:rental_id
 </code></pre>
 
-<h4 id="parameters-1">Parameters</h4>
-
-<table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>name</td>
-      <td>String</td>
-      <td>
-<strong>Required</strong>. Rental’s name.</td>
-    </tr>
-<tr>
-<td>notes</td>
-      <td>String</td>
-      <td>Rental’s private notes.</td>
-    </tr>
-<tr>
-<td>headline_LOCALE</td>
-      <td>String</td>
-      <td>Rental’s headline, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
-    </tr>
-<tr>
-<td>summary_LOCALE</td>
-      <td>String</td>
-      <td>Rental’s summary, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
-    </tr>
-<tr>
-<td>description_LOCALE</td>
-      <td>String</td>
-      <td>Rental’s description, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
-    </tr>
-<tr>
-<td>rates_table_id</td>
-      <td>Integer</td>
-      <td>Rates table id related to the rental.</td>
-    </tr>
-<tr>
-<td>base_rate</td>
-      <td>Integer</td>
-      <td>Rental’s base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate.</td>
-    </tr>
-<tr>
-<td>base_rate_kind</td>
-      <td>String</td>
-      <td>Rental’s rate type attached to the base rate. List of types described in <a href="/reference/enums#rates-types">enums section</a>.</td>
-    </tr>
-<tr>
-<td>currency</td>
-      <td>String</td>
-      <td>Rental’s currency code, list of codes described in <a href="/reference/enums#currencies">enums section</a>.</td>
-    </tr>
-<tr>
-<td>deposit</td>
-      <td>Integer</td>
-      <td>Rental’s default deposit percentage. If none defined, the default deposit percentage of the account will be used.</td>
-    </tr>
-<tr>
-<td>lat</td>
-      <td>Float</td>
-      <td>Rental’s latitude.</td>
-    </tr>
-<tr>
-<td>lng</td>
-      <td>Float</td>
-      <td>Rental’s longitude.</td>
-    </tr>
-<tr>
-<td>address1</td>
-      <td>String</td>
-      <td>Rental’s primary address.</td>
-    </tr>
-<tr>
-<td>address2</td>
-      <td>String</td>
-      <td>Rental’s optional address.</td>
-    </tr>
-<tr>
-<td>state</td>
-      <td>String</td>
-      <td>Rental’s state.</td>
-    </tr>
-<tr>
-<td>zip</td>
-      <td>String</td>
-      <td>Rental’s zip code.</td>
-    </tr>
-<tr>
-<td>city</td>
-      <td>String</td>
-      <td>Rental’s city.</td>
-    </tr>
-<tr>
-<td>country_code</td>
-      <td>String</td>
-      <td>Rental’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
-    </tr>
-<tr>
-<td>rentals_contact_id</td>
-      <td>Integer</td>
-      <td>Contact id related to the rental.</td>
-    </tr>
-<tr>
-<td>rental_type</td>
-      <td>String</td>
-      <td>Rental’s type (example: villa, apartment), all types described in <a href="/reference/enums#rental-types">enums section</a>.</td>
-    </tr>
-<tr>
-<td>bedrooms_count</td>
-      <td>Integer</td>
-      <td>Rental’s bedrooms count.</td>
-    </tr>
-<tr>
-<td>sleeps</td>
-      <td>Integer</td>
-      <td>Rental’s number of comfortable sleeps.</td>
-    </tr>
-<tr>
-<td>sleeps_max</td>
-      <td>Integer</td>
-      <td>Rental’s maximum number of sleeps.</td>
-    </tr>
-<tr>
-<td>bathrooms_count</td>
-      <td>Integer</td>
-      <td>Rental’s bathrooms count.</td>
-    </tr>
-<tr>
-<td>surface</td>
-      <td>Integer</td>
-      <td>Rental’s surface area.</td>
-    </tr>
-<tr>
-<td>surface_unit</td>
-      <td>String</td>
-      <td>Rental’s surface area unit, either <i>metric</i> or <i>imperial</i>.</td>
-    </tr>
-<tr>
-<td>destination_id</td>
-      <td>Integer</td>
-      <td>Destination id related to the rental.</td>
-    </tr>
-<tr>
-<td>amenity_ids</td>
-      <td>Array</td>
-      <td>Array of amenity ids related to the rental.</td>
-    </tr>
-<tr>
-<td>position</td>
-      <td>Integer</td>
-      <td>Rental’s position on the list.</td>
-    </tr>
-</tbody>
-</table><ul class="nav nav-pills pull-right" role="tablist">
+<ul class="nav nav-pills pull-right" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#426202810356rentals_write" role="tab" data-toggle="pill">
+      <a href="#272be7c4442brentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
@@ -994,19 +1464,17 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 1"</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 2"</span><span class="p">,</span>
       <span class="s2">"headline_en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span><span class="p">,</span>
       <span class="s2">"lat"</span><span class="o">:</span> <span class="mf">45.02</span><span class="p">,</span>
       <span class="s2">"lng"</span><span class="o">:</span> <span class="mf">6.6</span><span class="p">,</span>
-      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
-      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
+      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
       <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span><span class="p">,</span>
       <span class="s2">"amenity_ids"</span><span class="o">:</span> <span class="p">[</span>
-        <span class="mi">1</span><span class="p">,</span>
-        <span class="mi">2</span><span class="p">,</span>
-        <span class="mi">3</span>
+        <span class="mi">4</span>
       <span class="p">]</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -1015,7 +1483,7 @@
 <h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="426202810356rentals_write">
+    <div class="tab-pane active" id="272be7c4442brentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -1065,7 +1533,7 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 9 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
       <span class="s2">"rental_type"</span><span class="o">:</span> <span class="s2">"villa"</span><span class="p">,</span>
-      <span class="s2">"units"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"deposit"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
       <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
       <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
@@ -1089,8 +1557,9 @@
       <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
       <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="s2">"4.5"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
       <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"58 Ville Haute"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>

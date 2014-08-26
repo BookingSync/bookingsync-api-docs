@@ -69,8 +69,8 @@
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
           <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
           <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
-          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
@@ -92,10 +92,12 @@
 
 <ol id="markdown-toc">
 <li><a href="#currencies">Currencies</a></li>
+  <li><a href="#formats">Formats</a></li>
   <li><a href="#locales">Locales</a></li>
   <li><a href="#payment-kinds">Payment kinds</a></li>
   <li><a href="#photo-kinds">Photo kinds</a></li>
   <li><a href="#rates-types">Rates types</a></li>
+  <li><a href="#rates-rules-types">Rates Rules types</a></li>
   <li><a href="#rental-types">Rental types</a></li>
 </ol><h3 id="currencies">Currencies</h3>
 
@@ -136,6 +138,31 @@
 <tr>
 <td>$</td>
       <td>USD</td>
+    </tr>
+</tbody>
+</table><h3 id="formats">Formats</h3>
+
+<table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>date</td>
+      <td>
+<a href="http://en.wikipedia.org/wiki/ISO_8601#Dates">ISO 8601</a> compatible <code>%Y-%m-%d</code> <code>2014-08-21</code>
+</td>
+    </tr>
+<tr>
+<td>decimal</td>
+      <td>Decimal value returned as a string. Big.js is recommended for Javascript users.</td>
+    </tr>
+<tr>
+<td>time</td>
+      <td>
+<a href="http://en.wikipedia.org/wiki/ISO_8601#UTC">ISO 8601</a> compatible <code>%Y-%m-%dT%H:%M:%SZ</code> <code>2014-08-21T08:40:44Z</code>
+</td>
     </tr>
 </tbody>
 </table><h3 id="locales">Locales</h3>
@@ -264,6 +291,51 @@
 <tr>
 <td>weekly</td>
       <td>The reference rate is weekly based.</td>
+    </tr>
+</tbody>
+</table><h3 id="rates-rules-types">Rates Rules types</h3>
+
+<table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>arrival_only</td>
+      <td>Rule applied on arrival.</td>
+    </tr>
+<tr>
+<td>departure_only</td>
+      <td>Rule applied on departure.</td>
+    </tr>
+<tr>
+<td>early_booking</td>
+      <td>Rule applied on early booking.</td>
+    </tr>
+<tr>
+<td>full_period_only</td>
+      <td>Rule applied for full period.</td>
+    </tr>
+<tr>
+<td>late_booking</td>
+      <td>Rule applied for late booking.</td>
+    </tr>
+<tr>
+<td>prevent_if_booked_ahead_of</td>
+      <td>Rule applied if booked ahead.</td>
+    </tr>
+<tr>
+<td>stay_at_least</td>
+      <td>Rule applied for minimum stay.</td>
+    </tr>
+<tr>
+<td>strict_minimum_price_per_night</td>
+      <td>Rule applied for minimum price per night.</td>
+    </tr>
+<tr>
+<td>weekend_night</td>
+      <td>Rule applied for weekend night.</td>
     </tr>
 </tbody>
 </table><h3 id="rental-types">Rental types</h3>

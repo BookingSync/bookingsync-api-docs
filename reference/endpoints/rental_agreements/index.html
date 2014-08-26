@@ -69,8 +69,8 @@
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
           <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
           <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
-          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item active" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
@@ -96,7 +96,91 @@
   <li><a href="#create-a-new-default-rental-agreement">Create a new default rental agreement</a></li>
   <li><a href="#create-a-new-rental-agreement-for-a-booking">Create a new rental agreement for a booking</a></li>
   <li><a href="#create-a-new-rental-agreement-for-a-rental">Create a new rental agreement for a rental</a></li>
-</ol><h3 id="list-rental-agreements">List rental agreements</h3>
+</ol><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
+  <li><a href="#rentals_write" role="tab" data-toggle="pill">rentals_write</a></li>
+</ul><div class="tab-content">
+  <div class="tab-pane active" id="public">
+    <h4 id="parameters">Parameters</h4>
+
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental Agreement’s id.</td>
+        </tr></tbody>
+<tbody><tr>
+<td>body</td>
+          <td>Text</td>
+          <td>Read</td>
+          <td>Rental Agreement’s body.</td>
+        </tr></tbody>
+<tbody>
+<tr>
+<td>created_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Rental Agreement’s create time.</td>
+        </tr>
+<tr>
+<td>updated_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Rental Agreement’s update time.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+  <div class="tab-pane" id="rentals_write">
+    <h4 id="parameters-1">Parameters</h4>
+
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental Agreement’s id.</td>
+        </tr></tbody>
+<tbody><tr>
+<td>body</td>
+          <td>Text</td>
+          <td>Read/Write</td>
+          <td>
+<strong>Required</strong>. Rental Agreement’s body.</td>
+        </tr></tbody>
+<tbody>
+<tr>
+<td>created_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Rental Agreement’s create time.</td>
+        </tr>
+<tr>
+<td>updated_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Rental Agreement’s update time.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<h3 id="list-rental-agreements">List rental agreements</h3>
 
 <p>List all rental agreements for rentals in given account(s).</p>
 
@@ -107,7 +191,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#3c9a64354a52public" role="tab" data-toggle="pill">
+      <a href="#bf8dc61c3c82public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -115,14 +199,14 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="3c9a64354a52public">
+    <div class="tab-pane active" id="bf8dc61c3c82public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -141,7 +225,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#0ec70f5f2c0dpublic" role="tab" data-toggle="pill">
+      <a href="#0931f325f990public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -149,14 +233,14 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="0ec70f5f2c0dpublic">
+    <div class="tab-pane active" id="0931f325f990public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -167,7 +251,7 @@
 <h3 id="create-a-new-default-rental-agreement">Create a new default rental agreement</h3>
 
 <p>Create a new rental agreement to be used by default.
-This rental agreement will be used unless one is defined at rental
+This rental agreement will be used, unless one is defined at rental
 or booking level.</p>
 
 <p>Returns a newly created rental agreement.</p>
@@ -175,25 +259,11 @@ or booking level.</p>
 <pre><code>POST /rental_agreements
 </code></pre>
 
-<h4 id="parameters">Parameters</h4>
-
-<table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr></thead>
-<tbody><tr>
-<td>body</td>
-      <td>String</td>
-      <td>
-<strong>Required</strong>. Rental agreement’s content.</td>
-    </tr></tbody>
-</table><ul class="nav nav-pills pull-right" role="tablist">
+<ul class="nav nav-pills pull-right" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#b5ef076b33aarentals_write" role="tab" data-toggle="pill">
+      <a href="#4fa776f580berentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
@@ -210,14 +280,14 @@ or booking level.</p>
 <h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="b5ef076b33aarentals_write">
+    <div class="tab-pane active" id="4fa776f580berentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -234,33 +304,11 @@ or booking level.</p>
 <pre><code>POST /bookings/:booking_id/rental_agreements
 </code></pre>
 
-<h4 id="parameters-1">Parameters</h4>
-
-<table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>booking_id</td>
-      <td>Integer</td>
-      <td>
-<strong>Required</strong>. Rental agreement’s booking id.</td>
-    </tr>
-<tr>
-<td>body</td>
-      <td>String</td>
-      <td>
-<strong>Required</strong>. Rental agreement’s content.</td>
-    </tr>
-</tbody>
-</table><ul class="nav nav-pills pull-right" role="tablist">
+<ul class="nav nav-pills pull-right" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#2f60310b8d85rentals_write" role="tab" data-toggle="pill">
+      <a href="#58c8ebbc336drentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
@@ -269,7 +317,6 @@ or booking level.</p>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"booking_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -278,14 +325,14 @@ or booking level.</p>
 <h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="2f60310b8d85rentals_write">
+    <div class="tab-pane active" id="58c8ebbc336drentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -295,40 +342,18 @@ or booking level.</p>
 
 <h3 id="create-a-new-rental-agreement-for-a-rental">Create a new rental agreement for a rental</h3>
 
-<p>Create a new rental agreement to be used a default for the given rental.</p>
+<p>Create a new rental agreement to be used by default for the given rental.</p>
 
 <p>Returns a newly created rental agreement.</p>
 
 <pre><code>POST /rentals/:rental_id/rental_agreements
 </code></pre>
 
-<h4 id="parameters-2">Parameters</h4>
-
-<table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>rental_id</td>
-      <td>Integer</td>
-      <td>
-<strong>Required</strong>. Rental agreement’s rental id.</td>
-    </tr>
-<tr>
-<td>body</td>
-      <td>String</td>
-      <td>
-<strong>Required</strong>. Rental agreement’s content.</td>
-    </tr>
-</tbody>
-</table><ul class="nav nav-pills pull-right" role="tablist">
+<ul class="nav nav-pills pull-right" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#0fca9cef680crentals_write" role="tab" data-toggle="pill">
+      <a href="#fe8a5cd3943brentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
@@ -337,7 +362,6 @@ or booking level.</p>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -346,14 +370,14 @@ or booking level.</p>
 <h4 id="response-4">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="0fca9cef680crentals_write">
+    <div class="tab-pane active" id="fe8a5cd3943brentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>

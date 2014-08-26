@@ -69,8 +69,8 @@
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
           <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
           <a class="list-group-item active" href="/reference/endpoints/rates/">Rates</a>
-          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
@@ -94,7 +94,107 @@
 <li><a href="#list-rates">List rates</a></li>
   <li><a href="#search-rates">Search rates</a></li>
   <li><a href="#get-a-single-rate">Get a single rate</a></li>
-</ol><h3 id="list-rates">List rates</h3>
+</ol><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
+</ul><div class="tab-content">
+  <div class="tab-pane active" id="public">
+    <h4 id="parameters">Parameters</h4>
+
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rate’s id.</td>
+        </tr></tbody>
+<tbody>
+<tr>
+<td>currency</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rate’s currency code, list of codes described in <a href="/reference/enums#currencies">enums section</a>.</td>
+        </tr>
+<tr>
+<td>initial_nightly_rate</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Rate’s initial nightly rate.</td>
+        </tr>
+<tr>
+<td>initial_weekly_rate</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Rate’s initial weekly rate.</td>
+        </tr>
+<tr>
+<td>initial_monthly_rate</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Rate’s initial monthly rate.</td>
+        </tr>
+<tr>
+<td>final_nightly_rate</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Rate’s final nightly rate.</td>
+        </tr>
+<tr>
+<td>final_weekly_rate</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Rate’s final weekly rate.</td>
+        </tr>
+<tr>
+<td>final_monthly_rate</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Rate’s final monthly rate.</td>
+        </tr>
+<tr>
+<td>minimum_stay</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rate’s minimum stay in days.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>start_date</td>
+          <td><a href="/reference/formats#date--time">Date</a></td>
+          <td>Read</td>
+          <td>Rate’s start date.</td>
+        </tr>
+<tr>
+<td>end_date</td>
+          <td><a href="/reference/formats#date--time">Date</a></td>
+          <td>Read</td>
+          <td>Rate’s end date.</td>
+        </tr>
+<tr>
+<td>created_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Rate’s create time.</td>
+        </tr>
+<tr>
+<td>updated_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Rate’s update time.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<h3 id="list-rates">List rates</h3>
 
 <p>List all rates for given account(s).</p>
 
@@ -105,7 +205,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#feb6dca9e50fpublic" role="tab" data-toggle="pill">
+      <a href="#2faaaa1e2e44public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -113,7 +213,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="feb6dca9e50fpublic">
+    <div class="tab-pane active" id="2faaaa1e2e44public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rates.rental}"</span>
@@ -125,8 +225,8 @@
       <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-08-31T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-09-07T13:40:21Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2014-09-02"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2015-05-09"</span><span class="p">,</span>
       <span class="s2">"initial_nightly_rate"</span><span class="o">:</span> <span class="s2">"100.0"</span><span class="p">,</span>
       <span class="s2">"initial_weekly_rate"</span><span class="o">:</span> <span class="s2">"700.0"</span><span class="p">,</span>
       <span class="s2">"initial_monthly_rate"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
@@ -134,8 +234,8 @@
       <span class="s2">"final_weekly_rate"</span><span class="o">:</span> <span class="s2">"650.0"</span><span class="p">,</span>
       <span class="s2">"final_monthly_rate"</span><span class="o">:</span> <span class="s2">"2500.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -152,7 +252,7 @@
 <pre><code>GET /rates?rental_id=1
 </code></pre>
 
-<h4 id="parameters">Parameters</h4>
+<h4 id="search-parameters">Search Parameters</h4>
 
 <table class="table table-bordered">
 <thead><tr>
@@ -178,7 +278,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#d714c9d65f03public" role="tab" data-toggle="pill">
+      <a href="#eb76c905942bpublic" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -186,7 +286,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="d714c9d65f03public">
+    <div class="tab-pane active" id="eb76c905942bpublic">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rates.rental}"</span>
@@ -198,8 +298,8 @@
       <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-08-31T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-09-07T13:40:21Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2014-09-02"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2015-05-09"</span><span class="p">,</span>
       <span class="s2">"initial_nightly_rate"</span><span class="o">:</span> <span class="s2">"100.0"</span><span class="p">,</span>
       <span class="s2">"initial_weekly_rate"</span><span class="o">:</span> <span class="s2">"700.0"</span><span class="p">,</span>
       <span class="s2">"initial_monthly_rate"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
@@ -207,8 +307,8 @@
       <span class="s2">"final_weekly_rate"</span><span class="o">:</span> <span class="s2">"650.0"</span><span class="p">,</span>
       <span class="s2">"final_monthly_rate"</span><span class="o">:</span> <span class="s2">"2500.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>

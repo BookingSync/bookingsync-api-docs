@@ -69,8 +69,8 @@
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
           <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
           <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
-          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
@@ -93,7 +93,206 @@
 <ol id="markdown-toc">
 <li><a href="#list-inquiries">List inquiries</a></li>
   <li><a href="#get-a-single-inquiry">Get a single inquiry</a></li>
-</ol><h3 id="list-inquiries">List inquiries</h3>
+  <li><a href="#create-a-new-inquiry">Create a new inquiry</a></li>
+</ol><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="active"><a href="#inquiries_read" role="tab" data-toggle="pill">inquiries_read</a></li>
+  <li><a href="#inquiries_write" role="tab" data-toggle="pill">inquiries_write</a></li>
+</ul><div class="tab-content">
+  <div class="tab-pane active" id="inquiries_read">
+    <h4 id="parameters">Parameters</h4>
+
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Inquiry’s id.</td>
+        </tr></tbody>
+<tbody>
+<tr>
+<td>adults</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Inquiry’s booking number of adults.</td>
+        </tr>
+<tr>
+<td>children</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Inquiry’s booking number of children.</td>
+        </tr>
+<tr>
+<td>country_code</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Inquiry’s client country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+        </tr>
+<tr>
+<td>email</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Inquiry’s client email.</td>
+        </tr>
+<tr>
+<td>firstname</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Inquiry’s client firstname.</td>
+        </tr>
+<tr>
+<td>lastname</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Inquiry’s client lastname.</td>
+        </tr>
+<tr>
+<td>message</td>
+          <td>Text</td>
+          <td>Read</td>
+          <td>Inquiry’s message.</td>
+        </tr>
+<tr>
+<td>phone</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Inquiry’s client phone number.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>start_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Inquiry’s booking start time.</td>
+        </tr>
+<tr>
+<td>end_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Inquiry’s booking end time.</td>
+        </tr>
+<tr>
+<td>created_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Inquiry’s create time.</td>
+        </tr>
+<tr>
+<td>updated_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Inquiry’s update time.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+  <div class="tab-pane" id="inquiries_write">
+    <h4 id="parameters-1">Parameters</h4>
+
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Inquiry’s id.</td>
+        </tr></tbody>
+<tbody>
+<tr>
+<td>adults</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>Inquiry’s booking number of adults.</td>
+        </tr>
+<tr>
+<td>children</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>Inquiry’s booking number of children.</td>
+        </tr>
+<tr>
+<td>country_code</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Inquiry’s client country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+        </tr>
+<tr>
+<td>email</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>
+<strong>Required</strong>. Inquiry’s client email.</td>
+        </tr>
+<tr>
+<td>firstname</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>
+<strong>Required</strong>. Inquiry’s client firstname. (50 characters max)</td>
+        </tr>
+<tr>
+<td>lastname</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>
+<strong>Required</strong>. Inquiry’s client lastname. (99 characters max)</td>
+        </tr>
+<tr>
+<td>message</td>
+          <td>Text</td>
+          <td>Read/Write</td>
+          <td>Inquiry’s message. (500 characters max)</td>
+        </tr>
+<tr>
+<td>phone</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Inquiry’s client phone number.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>start_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read/Write</td>
+          <td>Inquiry’s booking start time.</td>
+        </tr>
+<tr>
+<td>end_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read/Write</td>
+          <td>Inquiry’s booking end time.</td>
+        </tr>
+<tr>
+<td>created_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Inquiry’s create time.</td>
+        </tr>
+<tr>
+<td>updated_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Inquiry’s update time.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<h3 id="list-inquiries">List inquiries</h3>
 
 <p>Returns a list of all inquiries for current account(s).</p>
 
@@ -104,7 +303,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#53cdde7b17dfinquiries_read-inquiries_write" role="tab" data-toggle="pill">
+      <a href="#963cbff9281finquiries_read-inquiries_write" role="tab" data-toggle="pill">
         inquiries_read / inquiries_write
       </a>
     </li>
@@ -112,7 +311,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="53cdde7b17dfinquiries_read-inquiries_write">
+    <div class="tab-pane active" id="963cbff9281finquiries_read-inquiries_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"inquiries.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{inquiries.rental}"</span>
@@ -128,13 +327,13 @@
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"phone"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-08-31T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-09-07T13:40:21Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-09-02T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-09-09T17:19:15Z"</span><span class="p">,</span>
       <span class="s2">"adults"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"children"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"message"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -153,7 +352,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#7dbc753b12c4inquiries_read-inquiries_write" role="tab" data-toggle="pill">
+      <a href="#b5e5d2645f65inquiries_read-inquiries_write" role="tab" data-toggle="pill">
         inquiries_read / inquiries_write
       </a>
     </li>
@@ -161,7 +360,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="7dbc753b12c4inquiries_read-inquiries_write">
+    <div class="tab-pane active" id="b5e5d2645f65inquiries_read-inquiries_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"inquiries.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{inquiries.rental}"</span>
@@ -177,13 +376,75 @@
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"phone"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-08-31T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-09-07T13:40:21Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-09-02T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-09-09T17:19:15Z"</span><span class="p">,</span>
       <span class="s2">"adults"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"children"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"message"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+    </div>
+  
+</div>
+
+<h3 id="create-a-new-inquiry">Create a new inquiry</h3>
+
+<p>Creates an inquiry for given rental.</p>
+
+<pre><code>POST /rentals/:rental_id/inquiries
+</code></pre>
+
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#7d9e312eeeb7inquiries_write" role="tab" data-toggle="pill">
+        inquiries_write
+      </a>
+    </li>
+  
+</ul><h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"inquiries"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
+      <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"Smith"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-09-02T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-09-09T17:19:15Z"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-2">Response</h4>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="7d9e312eeeb7inquiries_write">
+      <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"inquiries.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{inquiries.rental}"</span>
+  <span class="p">},</span>
+  <span class="s2">"inquiries"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
+      <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"Smith"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
+      <span class="s2">"country_code"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"phone"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-09-02T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-09-09T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"adults"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"children"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"message"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>

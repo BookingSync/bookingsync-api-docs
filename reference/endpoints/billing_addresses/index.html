@@ -69,8 +69,8 @@
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
           <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
           <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
-          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
@@ -93,7 +93,87 @@
 <ol id="markdown-toc">
 <li><a href="#list-billing-addresses">List billing addresses</a></li>
   <li><a href="#get-a-single-billing-address">Get a single billing address</a></li>
-</ol><h3 id="list-billing-addresses">List billing addresses</h3>
+</ol><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="active">
+    <a href="#payments_read-payments_write" role="tab" data-toggle="pill">
+      payments_read / payments_write
+    </a>
+  </li>
+</ul><div class="tab-content">
+  <div class="tab-pane active" id="payments_read-payments_write">
+    <h4 id="parameters">Parameters</h4>
+
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Billing Address’s id.</td>
+        </tr></tbody>
+<tbody>
+<tr>
+<td>address1</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Billing Address’s first address.</td>
+        </tr>
+<tr>
+<td>address2</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Billing Address’s second address.</td>
+        </tr>
+<tr>
+<td>city</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Billing Address’s city.</td>
+        </tr>
+<tr>
+<td>country_code</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Billing Address’s country_code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+        </tr>
+<tr>
+<td>state</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Billing Address’s state.</td>
+        </tr>
+<tr>
+<td>zip</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Billing Address’s zip.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>created_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Billing Address’s create time.</td>
+        </tr>
+<tr>
+<td>updated_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Billing Address’s update time.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<h3 id="list-billing-addresses">List billing addresses</h3>
 
 <p>List all billing addresses for given account.</p>
 
@@ -104,7 +184,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#1ce3ed3c667bpayments_read-payments_write" role="tab" data-toggle="pill">
+      <a href="#79fb1c71344bpayments_read-payments_write" role="tab" data-toggle="pill">
         payments_read / payments_write
       </a>
     </li>
@@ -112,7 +192,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="1ce3ed3c667bpayments_read-payments_write">
+    <div class="tab-pane active" id="79fb1c71344bpayments_read-payments_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"billing_addresses.payment"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payments/{billing_addresses.payment}"</span>
@@ -129,8 +209,8 @@
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Monatana"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -149,7 +229,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#94fc94d19f07payments_read-payments_write" role="tab" data-toggle="pill">
+      <a href="#6b390336485apayments_read-payments_write" role="tab" data-toggle="pill">
         payments_read / payments_write
       </a>
     </li>
@@ -157,7 +237,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="94fc94d19f07payments_read-payments_write">
+    <div class="tab-pane active" id="6b390336485apayments_read-payments_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"billing_addresses.payment"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payments/{billing_addresses.payment}"</span>
@@ -174,8 +254,8 @@
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Monatana"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>

@@ -69,8 +69,8 @@
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
           <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
           <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
-          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
@@ -94,7 +94,119 @@
 <li><a href="#list-reviews">List reviews</a></li>
   <li><a href="#get-a-single-review">Get a single review</a></li>
   <li><a href="#create-a-new-review">Create a new review</a></li>
-</ol><h3 id="list-reviews">List reviews</h3>
+</ol><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
+  <li><a href="#reviews_write" role="tab" data-toggle="pill">reviews_write</a></li>
+</ul><div class="tab-content">
+  <div class="tab-pane active" id="public">
+    <h4 id="parameters">Parameters</h4>
+
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Review’s id.</td>
+        </tr></tbody>
+<tbody>
+<tr>
+<td>comment</td>
+          <td>Text</td>
+          <td>Read</td>
+          <td>Review’s comment.</td>
+        </tr>
+<tr>
+<td>name</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Reviewer’s name.</td>
+        </tr>
+<tr>
+<td>rating</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Review’s rating.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>created_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Review’s create time.</td>
+        </tr>
+<tr>
+<td>updated_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Review’s update time.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+  <div class="tab-pane" id="reviews_write">
+    <h4 id="parameters-1">Parameters</h4>
+
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Review’s id.</td>
+        </tr></tbody>
+<tbody>
+<tr>
+<td>comment</td>
+          <td>Text</td>
+          <td>Read/Write</td>
+          <td>Review’s comment.  (10 min, 2000 max characters)</td>
+        </tr>
+<tr>
+<td>name</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Reviewer’s name.</td>
+        </tr>
+<tr>
+<td>rating</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>
+<strong>Required</strong>. Review’s rating. (between 1 and 6)</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>created_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Review’s create time.</td>
+        </tr>
+<tr>
+<td>updated_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Review’s update time.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<h3 id="list-reviews">List reviews</h3>
 
 <p>List all reviews for given account(s).</p>
 
@@ -105,7 +217,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#68c19dcc98cfpublic" role="tab" data-toggle="pill">
+      <a href="#08b74dc96a63public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -113,7 +225,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="68c19dcc98cfpublic">
+    <div class="tab-pane active" id="08b74dc96a63public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"reviews.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{reviews.booking}"</span><span class="p">,</span>
@@ -129,8 +241,8 @@
       <span class="s2">"rating"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"comment"</span><span class="o">:</span> <span class="s2">"It was awesome!"</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"John Smith"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -149,7 +261,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#54a8240fabb4public" role="tab" data-toggle="pill">
+      <a href="#235201622367public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -157,7 +269,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="54a8240fabb4public">
+    <div class="tab-pane active" id="235201622367public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"reviews.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{reviews.booking}"</span><span class="p">,</span>
@@ -173,8 +285,8 @@
       <span class="s2">"rating"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"comment"</span><span class="o">:</span> <span class="s2">"It was awesome!"</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"John Smith"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -189,32 +301,11 @@
 <pre><code>POST /bookings/:booking_id/reviews
 </code></pre>
 
-<h4 id="parameters">Parameters</h4>
-
-<table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>comment</td>
-      <td>String</td>
-      <td>Client’s opinion.</td>
-    </tr>
-<tr>
-<td>rating</td>
-      <td>Integer</td>
-      <td>
-<strong>Required</strong>. Client’s rating.</td>
-    </tr>
-</tbody>
-</table><ul class="nav nav-pills pull-right" role="tablist">
+<ul class="nav nav-pills pull-right" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#573138b671c9reviews_write" role="tab" data-toggle="pill">
+      <a href="#b21b63db0b3breviews_write" role="tab" data-toggle="pill">
         reviews_write
       </a>
     </li>
@@ -232,7 +323,7 @@
 <h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="573138b671c9reviews_write">
+    <div class="tab-pane active" id="b21b63db0b3breviews_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"reviews.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{reviews.booking}"</span><span class="p">,</span>
@@ -248,8 +339,8 @@
       <span class="s2">"rating"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"comment"</span><span class="o">:</span> <span class="s2">"It was awesome!"</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"John Smith"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>

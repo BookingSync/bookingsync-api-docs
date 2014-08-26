@@ -69,8 +69,8 @@
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
           <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
           <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
-          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item active" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
@@ -93,7 +93,93 @@
 <ol id="markdown-toc">
 <li><a href="#list-rates-rules">List rates rules</a></li>
   <li><a href="#get-a-single-rates-rule">Get a single rates rule</a></li>
-</ol><h3 id="list-rates-rules">List rates rules</h3>
+</ol><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="active">
+    <a href="#rates_read-rates_write" role="tab" data-toggle="pill">
+      rates_read / rates_write
+    </a>
+  </li>
+</ul><div class="tab-content">
+  <div class="tab-pane active" id="rates_read-rates_write">
+    <h4 id="parameters">Parameters</h4>
+
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rates Rule’s id.</td>
+        </tr></tbody>
+<tbody>
+<tr>
+<td>always_applied</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Rates Rule’s application status.</td>
+        </tr>
+<tr>
+<td>kind</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rates Rule’s kind. List of types described in <a href="/reference/enums#rates-rules-types">enums section</a>.</td>
+        </tr>
+<tr>
+<td>percentage</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rates Rule’s percentage discount.</td>
+        </tr>
+<tr>
+<td>period_name</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rates Rule’s period name.</td>
+        </tr>
+<tr>
+<td>variables</td>
+          <td>Text</td>
+          <td>Read</td>
+          <td>Rates Rule’s variables used depending on kind type.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>start_date</td>
+          <td><a href="/reference/formats#date--time">Date</a></td>
+          <td>Read</td>
+          <td>Rates Rule’s start date.</td>
+        </tr>
+<tr>
+<td>end_date</td>
+          <td><a href="/reference/formats#date--time">Date</a></td>
+          <td>Read</td>
+          <td>Rates Rule’s end date.</td>
+        </tr>
+<tr>
+<td>created_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Rates Rule’s create time.</td>
+        </tr>
+<tr>
+<td>updated_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Rates Rule’s update time.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<h3 id="list-rates-rules">List rates rules</h3>
 
 <p>List all rates rules for given account.</p>
 
@@ -104,7 +190,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#a4e1e2a0a85arates_read-rates_write" role="tab" data-toggle="pill">
+      <a href="#f56fc6270290rates_read-rates_write" role="tab" data-toggle="pill">
         rates_read / rates_write
       </a>
     </li>
@@ -112,7 +198,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="a4e1e2a0a85arates_read-rates_write">
+    <div class="tab-pane active" id="f56fc6270290rates_read-rates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates_rules.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{rates_rules.rates_table}"</span><span class="p">,</span>
@@ -139,10 +225,10 @@
         <span class="s2">"length"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s2">"unit"</span><span class="o">:</span> <span class="s2">"days"</span>
       <span class="p">},</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-08-31T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-09-07T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2014-09-02"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2015-05-09"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -161,7 +247,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#189cb2170c3drates_read-rates_write" role="tab" data-toggle="pill">
+      <a href="#03d714467d89rates_read-rates_write" role="tab" data-toggle="pill">
         rates_read / rates_write
       </a>
     </li>
@@ -169,7 +255,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="189cb2170c3drates_read-rates_write">
+    <div class="tab-pane active" id="03d714467d89rates_read-rates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates_rules.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{rates_rules.rates_table}"</span><span class="p">,</span>
@@ -196,10 +282,10 @@
         <span class="s2">"length"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s2">"unit"</span><span class="o">:</span> <span class="s2">"days"</span>
       <span class="p">},</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2014-08-31T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2014-09-07T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2014-09-02"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2015-05-09"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>

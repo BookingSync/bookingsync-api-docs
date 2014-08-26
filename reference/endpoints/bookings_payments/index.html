@@ -69,8 +69,8 @@
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
           <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
           <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
-          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
@@ -93,7 +93,61 @@
 <ol id="markdown-toc">
 <li><a href="#list-bookings-payments">List bookings payments</a></li>
   <li><a href="#get-a-single-bookings-payment">Get a single bookings payment</a></li>
-</ol><h3 id="list-bookings-payments">List bookings payments</h3>
+</ol><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="active"><a href="#payments_read-payments_write" role="tab" data-toggle="pill">
+    payments_read / payments_write
+  </a></li>
+</ul><div class="tab-content">
+  <div class="tab-pane active" id="payments_read-payments_write">
+    <h4 id="parameters">Parameters</h4>
+
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Bookings Payment’s id.</td>
+        </tr></tbody>
+<tbody>
+<tr>
+<td>amount</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Bookings Payment’s amount.</td>
+        </tr>
+<tr>
+<td>currency</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Bookings Payment’s currency code, list of codes described in <a href="/reference/enums#currencies">enums section</a>.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>created_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Bookings Payment’s create time.</td>
+        </tr>
+<tr>
+<td>updated_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Bookings Payment’s update time.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<h3 id="list-bookings-payments">List bookings payments</h3>
 
 <div class="callout callout-info">
   <h4>Amount's decimal point</h4>
@@ -109,7 +163,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#527f610af037payments_read-payments_write" role="tab" data-toggle="pill">
+      <a href="#1f6132aaad30payments_read-payments_write" role="tab" data-toggle="pill">
         payments_read / payments_write
       </a>
     </li>
@@ -117,7 +171,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="527f610af037payments_read-payments_write">
+    <div class="tab-pane active" id="1f6132aaad30payments_read-payments_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_payments.account}"</span><span class="p">,</span>
@@ -134,8 +188,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -159,7 +213,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#fd262eff766bpayments_read-payments_write" role="tab" data-toggle="pill">
+      <a href="#1ee9fcd6557apayments_read-payments_write" role="tab" data-toggle="pill">
         payments_read / payments_write
       </a>
     </li>
@@ -167,7 +221,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="fd262eff766bpayments_read-payments_write">
+    <div class="tab-pane active" id="1ee9fcd6557apayments_read-payments_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_payments.account}"</span><span class="p">,</span>
@@ -184,8 +238,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>

@@ -69,8 +69,8 @@
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
           <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
           <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
-          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
@@ -96,7 +96,133 @@
   <li><a href="#create-a-new-season">Create a new season</a></li>
   <li><a href="#update-a-season">Update a season</a></li>
   <li><a href="#destroy-a-season">Destroy a season</a></li>
-</ol><h3 id="list-seasons">List seasons</h3>
+</ol><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="active"><a href="#rates_read" role="tab" data-toggle="pill">rates_read</a></li>
+  <li><a href="#rates_write" role="tab" data-toggle="pill">rates_write</a></li>
+</ul><div class="tab-content">
+  <div class="tab-pane active" id="rates_read">
+    <h4 id="parameters">Parameters</h4>
+
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Season’s id.</td>
+        </tr></tbody>
+<tbody>
+<tr>
+<td>color_ratio</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Season’s color_ratio.</td>
+        </tr>
+<tr>
+<td>minimum_stay</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Season’s minimum stay in days.</td>
+        </tr>
+<tr>
+<td>name</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Season’s name.</td>
+        </tr>
+<tr>
+<td>ratio</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Season’s ratio.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>created_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Season’s create time.</td>
+        </tr>
+<tr>
+<td>updated_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Season’s update time.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+  <div class="tab-pane" id="rates_write">
+    <h4 id="parameters-1">Parameters</h4>
+
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Season’s id.</td>
+        </tr></tbody>
+<tbody>
+<tr>
+<td>color_ratio</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Season’s color_ratio.</td>
+        </tr>
+<tr>
+<td>minimum_stay</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>
+<strong>Required</strong>. Season’s minimum stay in days. (greater than 0)</td>
+        </tr>
+<tr>
+<td>name</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>
+<strong>Required</strong>. Season’s name. (50 max characters)</td>
+        </tr>
+<tr>
+<td>ratio</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read/Write</td>
+          <td>
+<strong>Required</strong>. Season’s ratio. (between 1 and 10)</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>created_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Season’s create time.</td>
+        </tr>
+<tr>
+<td>updated_at</td>
+          <td><a href="/reference/formats#date--time">Time</a></td>
+          <td>Read</td>
+          <td>Season’s update time.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<h3 id="list-seasons">List seasons</h3>
 
 <p>List all seasons for given account.</p>
 
@@ -107,7 +233,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#5c177cf2f42arates_read-rates_write" role="tab" data-toggle="pill">
+      <a href="#287d0afb6111rates_read-rates_write" role="tab" data-toggle="pill">
         rates_read / rates_write
       </a>
     </li>
@@ -115,7 +241,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="5c177cf2f42arates_read-rates_write">
+    <div class="tab-pane active" id="287d0afb6111rates_read-rates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{seasons.rates_table}"</span><span class="p">,</span>
@@ -140,8 +266,8 @@
       <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
       <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -160,7 +286,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#5b21950182b3rates_read-rates_write" role="tab" data-toggle="pill">
+      <a href="#75b3b0af1997rates_read-rates_write" role="tab" data-toggle="pill">
         rates_read / rates_write
       </a>
     </li>
@@ -168,7 +294,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="5b21950182b3rates_read-rates_write">
+    <div class="tab-pane active" id="75b3b0af1997rates_read-rates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{seasons.rates_table}"</span><span class="p">,</span>
@@ -193,8 +319,8 @@
       <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
       <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -209,39 +335,11 @@
 <pre><code>POST /rates_tables/:rates_table_id/seasons
 </code></pre>
 
-<h4 id="parameters">Parameters</h4>
-
-<table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>name</td>
-      <td>String</td>
-      <td>
-<strong>Required</strong>. Season’s name.</td>
-    </tr>
-<tr>
-<td>ratio</td>
-      <td>Number</td>
-      <td>
-<strong>Required</strong>. Season’s ratio calculated from the rental’s reference price. eg: 0.6 means 60% of the rental’s reference price.</td>
-    </tr>
-<tr>
-<td>minimum_stay</td>
-      <td>Integer</td>
-      <td>
-<strong>Required</strong>. Season’s minimum length of stay, a price won’t be calculated for a shorter request.</td>
-    </tr>
-</tbody>
-</table><ul class="nav nav-pills pull-right" role="tablist">
+<ul class="nav nav-pills pull-right" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#6ecfb092fdfarates_write" role="tab" data-toggle="pill">
+      <a href="#6888d431bfe9rates_write" role="tab" data-toggle="pill">
         rates_write
       </a>
     </li>
@@ -260,7 +358,7 @@
 <h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="6ecfb092fdfarates_write">
+    <div class="tab-pane active" id="6888d431bfe9rates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{seasons.rates_table}"</span><span class="p">,</span>
@@ -285,8 +383,8 @@
       <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
       <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -301,36 +399,11 @@
 <pre><code>PUT /seasons/:season_id
 </code></pre>
 
-<h4 id="parameters-1">Parameters</h4>
-
-<table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
-      <th>Type</th>
-      <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>name</td>
-      <td>String</td>
-      <td>Season’s name.</td>
-    </tr>
-<tr>
-<td>ratio</td>
-      <td>Number</td>
-      <td>Season’s ratio calculated from the rental’s reference price. eg: 0.6 means 60% of the rental’s reference price.</td>
-    </tr>
-<tr>
-<td>minimum_stay</td>
-      <td>Integer</td>
-      <td>Season’s minimum length of stay, a price won’t be calculated for a shorter request.</td>
-    </tr>
-</tbody>
-</table><ul class="nav nav-pills pull-right" role="tablist">
+<ul class="nav nav-pills pull-right" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#a49e80ea2d3crates_write" role="tab" data-toggle="pill">
+      <a href="#b51771572a22rates_write" role="tab" data-toggle="pill">
         rates_write
       </a>
     </li>
@@ -349,7 +422,7 @@
 <h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="a49e80ea2d3crates_write">
+    <div class="tab-pane active" id="b51771572a22rates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{seasons.rates_table}"</span><span class="p">,</span>
@@ -374,8 +447,8 @@
       <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
       <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-24T13:40:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T17:19:15Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
