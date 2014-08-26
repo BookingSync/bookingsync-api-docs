@@ -3,6 +3,16 @@
 1. TOC
 {:toc}
 
+## Booking statuses
+
+Status           | Description
+-----------------|------------
+0                | Available.
+1                | Booked.
+2                | Tentative.
+3                | Unavailable.
+{: class="table table-bordered"}
+
 ## Currencies
 
 Currency         | Code
