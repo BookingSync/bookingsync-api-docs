@@ -17,7 +17,7 @@ Name               | Type    | Read/Write | Description
 -------------------|---------|------------|------------
 id                 | Integer | Read       | Photo's id.
 -------------------|---------|------------|------------
-description_LOCALE | String  | Read       | Photo's description, list of locales described in [enums section](/reference/enums#locales).
+description        | [Object](/reference/enums#formats)    | Read       | Photo's description, list of locales described in [enums section](/reference/enums#locales).
 kind               | String  | Read       | Photo's kind, list of kinds described in [enum section](/reference/enums/#photo-kinds).
 position           | Integer | Read       | Photo's position on the rental list.
 -------------------|---------|------------|------------
@@ -26,8 +26,8 @@ micro_url          | String  | Read       | Photo's micro size url.
 normal_url         | String  | Read       | Photo's normal size url.
 thumb_url          | String  | Read       | Photo's thumb size url.
 -------------------|---------|------------|------------
-created_at         | [Time](/reference/formats#date--time) | Read       | Photo's create time.
-updated_at         | [Time](/reference/formats#date--time) | Read       | Photo's update time.
+created_at         | [Time](/reference/enums#formats) | Read       | Photo's create time.
+updated_at         | [Time](/reference/enums#formats) | Read       | Photo's update time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rentals_write" markdown="1">
@@ -37,7 +37,7 @@ Name               | Type    | Read/Write | Description
 -------------------|---------|------------|------------
 id                 | Integer | Read       | Photo's id.
 -------------------|---------|------------|------------
-description_LOCALE | String  | Read/Write | Photo's description, list of locales described in [enums section](/reference/enums#locales). (80 characters max)
+description        | [Object](/reference/enums#formats)    | Read/Write | Photo's description, list of locales described in [enums section](/reference/enums#locales). (80 characters max)
 kind               | String  | Read/Write | Photo's kind, list of kinds described in [enum section](/reference/enums/#photo-kinds).
 photo              | File    | Write      | **Required**. Photo's image.
 position           | Integer | Read/Write | Photo's position on the rental list.
@@ -48,8 +48,8 @@ micro_url          | String  | Read       | Photo's micro size url.
 normal_url         | String  | Read       | Photo's normal size url.
 thumb_url          | String  | Read       | Photo's thumb size url.
 -------------------|---------|------------|------------
-created_at         | [Time](/reference/formats#date--time) | Read       | Photo's create time.
-updated_at         | [Time](/reference/formats#date--time) | Read       | Photo's update time.
+created_at         | [Time](/reference/enums#formats) | Read       | Photo's create time.
+updated_at         | [Time](/reference/enums#formats) | Read       | Photo's update time.
 {: class="table table-bordered"}
   </div>
 </div>

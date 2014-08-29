@@ -21,8 +21,8 @@ id               | Integer | Read       | Bookings Payment's id.
 amount           | Integer | Read       | Bookings Payment's amount.
 currency         | String  | Read       | Bookings Payment's currency code, list of codes described in [enums section](/reference/enums#currencies).
 -----------------|---------|------------|------------
-created_at       | [Time](/reference/formats#date--time) | Read       | Bookings Payment's create time.
-updated_at       | [Time](/reference/formats#date--time) | Read       | Bookings Payment's update time.
+created_at       | [Time](/reference/enums#formats) | Read       | Bookings Payment's create time.
+updated_at       | [Time](/reference/enums#formats) | Read       | Bookings Payment's update time.
 {: class="table table-bordered"}
   </div>
 </div>

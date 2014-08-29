@@ -33,6 +33,7 @@ Name             | Description
 -----------------|------------
 date             | [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601#Dates) compatible `%Y-%m-%d` `2014-08-21`
 decimal          | Decimal value returned as a string. Big.js is recommended for Javascript users.
+object           | An Javascript Object. Translation objects are having [locales](/reference/enums#locales) as string keys and translations as string values. `{"en": "Wonderful living room", "fr": "Merveilleux séjour"}`
 time             | [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601#UTC) compatible `%Y-%m-%dT%H:%M:%SZ` `2014-08-21T08:40:44Z`
 {: class="table table-bordered"}
 

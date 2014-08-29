@@ -30,8 +30,8 @@ phone            | String  | Read       | Client's phone.
 state            | String  | Read       | Client's state.
 zip              | String  | Read       | Client's zip.
 -----------------|---------|------------|------------
-created_at       | [Time](/reference/formats#date--time) | Read       | Client's create time.
-updated_at       | [Time](/reference/formats#date--time) | Read       | Client's update time.
+created_at       | [Time](/reference/enums#formats) | Read       | Client's create time.
+updated_at       | [Time](/reference/enums#formats) | Read       | Client's update time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="clients_write" markdown="1">
@@ -54,8 +54,8 @@ phone            | String  | Read/Write | Client's phone.
 state            | String  | Read/Write | Client's state.
 zip              | String  | Read/Write | Client's zip.
 -----------------|---------|------------|------------
-created_at       | [Time](/reference/formats#date--time) | Read       | Client's create time.
-updated_at       | [Time](/reference/formats#date--time) | Read       | Client's update time.
+created_at       | [Time](/reference/enums#formats) | Read       | Client's create time.
+updated_at       | [Time](/reference/enums#formats) | Read       | Client's update time.
 {: class="table table-bordered"}
   </div>
 </div>
