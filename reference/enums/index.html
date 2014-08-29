@@ -59,6 +59,7 @@
         <div class="list-group">
           <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
           <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
           <a class="list-group-item" href="/reference/endpoints/billing_addresses/">Billing Addresses</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
@@ -91,7 +92,8 @@
         <h2 id="enumerables">Enumerables</h2>
 
 <ol id="markdown-toc">
-<li><a href="#currencies">Currencies</a></li>
+<li><a href="#booking-statuses">Booking statuses</a></li>
+  <li><a href="#currencies">Currencies</a></li>
   <li><a href="#formats">Formats</a></li>
   <li><a href="#locales">Locales</a></li>
   <li><a href="#payment-kinds">Payment kinds</a></li>
@@ -99,7 +101,32 @@
   <li><a href="#rates-types">Rates types</a></li>
   <li><a href="#rates-rules-types">Rates Rules types</a></li>
   <li><a href="#rental-types">Rental types</a></li>
-</ol><h3 id="currencies">Currencies</h3>
+</ol><h3 id="booking-statuses">Booking statuses</h3>
+
+<table class="table table-bordered">
+<thead><tr>
+<th>Status</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>0</td>
+      <td>Available.</td>
+    </tr>
+<tr>
+<td>1</td>
+      <td>Booked.</td>
+    </tr>
+<tr>
+<td>2</td>
+      <td>Tentative.</td>
+    </tr>
+<tr>
+<td>3</td>
+      <td>Unavailable.</td>
+    </tr>
+</tbody>
+</table><h3 id="currencies">Currencies</h3>
 
 <table class="table table-bordered">
 <thead><tr>
