@@ -34,9 +34,9 @@ GET /availabilities
 
 <%= render 'json_response', endpoint: "availabilities", scopes: %w(public) %>
 
-## Get a single billing address
+## Get a single availability
 
-Returns a single billing address identified by ID.
+Returns a single availability identified by ID.
 
 ~~~
 GET /availabilities/:availability_id
