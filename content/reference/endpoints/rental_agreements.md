@@ -19,8 +19,8 @@ id               | Integer | Read       | Rental Agreement's id.
 -----------------|---------|------------|------------
 body             | Text    | Read       | Rental Agreement's body.
 -----------------|---------|------------|------------
-created_at       | [Time](/reference/formats#date--time) | Read       | Rental Agreement's create time.
-updated_at       | [Time](/reference/formats#date--time) | Read       | Rental Agreement's update time.
+created_at       | [Time](/reference/enums#formats) | Read       | Rental Agreement's create time.
+updated_at       | [Time](/reference/enums#formats) | Read       | Rental Agreement's update time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rentals_write" markdown="1">
@@ -32,8 +32,8 @@ id               | Integer | Read       | Rental Agreement's id.
 -----------------|---------|------------|------------
 body             | Text    | Read/Write | **Required**. Rental Agreement's body.
 -----------------|---------|------------|------------
-created_at       | [Time](/reference/formats#date--time) | Read       | Rental Agreement's create time.
-updated_at       | [Time](/reference/formats#date--time) | Read       | Rental Agreement's update time.
+created_at       | [Time](/reference/enums#formats) | Read       | Rental Agreement's create time.
+updated_at       | [Time](/reference/enums#formats) | Read       | Rental Agreement's update time.
 {: class="table table-bordered"}
   </div>
 </div>

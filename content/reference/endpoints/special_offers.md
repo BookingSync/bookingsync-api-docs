@@ -18,12 +18,12 @@ Name                 | Type    | Read/Write | Description
 id                   | Integer | Read       | Special Offer's id.
 ---------------------|---------|------------|------------
 discount             | Integer | Read       | Special Offer's discount in percents.
-name_LOCALE          | String  | Read       | Special Offer's name, list of locales described in [enums section](/reference/enums#locales).
+name                 | [Object](/reference/enums#formats)    | Read       | Special Offer's name, list of locales described in [enums section](/reference/enums#locales).
 ---------------------|---------|------------|------------
-start_date           | [Date](/reference/formats#date--time) | Read       | Special Offer's start date.
-end_date             | [Date](/reference/formats#date--time) | Read       | Special Offer's end date.
-created_at           | [Time](/reference/formats#date--time) | Read       | Special Offer's create time.
-updated_at           | [Time](/reference/formats#date--time) | Read       | Special Offer's update time.
+start_date           | [Date](/reference/enums#formats) | Read       | Special Offer's start date.
+end_date             | [Date](/reference/enums#formats) | Read       | Special Offer's end date.
+created_at           | [Time](/reference/enums#formats) | Read       | Special Offer's create time.
+updated_at           | [Time](/reference/enums#formats) | Read       | Special Offer's update time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rates_write" markdown="1">
@@ -34,12 +34,12 @@ Name                 | Type    | Read/Write | Description
 id                   | Integer | Read       | Special Offer's id.
 ---------------------|---------|------------|------------
 discount             | Integer | Read/Write | **Required**. Special Offer's discount in percents. (between 1 and 100)
-name_LOCALE          | String  | Read/Write | **Required**. Special Offer's name, list of locales described in [enums section](/reference/enums#locales). (50 characters max)
+name                 | [Object](/reference/enums#formats)    | Read/Write | **Required**. Special Offer's name, list of locales described in [enums section](/reference/enums#locales). (50 characters max)
 ---------------------|---------|------------|------------
-start_date           | [Date](/reference/formats#date--time) | Read/Write | **Required**. Special Offer's start date.
-end_date             | [Date](/reference/formats#date--time) | Read/Write | **Required**. Special Offer's end date.
-created_at           | [Time](/reference/formats#date--time) | Read       | Special Offer's create time.
-updated_at           | [Time](/reference/formats#date--time) | Read       | Special Offer's update time.
+start_date           | [Date](/reference/enums#formats) | Read/Write | **Required**. Special Offer's start date.
+end_date             | [Date](/reference/enums#formats) | Read/Write | **Required**. Special Offer's end date.
+created_at           | [Time](/reference/enums#formats) | Read       | Special Offer's create time.
+updated_at           | [Time](/reference/enums#formats) | Read       | Special Offer's update time.
 {: class="table table-bordered"}
   </div>
 </div>

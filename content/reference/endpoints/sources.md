@@ -19,8 +19,8 @@ id               | Integer | Read       | Source's id.
 -----------------|---------|------------|------------
 name             | String  | Read       | Source's name.
 -----------------|---------|------------|------------
-created_at       | [Time](/reference/formats#date--time) | Read       | Source's create time.
-updated_at       | [Time](/reference/formats#date--time) | Read       | Source's update time.
+created_at       | [Time](/reference/enums#formats) | Read       | Source's create time.
+updated_at       | [Time](/reference/enums#formats) | Read       | Source's update time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="bookings_write" markdown="1">
@@ -32,8 +32,8 @@ id               | Integer | Read       | Source's id.
 -----------------|---------|------------|------------
 name             | String  | Read/Write | **Required**. Source's name.
 -----------------|---------|------------|------------
-created_at       | [Time](/reference/formats#date--time) | Read       | Source's create time.
-updated_at       | [Time](/reference/formats#date--time) | Read       | Source's update time.
+created_at       | [Time](/reference/enums#formats) | Read       | Source's create time.
+updated_at       | [Time](/reference/enums#formats) | Read       | Source's update time.
 {: class="table table-bordered"}
   </div>
 </div>

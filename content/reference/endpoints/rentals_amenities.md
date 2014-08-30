@@ -16,8 +16,8 @@ Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | Rentals Amenity's id.
 -----------------|---------|------------|------------
-created_at       | [Time](/reference/formats#date--time) | Read       | Rentals Amenity's create time.
-updated_at       | [Time](/reference/formats#date--time) | Read       | Rentals Amenity's update time.
+created_at       | [Time](/reference/enums#formats) | Read       | Rentals Amenity's create time.
+updated_at       | [Time](/reference/enums#formats) | Read       | Rentals Amenity's update time.
 {: class="table table-bordered"}
   </div>
 </div>

@@ -33,20 +33,45 @@ Name             | Description
 -----------------|------------
 date             | [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601#Dates) compatible `%Y-%m-%d` `2014-08-21`
 decimal          | Decimal value returned as a string. Big.js is recommended for Javascript users.
+object           | A Javascript Object.
 time             | [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601#UTC) compatible `%Y-%m-%dT%H:%M:%SZ` `2014-08-21T08:40:44Z`
 {: class="table table-bordered"}
+
+_Note_: Translation objects are having locales as string keys and translations as string values. `{"en": "Wonderful living room", "fr": "Merveilleux séjour"}`
 
 ## Locales
 
 Code             | Name
 -----------------|------------
+bg               | Bulgarian
+cs               | Czech
+da               | Danish
 de               | German
 el               | Greek
 en               | English
 es               | Spanish
+fi               | Finish
 fr               | French
+hu               | Hungarian
+id               | Bahasa Indonesian
 it               | Italian
+ja               | Japanese
+ko               | Korean
+lt               | Lithuanian
+lv               | Latvian
+mk               | Macedonian
+nb               | Norvegian
 nl               | Dutch
+pl               | Polish
+pt               | Portuguese
+ro               | Romanian
+rs               | Serbian
+ru               | Russian
+sk               | Slovak
+sv               | Swedish
+uk               | Ukrainian
+zh               | Simplified Chinese
+zh-TW            | Traditional Chinese
 {: class="table table-bordered"}
 
 ## Payment kinds

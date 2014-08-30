@@ -30,9 +30,9 @@ contact_name                    | String   | Read       | Rental's contact name.
 country_code                    | String   | Read       | Rental's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
 currency                        | String   | Read       | Rental's currency code, list of codes described in [enums section](/reference/enums#currencies).
 deposit                         | Integer  | Read       | Rental's default deposit percentage. If none defined, the default deposit percentage of the account will be used.
-description_LOCALE              | Text     | Read       | Rental's description, list of locales described in [enums section](/reference/enums#locales).
+description                     | [Object](/reference/enums#formats)     | Read       | Rental's description, list of locales described in [enums section](/reference/enums#locales).
 final_price                     | Integer  | Read       | Rental's final price. (after discount)
-headline_LOCALE                 | String   | Read       | Rental's headline, list of locales described in [enums section](/reference/enums#locales).
+headline                        | [Object](/reference/enums#formats)     | Read       | Rental's headline, list of locales described in [enums section](/reference/enums#locales).
 initial_price                   | Integer  | Read       | Rental's initial price.
 lat                             | Float    | Read       | Rental's latitude.
 lng                             | Float    | Read       | Rental's longitude.
@@ -47,13 +47,13 @@ reviews_count                   | Integer  | Read       | Rental's count of all 
 sleeps                          | Integer  | Read       | Rental's number of comfortable sleeps.
 sleeps_max                      | Integer  | Read       | Rental's maximum number of sleeps.
 state                           | String   | Read       | Rental's state.
-summary_LOCALE                  | String   | Read       | Rental's summary, list of locales described in [enums section](/reference/enums#locales).
+summary                         | [Object](/reference/enums#formats)     | Read       | Rental's summary, list of locales described in [enums section](/reference/enums#locales).
 surface                         | Integer  | Read       | Rental's surface area.
 surface_unit                    | String   | Read       | Rental's surface area unit, either <i>metric</i> or <i>imperial</i>.
 --------------------------------|----------|------------|--------------
-published_at                    | [Time](/reference/formats#date--time) | Read         | Rental's publish time.
-created_at                      | [Time](/reference/formats#date--time) | Read         | Rental's create time.
-updated_at                      | [Time](/reference/formats#date--time) | Read         | Rental's update time.
+published_at                    | [Time](/reference/enums#formats) | Read         | Rental's publish time.
+created_at                      | [Time](/reference/enums#formats) | Read         | Rental's create time.
+updated_at                      | [Time](/reference/enums#formats) | Read         | Rental's update time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rentals_read" markdown="1">
@@ -77,9 +77,9 @@ contact_name                    | String   | Read       | Rental's contact name.
 country_code                    | String   | Read       | Rental's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
 currency                        | String   | Read       | Rental's currency code, list of codes described in [enums section](/reference/enums#currencies).
 deposit                         | Integer  | Read       | Rental's default deposit percentage. If none defined, the default deposit percentage of the account will be used.
-description_LOCALE              | Text     | Read       | Rental's description, list of locales described in [enums section](/reference/enums#locales).
+description                     | [Object](/reference/enums#formats)     | Read       | Rental's description, list of locales described in [enums section](/reference/enums#locales).
 final_price                     | Integer  | Read       | Rental's final price.
-headline_LOCALE                 | String   | Read       | Rental's headline, list of locales described in [enums section](/reference/enums#locales).
+headline                        | [Object](/reference/enums#formats)     | Read       | Rental's headline, list of locales described in [enums section](/reference/enums#locales).
 initial_price                   | Integer  | Read       | Rental's initial price.
 lat                             | Float    | Read       | Rental's latitude.
 lng                             | Float    | Read       | Rental's longitude.
@@ -95,14 +95,14 @@ reviews_count                   | Integer  | Read       | Rental's count of all 
 sleeps                          | Integer  | Read       | Rental's number of comfortable sleeps.
 sleeps_max                      | Integer  | Read       | Rental's maximum number of sleeps.
 state                           | String   | Read       | Rental's state.
-summary_LOCALE                  | String   | Read       | Rental's summary, list of locales described in [enums section](/reference/enums#locales).
+summary                         | [Object](/reference/enums#formats)     | Read       | Rental's summary, list of locales described in [enums section](/reference/enums#locales).
 surface                         | Integer  | Read       | Rental's surface area.
 surface_unit                    | String   | Read       | Rental's surface area unit, either <i>metric</i> or <i>imperial</i>.
 zip                             | String   | Read       | Rental's zip code.
 --------------------------------|----------|------------|--------------
-published_at                    | [Time](/reference/formats#date--time) | Read         | Rental's publish time.
-created_at                      | [Time](/reference/formats#date--time) | Read         | Rental's create time.
-updated_at                      | [Time](/reference/formats#date--time) | Read         | Rental's update time.
+published_at                    | [Time](/reference/enums#formats) | Read         | Rental's publish time.
+created_at                      | [Time](/reference/enums#formats) | Read         | Rental's create time.
+updated_at                      | [Time](/reference/enums#formats) | Read         | Rental's update time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rentals_write" markdown="1">
@@ -130,9 +130,9 @@ contact_name                    | String   | Read       | Rental's contact name.
 country_code                    | String   | Read/Write | Rental's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
 currency                        | String   | Read/Write | Rental's currency code, list of codes described in [enums section](/reference/enums#currencies).
 deposit                         | Integer  | Read/Write | Rental's default deposit percentage. If none defined, the default deposit percentage of the account will be used. (between 0 and 100)
-description_LOCALE              | Text     | Read/Write | Rental's description, list of locales described in [enums section](/reference/enums#locales). (5000 characters max)
+description                     | [Object](/reference/enums#formats)     | Read/Write | Rental's description, list of locales described in [enums section](/reference/enums#locales). (5000 characters max)
 final_price                     | Integer  | Read       | Rental's final price. (after discount)
-headline_LOCALE                 | String   | Read/Write | Rental's headline, list of locales described in [enums section](/reference/enums#locales). (75 characters max)
+headline                        | [Object](/reference/enums#formats)     | Read/Write | Rental's headline, list of locales described in [enums section](/reference/enums#locales). (75 characters max)
 initial_price                   | Integer  | Read       | Rental's initial price.
 lat                             | Float    | Read/Write | Rental's latitude. (between -90 and 90)
 lng                             | Float    | Read/Write | Rental's longitude. (between -180 and 180)
@@ -148,19 +148,17 @@ reviews_count                   | Integer  | Read       | Rental's count of all 
 sleeps                          | Integer  | Read/Write | Rental's number of comfortable sleeps. (between 0 and 100)
 sleeps_max                      | Integer  | Read/Write | Rental's maximum number of sleeps. (between 0 and 100)
 state                           | String   | Read/Write | Rental's state.
-summary_LOCALE                  | String   | Read/Write | Rental's summary, list of locales described in [enums section](/reference/enums#locales). (150 characters max)
+summary                         | [Object](/reference/enums#formats)     | Read/Write | Rental's summary, list of locales described in [enums section](/reference/enums#locales). (150 characters max)
 surface                         | Integer  | Read/Write | Rental's surface area. (greater than 0)
 surface_unit                    | String   | Read/Write | Rental's surface area unit, either <i>metric</i> or <i>imperial</i>.
 zip                             | String   | Read/Write | Rental's zip code.
 --------------------------------|----------|------------|--------------
-published_at                    | [Time](/reference/formats#date--time) | Read         | Rental's publish time.
-created_at                      | [Time](/reference/formats#date--time) | Read         | Rental's create time.
-updated_at                      | [Time](/reference/formats#date--time) | Read         | Rental's update time.
+published_at                    | [Time](/reference/enums#formats) | Read         | Rental's publish time.
+created_at                      | [Time](/reference/enums#formats) | Read         | Rental's create time.
+updated_at                      | [Time](/reference/enums#formats) | Read         | Rental's update time.
 {: class="table table-bordered"}
   </div>
 </div>
-
-
 
 ## List rentals
 

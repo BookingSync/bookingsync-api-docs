@@ -22,8 +22,8 @@ minimum_stay     | Integer | Read       | Season's minimum stay in days.
 name             | String  | Read       | Season's name.
 ratio            | [Decimal](/reference/enums#formats) | Read       | Season's ratio.
 -----------------|---------|------------|------------
-created_at       | [Time](/reference/formats#date--time) | Read       | Season's create time.
-updated_at       | [Time](/reference/formats#date--time) | Read       | Season's update time.
+created_at       | [Time](/reference/enums#formats) | Read       | Season's create time.
+updated_at       | [Time](/reference/enums#formats) | Read       | Season's update time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rates_write" markdown="1">
@@ -38,8 +38,8 @@ minimum_stay     | Integer | Read/Write | **Required**. Season's minimum stay in
 name             | String  | Read/Write | **Required**. Season's name. (50 max characters)
 ratio            | [Decimal](/reference/enums#formats) | Read/Write | **Required**. Season's ratio. (between 1 and 10)
 -----------------|---------|------------|------------
-created_at       | [Time](/reference/formats#date--time) | Read       | Season's create time.
-updated_at       | [Time](/reference/formats#date--time) | Read       | Season's update time.
+created_at       | [Time](/reference/enums#formats) | Read       | Season's create time.
+updated_at       | [Time](/reference/enums#formats) | Read       | Season's update time.
 {: class="table table-bordered"}
   </div>
 </div>

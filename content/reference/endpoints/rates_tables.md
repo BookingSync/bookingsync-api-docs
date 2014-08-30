@@ -19,8 +19,8 @@ id               | Integer | Read       | Rates Table's id.
 -----------------|---------|-------------------------
 name             | String  | Read       | Rates Table's name.
 -----------------|---------|-------------------------
-created_at       | [Time](/reference/formats#date--time) | Read       | Rate's create time.
-updated_at       | [Time](/reference/formats#date--time) | Read       | Rate's update time.
+created_at       | [Time](/reference/enums#formats) | Read       | Rate's create time.
+updated_at       | [Time](/reference/enums#formats) | Read       | Rate's update time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rates_write" markdown="1">
@@ -32,8 +32,8 @@ id               | Integer | Read       | Rates Table's id.
 -----------------|---------|-------------------------
 name             | String  | Read/Write | **Required**. Rates Table's name. (50 characters max)
 -----------------|---------|-------------------------
-created_at       | [Time](/reference/formats#date--time) | Read       | Rate's create time.
-updated_at       | [Time](/reference/formats#date--time) | Read       | Rate's update time.
+created_at       | [Time](/reference/enums#formats) | Read       | Rate's create time.
+updated_at       | [Time](/reference/enums#formats) | Read       | Rate's update time.
 {: class="table table-bordered"}
   </div>
 </div>

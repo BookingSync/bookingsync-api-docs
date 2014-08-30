@@ -16,11 +16,11 @@ Name                            | Type     | Read/Write | Description
 --------------------------------|----------|-------------------------
 id                              | Integer  | Read       | Destination's id.
 --------------------------------|----------|-------------------------
-aliases_LOCALE                  | String   | Read       | Destination's aliases, list of locales described in [enums section](/reference/enums#locales).
+aliases                         | [Object](/reference/enums#formats)     | Read       | Destination's aliases, list of locales described in [enums section](/reference/enums#locales).
 counter                         | String   | Read       | Destination's use counter for rentals.
-fullname_LOCALE                 | String   | Read       | Destination's fullname, list of locales described in [enums section](/reference/enums#locales).
-name_LOCALE                     | String   | Read       | Destination's name, list of locales described in [enums section](/reference/enums#locales).
-permalink_LOCALE                | String   | Read       | Destination's permalink, list of locales described in [enums section](/reference/enums#locales).
+fullname                        | [Object](/reference/enums#formats)     | Read       | Destination's fullname, list of locales described in [enums section](/reference/enums#locales).
+name                            | [Object](/reference/enums#formats)     | Read       | Destination's name, list of locales described in [enums section](/reference/enums#locales).
+permalink                       | [Object](/reference/enums#formats)     | Read       | Destination's permalink, list of locales described in [enums section](/reference/enums#locales).
 {: class="table table-bordered"}
   </div>
 </div>

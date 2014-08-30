@@ -27,8 +27,8 @@ country_code     | String  | Read       | Billing Address's country_code, list o
 state            | String  | Read       | Billing Address's state.
 zip              | String  | Read       | Billing Address's zip.
 -----------------|---------|------------|------------
-created_at       | [Time](/reference/formats#date--time) | Read       | Billing Address's create time.
-updated_at       | [Time](/reference/formats#date--time) | Read       | Billing Address's update time.
+created_at       | [Time](/reference/enums#formats) | Read       | Billing Address's create time.
+updated_at       | [Time](/reference/enums#formats) | Read       | Billing Address's update time.
 {: class="table table-bordered"}
   </div>
 </div>

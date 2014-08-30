@@ -18,8 +18,8 @@ id               | Integer | Read       | Availability's id.
 -----------------|---------|------------|------------
 map              | String  | Read       | Availability's map of booking status. There is a total of 365 characters, each representing one day. List of statuses described in [enums section](/reference/enums#booking-statuses).
 -----------------|---------|------------|------------
-start_date       | [Date](/reference/formats#date--time) | Read       | Availability's start date.
-updated_at       | [Time](/reference/formats#date--time) | Read       | Availability's update time.
+start_date       | [Date](/reference/enums#formats) | Read       | Availability's start date.
+updated_at       | [Time](/reference/enums#formats) | Read       | Availability's update time.
 {: class="table table-bordered"}
   </div>
 </div>

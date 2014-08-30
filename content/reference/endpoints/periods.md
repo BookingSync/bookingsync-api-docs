@@ -17,10 +17,10 @@ Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | Period's id.
 -----------------|---------|------------|------------
-start_date       | [Date](/reference/formats#date--time) | Read       | Period's start date.
-end_date         | [Date](/reference/formats#date--time) | Read       | Period's end date.
-created_at       | [Time](/reference/formats#date--time) | Read       | Payment's create time.
-updated_at       | [Time](/reference/formats#date--time) | Read       | Payment's update time.
+start_date       | [Date](/reference/enums#formats) | Read       | Period's start date.
+end_date         | [Date](/reference/enums#formats) | Read       | Period's end date.
+created_at       | [Time](/reference/enums#formats) | Read       | Payment's create time.
+updated_at       | [Time](/reference/enums#formats) | Read       | Payment's update time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rates_write" markdown="1">
@@ -30,10 +30,10 @@ Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | Period's id.
 -----------------|---------|------------|------------
-start_date       | [Date](/reference/formats#date--time) | Read/Write | **Required**. Period's start date.
-end_date         | [Date](/reference/formats#date--time) | Read/Write | **Required**. Period's end date.
-created_at       | [Time](/reference/formats#date--time) | Read       | Payment's create time.
-updated_at       | [Time](/reference/formats#date--time) | Read       | Payment's update time.
+start_date       | [Date](/reference/enums#formats) | Read/Write | **Required**. Period's start date.
+end_date         | [Date](/reference/enums#formats) | Read/Write | **Required**. Period's end date.
+created_at       | [Time](/reference/enums#formats) | Read       | Payment's create time.
+updated_at       | [Time](/reference/enums#formats) | Read       | Payment's update time.
 {: class="table table-bordered"}
   </div>
 </div>

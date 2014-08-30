@@ -21,9 +21,9 @@ id                      | Integer | Read       | Booking's id.
 ------------------------|---------|------------|------------
 status                  | String  | Read       | Booking's status.
 ------------------------|---------|------------|------------
-start_at                | [Time](/reference/formats#date--time) | Read       | Booking's start time.
-end_at                  | [Time](/reference/formats#date--time) | Read       | Booking's end time.
-updated_at              | [Time](/reference/formats#date--time) | Read       | Booking's update time.
+start_at                | [Time](/reference/enums#formats) | Read       | Booking's start time.
+end_at                  | [Time](/reference/enums#formats) | Read       | Booking's end time.
+updated_at              | [Time](/reference/enums#formats) | Read       | Booking's update time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="bookings_public_write" markdown="1">
@@ -48,10 +48,10 @@ notes                   | Text    | Write      | Booking's notes. (1000 characte
 status                  | String  | Read       | Booking's status.
 unavailable             | Boolean | Write      | Booking's unavailable status.
 ------------------------|---------|------------|------------
-tentative_expires_at    | [Time](/reference/formats#date--time) | Write      | Booking's tentative expiry time.
-start_at                | [Time](/reference/formats#date--time) | Read/Write | **Required**. Booking's start time.
-end_at                  | [Time](/reference/formats#date--time) | Read/Write | **Required**. Booking's end time.
-updated_at              | [Time](/reference/formats#date--time) | Read       | Booking's update time.
+tentative_expires_at    | [Time](/reference/enums#formats) | Write      | Booking's tentative expiry time.
+start_at                | [Time](/reference/enums#formats) | Read/Write | **Required**. Booking's start time.
+end_at                  | [Time](/reference/enums#formats) | Read/Write | **Required**. Booking's end time.
+updated_at              | [Time](/reference/enums#formats) | Read       | Booking's update time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="bookings_read" markdown="1">
@@ -76,12 +76,12 @@ review_requests_count   | Integer | Read       | Booking's number of review requ
 status                  | String  | Read       | Booking's status.
 unavailable             | Boolean | Read       | Booking's unavailable status.
 ------------------------|---------|------------|------------
-canceled_at             | [Time](/reference/formats#date--time) | Read       | Booking's cancel time.
-tentative_expires_at    | [Time](/reference/formats#date--time) | Read       | Booking's tentative expiry time.
-start_at                | [Time](/reference/formats#date--time) | Read       | Booking's start time.
-end_at                  | [Time](/reference/formats#date--time) | Read       | Booking's end time.
-created_at              | [Time](/reference/formats#date--time) | Read       | Booking's create time.
-updated_at              | [Time](/reference/formats#date--time) | Read       | Booking's update time.
+canceled_at             | [Time](/reference/enums#formats) | Read       | Booking's cancel time.
+tentative_expires_at    | [Time](/reference/enums#formats) | Read       | Booking's tentative expiry time.
+start_at                | [Time](/reference/enums#formats) | Read       | Booking's start time.
+end_at                  | [Time](/reference/enums#formats) | Read       | Booking's end time.
+created_at              | [Time](/reference/enums#formats) | Read       | Booking's create time.
+updated_at              | [Time](/reference/enums#formats) | Read       | Booking's update time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="bookings_write" markdown="1">
@@ -109,12 +109,12 @@ review_requests_count   | Integer | Read       | Booking's number of review requ
 status                  | String  | Read       | Booking's status.
 unavailable             | Boolean | Read/Write | Booking's unavailable status.
 ------------------------|---------|------------|------------
-canceled_at             | [Time](/reference/formats#date--time) | Read       | Booking's cancel time.
-tentative_expires_at    | [Time](/reference/formats#date--time) | Read/Write | Booking's tentative expiry time.
-start_at                | [Time](/reference/formats#date--time) | Read/Write | **Required**. Booking's start time.
-end_at                  | [Time](/reference/formats#date--time) | Read/Write | **Required**. Booking's end time.
-created_at              | [Time](/reference/formats#date--time) | Read       | Booking's create time.
-updated_at              | [Time](/reference/formats#date--time) | Read       | Booking's update time.
+canceled_at             | [Time](/reference/enums#formats) | Read       | Booking's cancel time.
+tentative_expires_at    | [Time](/reference/enums#formats) | Read/Write | Booking's tentative expiry time.
+start_at                | [Time](/reference/enums#formats) | Read/Write | **Required**. Booking's start time.
+end_at                  | [Time](/reference/enums#formats) | Read/Write | **Required**. Booking's end time.
+created_at              | [Time](/reference/enums#formats) | Read       | Booking's create time.
+updated_at              | [Time](/reference/enums#formats) | Read       | Booking's update time.
 {: class="table table-bordered"}
   </div>
 </div>
