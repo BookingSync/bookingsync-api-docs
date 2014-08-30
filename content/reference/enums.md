@@ -43,13 +43,35 @@ _Note_: Translation objects are having locales as string keys and translations a
 
 Code             | Name
 -----------------|------------
+bg               | Bulgarian
+cs               | Czech
+da               | Danish
 de               | German
 el               | Greek
 en               | English
 es               | Spanish
+fi               | Finish
 fr               | French
+hu               | Hungarian
+id               | Bahasa Indonesian
 it               | Italian
+ja               | Japanese
+ko               | Korean
+lt               | Lithuanian
+lv               | Latvian
+mk               | Macedonian
+nb               | Norvegian
 nl               | Dutch
+pl               | Polish
+pt               | Portuguese
+ro               | Romanian
+rs               | Serbian
+ru               | Russian
+sk               | Slovak
+sv               | Swedish
+uk               | Ukrainian
+zh               | Simplified Chinese
+zh-TW            | Traditional Chinese
 {: class="table table-bordered"}
 
 ## Payment kinds
