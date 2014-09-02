@@ -40,6 +40,16 @@ Link: <https://www.bookingsync.com/api/v3/accounts?page=1>; rel="first", <https:
 X-Total-Pages: 3
 ~~~
 
+The possible `rel` values are:
+
+Name  | Description
+------|------------
+next  | Shows the URL of the immediate next page of results.
+last  | Shows the URL of the last page of results.
+first | Shows the URL of the first page of results.
+prev  | Shows the URL of the immediate previous page of results.
+{: class="table table-bordered"}
+
 ### Limiting Fields
 
 For retrieving collection of large resources, it is sometimes useful to limit
