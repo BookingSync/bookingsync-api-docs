@@ -17,12 +17,12 @@ Name                 | Type    | Read/Write | Description
 id                   | Integer | Read       | Rate's id.
 ---------------------|---------|------------|------------
 currency             | String  | Read       | Rate's currency code, list of codes described in [enums section](/reference/enums#currencies).
-initial_nightly_rate | [Decimal](/reference/enums#formats) | Read       | Rate's [initial](#initial-price) nightly rate.
-initial_weekly_rate  | [Decimal](/reference/enums#formats) | Read       | Rate's [initial](#initial-price) weekly rate.
-initial_monthly_rate | [Decimal](/reference/enums#formats) | Read       | Rate's [initial](#initial-price) monthly rate.
-final_nightly_rate   | [Decimal](/reference/enums#formats) | Read       | Rate's [final](#final-price) nightly rate.
-final_weekly_rate    | [Decimal](/reference/enums#formats) | Read       | Rate's [final](#final-price) weekly rate.
-final_monthly_rate   | [Decimal](/reference/enums#formats) | Read       | Rate's [final](#final-price) monthly rate.
+initial_nightly_rate | [Decimal](/reference/enums#formats) | Read       | Rate's [initial](#initial-rate) nightly rate.
+initial_weekly_rate  | [Decimal](/reference/enums#formats) | Read       | Rate's [initial](#initial-rate) weekly rate.
+initial_monthly_rate | [Decimal](/reference/enums#formats) | Read       | Rate's [initial](#initial-rate) monthly rate.
+final_nightly_rate   | [Decimal](/reference/enums#formats) | Read       | Rate's [final](#final-rate) nightly rate.
+final_weekly_rate    | [Decimal](/reference/enums#formats) | Read       | Rate's [final](#final-rate) weekly rate.
+final_monthly_rate   | [Decimal](/reference/enums#formats) | Read       | Rate's [final](#final-rate) monthly rate.
 minimum_stay         | Integer | Read       | Rate's minimum stay in days.
 ---------------------|---------|------------|------------
 start_date           | [Date](/reference/enums#formats) | Read       | Rate's start date.
@@ -34,11 +34,12 @@ updated_at           | [Time](/reference/enums#formats) | Read       | Rate's up
 </div>
 
 <div class="callout callout-info">
+  <h4>Definitions</h4>
   <dl class="dl-horizontal">
-    <dt id="initial-price">Initial price</dt>
-    <dd>Price computed before any discount.</dd>
-    <dt id="final-price">Final price</dt>
-    <dd>Price after discounts have been applied.</dd>
+    <dt id="initial-rate">Initial rate</dt>
+    <dd>Rate computed before any discount.</dd>
+    <dt id="final-rate">Final rate</dt>
+    <dd>Rate after discounts have been applied.</dd>
   </dl>
 </div>
 
