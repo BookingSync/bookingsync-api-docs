@@ -196,7 +196,10 @@ access to public information.</p>
   <li><code>rentals_read</code></li>
   <li><code>rentals_write</code></li>
   <li><code>reviews_write</code></li>
-</ul><h3 id="authorization-code-flow">Authorization Code Flow</h3>
+</ul><p><strong>Note</strong>: To request authorization for multiple scopes, use a space separated list.
+In URLs it would look like <code>&amp;scope=bookings_read%20rentals_read</code> (<code>%20</code> represent a space within URLs)</p>
+
+<h3 id="authorization-code-flow">Authorization Code Flow</h3>
 
 <p>Application can also use the
 <a href="http://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-4.1">OAuth 2.0 Authorization Code flow</a>
