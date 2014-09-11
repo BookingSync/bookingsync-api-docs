@@ -98,6 +98,9 @@ Additionally, the following scopes are available:
 * `rentals_write`
 * `reviews_write`
 
+**Note**: To request authorization for multiple scopes, use a space separated list.
+In URLs it would look like `&scope=bookings_read%20rentals_read` (`%20` represent a space within URLs)
+
 ## Authorization Code Flow
 
 Application can also use the
