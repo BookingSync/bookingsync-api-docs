@@ -18,6 +18,7 @@ Name             | Type    | Read/Write | Description
 id               | Integer | Read       | Source's id.
 -----------------|---------|------------|------------
 name             | String  | Read       | Source's name.
+position         | Integer | Read       | Source's position on the list.
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Source's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Source's update time.
@@ -31,6 +32,7 @@ Name             | Type    | Read/Write | Description
 id               | Integer | Read       | Source's id.
 -----------------|---------|------------|------------
 name             | String  | Read/Write | **Required**. Source's name.
+position         | Integer | Read/Write | Source's position on the list.
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Source's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Source's update time.
