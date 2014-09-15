@@ -15,7 +15,8 @@
       "id": 1,
       "name": "HomeAway.com",
       "created_at": "CREATED_AT",
-      "updated_at": "UPDATED_AT"
+      "updated_at": "UPDATED_AT",
+      "position": 1
     }
   ]
 }
