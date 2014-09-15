@@ -117,12 +117,20 @@
           <td>Read</td>
           <td>Source’s id.</td>
         </tr></tbody>
-<tbody><tr>
+<tbody>
+<tr>
 <td>name</td>
           <td>String</td>
           <td>Read</td>
           <td>Source’s name.</td>
-        </tr></tbody>
+        </tr>
+<tr>
+<td>position</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Source’s position on the list.</td>
+        </tr>
+</tbody>
 <tbody>
 <tr>
 <td>created_at</td>
@@ -155,13 +163,21 @@
           <td>Read</td>
           <td>Source’s id.</td>
         </tr></tbody>
-<tbody><tr>
+<tbody>
+<tr>
 <td>name</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>
 <strong>Required</strong>. Source’s name.</td>
-        </tr></tbody>
+        </tr>
+<tr>
+<td>position</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>Source’s position on the list.</td>
+        </tr>
+</tbody>
 <tbody>
 <tr>
 <td>created_at</td>
@@ -191,7 +207,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#2f10051425e0bookings_read-bookings_write" role="tab" data-toggle="pill">
+      <a href="#fb2b1be1778ebookings_read-bookings_write" role="tab" data-toggle="pill">
         bookings_read / bookings_write
       </a>
     </li>
@@ -199,7 +215,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="2f10051425e0bookings_read-bookings_write">
+    <div class="tab-pane active" id="fb2b1be1778ebookings_read-bookings_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"sources.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{sources.account}"</span><span class="p">,</span>
@@ -216,8 +232,9 @@
       <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"HomeAway.com"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-11T12:03:55Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-11T12:03:55Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-15T16:31:24Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-15T16:31:24Z"</span><span class="p">,</span>
+      <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -236,7 +253,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#4fd7b15e83cabookings_read-bookings_write" role="tab" data-toggle="pill">
+      <a href="#c99a4dbcaf24bookings_read-bookings_write" role="tab" data-toggle="pill">
         bookings_read / bookings_write
       </a>
     </li>
@@ -244,7 +261,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="4fd7b15e83cabookings_read-bookings_write">
+    <div class="tab-pane active" id="c99a4dbcaf24bookings_read-bookings_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"sources.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{sources.account}"</span><span class="p">,</span>
@@ -261,8 +278,9 @@
       <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"HomeAway.com"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-11T12:03:55Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-11T12:03:55Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-15T16:31:24Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-15T16:31:24Z"</span><span class="p">,</span>
+      <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -281,7 +299,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#c69fa74b934abookings_write" role="tab" data-toggle="pill">
+      <a href="#d79134f9902dbookings_write" role="tab" data-toggle="pill">
         bookings_write
       </a>
     </li>
@@ -290,7 +308,8 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"sources"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"HomeAway.com"</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"HomeAway.com"</span><span class="p">,</span>
+      <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -298,7 +317,7 @@
 <h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="c69fa74b934abookings_write">
+    <div class="tab-pane active" id="d79134f9902dbookings_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"sources.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{sources.account}"</span><span class="p">,</span>
@@ -315,8 +334,9 @@
       <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"HomeAway.com"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-11T12:03:55Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-11T12:03:55Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-15T16:31:24Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-15T16:31:24Z"</span><span class="p">,</span>
+      <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -335,7 +355,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#b96068072dabbookings_write" role="tab" data-toggle="pill">
+      <a href="#efb5b947d6fbbookings_write" role="tab" data-toggle="pill">
         bookings_write
       </a>
     </li>
@@ -344,7 +364,8 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"sources"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"HomeAway.com"</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"HomeAway.com"</span><span class="p">,</span>
+      <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -352,7 +373,7 @@
 <h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="b96068072dabbookings_write">
+    <div class="tab-pane active" id="efb5b947d6fbbookings_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"sources.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{sources.account}"</span><span class="p">,</span>
@@ -369,8 +390,9 @@
       <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"HomeAway.com"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-11T12:03:55Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-11T12:03:55Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-15T16:31:24Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-15T16:31:24Z"</span><span class="p">,</span>
+      <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
