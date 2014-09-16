@@ -35,12 +35,8 @@ updated_at           | [Time](/reference/enums#formats) | Read       | Rate's up
 
 <div class="callout callout-info">
   <h4>Definitions</h4>
-  <dl class="dl-horizontal">
-    <dt id="initial-rate">Initial rate</dt>
-    <dd>Rate computed before any discount.</dd>
-    <dt id="final-rate">Final rate</dt>
-    <dd>Rate after discounts have been applied.</dd>
-  </dl>
+  <strong>Initial rate</strong>: Rate computed before any discount.<br>
+  <strong>Final rate</strong>: Rate after discounts have been applied.
 </div>
 
 ## List rates
