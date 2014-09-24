@@ -11,13 +11,13 @@
       "firstname": "John",
       "lastname": "Smith",
       "email": "john@example.com",
-      "country_code": null,
-      "phone": null,
+      "country_code": "GB",
+      "phone": 7273647616,
       "start_at": "START_AT",
       "end_at": "END_AT",
-      "adults": null,
-      "children": null,
-      "message": null,
+      "adults": 4,
+      "children": 2,
+      "message": "Important message",
       "created_at": "CREATED_AT",
       "updated_at": "UPDATED_AT"
     }

@@ -19,11 +19,10 @@ id                 | Integer | Read       | Photo's id.
 -------------------|---------|------------|------------
 description        | [Object](/reference/enums#formats)    | Read       | Photo's description, list of locales described in [enums section](/reference/enums#locales).
 kind               | String  | Read       | Photo's kind, list of kinds described in [enum section](/reference/enums/#photo-kinds).
-position           | Integer | Read       | Photo's position on the rental list.
--------------------|---------|------------|------------
 large_url          | String  | Read       | Photo's large size url.
 micro_url          | String  | Read       | Photo's micro size url.
 normal_url         | String  | Read       | Photo's normal size url.
+position           | Integer | Read       | Photo's position on the rental list.
 thumb_url          | String  | Read       | Photo's thumb size url.
 -------------------|---------|------------|------------
 created_at         | [Time](/reference/enums#formats) | Read       | Photo's create time.
@@ -39,13 +38,12 @@ id                 | Integer | Read       | Photo's id.
 -------------------|---------|------------|------------
 description        | [Object](/reference/enums#formats)    | Read/Write | Photo's description, list of locales described in [enums section](/reference/enums#locales). (80 characters max)
 kind               | String  | Read/Write | Photo's kind, list of kinds described in [enum section](/reference/enums/#photo-kinds).
-photo              | File    | Write      | **Required**. Photo's image.
-position           | Integer | Read/Write | Photo's position on the rental list.
-remote_photo_url   | String  | Write      | Photo's remote url.
--------------------|---------|------------|------------
 large_url          | String  | Read       | Photo's large size url.
 micro_url          | String  | Read       | Photo's micro size url.
 normal_url         | String  | Read       | Photo's normal size url.
+photo              | File    | Write      | **Required**. Photo's image.
+position           | Integer | Read/Write | Photo's position on the rental list.
+remote_photo_url   | String  | Write      | Photo's remote url.
 thumb_url          | String  | Read       | Photo's thumb size url.
 -------------------|---------|------------|------------
 created_at         | [Time](/reference/enums#formats) | Read       | Photo's create time.
