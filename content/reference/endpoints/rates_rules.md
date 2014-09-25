@@ -26,10 +26,10 @@ percentage           | Integer | Read       | Rates Rule's percentage discount.
 period_name          | String  | Read       | Rates Rule's period name.
 variables            | Text    | Read       | Rates Rule's variables used depending on kind type.
 ---------------------|---------|------------|------------
-start_date           | [Date](/reference/enums#formats) | Read       | Rates Rule's start date.
-end_date             | [Date](/reference/enums#formats) | Read       | Rates Rule's end date.
 created_at           | [Time](/reference/enums#formats) | Read       | Rates Rule's create time.
 updated_at           | [Time](/reference/enums#formats) | Read       | Rates Rule's update time.
+start_date           | [Date](/reference/enums#formats) | Read       | Rates Rule's start date.
+end_date             | [Date](/reference/enums#formats) | Read       | Rates Rule's end date.
 {: class="table table-bordered"}
   </div>
 </div>

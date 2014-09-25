@@ -25,10 +25,10 @@ final_weekly_rate    | [Decimal](/reference/enums#formats) | Read       | Rate's
 final_monthly_rate   | [Decimal](/reference/enums#formats) | Read       | Rate's [final](#final-rate) monthly rate.
 minimum_stay         | Integer | Read       | Rate's minimum stay in days.
 ---------------------|---------|------------|------------
-start_date           | [Date](/reference/enums#formats) | Read       | Rate's start date.
-end_date             | [Date](/reference/enums#formats) | Read       | Rate's end date.
 created_at           | [Time](/reference/enums#formats) | Read       | Rate's create time.
 updated_at           | [Time](/reference/enums#formats) | Read       | Rate's update time.
+start_date           | [Date](/reference/enums#formats) | Read       | Rate's start date.
+end_date             | [Date](/reference/enums#formats) | Read       | Rate's end date.
 {: class="table table-bordered"}
   </div>
 </div>
