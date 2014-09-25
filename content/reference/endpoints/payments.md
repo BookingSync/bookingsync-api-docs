@@ -18,7 +18,7 @@ Name                | Type     | Read/Write | Description
 id                  | Integer  | Read       | Payment's id.
 --------------------|----------|------------|------------
 amount              | Integer  | Read       | Payment's value in cents.
-card                | String   | Read       | Payment's card.
+card                | String   | Read       | Payment's card number, only the last 4 digits are visible. (example: `"XXXX-XXXX-XXXX-1234"`).
 currency            | String   | Read       | Payment's currency code, list of codes described in [enums section](/reference/enums/#currencies).
 kind                | String   | Read       | Payment's kind, list of kinds described in [enums section](/reference/enums/#payment-kinds).
 email               | String   | Read       | Payer's email.
@@ -43,7 +43,7 @@ Name                | Type     | Read/Write | Description
 id                  | Integer  | Read       | Payment's id.
 --------------------|----------|------------|------------
 amount              | Integer  | Read/Write | **Required**. Payment's value in cents.
-card                | String   | Read       | Payment's card.
+card                | String   | Read       | Payment's card number, only the last 4 digits are visible. (example: `"XXXX-XXXX-XXXX-1234"`).
 currency            | String   | Read/Write | Payment's currency code, list of codes described in [enums section](/reference/enums/#currencies).
 kind                | String   | Read/Write | **Required**. Payment's kind, list of kinds described in [enums section](/reference/enums/#payment-kinds).
 email               | String   | Read/Write | Payer's email.
