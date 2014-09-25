@@ -1,6 +1,6 @@
 {
   "links": {
-    "availabilities.rental": "https://bookingsync.dev/api/v3/rentals/{availabilities.rental}"
+    "availabilities.rental": "https://www.bookingsync.com/api/v3/rentals/{availabilities.rental}"
   },
   "availabilities": [
     {
