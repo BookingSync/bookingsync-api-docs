@@ -12,7 +12,7 @@
       "id": 1,
       "rating": 5,
       "comment": "It was awesome!",
-      "name": "John Smith",
+      "name": "John S.",
       "created_at": "CREATED_AT",
       "updated_at": "UPDATED_AT"
     }
