@@ -28,11 +28,11 @@ locale              | String   | Read       | Payer's preferred locale, list of 
 notes               | Text     | Read       | Payment's additional information.
 test                | Boolean  | Read       | Payment's test status.
 --------------------|----------|------------|------------
-canceled_at         | [Time](/reference/enums#formats) | Read       | Payment's cancel time.
-paid_at             | [Time](/reference/enums#formats) | Read       | Payment's issue time.
-rejected_at         | [Time](/reference/enums#formats) | Read       | Payment's reject time.
 created_at          | [Time](/reference/enums#formats) | Read       | Payment's create time.
 updated_at          | [Time](/reference/enums#formats) | Read       | Payment's update time.
+rejected_at         | [Time](/reference/enums#formats) | Read       | Payment's reject time.
+canceled_at         | [Time](/reference/enums#formats) | Read       | Payment's cancel time.
+paid_at             | [Time](/reference/enums#formats) | Read       | Payment's issue time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="payments_write" markdown="1">
@@ -53,11 +53,11 @@ locale              | String   | Read/Write | Payer's preferred locale, list of 
 notes               | Text     | Read/Write | Payment's additional information.
 test                | Boolean  | Read       | Payment's test status.
 --------------------|----------|------------|------------
-canceled_at         | [Time](/reference/enums#formats) | Read       | Payment's cancel time.
-paid_at             | [Time](/reference/enums#formats) | Read/Write | Payment's issue time.
-rejected_at         | [Time](/reference/enums#formats) | Read       | Payment's reject time.
 created_at          | [Time](/reference/enums#formats) | Read       | Payment's create time.
 updated_at          | [Time](/reference/enums#formats) | Read       | Payment's update time.
+rejected_at         | [Time](/reference/enums#formats) | Read       | Payment's reject time.
+canceled_at         | [Time](/reference/enums#formats) | Read       | Payment's cancel time.
+paid_at             | [Time](/reference/enums#formats) | Read/Write | Payment's issue time.
 {: class="table table-bordered"}
   </div>
 </div>

@@ -51,9 +51,9 @@ summary                         | [Object](/reference/enums#formats)     | Read 
 surface                         | Integer  | Read       | Rental's surface area.
 surface_unit                    | String   | Read       | Rental's surface area unit, either <i>metric</i> or <i>imperial</i>.
 --------------------------------|----------|------------|--------------
-published_at                    | [Time](/reference/enums#formats) | Read         | Rental's publish time.
 created_at                      | [Time](/reference/enums#formats) | Read         | Rental's create time.
 updated_at                      | [Time](/reference/enums#formats) | Read         | Rental's update time.
+published_at                    | [Time](/reference/enums#formats) | Read         | Rental's publish time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rentals_read" markdown="1">
@@ -100,9 +100,9 @@ surface                         | Integer  | Read       | Rental's surface area.
 surface_unit                    | String   | Read       | Rental's surface area unit, either <i>metric</i> or <i>imperial</i>.
 zip                             | String   | Read       | Rental's zip code.
 --------------------------------|----------|------------|--------------
-published_at                    | [Time](/reference/enums#formats) | Read         | Rental's publish time.
 created_at                      | [Time](/reference/enums#formats) | Read         | Rental's create time.
 updated_at                      | [Time](/reference/enums#formats) | Read         | Rental's update time.
+published_at                    | [Time](/reference/enums#formats) | Read         | Rental's publish time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rentals_write" markdown="1">
@@ -153,9 +153,9 @@ surface                         | Integer  | Read/Write | Rental's surface area.
 surface_unit                    | String   | Read/Write | Rental's surface area unit, either <i>metric</i> or <i>imperial</i>.
 zip                             | String   | Read/Write | Rental's zip code.
 --------------------------------|----------|------------|--------------
-published_at                    | [Time](/reference/enums#formats) | Read         | Rental's publish time.
 created_at                      | [Time](/reference/enums#formats) | Read         | Rental's create time.
 updated_at                      | [Time](/reference/enums#formats) | Read         | Rental's update time.
+published_at                    | [Time](/reference/enums#formats) | Read         | Rental's publish time.
 {: class="table table-bordered"}
   </div>
 </div>

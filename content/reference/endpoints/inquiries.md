@@ -26,10 +26,10 @@ lastname         | String  | Read       | Inquiry's client lastname.
 message          | Text    | Read       | Inquiry's message.
 phone            | String  | Read       | Inquiry's client phone number.
 -----------------|---------|------------|------------
-start_at         | [Time](/reference/enums#formats) | Read       | Inquiry's booking start time.
-end_at           | [Time](/reference/enums#formats) | Read       | Inquiry's booking end time.
 created_at       | [Time](/reference/enums#formats) | Read       | Inquiry's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Inquiry's update time.
+start_at         | [Time](/reference/enums#formats) | Read       | Inquiry's booking start time.
+end_at           | [Time](/reference/enums#formats) | Read       | Inquiry's booking end time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="inquiries_write" markdown="1">
@@ -48,10 +48,10 @@ lastname         | String  | Read/Write | **Required**. Inquiry's client lastnam
 message          | Text    | Read/Write | Inquiry's message. (500 characters max)
 phone            | String  | Read/Write | Inquiry's client phone number.
 -----------------|---------|------------|------------
-start_at         | [Time](/reference/enums#formats) | Read/Write | Inquiry's booking start time.
-end_at           | [Time](/reference/enums#formats) | Read/Write | Inquiry's booking end time.
 created_at       | [Time](/reference/enums#formats) | Read       | Inquiry's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Inquiry's update time.
+start_at         | [Time](/reference/enums#formats) | Read/Write | Inquiry's booking start time.
+end_at           | [Time](/reference/enums#formats) | Read/Write | Inquiry's booking end time.
 {: class="table table-bordered"}
   </div>
 </div>
