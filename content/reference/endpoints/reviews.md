@@ -18,7 +18,7 @@ Name             | Type    | Read/Write | Description
 id               | Integer | Read       | Review's id.
 -----------------|---------|------------|------------
 comment          | Text    | Read       | Review's comment.
-name             | String  | Read       | Reviewer's name.
+name             | String  | Read       | Reviewer's name, cropped to show only the initial of the last name.
 rating           | Integer | Read       | Review's rating.
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Review's create time.
@@ -33,7 +33,7 @@ Name             | Type    | Read/Write | Description
 id               | Integer | Read       | Review's id.
 -----------------|---------|------------|------------
 comment          | Text    | Read/Write | Review's comment.  (10 min, 2000 max characters)
-name             | String  | Read       | Reviewer's name.
+name             | String  | Read       | Reviewer's name, cropped to show only the initial of the last name.
 rating           | Integer | Read/Write | **Required**. Review's rating. (between 1 and 6)
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Review's create time.
