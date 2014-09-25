@@ -132,14 +132,6 @@
           <td>Photo’s kind, list of kinds described in <a href="/reference/enums/#photo-kinds">enum section</a>.</td>
         </tr>
 <tr>
-<td>position</td>
-          <td>Integer</td>
-          <td>Read</td>
-          <td>Photo’s position on the rental list.</td>
-        </tr>
-</tbody>
-<tbody>
-<tr>
 <td>large_url</td>
           <td>String</td>
           <td>Read</td>
@@ -156,6 +148,12 @@
           <td>String</td>
           <td>Read</td>
           <td>Photo’s normal size url.</td>
+        </tr>
+<tr>
+<td>position</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Photo’s position on the rental list.</td>
         </tr>
 <tr>
 <td>thumb_url</td>
@@ -210,6 +208,24 @@
           <td>Photo’s kind, list of kinds described in <a href="/reference/enums/#photo-kinds">enum section</a>.</td>
         </tr>
 <tr>
+<td>large_url</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Photo’s large size url.</td>
+        </tr>
+<tr>
+<td>micro_url</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Photo’s micro size url.</td>
+        </tr>
+<tr>
+<td>normal_url</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Photo’s normal size url.</td>
+        </tr>
+<tr>
 <td>photo</td>
           <td>File</td>
           <td>Write</td>
@@ -227,26 +243,6 @@
           <td>String</td>
           <td>Write</td>
           <td>Photo’s remote url.</td>
-        </tr>
-</tbody>
-<tbody>
-<tr>
-<td>large_url</td>
-          <td>String</td>
-          <td>Read</td>
-          <td>Photo’s large size url.</td>
-        </tr>
-<tr>
-<td>micro_url</td>
-          <td>String</td>
-          <td>Read</td>
-          <td>Photo’s micro size url.</td>
-        </tr>
-<tr>
-<td>normal_url</td>
-          <td>String</td>
-          <td>Read</td>
-          <td>Photo’s normal size url.</td>
         </tr>
 <tr>
 <td>thumb_url</td>
@@ -284,7 +280,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#627f5e4fdc8epublic" role="tab" data-toggle="pill">
+      <a href="#fc24bfc9ef68public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -292,28 +288,28 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="627f5e4fdc8epublic">
+    <div class="tab-pane active" id="fc24bfc9ef68public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
   <span class="p">},</span>
   <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
-      <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Wonderful living room"</span>
       <span class="p">},</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"livingroom"</span><span class="p">,</span>
       <span class="s2">"large_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/large_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
-      <span class="s2">"normal_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/normal_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
-      <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"micro_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
+      <span class="s2">"normal_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/normal_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-15T16:31:23Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-15T16:31:23Z"</span>
+      <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:05:43Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:05:43Z"</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
+      <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -332,7 +328,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#263ee6f26d4apublic" role="tab" data-toggle="pill">
+      <a href="#4835f8baec00public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -340,28 +336,28 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="263ee6f26d4apublic">
+    <div class="tab-pane active" id="4835f8baec00public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
   <span class="p">},</span>
   <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
-      <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Wonderful living room"</span>
       <span class="p">},</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"livingroom"</span><span class="p">,</span>
       <span class="s2">"large_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/large_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
-      <span class="s2">"normal_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/normal_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
-      <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"micro_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
+      <span class="s2">"normal_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/normal_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-15T16:31:23Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-15T16:31:23Z"</span>
+      <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:05:43Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:05:43Z"</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
+      <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -380,7 +376,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#d8e95d0386c4rentals_write" role="tab" data-toggle="pill">
+      <a href="#deade32ea355rentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
@@ -389,11 +385,11 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"photo"</span><span class="o">:</span> <span class="s2">"livingroom.jpg"</span><span class="p">,</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Wonderful living room"</span>
       <span class="p">},</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"livingroom"</span><span class="p">,</span>
+      <span class="s2">"photo"</span><span class="o">:</span> <span class="s2">"livingroom.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -402,28 +398,28 @@
 <h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="d8e95d0386c4rentals_write">
+    <div class="tab-pane active" id="deade32ea355rentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
   <span class="p">},</span>
   <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
-      <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Wonderful living room"</span>
       <span class="p">},</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"livingroom"</span><span class="p">,</span>
       <span class="s2">"large_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/large_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
-      <span class="s2">"normal_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/normal_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
-      <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"micro_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
+      <span class="s2">"normal_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/normal_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-15T16:31:23Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-15T16:31:23Z"</span>
+      <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:05:43Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:05:43Z"</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
+      <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -442,7 +438,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#6f3813de3560rentals_write" role="tab" data-toggle="pill">
+      <a href="#307e861f9f4drentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
@@ -451,11 +447,11 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"photo"</span><span class="o">:</span> <span class="s2">"livingroom.jpg"</span><span class="p">,</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Wonderful living room"</span>
       <span class="p">},</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"livingroom"</span><span class="p">,</span>
+      <span class="s2">"photo"</span><span class="o">:</span> <span class="s2">"livingroom.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -464,28 +460,28 @@
 <h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="6f3813de3560rentals_write">
+    <div class="tab-pane active" id="307e861f9f4drentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
   <span class="p">},</span>
   <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
-      <span class="p">},</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Wonderful living room"</span>
       <span class="p">},</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"livingroom"</span><span class="p">,</span>
       <span class="s2">"large_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/large_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
-      <span class="s2">"normal_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/normal_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
-      <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"micro_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
+      <span class="s2">"normal_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/normal_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-15T16:31:23Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-15T16:31:23Z"</span>
+      <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:05:43Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:05:43Z"</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
+      <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
