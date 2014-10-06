@@ -29,8 +29,8 @@ city                            | String   | Read       | Rental's city.
 contact_name                    | String   | Read       | Rental's contact name.
 country_code                    | String   | Read       | Rental's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
 currency                        | String   | Read       | Rental's currency code, list of codes described in [enums section](/reference/enums#currencies).
-deposit                         | Integer  | Read       | Rental's default deposit percentage. If none defined, the default deposit percentage of the account will be used.
 description                     | [Object](/reference/enums#formats)     | Read       | Rental's description, list of locales described in [enums section](/reference/enums#locales).
+downpayment                     | Integer  | Read       | Rental's default downpayment percentage. If none defined, the default downpayment percentage of the account will be used.
 final_price                     | Integer  | Read       | Rental's final price. (after discount)
 headline                        | [Object](/reference/enums#formats)     | Read       | Rental's headline, list of locales described in [enums section](/reference/enums#locales).
 initial_price                   | Integer  | Read       | Rental's initial price.
@@ -76,8 +76,8 @@ city                            | String   | Read       | Rental's city.
 contact_name                    | String   | Read       | Rental's contact name.
 country_code                    | String   | Read       | Rental's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
 currency                        | String   | Read       | Rental's currency code, list of codes described in [enums section](/reference/enums#currencies).
-deposit                         | Integer  | Read       | Rental's default deposit percentage. If none defined, the default deposit percentage of the account will be used.
 description                     | [Object](/reference/enums#formats)     | Read       | Rental's description, list of locales described in [enums section](/reference/enums#locales).
+downpayment                     | Integer  | Read       | Rental's default downpayment percentage. If none defined, the default downpayment percentage of the account will be used.
 final_price                     | Integer  | Read       | Rental's final price.
 headline                        | [Object](/reference/enums#formats)     | Read       | Rental's headline, list of locales described in [enums section](/reference/enums#locales).
 initial_price                   | Integer  | Read       | Rental's initial price.
@@ -129,8 +129,8 @@ city                            | String   | Read/Write | Rental's city.
 contact_name                    | String   | Read       | Rental's contact name.
 country_code                    | String   | Read/Write | Rental's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
 currency                        | String   | Read/Write | Rental's currency code, list of codes described in [enums section](/reference/enums#currencies).
-deposit                         | Integer  | Read/Write | Rental's default deposit percentage. If none defined, the default deposit percentage of the account will be used. (between 0 and 100)
 description                     | [Object](/reference/enums#formats)     | Read/Write | Rental's description, list of locales described in [enums section](/reference/enums#locales). (5000 characters max)
+downpayment                         | Integer  | Read/Write | Rental's default downpayment percentage. If none defined, the default downpayment percentage of the account will be used. (between 0 and 100)
 final_price                     | Integer  | Read       | Rental's final price. (after discount)
 headline                        | [Object](/reference/enums#formats)     | Read/Write | Rental's headline, list of locales described in [enums section](/reference/enums#locales). (75 characters max)
 initial_price                   | Integer  | Read       | Rental's initial price.

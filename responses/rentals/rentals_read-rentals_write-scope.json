@@ -47,7 +47,7 @@
         "en": "First class Villa for 9 people with private pool. Situated in a pleasant residential area."
       },
       "rental_type": "villa",
-      "deposit":30,
+      "downpayment":30,
       "bedrooms_count": 5,
       "sleeps": 9,
       "sleeps_max": 10,
