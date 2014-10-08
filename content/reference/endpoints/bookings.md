@@ -40,8 +40,8 @@ adults                  | Integer | Write      | Booking's number of adults.
 booked                  | Boolean | Write      | Booking's booked status.
 children                | Integer | Write      | Booking's number of children.
 currency                | String  | Write      | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies).
-deposit                 | [Decimal](/reference/enums#formats) | Write      | Booking's deposit.
 discount                | String  | Write      | Booking's discount. (in percents e.g. 10%)
+downpayment             | [Decimal](/reference/enums#formats) | Write      | Booking's downpayment.
 final_price             | [Decimal](/reference/enums#formats) | Write      | Booking's final price. (after discount)
 initial_price           | [Decimal](/reference/enums#formats) | Write      | Booking's initial price.
 notes                   | Text    | Write      | Booking's notes. (1000 characters max)
@@ -66,8 +66,8 @@ booked                  | Boolean | Read       | Booking's booked status.
 bookings_payments_count | Integer | Read       | Booking's number of payments.
 children                | Integer | Read       | Booking's number of children.
 currency                | String  | Read       | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies).
-deposit                 | [Decimal](/reference/enums#formats) | Read       | Booking's deposit.
 discount                | String  | Read       | Booking's discount. (in percents e.g. 10%)
+downpayment             | [Decimal](/reference/enums#formats) | Read       | Booking's downpayment.
 final_price             | [Decimal](/reference/enums#formats) | Read       | Booking's final price. (after discount)
 initial_price           | [Decimal](/reference/enums#formats) | Read       | Booking's initial price.
 locked                  | String  | Read       | Booking's locked status.
@@ -99,8 +99,8 @@ booked                  | Boolean | Read/Write | Booking's booked status.
 bookings_payments_count | Integer | Read       | Booking's number of payments.
 children                | Integer | Read/Write | Booking's number of children.
 currency                | String  | Read/Write | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies).
-deposit                 | [Decimal](/reference/enums#formats) | Read/Write | Booking's deposit.
 discount                | String  | Read/Write | Booking's discount. (in percents e.g. 10%)
+downpayment                 | [Decimal](/reference/enums#formats) | Read/Write | Booking's downpayment.
 final_price             | [Decimal](/reference/enums#formats) | Read/Write | Booking's final price. (after discount)
 initial_price           | [Decimal](/reference/enums#formats) | Read/Write | Booking's initial price.
 locked                  | String  | Read/Write | Booking's locked status.
