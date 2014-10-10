@@ -187,16 +187,16 @@
           <td>Rental’s currency code, list of codes described in <a href="/reference/enums#currencies">enums section</a>.</td>
         </tr>
 <tr>
-<td>deposit</td>
-          <td>Integer</td>
-          <td>Read</td>
-          <td>Rental’s default deposit percentage. If none defined, the default deposit percentage of the account will be used.</td>
-        </tr>
-<tr>
 <td>description</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read</td>
           <td>Rental’s description, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td>downpayment</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s default downpayment percentage. If none defined, the default downpayment percentage of the account will be used.</td>
         </tr>
 <tr>
 <td>final_price</td>
@@ -431,16 +431,16 @@
           <td>Rental’s currency code, list of codes described in <a href="/reference/enums#currencies">enums section</a>.</td>
         </tr>
 <tr>
-<td>deposit</td>
-          <td>Integer</td>
-          <td>Read</td>
-          <td>Rental’s default deposit percentage. If none defined, the default deposit percentage of the account will be used.</td>
-        </tr>
-<tr>
 <td>description</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read</td>
           <td>Rental’s description, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td>downpayment</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s default downpayment percentage. If none defined, the default downpayment percentage of the account will be used.</td>
         </tr>
 <tr>
 <td>final_price</td>
@@ -713,16 +713,16 @@
           <td>Rental’s currency code, list of codes described in <a href="/reference/enums#currencies">enums section</a>.</td>
         </tr>
 <tr>
-<td>deposit</td>
-          <td>Integer</td>
-          <td>Read/Write</td>
-          <td>Rental’s default deposit percentage. If none defined, the default deposit percentage of the account will be used. (between 0 and 100)</td>
-        </tr>
-<tr>
 <td>description</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read/Write</td>
           <td>Rental’s description, list of locales described in <a href="/reference/enums#locales">enums section</a>. (5000 characters max)</td>
+        </tr>
+<tr>
+<td>downpayment</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>Rental’s default downpayment percentage. If none defined, the default downpayment percentage of the account will be used. (between 0 and 100)</td>
         </tr>
 <tr>
 <td>final_price</td>
@@ -887,13 +887,13 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#1f9318a9d83epublic" role="tab" data-toggle="pill">
+      <a href="#51db59b57f17public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
   
     <li>
-      <a href="#8f81823264aarentals_read-rentals_write" role="tab" data-toggle="pill">
+      <a href="#92bd05d0274drentals_read-rentals_write" role="tab" data-toggle="pill">
         rentals_read / rentals_write
       </a>
     </li>
@@ -901,7 +901,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="1f9318a9d83epublic">
+    <div class="tab-pane active" id="51db59b57f17public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -929,10 +929,10 @@
       <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"FR"</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
-      <span class="s2">"deposit"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 8 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
+      <span class="s2">"downpayment"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
       <span class="s2">"final_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span>
@@ -958,9 +958,9 @@
       <span class="p">},</span>
       <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:58:50Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:58:50Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:58:50Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-10T12:43:36Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-10T12:43:36Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2014-10-10T12:43:36Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -996,7 +996,7 @@
 <span class="p">}</span></code></pre>
     </div>
   
-    <div class="tab-pane " id="8f81823264aarentals_read-rentals_write">
+    <div class="tab-pane " id="92bd05d0274drentals_read-rentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -1026,10 +1026,10 @@
       <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"FR"</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
-      <span class="s2">"deposit"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 9 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
+      <span class="s2">"downpayment"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
       <span class="s2">"final_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span>
@@ -1057,9 +1057,9 @@
       <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:58:50Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:58:50Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:58:50Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-10T12:43:36Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-10T12:43:36Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2014-10-10T12:43:36Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -1102,13 +1102,13 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#3f534758ee86public" role="tab" data-toggle="pill">
+      <a href="#3563d88a7a8epublic" role="tab" data-toggle="pill">
         public
       </a>
     </li>
   
     <li>
-      <a href="#c64a29f16104rentals_read-rentals_write" role="tab" data-toggle="pill">
+      <a href="#bed633bed03drentals_read-rentals_write" role="tab" data-toggle="pill">
         rentals_read / rentals_write
       </a>
     </li>
@@ -1116,7 +1116,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="3f534758ee86public">
+    <div class="tab-pane active" id="3563d88a7a8epublic">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -1144,10 +1144,10 @@
       <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"FR"</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
-      <span class="s2">"deposit"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 8 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
+      <span class="s2">"downpayment"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
       <span class="s2">"final_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span>
@@ -1173,9 +1173,9 @@
       <span class="p">},</span>
       <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:58:50Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:58:50Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:58:50Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-10T12:43:36Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-10T12:43:36Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2014-10-10T12:43:36Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -1211,7 +1211,7 @@
 <span class="p">}</span></code></pre>
     </div>
   
-    <div class="tab-pane " id="c64a29f16104rentals_read-rentals_write">
+    <div class="tab-pane " id="bed633bed03drentals_read-rentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -1241,10 +1241,10 @@
       <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"FR"</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
-      <span class="s2">"deposit"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 9 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
+      <span class="s2">"downpayment"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
       <span class="s2">"final_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span>
@@ -1272,9 +1272,9 @@
       <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:58:50Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:58:50Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:58:50Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-10T12:43:36Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-10T12:43:36Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2014-10-10T12:43:36Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -1322,7 +1322,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#2e8a3d06427brentals_write" role="tab" data-toggle="pill">
+      <a href="#7f50f895498erentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
@@ -1350,7 +1350,7 @@
 <h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="2e8a3d06427brentals_write">
+    <div class="tab-pane active" id="7f50f895498erentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -1380,10 +1380,10 @@
       <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"FR"</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
-      <span class="s2">"deposit"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 9 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
+      <span class="s2">"downpayment"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
       <span class="s2">"final_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span>
@@ -1411,9 +1411,9 @@
       <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:58:50Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:58:50Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:58:50Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-10T12:43:36Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-10T12:43:36Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2014-10-10T12:43:36Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -1456,7 +1456,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#f300a4d89f2arentals_write" role="tab" data-toggle="pill">
+      <a href="#143907f85561rentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
@@ -1484,7 +1484,7 @@
 <h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="f300a4d89f2arentals_write">
+    <div class="tab-pane active" id="143907f85561rentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -1514,10 +1514,10 @@
       <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"FR"</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
-      <span class="s2">"deposit"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 9 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
+      <span class="s2">"downpayment"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
       <span class="s2">"final_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span>
@@ -1545,9 +1545,9 @@
       <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:58:50Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:58:50Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2014-09-25T12:58:50Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-10T12:43:36Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-10T12:43:36Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2014-10-10T12:43:36Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
