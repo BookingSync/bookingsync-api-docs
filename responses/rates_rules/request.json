@@ -1,0 +1,23 @@
+{
+  "rates_rules": [
+    {
+      "always_applied": false,
+      "percentage": -20,
+      "period_name": "Late Spring",
+      "kind": "late_booking",
+      "variables": {
+        "days": [
+          1
+        ],
+        "length": 5,
+        "unit": "days"
+      },
+      "start_date": "START_DATE",
+      "end_date": "END_DATE",
+      "season_ids": [
+        1,
+        19
+      ]
+    }
+  ]
+}
