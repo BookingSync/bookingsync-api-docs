@@ -35,7 +35,7 @@ end_date             | [Date](/reference/enums#formats) | Read       | Rates Rul
 Name                 | Type    | Read/Write | Description
 ---------------------|---------|------------|------------
 id                   | Integer | Read       | Rates Rule's id.
-season_ids          | Array   | Write      | Season ids related to the rates rule.
+season_ids           | Array   | Write      | Season ids related to the rates rule.
 ---------------------|---------|------------|------------
 always_applied       | Boolean | Read/Write | Rates Rule's application status.
 kind                 | String  | Read/Write | Rates Rule's kind. List of types described in [enums section](/reference/enums#rates-rules-types).
