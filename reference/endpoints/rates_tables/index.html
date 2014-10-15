@@ -118,12 +118,20 @@
           <td>Read</td>
           <td>Rates Table’s id.</td>
         </tr></tbody>
-<tbody><tr>
+<tbody>
+<tr>
 <td>name</td>
           <td>String</td>
           <td>Read</td>
           <td>Rates Table’s name.</td>
-        </tr></tbody>
+        </tr>
+<tr>
+<td>shared</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Rates Table’s shared status.</td>
+        </tr>
+</tbody>
 <tbody>
 <tr>
 <td>created_at</td>
@@ -156,13 +164,21 @@
           <td>Read</td>
           <td>Rates Table’s id.</td>
         </tr></tbody>
-<tbody><tr>
+<tbody>
+<tr>
 <td>name</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>
 <strong>Required</strong>. Rates Table’s name. (50 characters max)</td>
-        </tr></tbody>
+        </tr>
+<tr>
+<td>shared</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Rates Table’s shared status. (Rates Table is made shared when creating or updating through api)</td>
+        </tr>
+</tbody>
 <tbody>
 <tr>
 <td>created_at</td>
@@ -192,7 +208,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#c2a4f29211bfrates_read-rates_write" role="tab" data-toggle="pill">
+      <a href="#1ee06dffb945rates_read-rates_write" role="tab" data-toggle="pill">
         rates_read / rates_write
       </a>
     </li>
@@ -200,7 +216,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="c2a4f29211bfrates_read-rates_write">
+    <div class="tab-pane active" id="1ee06dffb945rates_read-rates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates_tables.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rates_tables.account}"</span><span class="p">,</span>
@@ -211,8 +227,9 @@
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-15T08:20:57Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-15T08:20:57Z"</span><span class="p">,</span>
+      <span class="s2">"shared"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-15T14:27:40Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-15T14:27:40Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s2">"rates_rules"</span><span class="o">:</span> <span class="p">[</span>
@@ -242,7 +259,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#6db108a2cc5arates_read-rates_write" role="tab" data-toggle="pill">
+      <a href="#205fe75be569rates_read-rates_write" role="tab" data-toggle="pill">
         rates_read / rates_write
       </a>
     </li>
@@ -250,7 +267,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="6db108a2cc5arates_read-rates_write">
+    <div class="tab-pane active" id="205fe75be569rates_read-rates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates_tables.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rates_tables.account}"</span><span class="p">,</span>
@@ -261,8 +278,9 @@
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-15T08:20:57Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-15T08:20:57Z"</span><span class="p">,</span>
+      <span class="s2">"shared"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-15T14:27:40Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-15T14:27:40Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s2">"rates_rules"</span><span class="o">:</span> <span class="p">[</span>
@@ -292,7 +310,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#5d35fa9121e4rates_write" role="tab" data-toggle="pill">
+      <a href="#ce9e0c11b267rates_write" role="tab" data-toggle="pill">
         rates_write
       </a>
     </li>
@@ -309,7 +327,7 @@
 <h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="5d35fa9121e4rates_write">
+    <div class="tab-pane active" id="ce9e0c11b267rates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates_tables.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rates_tables.account}"</span><span class="p">,</span>
@@ -320,8 +338,9 @@
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-15T08:20:57Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-15T08:20:57Z"</span><span class="p">,</span>
+      <span class="s2">"shared"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-15T14:27:40Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-15T14:27:40Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s2">"rates_rules"</span><span class="o">:</span> <span class="p">[</span>
@@ -351,7 +370,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#fbdbcfd38564rates_write" role="tab" data-toggle="pill">
+      <a href="#3581e8da869arates_write" role="tab" data-toggle="pill">
         rates_write
       </a>
     </li>
@@ -368,7 +387,7 @@
 <h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="fbdbcfd38564rates_write">
+    <div class="tab-pane active" id="3581e8da869arates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates_tables.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rates_tables.account}"</span><span class="p">,</span>
@@ -379,8 +398,9 @@
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-15T08:20:57Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-15T08:20:57Z"</span><span class="p">,</span>
+      <span class="s2">"shared"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-15T14:27:40Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-15T14:27:40Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s2">"rates_rules"</span><span class="o">:</span> <span class="p">[</span>
