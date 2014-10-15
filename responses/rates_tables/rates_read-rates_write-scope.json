@@ -2,7 +2,8 @@
   "links": {
     "rates_tables.account": "https://www.bookingsync.com/api/v3/accounts/{rates_tables.account}",
     "rates_tables.seasons": "https://www.bookingsync.com/api/v3/seasons/{rates_tables.seasons}",
-    "rates_tables.rates_rules": "https://www.bookingsync.com/api/v3/rates_rules/{rates_tables.rates_rules}"
+    "rates_tables.rates_rules": "https://www.bookingsync.com/api/v3/rates_rules/{rates_tables.rates_rules}",
+    "rates_tables.periods": "https://www.bookingsync.com/api/v3/periods/{rates_tables.periods}"
   },
   "rates_tables": [
     {
@@ -15,6 +16,10 @@
         "rates_rules": [
           3,
           7
+        ],
+        "periods": [
+          2,
+          3
         ]
       },
       "id": 2,
