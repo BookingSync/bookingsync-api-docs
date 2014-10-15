@@ -27,6 +27,7 @@ fullname         | String  | Read       | Client's fullname.
 mobile           | String  | Read       | Client's mobile.
 notes            | Text    | Read       | Client's notes.
 phone            | String  | Read       | Client's phone.
+preferred_locale | String  | Read       | Client's contact language preference.
 state            | String  | Read       | Client's state.
 zip              | String  | Read       | Client's zip.
 -----------------|---------|------------|------------
@@ -51,6 +52,7 @@ fullname         | String  | Read/Write | **Required**. Client's fullname. (150 
 mobile           | String  | Read/Write | Client's mobile.
 notes            | Text    | Read/Write | Client's notes. (1000 characters max)
 phone            | String  | Read/Write | Client's phone.
+preferred_locale | String  | Read/Write | Client's contact language preference.
 state            | String  | Read/Write | Client's state.
 zip              | String  | Read/Write | Client's zip.
 -----------------|---------|------------|------------
