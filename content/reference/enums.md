@@ -78,9 +78,11 @@ zh-TW            | Traditional Chinese
 
 Name             | Description
 -----------------|------------
+bookingsync      | Payment made through BookingSync.
 cash             | Payment made by Cash.
 cheque           | Payment made by Cheque.
 credits          | Payment made using Credits. Credits are money you might have kept from your guest after a cancellation.
+credit-card      | Payment made by Credit Card.
 online           | Payment made Online, outside of BookingSync.
 paypal           | Payment made with PayPal, outside of BookingSync.
 travel-cheque    | Payment made by Travel Cheque.
