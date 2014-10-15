@@ -19,6 +19,7 @@
       },
       "id": 2,
       "name": "Rates Table 2",
+      "shared": true,
       "created_at": "CREATED_AT",
       "updated_at": "UPDATED_AT"
     }
