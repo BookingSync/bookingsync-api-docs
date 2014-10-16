@@ -1,10 +1,12 @@
 {
   "links": {
+    "periods.rates_table": "https://www.bookingsync.com/api/v3/rates_tables/{periods.rates_table}",
     "periods.season": "https://www.bookingsync.com/api/v3/seasons/{periods.season}"
   },
   "periods": [
     {
       "links": {
+        "rates_table": 5,
         "season": 12
       },
       "id": 232,
