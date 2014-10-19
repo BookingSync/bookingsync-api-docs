@@ -96,6 +96,7 @@ Name             | Description
 -----------------|------------
 bathroom         | Bathroom's photo.
 bedroom          | Bedroom's photo.
+floor_plan       | Floor plan
 inside           | Inside's photo.
 kitchen          | Kitchen's photo.
 livingroom       | Livingroom's photo.
