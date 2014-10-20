@@ -2,7 +2,7 @@
   "seasons": [
     {
       "name": "Season 2",
-      "ratio": "1.0",
+      "ratio_percentage": "100",
       "minimum_stay": 7
     }
   ]

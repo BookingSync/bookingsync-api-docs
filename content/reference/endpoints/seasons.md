@@ -20,7 +20,7 @@ id               | Integer | Read       | Season's id.
 color_ratio      | [Decimal](/reference/enums#formats) | Read       | Season's color_ratio.
 minimum_stay     | Integer | Read       | Season's minimum stay in days.
 name             | String  | Read       | Season's name.
-ratio            | [Decimal](/reference/enums#formats) | Read       | Season's ratio.
+ratio_percentage | [Decimal](/reference/enums#formats) | Read       | Season's ratio expressed in percentage.
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Season's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Season's update time.
@@ -36,7 +36,7 @@ id               | Integer | Read       | Season's id.
 color_ratio      | [Decimal](/reference/enums#formats) | Read       | Season's color_ratio.
 minimum_stay     | Integer | Read/Write | **Required**. Season's minimum stay in days. (greater than 0)
 name             | String  | Read/Write | **Required**. Season's name. (50 max characters)
-ratio            | [Decimal](/reference/enums#formats) | Read/Write | **Required**. Season's ratio. (between 1 and 10)
+ratio_percentage | [Decimal](/reference/enums#formats) | Read/Write | **Required**. Season's ratio expressed in percentage. (between 1 and 1000)
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Season's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Season's update time.

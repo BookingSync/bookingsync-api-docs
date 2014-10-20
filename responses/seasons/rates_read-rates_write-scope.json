@@ -17,7 +17,7 @@
       },
       "id": 12,
       "name": "Season 2",
-      "ratio": "1.0",
+      "ratio_percentage": "100",
       "minimum_stay": 7,
       "color_ratio": "1.0",
       "created_at": "CREATED_AT",
