@@ -138,10 +138,10 @@
           <td>Season’s name.</td>
         </tr>
 <tr>
-<td>ratio</td>
+<td>ratio_percentage</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
-          <td>Season’s ratio.</td>
+          <td>Season’s ratio expressed in percentage.</td>
         </tr>
 </tbody>
 <tbody>
@@ -198,11 +198,11 @@
 <strong>Required</strong>. Season’s name. (50 max characters)</td>
         </tr>
 <tr>
-<td>ratio</td>
+<td>ratio_percentage</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read/Write</td>
           <td>
-<strong>Required</strong>. Season’s ratio. (between 1 and 10)</td>
+<strong>Required</strong>. Season’s ratio expressed in percentage. (between 1 and 1000)</td>
         </tr>
 </tbody>
 <tbody>
@@ -234,7 +234,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#4fbad3c46749rates_read-rates_write" role="tab" data-toggle="pill">
+      <a href="#f850cbaac8eerates_read-rates_write" role="tab" data-toggle="pill">
         rates_read / rates_write
       </a>
     </li>
@@ -242,7 +242,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="4fbad3c46749rates_read-rates_write">
+    <div class="tab-pane active" id="f850cbaac8eerates_read-rates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.periods"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/periods/{seasons.periods}"</span><span class="p">,</span>
@@ -255,9 +255,9 @@
       <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Season 2"</span><span class="p">,</span>
-      <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-19T12:37:14Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-19T12:37:14Z"</span><span class="p">,</span>
+      <span class="s2">"ratio_percentage"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-20T17:05:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-20T17:05:28Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
           <span class="mi">4</span><span class="p">,</span>
@@ -287,7 +287,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#3d5857d4ca1erates_read-rates_write" role="tab" data-toggle="pill">
+      <a href="#78ff040da18erates_read-rates_write" role="tab" data-toggle="pill">
         rates_read / rates_write
       </a>
     </li>
@@ -295,7 +295,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="3d5857d4ca1erates_read-rates_write">
+    <div class="tab-pane active" id="78ff040da18erates_read-rates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.periods"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/periods/{seasons.periods}"</span><span class="p">,</span>
@@ -308,9 +308,9 @@
       <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Season 2"</span><span class="p">,</span>
-      <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-19T12:37:14Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-19T12:37:14Z"</span><span class="p">,</span>
+      <span class="s2">"ratio_percentage"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-20T17:05:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-20T17:05:28Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
           <span class="mi">4</span><span class="p">,</span>
@@ -340,7 +340,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#697dea186726rates_write" role="tab" data-toggle="pill">
+      <a href="#3d40c39d0f6drates_write" role="tab" data-toggle="pill">
         rates_write
       </a>
     </li>
@@ -351,7 +351,7 @@
     <span class="p">{</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Season 2"</span><span class="p">,</span>
-      <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span>
+      <span class="s2">"ratio_percentage"</span><span class="o">:</span> <span class="s2">"100"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -359,7 +359,7 @@
 <h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="697dea186726rates_write">
+    <div class="tab-pane active" id="3d40c39d0f6drates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.periods"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/periods/{seasons.periods}"</span><span class="p">,</span>
@@ -372,9 +372,9 @@
       <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Season 2"</span><span class="p">,</span>
-      <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-19T12:37:14Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-19T12:37:14Z"</span><span class="p">,</span>
+      <span class="s2">"ratio_percentage"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-20T17:05:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-20T17:05:28Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
           <span class="mi">4</span><span class="p">,</span>
@@ -404,7 +404,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#19b83ca64866rates_write" role="tab" data-toggle="pill">
+      <a href="#9a20b1d4fe1erates_write" role="tab" data-toggle="pill">
         rates_write
       </a>
     </li>
@@ -415,7 +415,7 @@
     <span class="p">{</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Season 2"</span><span class="p">,</span>
-      <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span>
+      <span class="s2">"ratio_percentage"</span><span class="o">:</span> <span class="s2">"100"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -423,7 +423,7 @@
 <h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="19b83ca64866rates_write">
+    <div class="tab-pane active" id="9a20b1d4fe1erates_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.periods"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/periods/{seasons.periods}"</span><span class="p">,</span>
@@ -436,9 +436,9 @@
       <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Season 2"</span><span class="p">,</span>
-      <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-19T12:37:14Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-19T12:37:14Z"</span><span class="p">,</span>
+      <span class="s2">"ratio_percentage"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-20T17:05:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-20T17:05:28Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
           <span class="mi">4</span><span class="p">,</span>
