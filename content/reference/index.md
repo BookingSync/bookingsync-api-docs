@@ -79,3 +79,5 @@ X-RateLimit-Reset: 1395140400
 ~~~
 
 `X-RateLimit-Reset` is the UNIX time at which the next limit reset happens.
+
+_Note_: Reaching the rate limit, will return an error message `API v3 rate limit exceeded.` with `429 Too Many Requests` status code.
