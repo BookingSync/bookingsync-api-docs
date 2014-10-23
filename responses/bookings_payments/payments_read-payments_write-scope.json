@@ -12,7 +12,7 @@
         "payment": 11
       },
       "id": 2,
-      "amount": 100000,
+      "amount_in_cents": 100000,
       "currency": "USD",
       "created_at": "CREATED_AT",
       "updated_at": "UPDATED_AT"
