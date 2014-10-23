@@ -18,7 +18,7 @@ Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | Bookings Payment's id.
 -----------------|---------|------------|------------
-amount           | Integer | Read       | Bookings Payment's amount.
+amount_in_cents  | Integer | Read       | Bookings Payment's value.
 currency         | String  | Read       | Bookings Payment's currency code, list of codes described in [enums section](/reference/enums#currencies).
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Bookings Payment's create time.
@@ -28,8 +28,6 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Bookings Paym
 </div>
 
 ## List bookings payments
-
-<%= render 'amount_callout' %>
 
 List all bookings payments for given account.
 
@@ -41,8 +39,6 @@ GET /bookings_payments
   scopes: %w(payments_read-payments_write) %>
 
 ## Get a single bookings payment
-
-<%= render 'amount_callout' %>
 
 Returns a single bookings payment identified by ID.
 
