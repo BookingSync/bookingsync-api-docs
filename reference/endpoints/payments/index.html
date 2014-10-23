@@ -120,10 +120,10 @@
         </tr></tbody>
 <tbody>
 <tr>
-<td>amount</td>
+<td>amount_in_cents</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Payment’s value in cents.</td>
+          <td>Payment’s value.</td>
         </tr>
 <tr>
 <td>card</td>
@@ -232,11 +232,11 @@
         </tr></tbody>
 <tbody>
 <tr>
-<td>amount</td>
+<td>amount_in_cents</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>
-<strong>Required</strong>. Payment’s value in cents.</td>
+<strong>Required</strong>. Payment’s value.</td>
         </tr>
 <tr>
 <td>card</td>
@@ -332,11 +332,6 @@
 
 <h3 id="list-payments">List payments</h3>
 
-<div class="callout callout-info">
-  <h4>Amount's decimal point</h4>
-  Please note that amount's value is given in cents.
-</div>
-
 <p>List all payments for given account.</p>
 
 <pre><code>GET /payments
@@ -346,7 +341,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#222931dca94cpayments_read-payments_write" role="tab" data-toggle="pill">
+      <a href="#e3647668ddbepayments_read-payments_write" role="tab" data-toggle="pill">
         payments_read / payments_write
       </a>
     </li>
@@ -354,7 +349,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="222931dca94cpayments_read-payments_write">
+    <div class="tab-pane active" id="e3647668ddbepayments_read-payments_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -365,7 +360,7 @@
   <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
+      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
       <span class="s2">"card"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"GBP"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
@@ -377,11 +372,11 @@
       <span class="s2">"order_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-22T17:33:44Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-22T17:33:44Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-23T15:53:43Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-23T15:53:43Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2014-10-22T17:33:44Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2014-10-23T15:53:43Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"billing_address"</span><span class="o">:</span> <span class="p">[</span>
@@ -403,11 +398,6 @@
 
 <h3 id="get-a-single-payment">Get a single payment</h3>
 
-<div class="callout callout-info">
-  <h4>Amount's decimal point</h4>
-  Please note that amount's value is given in cents.
-</div>
-
 <p>Returns a single payment identified by ID.</p>
 
 <pre><code>GET /payments/:payment_id
@@ -417,7 +407,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#a86d04559bdbpayments_read-payments_write" role="tab" data-toggle="pill">
+      <a href="#691853f13eefpayments_read-payments_write" role="tab" data-toggle="pill">
         payments_read / payments_write
       </a>
     </li>
@@ -425,7 +415,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="a86d04559bdbpayments_read-payments_write">
+    <div class="tab-pane active" id="691853f13eefpayments_read-payments_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -436,7 +426,7 @@
   <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
+      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
       <span class="s2">"card"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"GBP"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
@@ -448,11 +438,11 @@
       <span class="s2">"order_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-22T17:33:44Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-22T17:33:44Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-23T15:53:43Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-23T15:53:43Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2014-10-22T17:33:44Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2014-10-23T15:53:43Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"billing_address"</span><span class="o">:</span> <span class="p">[</span>
@@ -483,7 +473,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#9b3e79d72015payments_write" role="tab" data-toggle="pill">
+      <a href="#90aa754fad7cpayments_write" role="tab" data-toggle="pill">
         payments_write
       </a>
     </li>
@@ -492,14 +482,14 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
+      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
       <span class="s2">"booking_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"GBP"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
       <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"John Doe"</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"cash"</span><span class="p">,</span>
       <span class="s2">"locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2014-10-22T17:33:44Z"</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2014-10-23T15:53:43Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -507,7 +497,7 @@
 <h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="9b3e79d72015payments_write">
+    <div class="tab-pane active" id="90aa754fad7cpayments_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -518,7 +508,7 @@
   <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
+      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
       <span class="s2">"card"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"GBP"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
@@ -530,11 +520,11 @@
       <span class="s2">"order_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-22T17:33:44Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-22T17:33:44Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-23T15:53:43Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-23T15:53:43Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2014-10-22T17:33:44Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2014-10-23T15:53:43Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"billing_address"</span><span class="o">:</span> <span class="p">[</span>
@@ -565,7 +555,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#a8b12f70f86cpayments_write" role="tab" data-toggle="pill">
+      <a href="#bc1ea76cbf4cpayments_write" role="tab" data-toggle="pill">
         payments_write
       </a>
     </li>
@@ -574,13 +564,13 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
+      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"GBP"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
       <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"John Doe"</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"cash"</span><span class="p">,</span>
       <span class="s2">"locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2014-10-22T17:33:44Z"</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2014-10-23T15:53:43Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -588,7 +578,7 @@
 <h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="a8b12f70f86cpayments_write">
+    <div class="tab-pane active" id="bc1ea76cbf4cpayments_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -599,7 +589,7 @@
   <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
+      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
       <span class="s2">"card"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"GBP"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
@@ -611,11 +601,11 @@
       <span class="s2">"order_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-22T17:33:44Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-22T17:33:44Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-23T15:53:43Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-23T15:53:43Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2014-10-22T17:33:44Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2014-10-23T15:53:43Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"billing_address"</span><span class="o">:</span> <span class="p">[</span>

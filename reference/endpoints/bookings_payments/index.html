@@ -118,10 +118,10 @@
         </tr></tbody>
 <tbody>
 <tr>
-<td>amount</td>
+<td>amount_in_cents</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Bookings Payment’s amount.</td>
+          <td>Bookings Payment’s value.</td>
         </tr>
 <tr>
 <td>currency</td>
@@ -150,11 +150,6 @@
 
 <h3 id="list-bookings-payments">List bookings payments</h3>
 
-<div class="callout callout-info">
-  <h4>Amount's decimal point</h4>
-  Please note that amount's value is given in cents.
-</div>
-
 <p>List all bookings payments for given account.</p>
 
 <pre><code>GET /bookings_payments
@@ -164,7 +159,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#1b8f0613ab88payments_read-payments_write" role="tab" data-toggle="pill">
+      <a href="#e44ffc33fc06payments_read-payments_write" role="tab" data-toggle="pill">
         payments_read / payments_write
       </a>
     </li>
@@ -172,7 +167,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="1b8f0613ab88payments_read-payments_write">
+    <div class="tab-pane active" id="e44ffc33fc06payments_read-payments_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_payments.account}"</span><span class="p">,</span>
@@ -182,10 +177,10 @@
   <span class="s2">"bookings_payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
+      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-22T17:33:44Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-22T17:33:44Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-23T15:53:43Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-23T15:53:43Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">44</span><span class="p">,</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">22</span><span class="p">,</span>
@@ -200,11 +195,6 @@
 
 <h3 id="get-a-single-bookings-payment">Get a single bookings payment</h3>
 
-<div class="callout callout-info">
-  <h4>Amount's decimal point</h4>
-  Please note that amount's value is given in cents.
-</div>
-
 <p>Returns a single bookings payment identified by ID.</p>
 
 <pre><code>GET /bookings_payments/:bookings_payment_id
@@ -214,7 +204,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#6b897be1f468payments_read-payments_write" role="tab" data-toggle="pill">
+      <a href="#06ea24a6715cpayments_read-payments_write" role="tab" data-toggle="pill">
         payments_read / payments_write
       </a>
     </li>
@@ -222,7 +212,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="6b897be1f468payments_read-payments_write">
+    <div class="tab-pane active" id="06ea24a6715cpayments_read-payments_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_payments.account}"</span><span class="p">,</span>
@@ -232,10 +222,10 @@
   <span class="s2">"bookings_payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"amount"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
+      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-22T17:33:44Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-22T17:33:44Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-10-23T15:53:43Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-10-23T15:53:43Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">44</span><span class="p">,</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">22</span><span class="p">,</span>
