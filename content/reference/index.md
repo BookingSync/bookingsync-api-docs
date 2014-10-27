@@ -26,6 +26,35 @@ the body is expected to be in the following format:
 }
 ~~~
 
+## Example cURL requests
+
+GET:
+
+~~~
+curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' https://www.bookingsync.com/api/v3/rentals
+~~~
+
+POST:
+
+~~~
+curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' --header 'Content-Type: application/vnd.api+json'
+--data '{"rentals":[{"name":"Name"}]}' https://www.bookingsync.com/api/v3/rentals
+~~~
+
+PUT:
+
+~~~
+curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' --header 'Content-Type: application/vnd.api+json'
+--request PUT --data '{"rentals":[{"name":"New Name"}]}' https://www.bookingsync.com/api/v3/rentals/RENTAL_ID
+~~~
+
+DELETE:
+
+~~~
+curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' --request DELETE
+https://www.bookingsync.com/api/v3/rentals/RENTAL_ID
+~~~
+
 ## Request Options
 
 ### Pagination
