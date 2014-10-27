@@ -129,6 +129,19 @@ The explicit OAuth 2.0 flow consists of the following steps:
 
 This request is responded to with either an error (HTTP status code 401) or an access token of the form `access_token=...&expires_in=1234`.
 
+### Refreshing access token
+
+Api calls made with expired token will return an HTTP Status Code 401 (Unauthorized). To prevent this from happening, request a new `access_token` using the `refresh_token`, by performing the action below before the `access_token` expiration. You can find your token lifetime (in seconds), by checking the `expires_in` attribute in authorization response.
+
+1. POST (application/x-www-form-urlencoded) the following parameters to `https://www.bookingsync.com/oauth/token`
+  * client_id
+  * client_secret
+  * refresh_token - from above section, step 4 response
+  * grant_type - must use `refresh_token`
+  * redirect_uri - must be the same as the provided in the first step
+
+This request is responded to with either an error (HTTP status code 401) or an access token of the form `access_token=...&expires_in=1234`.
+
 ## Implicit Flow
 
 Application can also use the
