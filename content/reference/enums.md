@@ -24,6 +24,7 @@ CHF              | CHF
 €                | EUR
 £                | GBP
 NZ$              | NZD
+฿                | THB
 $                | USD
 {: class="table table-bordered"}
 
