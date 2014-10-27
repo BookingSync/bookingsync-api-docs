@@ -238,6 +238,23 @@ This is to be used for <strong>Server-Side applications</strong>, with special c
 </li>
 </ol><p>This request is responded to with either an error (HTTP status code 401) or an access token of the form <code>access_token=...&amp;expires_in=1234</code>.</p>
 
+<h4 id="refreshing-access-token">Refreshing access token</h4>
+
+<p>Api calls made with expired token will return an HTTP Status Code 401 (Unauthorized). To prevent this from happening, request a new <code>access_token</code> using the <code>refresh_token</code>, by performing the action below before the <code>access_token</code> expiration. You can find your token lifetime (in seconds), by checking the <code>expires_in</code> attribute in authorization response.</p>
+
+<ol>
+<li>POST (application/x-www-form-urlencoded) the following parameters to <code>https://www.bookingsync.com/oauth/token</code>
+    <ul>
+<li>client_id</li>
+      <li>client_secret</li>
+      <li>refresh_token - from above section, step 4 response</li>
+      <li>grant_type - must use <code>refresh_token</code>
+</li>
+      <li>redirect_uri - must be the same as the provided in the first step</li>
+    </ul>
+</li>
+</ol><p>This request is responded to with either an error (HTTP status code 401) or an access token of the form <code>access_token=...&amp;expires_in=1234</code>.</p>
+
 <h3 id="implicit-flow">Implicit Flow</h3>
 
 <p>Application can also use the

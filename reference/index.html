@@ -94,6 +94,7 @@
 <ol id="markdown-toc">
 <li><a href="#accessing-the-api">Accessing the API</a></li>
   <li><a href="#json">JSON</a></li>
+  <li><a href="#example-curl-requests">Example cURL requests</a></li>
   <li><a href="#request-options">Request Options</a></li>
   <li><a href="#https">HTTPS</a></li>
   <li><a href="#rate-limiting">Rate limiting</a></li>
@@ -117,6 +118,31 @@ the body is expected to be in the following format:</p>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
+
+<h3 id="example-curl-requests">Example cURL requests</h3>
+
+<p>GET:</p>
+
+<pre><code>curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' https://www.bookingsync.com/api/v3/rentals
+</code></pre>
+
+<p>POST:</p>
+
+<pre><code>curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' --header 'Content-Type: application/vnd.api+json'
+--data '{"rentals":[{"name":"Name"}]}' https://www.bookingsync.com/api/v3/rentals
+</code></pre>
+
+<p>PUT:</p>
+
+<pre><code>curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' --header 'Content-Type: application/vnd.api+json'
+--request PUT --data '{"rentals":[{"name":"New Name"}]}' https://www.bookingsync.com/api/v3/rentals/RENTAL_ID
+</code></pre>
+
+<p>DELETE:</p>
+
+<pre><code>curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' --request DELETE
+https://www.bookingsync.com/api/v3/rentals/RENTAL_ID
+</code></pre>
 
 <h3 id="request-options">Request Options</h3>
 
