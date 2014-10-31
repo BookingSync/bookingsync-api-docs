@@ -2,7 +2,7 @@
   "rates_rules": [
     {
       "always_applied": false,
-      "percentage": -20,
+      "percentage": "-20.0",
       "period_name": "Late Spring",
       "kind": "late_booking",
       "variables": {
