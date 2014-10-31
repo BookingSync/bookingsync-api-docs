@@ -30,7 +30,7 @@ Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | Rental Agreement's id.
 -----------------|---------|------------|------------
-body             | Text    | Read/Write | **Required**. Rental Agreement's body.
+body             | Text    | Read/Write | **Required**. Rental Agreement's body. (100 000 characters max)
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Rental Agreement's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Rental Agreement's update time.
