@@ -72,6 +72,7 @@ final_price             | [Decimal](/reference/enums#formats) | Read       | Boo
 initial_price           | [Decimal](/reference/enums#formats) | Read       | Booking's initial price.
 locked                  | String  | Read       | Booking's locked status.
 notes                   | Text    | Read       | Booking's notes.
+paid_amount             | [Decimal](/reference/enums#formats) | Read       | Booking's amount that have already been paid.
 review_requests_count   | Integer | Read       | Booking's number of review requests.
 status                  | String  | Read       | Booking's status.
 unavailable             | Boolean | Read       | Booking's unavailable status.
@@ -105,6 +106,7 @@ final_price             | [Decimal](/reference/enums#formats) | Read/Write | Boo
 initial_price           | [Decimal](/reference/enums#formats) | Read/Write | Booking's initial price.
 locked                  | String  | Read/Write | Booking's locked status.
 notes                   | Text    | Read/Write | Booking's notes. (1000 characters max)
+paid_amount             | [Decimal](/reference/enums#formats) | Read       | Booking's amount that have already been paid.
 review_requests_count   | Integer | Read       | Booking's number of review requests.
 status                  | String  | Read       | Booking's status.
 unavailable             | Boolean | Read/Write | Booking's unavailable status.

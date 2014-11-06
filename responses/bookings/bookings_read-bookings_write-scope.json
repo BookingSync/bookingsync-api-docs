@@ -27,6 +27,7 @@
       "discount": "10%",
       "final_price": "2700.0",
       "downpayment": null,
+      "paid_amount": "0.0",
       "currency": "USD",
       "notes": "",
       "adults": 5,
