@@ -100,6 +100,7 @@
   <li><a href="#authorization-code-flow">Authorization Code Flow</a></li>
   <li><a href="#implicit-flow">Implicit Flow</a></li>
   <li><a href="#client-credentials-flow">Client Credentials Flow</a></li>
+  <li><a href="#authorization-errors">Authorization Errors</a></li>
 </ol><h3 id="oauth">OAuth</h3>
 
 <p>The BookingSync API uses <a href="http://oauth.net/2/">OAuth 2.0</a> for authorization.</p>
@@ -299,6 +300,12 @@ Accounts that authorized the given Application.</p>
 Instead of iterating over each authorized Account and fetching their rentals,
 the application can use the Client Credentials flow and fetch all rentals
 at once.</p>
+
+<h3 id="authorization-errors">Authorization Errors</h3>
+
+<p>When the token used to authorize the request is invalid, expired or revoke, the API will return a
+401 response. When the token is valid, but doesn’t have the scopes necessary to perform requested
+action, the API will return a 403 response.</p>
       </div>
     </div>
   </div>
