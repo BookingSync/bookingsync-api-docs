@@ -179,3 +179,9 @@ This is useful for bulk access, for example in a rental listing application.
 Instead of iterating over each authorized Account and fetching their rentals,
 the application can use the Client Credentials flow and fetch all rentals
 at once.
+
+## Authorization Errors
+
+When the token used to authorize the request is invalid, expired or revoke, the API will return a
+401 response. When the token is valid, but doesn't have the scopes necessary to perform requested
+action, the API will return a 403 response.
