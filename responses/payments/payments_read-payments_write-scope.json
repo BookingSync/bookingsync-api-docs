@@ -1,7 +1,6 @@
 {
   "links": {
     "payments.account": "https://www.bookingsync.com/api/v3/accounts/{payments.account}",
-    "payments.billing_address": "https://www.bookingsync.com/api/v3/billing_addresses/{payments.billing_address}",
     "payments.bookings": "https://www.bookingsync.com/api/v3/bookings/{payments.bookings}",
     "payments.bookings_payments": "https://www.bookingsync.com/api/v3/bookings_payments/{payments.bookings_payments}"
   },
@@ -9,7 +8,6 @@
     {
       "links": {
         "account": 33,
-        "billing_address": [],
         "bookings": [
           21
         ],
@@ -22,7 +20,7 @@
       "order_id": null,
       "card": null,
       "amount_in_cents": 100000,
-      "currency": "GBP",
+      "currency": "USD",
       "kind": "cash",
       "fullname": "John Doe",
       "email": "john@example.com",
@@ -34,7 +32,13 @@
       "created_at": "CREATED_AT",
       "updated_at": "UPDATED_AT",
       "rejected_at": null,
-      "canceled_at": null
+      "canceled_at": null,
+      "address1": "Bernhard Creek",
+      "address2": null,
+      "zip": "07671-8254",
+      "city": "East Winifred",
+      "state": "Monatana",
+      "country_code": "US"
     }
   ]
 }
