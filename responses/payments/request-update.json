@@ -7,7 +7,13 @@
       "fullname": "John Doe",
       "email": "john@example.com",
       "locale": "en",
-      "paid_at": "CREATED_AT"
+      "paid_at": "CREATED_AT",
+      "address1": "Bernhard Creek",
+      "address2": null,
+      "zip": "07671-8254",
+      "city": "East Winifred",
+      "state": "Monatana",
+      "country_code": "US"
     }
   ]
 }
