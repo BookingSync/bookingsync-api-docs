@@ -6,6 +6,9 @@ We're still in the process of building the API. While the technical parts
 (authorization, JSON support etc.) are mostly done, not all resources
 are complete or even available.
 
+## 2014-11-24
+  * [update] Describe how to use the refresh token to get a new access token in the [Testing Authorization](/reference/testing_authorization) guide.
+
 ## 2014-11-21
   * [update] Remove parent `id` from example with nested `POST` requests.
 
