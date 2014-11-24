@@ -2,7 +2,6 @@
   "bookings": [
     {
       "client_id": 37,
-      "rental_id": 16,
       "adults": 5,
       "currency": "USD",
       "discount": "10%",
