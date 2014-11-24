@@ -125,7 +125,7 @@ add at the end of this URL, a space separated list like:
 <p>Visit the generated URL, and authorize access to your test
 Application for a BookingSync user.</p>
 
-<h4 id="use-the-authorization-code-to-get-your-token">Use the Authorization Code to get your Token</h4>
+<h4 id="use-the-authorization-code-to-get-your-access-token">Use the Authorization Code to get your Access Token</h4>
 
 <p>Use the schema below with by replacing:</p>
 
@@ -147,8 +147,50 @@ Application for a BookingSync user.</p>
 <pre><code>curl -X POST -d "client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;code=RETURNED_CODE&amp;grant_type=authorization_code&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob" "https://www.bookingsync.com/oauth/token"
 </code></pre>
 
+<p>Sample response:</p>
+
+<pre><code class="language-json"><span class="p">{</span>
+  <span class="nt">"access_token"</span><span class="p">:</span> <span class="s2">"0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"</span><span class="p">,</span>
+  <span class="nt">"token_type"</span><span class="p">:</span> <span class="s2">"bearer"</span><span class="p">,</span>
+  <span class="nt">"expires_in"</span><span class="p">:</span> <span class="mi">7200</span><span class="p">,</span>
+  <span class="nt">"refresh_token"</span><span class="p">:</span> <span class="s2">"fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210"</span><span class="p">,</span>
+  <span class="nt">"scope"</span><span class="p">:</span> <span class="s2">"public"</span>
+<span class="p">}</span></code></pre>
+
 <p><strong>Note</strong>: Tokens (<code>access_token</code>) are only <strong>valid for 2 hours</strong>, you then need to use the
 <strong>Refresh Token</strong> to regenerate and new <strong>Token</strong> or restart the flow you just used.</p>
+
+<h4 id="using-the-refresh-token-to-get-a-new-access-token">Using the Refresh Token to get a new Access Token</h4>
+
+<p>Use the schema below with by replacing:</p>
+
+<ul>
+<li>
+<code>CLIENT ID</code>: Application’s Client ID</li>
+  <li>
+<code>CLIENT_SECRET</code>: Application’s Client Secret <em>(do not share, same as password)</em>
+</li>
+  <li>
+<code>REFRESH_TOKEN</code>: Refresh Token given when you got your Access Token in the previous step</li>
+</ul><pre><code>https://www.bookingsync.com/oauth/token?client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;refresh_token=REFRESH_TOKEN&amp;grant_type=refresh_token&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob
+</code></pre>
+
+<p>Make a POST request to this URL to get your refreshed Authentication Token.</p>
+
+<p>Example with CURL:</p>
+
+<pre><code>curl -X POST -d "client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;refresh_token=REFRESH_TOKEN&amp;grant_type=refresh_token&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob" "https://www.bookingsync.com/oauth/token"
+</code></pre>
+
+<p>Sample response:</p>
+
+<pre><code class="language-json"><span class="p">{</span>
+  <span class="nt">"access_token"</span><span class="p">:</span> <span class="s2">"0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"</span><span class="p">,</span>
+  <span class="nt">"token_type"</span><span class="p">:</span> <span class="s2">"bearer"</span><span class="p">,</span>
+  <span class="nt">"expires_in"</span><span class="p">:</span> <span class="mi">7200</span><span class="p">,</span>
+  <span class="nt">"refresh_token"</span><span class="p">:</span> <span class="s2">"fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210"</span><span class="p">,</span>
+  <span class="nt">"scope"</span><span class="p">:</span> <span class="s2">"public"</span>
+<span class="p">}</span></code></pre>
       </div>
     </div>
   </div>
