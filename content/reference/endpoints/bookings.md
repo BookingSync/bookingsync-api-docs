@@ -33,7 +33,6 @@ Name                    | Type    | Read/Write | Description
 ------------------------|---------|------------|------------
 id                      | Integer | Read       | Booking's id.
 client_id               | Integer | Write      | **Required**. Client id related to the Booking.
-rental_id               | Integer | Write      | **Required**. Rental id related to the Booking.
 source_id               | Integer | Write      | Source id related to the Booking.
 ------------------------|---------|------------|------------
 adults                  | Integer | Write      | Booking's number of adults.
@@ -92,7 +91,6 @@ Name                    | Type    | Read/Write | Description
 ------------------------|---------|------------|------------
 id                      | Integer | Read       | Booking's id.
 client_id               | Integer | Write      | **Required**. Client id related to the Booking.
-rental_id               | Integer | Write      | **Required**. Rental id related to the Booking.
 source_id               | Integer | Write      | Source id related to the Booking.
 ------------------------|---------|------------|------------
 adults                  | Integer | Read/Write | Booking's number of adults.
