@@ -7,7 +7,7 @@ We're still in the process of building the API. While the technical parts
 are complete or even available.
 
 ## 2014-11-21
-  * [update] Remove parent `id` from example nested `POST` requests.
+  * [update] Remove parent `id` from example with nested `POST` requests.
 
 ## 2014-11-21
   * [update] Remove `billing_addresses` endpoint with all its references. Add `address1`, `address2`, `city`, `country_code`, `state` and `zip` fields to `payments`.
