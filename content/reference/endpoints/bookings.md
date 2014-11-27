@@ -36,7 +36,7 @@ client_id               | Integer | Write      | **Required**. Client id related
 source_id               | Integer | Write      | Source id related to the Booking.
 ------------------------|---------|------------|------------
 adults                  | Integer | Write      | Booking's number of adults.
-booked                  | Boolean | Write      | Booking's booked status.
+booked                  | Boolean | Write      | Booking's booked status, false by default. When set to true, marks a regular booking.
 children                | Integer | Write      | Booking's number of children.
 currency                | String  | Write      | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies).
 discount                | String  | Write      | Booking's discount. (in percents e.g. 10%)
@@ -45,12 +45,12 @@ final_price             | [Decimal](/reference/enums#formats) | Write      | Boo
 initial_price           | [Decimal](/reference/enums#formats) | Write      | Booking's initial price.
 notes                   | Text    | Write      | Booking's notes. (1000 characters max)
 status                  | String  | Read       | Booking's status.
-unavailable             | Boolean | Write      | Booking's unavailable status.
+unavailable             | Boolean | Write      | Booking's unavailable status, false by default. When set to true, marks the given period as unavailable. Commonly used for closed or maintenance periods.
 ------------------------|---------|------------|------------
 updated_at              | [Time](/reference/enums#formats) | Read       | Booking's update time.
 start_at                | [Time](/reference/enums#formats) | Read/Write | **Required**. Booking's start time.
 end_at                  | [Time](/reference/enums#formats) | Read/Write | **Required**. Booking's end time.
-tentative_expires_at    | [Time](/reference/enums#formats) | Write      | Booking's tentative expiry time.
+tentative_expires_at    | [Time](/reference/enums#formats) | Write      | Booking's tentative expiry time, null by default. When set, it will mark the period as "on hold" until the given date. Once this date is passed, the period will automatically become available again.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="bookings_read" markdown="1">
@@ -61,7 +61,7 @@ Name                    | Type    | Read/Write | Description
 id                      | Integer | Read       | Booking's id.
 ------------------------|---------|------------|------------
 adults                  | Integer | Read       | Booking's number of adults.
-booked                  | Boolean | Read       | Booking's booked status.
+booked                  | Boolean | Read       | Booking's booked status, false by default. When set to true, marks a regular booking.
 bookings_payments_count | Integer | Read       | Booking's number of payments.
 children                | Integer | Read       | Booking's number of children.
 currency                | String  | Read       | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies).
@@ -74,14 +74,14 @@ notes                   | Text    | Read       | Booking's notes.
 paid_amount             | [Decimal](/reference/enums#formats) | Read       | Booking's amount that have already been paid.
 review_requests_count   | Integer | Read       | Booking's number of review requests.
 status                  | String  | Read       | Booking's status.
-unavailable             | Boolean | Read       | Booking's unavailable status.
+unavailable             | Boolean | Read       | Booking's unavailable status, false by default. When set to true, marks the given period as unavailable. Commonly used for closed or maintenance periods.
 ------------------------|---------|------------|------------
 created_at              | [Time](/reference/enums#formats) | Read       | Booking's create time.
 updated_at              | [Time](/reference/enums#formats) | Read       | Booking's update time.
 start_at                | [Time](/reference/enums#formats) | Read       | Booking's start time.
 end_at                  | [Time](/reference/enums#formats) | Read       | Booking's end time.
 canceled_at             | [Time](/reference/enums#formats) | Read       | Booking's cancel time.
-tentative_expires_at    | [Time](/reference/enums#formats) | Read       | Booking's tentative expiry time.
+tentative_expires_at    | [Time](/reference/enums#formats) | Read       | Booking's tentative expiry time, null by default. When set, it will mark the period as "on hold" until the given date. Once this date is passed, the period will automatically become available again.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="bookings_write" markdown="1">
@@ -94,7 +94,7 @@ client_id               | Integer | Write      | **Required**. Client id related
 source_id               | Integer | Write      | Source id related to the Booking.
 ------------------------|---------|------------|------------
 adults                  | Integer | Read/Write | Booking's number of adults.
-booked                  | Boolean | Read/Write | Booking's booked status.
+booked                  | Boolean | Read/Write | Booking's booked status, false by default. When set to true, marks a regular booking.
 bookings_payments_count | Integer | Read       | Booking's number of payments.
 children                | Integer | Read/Write | Booking's number of children.
 currency                | String  | Read/Write | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies).
@@ -107,14 +107,14 @@ notes                   | Text    | Read/Write | Booking's notes. (1000 characte
 paid_amount             | [Decimal](/reference/enums#formats) | Read       | Booking's amount that have already been paid.
 review_requests_count   | Integer | Read       | Booking's number of review requests.
 status                  | String  | Read       | Booking's status.
-unavailable             | Boolean | Read/Write | Booking's unavailable status.
+unavailable             | Boolean | Read/Write | Booking's unavailable status, false by default. When set to true, marks the given period as unavailable. Commonly used for closed or maintenance periods.
 ------------------------|---------|------------|------------
 created_at              | [Time](/reference/enums#formats) | Read       | Booking's create time.
 updated_at              | [Time](/reference/enums#formats) | Read       | Booking's update time.
 start_at                | [Time](/reference/enums#formats) | Read/Write | **Required**. Booking's start time.
 end_at                  | [Time](/reference/enums#formats) | Read/Write | **Required**. Booking's end time.
 canceled_at             | [Time](/reference/enums#formats) | Read       | Booking's cancel time.
-tentative_expires_at    | [Time](/reference/enums#formats) | Read/Write | Booking's tentative expiry time.
+tentative_expires_at    | [Time](/reference/enums#formats) | Read/Write | Booking's tentative expiry time, null by default. When set, it will mark the period as "on hold" until the given date. Once this date is passed, the period will automatically become available again.
 {: class="table table-bordered"}
   </div>
 </div>
