@@ -1,6 +1,7 @@
 {
   "bookings": [
     {
+      "booked": true,
       "client_id": 37,
       "adults": 5,
       "currency": "USD",

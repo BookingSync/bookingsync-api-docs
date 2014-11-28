@@ -178,6 +178,11 @@ GET /bookings/:booking_id
 
 ## Create a new booking
 
+<div class="callout callout-info" markdown="1">
+  <h4>Status assignment</h4>
+  To assign a status to a booking, you have to set either `booked`, `unavailable` or `tentative_expires_at` fields. Only one of those attributes can be used at the same time.
+</div>
+
 Creates a booking for given rental.
 
 ~~~~
