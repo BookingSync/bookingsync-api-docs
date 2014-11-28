@@ -6,6 +6,9 @@ We're still in the process of building the API. While the technical parts
 (authorization, JSON support etc.) are mostly done, not all resources
 are complete or even available.
 
+## 2014-11-28
+  * [improvement] Explain `bookings` status assignment on creation. Update example request.
+
 ## 2014-11-24
   * [update] Describe how to use the refresh token to get a new access token in the [Testing Authorization](/reference/testing_authorization) guide.
 
