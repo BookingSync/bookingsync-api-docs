@@ -21,6 +21,7 @@ A$               | AUD
 R$               | BRL
 C$               | CAD
 CHF              | CHF
+Kč               | CZK
 €                | EUR
 £                | GBP
 NZ$              | NZD
