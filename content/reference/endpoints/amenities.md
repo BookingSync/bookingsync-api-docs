@@ -16,7 +16,7 @@ Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | Amenity's id.
 -----------------|---------|------------|------------
-title            | String  | Read       | Amenity's title.
+key              | String  | Read       | Amenity's key.
 {: class="table table-bordered"}
   </div>
 </div>

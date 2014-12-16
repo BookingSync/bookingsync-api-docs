@@ -7,6 +7,9 @@ We're still in the process of building the API. While the technical parts
 are complete or even available.
 
 ## 2014-11-28
+  * [update] Rename `title` field to `key` for `amenities`.
+
+## 2014-11-28
   * [improvement] Explain `bookings` status assignment on creation. Update example request.
 
 ## 2014-11-24
