@@ -8,10 +8,10 @@ are complete or even available.
 
 ## 2014-11-28
   * [update] Rename `title` field to `key` for `amenities`.
+  * [update] Update `booked`, `unavailable`, `tentative_expires_at` fields description for `bookings`.
 
 ## 2014-11-28
   * [improvement] Explain `bookings` status assignment on creation. Update example request.
-  * [update] Update `booked`, `unavailable`, `tentative_expires_at` fields description for `bookings`.
 
 ## 2014-11-24
   * [update] Describe how to use the refresh token to get a new access token in the [Testing Authorization](/reference/testing_authorization) guide.
