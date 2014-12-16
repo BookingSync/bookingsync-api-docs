@@ -6,14 +6,15 @@ We're still in the process of building the API. While the technical parts
 (authorization, JSON support etc.) are mostly done, not all resources
 are complete or even available.
 
+## 2014-12-25
+  * [improvement] Explain `availabilities` mapping parameters.
+
 ## 2014-12-24
   * [update] Rename `bookings_public_write` scope to `bookings_write_owned`.
 
 ## 2014-11-28
   * [update] Rename `title` field to `key` for `amenities`.
   * [update] Update `booked`, `unavailable`, `tentative_expires_at` fields description for `bookings`.
-
-## 2014-11-28
   * [improvement] Explain `bookings` status assignment on creation. Update example request.
 
 ## 2014-11-24
