@@ -6,7 +6,7 @@
 <ul class="nav nav-pills pull-right" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
-  <li><a href="#bookings_public_write" role="tab" data-toggle="pill">bookings_public_write</a></li>
+  <li><a href="#bookings_write_owned" role="tab" data-toggle="pill">bookings_write_owned</a></li>
   <li><a href="#bookings_read" role="tab" data-toggle="pill">bookings_read</a></li>
   <li><a href="#bookings_write" role="tab" data-toggle="pill">bookings_write</a></li>
 </ul>
@@ -26,7 +26,7 @@ start_at                | [Time](/reference/enums#formats) | Read       | Bookin
 end_at                  | [Time](/reference/enums#formats) | Read       | Booking's end time.
 {: class="table table-bordered"}
   </div>
-  <div class="tab-pane" id="bookings_public_write" markdown="1">
+  <div class="tab-pane" id="bookings_write_owned" markdown="1">
 ### Parameters
 
 Name                    | Type    | Read/Write | Description
@@ -127,7 +127,7 @@ certain range.
 Scope                    | Read Permissions
 -------------------------|------------
 `:public`                | Display only future, not canceled bookings
-`:bookings_public_write` | Display only future, not canceled bookings
+`:bookings_write_owned` | Display only future, not canceled bookings
 `:bookings_read`         | Display all bookings
 `:bookings_write`        | Display all bookings
 {: class="table table-bordered"}
@@ -139,7 +139,7 @@ GET /bookings
 ~~~
 
 <%= render 'json_response', endpoint: "bookings",
-  scopes: %w(public-bookings_public_write bookings_read-bookings_write) %>
+  scopes: %w(public-bookings_write_owned bookings_read-bookings_write) %>
 
 ## Search bookings
 
@@ -174,7 +174,7 @@ GET /bookings/:booking_id
 ~~~
 
 <%= render 'json_response', endpoint: "bookings",
-  scopes: %w(public-bookings_public_write bookings_read-bookings_write) %>
+  scopes: %w(public-bookings_write_owned bookings_read-bookings_write) %>
 
 ## Create a new booking
 
@@ -191,7 +191,7 @@ POST /rentals/:rental_id/bookings
 
 <%= render 'json_response', endpoint: "bookings", request: "request",
   scopes: [
-    { bookings_public_write: "public-bookings_public_write" },
+    { bookings_write_owned: "public-bookings_write_owned" },
     { bookings_write: "bookings_read-bookings_write" }
   ] %>
 
@@ -205,13 +205,13 @@ PUT /bookings/:booking_id
 
 <%= render 'json_response', endpoint: "bookings", request: "request",
   scopes: [
-    { bookings_public_write: "public-bookings_public_write" },
+    { bookings_write_owned: "public-bookings_write_owned" },
     { bookings_write: "bookings_read-bookings_write" }
   ] %>
 
 ## Cancel a booking
 
-Required OAuth scope: `:bookings_write` or `:bookings_public_write`
+Required OAuth scope: `:bookings_write` or `:bookings_write_owned`
 
 Returns an empty response with '204 No Content' status code on success.
 
