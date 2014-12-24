@@ -83,7 +83,7 @@ access to public information.
 
 Additionally, the following scopes are available:
 
-* `bookings_public_write`
+* `bookings_write_owned`
 * `bookings_read`
 * `bookings_write`
 * `clients_read`
