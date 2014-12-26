@@ -93,6 +93,7 @@
 <ol id="markdown-toc">
 <li><a href="#list-availabilities">List availabilities</a></li>
   <li><a href="#get-a-single-availability">Get a single availability</a></li>
+  <li><a href="#customize-availability-maps">Customize availability maps</a></li>
 </ol><ul class="nav nav-pills pull-right" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
@@ -117,7 +118,7 @@
 <td>map</td>
           <td>String</td>
           <td>Read</td>
-          <td>Availability’s map of booking status. There is a total of 365 characters, each representing one day. List of statuses described in <a href="/reference/enums#booking-statuses">enums section</a>.</td>
+          <td>Availability’s map of booking status. There is a total of 1096 characters, each representing one day. List of statuses described in <a href="/reference/enums#booking-statuses">enums section</a>.</td>
         </tr></tbody>
 <tbody>
 <tr>
@@ -148,7 +149,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#7c8a45b118aapublic" role="tab" data-toggle="pill">
+      <a href="#5334e6c752e5public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -156,7 +157,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="7c8a45b118aapublic">
+    <div class="tab-pane active" id="5334e6c752e5public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"availabilities.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{availabilities.rental}"</span>
@@ -188,7 +189,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#27caee03d3fdpublic" role="tab" data-toggle="pill">
+      <a href="#cc46e8e1a2bbpublic" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -196,7 +197,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="27caee03d3fdpublic">
+    <div class="tab-pane active" id="cc46e8e1a2bbpublic">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"availabilities.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{availabilities.rental}"</span>
@@ -216,6 +217,49 @@
     </div>
   
 </div>
+
+<h3 id="customize-availability-maps">Customize availability maps</h3>
+
+<p>Mapping parameters allow to customize availability start point and status display.</p>
+
+<p>Examples:</p>
+
+<pre><code>GET /availabilities?include_tentative=false&amp;boolean=true&amp;from=20140324
+</code></pre>
+
+<pre><code>GET /availabilities/1?include_tentative=false&amp;boolean=true&amp;from=20140324
+</code></pre>
+
+<h4 id="mapping-parameters">Mapping parameters</h4>
+
+<table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td>from</td>
+      <td>Date</td>
+      <td>Beginning of current month</td>
+      <td>Starts mapping at the given date. Format <code>yyyymmdd</code> in UTC. Default is beginning of current month.</td>
+    </tr>
+<tr>
+<td>include_tentative</td>
+      <td>Boolean</td>
+      <td>true</td>
+      <td>Includes tentative bookings by default. If switched to false, tentative statuses will be rendered as <code>0</code>.</td>
+    </tr>
+<tr>
+<td>boolean</td>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>Render map using only <code>0</code> and <code>1</code> characters. In this mode, every blocking status will be rendered as <code>1</code>. List of statuses described in <a href="/reference/enums#booking-statuses">enums section</a>.</td>
+    </tr>
+</tbody>
+</table>
       </div>
     </div>
   </div>
