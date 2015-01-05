@@ -3,6 +3,15 @@
 1. TOC
 {:toc}
 
+## Account statuses
+
+Status           | Description
+-----------------|------------
+0                | trial
+1                | paying
+2                | suspended
+{: class="table table-bordered"}
+
 ## Booking statuses
 
 Status           | Description

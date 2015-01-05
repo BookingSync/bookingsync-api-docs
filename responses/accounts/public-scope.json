@@ -1,0 +1,11 @@
+{
+  "accounts": [
+    {
+      "id": 7,
+      "business_name": "Business Name",
+      "status":"trial",
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT"
+    }
+  ]
+}

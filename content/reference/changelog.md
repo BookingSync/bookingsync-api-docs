@@ -7,6 +7,9 @@ We're still in the process of building the API. While the technical parts
 are complete or even available.
 
 ## 2014-12-25
+  * [improvement] Add `accounts` endpoint.
+
+## 2014-12-25
   * [improvement] Explain `availabilities` mapping parameters.
 
 ## 2014-12-24
