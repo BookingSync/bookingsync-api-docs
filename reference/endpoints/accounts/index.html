@@ -88,7 +88,128 @@
       </div>
 
       <div id="content">
-        
+        <h2 id="accounts">Accounts</h2>
+
+<ol id="markdown-toc">
+<li><a href="#list-accounts">List accounts</a></li>
+  <li><a href="#get-a-single-account">Get a single account</a></li>
+</ol><ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
+</ul><div class="tab-content">
+  <div class="tab-pane active" id="public">
+    <h4 id="parameters">Parameters</h4>
+
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s id.</td>
+        </tr></tbody>
+<tbody><tr>
+<td>business_name</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s business name.</td>
+        </tr></tbody>
+<tbody><tr>
+<td>status</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Account’s status, list of statuses described in <a href="/reference/enums/#account-statuses">enums section</a>.</td>
+        </tr></tbody>
+<tbody><tr>
+<td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Account’s create time.</td>
+        </tr></tbody>
+<tbody><tr>
+<td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Account’s update time.</td>
+        </tr></tbody>
+</table>
+</div>
+</div>
+
+<h3 id="list-accounts">List accounts</h3>
+
+<p>List all authorized accounts. Only the <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a> currently allow you to retrieve multiple accounts at ones.</p>
+
+<pre><code>GET /accounts
+</code></pre>
+
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#4cdc80995d0fpublic" role="tab" data-toggle="pill">
+        public
+      </a>
+    </li>
+  
+</ul><h4 id="response">Response</h4>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="4cdc80995d0fpublic">
+      <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"accounts"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+      <span class="s2">"business_name"</span><span class="o">:</span> <span class="s2">"Business Name"</span><span class="p">,</span>
+      <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"trial"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-01-06T09:11:10Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-01-06T09:11:10Z"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+    </div>
+  
+</div>
+
+<h3 id="get-a-single-account">Get a single account</h3>
+
+<p>Returns a single authorized account identified by ID.</p>
+
+<pre><code>GET /accounts/:account_id
+</code></pre>
+
+<ul class="nav nav-pills pull-right" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  
+    <li class="active">
+      <a href="#4e925611bf09public" role="tab" data-toggle="pill">
+        public
+      </a>
+    </li>
+  
+</ul><h4 id="response-1">Response</h4>
+<div class="tab-content">
+  
+    <div class="tab-pane active" id="4e925611bf09public">
+      <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"accounts"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+      <span class="s2">"business_name"</span><span class="o">:</span> <span class="s2">"Business Name"</span><span class="p">,</span>
+      <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"trial"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-01-06T09:11:10Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-01-06T09:11:10Z"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+    </div>
+  
+</div>
       </div>
     </div>
   </div>
