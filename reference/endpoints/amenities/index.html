@@ -113,12 +113,20 @@
           <td>Read</td>
           <td>Amenity’s id.</td>
         </tr></tbody>
-<tbody><tr>
+<tbody>
+<tr>
 <td>key</td>
           <td>String</td>
           <td>Read</td>
           <td>Amenity’s key.</td>
-        </tr></tbody>
+        </tr>
+<tr>
+<td>title</td>
+          <td><a href="/reference/enums#formats">Object</a></td>
+          <td>Read</td>
+          <td>Amenity’s title, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+</tbody>
 </table>
 </div>
 </div>
@@ -135,7 +143,7 @@ rental has it’s own set of amenities.</p>
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#f91cd5e8395cpublic" role="tab" data-toggle="pill">
+      <a href="#74b1d636cd2fpublic" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -143,12 +151,15 @@ rental has it’s own set of amenities.</p>
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="f91cd5e8395cpublic">
+    <div class="tab-pane active" id="74b1d636cd2fpublic">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"amenities"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"key"</span><span class="o">:</span> <span class="s2">"internet"</span>
+      <span class="s2">"key"</span><span class="o">:</span> <span class="s2">"internet"</span><span class="p">,</span>
+      <span class="s2">"title"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Internet"</span>
+      <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
   <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
@@ -169,7 +180,7 @@ rental has it’s own set of amenities.</p>
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#a048474a4d72public" role="tab" data-toggle="pill">
+      <a href="#8d22a05d3e26public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -177,12 +188,15 @@ rental has it’s own set of amenities.</p>
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="a048474a4d72public">
+    <div class="tab-pane active" id="8d22a05d3e26public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"amenities"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"key"</span><span class="o">:</span> <span class="s2">"internet"</span>
+      <span class="s2">"key"</span><span class="o">:</span> <span class="s2">"internet"</span><span class="p">,</span>
+      <span class="s2">"title"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Internet"</span>
+      <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
   <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>

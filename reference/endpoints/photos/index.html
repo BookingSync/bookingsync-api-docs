@@ -119,10 +119,28 @@
         </tr></tbody>
 <tbody>
 <tr>
+<td>compact_url</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Photo’s compact size (384x256) url.</td>
+        </tr>
+<tr>
 <td>description</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read</td>
           <td>Photo’s description, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td>giant_url</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Photo’s giant size (2400x1600) url.</td>
+        </tr>
+<tr>
+<td>grande_url</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Photo’s grande size (1536x1024) url.</td>
         </tr>
 <tr>
 <td>kind</td>
@@ -134,19 +152,25 @@
 <td>large_url</td>
           <td>String</td>
           <td>Read</td>
-          <td>Photo’s large size url.</td>
+          <td>Photo’s large size (1200x800) url.</td>
+        </tr>
+<tr>
+<td>medium_url</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Photo’s medium size (768x512) url.</td>
         </tr>
 <tr>
 <td>micro_url</td>
           <td>String</td>
           <td>Read</td>
-          <td>Photo’s micro size url.</td>
+          <td>Photo’s micro size (48x32) url.</td>
         </tr>
 <tr>
 <td>normal_url</td>
           <td>String</td>
           <td>Read</td>
-          <td>Photo’s normal size url.</td>
+          <td>Photo’s normal size (1200x800) url.</td>
         </tr>
 <tr>
 <td>position</td>
@@ -155,10 +179,16 @@
           <td>Photo’s position on the rental list.</td>
         </tr>
 <tr>
+<td>small_url</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Photo’s small size (192x128) url.</td>
+        </tr>
+<tr>
 <td>thumb_url</td>
           <td>String</td>
           <td>Read</td>
-          <td>Photo’s thumb size url.</td>
+          <td>Photo’s thumb size (96x64) url.</td>
         </tr>
 </tbody>
 <tbody>
@@ -195,10 +225,28 @@
         </tr></tbody>
 <tbody>
 <tr>
+<td>compact_url</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Photo’s compact size url.</td>
+        </tr>
+<tr>
 <td>description</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read/Write</td>
           <td>Photo’s description, list of locales described in <a href="/reference/enums#locales">enums section</a>. (80 characters max)</td>
+        </tr>
+<tr>
+<td>giant_url</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Photo’s giant size url.</td>
+        </tr>
+<tr>
+<td>grande_url</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Photo’s grande size url.</td>
         </tr>
 <tr>
 <td>kind</td>
@@ -211,6 +259,12 @@
           <td>String</td>
           <td>Read</td>
           <td>Photo’s large size url.</td>
+        </tr>
+<tr>
+<td>medium_url</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Photo’s medium size url.</td>
         </tr>
 <tr>
 <td>micro_url</td>
@@ -242,6 +296,12 @@
           <td>String</td>
           <td>Write</td>
           <td>Photo’s remote url.</td>
+        </tr>
+<tr>
+<td>small_url</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Photo’s small size url.</td>
         </tr>
 <tr>
 <td>thumb_url</td>
@@ -279,7 +339,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#5e313cfcc787public" role="tab" data-toggle="pill">
+      <a href="#15d242b87224public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -287,7 +347,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="5e313cfcc787public">
+    <div class="tab-pane active" id="15d242b87224public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
@@ -295,17 +355,22 @@
   <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"compact_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/compact_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Wonderful living room"</span>
       <span class="p">},</span>
+      <span class="s2">"giant_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/giant_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
+      <span class="s2">"grande_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/grande_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"livingroom"</span><span class="p">,</span>
       <span class="s2">"large_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/large_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
+      <span class="s2">"medium_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/medium_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"micro_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"normal_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/normal_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"small_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/small_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-01-06T09:11:10Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-01-06T09:11:10Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-01-08T12:15:58Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-01-08T12:15:58Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
       <span class="p">}</span>
@@ -327,7 +392,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#95a4f2728c54public" role="tab" data-toggle="pill">
+      <a href="#85331a362bf4public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -335,7 +400,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="95a4f2728c54public">
+    <div class="tab-pane active" id="85331a362bf4public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
@@ -343,17 +408,22 @@
   <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"compact_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/compact_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Wonderful living room"</span>
       <span class="p">},</span>
+      <span class="s2">"giant_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/giant_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
+      <span class="s2">"grande_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/grande_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"livingroom"</span><span class="p">,</span>
       <span class="s2">"large_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/large_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
+      <span class="s2">"medium_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/medium_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"micro_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"normal_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/normal_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"small_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/small_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-01-06T09:11:10Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-01-06T09:11:10Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-01-08T12:15:58Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-01-08T12:15:58Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
       <span class="p">}</span>
@@ -375,7 +445,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#9189c6ea1dd8rentals_write" role="tab" data-toggle="pill">
+      <a href="#6f6c16eac7e7rentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
@@ -397,7 +467,7 @@
 <h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="9189c6ea1dd8rentals_write">
+    <div class="tab-pane active" id="6f6c16eac7e7rentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
@@ -405,17 +475,22 @@
   <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"compact_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/compact_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Wonderful living room"</span>
       <span class="p">},</span>
+      <span class="s2">"giant_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/giant_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
+      <span class="s2">"grande_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/grande_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"livingroom"</span><span class="p">,</span>
       <span class="s2">"large_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/large_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
+      <span class="s2">"medium_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/medium_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"micro_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"normal_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/normal_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"small_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/small_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-01-06T09:11:10Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-01-06T09:11:10Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-01-08T12:15:58Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-01-08T12:15:58Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
       <span class="p">}</span>
@@ -437,7 +512,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#3ae062ce2198rentals_write" role="tab" data-toggle="pill">
+      <a href="#8059ebeb1b91rentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
@@ -459,7 +534,7 @@
 <h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="3ae062ce2198rentals_write">
+    <div class="tab-pane active" id="8059ebeb1b91rentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
@@ -467,17 +542,22 @@
   <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"compact_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/compact_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Wonderful living room"</span>
       <span class="p">},</span>
+      <span class="s2">"giant_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/giant_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
+      <span class="s2">"grande_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/grande_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"livingroom"</span><span class="p">,</span>
       <span class="s2">"large_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/large_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
+      <span class="s2">"medium_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/medium_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"micro_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"normal_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/normal_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"small_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/small_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-01-06T09:11:10Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-01-06T09:11:10Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-01-08T12:15:58Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-01-08T12:15:58Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
       <span class="p">}</span>
