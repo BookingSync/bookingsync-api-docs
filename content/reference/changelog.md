@@ -6,7 +6,10 @@ We're still in the process of building the API. While the technical parts
 (authorization, JSON support etc.) are mostly done, not all resources
 are complete or even available.
 
-## 2014-12-25
+## 2015-01-08
+  * [improvement] Add `title` to `amenities`, include more photo versions urls in `photos` endpoint and add dimensions for each photo version.
+
+## 2015-01-06
   * [improvement] Add `accounts` endpoint.
 
 ## 2014-12-25
