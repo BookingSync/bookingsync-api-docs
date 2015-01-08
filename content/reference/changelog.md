@@ -6,6 +6,10 @@ We're still in the process of building the API. While the technical parts
 (authorization, JSON support etc.) are mostly done, not all resources
 are complete or even available.
 
+## 2015-01-08
+  * [improvement] Add more image sizes to `photos` endpoint.
+  * [improvement] Add titles to `amenities` endpoint.
+
 ## 2014-12-25
   * [improvement] Add `accounts` endpoint.
 
