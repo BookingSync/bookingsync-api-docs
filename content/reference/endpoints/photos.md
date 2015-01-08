@@ -17,12 +17,17 @@ Name               | Type    | Read/Write | Description
 -------------------|---------|------------|------------
 id                 | Integer | Read       | Photo's id.
 -------------------|---------|------------|------------
+compact_url        | String  | Read       | Photo's compact size url.
 description        | [Object](/reference/enums#formats)    | Read       | Photo's description, list of locales described in [enums section](/reference/enums#locales).
+giant_url          | String  | Read       | Photo's giant size url.
+grande_url         | String  | Read       | Photo's grande size url.
 kind               | String  | Read       | Photo's kind, list of kinds described in [enum section](/reference/enums/#photo-kinds).
 large_url          | String  | Read       | Photo's large size url.
+medium_url         | String  | Read       | Photo's medium size url.
 micro_url          | String  | Read       | Photo's micro size url.
 normal_url         | String  | Read       | Photo's normal size url.
 position           | Integer | Read       | Photo's position on the rental list.
+small_url          | String  | Read       | Photo's small size url.
 thumb_url          | String  | Read       | Photo's thumb size url.
 -------------------|---------|------------|------------
 created_at         | [Time](/reference/enums#formats) | Read       | Photo's create time.
@@ -36,14 +41,19 @@ Name               | Type    | Read/Write | Description
 -------------------|---------|------------|------------
 id                 | Integer | Read       | Photo's id.
 -------------------|---------|------------|------------
+compact_url        | String  | Read       | Photo's compact size url.
 description        | [Object](/reference/enums#formats)    | Read/Write | Photo's description, list of locales described in [enums section](/reference/enums#locales). (80 characters max)
+giant_url          | String  | Read       | Photo's giant size url.
+grande_url         | String  | Read       | Photo's grande size url.
 kind               | String  | Read/Write | Photo's kind, list of kinds described in [enum section](/reference/enums/#photo-kinds).
 large_url          | String  | Read       | Photo's large size url.
+medium_url         | String  | Read       | Photo's medium size url.
 micro_url          | String  | Read       | Photo's micro size url.
 normal_url         | String  | Read       | Photo's normal size url.
 photo              | File    | Write      | **Required**. Photo's image.
 position           | Integer | Read/Write | Photo's position on the rental list.
 remote_photo_url   | String  | Write      | Photo's remote url.
+small_url          | String  | Read       | Photo's small size url.
 thumb_url          | String  | Read       | Photo's thumb size url.
 -------------------|---------|------------|------------
 created_at         | [Time](/reference/enums#formats) | Read       | Photo's create time.
