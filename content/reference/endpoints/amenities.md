@@ -17,6 +17,7 @@ Name             | Type    | Read/Write | Description
 id               | Integer | Read       | Amenity's id.
 -----------------|---------|------------|------------
 key              | String  | Read       | Amenity's key.
+title            | [Object](/reference/enums#formats)| Read       | Amenity's title, list of locales described in [enums section](/reference/enums#locales).
 {: class="table table-bordered"}
   </div>
 </div>

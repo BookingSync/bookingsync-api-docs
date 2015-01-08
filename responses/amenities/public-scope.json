@@ -1,1 +1,13 @@
-{"amenities":[{"id":1,"key":"internet"}],"meta":{}}
+{
+  "amenities":[
+    {
+      "id": 1,
+      "key": "internet",
+      "title": {
+        "en": "Internet"
+      }
+    }
+  ],
+  "meta": {
+  }
+}
