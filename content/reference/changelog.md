@@ -8,9 +8,9 @@ are complete or even available.
 
 ## 2015-01-08
   * [improvement] Add more image sizes to `photos` endpoint.
-  * [improvement] Add titles to `amenities` endpoint.
+  * [improvement] Add `title` to `amenities` endpoint.
 
-## 2014-12-25
+## 2015-01-06
   * [improvement] Add `accounts` endpoint.
 
 ## 2014-12-25
