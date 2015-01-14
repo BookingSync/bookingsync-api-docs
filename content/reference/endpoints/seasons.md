@@ -19,7 +19,7 @@ id               | Integer | Read       | Season's id.
 -----------------|---------|------------|------------
 color_ratio      | [Decimal](/reference/enums#formats) | Read       | Season's color_ratio.
 minimum_stay     | Integer | Read       | Season's minimum stay in days.
-name             | String  | Read       | Season's name.
+name             | [Object](/reference/enums#formats) | Read       | Season's name, list of locales described in [enums section](/reference/enums#locales).
 ratio_percentage | [Decimal](/reference/enums#formats) | Read       | Season's ratio expressed in percentage.
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Season's create time.
