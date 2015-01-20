@@ -16,7 +16,9 @@
         "rates_table": 1
       },
       "id": 12,
-      "name": "Season 2",
+      "name": {
+        "en": "Season 2"
+      },
       "ratio_percentage": "100",
       "minimum_stay": 7,
       "color_ratio": "1.0",
