@@ -31,9 +31,9 @@ country_code                    | String   | Read       | Rental's country code,
 currency                        | String   | Read       | Rental's currency code, list of codes described in [enums section](/reference/enums#currencies).
 description                     | [Object](/reference/enums#formats)     | Read       | Rental's description, list of locales described in [enums section](/reference/enums#locales).
 downpayment                     | Integer  | Read       | Rental's default downpayment percentage. If none defined, the default downpayment percentage of the account will be used.
-final_price                     | Integer  | Read       | Rental's final price. (after discount)
+final_price                     | Integer  | Read       | Rental's final price (after discount). Available only for a search query with valid dates, for other cases please refer to `base_rate` and `base_rate_kind`.
 headline                        | [Object](/reference/enums#formats)     | Read       | Rental's headline, list of locales described in [enums section](/reference/enums#locales).
-initial_price                   | Integer  | Read       | Rental's initial price.
+initial_price                   | Integer  | Read       | Rental's initial price. Available only for a search query with valid dates, for other cases please refer to `base_rate` and `base_rate_kind`.
 lat                             | Float    | Read       | Rental's latitude.
 lng                             | Float    | Read       | Rental's longitude.
 max_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's maximum price.
@@ -78,9 +78,9 @@ country_code                    | String   | Read       | Rental's country code,
 currency                        | String   | Read       | Rental's currency code, list of codes described in [enums section](/reference/enums#currencies).
 description                     | [Object](/reference/enums#formats)     | Read       | Rental's description, list of locales described in [enums section](/reference/enums#locales).
 downpayment                     | Integer  | Read       | Rental's default downpayment percentage. If none defined, the default downpayment percentage of the account will be used.
-final_price                     | Integer  | Read       | Rental's final price.
+final_price                     | Integer  | Read       | Rental's final price (after discount). Available only for a search query with valid dates, for other cases please refer to `base_rate` and `base_rate_kind`.
 headline                        | [Object](/reference/enums#formats)     | Read       | Rental's headline, list of locales described in [enums section](/reference/enums#locales).
-initial_price                   | Integer  | Read       | Rental's initial price.
+initial_price                   | Integer  | Read       | Rental's initial price. Available only for a search query with valid dates, for other cases please refer to `base_rate` and `base_rate_kind`.
 lat                             | Float    | Read       | Rental's latitude.
 lng                             | Float    | Read       | Rental's longitude.
 max_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's maximum price.
@@ -131,9 +131,9 @@ country_code                    | String   | Read/Write | Rental's country code,
 currency                        | String   | Read/Write | Rental's currency code, list of codes described in [enums section](/reference/enums#currencies).
 description                     | [Object](/reference/enums#formats)     | Read/Write | Rental's description, list of locales described in [enums section](/reference/enums#locales). (5000 characters max)
 downpayment                         | Integer  | Read/Write | Rental's default downpayment percentage. If none defined, the default downpayment percentage of the account will be used. (between 0 and 100)
-final_price                     | Integer  | Read       | Rental's final price. (after discount)
-headline                        | [Object](/reference/enums#formats)     | Read/Write | Rental's headline, list of locales described in [enums section](/reference/enums#locales). (75 characters max)
-initial_price                   | Integer  | Read       | Rental's initial price.
+final_price                     | Integer  | Read       | Rental's final price (after discount). Available only for a search query with valid dates, for other cases please refer to `base_rate` and `base_rate_kind`.
+headline                        | [Object](/reference/enums#formats)     | Read       | Rental's headline, list of locales described in [enums section](/reference/enums#locales).
+initial_price                   | Integer  | Read       | Rental's initial price. Available only for a search query with valid dates, for other cases please refer to `base_rate` and `base_rate_kind`.
 lat                             | Float    | Read/Write | Rental's latitude. (between -90 and 90)
 lng                             | Float    | Read/Write | Rental's longitude. (between -180 and 180)
 max_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's maximum price.
