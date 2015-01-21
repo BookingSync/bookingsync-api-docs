@@ -6,9 +6,11 @@ We're still in the process of building the API. While the technical parts
 (authorization, JSON support etc.) are mostly done, not all resources
 are complete or even available.
 
+## 2015-01-21
+  * [improvement] Update `initial_price` and `final_price` descriptions
+
 ## 2015-01-20
   * [improvement] Update `seasons` endpoint - add names translations
-  * [improvement] Update `initial_price` and `final_price` descriptions
 
 ## 2015-01-08
   * [improvement] Add more image sizes to `photos` endpoint.
