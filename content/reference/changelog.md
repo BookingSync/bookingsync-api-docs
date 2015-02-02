@@ -8,6 +8,7 @@ are complete or even available.
 
 ## 2015-02-18
   * [api improvement][breaking change] Remove `normal_url` from `photos` endpoint. Use `large_url` instead.
+  * [api improvement][breaking change] Update `clients` endpoint with new grouped attributes.
 
 ## 2015-02-11
   * [doc update] Redesign the developers center to be inline with BookingSync style

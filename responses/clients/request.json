@@ -1,15 +1,42 @@
 {
   "clients": [
     {
-      "address1": "Bernhard Creek",
-      "city": "East Winifred",
-      "country_code": "US",
-      "email": "dwight_schiller@reilly.us",
-      "fullname": "Nelson McDermott",
-      "phone": "1-060-021-4277 73823",
-      "preferred_locale": "en",
-      "state": "Montana",
-      "zip": "07671-8254"
+      "addresses": [
+        {
+          "address1": "Kutch Stravenue",
+          "address2": "Building 1",
+          "city": "North Jacey",
+          "country_code": "US",
+          "label": "default",
+          "state": "Illinois",
+          "zip": "01363-9579"
+        }
+      ],
+      "emails": [
+        {
+          "email": "clementina_kling@example.com",
+          "label": "default"
+        }
+      ],
+      "phones": [
+        {
+          "label": "phone",
+          "number": "(153)070-6105"
+        },
+        {
+          "label": "mobile",
+          "number": "(153)070-6106"
+        },
+        {
+          "label": "fax",
+          "number": "(153)070-6107"
+        }
+      ],
+      "created_at": "2014-12-28T15:19:27Z",
+      "updated_at": "2015-02-02T11:07:45Z",
+      "fullname": "Clementina Kling",
+      "notes": "",
+      "preferred_locale": "en"
     }
   ]
 }
