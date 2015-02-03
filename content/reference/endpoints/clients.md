@@ -72,6 +72,11 @@ phones    |                  | Array   | Read/Write | Array of client's phone nu
   </div>
 </div>
 
+<div class="callout callout-info" markdown="1">
+  <h4>Grouped attributes</h4>
+  First set of attributes in array group will always be used as default `address`, `email` or `phone`.
+</div>
+
 ## List clients
 
 List all clients for given account.
