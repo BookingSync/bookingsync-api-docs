@@ -1,0 +1,18 @@
+{
+  "rentals": [
+    {
+      "id": 1,
+      "currency": "EUR",
+      "initial_price": 1257,
+      "final_price": 1257,
+      "updated_at": "2014-01-21T11:46:15Z"
+    },
+    {
+      "id": 2,
+      "currency": "EUR",
+      "initial_price": 1414,
+      "final_price": 1414,
+      "updated_at": "2014-01-21T13:32:17Z"
+    }
+  ]
+}

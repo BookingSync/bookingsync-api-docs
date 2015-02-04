@@ -170,6 +170,44 @@ GET /rentals
 
 <%= render 'json_response', endpoint: "rentals", scopes: %w(public rentals_read-rentals_write) %>
 
+## Search rentals
+
+Search parameters allow to filter rentals by specified fields.
+
+Example:
+
+~~~
+GET /rentals/search?start_at=20140324&end_at=20140330
+~~~
+
+### Search Parameters
+
+Name              | Type    | Default | Description
+------------------|---------|--------------
+amenities         | String  |         | List of comma separated amenities to include.
+bb_ne             | Float   |         | Rentals located between `bb_sw` & `bb_ne`. Format `latitude, longitude`.
+bb_sw             | Float   |         | Rentals located between `bb_sw` & `bb_ne`. Format `latitude, longitude`.
+city              | String  |         | Rentals matching given city.
+country_code      | String  |         | Rentals matching given country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
+destination       | String  |         | List of comma separated destinations.
+direction         | String  |         | Direction to sort rentals, either `asc` or `desc`.
+guests            | Integer |         | Rentals with maximum number of sleeps above given number of guests.
+include_tentative | Boolean | false   | Treat tentative periods as available ones.
+max_price         | Integer |         | Rentals with `max_price` below given price. Will use `final_price` if computed.
+min_price         | Integer |         | Rentals with `min_price` above given price. Will use `final_price` if computed.
+page              | Integer |         | Used to browse multi-paged listings.
+per_page          | Integer |         | Limit amount of returned rentals to given number. Full list can then be browsed with `page` parameter.
+reject_amenities  | String  |         | List of comma separated amenities to exclude.
+rental_type       | String  |         | List of comma separated types, all types described in [enums section](/reference/enums#rental-types).
+sort              | String  |         | Sort rentals by given attribute. Possible values: `price`, `sleeps`.
+special_offers    | Boolean | false   | Show only rentals with special offers.
+------------------|---------|---------|---------------------------------------
+start_at          | Time    |         | Rentals available between `start_at` & `end_at`. Format `yyyymmdd` in UTC.
+end_at            | Time    |         | Rentals available between `start_at` & `end_at`. Format `yyyymmdd` in UTC.
+{: class="table table-bordered"}
+
+<%= render 'json_response', endpoint: "rentals", scopes: [{ public: "search" }] %>
+
 ## Get a single rental
 
 Returns a single rental identified by ID.
