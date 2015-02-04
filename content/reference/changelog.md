@@ -6,7 +6,7 @@ We're still in the process of building the API. While the technical parts
 (authorization, JSON support etc.) are mostly done, not all resources
 are complete or even available.
 
-## 2015-01-22
+## 2015-02-04
   * [improvement] Add `search` section to `rentals` endpoint.
 
 ## 2015-01-21
