@@ -131,7 +131,7 @@ This request is responded to with either an error (HTTP status code 401) or an a
 
 ### Refreshing access token
 
-Api calls made with expired token will return an HTTP Status Code 401 (Unauthorized). To prevent this from happening, request a new `access_token` using the `refresh_token`, by performing the action below before the `access_token` expiration. You can find your token lifetime (in seconds), by checking the `expires_in` attribute in authorization response.
+API calls made with expired token will return an HTTP Status Code 401 (Unauthorized). To prevent this from happening, request a new `access_token` using the `refresh_token`, by performing the action below before the `access_token` expiration. You can find your token lifetime (in seconds), by checking the `expires_in` attribute in authorization response.
 
 1. POST (application/x-www-form-urlencoded) the following parameters to `https://www.bookingsync.com/oauth/token`
   * client_id

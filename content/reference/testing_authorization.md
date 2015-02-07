@@ -18,7 +18,7 @@ urn:ietf:wg:oauth:2.0:oob
 
 ## Console
 
-### Create Authorization Code's Request URL
+### 1. Create Authorization Code's Request URL
 
 Use the schema below with by replacing:
 
@@ -32,12 +32,12 @@ https://www.bookingsync.com/oauth/authorize?client_id=CLIENT_ID&redirect_uri=urn
 add at the end of this URL, a space separated list like:
 `&scope=bookings_read%20rentals_read` (`%20` represent a **space** within URLs)
 
-### Authorize this app for a given BookingSync User
+### 2. Authorize this app for a given BookingSync User
 
 Visit the generated URL, and authorize access to your test
 Application for a BookingSync user.
 
-### Use the Authorization Code to get your Access Token
+### 3. Use the Authorization Code to get your Access Token
 
 Use the schema below with by replacing:
 
@@ -73,7 +73,9 @@ Sample response:
 **Refresh Token** to regenerate and new **Token** or restart the flow you just used.
 
 
-### Using the Refresh Token to get a new Access Token
+### 4. Using the Refresh Token to get a new Access Token
+
+API calls made with expired token will return an HTTP Status Code 401 (Unauthorized). To prevent this from happening, request a new `access_token` using the `refresh_token`, by performing the action below before the `access_token` expiration. You can find your token lifetime (in seconds), by checking the `expires_in` attribute in authorization response.
 
 Use the schema below with by replacing:
 
