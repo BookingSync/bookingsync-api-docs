@@ -6,6 +6,10 @@ We're still in the process of building the API. While the technical parts
 (authorization, JSON support etc.) are mostly done, not all resources
 are complete or even available.
 
+## 2015-02-08
+  * [doc] Update requirements section with application setup.
+  * [doc] Improve documentation for testing the authorization.
+
 ## 2015-02-04
   * [improvement] Add `search` section to `rentals` endpoint.
 
