@@ -51,6 +51,7 @@
           <a class="list-group-item" href="/reference/changelog/">Changelog</a>
           <a class="list-group-item" href="/reference/requirements/">Requirements</a>
           <a class="list-group-item active" href="/reference/authorization/">Authorization</a>
+          <a class="list-group-item" href="/reference/testing_authorization/">Testing the Authorization</a>
           <a class="list-group-item" href="/reference/enums/">Enumerables</a>
         </div>
         <div class="panel-heading">
@@ -240,7 +241,7 @@ This is to be used for <strong>Server-Side applications</strong>, with special c
 
 <h4 id="refreshing-access-token">Refreshing access token</h4>
 
-<p>Api calls made with expired token will return an HTTP Status Code 401 (Unauthorized). To prevent this from happening, request a new <code>access_token</code> using the <code>refresh_token</code>, by performing the action below before the <code>access_token</code> expiration. You can find your token lifetime (in seconds), by checking the <code>expires_in</code> attribute in authorization response.</p>
+<p>API calls made with expired token will return an HTTP Status Code 401 (Unauthorized). To prevent this from happening, request a new <code>access_token</code> using the <code>refresh_token</code>, by performing the action below before the <code>access_token</code> expiration. You can find your token lifetime (in seconds), by checking the <code>expires_in</code> attribute in authorization response.</p>
 
 <ol>
 <li>POST (application/x-www-form-urlencoded) the following parameters to <code>https://www.bookingsync.com/oauth/token</code>

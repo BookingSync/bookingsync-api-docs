@@ -51,6 +51,7 @@
           <a class="list-group-item" href="/reference/changelog/">Changelog</a>
           <a class="list-group-item" href="/reference/requirements/">Requirements</a>
           <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+          <a class="list-group-item active" href="/reference/testing_authorization/">Testing the Authorization</a>
           <a class="list-group-item" href="/reference/enums/">Enumerables</a>
         </div>
         <div class="panel-heading">
@@ -106,7 +107,7 @@ make sure to use the following <strong>redirect_uri</strong>:</p>
 
 <h3 id="console">Console</h3>
 
-<h4 id="create-authorization-codes-request-url">Create Authorization Code’s Request URL</h4>
+<h4 id="create-authorization-codes-request-url">1. Create Authorization Code’s Request URL</h4>
 
 <p>Use the schema below with by replacing:</p>
 
@@ -120,12 +121,12 @@ make sure to use the following <strong>redirect_uri</strong>:</p>
 add at the end of this URL, a space separated list like:
 <code>&amp;scope=bookings_read%20rentals_read</code> (<code>%20</code> represent a <strong>space</strong> within URLs)</p>
 
-<h4 id="authorize-this-app-for-a-given-bookingsync-user">Authorize this app for a given BookingSync User</h4>
+<h4 id="authorize-this-app-for-a-given-bookingsync-user">2. Authorize this app for a given BookingSync User</h4>
 
 <p>Visit the generated URL, and authorize access to your test
 Application for a BookingSync user.</p>
 
-<h4 id="use-the-authorization-code-to-get-your-access-token">Use the Authorization Code to get your Access Token</h4>
+<h4 id="use-the-authorization-code-to-get-your-access-token">3. Use the Authorization Code to get your Access Token</h4>
 
 <p>Use the schema below with by replacing:</p>
 
@@ -160,7 +161,9 @@ Application for a BookingSync user.</p>
 <p><strong>Note</strong>: Tokens (<code>access_token</code>) are only <strong>valid for 2 hours</strong>, you then need to use the
 <strong>Refresh Token</strong> to regenerate and new <strong>Token</strong> or restart the flow you just used.</p>
 
-<h4 id="using-the-refresh-token-to-get-a-new-access-token">Using the Refresh Token to get a new Access Token</h4>
+<h4 id="using-the-refresh-token-to-get-a-new-access-token">4. Using the Refresh Token to get a new Access Token</h4>
+
+<p>API calls made with expired token will return an HTTP Status Code 401 (Unauthorized). To prevent this from happening, request a new <code>access_token</code> using the <code>refresh_token</code>, by performing the action below before the <code>access_token</code> expiration. You can find your token lifetime (in seconds), by checking the <code>expires_in</code> attribute in authorization response.</p>
 
 <p>Use the schema below with by replacing:</p>
 
