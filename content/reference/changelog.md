@@ -6,7 +6,7 @@ We're still in the process of building the API. While the technical parts
 (authorization, JSON support etc.) are mostly done, not all resources
 are complete or even available.
 
-## 2015-02-10
+## 2015-02-11
   * [improvement] Update testing the authorization section with `refresh_token` information.
 
 ## 2015-02-08
