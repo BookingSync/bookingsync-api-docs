@@ -106,3 +106,5 @@ Sample response:
   "scope": "public"
 }
 ~~~
+
+**Note**: New `refresh_token` will be generated after each `access_token` refresh.
