@@ -90,6 +90,16 @@ request:
 GET https://www.bookingsync.com/api/v3/accounts?fields=id,business_name
 ~~~
 
+### Sideloading Associations
+
+For lowering the number of requests, it is sometimes useful to sideload associations.
+For example, if we wanted to sideload availabilities of the Rentals, we could specify
+that in the request:
+
+~~~
+GET https://www.bookingsync.com/api/v3/rentals?include=availabilities
+~~~
+
 ## HTTPS
 
 Every request to the API must use HTTPS. When the API is accessed over HTTP,

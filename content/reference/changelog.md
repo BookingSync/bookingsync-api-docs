@@ -8,6 +8,7 @@ are complete or even available.
 
 ## 2015-02-11
   * [improvement] Update testing the authorization section with `refresh_token` information.
+  * [doc] Explain how to sideload associations.
 
 ## 2015-02-08
   * [doc] Update requirements section with application setup.
