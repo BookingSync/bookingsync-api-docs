@@ -7,52 +7,52 @@ We're still in the process of building the API. While the technical parts
 are complete or even available.
 
 ## 2015-02-11
-  * [improvement] Update testing the authorization section with `refresh_token` information.
-  * [doc] Explain how to sideload associations.
+  * [doc update] Update testing the authorization section with `refresh_token` information.
+  * [doc update] Explain how to sideload associations.
 
 ## 2015-02-08
-  * [doc] Update requirements section with application setup.
-  * [doc] Improve documentation for testing the authorization.
+  * [doc update] Update requirements section with application setup.
+  * [doc update] Improve documentation for testing the authorization.
 
 ## 2015-02-04
-  * [improvement] Add `search` section to `rentals` endpoint.
+  * [doc update] Add `search` section to `rentals` endpoint.
 
 ## 2015-01-21
-  * [improvement] Update `initial_price` and `final_price` descriptions.
+  * [doc update] Update `initial_price` and `final_price` descriptions.
 
 ## 2015-01-20
-  * [improvement] Update `seasons` endpoint - add names translations.
+  * [api improvement] Update `seasons` endpoint - add names translations.
 
 ## 2015-01-08
-  * [improvement] Add more image sizes to `photos` endpoint.
-  * [improvement] Add `title` to `amenities` endpoint.
+  * [api improvement] Add more image sizes to `photos` endpoint.
+  * [api improvement] Add `title` to `amenities` endpoint.
 
 ## 2015-01-06
-  * [improvement] Add `accounts` endpoint.
+  * [doc update] Add `accounts` endpoint.
 
 ## 2014-12-25
-  * [improvement] Explain `availabilities` mapping parameters.
+  * [doc update] Explain `availabilities` mapping parameters.
 
 ## 2014-12-24
-  * [update] Rename `bookings_public_write` scope to `bookings_write_owned`.
+  * [api improvement] Rename `bookings_public_write` scope to `bookings_write_owned`.
 
 ## 2014-11-28
-  * [update] Rename `title` field to `key` for `amenities`.
-  * [update] Update `booked`, `unavailable`, `tentative_expires_at` fields description for `bookings`.
-  * [improvement] Explain `bookings` status assignment on creation. Update example request.
+  * [api improvement] Rename `title` field to `key` for `amenities`.
+  * [doc update] Update `booked`, `unavailable`, `tentative_expires_at` fields description for `bookings`.
+  * [doc update] Explain `bookings` status assignment on creation. Update example request.
 
 ## 2014-11-24
-  * [update] Describe how to use the refresh token to get a new access token in the [Testing Authorization](/reference/testing_authorization) guide.
+  * [doc update] Describe how to use the refresh token to get a new access token in the [Testing Authorization](/reference/testing_authorization) guide.
 
 ## 2014-11-21
-  * [update] Remove parent `id` from example with nested `POST` requests.
+  * [doc update] Remove parent `id` from example with nested `POST` requests.
 
 ## 2014-11-21
-  * [update] Remove `billing_addresses` endpoint with all its references. Add `address1`, `address2`, `city`, `country_code`, `state` and `zip` fields to `payments`.
+  * [api improvement] Remove `billing_addresses` endpoint with all its references. Add `address1`, `address2`, `city`, `country_code`, `state` and `zip` fields to `payments`.
 
 ## 2014-11-13
-  * [improvement] The API will now return a 403 response when the current token doesn't have
+  * [api improvement] The API will now return a 403 response when the current token doesn't have
     the scopes necessary to perform requested action. Previously that would have been 401.
 
 ## 2014-11-06
-  * [improvement] Add `paid_amount` to `bookings` when using `bookings_read` or `bookings_write` scope.
+  * [doc update] Add `paid_amount` to `bookings` when using `bookings_read` or `bookings_write` scope.
