@@ -12,30 +12,44 @@
     <link rel="stylesheet" href="/highlight.css">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="/style.js"></script>
 
     <!-- you don't need to keep this, but it's cool for stats! -->
     <meta name="generator" content="nanoc <%= Nanoc::VERSION %>">
   </head>
-  <body>
-    <div class="container">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">BookingSync API Documentation</a>
+  <body class="flex-col">
+    <nav id="sidebar-left">
+      <ul class="nav">
+        <li><a href="#" class="sidebar-toggle"><i class="fa fa-close"></i></a></li>
+        <li class="<%= "active" if @item_rep.path.start_with?("/reference/") %>">
+          <a href="/reference/">API Reference</a>
+        </li>
+        <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
+      </ul>
+    </nav>
+    <div class="page-wrapper flex-1 flex-col">
+      <nav id="navigation" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container flex-row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle sidebar-toggle visible-xs-block">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <img alt="BookingSync" src="/images/bookingsync.svg">
+              <span>Developers</span>
+            </a>
+          </div>
+
+          <div class="flex-1 hidden-xs">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="<%= "active" if @item_rep.path.start_with?("/reference/") %>">
+                <a href="/reference/">API Reference</a>
+              </li>
+              <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="<%= "active" if @item_rep.path.start_with?("/reference/") %>">
-              <a href="/reference/">reference</a>
-            </li>
-            <li><a href="https://www.bookingsync.com">bookingsync.com</a></li>
-          </ul>
-        </div>
-      </div>
+      </nav>

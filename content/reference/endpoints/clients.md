@@ -3,16 +3,14 @@
 1. TOC
 {:toc}
 
-<ul class="nav nav-pills pull-right" role="tablist">
+### Parameters
+<ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#clients_read" role="tab" data-toggle="pill">clients_read</a></li>
   <li><a href="#clients_write" role="tab" data-toggle="pill">clients_write</a></li>
 </ul>
-
 <div class="tab-content" markdown="1">
   <div class="tab-pane active" id="clients_read" markdown="1">
-### Parameters
-
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | Client's id.
@@ -36,8 +34,6 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Client's upda
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="clients_write" markdown="1">
-### Parameters
-
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | Client's id.
