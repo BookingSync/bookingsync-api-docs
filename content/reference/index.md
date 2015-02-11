@@ -103,7 +103,7 @@ GET https://www.bookingsync.com/api/v3/rentals?include=availabilities
 ## HTTPS
 
 Every request to the API must use HTTPS. When the API is accessed over HTTP,
-a 302 redirect will be returned with the correct HTTPS url.
+a `302` redirect will be returned with the correct HTTPS url.
 
 ## Rate limiting
 

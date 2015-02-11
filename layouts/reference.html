@@ -1,82 +1,84 @@
 <%= render 'head' %>
-  <div class="row">
-    <div class="col-md-3 col-md-push-9">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Overview</h3>
-        </div>
-        <div class="list-group">
-          <%= link_to_with_current("Introduction", "/reference/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Changelog", "/reference/changelog/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Requirements", "/reference/requirements/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Authorization", "/reference/authorization/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Testing the Authorization", "/reference/testing_authorization/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Enumerables", "/reference/enums/",
-            class: "list-group-item") %>
-        </div>
-        <div class="panel-heading">
-          <h3 class="panel-title">Endpoints</h3>
-        </div>
-        <div class="list-group">
-          <%= link_to_with_current("Accounts", "/reference/endpoints/accounts/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Amenities", "/reference/endpoints/amenities/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Availabilities", "/reference/endpoints/availabilities/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Bookings", "/reference/endpoints/bookings/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Bookings Payments", "/reference/endpoints/bookings_payments/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Clients", "/reference/endpoints/clients/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Destinations", "/reference/endpoints/destinations/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Inquiries", "/reference/endpoints/inquiries/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Payments", "/reference/endpoints/payments/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Periods", "/reference/endpoints/periods/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Photos", "/reference/endpoints/photos/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Rates", "/reference/endpoints/rates/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Rates Rules", "/reference/endpoints/rates_rules/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Rates Tables", "/reference/endpoints/rates_tables/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Rentals", "/reference/endpoints/rentals/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Rental Agreements", "/reference/endpoints/rental_agreements/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Rentals Amenities", "/reference/endpoints/rentals_amenities/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Reviews", "/reference/endpoints/reviews/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Seasons", "/reference/endpoints/seasons/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Sources", "/reference/endpoints/sources/",
-            class: "list-group-item") %>
-          <%= link_to_with_current("Special Offers", "/reference/endpoints/special_offers/",
-            class: "list-group-item") %>
+<div class="container">
+  <div id="content">
+    <div class="row">
+      <div class="col-md-3 col-md-push-9">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Overview</h3>
+          </div>
+          <div class="list-group">
+            <%= link_to_with_current("Introduction", "/reference/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Changelog", "/reference/changelog/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Requirements", "/reference/requirements/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Authorization", "/reference/authorization/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Testing the Authorization", "/reference/testing_authorization/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Enumerables", "/reference/enums/",
+              class: "list-group-item") %>
+          </div>
+          <div class="panel-heading">
+            <h3 class="panel-title">Endpoints</h3>
+          </div>
+          <div class="list-group">
+            <%= link_to_with_current("Accounts", "/reference/endpoints/accounts/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Amenities", "/reference/endpoints/amenities/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Availabilities", "/reference/endpoints/availabilities/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Bookings", "/reference/endpoints/bookings/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Bookings Payments", "/reference/endpoints/bookings_payments/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Clients", "/reference/endpoints/clients/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Destinations", "/reference/endpoints/destinations/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Inquiries", "/reference/endpoints/inquiries/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Payments", "/reference/endpoints/payments/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Periods", "/reference/endpoints/periods/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Photos", "/reference/endpoints/photos/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Rates", "/reference/endpoints/rates/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Rates Rules", "/reference/endpoints/rates_rules/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Rates Tables", "/reference/endpoints/rates_tables/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Rentals", "/reference/endpoints/rentals/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Rental Agreements", "/reference/endpoints/rental_agreements/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Rentals Amenities", "/reference/endpoints/rentals_amenities/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Reviews", "/reference/endpoints/reviews/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Seasons", "/reference/endpoints/seasons/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Sources", "/reference/endpoints/sources/",
+              class: "list-group-item") %>
+            <%= link_to_with_current("Special Offers", "/reference/endpoints/special_offers/",
+              class: "list-group-item") %>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-md-9 col-md-pull-3">
-      <div class="alert alert-warning">
-        We're still in the process of building the API. If you notice any
-        problems, please contact <a href="mailto:support@bookingsync.com">support</a>.
-      </div>
+      <div class="col-md-9 col-md-pull-3">
+        <div class="alert alert-warning">
+          We're still in the process of building the API. If you notice any
+          problems, please contact <a href="mailto:support@bookingsync.com">support</a>.
+        </div>
 
-      <div id="content">
         <%= yield %>
       </div>
     </div>
   </div>
+</div>
 <%= render 'foot' %>

@@ -3,16 +3,14 @@
 1. TOC
 {:toc}
 
-<ul class="nav nav-pills pull-right" role="tablist">
+### Parameters
+<ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#rates_read" role="tab" data-toggle="pill">rates_read</a></li>
   <li><a href="#rates_write" role="tab" data-toggle="pill">rates_write</a></li>
 </ul>
-
 <div class="tab-content" markdown="1">
   <div class="tab-pane active" id="rates_read" markdown="1">
-### Parameters
-
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | Period's id.
@@ -24,8 +22,6 @@ end_date         | [Date](/reference/enums#formats) | Read       | Period's end 
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rates_write" markdown="1">
-### Parameters
-
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | Period's id.

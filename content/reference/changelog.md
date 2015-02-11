@@ -7,6 +7,7 @@ We're still in the process of building the API. While the technical parts
 are complete or even available.
 
 ## 2015-02-11
+  * [doc update] Redesign the developers center to be inline with BookingSync style
   * [doc update] Update testing the authorization section with `refresh_token` information.
   * [doc update] Explain how to sideload associations.
 

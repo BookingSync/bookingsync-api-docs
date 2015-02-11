@@ -1,6 +1,6 @@
 <% scopes.map! { |s| Scope.new(s) } %>
 
-<ul class="nav nav-pills pull-right" role="tablist">
+<ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
   <% scopes.each_with_index do |scope, i| %>
     <li <% if i.zero? %>class="active"<% end %>>

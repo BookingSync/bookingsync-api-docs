@@ -3,16 +3,14 @@
 1. TOC
 {:toc}
 
-<ul class="nav nav-pills pull-right" role="tablist">
+### Parameters
+<ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
   <li><a href="#rentals_write" role="tab" data-toggle="pill">rentals_write</a></li>
 </ul>
-
 <div class="tab-content" markdown="1">
   <div class="tab-pane active" id="public" markdown="1">
-### Parameters
-
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | Rentals Amenity's id.
@@ -22,8 +20,6 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Rentals Ameni
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rentals_write" markdown="1">
-### Parameters
-
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | Rentals Amenity's id.
