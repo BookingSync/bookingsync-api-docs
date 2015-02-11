@@ -12,83 +12,98 @@
     <link rel="stylesheet" href="/highlight.css">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="/style.js"></script>
 
     <!-- you don't need to keep this, but it's cool for stats! -->
     <meta name="generator" content="nanoc 3.6.7">
   </head>
-  <body>
-    <div class="container">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">BookingSync API Documentation</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active">
-              <a href="/reference/">reference</a>
-            </li>
-            <li><a href="https://www.bookingsync.com">bookingsync.com</a></li>
-          </ul>
-        </div>
-      </div>
+  <body class="flex-col">
+    <nav id="sidebar-left">
+      <ul class="nav">
+        <li><a href="#" class="sidebar-toggle"><i class="fa fa-close"></i></a></li>
+        <li class="active">
+          <a href="/reference/">API Reference</a>
+        </li>
+        <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
+      </ul>
+    </nav>
+    <div class="page-wrapper flex-1 flex-col">
+      <nav id="navigation" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container flex-row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle sidebar-toggle visible-xs-block">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <img alt="BookingSync" src="/images/bookingsync.svg">
+              <span>Developers</span>
+            </a>
+          </div>
 
-  <div class="row">
-    <div class="col-md-3 col-md-push-9">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Overview</h3>
+          <div class="flex-1 hidden-xs">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active">
+                <a href="/reference/">API Reference</a>
+              </li>
+              <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="list-group">
-          <a class="list-group-item" href="/reference/">Introduction</a>
-          <a class="list-group-item active" href="/reference/changelog/">Changelog</a>
-          <a class="list-group-item" href="/reference/requirements/">Requirements</a>
-          <a class="list-group-item" href="/reference/authorization/">Authorization</a>
-          <a class="list-group-item" href="/reference/testing_authorization/">Testing the Authorization</a>
-          <a class="list-group-item" href="/reference/enums/">Enumerables</a>
-        </div>
-        <div class="panel-heading">
-          <h3 class="panel-title">Endpoints</h3>
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
-          <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
-          <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
-          <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
-          <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
-          <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
-          <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
-          <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
-          <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
-          <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
-          <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
-          <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
-          <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
-          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
-          <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
-          <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
-          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
-          <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
-          <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
-          <a class="list-group-item" href="/reference/endpoints/sources/">Sources</a>
-          <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-9 col-md-pull-3">
-      <div class="alert alert-warning">
-        We're still in the process of building the API. If you notice any
-        problems, please contact <a href="mailto:support@bookingsync.com">support</a>.
-      </div>
+      </nav>
 
-      <div id="content">
+<div class="container">
+  <div id="content">
+    <div class="row">
+      <div class="col-md-3 col-md-push-9">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Overview</h3>
+          </div>
+          <div class="list-group">
+            <a class="list-group-item" href="/reference/">Introduction</a>
+            <a class="list-group-item active" href="/reference/changelog/">Changelog</a>
+            <a class="list-group-item" href="/reference/requirements/">Requirements</a>
+            <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+            <a class="list-group-item" href="/reference/testing_authorization/">Testing the Authorization</a>
+            <a class="list-group-item" href="/reference/enums/">Enumerables</a>
+          </div>
+          <div class="panel-heading">
+            <h3 class="panel-title">Endpoints</h3>
+          </div>
+          <div class="list-group">
+            <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
+            <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
+            <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
+            <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
+            <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+            <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
+            <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
+            <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
+            <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
+            <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
+            <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
+            <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
+            <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+            <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
+            <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
+            <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+            <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+            <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
+            <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
+            <a class="list-group-item" href="/reference/endpoints/sources/">Sources</a>
+            <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9 col-md-pull-3">
+        <div class="alert alert-warning">
+          We're still in the process of building the API. If you notice any
+          problems, please contact <a href="mailto:support@bookingsync.com">support</a>.
+        </div>
+
         <h2 id="changelog">Changelog</h2>
 
 <h3 id="work-in-progress">Work in progress</h3>
@@ -97,57 +112,63 @@
 (authorization, JSON support etc.) are mostly done, not all resources
 are complete or even available.</p>
 
-<h3 id="section">2015-02-08</h3>
+<h3 id="section">2015-02-11</h3>
 <ul>
-<li>[doc] Update requirements section with application setup.</li>
-  <li>[doc] Improve documentation for testing the authorization.</li>
-</ul><h3 id="section-1">2015-02-04</h3>
+<li>[doc update] Redesign the developers center to be inline with BookingSync style</li>
+  <li>[doc update] Update testing the authorization section with <code>refresh_token</code> information.</li>
+  <li>[doc update] Explain how to sideload associations.</li>
+</ul><h3 id="section-1">2015-02-08</h3>
 <ul>
-<li>[improvement] Add <code>search</code> section to <code>rentals</code> endpoint.</li>
-</ul><h3 id="section-2">2015-01-21</h3>
+<li>[doc update] Update requirements section with application setup.</li>
+  <li>[doc update] Improve documentation for testing the authorization.</li>
+</ul><h3 id="section-2">2015-02-04</h3>
 <ul>
-<li>[improvement] Update <code>initial_price</code> and <code>final_price</code> descriptions.</li>
-</ul><h3 id="section-3">2015-01-20</h3>
+<li>[doc update] Add <code>search</code> section to <code>rentals</code> endpoint.</li>
+</ul><h3 id="section-3">2015-01-21</h3>
 <ul>
-<li>[improvement] Update <code>seasons</code> endpoint - add names translations.</li>
-</ul><h3 id="section-4">2015-01-08</h3>
+<li>[doc update] Update <code>initial_price</code> and <code>final_price</code> descriptions.</li>
+</ul><h3 id="section-4">2015-01-20</h3>
 <ul>
-<li>[improvement] Add more image sizes to <code>photos</code> endpoint.</li>
-  <li>[improvement] Add <code>title</code> to <code>amenities</code> endpoint.</li>
-</ul><h3 id="section-5">2015-01-06</h3>
+<li>[api improvement] Update <code>seasons</code> endpoint - add names translations.</li>
+</ul><h3 id="section-5">2015-01-08</h3>
 <ul>
-<li>[improvement] Add <code>accounts</code> endpoint.</li>
-</ul><h3 id="section-6">2014-12-25</h3>
+<li>[api improvement] Add more image sizes to <code>photos</code> endpoint.</li>
+  <li>[api improvement] Add <code>title</code> to <code>amenities</code> endpoint.</li>
+</ul><h3 id="section-6">2015-01-06</h3>
 <ul>
-<li>[improvement] Explain <code>availabilities</code> mapping parameters.</li>
-</ul><h3 id="section-7">2014-12-24</h3>
+<li>[doc update] Add <code>accounts</code> endpoint.</li>
+</ul><h3 id="section-7">2014-12-25</h3>
 <ul>
-<li>[update] Rename <code>bookings_public_write</code> scope to <code>bookings_write_owned</code>.</li>
-</ul><h3 id="section-8">2014-11-28</h3>
+<li>[doc update] Explain <code>availabilities</code> mapping parameters.</li>
+</ul><h3 id="section-8">2014-12-24</h3>
 <ul>
-<li>[update] Rename <code>title</code> field to <code>key</code> for <code>amenities</code>.</li>
-  <li>[update] Update <code>booked</code>, <code>unavailable</code>, <code>tentative_expires_at</code> fields description for <code>bookings</code>.</li>
-  <li>[improvement] Explain <code>bookings</code> status assignment on creation. Update example request.</li>
-</ul><h3 id="section-9">2014-11-24</h3>
+<li>[api improvement] Rename <code>bookings_public_write</code> scope to <code>bookings_write_owned</code>.</li>
+</ul><h3 id="section-9">2014-11-28</h3>
 <ul>
-<li>[update] Describe how to use the refresh token to get a new access token in the <a href="/reference/testing_authorization">Testing Authorization</a> guide.</li>
-</ul><h3 id="section-10">2014-11-21</h3>
+<li>[api improvement] Rename <code>title</code> field to <code>key</code> for <code>amenities</code>.</li>
+  <li>[doc update] Update <code>booked</code>, <code>unavailable</code>, <code>tentative_expires_at</code> fields description for <code>bookings</code>.</li>
+  <li>[doc update] Explain <code>bookings</code> status assignment on creation. Update example request.</li>
+</ul><h3 id="section-10">2014-11-24</h3>
 <ul>
-<li>[update] Remove parent <code>id</code> from example with nested <code>POST</code> requests.</li>
+<li>[doc update] Describe how to use the refresh token to get a new access token in the <a href="/reference/testing_authorization">Testing Authorization</a> guide.</li>
 </ul><h3 id="section-11">2014-11-21</h3>
 <ul>
-<li>[update] Remove <code>billing_addresses</code> endpoint with all its references. Add <code>address1</code>, <code>address2</code>, <code>city</code>, <code>country_code</code>, <code>state</code> and <code>zip</code> fields to <code>payments</code>.</li>
-</ul><h3 id="section-12">2014-11-13</h3>
+<li>[doc update] Remove parent <code>id</code> from example with nested <code>POST</code> requests.</li>
+</ul><h3 id="section-12">2014-11-21</h3>
 <ul>
-<li>[improvement] The API will now return a 403 response when the current token doesn’t have
+<li>[api improvement] Remove <code>billing_addresses</code> endpoint with all its references. Add <code>address1</code>, <code>address2</code>, <code>city</code>, <code>country_code</code>, <code>state</code> and <code>zip</code> fields to <code>payments</code>.</li>
+</ul><h3 id="section-13">2014-11-13</h3>
+<ul>
+<li>[api improvement] The API will now return a 403 response when the current token doesn’t have
 the scopes necessary to perform requested action. Previously that would have been 401.</li>
-</ul><h3 id="section-13">2014-11-06</h3>
+</ul><h3 id="section-14">2014-11-06</h3>
 <ul>
-<li>[improvement] Add <code>paid_amount</code> to <code>bookings</code> when using <code>bookings_read</code> or <code>bookings_write</code> scope.</li>
+<li>[doc update] Add <code>paid_amount</code> to <code>bookings</code> when using <code>bookings_read</code> or <code>bookings_write</code> scope.</li>
 </ul>
       </div>
     </div>
   </div>
+</div>
     </div>
   </body>
 </html>

@@ -12,83 +12,98 @@
     <link rel="stylesheet" href="/highlight.css">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="/style.js"></script>
 
     <!-- you don't need to keep this, but it's cool for stats! -->
     <meta name="generator" content="nanoc 3.6.7">
   </head>
-  <body>
-    <div class="container">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">BookingSync API Documentation</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active">
-              <a href="/reference/">reference</a>
-            </li>
-            <li><a href="https://www.bookingsync.com">bookingsync.com</a></li>
-          </ul>
-        </div>
-      </div>
+  <body class="flex-col">
+    <nav id="sidebar-left">
+      <ul class="nav">
+        <li><a href="#" class="sidebar-toggle"><i class="fa fa-close"></i></a></li>
+        <li class="active">
+          <a href="/reference/">API Reference</a>
+        </li>
+        <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
+      </ul>
+    </nav>
+    <div class="page-wrapper flex-1 flex-col">
+      <nav id="navigation" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container flex-row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle sidebar-toggle visible-xs-block">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <img alt="BookingSync" src="/images/bookingsync.svg">
+              <span>Developers</span>
+            </a>
+          </div>
 
-  <div class="row">
-    <div class="col-md-3 col-md-push-9">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Overview</h3>
+          <div class="flex-1 hidden-xs">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active">
+                <a href="/reference/">API Reference</a>
+              </li>
+              <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
+            </ul>
+          </div>
         </div>
-        <div class="list-group">
-          <a class="list-group-item" href="/reference/">Introduction</a>
-          <a class="list-group-item" href="/reference/changelog/">Changelog</a>
-          <a class="list-group-item active" href="/reference/requirements/">Requirements</a>
-          <a class="list-group-item" href="/reference/authorization/">Authorization</a>
-          <a class="list-group-item" href="/reference/testing_authorization/">Testing the Authorization</a>
-          <a class="list-group-item" href="/reference/enums/">Enumerables</a>
-        </div>
-        <div class="panel-heading">
-          <h3 class="panel-title">Endpoints</h3>
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
-          <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
-          <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
-          <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
-          <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
-          <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
-          <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
-          <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
-          <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
-          <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
-          <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
-          <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
-          <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
-          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
-          <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
-          <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
-          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
-          <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
-          <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
-          <a class="list-group-item" href="/reference/endpoints/sources/">Sources</a>
-          <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-9 col-md-pull-3">
-      <div class="alert alert-warning">
-        We're still in the process of building the API. If you notice any
-        problems, please contact <a href="mailto:support@bookingsync.com">support</a>.
-      </div>
+      </nav>
 
-      <div id="content">
+<div class="container">
+  <div id="content">
+    <div class="row">
+      <div class="col-md-3 col-md-push-9">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Overview</h3>
+          </div>
+          <div class="list-group">
+            <a class="list-group-item" href="/reference/">Introduction</a>
+            <a class="list-group-item" href="/reference/changelog/">Changelog</a>
+            <a class="list-group-item active" href="/reference/requirements/">Requirements</a>
+            <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+            <a class="list-group-item" href="/reference/testing_authorization/">Testing the Authorization</a>
+            <a class="list-group-item" href="/reference/enums/">Enumerables</a>
+          </div>
+          <div class="panel-heading">
+            <h3 class="panel-title">Endpoints</h3>
+          </div>
+          <div class="list-group">
+            <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
+            <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
+            <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
+            <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
+            <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+            <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
+            <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
+            <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
+            <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
+            <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
+            <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
+            <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
+            <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+            <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
+            <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
+            <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+            <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+            <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
+            <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
+            <a class="list-group-item" href="/reference/endpoints/sources/">Sources</a>
+            <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9 col-md-pull-3">
+        <div class="alert alert-warning">
+          We're still in the process of building the API. If you notice any
+          problems, please contact <a href="mailto:support@bookingsync.com">support</a>.
+        </div>
+
         <h2 id="requirements">Requirements</h2>
 
 <ol id="markdown-toc">
@@ -124,6 +139,7 @@
       </div>
     </div>
   </div>
+</div>
     </div>
   </body>
 </html>
