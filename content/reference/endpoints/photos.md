@@ -23,7 +23,6 @@ kind               | String  | Read       | Photo's kind, list of kinds describe
 large_url          | String  | Read       | Photo's large size (1200x800) url.
 medium_url         | String  | Read       | Photo's medium size (768x512) url.
 micro_url          | String  | Read       | Photo's micro size (48x32) url.
-normal_url         | String  | Read       | Photo's normal size (1200x800) url.
 position           | Integer | Read       | Photo's position on the rental list.
 small_url          | String  | Read       | Photo's small size (192x128) url.
 thumb_url          | String  | Read       | Photo's thumb size (96x64) url.
@@ -45,7 +44,6 @@ kind               | String  | Read/Write | Photo's kind, list of kinds describe
 large_url          | String  | Read       | Photo's large size url.
 medium_url         | String  | Read       | Photo's medium size url.
 micro_url          | String  | Read       | Photo's micro size url.
-normal_url         | String  | Read       | Photo's normal size url.
 photo              | File    | Write      | **Required**. Photo's image.
 position           | Integer | Read/Write | Photo's position on the rental list.
 remote_photo_url   | String  | Write      | Photo's remote url.

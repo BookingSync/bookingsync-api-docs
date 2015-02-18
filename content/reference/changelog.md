@@ -6,6 +6,9 @@ We're still in the process of building the API. While the technical parts
 (authorization, JSON support etc.) are mostly done, not all resources
 are complete or even available.
 
+## 2015-02-18
+  * [api improvement][breaking change] Remove `normal_url` from `photos` endpoint. Use `large_url` instead.
+
 ## 2015-02-11
   * [doc update] Redesign the developers center to be inline with BookingSync style
   * [doc update] Update testing the authorization section with `refresh_token` information.
