@@ -120,92 +120,111 @@
   <div class="tab-pane active" id="clients_read">
     <table class="table table-bordered">
 <thead><tr>
-<th>Name</th>
+<th>Group</th>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
         </tr></thead>
 <tbody><tr>
-<td>id</td>
+<td> </td>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Client’s id.</td>
         </tr></tbody>
 <tbody>
 <tr>
-<td>address1</td>
-          <td>String</td>
-          <td>Read</td>
-          <td>Client’s first address.</td>
-        </tr>
-<tr>
-<td>address2</td>
-          <td>String</td>
-          <td>Read</td>
-          <td>Client’s second address.</td>
-        </tr>
-<tr>
-<td>city</td>
-          <td>String</td>
-          <td>Read</td>
-          <td>Client’s city.</td>
-        </tr>
-<tr>
-<td>country_code</td>
-          <td>String</td>
-          <td>Read</td>
-          <td>Client’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
-        </tr>
-<tr>
-<td>email</td>
-          <td>String</td>
-          <td>Read</td>
-          <td>Client’s email.</td>
-        </tr>
-<tr>
-<td>fax</td>
-          <td>String</td>
-          <td>Read</td>
-          <td>Client’s fax.</td>
-        </tr>
-<tr>
-<td>fullname</td>
+<td> </td>
+          <td>fullname</td>
           <td>String</td>
           <td>Read</td>
           <td>Client’s fullname.</td>
         </tr>
 <tr>
-<td>mobile</td>
-          <td>String</td>
-          <td>Read</td>
-          <td>Client’s mobile.</td>
-        </tr>
-<tr>
-<td>notes</td>
+<td> </td>
+          <td>notes</td>
           <td>Text</td>
           <td>Read</td>
           <td>Client’s notes.</td>
         </tr>
 <tr>
-<td>phone</td>
-          <td>String</td>
-          <td>Read</td>
-          <td>Client’s phone.</td>
-        </tr>
-<tr>
-<td>preferred_locale</td>
+<td> </td>
+          <td>preferred_locale</td>
           <td>String</td>
           <td>Read</td>
           <td>Client’s contact language preference.</td>
         </tr>
+</tbody>
+<tbody>
 <tr>
-<td>state</td>
+<td> </td>
+          <td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Client’s create time.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Client’s update time.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>addresses</td>
+          <td> </td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Array of client’s addresses.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>address1</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Client’s first address.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>address2</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Client’s second address.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>city</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Client’s city.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>country_code</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Client’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>label</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Address label.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>state</td>
           <td>String</td>
           <td>Read</td>
           <td>Client’s state.</td>
         </tr>
 <tr>
-<td>zip</td>
+<td> </td>
+          <td>zip</td>
           <td>String</td>
           <td>Read</td>
           <td>Client’s zip.</td>
@@ -213,16 +232,48 @@
 </tbody>
 <tbody>
 <tr>
-<td>created_at</td>
-          <td><a href="/reference/enums#formats">Time</a></td>
+<td>emails</td>
+          <td> </td>
+          <td>Array</td>
           <td>Read</td>
-          <td>Client’s create time.</td>
+          <td>Array of client’s emails.</td>
         </tr>
 <tr>
-<td>updated_at</td>
-          <td><a href="/reference/enums#formats">Time</a></td>
+<td> </td>
+          <td>email</td>
+          <td>String</td>
           <td>Read</td>
-          <td>Client’s update time.</td>
+          <td>Client’s email.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>label</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Email label.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>phones</td>
+          <td> </td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Array of client’s phone numbers.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>label</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Phone label.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>number</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Client’s number.</td>
         </tr>
 </tbody>
 </table>
@@ -230,93 +281,112 @@
   <div class="tab-pane" id="clients_write">
     <table class="table table-bordered">
 <thead><tr>
-<th>Name</th>
+<th>Group</th>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
         </tr></thead>
 <tbody><tr>
-<td>id</td>
+<td> </td>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Client’s id.</td>
         </tr></tbody>
 <tbody>
 <tr>
-<td>address1</td>
-          <td>String</td>
-          <td>Read/Write</td>
-          <td>Client’s first address.</td>
-        </tr>
-<tr>
-<td>address2</td>
-          <td>String</td>
-          <td>Read/Write</td>
-          <td>Client’s second address.</td>
-        </tr>
-<tr>
-<td>city</td>
-          <td>String</td>
-          <td>Read/Write</td>
-          <td>Client’s city.</td>
-        </tr>
-<tr>
-<td>country_code</td>
-          <td>String</td>
-          <td>Read/Write</td>
-          <td>Client’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
-        </tr>
-<tr>
-<td>email</td>
-          <td>String</td>
-          <td>Read/Write</td>
-          <td>Client’s email.</td>
-        </tr>
-<tr>
-<td>fax</td>
-          <td>String</td>
-          <td>Read/Write</td>
-          <td>Client’s fax.</td>
-        </tr>
-<tr>
-<td>fullname</td>
+<td> </td>
+          <td>fullname</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>
 <strong>Required</strong>. Client’s fullname. (150 characters max)</td>
         </tr>
 <tr>
-<td>mobile</td>
-          <td>String</td>
-          <td>Read/Write</td>
-          <td>Client’s mobile.</td>
-        </tr>
-<tr>
-<td>notes</td>
+<td> </td>
+          <td>notes</td>
           <td>Text</td>
           <td>Read/Write</td>
           <td>Client’s notes. (1000 characters max)</td>
         </tr>
 <tr>
-<td>phone</td>
-          <td>String</td>
-          <td>Read/Write</td>
-          <td>Client’s phone.</td>
-        </tr>
-<tr>
-<td>preferred_locale</td>
+<td> </td>
+          <td>preferred_locale</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s contact language preference.</td>
         </tr>
+</tbody>
+<tbody>
 <tr>
-<td>state</td>
+<td> </td>
+          <td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Client’s create time.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Client’s update time.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>addresses</td>
+          <td> </td>
+          <td>Array</td>
+          <td>Read/Write</td>
+          <td>Array of client’s addresses.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>address1</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Client’s first address.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>address2</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Client’s second address.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>city</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Client’s city.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>country_code</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Client’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>label</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Address label.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>state</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s state.</td>
         </tr>
 <tr>
-<td>zip</td>
+<td> </td>
+          <td>zip</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s zip.</td>
@@ -324,20 +394,57 @@
 </tbody>
 <tbody>
 <tr>
-<td>created_at</td>
-          <td><a href="/reference/enums#formats">Time</a></td>
-          <td>Read</td>
-          <td>Client’s create time.</td>
+<td>emails</td>
+          <td> </td>
+          <td>Array</td>
+          <td>Read/Write</td>
+          <td>Array of client’s emails.</td>
         </tr>
 <tr>
-<td>updated_at</td>
-          <td><a href="/reference/enums#formats">Time</a></td>
-          <td>Read</td>
-          <td>Client’s update time.</td>
+<td> </td>
+          <td>email</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Client’s email.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>label</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Email label.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>phones</td>
+          <td> </td>
+          <td>Array</td>
+          <td>Read/Write</td>
+          <td>Array of client’s phone numbers.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>label</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Phone label.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>number</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Client’s number.</td>
         </tr>
 </tbody>
 </table>
 </div>
+</div>
+
+<div class="callout callout-info">
+  <h4>Grouped attributes</h4>
+  <p>First set of attributes in array group will always be used as default <code>address</code>, <code>email</code> or <code>phone</code>.</p>
 </div>
 
 <h3 id="list-clients">List clients</h3>
@@ -351,7 +458,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#0b2937ef7b44clients_read-clients_write" role="tab" data-toggle="pill">
+      <a href="#e9252f8698fbclients_read-clients_write" role="tab" data-toggle="pill">
         clients_read / clients_write
       </a>
     </li>
@@ -359,31 +466,52 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="0b2937ef7b44clients_read-clients_write">
+    <div class="tab-pane active" id="e9252f8698fbclients_read-clients_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
   <span class="p">},</span>
   <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">19</span><span class="p">,</span>
-      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Bernhard Creek"</span><span class="p">,</span>
-      <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
-      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
-      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"dwight_schiller@reilly.us"</span><span class="p">,</span>
-      <span class="s2">"fax"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Nelson McDermott"</span><span class="p">,</span>
-      <span class="s2">"mobile"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"notes"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1-060-021-4277 73823"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"addresses"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Kutch Stravenue"</span><span class="p">,</span>
+          <span class="s2">"address2"</span><span class="o">:</span> <span class="s2">"Building 1"</span><span class="p">,</span>
+          <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"North Jacey"</span><span class="p">,</span>
+          <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span><span class="p">,</span>
+          <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Illinois"</span><span class="p">,</span>
+          <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"01363-9579"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"emails"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"clementina_kling@example.com"</span><span class="p">,</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Clementina Kling"</span><span class="p">,</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+      <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6105"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"mobile"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6106"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"fax"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6107"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
       <span class="s2">"preferred_locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Montana"</span><span class="p">,</span>
-      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-02-15T15:36:38Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-15T15:36:38Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-12-28T15:19:27Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-02T11:07:45Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">42</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -403,7 +531,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#4f0b1a3ce18fclients_read-clients_write" role="tab" data-toggle="pill">
+      <a href="#49d1697c1207clients_read-clients_write" role="tab" data-toggle="pill">
         clients_read / clients_write
       </a>
     </li>
@@ -411,31 +539,52 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="4f0b1a3ce18fclients_read-clients_write">
+    <div class="tab-pane active" id="49d1697c1207clients_read-clients_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
   <span class="p">},</span>
   <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">19</span><span class="p">,</span>
-      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Bernhard Creek"</span><span class="p">,</span>
-      <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
-      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
-      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"dwight_schiller@reilly.us"</span><span class="p">,</span>
-      <span class="s2">"fax"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Nelson McDermott"</span><span class="p">,</span>
-      <span class="s2">"mobile"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"notes"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1-060-021-4277 73823"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"addresses"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Kutch Stravenue"</span><span class="p">,</span>
+          <span class="s2">"address2"</span><span class="o">:</span> <span class="s2">"Building 1"</span><span class="p">,</span>
+          <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"North Jacey"</span><span class="p">,</span>
+          <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span><span class="p">,</span>
+          <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Illinois"</span><span class="p">,</span>
+          <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"01363-9579"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"emails"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"clementina_kling@example.com"</span><span class="p">,</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Clementina Kling"</span><span class="p">,</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+      <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6105"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"mobile"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6106"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"fax"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6107"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
       <span class="s2">"preferred_locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Montana"</span><span class="p">,</span>
-      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-02-15T15:36:38Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-15T15:36:38Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-12-28T15:19:27Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-02T11:07:45Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">42</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -455,7 +604,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#42064fa121e5clients_write" role="tab" data-toggle="pill">
+      <a href="#7ee2c48c5d76clients_write" role="tab" data-toggle="pill">
         clients_write
       </a>
     </li>
@@ -464,15 +613,42 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Bernhard Creek"</span><span class="p">,</span>
-      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
-      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
-      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"dwight_schiller@reilly.us"</span><span class="p">,</span>
-      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Nelson McDermott"</span><span class="p">,</span>
-      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1-060-021-4277 73823"</span><span class="p">,</span>
+      <span class="s2">"addresses"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Kutch Stravenue"</span><span class="p">,</span>
+          <span class="s2">"address2"</span><span class="o">:</span> <span class="s2">"Building 1"</span><span class="p">,</span>
+          <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"North Jacey"</span><span class="p">,</span>
+          <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span><span class="p">,</span>
+          <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Illinois"</span><span class="p">,</span>
+          <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"01363-9579"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"emails"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"clementina_kling@example.com"</span><span class="p">,</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Clementina Kling"</span><span class="p">,</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+      <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6105"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"mobile"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6106"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"fax"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6107"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
       <span class="s2">"preferred_locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Montana"</span><span class="p">,</span>
-      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-12-28T15:19:27Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-02T11:07:45Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -480,31 +656,52 @@
 <h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="42064fa121e5clients_write">
+    <div class="tab-pane active" id="7ee2c48c5d76clients_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
   <span class="p">},</span>
   <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">19</span><span class="p">,</span>
-      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Bernhard Creek"</span><span class="p">,</span>
-      <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
-      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
-      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"dwight_schiller@reilly.us"</span><span class="p">,</span>
-      <span class="s2">"fax"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Nelson McDermott"</span><span class="p">,</span>
-      <span class="s2">"mobile"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"notes"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1-060-021-4277 73823"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"addresses"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Kutch Stravenue"</span><span class="p">,</span>
+          <span class="s2">"address2"</span><span class="o">:</span> <span class="s2">"Building 1"</span><span class="p">,</span>
+          <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"North Jacey"</span><span class="p">,</span>
+          <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span><span class="p">,</span>
+          <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Illinois"</span><span class="p">,</span>
+          <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"01363-9579"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"emails"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"clementina_kling@example.com"</span><span class="p">,</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Clementina Kling"</span><span class="p">,</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+      <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6105"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"mobile"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6106"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"fax"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6107"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
       <span class="s2">"preferred_locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Montana"</span><span class="p">,</span>
-      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-02-15T15:36:38Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-15T15:36:38Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-12-28T15:19:27Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-02T11:07:45Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">42</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -515,6 +712,12 @@
 
 <h3 id="update-a-client">Update a client</h3>
 
+<div class="callout callout-warning">
+  <h4>Grouped attributes</h4>
+  <p>Please note that updating grouped attributes requires the full array to be re-sent, to avoid data loss.<br>
+  In below example all <code>phones</code> elements are present.</p>
+</div>
+
 <p>Returns an updated client identified by ID.</p>
 
 <pre><code>PUT /clients/:client_id
@@ -524,7 +727,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#c741eb241199clients_write" role="tab" data-toggle="pill">
+      <a href="#a14a059e052dclients_write" role="tab" data-toggle="pill">
         clients_write
       </a>
     </li>
@@ -533,15 +736,42 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Bernhard Creek"</span><span class="p">,</span>
-      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
-      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
-      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"dwight_schiller@reilly.us"</span><span class="p">,</span>
-      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Nelson McDermott"</span><span class="p">,</span>
-      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1-060-021-4277 73823"</span><span class="p">,</span>
+      <span class="s2">"addresses"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Kutch Stravenue"</span><span class="p">,</span>
+          <span class="s2">"address2"</span><span class="o">:</span> <span class="s2">"Building 1"</span><span class="p">,</span>
+          <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"North Jacey"</span><span class="p">,</span>
+          <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span><span class="p">,</span>
+          <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Illinois"</span><span class="p">,</span>
+          <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"01363-9579"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"emails"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"clementina_kling@example.com"</span><span class="p">,</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Clementina Kling"</span><span class="p">,</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+      <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6105"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"mobile"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6106"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"fax"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6107"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
       <span class="s2">"preferred_locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Montana"</span><span class="p">,</span>
-      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-12-28T15:19:27Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-02T11:07:45Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -549,31 +779,52 @@
 <h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="c741eb241199clients_write">
+    <div class="tab-pane active" id="a14a059e052dclients_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
   <span class="p">},</span>
   <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">19</span><span class="p">,</span>
-      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Bernhard Creek"</span><span class="p">,</span>
-      <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
-      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
-      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"dwight_schiller@reilly.us"</span><span class="p">,</span>
-      <span class="s2">"fax"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Nelson McDermott"</span><span class="p">,</span>
-      <span class="s2">"mobile"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"notes"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">"1-060-021-4277 73823"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"addresses"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Kutch Stravenue"</span><span class="p">,</span>
+          <span class="s2">"address2"</span><span class="o">:</span> <span class="s2">"Building 1"</span><span class="p">,</span>
+          <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"North Jacey"</span><span class="p">,</span>
+          <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span><span class="p">,</span>
+          <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Illinois"</span><span class="p">,</span>
+          <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"01363-9579"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"emails"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"clementina_kling@example.com"</span><span class="p">,</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Clementina Kling"</span><span class="p">,</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+      <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6105"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"mobile"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6106"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"fax"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6107"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
       <span class="s2">"preferred_locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
-      <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Montana"</span><span class="p">,</span>
-      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-02-15T15:36:38Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-15T15:36:38Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-12-28T15:19:27Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-02T11:07:45Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">42</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
