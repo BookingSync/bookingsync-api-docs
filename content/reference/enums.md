@@ -31,6 +31,7 @@ R$               | BRL
 C$               | CAD
 CHF              | CHF
 Kč               | CZK
+kr               | DKK
 €                | EUR
 £                | GBP
 NZ$              | NZD
