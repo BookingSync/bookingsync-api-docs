@@ -6,6 +6,9 @@ We're still in the process of building the API. While the technical parts
 (authorization, JSON support etc.) are mostly done, not all resources
 are complete or even available.
 
+## 2015-02-20
+  * [doc update] Update list of currencies with Danish krone (DKK)
+
 ## 2015-02-18
   * [api improvement][breaking change] Remove `normal_url` from `photos` endpoint. Use `large_url` instead.
   * [api improvement][breaking change] Update `clients` endpoint with new grouped attributes.
