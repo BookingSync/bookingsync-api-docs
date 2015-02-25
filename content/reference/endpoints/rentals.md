@@ -196,8 +196,8 @@ rental_type       | String  |         | List of comma separated types, all types
 sort              | String  |         | Sort rentals by given attribute. Possible values: `price`, `sleeps`.
 special_offers    | Boolean | false   | Show only rentals with special offers.
 ------------------|---------|---------|---------------------------------------
-start_at          | Time    |         | Rentals available between `start_at` & `end_at`. Format `yyyymmdd` in UTC.
-end_at            | Time    |         | Rentals available between `start_at` & `end_at`. Format `yyyymmdd` in UTC.
+start_at          | [Time](/reference/enums#formats) |         | Rentals available between `start_at` & `end_at`.
+end_at            | [Time](/reference/enums#formats) |         | Rentals available between `start_at` & `end_at`.
 {: class="table table-bordered"}
 
 <%= render 'json_response', endpoint: "rentals", scopes: [{ public: "search" }] %>

@@ -91,7 +91,7 @@ bookings_payments_count | Integer | Read       | Booking's number of payments.
 children                | Integer | Read/Write | Booking's number of children.
 currency                | String  | Read/Write | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies).
 discount                | String  | Read/Write | Booking's discount. (in percents e.g. 10%)
-downpayment                 | [Decimal](/reference/enums#formats) | Read/Write | Booking's downpayment.
+downpayment             | [Decimal](/reference/enums#formats) | Read/Write | Booking's downpayment.
 final_price             | [Decimal](/reference/enums#formats) | Read/Write | Booking's final price. (after discount)
 initial_price           | [Decimal](/reference/enums#formats) | Read/Write | Booking's initial price.
 locked                  | String  | Read/Write | Booking's locked status.
@@ -119,7 +119,7 @@ certain range.
 Scope                    | Read Permissions
 -------------------------|------------
 `:public`                | Display only future, not canceled bookings
-`:bookings_write_owned` | Display only future, not canceled bookings
+`:bookings_write_owned`  | Display only future, not canceled bookings
 `:bookings_read`         | Display all bookings
 `:bookings_write`        | Display all bookings
 {: class="table table-bordered"}
@@ -147,14 +147,14 @@ GET /bookings?status=booked,unavailable&from=20140324
 
 Name             | Type    | Default | Description
 -----------------|---------|--------------
-from             | Time    | now     | Bookings ending after given date. Format `yyyymmdd` in UTC. Default is now.
-until            | Time    |         | Bookings starting before given date. Format `yyyymmdd` in UTC.
+from             | [Time](/reference/enums#formats) | now     | Bookings ending after given time. Default is now.
+until            | [Time](/reference/enums#formats) |         | Bookings starting before given time.
 months           | Integer |         | Bookings starting before `:from` + `:months`.
 status           | String  |         | List of comma separated statuses. Possible values: booked,unavailable,tentative.
 include_canceled | Boolean | false   | Show also canceled bookings (requires `:bookings_read` or `:bookings_write` scope).
 rental_id        | String  |         | List of comma separated IDs. Returns only bookings for this rental(s)
 client_id        | String  |         | List of comma separated IDs. Returns only bookings for this client(s)
-updated_since    | Time    |         | Bookings updated after given date. Format `yyyymmdd` in UTC. Also includes ids of bookings canceled after given date.
+updated_since    | [Time](/reference/enums#formats) |         | Bookings updated after given time. Also includes ids of bookings canceled after given time.
 {: class="table table-bordered"}
 
 ## Get a single booking
