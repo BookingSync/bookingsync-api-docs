@@ -136,6 +136,12 @@
         </tr></tbody>
 <tbody>
 <tr>
+<td>absolute_min_price</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Rental’s minimum price based on <code>base_rate_kind</code>.</td>
+        </tr>
+<tr>
 <td>base_rate</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
@@ -365,6 +371,12 @@
           <td>Rental’s id.</td>
         </tr></tbody>
 <tbody>
+<tr>
+<td>absolute_min_price</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Rental’s minimum price based on <code>base_rate_kind</code>.</td>
+        </tr>
 <tr>
 <td>address1</td>
           <td>String</td>
@@ -646,6 +658,12 @@
 </tbody>
 <tbody>
 <tr>
+<td>absolute_min_price</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read/Write</td>
+          <td>Rental’s minimum price based on <code>base_rate_kind</code>.</td>
+        </tr>
+<tr>
 <td>address1</td>
           <td>String</td>
           <td>Read/Write</td>
@@ -898,13 +916,13 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#b6252a01e50bpublic" role="tab" data-toggle="pill">
+      <a href="#219aa8c438f0public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
   
     <li>
-      <a href="#52a0b8b981d3rentals_read-rentals_write" role="tab" data-toggle="pill">
+      <a href="#8e905254364brentals_read-rentals_write" role="tab" data-toggle="pill">
         rentals_read / rentals_write
       </a>
     </li>
@@ -912,7 +930,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="b6252a01e50bpublic">
+    <div class="tab-pane active" id="219aa8c438f0public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -929,6 +947,7 @@
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"absolute_min_price"</span><span class="o">:</span> <span class="s2">"300.0"</span><span class="p">,</span>
       <span class="s2">"base_rate"</span><span class="o">:</span> <span class="s2">"600.0"</span><span class="p">,</span>
       <span class="s2">"base_rate_kind"</span><span class="o">:</span> <span class="s2">"weekly"</span><span class="p">,</span>
       <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
@@ -969,9 +988,9 @@
       <span class="p">},</span>
       <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-02-25T14:33:25Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-25T14:33:25Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2015-02-25T14:33:25Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-03-11T07:34:59Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-03-11T07:34:59Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2015-03-11T07:34:59Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -1007,7 +1026,7 @@
 <span class="p">}</span></code></pre>
     </div>
   
-    <div class="tab-pane " id="52a0b8b981d3rentals_read-rentals_write">
+    <div class="tab-pane " id="8e905254364brentals_read-rentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -1024,6 +1043,7 @@
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"absolute_min_price"</span><span class="o">:</span> <span class="s2">"300.0"</span><span class="p">,</span>
       <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"58 Ville Haute"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"base_rate"</span><span class="o">:</span> <span class="s2">"700.0"</span><span class="p">,</span>
@@ -1068,9 +1088,9 @@
       <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-02-25T14:33:25Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-25T14:33:25Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2015-02-25T14:33:25Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-03-11T07:34:59Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-03-11T07:34:59Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2015-03-11T07:34:59Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -1200,6 +1220,12 @@
       <td>Limit amount of returned rentals to given number. Full list can then be browsed with <code>page</code> parameter.</td>
     </tr>
 <tr>
+<td>published_only</td>
+      <td>Boolean</td>
+      <td>false</td>
+      <td>Show only published rentals.</td>
+    </tr>
+<tr>
 <td>reject_amenities</td>
       <td>String</td>
       <td> </td>
@@ -1242,7 +1268,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#44e078468590public" role="tab" data-toggle="pill">
+      <a href="#b9116ce402fepublic" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -1250,7 +1276,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="44e078468590public">
+    <div class="tab-pane active" id="b9116ce402fepublic">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -1284,13 +1310,13 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#2e6c166276cdpublic" role="tab" data-toggle="pill">
+      <a href="#7ff66c88d29dpublic" role="tab" data-toggle="pill">
         public
       </a>
     </li>
   
     <li>
-      <a href="#8db24fda8c98rentals_read-rentals_write" role="tab" data-toggle="pill">
+      <a href="#28e15961b3dfrentals_read-rentals_write" role="tab" data-toggle="pill">
         rentals_read / rentals_write
       </a>
     </li>
@@ -1298,7 +1324,7 @@
 </ul><h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="2e6c166276cdpublic">
+    <div class="tab-pane active" id="7ff66c88d29dpublic">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -1315,6 +1341,7 @@
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"absolute_min_price"</span><span class="o">:</span> <span class="s2">"300.0"</span><span class="p">,</span>
       <span class="s2">"base_rate"</span><span class="o">:</span> <span class="s2">"600.0"</span><span class="p">,</span>
       <span class="s2">"base_rate_kind"</span><span class="o">:</span> <span class="s2">"weekly"</span><span class="p">,</span>
       <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
@@ -1355,9 +1382,9 @@
       <span class="p">},</span>
       <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-02-25T14:33:25Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-25T14:33:25Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2015-02-25T14:33:25Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-03-11T07:34:59Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-03-11T07:34:59Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2015-03-11T07:34:59Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -1393,7 +1420,7 @@
 <span class="p">}</span></code></pre>
     </div>
   
-    <div class="tab-pane " id="8db24fda8c98rentals_read-rentals_write">
+    <div class="tab-pane " id="28e15961b3dfrentals_read-rentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -1410,6 +1437,7 @@
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"absolute_min_price"</span><span class="o">:</span> <span class="s2">"300.0"</span><span class="p">,</span>
       <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"58 Ville Haute"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"base_rate"</span><span class="o">:</span> <span class="s2">"700.0"</span><span class="p">,</span>
@@ -1454,9 +1482,9 @@
       <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-02-25T14:33:25Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-25T14:33:25Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2015-02-25T14:33:25Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-03-11T07:34:59Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-03-11T07:34:59Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2015-03-11T07:34:59Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -1504,7 +1532,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#722aae4b5f74rentals_write" role="tab" data-toggle="pill">
+      <a href="#4f7d9060ea84rentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
@@ -1513,6 +1541,7 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
+      <span class="s2">"absolute_min_price"</span><span class="o">:</span> <span class="s2">"300.0"</span><span class="p">,</span>
       <span class="s2">"amenity_ids"</span><span class="o">:</span> <span class="p">[</span>
         <span class="mi">4</span>
       <span class="p">],</span>
@@ -1532,7 +1561,7 @@
 <h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="722aae4b5f74rentals_write">
+    <div class="tab-pane active" id="4f7d9060ea84rentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -1549,6 +1578,7 @@
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"absolute_min_price"</span><span class="o">:</span> <span class="s2">"300.0"</span><span class="p">,</span>
       <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"58 Ville Haute"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"base_rate"</span><span class="o">:</span> <span class="s2">"700.0"</span><span class="p">,</span>
@@ -1593,9 +1623,9 @@
       <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-02-25T14:33:25Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-25T14:33:25Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2015-02-25T14:33:25Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-03-11T07:34:59Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-03-11T07:34:59Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2015-03-11T07:34:59Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -1638,7 +1668,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#d2610e379d9brentals_write" role="tab" data-toggle="pill">
+      <a href="#ef59ffe2e77erentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
@@ -1647,6 +1677,7 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
+      <span class="s2">"absolute_min_price"</span><span class="o">:</span> <span class="s2">"300.0"</span><span class="p">,</span>
       <span class="s2">"amenity_ids"</span><span class="o">:</span> <span class="p">[</span>
         <span class="mi">4</span>
       <span class="p">],</span>
@@ -1666,7 +1697,7 @@
 <h4 id="response-4">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="d2610e379d9brentals_write">
+    <div class="tab-pane active" id="ef59ffe2e77erentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -1683,6 +1714,7 @@
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"absolute_min_price"</span><span class="o">:</span> <span class="s2">"300.0"</span><span class="p">,</span>
       <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"58 Ville Haute"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"base_rate"</span><span class="o">:</span> <span class="s2">"700.0"</span><span class="p">,</span>
@@ -1727,9 +1759,9 @@
       <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-02-25T14:33:25Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-25T14:33:25Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2015-02-25T14:33:25Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-03-11T07:34:59Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-03-11T07:34:59Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2015-03-11T07:34:59Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
