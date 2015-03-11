@@ -6,6 +6,10 @@ We're still in the process of building the API. While the technical parts
 (authorization, JSON support etc.) are mostly done, not all resources
 are complete or even available.
 
+## 2015-03-11
+  * [api improvement] Add `absolute_min_price` to `rentals` endpoint.
+  * [api improvement] Add `published_only` option to `rentals` search section.
+
 ## 2015-02-25
   * [doc update] Update `Date` and `Time` parameters with links to formats section.
 

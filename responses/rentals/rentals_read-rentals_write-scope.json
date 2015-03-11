@@ -82,7 +82,8 @@
       "initial_price": null,
       "final_price": null,
       "position": 1,
-      "notes": "Private comments."
+      "notes": "Private comments.",
+      "absolute_min_price": "300.0"
     }
   ],
   "meta": {

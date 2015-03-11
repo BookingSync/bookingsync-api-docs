@@ -16,6 +16,7 @@ Name                            | Type     | Read/Write | Description
 --------------------------------|----------|------------|------------
 id                              | Integer  | Read       | Rental's id.
 --------------------------------|----------|------------|--------------
+absolute_min_price              | [Decimal](/reference/enums#formats) | Read       | Rental's minimum price based on `base_rate_kind`.
 base_rate                       | [Decimal](/reference/enums#formats) | Read       | Rental's base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate.
 base_rate_kind                  | String   | Read       | Rental's rate type attached to the base rate. List of types described in [enums section](/reference/enums#rates-types).
 bathrooms_count                 | Integer  | Read       | Rental's bathrooms count.
@@ -59,6 +60,7 @@ Name                            | Type     | Read/Write | Description
 --------------------------------|----------|------------|------------
 id                              | Integer  | Read       | Rental's id.
 --------------------------------|----------|------------|--------------
+absolute_min_price              | [Decimal](/reference/enums#formats) | Read       | Rental's minimum price based on `base_rate_kind`.
 address1                        | String   | Read       | Rental's primary address.
 address2                        | String   | Read       | Rental's optional address.
 base_rate                       | [Decimal](/reference/enums#formats) | Read       | Rental's base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate.
@@ -110,6 +112,7 @@ destination_id                  | Integer  | Write      | Destination id related
 rates_table_id                  | Integer  | Write      | Rates Table id related to the rental.
 rentals_contact_id              | Integer  | Write      | Contact id related to the rental.
 --------------------------------|----------|------------|--------------
+absolute_min_price              | [Decimal](/reference/enums#formats) | Read/Write | Rental's minimum price based on `base_rate_kind`.
 address1                        | String   | Read/Write | Rental's primary address.
 address2                        | String   | Read/Write | Rental's optional address.
 base_rate                       | [Decimal](/reference/enums#formats) | Read/Write | Rental's base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate. (greater than 0)
@@ -191,6 +194,7 @@ max_price         | Integer |         | Rentals with `max_price` below given pri
 min_price         | Integer |         | Rentals with `min_price` above given price. Will use `final_price` if computed.
 page              | Integer |         | Used to browse multi-paged listings.
 per_page          | Integer |         | Limit amount of returned rentals to given number. Full list can then be browsed with `page` parameter.
+published_only    | Boolean | false   | Show only published rentals.
 reject_amenities  | String  |         | List of comma separated amenities to exclude.
 rental_type       | String  |         | List of comma separated types, all types described in [enums section](/reference/enums#rental-types).
 sort              | String  |         | Sort rentals by given attribute. Possible values: `price`, `sleeps`.
