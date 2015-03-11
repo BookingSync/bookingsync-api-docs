@@ -10,6 +10,7 @@
       "bathrooms_count": 3,
       "surface": 120,
       "surface_unit": "metric",
+      "absolute_min_price": "300.0",
       "amenity_ids": [
         4
       ]
