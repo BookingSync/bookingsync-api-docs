@@ -7,19 +7,20 @@
 
 Status           | Description
 -----------------|------------
-0                | trial
-1                | paying
-2                | suspended
+trial            | Account currently in trial period
+paying           | Account active and paying
+suspended        | Suspended account, it might get active again if payment made
 {: class="table table-bordered"}
 
 ## Booking statuses
 
 Status           | Description
 -----------------|------------
-0                | Available.
-1                | Booked.
-2                | Tentative.
-3                | Unavailable.
+Booked           | A regular reservation
+Tentative        | Tentative, this is a hold for a certain length of time
+Unavailable      | Unavailable period, often used to mark closed seasons or maintenance
+Locked           | Booking is locked by an other application or user
+Canceled         | This booking have been canceled
 {: class="table table-bordered"}
 
 ## Currencies
