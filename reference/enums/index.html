@@ -99,11 +99,6 @@
         </div>
       </div>
       <div class="col-md-9 col-md-pull-3">
-        <div class="alert alert-warning">
-          We're still in the process of building the API. If you notice any
-          problems, please contact <a href="mailto:support@bookingsync.com">support</a>.
-        </div>
-
         <h2 id="enumerables">Enumerables</h2>
 
 <ol id="markdown-toc">
@@ -126,16 +121,16 @@
     </tr></thead>
 <tbody>
 <tr>
-<td>0</td>
-      <td>trial</td>
+<td>trial</td>
+      <td>Account currently in trial period</td>
     </tr>
 <tr>
-<td>1</td>
-      <td>paying</td>
+<td>paying</td>
+      <td>Account active and paying</td>
     </tr>
 <tr>
-<td>2</td>
-      <td>suspended</td>
+<td>suspended</td>
+      <td>Suspended account, it might get active again if payment made</td>
     </tr>
 </tbody>
 </table><h3 id="booking-statuses">Booking statuses</h3>
@@ -147,20 +142,24 @@
     </tr></thead>
 <tbody>
 <tr>
-<td>0</td>
-      <td>Available.</td>
+<td>Booked</td>
+      <td>A regular reservation</td>
     </tr>
 <tr>
-<td>1</td>
-      <td>Booked.</td>
+<td>Tentative</td>
+      <td>Tentative, this is a hold for a certain length of time</td>
     </tr>
 <tr>
-<td>2</td>
-      <td>Tentative.</td>
+<td>Unavailable</td>
+      <td>Unavailable period, often used to mark closed seasons or maintenance</td>
     </tr>
 <tr>
-<td>3</td>
-      <td>Unavailable.</td>
+<td>Locked</td>
+      <td>Booking is locked by an other application or user</td>
+    </tr>
+<tr>
+<td>Canceled</td>
+      <td>This booking have been canceled</td>
     </tr>
 </tbody>
 </table><h3 id="currencies">Currencies</h3>
