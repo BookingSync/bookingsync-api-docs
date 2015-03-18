@@ -12,6 +12,16 @@ paying           | Account active and paying
 suspended        | Suspended account, it might get active again if payment made
 {: class="table table-bordered"}
 
+## Availability map statuses
+
+Status           | Description
+-----------------|------------
+0                | Available
+1                | Booked
+2                | Tentative
+3                | Unavailable
+{: class="table table-bordered"}
+
 ## Booking statuses
 
 Status           | Description

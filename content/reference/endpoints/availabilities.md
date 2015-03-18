@@ -14,7 +14,7 @@ Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | Availability's id.
 -----------------|---------|------------|------------
-map              | String  | Read       | Availability's map of booking status. There is a total of 1096 characters, each representing one day. List of statuses described in [enums section](/reference/enums#booking-statuses).
+map              | String  | Read       | Availability's map of booking status. There is a total of 1096 characters, each representing one day. List of statuses described in [enums section](/reference/enums#availability-map-statuses).
 -----------------|---------|------------|------------
 start_date       | [Date](/reference/enums#formats) | Read       | Availability's start date.
 updated_at       | [Time](/reference/enums#formats) | Read       | Availability's update time.
@@ -62,5 +62,5 @@ Name              | Type    | Default                        | Description
 ------------------|---------|---------------------------------------------
 from              | [Date](/reference/enums#formats) | Beginning of current month     | Starts mapping at the given date. Default is beginning of current month.
 include_tentative | Boolean | true                           | Includes tentative bookings by default. If switched to false, tentative statuses will be rendered as `0`.
-boolean           | Boolean | false                          | Render map using only `0` and `1` characters. In this mode, every blocking status will be rendered as `1`. List of statuses described in [enums section](/reference/enums#booking-statuses).
+boolean           | Boolean | false                          | Render map using only `0` and `1` characters. In this mode, every blocking status will be rendered as `1`. List of statuses described in [enums section](/reference/enums#availability-map-statuses).
 {: class="table table-bordered"}
