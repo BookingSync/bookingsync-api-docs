@@ -1,8 +1,11 @@
 # Changelog
 
-## 2015-04-12
+## 2015-03-18
+  * [doc update] Update the list of availability map statuses.
+
+## 2015-03-12
   * [api improvement] The API V3 is now marked as stable release <3.
-  * [doc update] Update the list of accounts and bookings status reflect all the possible options.
+  * [doc update] Update the list of accounts and bookings statuses to reflect all the possible options.
 
 ## 2015-03-11
   * [api improvement] Add `absolute_min_price` to `rentals` endpoint.
