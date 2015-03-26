@@ -1,5 +1,8 @@
 # Changelog
 
+## 2015-03-26
+  * [doc update] Link to deprecated API v1
+
 ## 2015-03-18
   * [doc update] Update the list of availability map statuses.
 
