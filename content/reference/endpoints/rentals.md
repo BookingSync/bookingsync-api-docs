@@ -39,7 +39,7 @@ max_price                       | [Decimal](/reference/enums#formats)  | Read   
 min_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's minimum price.
 name                            | String   | Read       | Rental's name.
 position                        | Integer  | Read       | Rental's position on the list.
-price_public_notes              | String   | Read       | Rental's price notes for public.
+price_public_notes              | [Object](/reference/enums#formats)   | Read       | Rental's price notes for public, list of locales described in [enums section](/reference/enums#locales).
 rental_type                     | String   | Read       | Rental's type (example: villa, apartment), all types described in [enums section](/reference/enums#rental-types).
 reviews_average_rating          | [Decimal](/reference/enums#formats)  | Read       | Rental's overall rating from reviews.
 reviews_count                   | Integer  | Read       | Rental's count of all reviews.
@@ -86,7 +86,7 @@ min_price                       | [Decimal](/reference/enums#formats)  | Read   
 name                            | String   | Read       | Rental's name.
 notes                           | Text     | Read       | Rental's private notes.
 position                        | Integer  | Read       | Rental's position on the list.
-price_public_notes              | String   | Read       | Rental's price notes for public.
+price_public_notes              | [Object](/reference/enums#formats)   | Read       | Rental's price notes for public, list of locales described in [enums section](/reference/enums#locales).
 rental_type                     | String   | Read       | Rental's type (example: villa, apartment), all types described in [enums section](/reference/enums#rental-types).
 reviews_average_rating          | [Decimal](/reference/enums#formats)  | Read       | Rental's overall rating from reviews.
 reviews_count                   | Integer  | Read       | Rental's count of all reviews.
@@ -138,7 +138,7 @@ min_price                       | [Decimal](/reference/enums#formats)  | Read   
 name                            | String   | Read/Write | **Required**. Rental's name. (3 min, 40 max characters)
 notes                           | Text     | Read/Write | Rental's private notes. (1000 characters max)
 position                        | Integer  | Read/Write | Rental's position on the list.
-price_public_notes              | String   | Read       | Rental's price notes for public.
+price_public_notes              | [Object](/reference/enums#formats)   | Read/Write | Rental's price notes for public, list of locales described in [enums section](/reference/enums#locales).
 rental_type                     | String   | Read/Write | Rental's type (example: villa, apartment), all types described in [enums section](/reference/enums#rental-types).
 reviews_average_rating          | [Decimal](/reference/enums#formats)  | Read       | Rental's overall rating from reviews.
 reviews_count                   | Integer  | Read       | Rental's count of all reviews.
@@ -223,6 +223,13 @@ GET /rentals/:rental_id
   Please note that creating rentals will increase the account monthly fee. For further details, check our <a href="http://www.bookingsync.com/pricing">pricing</a>.
 </div>
 
+<div class="callout callout-info">
+  <h4>Translated attributes</h4>
+  <p>Please note that translated attributes are updated differenly than you read them.<br>
+  To set the English headline, locale <code>en</code>, you need to use the <code>headline_en</code> attribute.</p>
+  <p>List of locales described in <a href="/reference/enums#locales">enums section</a>.</p>
+</div>
+
 Returns a newly created rental.
 
 ~~~~
@@ -235,6 +242,13 @@ POST /rentals
 ## Update a rental
 
 Returns an updated rental identified by ID.
+
+<div class="callout callout-info">
+  <h4>Translated attributes</h4>
+  <p>Please note that translated attributes are updated differenly than you read them.<br>
+  To set the English headline, locale <code>en</code>, you need to use the <code>headline_en</code> attribute.</p>
+  <p>List of locales described in <a href="/reference/enums#locales">enums section</a>.</p>
+</div>
 
 ~~~
 PUT /rentals/:rental_id
