@@ -1,5 +1,8 @@
 # Changelog
 
+## 2015-04-11
+  * [api improvement] Add `email` to the `accounts` endpoint.
+
 ## 2015-04-06
   * [doc update] Add explanation about translated attributes as they need to be written differently than they read.
   * [doc update] Fix documentation error, `price_public_notes` is an `object`, not a `string`.

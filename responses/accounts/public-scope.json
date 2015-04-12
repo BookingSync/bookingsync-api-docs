@@ -3,6 +3,7 @@
     {
       "id": 7,
       "business_name": "Business Name",
+      "email": "email@example.com",
       "status":"trial",
       "created_at": "CREATED_AT",
       "updated_at": "UPDATED_AT"

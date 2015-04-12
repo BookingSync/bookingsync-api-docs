@@ -16,6 +16,8 @@ id               | Integer | Read                                 | Account's id
 -----------------|---------|------------|------------
 business_name    | Integer | Read                                 | Account's business name.
 -----------------|---------|------------|------------
+email            | String  | Read                                 | Account's email.
+-----------------|---------|------------|------------
 status           | String  | Read                                 | Account's status, list of statuses described in [enums section](/reference/enums/#account-statuses).
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats)  | Read       | Account's create time.
