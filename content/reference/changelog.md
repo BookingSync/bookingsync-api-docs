@@ -1,5 +1,8 @@
 # Changelog
 
+## 2015-04-15
+  * [api improvement] Allow to clone `rates_tables` via API V3.
+
 ## 2015-04-11
   * [api improvement] Add `email` to the `accounts` endpoint.
 

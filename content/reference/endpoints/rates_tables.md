@@ -58,6 +58,11 @@ GET /rates_tables/:rates_table_id
 
 ## Create a new rates table
 
+<div class="callout callout-info">
+  <h4>Cloning a rates table</h4>
+  <p>To clone an existing rates table, pass <code>"clone_from": "ID"</code> parameter with ID of the source.</p>
+</div>
+
 Returns a newly created rates table.
 
 ~~~
