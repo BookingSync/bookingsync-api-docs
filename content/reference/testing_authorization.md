@@ -18,6 +18,10 @@ urn:ietf:wg:oauth:2.0:oob
 
 ## Console
 
+<div class="embed-responsive embed-responsive-4by3">
+ <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/lRkllEnbV3E" allowfullscreen></iframe>
+</div>
+
 ### 1. Create Authorization Code's Request URL
 
 Use the schema below with by replacing:
