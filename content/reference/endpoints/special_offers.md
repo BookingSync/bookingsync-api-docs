@@ -15,7 +15,7 @@ Name                 | Type    | Read/Write | Description
 ---------------------|---------|------------|------------
 id                   | Integer | Read       | Special Offer's id.
 ---------------------|---------|------------|------------
-discount             | Integer | Read       | Special Offer's discount in percents.
+discount             | Float   | Read       | Special Offer's discount in percents.
 name                 | [Object](/reference/enums#formats)    | Read       | Special Offer's name, list of locales described in [enums section](/reference/enums#locales).
 ---------------------|---------|------------|------------
 created_at           | [Time](/reference/enums#formats) | Read       | Special Offer's create time.
@@ -29,7 +29,7 @@ Name                 | Type    | Read/Write | Description
 ---------------------|---------|------------|------------
 id                   | Integer | Read       | Special Offer's id.
 ---------------------|---------|------------|------------
-discount             | Integer | Read/Write | **Required**. Special Offer's discount in percents. (between 1 and 100)
+discount             | Float   | Read/Write | **Required**. Special Offer's discount in percents. (between 1 and 100)
 name                 | [Object](/reference/enums#formats)    | Read/Write | **Required**. Special Offer's name, list of locales described in [enums section](/reference/enums#locales). (50 characters max)
 ---------------------|---------|------------|------------
 created_at           | [Time](/reference/enums#formats) | Read       | Special Offer's create time.

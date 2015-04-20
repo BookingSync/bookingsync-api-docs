@@ -13,7 +13,7 @@
       },
       "start_date": "START_DATE",
       "end_date": "END_DATE",
-      "discount": 10,
+      "discount": 10.0,
       "created_at": "CREATED_AT",
       "updated_at": "UPDATED_AT"
     }

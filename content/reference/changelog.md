@@ -1,5 +1,8 @@
 # Changelog
 
+## 2015-04-20
+  * [doc update] Special Offer discount is a `float` not `integer`
+
 ## 2015-04-15
   * [api improvement] Allow to clone `rates_tables` via API V3.
 
