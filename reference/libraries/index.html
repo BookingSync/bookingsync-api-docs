@@ -66,7 +66,7 @@
             <a class="list-group-item" href="/reference/">Introduction</a>
             <a class="list-group-item" href="/reference/changelog/">Changelog</a>
             <a class="list-group-item" href="/reference/requirements/">Requirements</a>
-            <a class="list-group-item" href="/reference/libraries/">Libraries</a>
+            <a class="list-group-item active" href="/reference/libraries/">Libraries</a>
             <a class="list-group-item" href="/reference/authorization/">Authorization</a>
             <a class="list-group-item" href="/reference/testing_authorization/">Testing the Authorization</a>
             <a class="list-group-item" href="/reference/enums/">Enumerables</a>
@@ -75,7 +75,7 @@
             <h3 class="panel-title">Endpoints</h3>
           </div>
           <div class="list-group">
-            <a class="list-group-item active" href="/reference/endpoints/accounts/">Accounts</a>
+            <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
             <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
             <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
             <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
@@ -106,135 +106,38 @@
         </div>
       </div>
       <div class="col-md-9 col-md-pull-3">
-        <h2 id="accounts">Accounts</h2>
+        <h2 id="libraries">Libraries</h2>
 
-<ol id="markdown-toc">
-<li><a href="#list-accounts">List accounts</a></li>
-  <li><a href="#get-a-single-account">Get a single account</a></li>
-</ol><h4 id="parameters">Parameters</h4>
-<ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
-  <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
-</ul><div class="tab-content">
-  <div class="tab-pane active" id="public">
-    <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
-          <th>Type</th>
-          <th>Read/Write</th>
-          <th>Description</th>
-        </tr></thead>
-<tbody><tr>
-<td>id</td>
-          <td>Integer</td>
-          <td>Read</td>
-          <td>Account’s id.</td>
-        </tr></tbody>
-<tbody><tr>
-<td>business_name</td>
-          <td>Integer</td>
-          <td>Read</td>
-          <td>Account’s business name.</td>
-        </tr></tbody>
-<tbody><tr>
-<td>email</td>
-          <td>String</td>
-          <td>Read</td>
-          <td>Account’s email.</td>
-        </tr></tbody>
-<tbody><tr>
-<td>status</td>
-          <td>String</td>
-          <td>Read</td>
-          <td>Account’s status, list of statuses described in <a href="/reference/enums/#account-statuses">enums section</a>.</td>
-        </tr></tbody>
-<tbody><tr>
-<td>created_at</td>
-          <td><a href="/reference/enums#formats">Time</a></td>
-          <td>Read</td>
-          <td>Account’s create time.</td>
-        </tr></tbody>
-<tbody><tr>
-<td>updated_at</td>
-          <td><a href="/reference/enums#formats">Time</a></td>
-          <td>Read</td>
-          <td>Account’s update time.</td>
-        </tr></tbody>
-</table>
-</div>
-</div>
+<p>We recommend using an existing OAuth 2.0 library instead of implementing
+the protocol by hand. There are many edge cases, and using a well-tested
+library is the best way to cover them all.</p>
 
-<h3 id="list-accounts">List accounts</h3>
+<p>You can find a list of client libraries at <a href="http://oauth.net/2/#client-libraries">oauth.net</a>.</p>
 
-<p>List all authorized accounts. Only the <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a> currently allow you to retrieve multiple accounts at ones.</p>
+<p>For Ruby users, we also developed nice gems ourselves to ease the integration of our api:</p>
 
-<pre><code>GET /accounts
-</code></pre>
+<h4 id="ruby">Ruby</h4>
 
-<ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
-  
-    <li class="active">
-      <a href="#45424c22f5edpublic" role="tab" data-toggle="pill">
-        public
-      </a>
-    </li>
-  
-</ul><h4 id="response">Response</h4>
-<div class="tab-content">
-  
-    <div class="tab-pane active" id="45424c22f5edpublic">
-      <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"accounts"</span><span class="o">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
-      <span class="s2">"business_name"</span><span class="o">:</span> <span class="s2">"Business Name"</span><span class="p">,</span>
-      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"email@example.com"</span><span class="p">,</span>
-      <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"trial"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-04-30T15:25:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-04-30T15:25:18Z"</span>
-    <span class="p">}</span>
-  <span class="p">]</span>
-<span class="p">}</span></code></pre>
-    </div>
-  
-</div>
-
-<h3 id="get-a-single-account">Get a single account</h3>
-
-<p>Returns a single authorized account identified by ID.</p>
-
-<pre><code>GET /accounts/:account_id
-</code></pre>
-
-<ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
-  
-    <li class="active">
-      <a href="#65185d1ae992public" role="tab" data-toggle="pill">
-        public
-      </a>
-    </li>
-  
-</ul><h4 id="response-1">Response</h4>
-<div class="tab-content">
-  
-    <div class="tab-pane active" id="65185d1ae992public">
-      <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"accounts"</span><span class="o">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
-      <span class="s2">"business_name"</span><span class="o">:</span> <span class="s2">"Business Name"</span><span class="p">,</span>
-      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"email@example.com"</span><span class="p">,</span>
-      <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"trial"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-04-30T15:25:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-04-30T15:25:18Z"</span>
-    <span class="p">}</span>
-  <span class="p">]</span>
-<span class="p">}</span></code></pre>
-    </div>
-  
-</div>
+<ul>
+<li>
+<a href="https://github.com/intridea/omniauth">omniauth</a> with the
+<a href="https://github.com/bookingsync/omniauth-bookingsync">omniauth-bookingsync</a>
+strategy provide an easy to use framework for integrating applications
+with the API.</li>
+  <li>
+<a href="https://github.com/BookingSync/bookingsync-api">bookingsync-api</a>
+is a complete library that provide convenient methods for accessing the API.</li>
+  <li>
+<a href="https://github.com/BookingSync/bookingsync-engine">bookingsync-engine</a>
+is a complete solution for Ruby on Rails applications that handles
+authorization and provides convenience methods for accessing the API.
+It includes <a href="https://github.com/bookingsync/omniauth-bookingsync">omniauth-bookingsync</a>
+and <a href="https://github.com/BookingSync/bookingsync-api">bookingsync-api</a>
+</li>
+  <li>
+<a href="https://github.com/BookingSync/synced">synced</a>
+makes it super simple to synchronize data from BookingSync to your Application.</li>
+</ul>
       </div>
     </div>
   </div>

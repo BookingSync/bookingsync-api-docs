@@ -66,6 +66,7 @@
             <a class="list-group-item" href="/reference/">Introduction</a>
             <a class="list-group-item" href="/reference/changelog/">Changelog</a>
             <a class="list-group-item" href="/reference/requirements/">Requirements</a>
+            <a class="list-group-item" href="/reference/libraries/">Libraries</a>
             <a class="list-group-item active" href="/reference/authorization/">Authorization</a>
             <a class="list-group-item" href="/reference/testing_authorization/">Testing the Authorization</a>
             <a class="list-group-item" href="/reference/enums/">Enumerables</a>
@@ -110,7 +111,6 @@
 <ol id="markdown-toc">
 <li><a href="#oauth">OAuth</a></li>
   <li><a href="#testing-the-authorization">Testing the Authorization</a></li>
-  <li><a href="#libraries">Libraries</a></li>
   <li><a href="#embedded-application">Embedded Application</a></li>
   <li><a href="#scopes">Scopes</a></li>
   <li><a href="#authorization-code-flow">Authorization Code Flow</a></li>
@@ -136,42 +136,7 @@ accessible by users.</p>
 <p>For testing the authorization process in console or play around the API,
 refer to <a href="/reference/testing_authorization/">Testing BookingSync Authorization</a></p>
 
-<h3 id="libraries">Libraries</h3>
-
-<p>We recommend using an existing OAuth 2.0 library instead of implementing
-the protocol by hand. There are many edge cases, and using a well-tested
-library is the best way to cover them all.</p>
-
-<h4 id="ruby">Ruby</h4>
-
-<ul>
-<li>
-<a href="https://github.com/intridea/oauth2">oauth2</a> provides a basic abstraction
-for interacting with OAuth 2.0.</li>
-  <li>
-<a href="https://github.com/intridea/omniauth">omniauth</a> with the
-<a href="https://github.com/bookingsync/omniauth-bookingsync">omniauth-bookingsync</a>
-strategy provide an easy to use framework for integrating applications
-with the API.</li>
-  <li>
-<a href="https://github.com/BookingSync/bookingsync-engine">bookingsync-engine</a>
-is a complete solution for Ruby on Rails applications that handles
-authorization and provides convenience methods for accessing the API.</li>
-</ul><h4 id="php">PHP</h4>
-
-<ul>
-<li><a href="https://github.com/adoy/PHP-OAuth2">PHP-OAuth2</a></li>
-  <li><a href="https://github.com/Lusitanian/PHPoAuthLib">PHPoAuthLib</a></li>
-</ul><h4 id="python">Python</h4>
-
-<ul>
-<li><a href="https://github.com/litl/rauth">rauth</a></li>
-  <li><a href="https://github.com/demianbrecht/sanction">sanction</a></li>
-</ul><h4 id="dotnet">DotNet</h4>
-
-<ul>
-<li><a href="http://dotnetopenauth.net/">DotNetOpenAuth</a></li>
-</ul><h3 id="embedded-application">Embedded Application</h3>
+<h3 id="embedded-application">Embedded Application</h3>
 
 <p>When building applications that are meant to be embedded in the
 BookingSync App Store, keep in mind that the authorization redirect
