@@ -1,5 +1,8 @@
 # Changelog
 
+## 2015-04-30
+  * [doc update] Add libraries section with general info about oauth2 and bookingsync gems.
+
 ## 2015-04-20
   * [doc update] Add video to help getting started with the setup and authorization process.
   * [doc update] Special Offer discount is a `float` not `integer`
