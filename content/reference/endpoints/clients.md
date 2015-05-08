@@ -17,6 +17,7 @@ Group     | Name             | Type    | Read/Write | Description
 ----------|------------------|---------|------------|------------
           | fullname         | String  | Read       | Client's fullname.
           | notes            | Text    | Read       | Client's notes.
+          | passport         | String  | Read       | Client's passport id.
           | preferred_locale | String  | Read       | Client's contact language preference.
 ----------|------------------|---------|------------|------------
           | created_at       | [Time](/reference/enums#formats) | Read       | Client's create time.
@@ -47,6 +48,7 @@ Group     | Name             | Type    | Read/Write | Description
 ----------|------------------|---------|------------|------------
           | fullname         | String  | Read/Write | **Required**. Client's fullname. (150 characters max)
           | notes            | Text    | Read/Write | Client's notes. (1000 characters max)
+          | passport         | String  | Read/Write | Client's passport id. (50 characters max)
           | preferred_locale | String  | Read/Write | Client's contact language preference.
 ----------|------------------|---------|------------|------------
           | created_at       | [Time](/reference/enums#formats) | Read       | Client's create time.

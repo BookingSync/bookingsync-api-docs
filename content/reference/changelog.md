@@ -1,5 +1,8 @@
 # Changelog
 
+## 2015-05-08
+  * [api improvement] Add `passport` to the `clients` endpoint.
+
 ## 2015-04-30
   * [doc update] Add libraries section with general info about oauth2 and bookingsync gems.
 
