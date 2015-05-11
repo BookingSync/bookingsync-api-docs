@@ -152,6 +152,13 @@
         </tr>
 <tr>
 <td> </td>
+          <td>passport</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Client’s passport id.</td>
+        </tr>
+<tr>
+<td> </td>
           <td>preferred_locale</td>
           <td>String</td>
           <td>Read</td>
@@ -314,6 +321,13 @@
         </tr>
 <tr>
 <td> </td>
+          <td>passport</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Client’s passport id. (50 characters max)</td>
+        </tr>
+<tr>
+<td> </td>
           <td>preferred_locale</td>
           <td>String</td>
           <td>Read/Write</td>
@@ -460,7 +474,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#20adb70dc73cclients_read-clients_write" role="tab" data-toggle="pill">
+      <a href="#5c5d8db2d9efclients_read-clients_write" role="tab" data-toggle="pill">
         clients_read / clients_write
       </a>
     </li>
@@ -468,7 +482,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="20adb70dc73cclients_read-clients_write">
+    <div class="tab-pane active" id="5c5d8db2d9efclients_read-clients_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -495,6 +509,7 @@
       <span class="p">],</span>
       <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Clementina Kling"</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+      <span class="s2">"passport"</span><span class="o">:</span> <span class="s2">"AHJ4678956"</span><span class="p">,</span>
       <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
@@ -533,7 +548,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#9e73adcbd8f8clients_read-clients_write" role="tab" data-toggle="pill">
+      <a href="#042ba2e8bfe6clients_read-clients_write" role="tab" data-toggle="pill">
         clients_read / clients_write
       </a>
     </li>
@@ -541,7 +556,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="9e73adcbd8f8clients_read-clients_write">
+    <div class="tab-pane active" id="042ba2e8bfe6clients_read-clients_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -568,6 +583,7 @@
       <span class="p">],</span>
       <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Clementina Kling"</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+      <span class="s2">"passport"</span><span class="o">:</span> <span class="s2">"AHJ4678956"</span><span class="p">,</span>
       <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
@@ -606,7 +622,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#008c3e574d02clients_write" role="tab" data-toggle="pill">
+      <a href="#aa37163e9947clients_write" role="tab" data-toggle="pill">
         clients_write
       </a>
     </li>
@@ -634,6 +650,7 @@
       <span class="p">],</span>
       <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Clementina Kling"</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+      <span class="s2">"passport"</span><span class="o">:</span> <span class="s2">"AHJ4678956"</span><span class="p">,</span>
       <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
@@ -658,7 +675,7 @@
 <h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="008c3e574d02clients_write">
+    <div class="tab-pane active" id="aa37163e9947clients_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -685,6 +702,7 @@
       <span class="p">],</span>
       <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Clementina Kling"</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+      <span class="s2">"passport"</span><span class="o">:</span> <span class="s2">"AHJ4678956"</span><span class="p">,</span>
       <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
@@ -729,7 +747,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#64599ec8c646clients_write" role="tab" data-toggle="pill">
+      <a href="#49efdc5be338clients_write" role="tab" data-toggle="pill">
         clients_write
       </a>
     </li>
@@ -757,6 +775,7 @@
       <span class="p">],</span>
       <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Clementina Kling"</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+      <span class="s2">"passport"</span><span class="o">:</span> <span class="s2">"AHJ4678956"</span><span class="p">,</span>
       <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
@@ -781,7 +800,7 @@
 <h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="64599ec8c646clients_write">
+    <div class="tab-pane active" id="49efdc5be338clients_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -808,6 +827,7 @@
       <span class="p">],</span>
       <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"Clementina Kling"</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+      <span class="s2">"passport"</span><span class="o">:</span> <span class="s2">"AHJ4678956"</span><span class="p">,</span>
       <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
