@@ -23,3 +23,8 @@ For Ruby users, we also developed nice gems ourselves to ease the integration of
   and [bookingsync-api](https://github.com/BookingSync/bookingsync-api)
 * [synced](https://github.com/BookingSync/synced)
   makes it super simple to synchronize data from BookingSync to your Application.
+
+### PHP
+
+* [oauth2-bookingsync-php](https://github.com/BookingSync/oauth2-bookingsync-php) provide an easy to use framework for handling OAuth 2 authorization with BookingSync. This is based on top of the PHP League's [OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client)
+* [rest-request-php](https://github.com/BookingSync/rest-request-php) a library that provide convenient methods for accessing a REST API with OAuth 2 with Bearer tokens. It's an ideal fit for BookingSync JSON REST API v3.
