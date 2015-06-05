@@ -1,5 +1,8 @@
 # Changelog
 
+## 2015-06-05
+  * [library update] Add 2 PHP libraries: OAuth2 BookingSync PHP and and update REST Request PHP for full compatibility with BookingSync API v3
+
 ## 2015-05-08
   * [api improvement] Add `passport` to the `clients` endpoint.
 
