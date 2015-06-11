@@ -1,0 +1,28 @@
+{
+  "links": {
+    "bookings_taxes.booking": "http://www.bookingsync.com/api/v3/bookings/{bookings_taxes.booking}",
+    "bookings_taxes.tax": "http://www.bookingsync.com/api/v3/taxes/{bookings_taxes.tax}",
+    "bookings_taxes.rental": "http://www.bookingsync.com/api/v3/rentals/{bookings_taxes.taxable.id}",
+    "bookings_taxes.fee": "http://www.bookingsync.com/api/v3/fees/{bookings_taxes.taxable.id}"
+  },
+  "bookings_taxes": [
+    {
+      "links": {
+        "booking": 1382,
+        "tax": 7,
+        "taxable": {
+          "id": 1,
+          "type": "Rental"
+        }
+      },
+      "id": 52,
+      "name": {
+        "en": "Bookings Tax"
+      },
+      "tax_included_in_price": false,
+      "percentage": "455.0",
+      "amount": "1565.2"
+    }
+  ],
+  "meta": {}
+}
