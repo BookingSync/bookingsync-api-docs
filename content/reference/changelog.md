@@ -1,5 +1,9 @@
 # Changelog
 
+## 2015-06-26
+
+  * [doc fix] Fix FontAwesome dependency
+
 ## 2015-06-05
   * [library update] Add 2 PHP libraries: OAuth2 BookingSync PHP and and update REST Request PHP for full compatibility with BookingSync API v3
 
