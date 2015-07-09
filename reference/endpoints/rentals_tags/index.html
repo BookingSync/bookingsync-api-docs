@@ -78,7 +78,7 @@
           <div class="list-group">
             <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
             <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
-            <a class="list-group-item active" href="/reference/endpoints/availabilities/">Availabilities</a>
+            <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
             <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
             <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
             <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
@@ -93,7 +93,7 @@
             <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
             <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
             <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
-            <a class="list-group-item" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
+            <a class="list-group-item active" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
             <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
             <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
             <a class="list-group-item" href="/reference/endpoints/sources/">Sources</a>
@@ -108,18 +108,17 @@
         </div>
       </div>
       <div class="col-md-9 col-md-pull-3">
-        <h2 id="availabilities">Availabilities</h2>
+        <h2 id="rentals-tags">Rentals tags</h2>
 
 <ol id="markdown-toc">
-<li><a href="#list-availabilities">List availabilities</a></li>
-  <li><a href="#get-a-single-availability">Get a single availability</a></li>
-  <li><a href="#customize-availability-maps">Customize availability maps</a></li>
+<li><a href="#list-rentals-tags">List rentals tags</a></li>
+  <li><a href="#get-a-single-rentals-tag">Get a single rentals tag</a></li>
 </ol><h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
-  <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
+  <li class="active"><a href="#public" role="tab" data-toggle="pill">rentals_read</a></li>
 </ul><div class="tab-content">
-  <div class="tab-pane active" id="public">
+  <div class="tab-pane active" id="rentals_read">
     <table class="table table-bordered">
 <thead><tr>
 <th>Name</th>
@@ -131,44 +130,58 @@
 <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Availability’s id.</td>
-        </tr></tbody>
-<tbody><tr>
-<td>map</td>
-          <td>String</td>
-          <td>Read</td>
-          <td>Availability’s map of booking status. There is a total of 1096 characters, each representing one day. List of statuses described in <a href="/reference/enums#availability-map-statuses">enums section</a>.</td>
+          <td>Rentals Tag’s id.</td>
         </tr></tbody>
 <tbody>
 <tr>
-<td>start_date</td>
-          <td><a href="/reference/enums#formats">Date</a></td>
+<td>name</td>
+          <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read</td>
-          <td>Availability’s start date.</td>
+          <td>Rentals Tag’s title, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td>logo</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rentals Tag’s logo (Font Awesome class).</td>
+        </tr>
+<tr>
+<td>color</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rentals Tag’s color (hex).</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Rentals Tag’s create time.</td>
         </tr>
 <tr>
 <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Availability’s update time.</td>
+          <td>Rentals Tag’s update time.</td>
         </tr>
 </tbody>
 </table>
 </div>
 </div>
 
-<h3 id="list-availabilities">List availabilities</h3>
+<h3 id="list-rentals-tags">List rentals tags</h3>
 
-<p>List all availabilities for given account.</p>
+<p>List all rentals tags for given account.</p>
 
-<pre><code>GET /availabilities
+<pre><code>GET /rentals_tags
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#4118a935fa1dpublic" role="tab" data-toggle="pill">
+      <a href="#f5f309591e15public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -176,19 +189,23 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="4118a935fa1dpublic">
+    <div class="tab-pane active" id="f5f309591e15public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"availabilities.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{availabilities.rental}"</span>
+    <span class="s2">"rentals_tags.account"</span><span class="o">:</span> <span class="s2">"http://test.host/api/v3/accounts/{rentals_tags.account}"</span>
   <span class="p">},</span>
-  <span class="s2">"availabilities"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"map"</span><span class="o">:</span> <span class="s2">"11111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T12:57:46Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2014-08-26"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"color"</span><span class="o">:</span> <span class="s2">"#FFFFFF"</span><span class="p">,</span>
+      <span class="s2">"logo"</span><span class="o">:</span> <span class="s2">"fa-rocket"</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"tag"</span>
+      <span class="p">},</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-07-09T16:11:59Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-07-09T16:11:59Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -197,18 +214,18 @@
   
 </div>
 
-<h3 id="get-a-single-availability">Get a single availability</h3>
+<h3 id="get-a-single-rentals-tag">Get a single rentals tag</h3>
 
-<p>Returns a single availability identified by ID.</p>
+<p>Returns a single rentals tag identified by ID.</p>
 
-<pre><code>GET /availabilities/:availability_id
+<pre><code>GET /rentals_tags/:rentals_tag_id
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#544f7d9ca8f6public" role="tab" data-toggle="pill">
+      <a href="#d9244efe0a6apublic" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -216,19 +233,23 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="544f7d9ca8f6public">
+    <div class="tab-pane active" id="d9244efe0a6apublic">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"availabilities.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{availabilities.rental}"</span>
+    <span class="s2">"rentals_tags.account"</span><span class="o">:</span> <span class="s2">"http://test.host/api/v3/accounts/{rentals_tags.account}"</span>
   <span class="p">},</span>
-  <span class="s2">"availabilities"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"map"</span><span class="o">:</span> <span class="s2">"11111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2014-08-26T12:57:46Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2014-08-26"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"color"</span><span class="o">:</span> <span class="s2">"#FFFFFF"</span><span class="p">,</span>
+      <span class="s2">"logo"</span><span class="o">:</span> <span class="s2">"fa-rocket"</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"tag"</span>
+      <span class="p">},</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-07-09T16:11:59Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-07-09T16:11:59Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -236,49 +257,6 @@
     </div>
   
 </div>
-
-<h3 id="customize-availability-maps">Customize availability maps</h3>
-
-<p>Mapping parameters allow to customize availability start point and status display.</p>
-
-<p>Examples:</p>
-
-<pre><code>GET /availabilities?include_tentative=false&amp;boolean=true&amp;from=20140324
-</code></pre>
-
-<pre><code>GET /availabilities/1?include_tentative=false&amp;boolean=true&amp;from=20140324
-</code></pre>
-
-<h4 id="mapping-parameters">Mapping parameters</h4>
-
-<table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>from</td>
-      <td><a href="/reference/enums#formats">Date</a></td>
-      <td>Beginning of current month</td>
-      <td>Starts mapping at the given date. Default is beginning of current month.</td>
-    </tr>
-<tr>
-<td>include_tentative</td>
-      <td>Boolean</td>
-      <td>true</td>
-      <td>Includes tentative bookings by default. If switched to false, tentative statuses will be rendered as <code>0</code>.</td>
-    </tr>
-<tr>
-<td>boolean</td>
-      <td>Boolean</td>
-      <td>false</td>
-      <td>Render map using only <code>0</code> and <code>1</code> characters. In this mode, every blocking status will be rendered as <code>1</code>. List of statuses described in <a href="/reference/enums#availability-map-statuses">enums section</a>.</td>
-    </tr>
-</tbody>
-</table>
       </div>
     </div>
   </div>
