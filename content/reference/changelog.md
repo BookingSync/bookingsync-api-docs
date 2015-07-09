@@ -1,5 +1,9 @@
 # Changelog
 
+## 2015-07-09
+
+  * [api improvement] Add `rentals_tags` endpoint, add `rentals_tags` to `rentals` search params
+
 ## 2015-06-26
 
   * [doc fix] Fix FontAwesome dependency

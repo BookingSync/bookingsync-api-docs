@@ -1,0 +1,20 @@
+{
+  "links" : {
+    "rentals_tags.account" : "http://test.host/api/v3/accounts/{rentals_tags.account}"
+  },
+  "rentals_tags": [
+    {
+      "links": {
+        "account": 1
+      },
+      "id": 1,
+      "name": {
+        "en": "tag"
+      },
+      "logo": "fa-rocket",
+      "color": "#FFFFFF",
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT"
+    }
+  ]
+}
