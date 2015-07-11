@@ -156,10 +156,14 @@ Name             | Description
 -----------------|------------
 apartment        | Apartment
 boat             | Boat
+bungalow         | Bungalow
+cabin            | Cabin
 castle           | Castle
+chalet           | Chalet
 cottage          | Cottage
 farmhouse        | Farmhouse
 holiday-home     | Holiday Home
+house            | House
 private-room     | Private room
 studio           | Studio
 villa            | Villa

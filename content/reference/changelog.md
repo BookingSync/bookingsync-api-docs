@@ -1,5 +1,9 @@
 # Changelog
 
+## 2015-07-11
+
+  * [api improvement] Add new rental types: `bungalow`, `cabin`, `chalet`, `house`. Full list at [enums section](/reference/enums#rates-types)
+
 ## 2015-07-09
 
   * [api improvement] Add `rentals_tags` endpoint, add `rentals_tags` to `rentals` search params
