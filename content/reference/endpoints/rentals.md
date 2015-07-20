@@ -46,6 +46,7 @@ reviews_count                   | Integer  | Read       | Rental's count of all 
 sleeps                          | Integer  | Read       | Rental's number of comfortable sleeps.
 sleeps_max                      | Integer  | Read       | Rental's maximum number of sleeps.
 state                           | String   | Read       | Rental's state.
+stories_count                   | Integer  | Read       | Rental's number of stories.
 summary                         | [Object](/reference/enums#formats)     | Read       | Rental's summary, list of locales described in [enums section](/reference/enums#locales).
 surface                         | Integer  | Read       | Rental's surface area.
 surface_unit                    | String   | Read       | Rental's surface area unit, either <i>metric</i> or <i>imperial</i>.
@@ -93,6 +94,7 @@ reviews_count                   | Integer  | Read       | Rental's count of all 
 sleeps                          | Integer  | Read       | Rental's number of comfortable sleeps.
 sleeps_max                      | Integer  | Read       | Rental's maximum number of sleeps.
 state                           | String   | Read       | Rental's state.
+stories_count                   | Integer  | Read       | Rental's number of stories.
 summary                         | [Object](/reference/enums#formats)     | Read       | Rental's summary, list of locales described in [enums section](/reference/enums#locales).
 surface                         | Integer  | Read       | Rental's surface area.
 surface_unit                    | String   | Read       | Rental's surface area unit, either <i>metric</i> or <i>imperial</i>.
@@ -145,6 +147,7 @@ reviews_count                   | Integer  | Read       | Rental's count of all 
 sleeps                          | Integer  | Read/Write | Rental's number of comfortable sleeps. (between 0 and 100)
 sleeps_max                      | Integer  | Read/Write | Rental's maximum number of sleeps. (between 0 and 100)
 state                           | String   | Read/Write | Rental's state.
+stories_count                   | Integer  | Read/Write | Rental's number of stories.
 summary                         | [Object](/reference/enums#formats)     | Read/Write | Rental's summary, list of locales described in [enums section](/reference/enums#locales). (150 characters max)
 surface                         | Integer  | Read/Write | Rental's surface area. (greater than 0)
 surface_unit                    | String   | Read/Write | Rental's surface area unit, either <i>metric</i> or <i>imperial</i>.

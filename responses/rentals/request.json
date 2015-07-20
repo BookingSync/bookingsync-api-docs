@@ -11,6 +11,7 @@
       "surface": 120,
       "surface_unit": "metric",
       "absolute_min_price": "300.0",
+      "stories_count": 2,
       "amenity_ids": [
         4
       ]

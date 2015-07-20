@@ -1,5 +1,9 @@
 # Changelog
 
+## 2015-07-20
+
+  * [api improvement] Add `stories_count` to the `rentals` endpoint.
+
 ## 2015-07-11
 
   * [api improvement] Add new rental types: `bungalow`, `cabin`, `chalet`, `house`. Full list at [enums section](/reference/enums#rates-types)
