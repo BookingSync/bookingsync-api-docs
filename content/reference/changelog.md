@@ -1,6 +1,6 @@
 # Changelog
 
-## 2015-07-20
+## 2015-07-23
 
   * [api improvement] Add `stories_count` to the `rentals` endpoint.
 
