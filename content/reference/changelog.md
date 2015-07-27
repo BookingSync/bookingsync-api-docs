@@ -1,5 +1,9 @@
 # Changelog
 
+## 2016-12-11
+
+  * [api improvement] Add `los_records` endpoint.
+
 ## 2016-11-25
 
   * [api improvement] Add `living_rooms` endpoint.
