@@ -1,5 +1,9 @@
 # Changelog
 
+## 2015-09-04
+
+  * [api improvement] Add `details` to the `rentals_amenities` endpoint.
+
 ## 2015-07-23
 
   * [api improvement] Add `stories_count` to the `rentals` endpoint.
