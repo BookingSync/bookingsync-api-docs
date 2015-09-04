@@ -15,6 +15,8 @@ Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | Rentals Amenity's id.
 -----------------|---------|------------|------------
+details          | [Object](/reference/enums#formats) | Read       | Rentals Amenity's details, list of locales described in [enums section](/reference/enums#locales).
+-----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Rentals Amenity's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Rentals Amenity's update time.
 {: class="table table-bordered"}
@@ -24,6 +26,8 @@ Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | Rentals Amenity's id.
 amenity_id       | Integer | Write      | **Required**. Amenity id related to the Rentals Amenity.
+-----------------|---------|------------|------------
+details          | [Object](/reference/enums#formats) | Read/Write | Rentals Amenity's details, list of locales described in [enums section](/reference/enums#locales).
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Rentals Amenity's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Rentals Amenity's update time.
