@@ -2,7 +2,6 @@
   "payments": [
     {
       "amount_in_cents": 100000,
-      "booking_id": 1,
       "currency": "GBP",
       "kind": "cash",
       "fullname": "John Doe",

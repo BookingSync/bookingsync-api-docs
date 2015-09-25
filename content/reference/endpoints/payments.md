@@ -95,7 +95,7 @@ GET /payments/:payment_id
 Returns a newly created payment.
 
 ~~~~
-POST /payments
+POST /bookings/:booking_id/payments
 ~~~~
 
 <%= render 'json_response', endpoint: "payments", request: "request",
