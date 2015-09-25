@@ -1,5 +1,9 @@
 # Changelog
 
+## 2015-09-25
+
+  * [doc update] Update payments `create` action to be scoped under `bookings` endpoint.
+
 ## 2015-09-04
 
   * [api improvement] Add `details` to the `rentals_amenities` endpoint.
