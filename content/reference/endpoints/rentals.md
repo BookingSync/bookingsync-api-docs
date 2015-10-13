@@ -210,6 +210,36 @@ end_at            | [Time](/reference/enums#formats) |         | Rentals availab
 
 <%= render 'json_response', endpoint: "rentals", scopes: [{ public: "search" }] %>
 
+### Search response Parameters
+
+Group          | Subgroup     | Name             | Type    | Description
+---------------|--------------|------------------|---------|--------------
+               |              | final_price      | Float   | Rental's price with fees and taxes.
+               |              | initial_price    | Float   | Rental's price.
+               |              | price_to_pay_now | Float   | Part of the price to pay at this moment if the rental was to be booked now.
+---------------|--------------|------------------|---------|---------------------------------------
+ price_details |              |                  | Hash    | Fees and taxes breakdown contributing to the final price.
+---------------|--------------|------------------|---------|---------------------------------------
+               | taxes        |                  | Array   | Detailed breakdown of Taxes with reference to the item which was taxed by the Tax (Fee or Rental) and own ID.
+               |              | name             | String  | Tax's name.
+               |              | percentage       | String  | Tax's percentage.
+               |              | amount           | String  | Tax's amount.
+               |              | taxable_type     | String  | Taxed item type (Fee or Rental)
+               |              | taxable_id       | Integer | Fee or Rental ID
+               |              | tax_id           | Integer | Tax's ID
+---------------|--------------|------------------|---------|---------------------------------------
+               | fees         |                  | Array   | The required Rental fees to be booked with the Rental.
+               |              | name             | String  | Fee's name.
+               |              | required         | Boolean | True/False status for always required.
+               |              | price            | String  | Fee's price.
+               |              | quantity         | String  | Fee's quantity.
+---------------|--------------|------------------|---------|---------------------------------------
+ taxes         |              |                  | Array   | Grouped taxes by their identity with summed amounts.
+               |              | name             | String  | Tax's name.
+               |              | percentage       | String  | Tax's percentage.
+               |              | amount           | String  | Tax's amount.
+{: class="table table-bordered"}
+
 ## Get a single rental
 
 Returns a single rental identified by ID.
