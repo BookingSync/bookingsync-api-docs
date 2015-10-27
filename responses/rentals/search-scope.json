@@ -1,18 +1,49 @@
 {
   "rentals": [
     {
+      "links": {
+        "rentals_fees": "http://www.bookingsync.com/api/v3/rentals_fees/{rentals.rentals_fees}"
+      },
       "id": 1,
       "currency": "EUR",
-      "initial_price": 1257,
-      "final_price": 1257,
-      "updated_at": "2014-01-21T11:46:15Z"
-    },
-    {
-      "id": 2,
-      "currency": "EUR",
-      "initial_price": 1414,
-      "final_price": 1414,
-      "updated_at": "2014-01-21T13:32:17Z"
+      "updated_at": "2014-01-21T11:46:15Z",
+      "initial_price": 700.0,
+      "final_price": 858.33,
+      "price_to_pay_now": 858.33,
+      "taxes": [
+        {
+          "name": {
+            "en": "VAT"
+          },
+          "percentage": "10.0",
+          "amount": "58.33"
+        }
+      ],
+      "price_details": {
+        "taxes": [
+          {
+            "name": {
+              "en": "VAT"
+            },
+            "percentage": "10.0",
+            "amount": "58.33",
+            "taxable_type": "Rental",
+            "taxable_id": 2,
+            "tax_id": 1
+          }
+       ],
+       "fees": [
+          {
+            "name": {
+              "en": "some fee"
+            },
+            "required": true,
+            "price": "100.0",
+            "quantity": 1,
+            "id": 10
+          }
+        ]
+      }
     }
   ]
 }
