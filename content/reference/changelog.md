@@ -1,5 +1,9 @@
 # Changelog
 
+## 2015-10-27
+
+  * [doc update] Update search response for `rentals` endpoint.
+
 ## 2015-09-25
 
   * [doc update] Update payments `create` action to be scoped under `bookings` endpoint.
