@@ -1,0 +1,19 @@
+.jumbotron {
+  margin-bottom: 0;
+}
+
+.jumbotron-icon {
+  display: block !important;
+  margin: 30px 10px;
+  vertical-align: middle;
+  text-shadow: 0px -1px 0px #fff;
+
+  @media (min-width: $screen-sm) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: $screen-md) {
+    display: inline-block !important;
+  }
+}

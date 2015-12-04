@@ -1,0 +1,32 @@
+.navbar-brand {
+  white-space: nowrap;
+
+  > img {
+    height: 32px;
+    width: auto;
+    display: inline-block;
+  }
+
+  > span {
+    margin-left: 0.5em;
+    font-size: 22px;
+    vertical-align: middle;
+  }
+
+  @media (max-width: $grid-float-breakpoint-max) {
+    width: auto !important;
+    margin-left: $navbar-padding-horizontal !important;
+
+    > img {
+      height: 18px;
+    }
+
+    > span {
+      font-size: 14px;
+    }
+  }
+}
+
+.navbar-toggle {
+  border: 0;
+}
