@@ -1,5 +1,9 @@
 # Changelog
 
+## 2015-12-04
+
+  * [api fix] Rental search by destination returns rentals in descendants  destinations. Example: Searching for rentals in Europe will return rentals in France as well.
+
 ## 2015-10-27
 
   * [doc update] Update search response for `rentals` endpoint.
