@@ -1,5 +1,9 @@
 # Changelog
 
+## 2015-12-10
+
+  * [api improvement] Allow to create bookings with fees and taxes in a single request.
+
 ## 2015-12-04
 
   * [api fix] Rental search by destination returns rentals in descendants  destinations. Example: Searching for rentals in Europe will return rentals in France as well.
