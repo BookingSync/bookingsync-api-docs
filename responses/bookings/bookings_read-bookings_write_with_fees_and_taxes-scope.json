@@ -17,8 +17,8 @@
         "client": 37,
         "rental_agreement": null,
         "source": null,
-        "bookings_fees": [],
-        "bookings_taxes": [],
+        "bookings_fees": [10, 11],
+        "bookings_taxes": [22, 23],
         "bookings_tags": []
       },
       "id": 80,

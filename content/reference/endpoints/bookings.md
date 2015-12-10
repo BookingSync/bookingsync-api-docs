@@ -187,6 +187,18 @@ POST /rentals/:rental_id/bookings
     { bookings_write: "bookings_read-bookings_write" }
   ] %>
 
+<div class="callout callout-info" markdown="1">
+  <h4>Fees and Taxes</h4>
+  You can also pass bookings fees and bookings taxes directly during a booking creation using the parameters: `bookings_fees` and `bookings_taxes`.
+
+  _**Note**: the sum of `initial_price` plus `bookings_fees` (`price * times_booked`) and `bookings_taxes` (`amount`) minus `discount` must equal the given `final_price`. Otherwise booking is not valid._
+</div>
+
+<%= render 'json_response', endpoint: "bookings", request: "request_with_fees_and_taxes",
+  scopes: [
+    { bookings_write: "bookings_read-bookings_write_with_fees_and_taxes" }
+  ] %>
+
 ## Update a booking
 
 Returns an updated booking identified by ID.
