@@ -1,5 +1,9 @@
 # Changelog
 
+## 2015-12-12
+
+  * [doc update] Add reference to [tapioca-bookingsync](https://github.com/PaoloC68/tapioca-bookingsync), contributed by [Fetch My Guest](http://www.fetchmyguest.com/).
+
 ## 2015-12-10
 
   * [api improvement] Allow to create bookings with fees and taxes in a single request.

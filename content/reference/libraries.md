@@ -27,4 +27,8 @@ For Ruby users, we also developed nice gems ourselves to ease the integration of
 ### PHP
 
 * [oauth2-bookingsync-php](https://github.com/BookingSync/oauth2-bookingsync-php) provide an easy to use framework for handling OAuth 2 authorization with BookingSync. This is based on top of the PHP League's [OAuth 2.0 Client](https://github.com/thephpleague/oauth2-client)
-* [rest-request-php](https://github.com/BookingSync/rest-request-php) a library that provide convenient methods for accessing a REST API with OAuth 2 with Bearer tokens. It's an ideal fit for BookingSync JSON REST API v3.
+* [rest-request-php](https://github.com/BookingSync/rest-request-php) is a library that provide convenient methods for accessing a REST API with OAuth 2 with Bearer tokens. It's an ideal fit for BookingSync JSON REST API v3.
+
+### Python
+
+* [tapioca-bookingsync](https://github.com/PaoloC68/tapioca-bookingsync) is a library to use BookingSync API on top of [Tapioca Wrapper](https://github.com/vintasoftware/tapioca-wrapper). Contributed by [Fetch My Guest](http://www.fetchmyguest.com/).
