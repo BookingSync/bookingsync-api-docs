@@ -227,6 +227,7 @@ Group          | Subgroup     | Name             | Type    | Description
                |              | taxable_type     | String  | Taxed item type (Fee or Rental)
                |              | taxable_id       | Integer | Fee or Rental ID
                |              | tax_id           | Integer | Tax's ID
+               |              | included         | Boolean | True/False status if this tax is already included in taxable's (Fee or Rental) price or not
 ---------------|--------------|------------------|---------|---------------------------------------
                | fees         |                  | Array   | The required Rental fees to be booked with the Rental.
                |              | name             | String  | Fee's name.
