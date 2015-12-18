@@ -15,8 +15,9 @@
         { "price": "30", "times_booked": "1", "rentals_fee_id": "10" }
       ],
       "bookings_taxes": [
-        { "taxable_type": "Rental", "taxable_id": "1", "amount": "60", "tax_id": "5" },
-        { "taxable_type": "Rental", "taxable_id": "1", "amount": "40", "tax_id": "7" }
+        { "taxable_type": "Rental", "taxable_id": "1", "amount": "60", "tax_id": "5", "included": false },
+        { "taxable_type": "Rental", "taxable_id": "1", "amount": "40", "tax_id": "7", "included": false },
+        { "taxable_type": "Rental", "taxable_id": "1", "amount": "10", "tax_id": "4", "included": true }
       ]
     }
   ]

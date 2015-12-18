@@ -2,6 +2,7 @@
 
 ## 2015-12-18
 
+  * [doc update] Update bookings creation example. with `included` attribute in `bookings_taxes`.
   * [doc update] Update search response for `rentals` endpoint with `included` attribute for `taxes` in `price_details`.
 
 ## 2015-12-12
