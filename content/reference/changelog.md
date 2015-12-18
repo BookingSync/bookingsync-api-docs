@@ -1,5 +1,9 @@
 # Changelog
 
+## 2015-12-18
+
+  * [doc update] Update search response for `rentals` endpoint with `included` attribute for `taxes` in `price_details`.
+
 ## 2015-12-12
 
   * [doc update] Add reference to [tapioca-bookingsync](https://github.com/PaoloC68/tapioca-bookingsync), contributed by [Fetch My Guest](http://www.fetchmyguest.com/).

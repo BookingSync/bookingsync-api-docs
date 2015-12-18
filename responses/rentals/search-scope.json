@@ -29,7 +29,8 @@
             "amount": "58.33",
             "taxable_type": "Rental",
             "taxable_id": 2,
-            "tax_id": 1
+            "tax_id": 1,
+            "included": false
           }
        ],
        "fees": [
