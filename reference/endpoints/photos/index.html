@@ -5,34 +5,22 @@
     <title>BookingSync API documentation</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/assets/stylesheets/application.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/highlight.css">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="/style.js"></script>
+    <script src="/assets/javascripts/application.js"></script>
 
     <!-- you don't need to keep this, but it's cool for stats! -->
     <meta name="generator" content="nanoc 3.8.0">
   </head>
   <body class="flex-col">
-    <nav id="sidebar-left">
-      <ul class="nav">
-        <li><a href="#" class="sidebar-toggle"><i class="fa fa-close"></i></a></li>
-        <li class="active">
-          <a href="/reference/">API Reference</a>
-        </li>
-        <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
-      </ul>
-    </nav>
     <div class="page-wrapper flex-1 flex-col">
-      <nav id="navigation" class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container flex-row">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle sidebar-toggle visible-xs-block">
+            <button type="button" class="navbar-toggle sidebar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -44,7 +32,7 @@
             </a>
           </div>
 
-          <div class="flex-1 hidden-xs">
+          <div class="collapse navbar-collapse" id="navigation">
             <ul class="nav navbar-nav navbar-right">
               <li class="active">
                 <a href="/reference/">API Reference</a>
@@ -55,60 +43,61 @@
         </div>
       </nav>
 
-<div class="container">
-  <div id="content">
-    <div class="row">
-      <div class="col-md-3 col-md-push-9">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Overview</h3>
-          </div>
-          <div class="list-group">
-            <a class="list-group-item" href="/reference/">Introduction</a>
-            <a class="list-group-item" href="/reference/changelog/">Changelog</a>
-            <a class="list-group-item" href="/reference/requirements/">Requirements</a>
-            <a class="list-group-item" href="/reference/libraries/">Libraries</a>
-            <a class="list-group-item" href="/reference/authorization/">Authorization</a>
-            <a class="list-group-item" href="/reference/testing_authorization/">Testing the Authorization</a>
-            <a class="list-group-item" href="/reference/enums/">Enumerables</a>
-          </div>
-          <div class="panel-heading">
-            <h3 class="panel-title">Endpoints</h3>
-          </div>
-          <div class="list-group">
-            <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
-            <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
-            <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
-            <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
-            <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
-            <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
-            <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
-            <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
-            <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
-            <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
-            <a class="list-group-item active" href="/reference/endpoints/photos/">Photos</a>
-            <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
-            <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
-            <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
-            <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
-            <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
-            <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
-            <a class="list-group-item" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
-            <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
-            <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
-            <a class="list-group-item" href="/reference/endpoints/sources/">Sources</a>
-            <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
-          </div>
-          <div class="panel-heading">
-            <h3 class="panel-title">Deprecated APIs</h3>
-          </div>
-          <div class="list-group">
-            <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
-          </div>
+<div class="container content">
+  <div class="row">
+    <div class="col-md-3 col-md-push-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Overview</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="/reference/">Introduction</a>
+          <a class="list-group-item" href="/reference/changelog/">Changelog</a>
+          <a class="list-group-item" href="/reference/requirements/">Requirements</a>
+          <a class="list-group-item" href="/reference/libraries/">Libraries</a>
+          <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+          <a class="list-group-item" href="/reference/testing_authorization/">Testing the Authorization</a>
+          <a class="list-group-item" href="/reference/enums/">Enumerables</a>
+        </div>
+        <div class="panel-heading">
+          <h3 class="panel-title">Endpoints</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
+          <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
+          <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
+          <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
+          <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
+          <a class="list-group-item active" href="/reference/endpoints/photos/">Photos</a>
+          <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
+          <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
+          <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
+          <a class="list-group-item" href="/reference/endpoints/sources/">Sources</a>
+          <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
+        </div>
+        <div class="panel-heading">
+          <h3 class="panel-title">Deprecated APIs</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
         </div>
       </div>
-      <div class="col-md-9 col-md-pull-3">
-        <h2 id="photos">Photos</h2>
+    </div>
+    <div class="col-md-9 col-md-pull-3">
+      <div class="panel panel-default">
+        <div class="panel-body reference-body">
+          <h2 id="photos">Photos</h2>
 
 <ol id="markdown-toc">
 <li><a href="#list-photos">List photos</a></li>
@@ -344,7 +333,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#3e860d9e007fpublic" role="tab" data-toggle="pill">
+      <a href="#e0731c7fef05public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -352,7 +341,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="3e860d9e007fpublic">
+    <div class="tab-pane active" id="e0731c7fef05public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
@@ -373,8 +362,8 @@
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"small_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/small_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
       <span class="p">}</span>
@@ -396,7 +385,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#3b096d39f8abpublic" role="tab" data-toggle="pill">
+      <a href="#64d3d3e91b74public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -404,7 +393,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="3b096d39f8abpublic">
+    <div class="tab-pane active" id="64d3d3e91b74public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
@@ -425,8 +414,8 @@
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"small_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/small_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
       <span class="p">}</span>
@@ -448,7 +437,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#0ca773618d70rentals_write" role="tab" data-toggle="pill">
+      <a href="#916ce66a7818rentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
@@ -470,7 +459,7 @@
 <h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="0ca773618d70rentals_write">
+    <div class="tab-pane active" id="916ce66a7818rentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
@@ -491,8 +480,8 @@
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"small_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/small_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
       <span class="p">}</span>
@@ -514,7 +503,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#161b06cb60d2rentals_write" role="tab" data-toggle="pill">
+      <a href="#254e76b791e9rentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
@@ -536,7 +525,7 @@
 <h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="161b06cb60d2rentals_write">
+    <div class="tab-pane active" id="254e76b791e9rentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
@@ -557,8 +546,8 @@
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"small_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/small_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
       <span class="p">}</span>
@@ -577,6 +566,7 @@
 
 <pre><code>DELETE /photos/:photo_id
 </code></pre>
+        </div>
       </div>
     </div>
   </div>

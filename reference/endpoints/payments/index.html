@@ -5,34 +5,22 @@
     <title>BookingSync API documentation</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/assets/stylesheets/application.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/highlight.css">
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="/style.js"></script>
+    <script src="/assets/javascripts/application.js"></script>
 
     <!-- you don't need to keep this, but it's cool for stats! -->
     <meta name="generator" content="nanoc 3.8.0">
   </head>
   <body class="flex-col">
-    <nav id="sidebar-left">
-      <ul class="nav">
-        <li><a href="#" class="sidebar-toggle"><i class="fa fa-close"></i></a></li>
-        <li class="active">
-          <a href="/reference/">API Reference</a>
-        </li>
-        <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
-      </ul>
-    </nav>
     <div class="page-wrapper flex-1 flex-col">
-      <nav id="navigation" class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container flex-row">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle sidebar-toggle visible-xs-block">
+            <button type="button" class="navbar-toggle sidebar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -44,7 +32,7 @@
             </a>
           </div>
 
-          <div class="flex-1 hidden-xs">
+          <div class="collapse navbar-collapse" id="navigation">
             <ul class="nav navbar-nav navbar-right">
               <li class="active">
                 <a href="/reference/">API Reference</a>
@@ -55,60 +43,61 @@
         </div>
       </nav>
 
-<div class="container">
-  <div id="content">
-    <div class="row">
-      <div class="col-md-3 col-md-push-9">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Overview</h3>
-          </div>
-          <div class="list-group">
-            <a class="list-group-item" href="/reference/">Introduction</a>
-            <a class="list-group-item" href="/reference/changelog/">Changelog</a>
-            <a class="list-group-item" href="/reference/requirements/">Requirements</a>
-            <a class="list-group-item" href="/reference/libraries/">Libraries</a>
-            <a class="list-group-item" href="/reference/authorization/">Authorization</a>
-            <a class="list-group-item" href="/reference/testing_authorization/">Testing the Authorization</a>
-            <a class="list-group-item" href="/reference/enums/">Enumerables</a>
-          </div>
-          <div class="panel-heading">
-            <h3 class="panel-title">Endpoints</h3>
-          </div>
-          <div class="list-group">
-            <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
-            <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
-            <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
-            <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
-            <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
-            <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
-            <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
-            <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
-            <a class="list-group-item active" href="/reference/endpoints/payments/">Payments</a>
-            <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
-            <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
-            <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
-            <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
-            <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
-            <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
-            <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
-            <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
-            <a class="list-group-item" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
-            <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
-            <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
-            <a class="list-group-item" href="/reference/endpoints/sources/">Sources</a>
-            <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
-          </div>
-          <div class="panel-heading">
-            <h3 class="panel-title">Deprecated APIs</h3>
-          </div>
-          <div class="list-group">
-            <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
-          </div>
+<div class="container content">
+  <div class="row">
+    <div class="col-md-3 col-md-push-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Overview</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="/reference/">Introduction</a>
+          <a class="list-group-item" href="/reference/changelog/">Changelog</a>
+          <a class="list-group-item" href="/reference/requirements/">Requirements</a>
+          <a class="list-group-item" href="/reference/libraries/">Libraries</a>
+          <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+          <a class="list-group-item" href="/reference/testing_authorization/">Testing the Authorization</a>
+          <a class="list-group-item" href="/reference/enums/">Enumerables</a>
+        </div>
+        <div class="panel-heading">
+          <h3 class="panel-title">Endpoints</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
+          <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
+          <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
+          <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
+          <a class="list-group-item active" href="/reference/endpoints/payments/">Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
+          <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
+          <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
+          <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
+          <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
+          <a class="list-group-item" href="/reference/endpoints/sources/">Sources</a>
+          <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
+        </div>
+        <div class="panel-heading">
+          <h3 class="panel-title">Deprecated APIs</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
         </div>
       </div>
-      <div class="col-md-9 col-md-pull-3">
-        <h2 id="payments">Payments</h2>
+    </div>
+    <div class="col-md-9 col-md-pull-3">
+      <div class="panel panel-default">
+        <div class="panel-body reference-body">
+          <h2 id="payments">Payments</h2>
 
 <ol id="markdown-toc">
 <li><a href="#list-payments">List payments</a></li>
@@ -429,7 +418,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#a0084ae7ae20payments_read-payments_write" role="tab" data-toggle="pill">
+      <a href="#19b67d459d9epayments_read-payments_write" role="tab" data-toggle="pill">
         payments_read / payments_write
       </a>
     </li>
@@ -437,7 +426,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="a0084ae7ae20payments_read-payments_write">
+    <div class="tab-pane active" id="19b67d459d9epayments_read-payments_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -465,11 +454,11 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -497,7 +486,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#b50d9888fa40payments_read-payments_write" role="tab" data-toggle="pill">
+      <a href="#54cfcfcdf49epayments_read-payments_write" role="tab" data-toggle="pill">
         payments_read / payments_write
       </a>
     </li>
@@ -505,7 +494,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="b50d9888fa40payments_read-payments_write">
+    <div class="tab-pane active" id="54cfcfcdf49epayments_read-payments_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -533,11 +522,11 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -565,7 +554,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#798ace7f7743payments_write" role="tab" data-toggle="pill">
+      <a href="#3c0568b236cepayments_write" role="tab" data-toggle="pill">
         payments_write
       </a>
     </li>
@@ -586,7 +575,7 @@
       <span class="s2">"locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Monatana"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -594,7 +583,7 @@
 <h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="798ace7f7743payments_write">
+    <div class="tab-pane active" id="3c0568b236cepayments_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -622,11 +611,11 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -654,7 +643,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#45ffc78d645apayments_write" role="tab" data-toggle="pill">
+      <a href="#715694336d1apayments_write" role="tab" data-toggle="pill">
         payments_write
       </a>
     </li>
@@ -675,7 +664,7 @@
       <span class="s2">"locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Monatana"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -683,7 +672,7 @@
 <h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="45ffc78d645apayments_write">
+    <div class="tab-pane active" id="715694336d1apayments_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -711,11 +700,11 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2015-12-18T13:31:00Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2016-01-21T08:06:18Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -740,6 +729,7 @@
 
 <pre><code>DELETE /payments/:payment_id
 </code></pre>
+        </div>
       </div>
     </div>
   </div>
