@@ -10,3 +10,6 @@ gem "coderay"
 gem "kramdown"
 gem "pygments.rb"
 gem "nokogiri"
+gem 'uglifier'
+gem 'nanoc-sprockets3'
+gem "bootstrap-bookingsync-sass"

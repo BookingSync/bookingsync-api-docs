@@ -1,0 +1,15 @@
+@mixin button-outline-variant($color) {
+  color: $color;
+  background-image: none;
+  background-color: transparent;
+  border-color: $color;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color;
+    background-color: transparentize(#fff, 0.7);
+    border-color: $color;
+    @include box-shadow(none);
+  }
+}

@@ -13,6 +13,8 @@
 #   item, use the pattern “/about/*/”; “/about/*” will also select the parent,
 #   because “*” matches zero or more characters.
 
+ignore '/assets/stylesheets/_*'
+
 compile '/static/*' do
 end
 
@@ -30,11 +32,22 @@ compile '/reference/*' do
   layout item[:layout] || 'reference'
 end
 
+compile %r{/assets/(stylesheets|javascripts)/.+/} do
+  filter :sprockets, {
+    :css_compressor => :scss,
+    :js_compressor  => :uglifier
+  }
+end
+
 compile '*' do
   filter :erb
   filter :kramdown, toc_levels: [2], header_offset: 1, enable_coderay: false
   filter :colorize_syntax, default_colorizer: :pygmentsrb
   layout item[:layout] || 'default'
+end
+
+route '/assets/*/' do
+  Nanoc::Sprockets::Helper.asset_path(item)
 end
 
 route '/CNAME' do

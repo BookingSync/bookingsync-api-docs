@@ -1,0 +1,23 @@
+.content {
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.reference-body h3,
+.reference-body h4,
+.reference-body h5,
+.reference-body h6 {
+  margin-top: 2em;
+}
+
+.reference-body h3+h4 {
+  margin-top: 1em;
+}
+
+.reference-body .nav-pills {
+  border-bottom: 2px solid $nav-pills-active-link-hover-bg;
+}
+
+.reference-body .nav-pills a {
+  border-radius: 0;
+}
