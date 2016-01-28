@@ -53,7 +53,7 @@ start_at         | [Time](/reference/enums#formats) | Read/Write | Inquiry's boo
 end_at           | [Time](/reference/enums#formats) | Read/Write | Inquiry's booking end time.
 {: class="table table-bordered"}
   </div>
-    <div class="tab-pane" id="inquiries_write_owned" markdown="1">
+  <div class="tab-pane" id="inquiries_write_owned" markdown="1">
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | Inquiry's id.
