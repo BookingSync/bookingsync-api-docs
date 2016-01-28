@@ -56,8 +56,10 @@ Additionally, the following scopes are available:
 * `bookings_write`
 * `clients_read`
 * `clients_write`
+* `inquiries_write_owned`
 * `inquiries_read`
 * `inquiries_write`
+* `payments_write_owned`
 * `payments_read`
 * `payments_write`
 * `rates_read`
