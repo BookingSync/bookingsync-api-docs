@@ -1,5 +1,11 @@
 # Changelog
 
+## 2016-01-28
+
+  * [doc update] Add missing scope `payments_write_owned`.
+  * [api improvement] Add `inquiries_write_owned`.
+  * [api improvement] Add `sources` to `inquiries`.
+
 ## 2015-12-18
 
   * [doc update] Update bookings creation example. with `included` attribute in `bookings_taxes`.
