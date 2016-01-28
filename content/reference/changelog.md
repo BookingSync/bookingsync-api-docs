@@ -1,5 +1,9 @@
 # Changelog
 
+## 2016-01-29
+
+  * [doc update] Add scope `payments_write_owned` to payments endpoint.
+
 ## 2016-01-28
 
   * [doc update] Add missing scope `payments_write_owned`.
