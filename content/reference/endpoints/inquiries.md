@@ -23,6 +23,8 @@ firstname        | String  | Read       | Inquiry's client firstname.
 lastname         | String  | Read       | Inquiry's client lastname.
 message          | Text    | Read       | Inquiry's message.
 phone            | String  | Read       | Inquiry's client phone number.
+locked           | String  | Read       | Inquiry's locked status.
+source_id        | Integer | Write      | Source id related to the Inquiry.
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Inquiry's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Inquiry's update time.
@@ -43,6 +45,29 @@ firstname        | String  | Read/Write | **Required**. Inquiry's client firstna
 lastname         | String  | Read/Write | **Required**. Inquiry's client lastname. (99 characters max)
 message          | Text    | Read/Write | Inquiry's message. (500 characters max)
 phone            | String  | Read/Write | Inquiry's client phone number.
+source_id        | Integer | Write      | Source id related to the Inquiry.
+-----------------|---------|------------|------------
+created_at       | [Time](/reference/enums#formats) | Read       | Inquiry's create time.
+updated_at       | [Time](/reference/enums#formats) | Read       | Inquiry's update time.
+start_at         | [Time](/reference/enums#formats) | Read/Write | Inquiry's booking start time.
+end_at           | [Time](/reference/enums#formats) | Read/Write | Inquiry's booking end time.
+{: class="table table-bordered"}
+  </div>
+    <div class="tab-pane" id="inquiries_write_owned" markdown="1">
+Name             | Type    | Read/Write | Description
+-----------------|---------|------------|------------
+id               | Integer | Read       | Inquiry's id.
+-----------------|---------|------------|------------
+adults           | Integer | Read/Write | Inquiry's booking number of adults.
+children         | Integer | Read/Write | Inquiry's booking number of children.
+country_code     | String  | Read/Write | Inquiry's client country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
+email            | String  | Read/Write | **Required**. Inquiry's client email.
+firstname        | String  | Read/Write | **Required**. Inquiry's client firstname. (50 characters max)
+lastname         | String  | Read/Write | **Required**. Inquiry's client lastname. (99 characters max)
+message          | Text    | Read/Write | Inquiry's message. (500 characters max)
+phone            | String  | Read/Write | Inquiry's client phone number.
+locked           | String  | Read/Write | Inquiry's locked status.
+source_id        | Integer | Write      | Source id related to the Inquiry.
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Inquiry's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Inquiry's update time.
