@@ -106,4 +106,15 @@ POST /rentals/:rental_id/inquiries
 ~~~~
 
 <%= render 'json_response', endpoint: "inquiries", request: "request",
-  scopes: [{ inquiries_write: "inquiries_read-inquiries_write" }] %>
+  scopes: %w(inquiries_write-inquiries_write_owned) %>
+
+## Update a inquiry
+
+Returns an updated inquiry identified by ID.
+
+~~~
+PUT /inquiries/:id
+~~~
+
+<%= render 'json_response', endpoint: "inquiries", request: "request",
+  scopes: %w(inquiries_write_owned) %>
