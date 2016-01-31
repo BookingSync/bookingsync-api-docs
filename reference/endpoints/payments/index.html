@@ -108,9 +108,158 @@
 </ol><h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
+  <li><a href="#payments_write_owned" role="tab" data-toggle="pill">payments_write_owned</a></li>
   <li class="active"><a href="#payments_read" role="tab" data-toggle="pill">payments_read</a></li>
   <li><a href="#payments_write" role="tab" data-toggle="pill">payments_write</a></li>
 </ul><div class="tab-content">
+  <div class="tab-pane" id="payments_write_owned">
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Payment’s id.</td>
+        </tr></tbody>
+<tbody>
+<tr>
+<td>address1</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Payer’s first address. (100 characters max)</td>
+        </tr>
+<tr>
+<td>address2</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Payer’s second address. (100 characters max)</td>
+        </tr>
+<tr>
+<td>amount_in_cents</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>
+<strong>Required</strong>. Payment’s value.</td>
+        </tr>
+<tr>
+<td>card</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Payment’s card number, only the last 4 digits are visible. (example: <code>"XXXX-XXXX-XXXX-1234"</code>).</td>
+        </tr>
+<tr>
+<td>city</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Payer’s city. (100 characters max)</td>
+        </tr>
+<tr>
+<td>country_code</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Payer’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+        </tr>
+<tr>
+<td>currency</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Payment’s currency code, list of codes described in <a href="/reference/enums/#currencies">enums section</a>.</td>
+        </tr>
+<tr>
+<td>kind</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>
+<strong>Required</strong>. Payment’s kind, list of kinds described in <a href="/reference/enums/#payment-kinds">enums section</a>.</td>
+        </tr>
+<tr>
+<td>email</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Payer’s email.</td>
+        </tr>
+<tr>
+<td>fullname</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Payer’s fullname.</td>
+        </tr>
+<tr>
+<td>ip</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Payer’s ip.</td>
+        </tr>
+<tr>
+<td>locale</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Payer’s preferred locale, list of locales described in <a href="/reference/enums/#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td>notes</td>
+          <td>Text</td>
+          <td>Read/Write</td>
+          <td>Payment’s additional information.</td>
+        </tr>
+<tr>
+<td>state</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Payer’s state. (100 characters max, required if country_code set to <code>US</code>)</td>
+        </tr>
+<tr>
+<td>test</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Payment’s test status.</td>
+        </tr>
+<tr>
+<td>zip</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Payer’s zip code. (10 characters max)</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Payment’s create time.</td>
+        </tr>
+<tr>
+<td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Payment’s update time.</td>
+        </tr>
+<tr>
+<td>rejected_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Payment’s reject time.</td>
+        </tr>
+<tr>
+<td>canceled_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Payment’s cancel time.</td>
+        </tr>
+<tr>
+<td>paid_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read/Write</td>
+          <td>Payment’s issue time.</td>
+        </tr>
+</tbody>
+</table>
+</div>
   <div class="tab-pane active" id="payments_read">
     <table class="table table-bordered">
 <thead><tr>
@@ -418,15 +567,15 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#fb4ad263ac6cpayments_read-payments_write" role="tab" data-toggle="pill">
-        payments_read / payments_write
+      <a href="#d389f506f518payments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
+        payments_write_owned / payments_read / payments_write
       </a>
     </li>
   
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="fb4ad263ac6cpayments_read-payments_write">
+    <div class="tab-pane active" id="d389f506f518payments_write_owned-payments_read-payments_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -454,11 +603,11 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T06:58:55Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T06:58:55Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T09:13:58Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T09:13:58Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T06:58:55Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T09:13:58Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -486,15 +635,15 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#110e3bc8636dpayments_read-payments_write" role="tab" data-toggle="pill">
-        payments_read / payments_write
+      <a href="#d54c5fe65574payments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
+        payments_write_owned / payments_read / payments_write
       </a>
     </li>
   
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="110e3bc8636dpayments_read-payments_write">
+    <div class="tab-pane active" id="d54c5fe65574payments_write_owned-payments_read-payments_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -522,11 +671,11 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T06:58:55Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T06:58:55Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T09:13:58Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T09:13:58Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T06:58:55Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T09:13:58Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -554,8 +703,8 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#a6c07da3dce3payments_write" role="tab" data-toggle="pill">
-        payments_write
+      <a href="#3f658c54e12cpayments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
+        payments_write_owned / payments_write
       </a>
     </li>
   
@@ -575,7 +724,7 @@
       <span class="s2">"locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Monatana"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T06:58:55Z"</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T09:13:58Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -583,7 +732,7 @@
 <h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="a6c07da3dce3payments_write">
+    <div class="tab-pane active" id="3f658c54e12cpayments_write_owned / payments_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -611,11 +760,11 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T06:58:55Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T06:58:55Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T09:13:58Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T09:13:58Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T06:58:55Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T09:13:58Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -643,8 +792,8 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#46e281c69504payments_write" role="tab" data-toggle="pill">
-        payments_write
+      <a href="#6dcbf1c6d572payments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
+        payments_write_owned / payments_write
       </a>
     </li>
   
@@ -664,7 +813,7 @@
       <span class="s2">"locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Monatana"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T06:58:55Z"</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T09:13:58Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -672,7 +821,7 @@
 <h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="46e281c69504payments_write">
+    <div class="tab-pane active" id="6dcbf1c6d572payments_write_owned / payments_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -700,11 +849,11 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T06:58:55Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T06:58:55Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T09:13:58Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T09:13:58Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T06:58:55Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2016-01-31T09:13:58Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -723,7 +872,7 @@
 
 <h3 id="cancel-a-payment">Cancel a payment</h3>
 
-<p>Required OAuth scope: <code>:payments_write</code></p>
+<p>Required OAuth scope: <code>:payments_write_owned</code> or <code>:payments_write</code></p>
 
 <p>Returns an empty response with ‘204 No Content’ status code on success.</p>
 
