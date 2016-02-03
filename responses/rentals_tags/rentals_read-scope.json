@@ -1,6 +1,6 @@
 {
   "links" : {
-    "rentals_tags.account" : "http://test.host/api/v3/accounts/{rentals_tags.account}"
+    "rentals_tags.account" : "https://www.bookingsync.com/api/v3/accounts/{rentals_tags.account}"
   },
   "rentals_tags": [
     {
