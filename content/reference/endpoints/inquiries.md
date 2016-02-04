@@ -117,4 +117,4 @@ PUT /inquiries/:id
 ~~~
 
 <%= render 'json_response', endpoint: "inquiries", request: "request",
-  scopes: %w(inquiries_write_owned) %>
+  scopes: %w(inquiries_write-inquiries_write_owned) %>
