@@ -1,0 +1,21 @@
+{
+  "links": {
+    "bathrooms.rental": "https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"
+  },
+  "bathrooms": [
+    {
+      "links": {
+        "rental": 1
+      },
+      "id": 1,
+      "name": {
+        "en": "bathroom"
+      },
+      "bath_count": 1,
+      "shower_count": 0,
+      "wc_count": 2,
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT"
+    }
+  ]
+}
