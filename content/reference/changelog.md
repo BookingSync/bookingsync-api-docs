@@ -1,5 +1,9 @@
 # Changelog
 
+## 2016-02-05
+
+  * [api improvement] Allow `inquiries_write` to edit `inquiries` unless they are owned by an other application.
+
 ## 2016-01-31
 
   * [doc update] Add scope `payments_write_owned` to payments endpoint.
