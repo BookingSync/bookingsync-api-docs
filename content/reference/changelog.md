@@ -4,6 +4,7 @@
 
   * [api improvement] Allow to search by instantly bookable rentals using the `bookable_online` query param.
   * [api improvement] Allow `inquiries_write` to edit `inquiries` unless they are owned by an other application.
+  * [api improvement] Add `bathrooms` and `bedrooms` endpoints.
 
 ## 2016-01-31
 
