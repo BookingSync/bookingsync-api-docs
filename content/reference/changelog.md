@@ -1,5 +1,9 @@
 # Changelog
 
+## 2016-02-06
+
+ * [api improvement] Allow to update the `rental_id` of a given `inquiry`
+
 ## 2016-02-05
 
   * [api improvement] Allow to search by instantly bookable rentals using the `bookable_online` query param.
