@@ -110,6 +110,7 @@
   <li><a href="#implicit-flow">Implicit Flow</a></li>
   <li><a href="#client-credentials-flow">Client Credentials Flow</a></li>
   <li><a href="#authorization-errors">Authorization Errors</a></li>
+  <li><a href="#pre-select-the-account-to-authorize">Pre-Select The Account To Authorize</a></li>
 </ol><h3 id="oauth">OAuth</h3>
 
 <p>The BookingSync API uses <a href="http://oauth.net/2/">OAuth 2.0</a> for authorization.</p>
@@ -132,7 +133,7 @@ refer to <a href="/reference/testing_authorization/">Testing BookingSync Authori
 <h3 id="embedded-application">Embedded Application</h3>
 
 <p>When building applications that are meant to be embedded in the
-BookingSync App Store, keep in mind that the authorization redirect
+BookingSync App Center, keep in mind that the authorization redirect
 can’t be done with a simple 301 redirect.</p>
 
 <p>The BookingSync website serves the <code>X-Frame-Options: DENY</code> header, which
@@ -194,6 +195,8 @@ This is to be used for <strong>Server-Side applications</strong>, with special c
 </li>
       <li>scope - options (<a href="#scopes">details</a>)</li>
       <li>state - optional</li>
+      <li>account_id - optional, used to force which account will be requested to authorize <a href="#pre-select-the-account-to-authorize">more details</a>
+</li>
     </ul>
 </li>
   <li>The user approves your app</li>
@@ -250,6 +253,8 @@ This is recommended for <strong>Client-Side applications</strong>.</p>
 </li>
       <li>scope (<a href="#scopes">details</a>)</li>
       <li>state - optional</li>
+      <li>account_id - optional, used to force which account will be requested to authorize <a href="#pre-select-the-account-to-authorize">more details</a>
+</li>
     </ul>
 </li>
   <li>The user approves your app</li>
@@ -282,6 +287,10 @@ at once.</p>
 <p>When the token used to authorize the request is invalid, expired or revoke, the API will return a
 401 response. When the token is valid, but doesn’t have the scopes necessary to perform requested
 action, the API will return a 403 response.</p>
+
+<h3 id="pre-select-the-account-to-authorize">Pre-Select The Account To Authorize</h3>
+
+<p>When calling your Admin URL, we pass the parameter <code>_bookingsync_account_id</code>. The value of this parameter can be used as the <code>account_id</code> parameter during the authorization process. Doing so will pre-select the account to authorize when using the <a href="#authorization-code-flow">Authorization Code Flow</a> or <a href="#implicit-flow">Implicit Flow</a>.</p>
         </div>
       </div>
     </div>
