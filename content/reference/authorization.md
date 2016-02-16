@@ -25,7 +25,7 @@ refer to [Testing BookingSync Authorization](/reference/testing_authorization/)
 ## Embedded Application
 
 When building applications that are meant to be embedded in the
-BookingSync App Store, keep in mind that the authorization redirect
+BookingSync App Center, keep in mind that the authorization redirect
 can't be done with a simple 301 redirect.
 
 The BookingSync website serves the `X-Frame-Options: DENY` header, which
@@ -86,6 +86,7 @@ The explicit OAuth 2.0 flow consists of the following steps:
   * response_type - must be `code`
   * scope - options ([details](#scopes))
   * state - optional
+  * account_id - optional, used to force which account will be requested to authorize [more details](#pre-select-the-account-to-authorize)
 2. The user approves your app
 3. The user is redirected to **redirect_uri**, with these query string parameters
   * code
@@ -127,6 +128,7 @@ The implicit OAuth 2.0 flow consists of the following steps:
   * response_type - must be `token`
   * scope ([details](#scopes))
   * state - optional
+  * account_id - optional, used to force which account will be requested to authorize [more details](#pre-select-the-account-to-authorize)
 2. The user approves your app
 3. The user is redirected to **redirect_uri**, with these parameters in the hash
   * access_token
@@ -155,3 +157,7 @@ at once.
 When the token used to authorize the request is invalid, expired or revoke, the API will return a
 401 response. When the token is valid, but doesn't have the scopes necessary to perform requested
 action, the API will return a 403 response.
+
+## Pre-Select The Account To Authorize
+
+When calling your Admin URL, we pass the parameter `_bookingsync_account_id`. The value of this parameter can be used as the `account_id` parameter during the authorization process. Doing so will pre-select the account to authorize when using the [Authorization Code Flow](#authorization-code-flow) or [Implicit Flow](#implicit-flow).
