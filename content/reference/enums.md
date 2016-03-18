@@ -106,6 +106,15 @@ zh               | Simplified Chinese
 zh-TW            | Traditional Chinese
 {: class="table table-bordered"}
 
+## Fee kinds
+
+Name                         | Description
+-----------------------------|------------
+fixed                        | Fixed price
+percentage                   | Percentage of the rental price
+{: class="table table-bordered"}
+
+
 ## Payment kinds
 
 Name             | Description
