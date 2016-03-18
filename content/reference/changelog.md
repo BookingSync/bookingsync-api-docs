@@ -3,6 +3,7 @@
 ## 2016-03-18
 
   * [api improvement] Add `fees`, `taxes`, `bookings_fees`, `bookings_taxes`, `rentals_fees`, `rentals_taxes`, `fees_taxes`, `tax_rules` endpoints.
+  * [api improvement] Add more currencies.
 
 ## 2016-02-06
 

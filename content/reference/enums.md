@@ -37,6 +37,7 @@ Canceled         | This booking have been canceled
 
 Currency         | Code
 -----------------|------------
+إ.د              | AED
 A$               | AUD
 R$               | BRL
 C$               | CAD
@@ -45,8 +46,16 @@ Kč               | CZK
 kr               | DKK
 €                | EUR
 £                | GBP
+Ft               | HUF
+Rp               | IDR
+₹                | INR
+¥                | JPY
+RM               | MYR
 NZ$              | NZD
+zł               | PLN
+₽                | RUB
 ฿                | THB
+₴                | UAH
 $                | USD
 {: class="table table-bordered"}
 
