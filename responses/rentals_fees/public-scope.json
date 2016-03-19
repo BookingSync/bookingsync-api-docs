@@ -1,0 +1,23 @@
+{
+  "links": {
+    "rentals_fees.fee": "http://www.bookingsync.com/api/v3/fees/{rentals_fees.fee}",
+    "rentals_fees.rental": "http://www.bookingsync.com/api/v3/rentals/{rentals_fees.rental}"
+  },
+  "rentals_fees": [
+    {
+      "links": {
+        "fee": 9,
+        "rental": 1
+      },
+      "id": 6,
+      "always_applied": true,
+      "end_date": null,
+      "maximum_bookable": 12,
+      "public": false,
+      "required": false,
+      "start_date": null,
+      "created_at": "2015-03-18T09:34:01Z",
+      "updated_at": "2015-03-18T09:34:01Z"
+    }
+  ]
+}

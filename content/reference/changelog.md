@@ -1,5 +1,10 @@
 # Changelog
 
+## 2016-03-18
+
+  * [api improvement] Add `fees`, `taxes`, `bookings_fees`, `bookings_taxes`, `rentals_fees`, `rentals_taxes`, `fees_taxes`, `tax_rules` endpoints.
+  * [api improvement] Add more currencies.
+
 ## 2016-02-06
 
  * [api improvement] Allow to update the `rental_id` of a given `inquiry`
@@ -66,7 +71,7 @@
   * [doc fix] Fix FontAwesome dependency
 
 ## 2015-06-05
-  * [library update] Add 2 PHP libraries: OAuth2 BookingSync PHP and and update REST Request PHP for full compatibility with BookingSync API v3
+  * [library update] Add 2 PHP libraries: OAuth2 BookingSync PHP and update REST Request PHP for full compatibility with BookingSync API v3.
 
 ## 2015-05-08
   * [api improvement] Add `passport` to the `clients` endpoint.
@@ -76,7 +81,7 @@
 
 ## 2015-04-20
   * [doc update] Add video to help getting started with the setup and authorization process.
-  * [doc update] Special Offer discount is a `float` not `integer`
+  * [doc update] Special Offer discount is a `float` not `integer`.
 
 ## 2015-04-15
   * [api improvement] Allow to clone `rates_tables` via API V3.
@@ -89,7 +94,7 @@
   * [doc update] Fix documentation error, `price_public_notes` is an `object`, not a `string`.
 
 ## 2015-03-26
-  * [doc update] Link to deprecated API v1
+  * [doc update] Link to deprecated API v1.
 
 ## 2015-03-18
   * [doc update] Update the list of availability map statuses.

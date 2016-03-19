@@ -1,0 +1,18 @@
+{
+  "links": {
+    "fees_taxes.fee": "http://bookingsync.dev/api/v3/fees/{fees_taxes.fee}",
+    "fees_taxes.tax": "http://bookingsync.dev/api/v3/taxes/{fees_taxes.tax}"
+  },
+  "fees_taxes": [
+    {
+      "links": {
+        "fee": 2,
+        "tax": 2
+      },
+      "id": 3,
+      "tax_included_in_rate": true,
+      "created_at": "2015-08-04T15:23:57Z",
+      "updated_at": "2015-08-04T15:23:57Z"
+    }
+  ]
+}
