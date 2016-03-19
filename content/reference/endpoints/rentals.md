@@ -69,6 +69,8 @@ base_rate_kind                  | String   | Read       | Rental's rate type att
 bathrooms_count                 | Integer  | Read       | Rental's bathrooms count.
 bedrooms_count                  | Integer  | Read       | Rental's bedrooms count.
 bookable_online                 | Boolean  | Read       | Rental's online booking status.
+checkin_details                 | [Object](/reference/enums#formats)     | Read       | Rental's check-in details, list of locales described in [enums section](/reference/enums#locales).
+checkout_details                | [Object](/reference/enums#formats)     | Read       | Rental's check-out details, list of locales described in [enums section](/reference/enums#locales).
 checkin_time                    | Integer  | Read       | Rental's checkin time.
 checkout_time                   | Integer  | Read       | Rental's checkout time.
 city                            | String   | Read       | Rental's city.
@@ -122,6 +124,8 @@ base_rate_kind                  | String   | Read/Write | Rental's rate type att
 bathrooms_count                 | Integer  | Read/Write | Rental's bathrooms count. (between 0 and 100)
 bedrooms_count                  | Integer  | Read/Write | Rental's bedrooms count. (between 0 and 100)
 bookable_online                 | Boolean  | Read       | Rental's online booking status.
+checkin_details                 | [Object](/reference/enums#formats)     | Read/Write       | Rental's check-in details, list of locales described in [enums section](/reference/enums#locales).
+checkout_details                | [Object](/reference/enums#formats)     | Read/Write       | Rental's check-out details, list of locales described in [enums section](/reference/enums#locales).
 checkin_time                    | Integer  | Read       | Rental's checkin time.
 checkout_time                   | Integer  | Read       | Rental's checkout time.
 city                            | String   | Read/Write | Rental's city.
