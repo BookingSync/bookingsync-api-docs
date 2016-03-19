@@ -2,12 +2,9 @@
 
 ## 2016-03-19
 
-  * [api improvement] Add `checkin_details` and `checkout_details` to rentals. Requires `rentals_read` or `rentals_write` scope as this data should not be shared before the booking is confirmed.
-
-## 2016-03-18
-
   * [api improvement] Add `fees`, `taxes`, `bookings_fees`, `bookings_taxes`, `rentals_fees`, `rentals_taxes`, `fees_taxes`, `tax_rules` endpoints.
   * [api improvement] Add more currencies.
+  * [api improvement] Add `checkin_details` and `checkout_details` to rentals. Requires `rentals_read` or `rentals_write` scope as this data should not be shared before the booking is confirmed.
 
 ## 2016-02-06
 
