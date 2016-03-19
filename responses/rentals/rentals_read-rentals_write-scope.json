@@ -77,6 +77,12 @@
       "address1": "58 Ville Haute",
       "address2": null,
       "zip": "05100",
+      "checkin_details": {
+        "en": "Please call us 15 min before your arrival so we can welcome you at the villa."
+      },
+      "checkout_details": {
+        "en": "Please confirm us your departure time the day before so we can wish you a good travel back in person."
+      },
       "checkin_time": 16,
       "checkout_time": 10,
       "initial_price": null,
