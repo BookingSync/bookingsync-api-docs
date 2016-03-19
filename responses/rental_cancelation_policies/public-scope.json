@@ -1,0 +1,23 @@
+{
+  "links": {
+    "rental_cancelation_policies.rental": "https://www.bookingsync.com/api/v3/rentals/{rental_cancelation_policies.rental}",
+    "rental_cancelation_policies.rental_cancelation_policy_items": "https://www.bookingsync.com/api/v3/rental_cancelation_policy_items/{rental_cancelation_policies.rental_cancelation_policy_items}"
+  },
+  "rental_cancelation_policies": [
+    {
+      "links": {
+        "rental": 1,
+        "rental_cancelation_policy_items": [
+          1,
+          2
+        ]
+      },
+      "id": 1,
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT",
+      "body_translations": {
+        "en": "CANCELLATIONS. \nAny cancellation must be sent by registered letter, on strength of postmark."
+      }
+    }
+  ]
+}
