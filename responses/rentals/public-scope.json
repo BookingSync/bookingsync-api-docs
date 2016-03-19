@@ -107,7 +107,8 @@
       "final_price": null,
       "position": 1,
       "absolute_min_price": "300.0",
-      "stories_count": 2
+      "stories_count": 2,
+      "floor": "A"
     }
   ],
   "meta": {
