@@ -106,7 +106,17 @@ zh               | Simplified Chinese
 zh-TW            | Traditional Chinese
 {: class="table table-bordered"}
 
+
 ## Fee kinds
+
+Name                         | Description
+-----------------------------|------------
+cleaning                     | Cleaning fee
+other                        | Any other type of fee
+{: class="table table-bordered"}
+
+
+## Fee rate kinds
 
 Name                         | Description
 -----------------------------|------------

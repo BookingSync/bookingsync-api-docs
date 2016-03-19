@@ -16,9 +16,9 @@ id               | Integer | Read       | Fee's id.
 -----------------|---------|------------|------------
 downpayment_percentage | [Decimal](/reference/enums#formats) | Read       | Fee's downpayment_percentage.
 name             | [Object](/reference/enums#formats)   | Read       | Fee's name, list of locales described in [enums section](/reference/enums#locales).
-kind             | String  | Read       | Fee's kind. Can be `cleaning` or `other`.
+kind             | String  | Read       | Fee's kind, list of fee's kinds described in [enums section](/reference/enums#fee-kinds)
 rate             | [Decimal](/reference/enums#formats)  | Read       | Fee's rate.
-rate_kind        | String  | Read       | Fee's rate kind, list of fee's kinds described in [enums section](/reference/enums#fee-kinds).
+rate_kind        | String  | Read       | Fee's rate kind, list of fee's rate kinds described in [enums section](/reference/enums#fee-rate-kinds).
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read         | Fee's create time.
 updated_at       | [Time](/reference/enums#formats) | Read         | Fee's update time.
