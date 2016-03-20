@@ -69,9 +69,13 @@
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item active" href="/reference/endpoints/bedrooms/">Bedrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_taxes/">Bookings Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
           <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
+          <a class="list-group-item" href="/reference/endpoints/fees/">Fees</a>
+          <a class="list-group-item" href="/reference/endpoints/fees_taxes/">Fees Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
           <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
@@ -82,11 +86,15 @@
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_taxes/">Rentals Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
           <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
           <a class="list-group-item" href="/reference/endpoints/sources/">Sources</a>
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
+          <a class="list-group-item" href="/reference/endpoints/taxes/">Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/tax_rules/">Tax Rules</a>
         </div>
         <div class="panel-heading">
           <h3 class="panel-title">Deprecated APIs</h3>
@@ -275,7 +283,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#e51af9e2931epublic" role="tab" data-toggle="pill">
+      <a href="#192008cb8a36public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -283,7 +291,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="e51af9e2931epublic">
+    <div class="tab-pane active" id="192008cb8a36public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bedrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bedrooms.rental}"</span>
@@ -300,8 +308,8 @@
       <span class="s2">"queensize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"single_beds_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"sofa_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-02-16T17:33:06Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-02-16T17:33:06Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-03-20T12:15:01Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-03-20T12:15:01Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -323,7 +331,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#8aec4e3a3e0bpublic" role="tab" data-toggle="pill">
+      <a href="#6694ea9f2c9cpublic" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -331,7 +339,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="8aec4e3a3e0bpublic">
+    <div class="tab-pane active" id="6694ea9f2c9cpublic">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bedrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bedrooms.rental}"</span>
@@ -348,8 +356,8 @@
       <span class="s2">"queensize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"single_beds_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"sofa_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-02-16T17:33:06Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-02-16T17:33:06Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-03-20T12:15:01Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-03-20T12:15:01Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -371,7 +379,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#9956caea40e0rentals_write" role="tab" data-toggle="pill">
+      <a href="#9fb6cd44a23drentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
@@ -394,7 +402,7 @@
 <h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="9956caea40e0rentals_write">
+    <div class="tab-pane active" id="9fb6cd44a23drentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bedrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bedrooms.rental}"</span>
@@ -411,8 +419,8 @@
       <span class="s2">"queensize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"single_beds_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"sofa_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-02-16T17:33:06Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-02-16T17:33:06Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-03-20T12:15:01Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-03-20T12:15:01Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -434,7 +442,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#92705e764f7brentals_write" role="tab" data-toggle="pill">
+      <a href="#9e00bfce41barentals_write" role="tab" data-toggle="pill">
         rentals_write
       </a>
     </li>
@@ -457,7 +465,7 @@
 <h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="92705e764f7brentals_write">
+    <div class="tab-pane active" id="9e00bfce41barentals_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bedrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bedrooms.rental}"</span>
@@ -474,8 +482,8 @@
       <span class="s2">"queensize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"single_beds_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"sofa_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-02-16T17:33:06Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-02-16T17:33:06Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-03-20T12:15:01Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-03-20T12:15:01Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>

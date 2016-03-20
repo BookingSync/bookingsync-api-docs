@@ -69,9 +69,13 @@
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_taxes/">Bookings Taxes</a>
           <a class="list-group-item active" href="/reference/endpoints/clients/">Clients</a>
           <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
+          <a class="list-group-item" href="/reference/endpoints/fees/">Fees</a>
+          <a class="list-group-item" href="/reference/endpoints/fees_taxes/">Fees Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
           <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
@@ -82,11 +86,15 @@
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_taxes/">Rentals Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
           <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
           <a class="list-group-item" href="/reference/endpoints/sources/">Sources</a>
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
+          <a class="list-group-item" href="/reference/endpoints/taxes/">Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/tax_rules/">Tax Rules</a>
         </div>
         <div class="panel-heading">
           <h3 class="panel-title">Deprecated APIs</h3>
@@ -467,7 +475,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#502283c352fbclients_read-clients_write" role="tab" data-toggle="pill">
+      <a href="#212673e5db1bclients_read-clients_write" role="tab" data-toggle="pill">
         clients_read / clients_write
       </a>
     </li>
@@ -475,7 +483,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="502283c352fbclients_read-clients_write">
+    <div class="tab-pane active" id="212673e5db1bclients_read-clients_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -541,7 +549,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#b9b7519cd4bdclients_read-clients_write" role="tab" data-toggle="pill">
+      <a href="#2bc46d2df13eclients_read-clients_write" role="tab" data-toggle="pill">
         clients_read / clients_write
       </a>
     </li>
@@ -549,7 +557,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="b9b7519cd4bdclients_read-clients_write">
+    <div class="tab-pane active" id="2bc46d2df13eclients_read-clients_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -615,7 +623,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#cbdedf00bb8cclients_write" role="tab" data-toggle="pill">
+      <a href="#e78dc877f77bclients_write" role="tab" data-toggle="pill">
         clients_write
       </a>
     </li>
@@ -668,7 +676,7 @@
 <h4 id="response-2">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="cbdedf00bb8cclients_write">
+    <div class="tab-pane active" id="e78dc877f77bclients_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -740,7 +748,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#16b5e8add615clients_write" role="tab" data-toggle="pill">
+      <a href="#1895a9d7e69fclients_write" role="tab" data-toggle="pill">
         clients_write
       </a>
     </li>
@@ -793,7 +801,7 @@
 <h4 id="response-3">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="16b5e8add615clients_write">
+    <div class="tab-pane active" id="1895a9d7e69fclients_write">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>

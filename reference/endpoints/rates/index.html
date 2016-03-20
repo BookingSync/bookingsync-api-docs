@@ -69,9 +69,13 @@
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_taxes/">Bookings Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
           <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
+          <a class="list-group-item" href="/reference/endpoints/fees/">Fees</a>
+          <a class="list-group-item" href="/reference/endpoints/fees_taxes/">Fees Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
           <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
@@ -82,11 +86,15 @@
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_taxes/">Rentals Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
           <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
           <a class="list-group-item" href="/reference/endpoints/sources/">Sources</a>
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
+          <a class="list-group-item" href="/reference/endpoints/taxes/">Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/tax_rules/">Tax Rules</a>
         </div>
         <div class="panel-heading">
           <h3 class="panel-title">Deprecated APIs</h3>
@@ -220,7 +228,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#5593a167057apublic" role="tab" data-toggle="pill">
+      <a href="#c9305d188a0apublic" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -228,7 +236,7 @@
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="5593a167057apublic">
+    <div class="tab-pane active" id="c9305d188a0apublic">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rates.rental}"</span>
@@ -244,10 +252,10 @@
       <span class="s2">"initial_nightly_rate"</span><span class="o">:</span> <span class="s2">"100.0"</span><span class="p">,</span>
       <span class="s2">"initial_weekly_rate"</span><span class="o">:</span> <span class="s2">"700.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-02-16T17:33:07Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-02-16T17:33:07Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2016-02-23"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2016-10-29"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-03-20T12:15:02Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-03-20T12:15:02Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2016-03-27"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2016-12-01"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">14</span>
       <span class="p">}</span>
@@ -293,7 +301,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#288d8cf33862public" role="tab" data-toggle="pill">
+      <a href="#9899ca5c07f9public" role="tab" data-toggle="pill">
         public
       </a>
     </li>
@@ -301,7 +309,7 @@
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="288d8cf33862public">
+    <div class="tab-pane active" id="9899ca5c07f9public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rates.rental}"</span>
@@ -317,10 +325,10 @@
       <span class="s2">"initial_nightly_rate"</span><span class="o">:</span> <span class="s2">"100.0"</span><span class="p">,</span>
       <span class="s2">"initial_weekly_rate"</span><span class="o">:</span> <span class="s2">"700.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-02-16T17:33:07Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-02-16T17:33:07Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2016-02-23"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2016-10-29"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-03-20T12:15:02Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-03-20T12:15:02Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2016-03-27"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2016-12-01"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">14</span>
       <span class="p">}</span>

@@ -70,11 +70,11 @@
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
-          <a class="list-group-item active" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_taxes/">Bookings Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
           <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
-          <a class="list-group-item" href="/reference/endpoints/fees/">Fees</a>
+          <a class="list-group-item active" href="/reference/endpoints/fees/">Fees</a>
           <a class="list-group-item" href="/reference/endpoints/fees_taxes/">Fees Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
           <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
@@ -107,19 +107,17 @@
     <div class="col-md-9 col-md-pull-3">
       <div class="panel panel-default">
         <div class="panel-body reference-body">
-          <h2 id="bookings-payments">Bookings Payments</h2>
+          <h2 id="fees">Fees</h2>
 
 <ol id="markdown-toc">
-<li><a href="#list-bookings-payments">List bookings payments</a></li>
-  <li><a href="#get-a-single-bookings-payment">Get a single bookings payment</a></li>
+<li><a href="#list-fees">List fees</a></li>
+  <li><a href="#get-a-single-fee">Get a single fee</a></li>
 </ol><h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
-  <li class="active"><a href="#payments_read-payments_write" role="tab" data-toggle="pill">
-    payments_read / payments_write
-  </a></li>
+  <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
 </ul><div class="tab-content">
-  <div class="tab-pane active" id="payments_read-payments_write">
+  <div class="tab-pane active" id="public">
     <table class="table table-bordered">
 <thead><tr>
 <th>Name</th>
@@ -131,20 +129,39 @@
 <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Bookings Payment’s id.</td>
+          <td>Fee’s id.</td>
         </tr></tbody>
 <tbody>
 <tr>
-<td>amount_in_cents</td>
-          <td>Integer</td>
+<td>downpayment_percentage</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
-          <td>Bookings Payment’s value.</td>
+          <td>Fee’s downpayment_percentage.</td>
         </tr>
 <tr>
-<td>currency</td>
+<td>name</td>
+          <td><a href="/reference/enums#formats">Object</a></td>
+          <td>Read</td>
+          <td>Fee’s name, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td>kind</td>
           <td>String</td>
           <td>Read</td>
-          <td>Bookings Payment’s currency code, list of codes described in <a href="/reference/enums#currencies">enums section</a>.</td>
+          <td>Fee’s kind, list of fee’s kinds described in <a href="/reference/enums#fee-kinds">enums section</a>
+</td>
+        </tr>
+<tr>
+<td>rate</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Fee’s rate.</td>
+        </tr>
+<tr>
+<td>rate_kind</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Fee’s rate kind, list of fee’s rate kinds described in <a href="/reference/enums#fee-rate-kinds">enums section</a>.</td>
         </tr>
 </tbody>
 <tbody>
@@ -152,56 +169,57 @@
 <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Bookings Payment’s create time.</td>
+          <td>Fee’s create time.</td>
         </tr>
 <tr>
 <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Bookings Payment’s update time.</td>
+          <td>Fee’s update time.</td>
         </tr>
 </tbody>
 </table>
 </div>
 </div>
 
-<h3 id="list-bookings-payments">List bookings payments</h3>
+<h3 id="list-fees">List fees</h3>
 
-<p>List all bookings payments for given account.</p>
+<p>List all fees for given account(s).</p>
 
-<pre><code>GET /bookings_payments
+<pre><code>GET /fees
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#d261542bf434payments_read-payments_write" role="tab" data-toggle="pill">
-        payments_read / payments_write
+      <a href="#03588c276751public" role="tab" data-toggle="pill">
+        public
       </a>
     </li>
   
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="d261542bf434payments_read-payments_write">
+    <div class="tab-pane active" id="03588c276751public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"bookings_payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_payments.account}"</span><span class="p">,</span>
-    <span class="s2">"bookings_payments.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{bookings_payments.booking}"</span><span class="p">,</span>
-    <span class="s2">"bookings_payments.payment"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payments/{bookings_payments.payment}"</span>
+    <span class="s2">"fees.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{fees.account}"</span>
   <span class="p">},</span>
-  <span class="s2">"bookings_payments"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"fees"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
-      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-03-20T12:15:01Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-03-20T12:15:01Z"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
+      <span class="s2">"downpayment_percentage"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
+      <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"other"</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Fee"</span>
+      <span class="p">},</span>
+      <span class="s2">"rate"</span><span class="o">:</span> <span class="s2">"12.0"</span><span class="p">,</span>
+      <span class="s2">"rate_kind"</span><span class="o">:</span> <span class="s2">"fixed"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-03-18T09:33:45Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-03-18T09:33:45Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">44</span><span class="p">,</span>
-        <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">22</span><span class="p">,</span>
-        <span class="s2">"payment"</span><span class="o">:</span> <span class="mi">11</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -210,43 +228,44 @@
   
 </div>
 
-<h3 id="get-a-single-bookings-payment">Get a single bookings payment</h3>
+<h3 id="get-a-single-fee">Get a single fee</h3>
 
-<p>Returns a single bookings payment identified by ID.</p>
+<p>Returns a single fee identified by ID.</p>
 
-<pre><code>GET /bookings_payments/:bookings_payment_id
+<pre><code>GET /fees/:fee_id
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#31fcc94afe4cpayments_read-payments_write" role="tab" data-toggle="pill">
-        payments_read / payments_write
+      <a href="#9f8f33d5af6cpublic" role="tab" data-toggle="pill">
+        public
       </a>
     </li>
   
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="31fcc94afe4cpayments_read-payments_write">
+    <div class="tab-pane active" id="9f8f33d5af6cpublic">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"bookings_payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_payments.account}"</span><span class="p">,</span>
-    <span class="s2">"bookings_payments.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{bookings_payments.booking}"</span><span class="p">,</span>
-    <span class="s2">"bookings_payments.payment"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payments/{bookings_payments.payment}"</span>
+    <span class="s2">"fees.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{fees.account}"</span>
   <span class="p">},</span>
-  <span class="s2">"bookings_payments"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"fees"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
-      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-03-20T12:15:01Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-03-20T12:15:01Z"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
+      <span class="s2">"downpayment_percentage"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
+      <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"other"</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Fee"</span>
+      <span class="p">},</span>
+      <span class="s2">"rate"</span><span class="o">:</span> <span class="s2">"12.0"</span><span class="p">,</span>
+      <span class="s2">"rate_kind"</span><span class="o">:</span> <span class="s2">"fixed"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-03-18T09:33:45Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-03-18T09:33:45Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">44</span><span class="p">,</span>
-        <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">22</span><span class="p">,</span>
-        <span class="s2">"payment"</span><span class="o">:</span> <span class="mi">11</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>

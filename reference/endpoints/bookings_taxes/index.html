@@ -70,8 +70,8 @@
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
-          <a class="list-group-item active" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
-          <a class="list-group-item" href="/reference/endpoints/bookings_taxes/">Bookings Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+          <a class="list-group-item active" href="/reference/endpoints/bookings_taxes/">Bookings Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
           <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
           <a class="list-group-item" href="/reference/endpoints/fees/">Fees</a>
@@ -107,19 +107,17 @@
     <div class="col-md-9 col-md-pull-3">
       <div class="panel panel-default">
         <div class="panel-body reference-body">
-          <h2 id="bookings-payments">Bookings Payments</h2>
+          <h2 id="bookings-taxes">Bookings Taxes</h2>
 
 <ol id="markdown-toc">
-<li><a href="#list-bookings-payments">List bookings payments</a></li>
-  <li><a href="#get-a-single-bookings-payment">Get a single bookings payment</a></li>
+<li><a href="#list-bookings-taxes">List bookings taxes</a></li>
+  <li><a href="#get-a-single-bookings-tax">Get a single bookings tax</a></li>
 </ol><h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
-  <li class="active"><a href="#payments_read-payments_write" role="tab" data-toggle="pill">
-    payments_read / payments_write
-  </a></li>
+  <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
 </ul><div class="tab-content">
-  <div class="tab-pane active" id="payments_read-payments_write">
+  <div class="tab-pane active" id="public">
     <table class="table table-bordered">
 <thead><tr>
 <th>Name</th>
@@ -131,125 +129,139 @@
 <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Bookings Payment’s id.</td>
+          <td>Bookings Tax’s id.</td>
         </tr></tbody>
 <tbody>
 <tr>
-<td>amount_in_cents</td>
-          <td>Integer</td>
+<td>amount</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
-          <td>Bookings Payment’s value.</td>
+          <td>Bookings Tax’s amount.</td>
         </tr>
 <tr>
-<td>currency</td>
-          <td>String</td>
+<td>name</td>
+          <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read</td>
-          <td>Bookings Payment’s currency code, list of codes described in <a href="/reference/enums#currencies">enums section</a>.</td>
-        </tr>
-</tbody>
-<tbody>
-<tr>
-<td>created_at</td>
-          <td><a href="/reference/enums#formats">Time</a></td>
-          <td>Read</td>
-          <td>Bookings Payment’s create time.</td>
+          <td>Bookings Tax’s name, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
         </tr>
 <tr>
-<td>updated_at</td>
-          <td><a href="/reference/enums#formats">Time</a></td>
+<td>percentage</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
-          <td>Bookings Payment’s update time.</td>
+          <td>Bookings Tax’s percentage.</td>
+        </tr>
+<tr>
+<td>tax_included_in_price</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Tax amount already included in taxable(Rental or Bookings Fee) price if set to true.</td>
         </tr>
 </tbody>
 </table>
 </div>
 </div>
 
-<h3 id="list-bookings-payments">List bookings payments</h3>
+<h3 id="list-bookings-taxes">List bookings taxes</h3>
 
-<p>List all bookings payments for given account.</p>
+<p>List all bookings taxes for given account(s).</p>
 
-<pre><code>GET /bookings_payments
+<pre><code>GET /bookings_taxes
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#d261542bf434payments_read-payments_write" role="tab" data-toggle="pill">
-        payments_read / payments_write
+      <a href="#85871bcbd8e7public" role="tab" data-toggle="pill">
+        public
       </a>
     </li>
   
 </ul><h4 id="response">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="d261542bf434payments_read-payments_write">
+    <div class="tab-pane active" id="85871bcbd8e7public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"bookings_payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_payments.account}"</span><span class="p">,</span>
-    <span class="s2">"bookings_payments.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{bookings_payments.booking}"</span><span class="p">,</span>
-    <span class="s2">"bookings_payments.payment"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payments/{bookings_payments.payment}"</span>
+    <span class="s2">"bookings_taxes.booking"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/bookings/{bookings_taxes.booking}"</span><span class="p">,</span>
+    <span class="s2">"bookings_taxes.fee"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/fees/{bookings_taxes.taxable.id}"</span><span class="p">,</span>
+    <span class="s2">"bookings_taxes.rental"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/rentals/{bookings_taxes.taxable.id}"</span><span class="p">,</span>
+    <span class="s2">"bookings_taxes.tax"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/taxes/{bookings_taxes.tax}"</span>
   <span class="p">},</span>
-  <span class="s2">"bookings_payments"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"bookings_taxes"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
-      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-03-20T12:15:01Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-03-20T12:15:01Z"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">52</span><span class="p">,</span>
+      <span class="s2">"amount"</span><span class="o">:</span> <span class="s2">"1565.2"</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Bookings Tax"</span>
+      <span class="p">},</span>
+      <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"455.0"</span><span class="p">,</span>
+      <span class="s2">"tax_included_in_price"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">44</span><span class="p">,</span>
-        <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">22</span><span class="p">,</span>
-        <span class="s2">"payment"</span><span class="o">:</span> <span class="mi">11</span>
+        <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">1382</span><span class="p">,</span>
+        <span class="s2">"tax"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s2">"taxable"</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"Rental"</span>
+        <span class="p">}</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
     </div>
   
 </div>
 
-<h3 id="get-a-single-bookings-payment">Get a single bookings payment</h3>
+<h3 id="get-a-single-bookings-tax">Get a single bookings tax</h3>
 
-<p>Returns a single bookings payment identified by ID.</p>
+<p>Returns a single bookings tax identified by ID.</p>
 
-<pre><code>GET /bookings_payments/:bookings_payment_id
+<pre><code>GET /bookings_taxes/:bookings_tax_id
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
   
     <li class="active">
-      <a href="#31fcc94afe4cpayments_read-payments_write" role="tab" data-toggle="pill">
-        payments_read / payments_write
+      <a href="#706e37a25bb6public" role="tab" data-toggle="pill">
+        public
       </a>
     </li>
   
 </ul><h4 id="response-1">Response</h4>
 <div class="tab-content">
   
-    <div class="tab-pane active" id="31fcc94afe4cpayments_read-payments_write">
+    <div class="tab-pane active" id="706e37a25bb6public">
       <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"bookings_payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_payments.account}"</span><span class="p">,</span>
-    <span class="s2">"bookings_payments.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{bookings_payments.booking}"</span><span class="p">,</span>
-    <span class="s2">"bookings_payments.payment"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payments/{bookings_payments.payment}"</span>
+    <span class="s2">"bookings_taxes.booking"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/bookings/{bookings_taxes.booking}"</span><span class="p">,</span>
+    <span class="s2">"bookings_taxes.fee"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/fees/{bookings_taxes.taxable.id}"</span><span class="p">,</span>
+    <span class="s2">"bookings_taxes.rental"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/rentals/{bookings_taxes.taxable.id}"</span><span class="p">,</span>
+    <span class="s2">"bookings_taxes.tax"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/taxes/{bookings_taxes.tax}"</span>
   <span class="p">},</span>
-  <span class="s2">"bookings_payments"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"bookings_taxes"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
-      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-03-20T12:15:01Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-03-20T12:15:01Z"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">52</span><span class="p">,</span>
+      <span class="s2">"amount"</span><span class="o">:</span> <span class="s2">"1565.2"</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Bookings Tax"</span>
+      <span class="p">},</span>
+      <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"455.0"</span><span class="p">,</span>
+      <span class="s2">"tax_included_in_price"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">44</span><span class="p">,</span>
-        <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">22</span><span class="p">,</span>
-        <span class="s2">"payment"</span><span class="o">:</span> <span class="mi">11</span>
+        <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">1382</span><span class="p">,</span>
+        <span class="s2">"tax"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s2">"taxable"</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"Rental"</span>
+        <span class="p">}</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
     </div>
   
