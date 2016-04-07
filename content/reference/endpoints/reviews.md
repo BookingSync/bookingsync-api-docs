@@ -66,5 +66,5 @@ Creates a review for given booking.
 POST /bookings/:booking_id/reviews
 ~~~
 
-<%= render 'json_response', endpoint: "reviews", request: "request",
+<%= render 'json_response', endpoint: "reviews", request: "create",
   scopes: [{ reviews_write: "public-reviews_write" }] %>

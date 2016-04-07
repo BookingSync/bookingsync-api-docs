@@ -75,7 +75,7 @@ Creates a rates rule for given rates table.
 POST /rates_tables/:rates_table_id/rates_rules
 ~~~
 
-<%= render 'json_response', endpoint: "rates_rules", request: "request",
+<%= render 'json_response', endpoint: "rates_rules", request: "create",
   scopes: [{ rates_write: "rates_read-rates_write" }] %>
 
 ## Update a rates rule
@@ -86,7 +86,7 @@ Returns an updated rates rule identified by ID.
 PUT /rates_rules/:rates_table_id
 ~~~
 
-<%= render 'json_response', endpoint: "rates_rules", request: "request",
+<%= render 'json_response', endpoint: "rates_rules", request: "update",
   scopes: [{ rates_write: "rates_read-rates_write" }] %>
 
 ## Destroy a rates rule

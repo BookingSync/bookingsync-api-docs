@@ -181,7 +181,7 @@ Creates a booking for given rental.
 POST /rentals/:rental_id/bookings
 ~~~~
 
-<%= render 'json_response', endpoint: "bookings", request: "request",
+<%= render 'json_response', endpoint: "bookings", request: "create",
   scopes: [
     { bookings_write_owned: "public-bookings_write_owned" },
     { bookings_write: "bookings_read-bookings_write" }
@@ -194,7 +194,7 @@ POST /rentals/:rental_id/bookings
   _**Note**: the sum of `initial_price` plus `bookings_fees` (`price * times_booked`) and `bookings_taxes` (`amount`) minus `discount` must equal the given `final_price`. Otherwise booking is not valid._
 </div>
 
-<%= render 'json_response', endpoint: "bookings", request: "request_with_fees_and_taxes",
+<%= render 'json_response', endpoint: "bookings", request: "create_with_fees_and_taxes",
   scopes: [
     { bookings_write: "bookings_read-bookings_write_with_fees_and_taxes" }
   ] %>
@@ -207,7 +207,7 @@ Returns an updated booking identified by ID.
 PUT /bookings/:booking_id
 ~~~
 
-<%= render 'json_response', endpoint: "bookings", request: "request",
+<%= render 'json_response', endpoint: "bookings", request: "update",
   scopes: [
     { bookings_write_owned: "public-bookings_write_owned" },
     { bookings_write: "bookings_read-bookings_write" }

@@ -279,7 +279,7 @@ Returns a newly created rental.
 POST /rentals
 ~~~~
 
-<%= render 'json_response', endpoint: "rentals", request: "request",
+<%= render 'json_response', endpoint: "rentals", request: "create",
   scopes: [{ rentals_write: "rentals_read-rentals_write" }] %>
 
 ## Update a rental
@@ -297,7 +297,7 @@ Returns an updated rental identified by ID.
 PUT /rentals/:rental_id
 ~~~
 
-<%= render 'json_response', endpoint: "rentals", request: "request",
+<%= render 'json_response', endpoint: "rentals", request: "update",
   scopes: [{ rentals_write: "rentals_read-rentals_write" }] %>
 
 ## Destroy a rental

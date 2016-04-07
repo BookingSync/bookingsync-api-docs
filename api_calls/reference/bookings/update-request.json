@@ -1,0 +1,15 @@
+{
+  "bookings": [
+    {
+      "booked": true,
+      "client_id": 37,
+      "adults": 5,
+      "currency": "USD",
+      "discount": "10%",
+      "final_price": "2700.0",
+      "initial_price": "3000.0",
+      "start_at": "START_AT",
+      "end_at": "END_AT"
+    }
+  ]
+}

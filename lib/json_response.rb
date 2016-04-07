@@ -1,8 +1,8 @@
 require 'json'
 
 module JsonResponse
-  def json_response(name)
-    response = File.read("responses/#{name}.json")
+  def json_response(name, resource_name)
+    response = File.read("api_calls/#{name}.json")
     vars = {
       created_at: Time.now.utc,
       updated_at: Time.now.utc,
@@ -18,8 +18,7 @@ module JsonResponse
       response = response.gsub(key.to_s.upcase, value.to_s)
     end
 
-    endpoint = name.split("/").first
-    sorted_response = sort_response(JSON.parse(response), endpoint)
+    sorted_response = sort_response(JSON.parse(response), resource_name)
     json = JSON.pretty_generate(sorted_response)
     %Q{<pre><code class="language-javascript">#{json}</code></pre>}
   end
@@ -28,9 +27,9 @@ module JsonResponse
     Time.now.utc + 86400 * days
   end
 
-  def sort_response(response, endpoint)
+  def sort_response(response, resource_name)
     sorted_links = sort_element(response, "links")
-    sorted_resource = { endpoint => response[endpoint].map { |resource| sort_resource(resource) } }
+    sorted_resource = { resource_name => response[resource_name].map { |resource| sort_resource(resource) } }
     sorted_meta = sort_element(response, "meta")
 
     sorted_links.merge(sorted_resource).merge(sorted_meta)

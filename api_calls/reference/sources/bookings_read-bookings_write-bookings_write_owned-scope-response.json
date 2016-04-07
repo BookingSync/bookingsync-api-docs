@@ -1,0 +1,22 @@
+{
+  "links": {
+    "sources.account":"https://www.bookingsync.com/api/v3/accounts/{sources.account}",
+    "sources.bookings":"https://www.bookingsync.com/api/v3/bookings/{sources.bookings}"
+  },
+  "sources": [
+    {
+      "links": {
+        "account": 1,
+        "bookings": [
+          1,
+          3
+        ]
+      },
+      "id": 1,
+      "name": "Airbnb",
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT",
+      "position": 1
+    }
+  ]
+}
