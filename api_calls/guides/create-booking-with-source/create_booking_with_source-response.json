@@ -1,0 +1,50 @@
+{
+  "links": {
+    "bookings.account": "https://www.bookingsync.com/api/v3/accounts/{bookings.account}",
+    "bookings.rental": "https://www.bookingsync.com/api/v3/rentals/{bookings.rental}",
+    "bookings.client": "https://www.bookingsync.com/api/v3/clients/{bookings.client}",
+    "bookings.rental_agreement": "https://www.bookingsync.com/api/v3/rental_agreements/{bookings.rental_agreement}",
+    "bookings.source": "https://www.bookingsync.com/api/v3/sources/{bookings.source}",
+    "bookings.bookings_fees": "https://www.bookingsync.com/api/v3/bookings_fees/{bookings.bookings_fees}",
+    "bookings.bookings_taxes": "https://www.bookingsync.com/api/v3/bookings_taxes/{bookings.bookings_taxes}",
+    "bookings.bookings_tags": "https://www.bookingsync.com/api/v3/bookings_tags/{bookings.bookings_tags}"
+  },
+  "bookings": [
+    {
+      "links": {
+        "account": 1,
+        "rental": 1,
+        "client": 1,
+        "rental_agreement": null,
+        "source": 2,
+        "bookings_fees": [],
+        "bookings_taxes": [],
+        "bookings_tags": []
+      },
+      "id": 1,
+      "start_at": "START_AT",
+      "end_at": "END_AT",
+      "status": "Booked",
+      "updated_at": "UPDATED_AT",
+      "booked": true,
+      "unavailable": false,
+      "tentative_expires_at": null,
+      "initial_price": "3000.0",
+      "discount": null,
+      "final_price": "3000.0",
+      "downpayment": null,
+      "paid_amount": "0.0",
+      "currency": "EUR",
+      "notes": "",
+      "adults": 2,
+      "children": 3,
+      "bookings_payments_count": 0,
+      "review_requests_count": 0,
+      "locked": null,
+      "created_at": "CREATED_AT",
+      "canceled_at": null
+    }
+  ],
+  "meta": {
+  }
+}
