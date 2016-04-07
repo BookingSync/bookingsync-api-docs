@@ -34,6 +34,9 @@
 
           <div class="collapse navbar-collapse" id="navigation">
             <ul class="nav navbar-nav navbar-right">
+              <li class="<%= "active" if @item_rep.path.start_with?("/guides/") %>">
+                <a href="/guides/">Guides</a>
+              </li>
               <li class="<%= "active" if @item_rep.path.start_with?("/reference/") %>">
                 <a href="/reference/">API Reference</a>
               </li>

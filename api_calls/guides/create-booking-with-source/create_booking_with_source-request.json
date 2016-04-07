@@ -1,0 +1,16 @@
+{
+  "bookings": [
+    {
+      "booked": true,
+      "client_id": 1,
+      "source_id": 2,
+      "adults": 2,
+      "children": 3,
+      "currency": "EUR",
+      "final_price": "3000.0",
+      "initial_price": "3000.0",
+      "start_at": "START_AT",
+      "end_at": "END_AT"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+<%= render 'head' %>
+<div class="container content">
+  <div class="row">
+    <div class="col-md-3 col-md-push-9">
+      <div class="panel panel-default">
+        <div class="list-group">
+          <%= link_to_with_current("Introduction", "/guides/",
+            class: "list-group-item") %>
+          <%= link_to_with_current("Create Booking with source", "/guides/create-booking-with-source",
+            class: "list-group-item") %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 col-md-pull-3">
+      <div class="panel panel-default">
+        <div class="panel-body guide-body">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render 'foot' %>
