@@ -76,7 +76,7 @@ Creates a bedroom for given rental.
 POST /rentals/:rental_id/bedrooms
 ~~~
 
-<%= render 'json_response', endpoint: "bedrooms", request: "request",
+<%= render 'json_response', endpoint: "bedrooms", request: "create",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Update a bedroom
@@ -87,7 +87,7 @@ Returns an updated bedroom identified by ID.
 PUT /bedrooms/:bedroom_id
 ~~~
 
-<%= render 'json_response', endpoint: "bedrooms", request: "request",
+<%= render 'json_response', endpoint: "bedrooms", request: "update",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Destroy a bedroom

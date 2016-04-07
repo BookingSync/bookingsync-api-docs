@@ -130,7 +130,7 @@ Returns a newly created payment.
 POST /bookings/:booking_id/payments
 ~~~~
 
-<%= render 'json_response', endpoint: "payments", request: "request",
+<%= render 'json_response', endpoint: "payments", request: "create",
   scopes: [{
     "payments_write_owned / payments_write" => "payments_write_owned-payments_read-payments_write"
   }] %>
@@ -143,7 +143,7 @@ Returns an updated payment identified by ID.
 PUT /payments/:payment_id
 ~~~
 
-<%= render 'json_response', endpoint: "payments", request: "request-update",
+<%= render 'json_response', endpoint: "payments", request: "update",
   scopes: [{
     "payments_write_owned / payments_write" => "payments_write_owned-payments_read-payments_write"
   }] %>

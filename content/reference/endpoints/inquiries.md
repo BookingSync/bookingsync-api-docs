@@ -105,7 +105,7 @@ Creates an inquiry for given rental.
 POST /rentals/:rental_id/inquiries
 ~~~~
 
-<%= render 'json_response', endpoint: "inquiries", request: "request",
+<%= render 'json_response', endpoint: "inquiries", request: "create",
   scopes: %w(inquiries_write-inquiries_write_owned) %>
 
 ## Update a inquiry
@@ -116,5 +116,5 @@ Returns an updated inquiry identified by ID.
 PUT /inquiries/:id
 ~~~
 
-<%= render 'json_response', endpoint: "inquiries", request: "request",
+<%= render 'json_response', endpoint: "inquiries", request: "update",
   scopes: %w(inquiries_write-inquiries_write_owned) %>

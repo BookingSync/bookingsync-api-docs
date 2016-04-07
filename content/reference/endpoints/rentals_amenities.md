@@ -65,7 +65,7 @@ Creates a rentals amenity for given rental.
 POST /rentals/:rental_id/rentals_amenities
 ~~~~
 
-<%= render 'json_response', endpoint: "rentals_amenities", request: "request",
+<%= render 'json_response', endpoint: "rentals_amenities", request: "create",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Update a rentals amenity
@@ -76,7 +76,7 @@ Returns an updated rentals amenity identified by ID.
 PUT /rentals_amenities/:rentals_amenity_id
 ~~~
 
-<%= render 'json_response', endpoint: "rentals_amenities", request: "request",
+<%= render 'json_response', endpoint: "rentals_amenities", request: "update",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Destroy a rentals amenity

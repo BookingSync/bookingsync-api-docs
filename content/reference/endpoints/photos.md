@@ -84,7 +84,7 @@ Creates a photo for given rental.
 POST /rentals/:rental_id/photos
 ~~~~
 
-<%= render 'json_response', endpoint: "photos", request: "request",
+<%= render 'json_response', endpoint: "photos", request: "create",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Update a photo
@@ -95,7 +95,7 @@ Returns an updated photo identified by ID.
 PUT /photos/:photo_id
 ~~~
 
-<%= render 'json_response', endpoint: "photos", request: "request",
+<%= render 'json_response', endpoint: "photos", request: "update",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Destroy a photo

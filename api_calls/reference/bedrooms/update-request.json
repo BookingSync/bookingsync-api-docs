@@ -1,0 +1,13 @@
+{
+  "bedrooms": [
+    {
+      "name": "bedroom",
+      "bunk_beds_count": 0,
+      "double_beds_count": 1,
+      "kingsize_beds_count": 0,
+      "queensize_beds_count": 0,
+      "single_beds_count": 2,
+      "sofa_beds_count": 1
+    }
+  ]
+}

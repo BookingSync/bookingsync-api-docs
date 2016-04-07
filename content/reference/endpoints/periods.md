@@ -62,7 +62,7 @@ Creates a period for given season.
 POST /seasons/:season_id/periods
 ~~~
 
-<%= render 'json_response', endpoint: "periods", request: "request",
+<%= render 'json_response', endpoint: "periods", request: "create",
   scopes: [{ rates_write: "rates_read-rates_write" }] %>
 
 ## Update a period
@@ -73,7 +73,7 @@ Returns an updated period identified by ID.
 PUT /periods/:period_id
 ~~~
 
-<%= render 'json_response', endpoint: "periods", request: "request",
+<%= render 'json_response', endpoint: "periods", request: "update",
   scopes: [{ rates_write: "rates_read-rates_write" }] %>
 
 ## Destroy a period

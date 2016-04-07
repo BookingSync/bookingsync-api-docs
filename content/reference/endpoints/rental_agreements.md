@@ -68,7 +68,7 @@ Returns a newly created rental agreement.
 POST /rental_agreements
 ~~~~
 
-<%= render 'json_response', endpoint: "rental_agreements", request: "request",
+<%= render 'json_response', endpoint: "rental_agreements", request: "create",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Create a new rental agreement for a booking
@@ -81,7 +81,7 @@ Returns a newly created rental agreement.
 POST /bookings/:booking_id/rental_agreements
 ~~~~
 
-<%= render 'json_response', endpoint: "rental_agreements", request: "request",
+<%= render 'json_response', endpoint: "rental_agreements", request: "create",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Create a new rental agreement for a rental
@@ -94,5 +94,5 @@ Returns a newly created rental agreement.
 POST /rentals/:rental_id/rental_agreements
 ~~~~
 
-<%= render 'json_response', endpoint: "rental_agreements", request: "request",
+<%= render 'json_response', endpoint: "rental_agreements", request: "create",
   scopes: [{ rentals_write: "public-rentals_write" }] %>

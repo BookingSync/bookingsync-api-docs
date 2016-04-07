@@ -107,7 +107,7 @@ Returns a newly created client.
 POST /clients
 ~~~~
 
-<%= render 'json_response', endpoint: "clients", request: "request",
+<%= render 'json_response', endpoint: "clients", request: "create",
   scopes: [{ clients_write: "clients_read-clients_write" }] %>
 
 ## Update a client
@@ -124,5 +124,5 @@ Returns an updated client identified by ID.
 PUT /clients/:client_id
 ~~~
 
-<%= render 'json_response', endpoint: "clients", request: "request",
+<%= render 'json_response', endpoint: "clients", request: "update",
   scopes: [{ clients_write: "clients_read-clients_write" }] %>

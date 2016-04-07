@@ -69,7 +69,7 @@ Returns a newly created rates table.
 POST /rates_tables
 ~~~
 
-<%= render 'json_response', endpoint: "rates_tables", request: "request",
+<%= render 'json_response', endpoint: "rates_tables", request: "create",
   scopes: [{ rates_write: "rates_read-rates_write" }] %>
 
 ## Update a rates table
@@ -80,7 +80,7 @@ Returns an updated rates table identified by ID.
 PUT /rates_tables/:rates_table_id
 ~~~
 
-<%= render 'json_response', endpoint: "rates_tables", request: "request",
+<%= render 'json_response', endpoint: "rates_tables", request: "update",
   scopes: [{ rates_write: "rates_read-rates_write" }] %>
 
 ## Destroy a rates table

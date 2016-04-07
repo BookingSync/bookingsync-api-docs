@@ -70,7 +70,7 @@ Creates a bathroom for given rental.
 POST /rentals/:rental_id/bathrooms
 ~~~
 
-<%= render 'json_response', endpoint: "bathrooms", request: "request",
+<%= render 'json_response', endpoint: "bathrooms", request: "create",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Update a bathroom
@@ -81,7 +81,7 @@ Returns an updated bathroom identified by ID.
 PUT /bathrooms/:bathroom_id
 ~~~
 
-<%= render 'json_response', endpoint: "bathrooms", request: "request",
+<%= render 'json_response', endpoint: "bathrooms", request: "update",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Destroy a bathroom

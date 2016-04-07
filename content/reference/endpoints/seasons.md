@@ -70,7 +70,7 @@ Creates a season for given rates table.
 POST /rates_tables/:rates_table_id/seasons
 ~~~
 
-<%= render 'json_response', endpoint: "seasons", request: "request",
+<%= render 'json_response', endpoint: "seasons", request: "create",
   scopes: [{ rates_write: "rates_read-rates_write" }] %>
 
 ## Update a season
@@ -81,7 +81,7 @@ Returns an updated season identified by ID.
 PUT /seasons/:season_id
 ~~~
 
-<%= render 'json_response', endpoint: "seasons", request: "request",
+<%= render 'json_response', endpoint: "seasons", request: "update",
   scopes: [{ rates_write: "rates_read-rates_write" }] %>
 
 ## Destroy a season

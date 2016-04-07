@@ -68,7 +68,7 @@ Creates a special offer for given rental.
 POST /rentals/:rental_id/special_offers
 ~~~
 
-<%= render 'json_response', endpoint: "special_offers", request: "request",
+<%= render 'json_response', endpoint: "special_offers", request: "create",
   scopes: [{ rates_write: "public-rates_write" }] %>
 
 ## Update a special offer
@@ -79,7 +79,7 @@ Returns an updated special offer identified by ID.
 PUT /special_offers/:special_offer
 ~~~
 
-<%= render 'json_response', endpoint: "special_offers", request: "request",
+<%= render 'json_response', endpoint: "special_offers", request: "update",
   scopes: [{ rates_write: "public-rates_write" }] %>
 
 ## Destroy a special offer

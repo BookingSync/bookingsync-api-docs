@@ -1,26 +1,44 @@
-<% scopes.map! { |s| Scope.new(s) } %>
+<%
+if defined?(scopes)
+  scopes.map! { |s| Scope.new(s) }
+end
 
-<ul class="nav nav-pills" role="tablist">
-  <li class="disabled"><a>OAuth Scopes:</a></li>
-  <% scopes.each_with_index do |scope, i| %>
-    <li <% if i.zero? %>class="active"<% end %>>
-      <a href="#<%= scope.href %>" role="tab" data-toggle="pill">
-        <%= scope.display_name %>
-      </a>
-    </li>
-  <% end %>
-</ul>
+if defined?(endpoint)
+  path = "reference/#{endpoint}"
+  resource_name = endpoint.split('/').first
+elsif defined?(guide)
+  resource_name = @resource_name
+  path = "guides/#{guide}"
+end
+%>
+
+<% if defined?(scopes) %>
+  <ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    <% scopes.each_with_index do |scope, i| %>
+      <li <% if i.zero? %>class="active"<% end %>>
+        <a href="#<%= scope.href %>" role="tab" data-toggle="pill">
+          <%= scope.display_name %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
 
 <% if defined?(request) %>
   <h4>Example JSON request</h4>
-  <%= json_response("#{endpoint}/#{request}") %>
+  <%= json_response("#{path}/#{request}-request", resource_name) %>
 <% end %>
 
 ### Response
 <div class="tab-content">
-  <% scopes.each_with_index do |scope, i| %>
-    <div class="tab-pane <%= "active" if i.zero? %>" id="<%= scope.href %>">
-      <%= json_response("#{endpoint}/#{scope.path}-scope") %>
-    </div>
+  <% if defined?(response) %>
+    <%= json_response("#{path}/#{response}-response", resource_name) %>
+  <% elsif defined?(scopes) %>
+    <% scopes.each_with_index do |scope, i| %>
+      <div class="tab-pane <%= "active" if i.zero? %>" id="<%= scope.href %>">
+        <%= json_response("#{path}/#{scope.path}-scope-response", resource_name) %>
+      </div>
+    <% end %>
   <% end %>
 </div>

@@ -1,0 +1,43 @@
+{
+  "clients": [
+    {
+      "addresses": [
+        {
+          "address1": "Kutch Stravenue",
+          "address2": "Building 1",
+          "city": "North Jacey",
+          "country_code": "US",
+          "label": "default",
+          "state": "Illinois",
+          "zip": "01363-9579"
+        }
+      ],
+      "emails": [
+        {
+          "email": "clementina_kling@example.com",
+          "label": "default"
+        }
+      ],
+      "phones": [
+        {
+          "label": "phone",
+          "number": "(153)070-6105"
+        },
+        {
+          "label": "mobile",
+          "number": "(153)070-6106"
+        },
+        {
+          "label": "fax",
+          "number": "(153)070-6107"
+        }
+      ],
+      "created_at": "2014-12-28T15:19:27Z",
+      "updated_at": "2015-02-02T11:07:45Z",
+      "fullname": "Clementina Kling",
+      "notes": "",
+      "passport": "AHJ4678956",
+      "preferred_locale": "en"
+    }
+  ]
+}
