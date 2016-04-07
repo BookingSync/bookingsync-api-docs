@@ -52,21 +52,21 @@
       <div class="panel panel-default">
         <div class="list-group">
           <a class="list-group-item" href="/guides/">Introduction</a>
-          <a class="list-group-item" href="/guides/create-booking-with-source">Create Booking with source</a>
+          <a class="list-group-item" href="/guides/create-a-booking-with-a-source">Create a Booking with a Source</a>
         </div>
       </div>
     </div>
     <div class="col-md-9 col-md-pull-3">
       <div class="panel panel-default">
         <div class="panel-body guide-body">
-          <h2 id="create-booking-with-source">Create Booking with Source</h2>
+          <h2 id="create-a-booking-with-a-source">Create a Booking with a Source</h2>
 
 <ol id="markdown-toc">
 <li><a href="#preface">Preface</a></li>
   <li><a href="#requirements">Requirements</a></li>
   <li><a href="#find-a-source-by-name">Find a source by name</a></li>
   <li><a href="#create-source-if-not-existing">Create source if not existing</a></li>
-  <li><a href="#create-a-booking-with-a-source">Create a booking with a source</a></li>
+  <li><a href="#create-a-booking-with-a-source-1">Create a booking with a source</a></li>
 </ol><h3 id="preface">Preface</h3>
 
 <p>For a Property Manager and Owner, having the source of a booking, where it originate from, is a really valuable information. To do so, <a href="/">BookingSync API</a> allows you to link a <a href="/reference/endpoints/bookings">booking</a> with a given <a href="/reference/endpoints/sources">source</a>.</p>
@@ -79,7 +79,7 @@
 
 <p>To assign a source when creating a booking, you first need to find it’s ID.</p>
 
-<p>Sources being managed per BookingSync account, you need to use the <a href="/reference/endpoints/sources/#list-sources/">List Source</a> endpoint to see if your desired source is already present.</p>
+<p>Sources are managed per BookingSync account, so you need to use the <a href="/reference/endpoints/sources/#list-sources/">List Source</a> endpoint to see, if your desired source is already present.</p>
 
 <pre><code>GET /sources
 </code></pre>
@@ -97,8 +97,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Airbnb"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-04-07T11:49:22Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-04-07T11:49:22Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-04-07T17:18:42Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-04-07T17:18:42Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -141,8 +141,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Booking.com"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-04-07T11:49:22Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-04-07T11:49:22Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-04-07T17:18:42Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-04-07T17:18:42Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -155,7 +155,7 @@
   
 </div>
 
-<h3 id="create-a-booking-with-a-source">Create a booking with a source</h3>
+<h3 id="create-a-booking-with-a-source-1">Create a booking with a source</h3>
 
 <p>Now that you have the source ID that you want to use, you can <a href="/reference/endpoints/bookings/#create-a-new-booking/">create your booking</a> with the <code>source_id</code> parameter.</p>
 
@@ -174,8 +174,8 @@
       <span class="s2">"final_price"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
       <span class="s2">"initial_price"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
       <span class="s2">"source_id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2016-04-14T11:49:22Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2016-04-21T11:49:22Z"</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2016-04-14T17:18:42Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2016-04-21T17:18:42Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -212,10 +212,10 @@
       <span class="s2">"review_requests_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
       <span class="s2">"unavailable"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-04-07T11:49:22Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-04-07T11:49:22Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2016-04-14T11:49:22Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2016-04-21T11:49:22Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-04-07T17:18:42Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-04-07T17:18:42Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2016-04-14T17:18:42Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2016-04-21T17:18:42Z"</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"tentative_expires_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
