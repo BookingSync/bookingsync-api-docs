@@ -1,0 +1,252 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BookingSync API documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/stylesheets/application.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/highlight.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="/assets/javascripts/application.js"></script>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.8.0">
+  </head>
+  <body class="flex-col">
+    <div class="page-wrapper flex-1 flex-col">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle sidebar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <img alt="BookingSync" src="/images/bookingsync.svg">
+              <span>Developers</span>
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active">
+                <a href="/guides/">Guides</a>
+              </li>
+              <li class="">
+                <a href="/reference/">API Reference</a>
+              </li>
+              <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+<div class="container content">
+  <div class="row">
+    <div class="col-md-3 col-md-push-9">
+      <div class="panel panel-default">
+        <div class="list-group">
+          <a class="list-group-item" href="/guides/">Introduction</a>
+          <a class="list-group-item" href="/guides/create-booking-with-source">Create Booking with source</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 col-md-pull-3">
+      <div class="panel panel-default">
+        <div class="panel-body guide-body">
+          <h2 id="create-booking-with-source">Create Booking with Source</h2>
+
+<ol id="markdown-toc">
+<li><a href="#preface">Preface</a></li>
+  <li><a href="#requirements">Requirements</a></li>
+  <li><a href="#find-a-source-by-name">Find a source by name</a></li>
+  <li><a href="#create-source-if-not-existing">Create source if not existing</a></li>
+  <li><a href="#create-a-booking-with-a-source">Create a booking with a source</a></li>
+</ol><h3 id="preface">Preface</h3>
+
+<p>For a Property Manager and Owner, having the source of a booking, where it originate from, is a really valuable information. To do so, <a href="/">BookingSync API</a> allows you to link a <a href="/reference/endpoints/bookings">booking</a> with a given <a href="/reference/endpoints/sources">source</a>.</p>
+
+<h3 id="requirements">Requirements</h3>
+
+<p>To use this scenario, you will need to have the <code>bookings_write</code> or <code>bookings_write_owned</code> scope.</p>
+
+<h3 id="find-a-source-by-name">Find a source by name</h3>
+
+<p>To assign a source when creating a booking, you first need to find it’s ID.</p>
+
+<p>Sources being managed per BookingSync account, you need to use the <a href="/reference/endpoints/sources/#list-sources/">List Source</a> endpoint to see if your desired source is already present.</p>
+
+<pre><code>GET /sources
+</code></pre>
+
+<h4 id="response">Response</h4>
+<div class="tab-content">
+  
+    <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"sources.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{sources.account}"</span><span class="p">,</span>
+    <span class="s2">"sources.bookings"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{sources.bookings}"</span>
+  <span class="p">},</span>
+  <span class="s2">"sources"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Airbnb"</span><span class="p">,</span>
+      <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-04-07T11:49:22Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-04-07T11:49:22Z"</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">1</span><span class="p">,</span>
+          <span class="mi">3</span>
+        <span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+  
+</div>
+
+<h3 id="create-source-if-not-existing">Create source if not existing</h3>
+
+<p>If the source you are looking for could not be found, you should <a href="/reference/endpoints/sources/#create-a-new-source/">create a new source</a>.</p>
+
+<pre><code>POST /sources
+</code></pre>
+
+<h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"sources"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Booking.com"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-1">Response</h4>
+<div class="tab-content">
+  
+    <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"sources.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{sources.account}"</span><span class="p">,</span>
+    <span class="s2">"sources.bookings"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{sources.bookings}"</span>
+  <span class="p">},</span>
+  <span class="s2">"sources"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Booking.com"</span><span class="p">,</span>
+      <span class="s2">"position"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-04-07T11:49:22Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-04-07T11:49:22Z"</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">]</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+  
+</div>
+
+<h3 id="create-a-booking-with-a-source">Create a booking with a source</h3>
+
+<p>Now that you have the source ID that you want to use, you can <a href="/reference/endpoints/bookings/#create-a-new-booking/">create your booking</a> with the <code>source_id</code> parameter.</p>
+
+<pre><code>POST /rentals/:rental_id/bookings
+</code></pre>
+
+<h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"adults"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"booked"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"children"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
+      <span class="s2">"final_price"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
+      <span class="s2">"initial_price"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
+      <span class="s2">"source_id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2016-04-14T11:49:22Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2016-04-21T11:49:22Z"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-2">Response</h4>
+<div class="tab-content">
+  
+    <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
+    <span class="s2">"bookings.bookings_fees"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings_fees/{bookings.bookings_fees}"</span><span class="p">,</span>
+    <span class="s2">"bookings.bookings_tags"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings_tags/{bookings.bookings_tags}"</span><span class="p">,</span>
+    <span class="s2">"bookings.bookings_taxes"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings_taxes/{bookings.bookings_taxes}"</span><span class="p">,</span>
+    <span class="s2">"bookings.client"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/clients/{bookings.client}"</span><span class="p">,</span>
+    <span class="s2">"bookings.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}"</span><span class="p">,</span>
+    <span class="s2">"bookings.rental_agreement"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_agreements/{bookings.rental_agreement}"</span><span class="p">,</span>
+    <span class="s2">"bookings.source"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/sources/{bookings.source}"</span>
+  <span class="p">},</span>
+  <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"adults"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"booked"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"bookings_payments_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"children"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
+      <span class="s2">"discount"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"downpayment"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"final_price"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
+      <span class="s2">"initial_price"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
+      <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+      <span class="s2">"paid_amount"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
+      <span class="s2">"review_requests_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
+      <span class="s2">"unavailable"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-04-07T11:49:22Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-04-07T11:49:22Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2016-04-14T11:49:22Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2016-04-21T11:49:22Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"tentative_expires_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"bookings_fees"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"bookings_tags"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"bookings_taxes"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"client"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">"source"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+  
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </body>
+</html>
+
