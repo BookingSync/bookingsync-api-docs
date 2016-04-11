@@ -1,5 +1,9 @@
 # Changelog
 
+## 2016-04-11
+
+  * [doc fix] Add missing rental's search parameter: `rental_id`.
+
 ## 2016-03-20
 
   * [api improvement] Add `fees`, `taxes`, `bookings_fees`, `bookings_taxes`, `rentals_fees`, `rentals_taxes`, `fees_taxes`, `tax_rules` endpoints.
