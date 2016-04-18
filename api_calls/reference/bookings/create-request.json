@@ -9,7 +9,8 @@
       "final_price": "2700.0",
       "initial_price": "3000.0",
       "start_at": "START_AT",
-      "end_at": "END_AT"
+      "end_at": "END_AT",
+      "bookings_tag_ids": [1, 2]
     }
   ]
 }

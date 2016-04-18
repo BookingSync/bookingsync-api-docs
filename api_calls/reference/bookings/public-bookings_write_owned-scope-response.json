@@ -1,13 +1,15 @@
 {
   "links": {
     "bookings.account": "https://www.bookingsync.com/api/v3/accounts/{bookings.account}",
-    "bookings.rental": "https://www.bookingsync.com/api/v3/rentals/{bookings.rental}"
+    "bookings.rental": "https://www.bookingsync.com/api/v3/rentals/{bookings.rental}",
+    "bookings.bookings_tags": "https://www.bookingsync.com/api/v3/bookings_tags/{bookings.bookings_tags}"
   },
   "bookings": [
     {
       "links": {
         "account": 1,
-        "rental": 16
+        "rental": 16,
+        "bookings_tags": [1, 2]
       },
       "id": 203,
       "start_at": "START_AT",
