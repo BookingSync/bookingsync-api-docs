@@ -1,5 +1,9 @@
 # Changelog
 
+## 2016-04-18
+
+  * [api improvement] Allow to set bookings_tag_ids when creating or updating bookings.
+
 ## 2016-04-11
 
   * [doc fix] Add missing rental's search parameter: `rental_id`.

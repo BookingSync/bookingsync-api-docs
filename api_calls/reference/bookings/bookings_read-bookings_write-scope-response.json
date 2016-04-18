@@ -19,7 +19,7 @@
         "source": null,
         "bookings_fees": [],
         "bookings_taxes": [],
-        "bookings_tags": []
+        "bookings_tags": [1, 2]
       },
       "id": 80,
       "start_at": "START_AT",
