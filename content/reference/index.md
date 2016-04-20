@@ -97,7 +97,7 @@ For example, if we wanted to sideload availabilities of the Rentals, we could sp
 that in the request:
 
 ~~~
-GET https://www.bookingsync.com/api/v3/rentals?include=availabilities
+GET https://www.bookingsync.com/api/v3/rentals?include=availability
 ~~~
 
 ## HTTPS
