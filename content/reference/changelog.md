@@ -3,6 +3,7 @@
 ## 2016-05-09
 
   * [api improvement] Add `booking_comments` endpoint.
+  * [doc update] Update `bookings` responses with `booking_comments` links.
 
 ## 2016-04-20
 
