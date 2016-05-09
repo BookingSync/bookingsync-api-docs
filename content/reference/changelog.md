@@ -1,5 +1,9 @@
 # Changelog
 
+## 2016-05-09
+
+  * [api improvement] Add `booking_comments` endpoint.
+
 ## 2016-04-20
 
   * [doc fix] Fix sideloading example, `availability` is singular.

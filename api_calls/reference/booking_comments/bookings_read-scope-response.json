@@ -1,0 +1,19 @@
+{
+  "links": {
+    "booking_comments.booking": "https://www.bookingsync.com/api/v3/bookings/{booking_comments.booking}"
+  },
+  "booking_comments": [
+    {
+      "links": {
+        "booking": 1
+      },
+      "id": 3,
+      "content": "Comment content",
+      "editable": false,
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT"
+    }
+  ],
+  "meta": {
+  }
+}

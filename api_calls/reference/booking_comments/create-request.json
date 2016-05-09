@@ -1,0 +1,8 @@
+{
+  "booking_id": 1,
+  "booking_comments": [
+    {
+      "content": "Comment content"
+    }
+  ]
+}
