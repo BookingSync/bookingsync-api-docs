@@ -28,11 +28,16 @@ module JsonResponse
   end
 
   def sort_response(response, resource_name)
+    sorted_not_nested = sort_not_nested(response)
     sorted_links = sort_element(response, "links")
     sorted_resource = { resource_name => response[resource_name].map { |resource| sort_resource(resource) } }
     sorted_meta = sort_element(response, "meta")
 
-    sorted_links.merge(sorted_resource).merge(sorted_meta)
+    sorted_not_nested.merge(sorted_links).merge(sorted_resource).merge(sorted_meta)
+  end
+
+  def sort_not_nested(response)
+    response.reject { |_, value| value.is_a?(Array) || value.is_a?(Hash) }.sort.to_h
   end
 
   def sort_resource(resource)
