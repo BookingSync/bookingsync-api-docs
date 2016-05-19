@@ -10,6 +10,10 @@
       "initial_price": "3000.0",
       "start_at": "START_AT",
       "end_at": "END_AT",
+      "comments": [
+        { "content": "Comment one" },
+        { "content": "Comment two" }
+      ],
       "bookings_fees": [
         { "price": "50", "times_booked": "2", "rentals_fee_id": "10" },
         { "price": "30", "times_booked": "1", "rentals_fee_id": "10" }

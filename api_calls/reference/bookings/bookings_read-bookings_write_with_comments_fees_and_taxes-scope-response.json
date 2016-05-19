@@ -21,7 +21,7 @@
         "bookings_fees": [10, 11],
         "bookings_taxes": [22, 23],
         "bookings_tags": [],
-        "booking_comments": []
+        "booking_comments": [1, 2]
       },
       "id": 80,
       "start_at": "START_AT",
