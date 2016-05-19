@@ -1,5 +1,9 @@
 # Changelog
 
+## 2016-05-19
+
+  * [api improvement] Allow to create ooking with comments
+
 ## 2016-05-09
 
   * [api improvement] Add `booking_comments` endpoint.
