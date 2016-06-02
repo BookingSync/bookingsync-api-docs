@@ -22,7 +22,15 @@ urn:ietf:wg:oauth:2.0:oob
  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/lRkllEnbV3E" allowfullscreen></iframe>
 </div>
 
-### 1. Create Authorization Code's Request URL
+### 1. Authorize your application
+
+As a one time process, you will need to authorize your application by requesting the account owner to grant you access.
+
+This process require user interaction but won't be required any more, so you can perfectly run background jobs later on.
+
+This authorization can only be revoked if the account owner uninstall your application.
+
+#### 1.a Create Authorization Code's Request URL
 
 Use the schema below with by replacing:
 
@@ -36,12 +44,12 @@ https://www.bookingsync.com/oauth/authorize?client_id=CLIENT_ID&redirect_uri=urn
 add at the end of this URL, a space separated list like:
 `&scope=bookings_read%20rentals_read` (`%20` represent a **space** within URLs)
 
-### 2. Authorize this app for a given BookingSync User
+#### 1.b Authorize this app for a given BookingSync User
 
 Visit the generated URL, and authorize access to your test
 Application for a BookingSync user.
 
-### 3. Use the Authorization Code to get your Access Token
+#### 1.c Use the Authorization Code to get your Access Token
 
 Use the schema below with by replacing:
 
@@ -74,12 +82,27 @@ Sample response:
 ~~~
 
 **Note**: Tokens (`access_token`) are only **valid for 2 hours**, you then need to use the
-**Refresh Token** to regenerate and new **Token** or restart the flow you just used.
+**Refresh Token** to regenerate and new set of **Tokens** or restart the flow you just used.
 
+### 2. Using the Refresh Token to get a new Access Token
 
-### 4. Using the Refresh Token to get a new Access Token
+Once your application is authorized, you only need this single step to get a valid `access_token` if the one you have is expired.
 
-API calls made with expired token will return an HTTP Status Code 401 (Unauthorized). To prevent this from happening, request a new `access_token` using the `refresh_token`, by performing the action below before the `access_token` expiration. You can find your token lifetime (in seconds), by checking the `expires_in` attribute in authorization response.
+API calls made with expired `access_token` will return an HTTP Status Code 401 (Unauthorized).
+
+To prevent this from happening, you can request a new `access_token` using the `refresh_token` as demonstrated below before the `access_token` expiration.
+You can find your token lifetime (in seconds), by checking the `expires_in` attribute in authorization response.
+
+<div class="callout callout-info" markdown="1">
+  <h4>Refresh Token Behavior</h4>
+  <p>A refresh token is valid as long as it's used (or your application is uninstalled), therefore <strong>you can also request a new set of tokens after expiration of your <code>access_token</code>.</strong></p>
+
+  <p>A new <code>refresh_token</code> will be generated after each refresh, therefore make sure to save it.</p>
+
+  <p>As the refresh token gives you lifelong access to an account, it must be stored securely.</p>
+</div>
+
+#### Refresh Token Process
 
 Use the schema below with by replacing:
 
@@ -111,4 +134,3 @@ Sample response:
 }
 ~~~
 
-**Note**: New `refresh_token` will be generated after each `access_token` refresh.
