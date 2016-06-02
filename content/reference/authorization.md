@@ -76,7 +76,16 @@ In URLs it would look like `&scope=bookings_read%20rentals_read` (`%20` represen
 Application can also use the
 [OAuth 2.0 Authorization Code flow](http://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-4.1)
 to access the API.
-This is to be used for **Server-Side applications**, with special care taken to *never* leak `client_secret`.
+This is to be used for **Server-Side applications**, with special care taken to **never** leak `client_secret`.
+
+<div class="callout callout-info" markdown="1">
+  <h4>Required only once</h4>
+  <p>This authorization process is required only once. When your first set of tokens received, you will no longer need this process unless an account intentionnally uninstalled your application. The <a href="#refreshing-access-token">refresh token process</a> will then be used.</p>
+
+  <hr>
+  
+  <p>For more details, visit our <a href="/reference/testing_authorization/">Testing BookingSync Authorization</a> page for a step by step guide.</p>
+</div>
 
 The explicit OAuth 2.0 flow consists of the following steps:
 
@@ -98,11 +107,37 @@ The explicit OAuth 2.0 flow consists of the following steps:
   * grant_type - must use `authorization_code`
   * redirect_uri - must be the same as the provided in the first step
 
-This request is responded to with either an error (HTTP status code 401) or an access token of the form `access_token=...&expires_in=1234`.
+This request is responded to with either an error (HTTP status code 401) or the following sample request:
+
+~~~
+{
+  "access_token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+  "token_type": "bearer",
+  "expires_in": 7200,
+  "refresh_token": "fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210",
+  "scope": "public"
+}
+~~~
 
 ### Refreshing access token
 
-API calls made with expired token will return an HTTP Status Code 401 (Unauthorized). To prevent this from happening, request a new `access_token` using the `refresh_token`, by performing the action below before the `access_token` expiration. You can find your token lifetime (in seconds), by checking the `expires_in` attribute in authorization response.
+API calls made with expired `access_token` will return an HTTP Status Code 401 (Unauthorized).
+
+To prevent this from happening, you can request a new `access_token` using the `refresh_token` as demonstrated below before the `access_token` expiration.
+You can find your token lifetime (in seconds), by checking the `expires_in` attribute in authorization response.
+
+<div class="callout callout-info" markdown="1">
+  <h4>Refresh Token Behavior</h4>
+  <p>A refresh token is valid as long as it's used (or your application is uninstalled), therefore <strong>you can also request a new set of tokens after expiration of your <code>access_token</code>.</strong></p>
+
+  <p>A new <code>refresh_token</code> will be generated after each refresh, therefore make sure to save it.</p>
+
+  <p>As the refresh token gives you lifelong access to an account, it must be stored securely.</p>
+
+  <hr>
+  
+  <p>For more details, visit our <a href="/reference/testing_authorization/">Testing BookingSync Authorization</a> page for a step by step guide.</p>
+</div>
 
 1. POST (application/x-www-form-urlencoded) the following parameters to `https://www.bookingsync.com/oauth/token`
   * client_id
@@ -111,7 +146,17 @@ API calls made with expired token will return an HTTP Status Code 401 (Unauthori
   * grant_type - must use `refresh_token`
   * redirect_uri - must be the same as the provided in the first step
 
-This request is responded to with either an error (HTTP status code 401) or an access token of the form `access_token=...&expires_in=1234`.
+This request is responded to with either an error (HTTP status code 401) or the following sample request:
+
+~~~
+{
+  "access_token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+  "token_type": "bearer",
+  "expires_in": 7200,
+  "refresh_token": "fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210",
+  "scope": "public"
+}
+~~~
 
 ## Implicit Flow
 
