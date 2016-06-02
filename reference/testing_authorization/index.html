@@ -133,7 +133,15 @@ make sure to use the following <strong>redirect_uri</strong>:</p>
  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/lRkllEnbV3E" allowfullscreen=""></iframe>
 </div>
 
-<h4 id="create-authorization-codes-request-url">1. Create Authorization Code’s Request URL</h4>
+<h4 id="authorize-your-application">1. Authorize your application</h4>
+
+<p>As a one time process, you will need to authorize your application by requesting the account owner to grant you access.</p>
+
+<p>This process require user interaction but won’t be required any more, so you can perfectly run background jobs later on.</p>
+
+<p>This authorization can only be revoked if the account owner uninstall your application.</p>
+
+<h5 id="a-create-authorization-codes-request-url">1.a Create Authorization Code’s Request URL</h5>
 
 <p>Use the schema below with by replacing:</p>
 
@@ -147,12 +155,12 @@ make sure to use the following <strong>redirect_uri</strong>:</p>
 add at the end of this URL, a space separated list like:
 <code>&amp;scope=bookings_read%20rentals_read</code> (<code>%20</code> represent a <strong>space</strong> within URLs)</p>
 
-<h4 id="authorize-this-app-for-a-given-bookingsync-user">2. Authorize this app for a given BookingSync User</h4>
+<h5 id="b-authorize-this-app-for-a-given-bookingsync-user">1.b Authorize this app for a given BookingSync User</h5>
 
 <p>Visit the generated URL, and authorize access to your test
 Application for a BookingSync user.</p>
 
-<h4 id="use-the-authorization-code-to-get-your-access-token">3. Use the Authorization Code to get your Access Token</h4>
+<h5 id="c-use-the-authorization-code-to-get-your-access-token">1.c Use the Authorization Code to get your Access Token</h5>
 
 <p>Use the schema below with by replacing:</p>
 
@@ -185,11 +193,27 @@ Application for a BookingSync user.</p>
 <span class="p">}</span></code></pre>
 
 <p><strong>Note</strong>: Tokens (<code>access_token</code>) are only <strong>valid for 2 hours</strong>, you then need to use the
-<strong>Refresh Token</strong> to regenerate and new <strong>Token</strong> or restart the flow you just used.</p>
+<strong>Refresh Token</strong> to regenerate and new set of <strong>Tokens</strong> or restart the flow you just used.</p>
 
-<h4 id="using-the-refresh-token-to-get-a-new-access-token">4. Using the Refresh Token to get a new Access Token</h4>
+<h4 id="using-the-refresh-token-to-get-a-new-access-token">2. Using the Refresh Token to get a new Access Token</h4>
 
-<p>API calls made with expired token will return an HTTP Status Code 401 (Unauthorized). To prevent this from happening, request a new <code>access_token</code> using the <code>refresh_token</code>, by performing the action below before the <code>access_token</code> expiration. You can find your token lifetime (in seconds), by checking the <code>expires_in</code> attribute in authorization response.</p>
+<p>Once your application is authorized, you only need this single step to get a valid <code>access_token</code> if the one you have is expired.</p>
+
+<p>API calls made with expired <code>access_token</code> will return an HTTP Status Code 401 (Unauthorized).</p>
+
+<p>To prevent this from happening, you can request a new <code>access_token</code> using the <code>refresh_token</code> as demonstrated below before the <code>access_token</code> expiration.
+You can find your token lifetime (in seconds), by checking the <code>expires_in</code> attribute in authorization response.</p>
+
+<div class="callout callout-info">
+  <h4>Refresh Token Behavior</h4>
+  <p>A refresh token is valid as long as it's used (or your application is uninstalled), therefore <strong>you can also request a new set of tokens after expiration of your <code>access_token</code>.</strong></p>
+
+  <p>A new <code>refresh_token</code> will be generated after each refresh, therefore make sure to save it.</p>
+
+  <p>As the refresh token gives you lifelong access to an account, it must be stored securely.</p>
+</div>
+
+<h5 id="refresh-token-process">Refresh Token Process</h5>
 
 <p>Use the schema below with by replacing:</p>
 
@@ -220,8 +244,6 @@ Application for a BookingSync user.</p>
   <span class="nt">"refresh_token"</span><span class="p">:</span> <span class="s2">"fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210"</span><span class="p">,</span>
   <span class="nt">"scope"</span><span class="p">:</span> <span class="s2">"public"</span>
 <span class="p">}</span></code></pre>
-
-<p><strong>Note</strong>: New <code>refresh_token</code> will be generated after each <code>access_token</code> refresh.</p>
         </div>
       </div>
     </div>

@@ -194,7 +194,15 @@ In URLs it would look like <code>&amp;scope=bookings_read%20rentals_read</code> 
 <p>Application can also use the
 <a href="http://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-4.1">OAuth 2.0 Authorization Code flow</a>
 to access the API.
-This is to be used for <strong>Server-Side applications</strong>, with special care taken to <em>never</em> leak <code>client_secret</code>.</p>
+This is to be used for <strong>Server-Side applications</strong>, with special care taken to <strong>never</strong> leak <code>client_secret</code>.</p>
+
+<div class="callout callout-info">
+  <h4>Required only once</h4>
+  <p>This authorization process is required only once. When your first set of tokens received, you will no longer need this process unless an account intentionnally uninstalled your application. The <a href="#refreshing-access-token">refresh token process</a> will then be used.</p>
+
+  <hr>
+<p>For more details, visit our <a href="/reference/testing_authorization/">Testing BookingSync Authorization</a> page for a step by step guide.</p>
+</div>
 
 <p>The explicit OAuth 2.0 flow consists of the following steps:</p>
 
@@ -228,11 +236,35 @@ This is to be used for <strong>Server-Side applications</strong>, with special c
       <li>redirect_uri - must be the same as the provided in the first step</li>
     </ul>
 </li>
-</ol><p>This request is responded to with either an error (HTTP status code 401) or an access token of the form <code>access_token=...&amp;expires_in=1234</code>.</p>
+</ol><p>This request is responded to with either an error (HTTP status code 401) or the following sample request:</p>
+
+<pre><code>{
+  "access_token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+  "token_type": "bearer",
+  "expires_in": 7200,
+  "refresh_token": "fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210",
+  "scope": "public"
+}
+</code></pre>
 
 <h4 id="refreshing-access-token">Refreshing access token</h4>
 
-<p>API calls made with expired token will return an HTTP Status Code 401 (Unauthorized). To prevent this from happening, request a new <code>access_token</code> using the <code>refresh_token</code>, by performing the action below before the <code>access_token</code> expiration. You can find your token lifetime (in seconds), by checking the <code>expires_in</code> attribute in authorization response.</p>
+<p>API calls made with expired <code>access_token</code> will return an HTTP Status Code 401 (Unauthorized).</p>
+
+<p>To prevent this from happening, you can request a new <code>access_token</code> using the <code>refresh_token</code> as demonstrated below before the <code>access_token</code> expiration.
+You can find your token lifetime (in seconds), by checking the <code>expires_in</code> attribute in authorization response.</p>
+
+<div class="callout callout-info">
+  <h4>Refresh Token Behavior</h4>
+  <p>A refresh token is valid as long as it's used (or your application is uninstalled), therefore <strong>you can also request a new set of tokens after expiration of your <code>access_token</code>.</strong></p>
+
+  <p>A new <code>refresh_token</code> will be generated after each refresh, therefore make sure to save it.</p>
+
+  <p>As the refresh token gives you lifelong access to an account, it must be stored securely.</p>
+
+  <hr>
+<p>For more details, visit our <a href="/reference/testing_authorization/">Testing BookingSync Authorization</a> page for a step by step guide.</p>
+</div>
 
 <ol>
 <li>POST (application/x-www-form-urlencoded) the following parameters to <code>https://www.bookingsync.com/oauth/token</code>
@@ -245,7 +277,16 @@ This is to be used for <strong>Server-Side applications</strong>, with special c
       <li>redirect_uri - must be the same as the provided in the first step</li>
     </ul>
 </li>
-</ol><p>This request is responded to with either an error (HTTP status code 401) or an access token of the form <code>access_token=...&amp;expires_in=1234</code>.</p>
+</ol><p>This request is responded to with either an error (HTTP status code 401) or the following sample request:</p>
+
+<pre><code>{
+  "access_token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+  "token_type": "bearer",
+  "expires_in": 7200,
+  "refresh_token": "fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210",
+  "scope": "public"
+}
+</code></pre>
 
 <h3 id="implicit-flow">Implicit Flow</h3>
 
