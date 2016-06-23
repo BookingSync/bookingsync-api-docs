@@ -146,7 +146,7 @@ You can find your token lifetime (in seconds), by checking the `expires_in` attr
   * grant_type - must use `refresh_token`
   * redirect_uri - must be the same as the provided in the first step
 
-This request is responded to with either an error (HTTP status code 401) or the following sample request:
+This request responds with either an error (HTTP status code 401) or the following sample request:
 
 ~~~
 {
@@ -188,14 +188,38 @@ Application can also use the
 [OAuth 2.0 Client Credentials flow](http://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-4.4)
 to access the API.
 
-Requests using a token obtained using the Client Credentials flow are limited
-to using only the `public` scope, but can access resources of all BookingSync
-Accounts that authorized the given Application.
-
 This is useful for bulk access, for example in a rental listing application.
 Instead of iterating over each authorized Account and fetching their rentals,
 the application can use the Client Credentials flow and fetch all rentals
 at once.
+
+You still need each account to be authorize your application by using the [Authorization Code Flow](/reference/authorization/#authorization-code-flow).
+
+<div class="callout callout-info">
+  <h4>Limitations</h4>
+
+  <p>Requests using a token obtained using the Client Credentials flow are limited to using only the <code>public</code> scope, but can access resources of all BookingSync Accounts that authorized the given Application.</p>
+</div>
+
+The client credentials OAuth 2.0 flow consists of this single step:
+
+1. POST (application/x-www-form-urlencoded) the following parameters to `https://www.bookingsync.com/oauth/token`
+  * client_id
+  * client_secret
+  * grant_type - must use `client_credentials`
+
+This request responds with either an error (HTTP status code 401) or the following sample request:
+
+~~~
+{
+  "access_token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+  "token_type": "bearer",
+  "expires_in": 7200,
+  "scope": "public",
+  "created_at": 1466671142
+}
+~~~
+
 
 ## Authorization Errors
 
