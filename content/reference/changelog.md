@@ -2,7 +2,7 @@
 
 ## 2016-05-19
 
-  * [api improvement] Allow to create ooking with comments
+  * [api improvement] Allow to create booking with comments
 
 ## 2016-05-09
 
