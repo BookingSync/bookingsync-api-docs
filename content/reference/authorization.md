@@ -146,7 +146,7 @@ You can find your token lifetime (in seconds), by checking the `expires_in` attr
   * grant_type - must use `refresh_token`
   * redirect_uri - must be the same as the provided in the first step
 
-This request is responded to with either an error (HTTP status code 401) or the following sample request:
+This request responds with either an error (HTTP status code 401) or the following sample request:
 
 ~~~
 {
@@ -208,7 +208,7 @@ The client credentials OAuth 2.0 flow consists of this single step:
   * client_secret
   * grant_type - must use `client_credentials`
 
-This request is responded to with either an error (HTTP status code 401) or the following sample request:
+This request responds with either an error (HTTP status code 401) or the following sample request:
 
 ~~~
 {
