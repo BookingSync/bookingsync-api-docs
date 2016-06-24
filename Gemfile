@@ -13,3 +13,4 @@ gem "nokogiri"
 gem 'uglifier'
 gem 'nanoc-sprockets3'
 gem "bootstrap-bookingsync-sass"
+gem "rake"

@@ -74,6 +74,7 @@ GEM
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
     rack (1.5.2)
+    rake (11.1.2)
     rb-fsevent (0.9.4)
     rb-inotify (0.9.3)
       ffi (>= 0.5.0)
@@ -105,6 +106,7 @@ DEPENDENCIES
   nanoc-sprockets3
   nokogiri
   pygments.rb
+  rake
   uglifier
 
 BUNDLED WITH
