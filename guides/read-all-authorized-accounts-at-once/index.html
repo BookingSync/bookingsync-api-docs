@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BookingSync API documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/stylesheets/application.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/highlight.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="/assets/javascripts/application.js"></script>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.8.0">
+  </head>
+  <body class="flex-col">
+    <div class="page-wrapper flex-1 flex-col">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle sidebar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <img alt="BookingSync" src="/images/bookingsync.svg">
+              <span>Developers</span>
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active">
+                <a href="/guides/">Guides</a>
+              </li>
+              <li class="">
+                <a href="/reference/">API Reference</a>
+              </li>
+              <li><a href="https://www.bookingsync.com">BookingSync.com</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+<div class="container content">
+  <div class="row">
+    <div class="col-md-3 col-md-push-9">
+      <div class="panel panel-default">
+        <div class="list-group">
+          <a class="list-group-item" href="/guides/">Introduction</a>
+          <a class="list-group-item" href="/guides/create-a-booking-with-a-source">Create a Booking with a Source</a>
+          <a class="list-group-item" href="/guides/read-all-authorized-accounts-at-once">Read all authorized accounts at once</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 col-md-pull-3">
+      <div class="panel panel-default">
+        <div class="panel-body guide-body">
+          <h2 id="read-all-authorized-accounts-at-once">Read All Authorized Accounts At Once</h2>
+
+<ol id="markdown-toc">
+<li><a href="#preface">Preface</a></li>
+  <li><a href="#requirements">Requirements</a></li>
+  <li><a href="#getting-a-client-credential-token">Getting A Client Credential Token</a></li>
+  <li><a href="#read-all-published-rentals">Read All Published Rentals</a></li>
+</ol><h3 id="preface">Preface</h3>
+
+<p>In some cases it can be very convenient to read information from all the accounts in a single query. This is possible for reading public information (behind the <code>public</code> scope) by using the <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a>.</p>
+
+<h3 id="requirements">Requirements</h3>
+
+<p>As only public information are returned when using the <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a> you will need to make sure that your test accounts have <code>published</code> rentals as only those ones are returned.</p>
+
+<p>To test the examples of this guide, you will need to authorize at least 2 test accounts.</p>
+
+<h3 id="getting-a-client-credential-token">Getting A Client Credential Token</h3>
+
+<p>Use the schema below with by replacing:</p>
+
+<ul>
+<li>
+<code>CLIENT ID</code>: Application’s Client ID</li>
+  <li>
+<code>CLIENT_SECRET</code>: Application’s Client Secret <em>(do not share, same as password)</em>
+</li>
+</ul><pre><code>https://www.bookingsync.com/oauth/token?client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;grant_type=client_credentials
+</code></pre>
+
+<p>Make a POST request to this URL to get your Authentication Token.</p>
+
+<p>Example with CURL:</p>
+
+<pre><code>curl -X POST -d "client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;grant_type=client_credentials" "https://www.bookingsync.com/oauth/token"
+</code></pre>
+
+<p>Sample response:</p>
+
+<pre><code class="language-json"><span class="p">{</span>
+  <span class="nt">"access_token"</span><span class="p">:</span> <span class="s2">"0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"</span><span class="p">,</span>
+  <span class="nt">"token_type"</span><span class="p">:</span> <span class="s2">"bearer"</span><span class="p">,</span>
+  <span class="nt">"expires_in"</span><span class="p">:</span> <span class="mi">7200</span><span class="p">,</span>
+  <span class="nt">"scope"</span><span class="p">:</span> <span class="s2">"public"</span><span class="p">,</span>
+  <span class="nt">"created_at"</span><span class="p">:</span> <span class="mi">1466671142</span>
+<span class="p">}</span></code></pre>
+
+<p><strong>Note</strong>: Tokens (<code>access_token</code>) are only <strong>valid for 2 hours</strong>, you then need to request a new one.</p>
+
+<h3 id="read-all-published-rentals">Read All Published Rentals</h3>
+
+<p>Now that you have your <code>access_token</code>, you can read all the published rentals with the following request.</p>
+
+<div class="callout callout-info">
+  <h4>Pagination</h4>
+
+  <p>Do not forget that all <a href="/reference/#pagination">responses are paginated</a>.</p>
+</div>
+
+<p>Example with CURL:</p>
+
+<pre><code>curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' https://www.bookingsync.com/api/v3/rentals
+</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </body>
+</html>
+

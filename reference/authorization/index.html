@@ -277,7 +277,7 @@ You can find your token lifetime (in seconds), by checking the <code>expires_in<
       <li>redirect_uri - must be the same as the provided in the first step</li>
     </ul>
 </li>
-</ol><p>This request is responded to with either an error (HTTP status code 401) or the following sample request:</p>
+</ol><p>This request responds with either an error (HTTP status code 401) or the following sample request:</p>
 
 <pre><code>{
   "access_token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
@@ -326,14 +326,40 @@ This is recommended for <strong>Client-Side applications</strong>.</p>
 <a href="http://tools.ietf.org/html/draft-ietf-oauth-v2-31#section-4.4">OAuth 2.0 Client Credentials flow</a>
 to access the API.</p>
 
-<p>Requests using a token obtained using the Client Credentials flow are limited
-to using only the <code>public</code> scope, but can access resources of all BookingSync
-Accounts that authorized the given Application.</p>
-
 <p>This is useful for bulk access, for example in a rental listing application.
 Instead of iterating over each authorized Account and fetching their rentals,
 the application can use the Client Credentials flow and fetch all rentals
 at once.</p>
+
+<p>You still need each account to be authorize your application by using the <a href="/reference/authorization/#authorization-code-flow">Authorization Code Flow</a>.</p>
+
+<div class="callout callout-info">
+  <h4>Limitations</h4>
+
+  <p>Requests using a token obtained using the Client Credentials flow are limited to using only the <code>public</code> scope, but can access resources of all BookingSync Accounts that authorized the given Application.</p>
+</div>
+
+<p>The client credentials OAuth 2.0 flow consists of this single step:</p>
+
+<ol>
+<li>POST (application/x-www-form-urlencoded) the following parameters to <code>https://www.bookingsync.com/oauth/token</code>
+    <ul>
+<li>client_id</li>
+      <li>client_secret</li>
+      <li>grant_type - must use <code>client_credentials</code>
+</li>
+    </ul>
+</li>
+</ol><p>This request responds with either an error (HTTP status code 401) or the following sample request:</p>
+
+<pre><code>{
+  "access_token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+  "token_type": "bearer",
+  "expires_in": 7200,
+  "scope": "public",
+  "created_at": 1466671142
+}
+</code></pre>
 
 <h3 id="authorization-errors">Authorization Errors</h3>
 
