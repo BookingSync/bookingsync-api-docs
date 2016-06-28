@@ -1,5 +1,9 @@
 # Changelog
 
+## 2016-06-28
+
+  * [doc update] Clarify `/accounts` endpoint limitations.
+
 ## 2016-06-23
 
   * [doc update] Add new guide: [Read All Authorized Accounts At Once](/guides/read-all-authorized-accounts-at-once/)
