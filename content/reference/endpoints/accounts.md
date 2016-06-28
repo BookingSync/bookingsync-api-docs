@@ -29,7 +29,13 @@ updated_at       | [Time](/reference/enums#formats)  | Read       | Account's up
 
 ## List accounts
 
-List all authorized accounts. Only the [Client Credentials Flow](/reference/authorization/#client-credentials-flow) currently allow you to retrieve multiple accounts at ones.
+List all authorized accounts.
+
+<div class="callout callout-info">
+  <h4>Limitations</h4>
+
+  <p>Only the <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a> currently allow you to retrieve multiple accounts at ones. Using an other authorization flow, this endpoint will only return a single authorized account.</p>
+</div>
 
 ~~~
 GET /accounts
