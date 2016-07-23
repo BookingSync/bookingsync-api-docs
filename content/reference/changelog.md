@@ -1,5 +1,9 @@
 # Changelog
 
+## 2016-07-23
+
+  * [doc fix] `rentals#search` take a `id` param, not `rental_id`.
+
 ## 2016-06-28
 
   * [doc update] Clarify `/accounts` endpoint limitations.
