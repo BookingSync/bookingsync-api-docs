@@ -1,5 +1,9 @@
 # Changelog
 
+## 2016-07-30
+
+  * [doc fix] `bathrooms` details `bath`, `shower` and `wc` are suffixed with `_count`.
+
 ## 2016-07-23
 
   * [doc fix] `rentals#search` take a `id` param, not `rental_id`.
