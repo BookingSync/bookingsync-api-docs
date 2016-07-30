@@ -16,9 +16,9 @@ Name                | Type    | Read/Write | Description
 id                  | Integer | Read       | Bathroom's id.
 --------------------|---------|------------|------------
 name                | [Object](/reference/enums#formats)| Read       | Bathroom's name, list of locales described in [enums section](/reference/enums#locales).
-bath                | Integer | Read       | Bathroom's number of baths.
-shower              | Integer | Read       | Bathroom's number of showers.
-wc                  | Integer | Read       | Bathroom's number of wc's.
+bath_count          | Integer | Read       | Bathroom's number of baths.
+shower_count        | Integer | Read       | Bathroom's number of showers.
+wc_count            | Integer | Read       | Bathroom's number of wc's.
 --------------------|---------|------------|------------
 created_at          | [Time](/reference/enums#formats) | Read        | Bathroom's create time.
 updated_at          | [Time](/reference/enums#formats) | Read        | Bathroom's update time.
@@ -30,9 +30,9 @@ Name                | Type    | Read/Write | Description
 id                  | Integer | Read       | Bathroom's id.
 --------------------|---------|------------|------------
 name                | [Object](/reference/enums#formats)| Read/Write | **Required**. Bathroom's name, list of locales described in [enums section](/reference/enums#locales).
-bath                | Integer | Read/Write | Bathroom's number of baths.
-shower              | Integer | Read/Write | Bathroom's number of showers.
-wc                  | Integer | Read/Write | Bathroom's number of wc's.
+bath_count          | Integer | Read/Write | Bathroom's number of baths.
+shower_count        | Integer | Read/Write | Bathroom's number of showers.
+wc_count            | Integer | Read/Write | Bathroom's number of wc's.
 --------------------|---------|------------|------------
 created_at          | [Time](/reference/enums#formats) | Read       | Bathroom's create time.
 updated_at          | [Time](/reference/enums#formats) | Read       | Bathroom's update time.
