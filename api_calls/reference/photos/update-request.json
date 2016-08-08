@@ -1,10 +1,9 @@
 {
   "photos": [
     {
-      "photo": "livingroom.jpg",
-      "description": {
-        "en": "Wonderful living room"
-      },
+      "remote_photo_url": "http://www.gstatic.com/webp/gallery/2.jpg",
+      "description_en": "Wonderful living room",
+      "description_fr": "Superbe salon",
       "kind": "livingroom",
       "position": 1
     }
