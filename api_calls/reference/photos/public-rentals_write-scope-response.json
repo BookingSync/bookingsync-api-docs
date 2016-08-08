@@ -9,7 +9,8 @@
       },
       "id": 1,
       "description": {
-        "en": "Wonderful living room"
+        "en": "Wonderful living room",
+        "fr": "Superbe salon"
       },
       "kind": "livingroom",
       "micro_url": "http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg",

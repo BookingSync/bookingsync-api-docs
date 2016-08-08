@@ -44,9 +44,9 @@ kind               | String  | Read/Write | Photo's kind, list of kinds describe
 large_url          | String  | Read       | Photo's large size url.
 medium_url         | String  | Read       | Photo's medium size url.
 micro_url          | String  | Read       | Photo's micro size url.
-photo              | File    | Write      | **Required**. Photo's image.
+photo              | File    | Write      | **Required**. Photo's image. (`remote_photo_url` can be used instead)
 position           | Integer | Read/Write | Photo's position on the rental list.
-remote_photo_url   | String  | Write      | Photo's remote url.
+remote_photo_url   | String  | Write      | **Required**. Photo's remote url. (`photo` can be used instead)
 small_url          | String  | Read       | Photo's small size url.
 thumb_url          | String  | Read       | Photo's thumb size url.
 -------------------|---------|------------|------------
@@ -78,7 +78,14 @@ GET /photos/:photo_id
 
 ## Create a new photo
 
-Creates a photo for given rental.
+<div class="callout callout-info">
+  <h4>Translated attributes</h4>
+  <p>Please note that translated attributes are updated differenly than you read them.<br>
+  To set the English description, locale <code>en</code>, you need to use the <code>description_en</code> attribute.</p>
+  <p>List of locales described in <a href="/reference/enums#locales">enums section</a>.</p>
+</div>
+
+Returns a newly created photo for given rental.
 
 ~~~~
 POST /rentals/:rental_id/photos
@@ -88,6 +95,13 @@ POST /rentals/:rental_id/photos
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Update a photo
+
+<div class="callout callout-info">
+  <h4>Translated attributes</h4>
+  <p>Please note that translated attributes are updated differenly than you read them.<br>
+  To set the English description, locale <code>en</code>, you need to use the <code>description_en</code> attribute.</p>
+  <p>List of locales described in <a href="/reference/enums#locales">enums section</a>.</p>
+</div>
 
 Returns an updated photo identified by ID.
 

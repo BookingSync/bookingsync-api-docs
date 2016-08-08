@@ -1,5 +1,9 @@
 # Changelog
 
+## 2016-08-08
+ 
+ * [doc fix] Fix documentation about `photos` creation and update.
+
 ## 2016-07-30
 
   * [doc fix] `bathrooms` details `bath`, `shower` and `wc` are suffixed with `_count`.
