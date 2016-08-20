@@ -7,7 +7,8 @@
 
 In this guide, we will learn how to use BookingSync API using PHP language and our dedicated [PHP lib](https://github.com/BookingSync/rest-request-php).
 
-We will here run *get_rentals* example.
+We will here run *get_rentals* example. This example use [oauth2 bookingsync php](https://github.com/BookingSync/oauth2-bookingsync-php). PHP 5.4 is required here.
+
 
 ## Requirements
 
