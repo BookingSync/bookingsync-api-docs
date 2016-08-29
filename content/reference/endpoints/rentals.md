@@ -194,7 +194,7 @@ Name              | Type    | Default | Description
 amenities         | String  |         | List of comma separated amenities to include.
 bb_ne             | Float   |         | Rentals located between `bb_sw` & `bb_ne`. Format `latitude, longitude`.
 bb_sw             | Float   |         | Rentals located between `bb_sw` & `bb_ne`. Format `latitude, longitude`.
-bookable_online   | Boolean | blank   | `true` to get rentals that require no human interaction for booking, `false` to get those that do.
+bookable_online   | Boolean | blank   | `true` to get rentals that are instantly bookable (requiring no human interaction), `false` to get those that are not.
 city              | String  |         | Rentals matching given city.
 country_code      | String  |         | Rentals matching given country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
 destination       | String  |         | List of comma separated destinations.
