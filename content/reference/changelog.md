@@ -1,5 +1,9 @@
 # Changelog
 
+## 2016-09-26
+
+ * [api improvement] `priced_only` mapping parameter added to `availabilities`.
+
 ## 2016-09-25
 
   * [doc fix] `client_id` was wrongly marked as required when creating bookings.

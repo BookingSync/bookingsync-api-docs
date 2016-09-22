@@ -63,4 +63,5 @@ Name              | Type    | Default                        | Description
 from              | [Date](/reference/enums#formats) | Beginning of current month     | Starts mapping at the given date. Default is beginning of current month.
 include_tentative | Boolean | true                           | Includes tentative bookings by default. If switched to false, tentative statuses will be rendered as `0`.
 boolean           | Boolean | false                          | Render map using only `0` and `1` characters. In this mode, every blocking status will be rendered as `1`. List of statuses described in [enums section](/reference/enums#availability-map-statuses).
+priced_only       | Boolean | false                          | Show days without nightly rate as unavailable.
 {: class="table table-bordered"}
