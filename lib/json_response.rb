@@ -10,7 +10,8 @@ module JsonResponse
       start_at: days_from_now(7),
       end_at: days_from_now(14),
       start_date: days_from_now(7).strftime("%F"),
-      end_date: days_from_now(256).strftime("%F")
+      end_date: days_from_now(256).strftime("%F"),
+      beginning_of_month: Date.today.strftime("%Y-%m-01")
     }
     vars.each do |key, value|
       value = value.iso8601 if value.is_a?(Time)

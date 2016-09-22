@@ -1,7 +1,11 @@
 # Changelog
 
+## 2016-09-21
+
+ * [api improvement] Add `nightly_rate_maps` endpoint.
+
 ## 2016-08-08
- 
+
  * [doc fix] Fix documentation about `photos` creation and update.
 
 ## 2016-07-30
