@@ -28,7 +28,7 @@ end_at                  | [Time](/reference/enums#formats) | Read       | Bookin
 Name                    | Type    | Read/Write | Description
 ------------------------|---------|------------|------------
 id                      | Integer | Read       | Booking's id.
-client_id               | Integer | Write      | **Required**. Client id related to the Booking.
+client_id               | Integer | Write      | Client id related to the Booking.
 source_id               | Integer | Write      | Source id related to the Booking.
 ------------------------|---------|------------|------------
 adults                  | Integer | Write      | Booking's number of adults.
@@ -82,7 +82,7 @@ tentative_expires_at    | [Time](/reference/enums#formats) | Read       | Bookin
 Name                    | Type    | Read/Write | Description
 ------------------------|---------|------------|------------
 id                      | Integer | Read       | Booking's id.
-client_id               | Integer | Write      | **Required**. Client id related to the Booking.
+client_id               | Integer | Write      | Client id related to the Booking.
 source_id               | Integer | Write      | Source id related to the Booking.
 ------------------------|---------|------------|------------
 adults                  | Integer | Read/Write | Booking's number of adults.
