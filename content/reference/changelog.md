@@ -1,5 +1,9 @@
 # Changelog
 
+## 2016-10-18
+
+ * [api improvement] `title` attribute added to `reviews`.
+
 ## 2016-09-26
 
  * [api improvement] `priced_only` mapping parameter added to `availabilities`.
