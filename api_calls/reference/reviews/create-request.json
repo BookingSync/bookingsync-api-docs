@@ -2,7 +2,8 @@
   "reviews": [
     {
       "comment": "It was awesome!",
-      "rating": 5
+      "rating": 5,
+      "title": "Awesome"
     }
   ]
 }

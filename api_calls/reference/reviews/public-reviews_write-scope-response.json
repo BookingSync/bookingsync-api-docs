@@ -13,6 +13,7 @@
       "rating": 5,
       "comment": "It was awesome!",
       "name": "John S.",
+      "title": "Awesome",
       "created_at": "CREATED_AT",
       "updated_at": "UPDATED_AT"
     }
