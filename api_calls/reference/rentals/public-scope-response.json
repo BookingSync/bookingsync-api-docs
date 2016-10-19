@@ -14,7 +14,9 @@
     "rentals.rentals_fees": "https://www.bookingsync.com/api/v3/rentals_fees/{rentals.rentals_fees}",
     "rentals.bathrooms": "https://www.bookingsync.com/api/v3/bathrooms/{rentals.bathrooms}",
     "rentals.bedrooms": "https://www.bookingsync.com/api/v3/bedrooms/{rentals.bedrooms}",
-    "rentals.rentals_tags": "https://www.bookingsync.com/api/v3/rentals_tags/{rentals.rentals_tags}"
+    "rentals.rentals_tags": "https://www.bookingsync.com/api/v3/rentals_tags/{rentals.rentals_tags}",
+    "rentals.change_over": "https://www.bookingsync.com/api/v3/change_overs/{rentals.change_over}",
+    "rentals.nightly_rate_map": "https://www.bookingsync.com/api/v3/nightly_rate_maps/{rentals.nightly_rate_map}"
   },
   "rentals": [
     {
@@ -60,7 +62,9 @@
           11
         ],
         "rentals_tags": [
-        ]
+        ],
+        "change_over": 1,
+        "nightly_rate_map": 1
       },
       "id": 1,
       "name": "Cottage 1",
@@ -108,7 +112,8 @@
       "position": 1,
       "absolute_min_price": "300.0",
       "stories_count": 2,
-      "floor": "A"
+      "floor": "A",
+      "nightly_rates_managed_externally": false
     }
   ],
   "meta": {

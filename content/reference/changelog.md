@@ -1,5 +1,9 @@
 # Changelog
 
+## 2016-10-19
+
+ * [api improvement] Update `rentals` endpoint with `nightly_rates_managed_externally` attribute, `nightly_rate_map` and `change_over` links.
+
 ## 2016-10-18
 
  * [api improvement] `title` attribute added to `reviews`.

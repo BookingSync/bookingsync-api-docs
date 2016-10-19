@@ -39,6 +39,7 @@ lng                             | Float    | Read       | Rental's longitude.
 max_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's maximum price.
 min_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's minimum price.
 name                            | String   | Read       | Rental's name.
+nightly_rates_managed_externally | Boolean  | Read       | Defines whether `nightly_rate_map` can be updated via API. Defaults to `false`.
 position                        | Integer  | Read       | Rental's position on the list.
 price_public_notes              | [Object](/reference/enums#formats)   | Read       | Rental's price notes for public, list of locales described in [enums section](/reference/enums#locales).
 rental_type                     | String   | Read       | Rental's type (example: villa, apartment), all types described in [enums section](/reference/enums#rental-types).
@@ -89,6 +90,7 @@ lng                             | Float    | Read       | Rental's longitude.
 max_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's maximum price.
 min_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's minimum price.
 name                            | String   | Read       | Rental's name.
+nightly_rates_managed_externally | Boolean  | Read       | Defines whether `nightly_rate_map` can be updated via API. Defaults to `false`.
 notes                           | Text     | Read       | Rental's private notes.
 position                        | Integer  | Read       | Rental's position on the list.
 price_public_notes              | [Object](/reference/enums#formats)   | Read       | Rental's price notes for public, list of locales described in [enums section](/reference/enums#locales).
@@ -145,6 +147,7 @@ lng                             | Float    | Read/Write | Rental's longitude. (b
 max_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's maximum price.
 min_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's minimum price.
 name                            | String   | Read/Write | **Required**. Rental's name. (3 min, 40 max characters)
+nightly_rates_managed_externally | Boolean  | Read/Write | Defines whether `nightly_rate_map` can be updated via API. Defaults to `false`.
 notes                           | Text     | Read/Write | Rental's private notes. (1000 characters max)
 position                        | Integer  | Read/Write | Rental's position on the list.
 price_public_notes              | [Object](/reference/enums#formats)   | Read/Write | Rental's price notes for public, list of locales described in [enums section](/reference/enums#locales).
