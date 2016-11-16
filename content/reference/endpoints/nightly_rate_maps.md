@@ -30,7 +30,7 @@ id               | Integer | Read       | Nightly Rate Map's id.
 minimum_stays_map| String  | Read/Write | Nightly Rate Map's map of minimum stays. There is a total of 1096 characters, each representing one day.
 rates_map        | String  | Read/Write | Nightly Rate Map's map of rates. There is a total of 1096 characters, each representing one day. `0` rate represents a day without rate assigned.
 -----------------|---------|------------|------------
-start_date       | [Date](/reference/enums#formats) | Read       | Nightly Rate Map's start date.
+start_date       | [Date](/reference/enums#formats) | Read/Write | **Required**. Nightly Rate Map's start date. Earliest supported `start_date` is yesterday, latest one - 1094 days from today. Both restrictions are based on current UTC date.
 updated_at       | [Time](/reference/enums#formats) | Read       | Nightly Rate Map's update time.
 {: class="table table-bordered"}
   </div>
@@ -61,6 +61,11 @@ GET /nightly_rate_maps/:nightly_rate_map_id
 <div class="callout callout-info">
   <h4>Update requirement</h4>
   <p>Rental attribute <code>nightly_rates_managed_externally</code> must be set to <code>true</code>, before you can write to this endpoint.</p>
+</div>
+<div class="callout callout-info">
+  <h4>Partial update</h4>
+  <p>This endpoint supports partial updates, meaning you can push only subset that changes with corresponding <code>start_date</code>.</p>
+  <p>Each map maximum length follows the same restrictions as <code>start_date</code>. Please note that only <strong>1096 nights</strong> of data can be sent when the <code>start_date</code> <strong>is yesterday UTC</strong>. Therefore if sending <code>start_date</code> <strong>as today UTC</strong>, you can only set <strong>1095 nights</strong>.</p>
 </div>
 
 Returns an updated nightly rate map identified by ID.
