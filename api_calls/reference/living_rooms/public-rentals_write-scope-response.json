@@ -1,0 +1,21 @@
+{
+  "links": {
+    "living_rooms.rental": "https://www.bookingsync.com/api/v3/rentals/{living_rooms.rental}"
+  },
+  "living_rooms": [
+    {
+      "links": {
+        "rental": 1
+      },
+      "id": 1,
+      "bunk_beds_count": 0,
+      "double_beds_count": 1,
+      "kingsize_beds_count": 0,
+      "queensize_beds_count": 0,
+      "single_beds_count": 2,
+      "sofa_beds_count": 1,
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT"
+    }
+  ]
+}

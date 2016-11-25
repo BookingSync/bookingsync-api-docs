@@ -1,5 +1,9 @@
 # Changelog
 
+## 2016-11-25
+
+  * [api improvement] Add `living_rooms` endpoint.
+
 ## 2016-11-16
 
  * [api improvement] Update `nightly_rate_maps` endpoint with partial update information.
