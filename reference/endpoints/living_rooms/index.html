@@ -70,7 +70,7 @@
           <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
           <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
-          <a class="list-group-item active" href="/reference/endpoints/bathrooms/">Bathrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
@@ -82,7 +82,7 @@
           <a class="list-group-item" href="/reference/endpoints/fees/">Fees</a>
           <a class="list-group-item" href="/reference/endpoints/fees_taxes/">Fees Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
-          <a class="list-group-item" href="/reference/endpoints/living_rooms/">Living Rooms</a>
+          <a class="list-group-item active" href="/reference/endpoints/living_rooms/">Living Rooms</a>
           <a class="list-group-item" href="/reference/endpoints/nightly_rate_maps/">Nightly Rate Maps</a>
           <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
@@ -114,14 +114,14 @@
     <div class="col-md-9 col-md-pull-3">
       <div class="panel panel-default">
         <div class="panel-body reference-body">
-          <h2 id="bathrooms">Bathrooms</h2>
+          <h2 id="livingrooms">LivingRooms</h2>
 
 <ol id="markdown-toc">
-<li><a href="#list-bathrooms">List bathrooms</a></li>
-  <li><a href="#get-a-single-bathroom">Get a single bathroom</a></li>
-  <li><a href="#create-a-new-bathroom">Create a new bathroom</a></li>
-  <li><a href="#update-a-bathroom">Update a bathroom</a></li>
-  <li><a href="#destroy-a-bathroom">Destroy a bathroom</a></li>
+<li><a href="#list-livingrooms">List living_rooms</a></li>
+  <li><a href="#get-a-single-livingroom">Get a single living_room</a></li>
+  <li><a href="#create-a-new-livingroom">Create a new living_room</a></li>
+  <li><a href="#update-a-livingroom">Update a living_room</a></li>
+  <li><a href="#destroy-a-livingroom">Destroy a living_room</a></li>
 </ol><h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -140,32 +140,44 @@
 <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Bathroom’s id.</td>
+          <td>LivingRoom’s id.</td>
         </tr></tbody>
 <tbody>
 <tr>
-<td>name</td>
-          <td><a href="/reference/enums#formats">Object</a></td>
-          <td>Read</td>
-          <td>Bathroom’s name, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
-        </tr>
-<tr>
-<td>bath_count</td>
+<td>bunk_beds_count</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Bathroom’s number of baths.</td>
+          <td>LivingRoom’s number of bunk beds.</td>
         </tr>
 <tr>
-<td>shower_count</td>
+<td>double_beds_count</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Bathroom’s number of showers.</td>
+          <td>LivingRoom’s number of double beds.</td>
         </tr>
 <tr>
-<td>wc_count</td>
+<td>kingsize_beds_count</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Bathroom’s number of wc’s.</td>
+          <td>LivingRoom’s number of kingsize beds.</td>
+        </tr>
+<tr>
+<td>queensize_beds_count</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>LivingRoom’s number of queensize beds.</td>
+        </tr>
+<tr>
+<td>single_beds_count</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>LivingRoom’s number of single beds.</td>
+        </tr>
+<tr>
+<td>sofa_beds_count</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>LivingRoom’s number of sofa beds.</td>
         </tr>
 </tbody>
 <tbody>
@@ -173,13 +185,13 @@
 <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Bathroom’s create time.</td>
+          <td>LivingRoom’s create time.</td>
         </tr>
 <tr>
 <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Bathroom’s update time.</td>
+          <td>LivingRoom’s update time.</td>
         </tr>
 </tbody>
 </table>
@@ -196,33 +208,44 @@
 <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Bathroom’s id.</td>
+          <td>LivingRoom’s id.</td>
         </tr></tbody>
 <tbody>
 <tr>
-<td>name</td>
-          <td><a href="/reference/enums#formats">Object</a></td>
-          <td>Read/Write</td>
-          <td>
-<strong>Required</strong>. Bathroom’s name, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
-        </tr>
-<tr>
-<td>bath_count</td>
+<td>bunk_beds_count</td>
           <td>Integer</td>
           <td>Read/Write</td>
-          <td>Bathroom’s number of baths.</td>
+          <td>LivingRoom’s number of bunk beds.</td>
         </tr>
 <tr>
-<td>shower_count</td>
+<td>double_beds_count</td>
           <td>Integer</td>
           <td>Read/Write</td>
-          <td>Bathroom’s number of showers.</td>
+          <td>LivingRoom’s number of double beds.</td>
         </tr>
 <tr>
-<td>wc_count</td>
+<td>kingsize_beds_count</td>
           <td>Integer</td>
           <td>Read/Write</td>
-          <td>Bathroom’s number of wc’s.</td>
+          <td>LivingRoom’s number of kingsize beds.</td>
+        </tr>
+<tr>
+<td>queensize_beds_count</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>LivingRoom’s number of queensize beds.</td>
+        </tr>
+<tr>
+<td>single_beds_count</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>LivingRoom’s number of single beds.</td>
+        </tr>
+<tr>
+<td>sofa_beds_count</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>LivingRoom’s number of sofa beds.</td>
         </tr>
 </tbody>
 <tbody>
@@ -230,31 +253,31 @@
 <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Bathroom’s create time.</td>
+          <td>LivingRoom’s create time.</td>
         </tr>
 <tr>
 <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Bathroom’s update time.</td>
+          <td>LivingRoom’s update time.</td>
         </tr>
 </tbody>
 </table>
 </div>
 </div>
 
-<h3 id="list-bathrooms">List bathrooms</h3>
+<h3 id="list-livingrooms">List living_rooms</h3>
 
-<p>List all bathrooms for given account.</p>
+<p>List all living_rooms for given account.</p>
 
-<pre><code>GET /bathrooms
+<pre><code>GET /living_rooms
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#2eb72c2d1c6fpublic" role="tab" data-toggle="pill">
+        <a href="#c8ca0df36223public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -263,22 +286,22 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="2eb72c2d1c6fpublic">
+      <div class="tab-pane active" id="c8ca0df36223public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"bathrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"</span>
+    <span class="s2">"living_rooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{living_rooms.rental}"</span>
   <span class="p">},</span>
-  <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"living_rooms"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"bathroom"</span>
-      <span class="p">},</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-11-28T11:34:04Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-11-28T11:34:04Z"</span><span class="p">,</span>
+      <span class="s2">"bunk_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"double_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"kingsize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"queensize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"single_beds_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"sofa_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-11-28T11:34:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-11-28T11:34:05Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -290,18 +313,18 @@
   
 </div>
 
-<h3 id="get-a-single-bathroom">Get a single bathroom</h3>
+<h3 id="get-a-single-livingroom">Get a single living_room</h3>
 
-<p>Returns a single bathroom identified by ID.</p>
+<p>Returns a single living_room identified by ID.</p>
 
-<pre><code>GET /bathrooms/:bathroom_id
+<pre><code>GET /living_rooms/:living_room_id
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#629d505b53f7public" role="tab" data-toggle="pill">
+        <a href="#d05e71990b43public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -310,22 +333,22 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="629d505b53f7public">
+      <div class="tab-pane active" id="d05e71990b43public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"bathrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"</span>
+    <span class="s2">"living_rooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{living_rooms.rental}"</span>
   <span class="p">},</span>
-  <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"living_rooms"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"bathroom"</span>
-      <span class="p">},</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-11-28T11:34:04Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-11-28T11:34:04Z"</span><span class="p">,</span>
+      <span class="s2">"bunk_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"double_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"kingsize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"queensize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"single_beds_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"sofa_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-11-28T11:34:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-11-28T11:34:05Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -337,30 +360,32 @@
   
 </div>
 
-<h3 id="create-a-new-bathroom">Create a new bathroom</h3>
+<h3 id="create-a-new-livingroom">Create a new living_room</h3>
 
-<p>Creates a bathroom for given rental.</p>
+<p>Creates a living_room for given rental.</p>
 
-<pre><code>POST /rentals/:rental_id/bathrooms
+<pre><code>POST /rentals/:rental_id/living_rooms
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#2911135013b0rentals_write" role="tab" data-toggle="pill">
+        <a href="#e3dddcda2de6rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
     
   </ul><h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"living_rooms"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"bathroom"</span><span class="p">,</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="s2">"bunk_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"double_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"kingsize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"queensize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"single_beds_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"sofa_beds_count"</span><span class="o">:</span> <span class="mi">1</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -369,22 +394,22 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="2911135013b0rentals_write">
+      <div class="tab-pane active" id="e3dddcda2de6rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"bathrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"</span>
+    <span class="s2">"living_rooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{living_rooms.rental}"</span>
   <span class="p">},</span>
-  <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"living_rooms"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"bathroom"</span>
-      <span class="p">},</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-11-28T11:34:04Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-11-28T11:34:04Z"</span><span class="p">,</span>
+      <span class="s2">"bunk_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"double_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"kingsize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"queensize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"single_beds_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"sofa_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-11-28T11:34:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-11-28T11:34:05Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -396,30 +421,32 @@
   
 </div>
 
-<h3 id="update-a-bathroom">Update a bathroom</h3>
+<h3 id="update-a-livingroom">Update a living_room</h3>
 
-<p>Returns an updated bathroom identified by ID.</p>
+<p>Returns an updated living_room identified by ID.</p>
 
-<pre><code>PUT /bathrooms/:bathroom_id
+<pre><code>PUT /living_rooms/:living_room_id
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#dc00e379b915rentals_write" role="tab" data-toggle="pill">
+        <a href="#c9cb4fe85263rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
     
   </ul><h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"living_rooms"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"bathroom"</span><span class="p">,</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="s2">"bunk_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"double_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"kingsize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"queensize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"single_beds_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"sofa_beds_count"</span><span class="o">:</span> <span class="mi">1</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -428,22 +455,22 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="dc00e379b915rentals_write">
+      <div class="tab-pane active" id="c9cb4fe85263rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"bathrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"</span>
+    <span class="s2">"living_rooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{living_rooms.rental}"</span>
   <span class="p">},</span>
-  <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"living_rooms"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"bathroom"</span>
-      <span class="p">},</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-11-28T11:34:04Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-11-28T11:34:04Z"</span><span class="p">,</span>
+      <span class="s2">"bunk_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"double_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"kingsize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"queensize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"single_beds_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"sofa_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2016-11-28T11:34:05Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-11-28T11:34:05Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -455,13 +482,13 @@
   
 </div>
 
-<h3 id="destroy-a-bathroom">Destroy a bathroom</h3>
+<h3 id="destroy-a-livingroom">Destroy a living_room</h3>
 
 <p>Required OAuth scope: <code>:rentals_write</code></p>
 
 <p>Returns an empty response with ‘204 No Content’ status code on success.</p>
 
-<pre><code>DELETE /bathrooms/:bathroom_id
+<pre><code>DELETE /living_rooms/:living_room_id
 </code></pre>
         </div>
       </div>
