@@ -47,7 +47,7 @@ GET /los_records?kinds=rental_price_before_special_offers,rental_price&exchange_
 Name                 | Type    | Default | Description
 ---------------------|---------|---------|-------------
 kinds                | String  |         | List of comma separated kinds. Returns only los records for this kind(s).<br>For possible values visit the [enums section](/reference/enums#los_kinds).
-exchange_currency_to | String  |         | Code of the currency in which the rates are to be displayed.<br>The accepted codes can be found in the [enums section](/reference/enums#currencies).
+exchange_to_currency | String  |         | Code of the currency in which the rates are to be displayed.<br>The accepted codes can be found in the [enums section](/reference/enums#currencies).
 updated_since        | [Time](/reference/enums#formats) |         | Only los records updated after given time.
 {: class="table table-bordered"}
 
