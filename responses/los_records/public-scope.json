@@ -10,6 +10,11 @@
       "id": 705,
       "kind": "initial",
       "day": "2016-07-13",
+      "min_occupancy": 9,
+      "max_occupancy": 9,
+      "original_currency" : "EUR",
+      "currency": "EUR",
+      "exchange_rate" : "1.0",
       "rates": [
         "0.0",
         "50.0",
@@ -42,7 +47,6 @@
         "725.0",
         "750.0"
       ],
-      "occupancy": 9,
       "created_at": "2015-07-27T19:20:10Z"
     }
   ],
