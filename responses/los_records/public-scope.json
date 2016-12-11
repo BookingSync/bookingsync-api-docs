@@ -8,7 +8,7 @@
         "rental": 1
       },
       "id": 705,
-      "kind": "initial",
+      "kind": "final_price",
       "day": "2016-07-13",
       "min_occupancy": 9,
       "max_occupancy": 9,

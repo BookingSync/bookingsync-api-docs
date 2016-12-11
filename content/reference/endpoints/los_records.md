@@ -1,4 +1,4 @@
-# Los Records
+# LOS Records
 
 1. TOC
 {:toc}
@@ -12,48 +12,25 @@
   <div class="tab-pane active" id="public" markdown="1">
 Name                 | Type    | Read/Write | Description
 ---------------------|---------|------------|------------
-id                   | Integer | Read       | Los Record's id.
+id                   | Integer | Read       | Uniq identifier.
 ---------------------|---------|------------|------------
-kind                 | String  | Read       | Los Record's kind, either `initial` or `final`.
-day                  | [Date](/reference/enums#formats) | Read       | Day for which Los Record is valid.
-min_occupancy        | Integer | Read       | Minimum occupancy for which the Los Record is valid.
-max_occupancy        | Integer | Read       | Maximum occupancy for which the Los Record is valid.
-original_currency    | String  | Read       | Currency in which the rates are stored.<br>The list of codes can be found in the [enums section](/reference/enums#currencies). 
-currency             | String  | Read       | Currency in which the rates are presented here.<br>The list of codes can be found in the [enums section](/reference/enums#currencies).
+kind                 | String  | Read       | LOS record's kind. For possible values visit the [enums section](/reference/enums#los-kinds).
+day                  | [Date](/reference/enums#formats) | Read       | Day for which LOS record is valid.
+min_occupancy        | Integer | Read       | Minimum occupancy for which the LOS record is valid.
+max_occupancy        | Integer | Read       | Maximum occupancy for which the LOS record is valid.
+original_currency    | String  | Read       | Currency in which the rates are originating from.<br>The list of codes can be found in the [enums section](/reference/enums#currencies).
+currency             | String  | Read       | Currency in which the rates are in the response.<br>The list of codes can be found in the [enums section](/reference/enums#currencies).
 exchange_rate        | [Decimal](/reference/enums#formats) | Read       | The rate used to convert from the `original_currency` to `currency`.
 rates                | Array   | Read       | Starting from a one day length of stay, array lists rates up to 30 days. Rate will equal `0.0`, if corresponding length is invalid with `minimum_stay` setting.
 ---------------------|---------|------------|------------
-created_at           | [Time](/reference/enums#formats) | Read       | Los Record's create time.
+created_at           | [Time](/reference/enums#formats) | Read       | LOS record's create time.
 {: class="table table-bordered"}
   </div>
 </div>
 
-<div class="callout callout-info">
-  <h4>Definitions</h4>
-  <strong>Initial los record</strong>: Los Record computed before any discount.<br>
-  <strong>Final los record</strong>: Los Record after discounts have been applied.
-</div>
+## List LOS records
 
-### Query parameters
-
-Query parameters allow filtering and customization.
-
-Example:
-
-~~~
-GET /los_records?kinds=rental_price_before_special_offers,rental_price&exchange_currency_to=EUR
-~~~
-
-Name                 | Type    | Default | Description
----------------------|---------|---------|-------------
-kinds                | String  |         | List of comma separated kinds. Returns only los records for this kind(s).<br>For possible values visit the [enums section](/reference/enums#los_kinds).
-exchange_to_currency | String  |         | Code of the currency in which the rates are to be displayed.<br>The accepted codes can be found in the [enums section](/reference/enums#currencies).
-updated_since        | [Time](/reference/enums#formats) |         | Only los records updated after given time.
-{: class="table table-bordered"}
-
-## List los records
-
-List all los records for given account(s).
+List all LOS records for given account(s).
 
 ~~~
 GET /los_records
@@ -61,26 +38,29 @@ GET /los_records
 
 <%= render 'json_response', endpoint: "los_records", scopes: %w(public) %>
 
-## Search los records
+## Search LOS records
 
-Search parameters allow to filter los records by specified fields.
+Search parameters allow to filter LOS records by specified fields.
 
 Example:
 
 ~~~
-GET /los_records?rental_id=1
+GET /los_records?rental_id=1&kinds=rental_price_before_special_offers,rental_price&exchange_currency_to=EUR
 ~~~
 
 ### Search Parameters
 
-Name             | Type    | Default | Description
------------------|---------|---------|-------------
-rental_id        | String  |         | List of comma separated IDs. Returns only los records for this rental(s)
+Name                 | Type    | Default | Description
+---------------------|---------|---------|-------------
+exchange_to_currency | String  |         | Code of the currency in which the rates are to be returned.<br>The accepted codes can be found in the [enums section](/reference/enums#currencies).
+kinds                | String  |         | List of comma separated kinds. Returns only LOS records for this kind(s).<br>For possible values visit the [enums section](/reference/enums#los-kinds).
+rental_id            | String  |         | List of comma separated IDs. Returns only LOS records for this rental(s)
+updated_since        | [Time](/reference/enums#formats) |         | Only LOS records updated after given time.
 {: class="table table-bordered"}
 
-## Get a single los record
+## Get a single LOS record
 
-Returns a single los record identified by ID.
+Returns a single LOS record identified by ID.
 
 ~~~
 GET /los_records/:los_record_id
