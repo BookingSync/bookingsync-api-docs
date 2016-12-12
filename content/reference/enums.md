@@ -106,6 +106,14 @@ zh               | Simplified Chinese
 zh-TW            | Traditional Chinese
 {: class="table table-bordered"}
 
+## LOS kinds
+
+Name                               | Description
+-----------------------------------|------------
+rental_price_before_special_offers | Price for the rent only, before special offers discounts being applied.
+rental_price                       | Price for the rent only, after all discounts applied.
+final_price                        | Price including all required fees and taxes.
+{: class="table table-bordered"}
 
 ## Fee kinds
 
@@ -124,7 +132,6 @@ fixed                        | Fixed price
 percentage                   | Percentage of the rental price
 {: class="table table-bordered"}
 
-
 ## Payment kinds
 
 Name             | Description
@@ -139,7 +146,6 @@ paypal           | Payment made with PayPal, outside of BookingSync.
 travel-cheque    | Payment made by Travel Cheque.
 wiretransfer     | Payment made by Wire Transfer.
 {: class="table table-bordered"}
-
 
 ## Photo kinds
 
