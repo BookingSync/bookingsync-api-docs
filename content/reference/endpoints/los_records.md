@@ -57,13 +57,3 @@ kinds                | String  |         | List of comma separated kinds. Return
 rental_id            | String  |         | List of comma separated IDs. Returns only LOS records for this rental(s)
 updated_since        | [Time](/reference/enums#formats) |         | Only LOS records updated after given time.
 {: class="table table-bordered"}
-
-## Get a single LOS record
-
-Returns a single LOS record identified by ID.
-
-~~~
-GET /los_records/:los_record_id
-~~~
-
-<%= render 'json_response', endpoint: "los_records", scopes: %w(public) %>
