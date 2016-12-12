@@ -69,7 +69,7 @@
         <div class="list-group">
           <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
           <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
-          <a class="list-group-item active" href="/reference/endpoints/availabilities/">Availabilities</a>
+          <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
@@ -83,7 +83,7 @@
           <a class="list-group-item" href="/reference/endpoints/fees_taxes/">Fees Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
           <a class="list-group-item" href="/reference/endpoints/living_rooms/">Living Rooms</a>
-          <a class="list-group-item" href="/reference/endpoints/los_records/">LOS Records</a>
+          <a class="list-group-item active" href="/reference/endpoints/los_records/">LOS Records</a>
           <a class="list-group-item" href="/reference/endpoints/nightly_rate_maps/">Nightly Rate Maps</a>
           <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
@@ -115,12 +115,11 @@
     <div class="col-md-9 col-md-pull-3">
       <div class="panel panel-default">
         <div class="panel-body reference-body">
-          <h2 id="availabilities">Availabilities</h2>
+          <h2 id="los-records">LOS Records</h2>
 
 <ol id="markdown-toc">
-<li><a href="#list-availabilities">List availabilities</a></li>
-  <li><a href="#get-a-single-availability">Get a single availability</a></li>
-  <li><a href="#customize-availability-maps">Customize availability maps</a></li>
+<li><a href="#list-los-records">List LOS records</a></li>
+  <li><a href="#search-los-records">Search LOS records</a></li>
 </ol><h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -138,44 +137,80 @@
 <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Availability’s id.</td>
-        </tr></tbody>
-<tbody><tr>
-<td>map</td>
-          <td>String</td>
-          <td>Read</td>
-          <td>Availability’s map of booking status. There is a total of 1096 characters, each representing one day. List of statuses described in <a href="/reference/enums#availability-map-statuses">enums section</a>.</td>
+          <td>Uniq identifier.</td>
         </tr></tbody>
 <tbody>
 <tr>
-<td>start_date</td>
-          <td><a href="/reference/enums#formats">Date</a></td>
+<td>kind</td>
+          <td>String</td>
           <td>Read</td>
-          <td>Availability’s start date.</td>
+          <td>LOS record’s kind. For possible values visit the <a href="/reference/enums#los-kinds">enums section</a>.</td>
         </tr>
 <tr>
-<td>updated_at</td>
-          <td><a href="/reference/enums#formats">Time</a></td>
+<td>day</td>
+          <td><a href="/reference/enums#formats">Date</a></td>
           <td>Read</td>
-          <td>Availability’s update time.</td>
+          <td>Day for which LOS record is valid.</td>
+        </tr>
+<tr>
+<td>min_occupancy</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Minimum occupancy for which the LOS record is valid.</td>
+        </tr>
+<tr>
+<td>max_occupancy</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Maximum occupancy for which the LOS record is valid.</td>
+        </tr>
+<tr>
+<td>original_currency</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Currency in which the rates are originating from.<br>The list of codes can be found in the <a href="/reference/enums#currencies">enums section</a>.</td>
+        </tr>
+<tr>
+<td>currency</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Currency in which the rates are in the response.<br>The list of codes can be found in the <a href="/reference/enums#currencies">enums section</a>.</td>
+        </tr>
+<tr>
+<td>exchange_rate</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>The rate used to convert from the <code>original_currency</code> to <code>currency</code>.</td>
+        </tr>
+<tr>
+<td>rates</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Starting from a one day length of stay, array lists rates up to 30 days. Rate will equal <code>0.0</code>, if corresponding length is invalid with <code>minimum_stay</code> setting.</td>
         </tr>
 </tbody>
+<tbody><tr>
+<td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>LOS record’s create time.</td>
+        </tr></tbody>
 </table>
 </div>
 </div>
 
-<h3 id="list-availabilities">List availabilities</h3>
+<h3 id="list-los-records">List LOS records</h3>
 
-<p>List all availabilities for given account.</p>
+<p>List all LOS records for given account(s).</p>
 
-<pre><code>GET /availabilities
+<pre><code>GET /los_records
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#4379a000d203public" role="tab" data-toggle="pill">
+        <a href="#a5356ed73128public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -184,83 +219,77 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="4379a000d203public">
+      <div class="tab-pane active" id="a5356ed73128public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"availabilities.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{availabilities.rental}"</span>
+    <span class="s2">"los_records.rental"</span><span class="o">:</span> <span class="s2">"http://bookingsync.dev/api/v3/rentals/{los_records.rental}"</span>
   <span class="p">},</span>
-  <span class="s2">"availabilities"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"los_records"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"map"</span><span class="o">:</span> <span class="s2">"11111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-12-12T11:58:01Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2016-12-01"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">705</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
+      <span class="s2">"day"</span><span class="o">:</span> <span class="s2">"2016-07-13"</span><span class="p">,</span>
+      <span class="s2">"exchange_rate"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
+      <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"final_price"</span><span class="p">,</span>
+      <span class="s2">"max_occupancy"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
+      <span class="s2">"min_occupancy"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
+      <span class="s2">"original_currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
+      <span class="s2">"rates"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"0.0"</span><span class="p">,</span>
+        <span class="s2">"50.0"</span><span class="p">,</span>
+        <span class="s2">"75.0"</span><span class="p">,</span>
+        <span class="s2">"100.0"</span><span class="p">,</span>
+        <span class="s2">"125.0"</span><span class="p">,</span>
+        <span class="s2">"150.0"</span><span class="p">,</span>
+        <span class="s2">"175.0"</span><span class="p">,</span>
+        <span class="s2">"200.0"</span><span class="p">,</span>
+        <span class="s2">"225.0"</span><span class="p">,</span>
+        <span class="s2">"250.0"</span><span class="p">,</span>
+        <span class="s2">"275.0"</span><span class="p">,</span>
+        <span class="s2">"300.0"</span><span class="p">,</span>
+        <span class="s2">"325.0"</span><span class="p">,</span>
+        <span class="s2">"350.0"</span><span class="p">,</span>
+        <span class="s2">"375.0"</span><span class="p">,</span>
+        <span class="s2">"400.0"</span><span class="p">,</span>
+        <span class="s2">"425.0"</span><span class="p">,</span>
+        <span class="s2">"450.0"</span><span class="p">,</span>
+        <span class="s2">"475.0"</span><span class="p">,</span>
+        <span class="s2">"500.0"</span><span class="p">,</span>
+        <span class="s2">"525.0"</span><span class="p">,</span>
+        <span class="s2">"550.0"</span><span class="p">,</span>
+        <span class="s2">"575.0"</span><span class="p">,</span>
+        <span class="s2">"600.0"</span><span class="p">,</span>
+        <span class="s2">"625.0"</span><span class="p">,</span>
+        <span class="s2">"650.0"</span><span class="p">,</span>
+        <span class="s2">"675.0"</span><span class="p">,</span>
+        <span class="s2">"700.0"</span><span class="p">,</span>
+        <span class="s2">"725.0"</span><span class="p">,</span>
+        <span class="s2">"750.0"</span>
+      <span class="p">],</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-07-27T19:20:10Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
     
   
 </div>
 
-<h3 id="get-a-single-availability">Get a single availability</h3>
+<h3 id="search-los-records">Search LOS records</h3>
 
-<p>Returns a single availability identified by ID.</p>
+<p>Search parameters allow to filter LOS records by specified fields.</p>
 
-<pre><code>GET /availabilities/:availability_id
+<p>Example:</p>
+
+<pre><code>GET /los_records?rental_id=1&amp;kinds=rental_price_before_special_offers,rental_price&amp;exchange_currency_to=EUR
 </code></pre>
 
-<ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
-    
-      <li class="active">
-        <a href="#c861018ce9efpublic" role="tab" data-toggle="pill">
-          public
-        </a>
-      </li>
-    
-  </ul><h4 id="response-1">Response</h4>
-<div class="tab-content">
-  
-    
-      <div class="tab-pane active" id="c861018ce9efpublic">
-        <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"availabilities.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{availabilities.rental}"</span>
-  <span class="p">},</span>
-  <span class="s2">"availabilities"</span><span class="o">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"map"</span><span class="o">:</span> <span class="s2">"11111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2016-12-12T11:58:01Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2016-12-01"</span><span class="p">,</span>
-      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">]</span>
-<span class="p">}</span></code></pre>
-      </div>
-    
-  
-</div>
-
-<h3 id="customize-availability-maps">Customize availability maps</h3>
-
-<p>Mapping parameters allow to customize availability start point and status display.</p>
-
-<p>Examples:</p>
-
-<pre><code>GET /availabilities?include_tentative=false&amp;boolean=true&amp;from=20140324
-</code></pre>
-
-<pre><code>GET /availabilities/1?include_tentative=false&amp;boolean=true&amp;from=20140324
-</code></pre>
-
-<h4 id="mapping-parameters">Mapping parameters</h4>
+<h4 id="search-parameters">Search Parameters</h4>
 
 <table class="table table-bordered">
 <thead><tr>
@@ -271,28 +300,28 @@
     </tr></thead>
 <tbody>
 <tr>
-<td>from</td>
-      <td><a href="/reference/enums#formats">Date</a></td>
-      <td>Beginning of current month</td>
-      <td>Starts mapping at the given date. Default is beginning of current month.</td>
+<td>exchange_to_currency</td>
+      <td>String</td>
+      <td> </td>
+      <td>Code of the currency in which the rates are to be returned.<br>The accepted codes can be found in the <a href="/reference/enums#currencies">enums section</a>.</td>
     </tr>
 <tr>
-<td>include_tentative</td>
-      <td>Boolean</td>
-      <td>true</td>
-      <td>Includes tentative bookings by default. If switched to false, tentative statuses will be rendered as <code>0</code>.</td>
+<td>kinds</td>
+      <td>String</td>
+      <td> </td>
+      <td>List of comma separated kinds. Returns only LOS records for this kind(s).<br>For possible values visit the <a href="/reference/enums#los-kinds">enums section</a>.</td>
     </tr>
 <tr>
-<td>boolean</td>
-      <td>Boolean</td>
-      <td>false</td>
-      <td>Render map using only <code>0</code> and <code>1</code> characters. In this mode, every blocking status will be rendered as <code>1</code>. List of statuses described in <a href="/reference/enums#availability-map-statuses">enums section</a>.</td>
+<td>rental_id</td>
+      <td>String</td>
+      <td> </td>
+      <td>List of comma separated IDs. Returns only LOS records for this rental(s)</td>
     </tr>
 <tr>
-<td>priced_only</td>
-      <td>Boolean</td>
-      <td>false</td>
-      <td>Show days without nightly rate as unavailable.</td>
+<td>updated_since</td>
+      <td><a href="/reference/enums#formats">Time</a></td>
+      <td> </td>
+      <td>Only LOS records updated after given time.</td>
     </tr>
 </tbody>
 </table>
