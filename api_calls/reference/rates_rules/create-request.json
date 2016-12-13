@@ -3,6 +3,7 @@
     {
       "always_applied": false,
       "percentage": "-20.0",
+      "fixed_amount": null,
       "period_name": "Late Spring",
       "kind": "late_booking",
       "variables": {

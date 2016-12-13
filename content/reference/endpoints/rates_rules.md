@@ -18,6 +18,7 @@ id                   | Integer | Read       | Rates Rule's id.
 always_applied       | Boolean | Read       | Rates Rule's application status.
 kind                 | String  | Read       | Rates Rule's kind. List of types described in [enums section](/reference/enums#rates-rules-types).
 percentage           | [Decimal](/reference/enums#formats) | Read       | Rates Rule's percentage discount.
+fixed_amount         | [Decimal](/reference/enums#formats) | Read       | Rates Rule's fixed price modifier.
 period_name          | String  | Read       | Rates Rule's period name.
 variables            | [Object](/reference/enums#formats) | Read       | Rates Rule's variables used depending on kind type.
 ---------------------|---------|------------|------------
@@ -36,6 +37,7 @@ season_ids           | Array   | Write      | Season ids related to the rates ru
 always_applied       | Boolean | Read/Write | Rates Rule's application status.
 kind                 | String  | Read/Write | Rates Rule's kind. List of types described in [enums section](/reference/enums#rates-rules-types).
 percentage           | [Decimal](/reference/enums#formats) | Read/Write | Rates Rule's percentage discount. (greater than (-100))
+fixed_amount         | [Decimal](/reference/enums#formats) | Read/Write | Rates Rule's fixed price modifier.
 period_name          | String  | Read/Write | Rates Rule's period name. (50 max characters)
 variables            | [Object](/reference/enums#formats) | Read/Write | Rates Rule's variables used depending on kind type.
 ---------------------|---------|------------|------------
