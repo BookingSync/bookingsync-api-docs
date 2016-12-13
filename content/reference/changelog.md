@@ -1,5 +1,9 @@
 # Changelog
 
+## 2016-12-13
+
+ * [api improvement] Add `fixed_amount` attribute to `rates_rules` endpoint.
+
 ## 2016-12-11
 
   * [api improvement] Add `los_records` endpoint.
