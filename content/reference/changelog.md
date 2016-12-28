@@ -1,8 +1,12 @@
 # Changelog
 
+## 2016-12-28
+
+  * [api improvement] Add `country_code` attribute to `reviews` endpoint.
+
 ## 2016-12-13
 
- * [api improvement] Add `fixed_amount` attribute to `rates_rules` endpoint.
+  * [api improvement] Add `fixed_amount` attribute to `rates_rules` endpoint.
 
 ## 2016-12-11
 
