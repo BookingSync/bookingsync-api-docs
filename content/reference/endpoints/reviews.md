@@ -16,6 +16,7 @@ Name             | Type    | Read/Write | Description
 id               | Integer | Read       | Review's id.
 -----------------|---------|------------|------------
 comment          | Text    | Read       | Review's comment.
+country_code     | String  | Read       | Reviewer's country code. e.g: FR
 name             | String  | Read       | Reviewer's name, cropped to show only the initial of the last name.
 rating           | Integer | Read       | Review's rating.
 title            | String  | Read       | Review's title.
@@ -30,6 +31,7 @@ Name             | Type    | Read/Write | Description
 id               | Integer | Read       | Review's id.
 -----------------|---------|------------|------------
 comment          | Text    | Read/Write | **Required**. Review's comment. (10 min, 2000 max characters)
+country_code     | String  | Read       | Reviewer's country code. e.g: FR
 name             | String  | Read       | Reviewer's name, cropped to show only the initial of the last name.
 rating           | Integer | Read/Write | **Required**. Review's rating. (between 1 and 6)
 title            | String  | Read/Write | Review's title. (3 min, 100 max characters)
