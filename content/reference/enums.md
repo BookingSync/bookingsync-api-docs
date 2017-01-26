@@ -129,7 +129,17 @@ other                        | Any other type of fee
 Name                         | Description
 -----------------------------|------------
 fixed                        | Fixed price
+fixed_per_person             | Fixed price per person
+fixed_per_adult              | Fixed price per adult
+fixed_per_child              | Fixed price per child
+fixed_per_night              | Fixed price per night
+fixed_per_person_per_night   | Fixed price per person per night
+fixed_per_adult_per_night    | Fixed price per adult per night
+fixed_per_child_per_night    | Fixed price per child per night
 percentage                   | Percentage of the rental price
+percentage_per_person        | Percentage of the rental price per person
+percentage_per_adult         | Percentage of the rental price per adult
+percentage_per_child         | Percentage of the rental price per child
 {: class="table table-bordered"}
 
 ## Payment kinds
