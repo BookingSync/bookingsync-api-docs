@@ -1,5 +1,9 @@
 # Changelog
 
+## 2017-01-26
+
+  * [api improvement] Add missing `Fee rate kinds` to enumerables page
+
 ## 2016-12-28
 
   * [api improvement] Add `country_code` attribute to `reviews` endpoint.
