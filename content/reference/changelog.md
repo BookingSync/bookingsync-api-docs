@@ -1,5 +1,8 @@
 # Changelog
 
+## 2017-02-02
+  * [api improvement] Added create and update action to `rentals_tags`. 
+
 ## 2017-01-26
 
   * [api improvement] Add missing `Fee rate kinds` to enumerables page
