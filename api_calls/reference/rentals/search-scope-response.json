@@ -41,7 +41,8 @@
             "required": true,
             "price": "100.0",
             "quantity": 1,
-            "id": 10
+            "id": 10,
+            "rentals_fee_id" : 12
           }
         ]
       }
