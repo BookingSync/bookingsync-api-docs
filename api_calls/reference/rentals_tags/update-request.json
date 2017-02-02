@@ -1,0 +1,9 @@
+{
+  "rentals_tags": [
+    {
+      "name_en": "tag",
+      "color": "#FFFFFF",
+      "logo": "fa-rocket"
+    }
+  ]
+}
