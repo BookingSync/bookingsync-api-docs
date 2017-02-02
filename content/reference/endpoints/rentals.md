@@ -241,11 +241,13 @@ Group          | Subgroup     | Name             | Type    | Description
                |              | tax_id           | Integer | Tax's ID
                |              | included         | Boolean | True/False status if this tax is already included in taxable's (Fee or Rental) price or not
 ---------------|--------------|------------------|---------|---------------------------------------
-               | fees         |                  | Array   | The required Rental fees to be booked with the Rental.
+               | fees         |                  | Array   | Details of the bookings fees required to be booked with the rental.
                |              | name             | String  | Fee's name.
                |              | required         | Boolean | True/False status for always required.
                |              | price            | String  | Fee's price.
                |              | quantity         | String  | Fee's quantity.
+               |              | id               | Integer | Fee's ID
+               |              | rentals_fee_id   | Integer | Rentals Fee's ID
 ---------------|--------------|------------------|---------|---------------------------------------
  taxes         |              |                  | Array   | Grouped taxes by their identity with summed amounts.
                |              | name             | String  | Tax's name.

@@ -1,11 +1,13 @@
 # Changelog
 
 ## 2017-02-02
-  * [api improvement] Added create and update action to `rentals_tags`. 
+
+  * [api improvement] Added create and update action to `rentals_tags`.
+  * [doc fix] Update search response for `rentals` endpoint.
 
 ## 2017-01-26
 
-  * [api improvement] Add missing `Fee rate kinds` to enumerables page
+  * [api improvement] Add missing `Fee rate kinds` to enumerables page.
 
 ## 2016-12-28
 
