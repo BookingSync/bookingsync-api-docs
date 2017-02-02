@@ -12,6 +12,114 @@ paying           | Account active and paying
 suspended        | Suspended account, it might get active again if payment made
 {: class="table table-bordered"}
 
+## Amenities
+
+Key                   | Description |
+--------------------------|-----------|
+air_conditioning | Air Conditioning |
+balcony | Balcony |
+bar_private | Bar Private |
+bbq | BBQ |
+bowling_private | Private Bowling |
+bike | Bike |
+blender | Blender |
+boat | Boat |
+boat_dock | Boat Dock |
+books | Books |
+books_-_kids | Books Kids |
+bottled_water | Bottled Water |
+breakfast_included | Breakfast Included |
+canoe | Canoe |
+car_included | Car Included |
+cd_player | CD Player |
+ceiling_fans | Ceiling Fans |
+cellar | Cellar |
+central_heating | Central Heating |
+child's_swing | Child's Swing |
+cinema | Cinema |
+clothes_dryer | Clothes Dryer |
+coffee_maker | Coffee Maker |
+computer_available | Computer Available |
+concierge | Concierge |
+daily_maid_service | Daily Maid Service |
+dishwasher | Dishwasher |
+dvd_player | Dvd Player |
+elevator | Elevator |
+essentials | Essentials |
+filtered_water | Filtered Water |
+fireplace | Fireplace |
+firewood | Firewood |
+fitness_equipment | Fitness Equipment |
+freezer | Freezer |
+fridge | Fridge |
+full_equipped_kitchen | Full Equipped Kitchen |
+golf | Golf |
+helipad | Helipad |
+game_room | Game Room |
+games_-_all_ages | Games For All Ages |
+games_-_kids | Kids' Games |
+garage | Garage |
+garden | Garden |
+gated_community | Gated Community |
+gym | Gym |
+hair_dryer | Hair Dryer |
+handicap_accessible | Handicap Accessible |
+heated_pool | Heated Pool |
+heating | Heating |
+hoover | Hoover |
+ice_maker | Ice Maker |
+internet | Internet |
+iron | Iron |
+jacuzzi | Jacuzzi |
+jacuzzi_bath | Jacuzzi Bath |
+kettle | Kettle |
+kids_friendly | Kids Friendly |
+kids_pool | Kids Pool |
+long_term_rentals_available | Long Term Rentals Available |
+massage_on_request | Massage On Request |
+microwave | Microwave |
+mosquito_net | Mosquito Net |
+music_library | Music Library |
+not_suitable_for_children | Not Suitable For Children |
+outdoor_furniture | Outdoor Furniture |
+oven | Oven |
+parking_included | Parking Included |
+pets_considered | Pets Considered |
+ping_pong | Ping Pong |
+pool_private | Pool Private |
+pool_shared | Pool Shared |
+pool_table | Pool Table |
+private_car_park | Private Car Park |
+private_chef | Private Chef |
+radio | Radio |
+safe | Safe |
+sauna | Sauna |
+sea_view | Sea View |
+satellite_or_cable | Satellite Or Cable |
+security_system | Security System |
+shared_car_park | Shared Car Park |
+ski_in | Ski In |
+ski_out | Ski Out |
+ski_room | Ski Room |
+smoking_forbidden | Smoking Forbidden |
+solarium | Solarium |
+staff | Staff |
+stereo_system | Stereo System |
+tennis_court | Tennis Court |
+telephone | Telephone |
+terrace | Terrace |
+toaster | Toaster |
+toys | Toys |
+tv | Tv |
+ventilator | Ventilator |
+video_library | Video Library |
+video_player | Video Player |
+videogames | Videogames |
+videogame_console | Videogame Console |
+washing_machine | Washing Machine |
+water_cooler | Water Cooler |
+wedding | Wedding |
+
 ## Availability map statuses
 
 Status           | Description
