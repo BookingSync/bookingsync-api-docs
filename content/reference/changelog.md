@@ -1,5 +1,9 @@
 # Changelog
 
+## 2017-02-07
+
+  * [doc fix] Rentals' `price_public_notes` should be written from RatesTables.
+
 ## 2017-02-02
 
   * [api improvement] Added create and update action to `rentals_tags`.
