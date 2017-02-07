@@ -150,7 +150,7 @@ name                            | String   | Read/Write | **Required**. Rental's
 nightly_rates_managed_externally | Boolean  | Read/Write | Defines whether `nightly_rate_map` can be updated via API. Defaults to `false`.
 notes                           | Text     | Read/Write | Rental's private notes. (1000 characters max)
 position                        | Integer  | Read/Write | Rental's position on the list.
-price_public_notes              | [Object](/reference/enums#formats)   | Read | Rental's price notes for public, list of locales described in [enums section](/reference/enums#locales). Write is possible through RatesRules.
+price_public_notes              | [Object](/reference/enums#formats)   | Read | Rental's price notes for public, list of locales described in [enums section](/reference/enums#locales). Write is possible through RatesTables.
 rental_type                     | String   | Read/Write | Rental's type (example: villa, apartment), all types described in [enums section](/reference/enums#rental-types).
 reviews_average_rating          | [Decimal](/reference/enums#formats)  | Read       | Rental's overall rating from reviews.
 reviews_count                   | Integer  | Read       | Rental's count of all reviews.
