@@ -1,0 +1,9 @@
+{
+  "rentals_fees": [
+    {
+      "always_applied": "true",
+      "maximum_bookable": 12,
+      "status": "public"
+    }
+  ]
+}

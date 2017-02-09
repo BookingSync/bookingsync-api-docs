@@ -1,0 +1,10 @@
+{
+  "rentals_fees": [
+    {
+      "fee_id": 9,
+      "always_applied": true,
+      "maximum_bookable": 12,
+      "status": "public"
+    }
+  ]
+}
