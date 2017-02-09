@@ -1,0 +1,11 @@
+{
+  "fees": [
+    {
+      "name_en": "Fee",
+      "kind": "other",
+      "rate": "12.0",
+      "rate_kind": "fixed",
+      "downpayment_percentage": "0.0"
+    }
+  ]
+}

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2017-02-09
+
+* [doc update] Update `fees` and `rentals_fees` endpoints with new actions and attributes.
+
 ## 2017-02-07
 
   * [doc fix] Rentals' `price_public_notes` should be written from RatesTables.
