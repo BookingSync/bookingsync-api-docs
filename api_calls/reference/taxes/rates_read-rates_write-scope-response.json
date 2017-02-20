@@ -13,6 +13,7 @@
       "updated_at": "UPDATED_AT",
       "start_date": "START_DATE",
       "end_date": "END_DATE",
+      "notes": "Private notes",
       "name": {
         "en": "Tax"
       }

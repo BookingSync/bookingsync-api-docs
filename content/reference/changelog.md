@@ -1,5 +1,9 @@
 # Changelog
 
+## 2017-02-28
+
+* [doc update] Update `taxes` endpoint with create action.
+
 ## 2017-02-26
 
 * [api improvement] Add translatable `website_url` to `rentals` endpoint.
