@@ -1,5 +1,9 @@
 # Changelog
 
+## 2017-02-26
+
+* [api improvement] Add translatable `website_url` to `rentals` endpoint.
+
 ## 2017-02-09
 
 * [doc update] Update `fees` and `rentals_fees` endpoints with new actions and attributes.
