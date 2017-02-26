@@ -52,6 +52,7 @@ stories_count                   | Integer  | Read       | Rental's number of sto
 summary                         | [Object](/reference/enums#formats)     | Read       | Rental's summary, list of locales described in [enums section](/reference/enums#locales).
 surface                         | Integer  | Read       | Rental's surface area.
 surface_unit                    | String   | Read       | Rental's surface area unit, either <i>metric</i> or <i>imperial</i>.
+website_url                     | [Object](/reference/enums#formats)   | Read       | Rental's primary website url, list of locales described in [enums section](/reference/enums#locales).
 --------------------------------|----------|------------|--------------
 created_at                      | [Time](/reference/enums#formats) | Read         | Rental's create time.
 updated_at                      | [Time](/reference/enums#formats) | Read         | Rental's update time.
@@ -104,6 +105,7 @@ stories_count                   | Integer  | Read       | Rental's number of sto
 summary                         | [Object](/reference/enums#formats)     | Read       | Rental's summary, list of locales described in [enums section](/reference/enums#locales).
 surface                         | Integer  | Read       | Rental's surface area.
 surface_unit                    | String   | Read       | Rental's surface area unit, either <i>metric</i> or <i>imperial</i>.
+website_url                     | [Object](/reference/enums#formats)   | Read       | Rental's primary website url, list of locales described in [enums section](/reference/enums#locales).
 zip                             | String   | Read       | Rental's zip code.
 --------------------------------|----------|------------|--------------
 created_at                      | [Time](/reference/enums#formats) | Read         | Rental's create time.
@@ -161,6 +163,7 @@ stories_count                   | Integer  | Read/Write | Rental's number of sto
 summary                         | [Object](/reference/enums#formats)     | Read/Write | Rental's summary, list of locales described in [enums section](/reference/enums#locales). (150 characters max)
 surface                         | Integer  | Read/Write | Rental's surface area. (greater than 0)
 surface_unit                    | String   | Read/Write | Rental's surface area unit, either <i>metric</i> or <i>imperial</i>.
+website_url                     | [Object](/reference/enums#formats)   | Read/Write | Rental's primary website url, list of locales described in [enums section](/reference/enums#locales).
 zip                             | String   | Read/Write | Rental's zip code.
 --------------------------------|----------|------------|--------------
 created_at                      | [Time](/reference/enums#formats) | Read         | Rental's create time.
