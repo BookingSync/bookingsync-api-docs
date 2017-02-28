@@ -120,10 +120,13 @@
 <ol id="markdown-toc">
 <li><a href="#list-taxes">List taxes</a></li>
   <li><a href="#get-a-single-tax">Get a single tax</a></li>
+  <li><a href="#create-a-new-tax">Create a new tax</a></li>
 </ol><h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
+  <li><a href="#rates_read" role="tab" data-toggle="pill">rates_write</a></li>
+  <li><a href="#rates_write" role="tab" data-toggle="pill">rates_write</a></li>
 </ul><div class="tab-content">
   <div class="tab-pane active" id="public">
     <table class="table table-bordered">
@@ -166,6 +169,142 @@
           <td>Read</td>
           <td>Tax’s update time.</td>
         </tr>
+<tr>
+<td>start_date</td>
+          <td><a href="/reference/enums#formats">Date</a></td>
+          <td>Read</td>
+          <td>Beginning of the period when the tax is applicable.</td>
+        </tr>
+<tr>
+<td>end_date</td>
+          <td><a href="/reference/enums#formats">Date</a></td>
+          <td>Read</td>
+          <td>Ending of the period when the tax is applicable.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+  <div class="tab-pane" id="rates_read">
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Tax’s id.</td>
+        </tr></tbody>
+<tbody>
+<tr>
+<td>name</td>
+          <td><a href="/reference/enums#formats">Object</a></td>
+          <td>Read</td>
+          <td>Tax’s name, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td>notes</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Tax’s private notes.</td>
+        </tr>
+<tr>
+<td>percentage</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Tax’s percentage.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Tax’s create time.</td>
+        </tr>
+<tr>
+<td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Tax’s update time.</td>
+        </tr>
+<tr>
+<td>start_date</td>
+          <td><a href="/reference/enums#formats">Date</a></td>
+          <td>Read</td>
+          <td>Beginning of the period when the tax is applicable.</td>
+        </tr>
+<tr>
+<td>end_date</td>
+          <td><a href="/reference/enums#formats">Date</a></td>
+          <td>Read</td>
+          <td>Ending of the period when the tax is applicable.</td>
+        </tr>
+</tbody>
+</table>
+</div>
+  <div class="tab-pane" id="rates_write">
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Tax’s id.</td>
+        </tr></tbody>
+<tbody>
+<tr>
+<td>name</td>
+          <td><a href="/reference/enums#formats">Object</a></td>
+          <td>Read/Write</td>
+          <td>Tax’s name, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td>notes</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Tax’s private notes.</td>
+        </tr>
+<tr>
+<td>percentage</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read/Write</td>
+          <td>Tax’s percentage.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Tax’s create time.</td>
+        </tr>
+<tr>
+<td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Tax’s update time.</td>
+        </tr>
+<tr>
+<td>start_date</td>
+          <td><a href="/reference/enums#formats">Date</a></td>
+          <td>Read/Write</td>
+          <td>Beginning of the period when the tax is applicable.</td>
+        </tr>
+<tr>
+<td>end_date</td>
+          <td><a href="/reference/enums#formats">Date</a></td>
+          <td>Read/Write</td>
+          <td>Ending of the period when the tax is applicable.</td>
+        </tr>
 </tbody>
 </table>
 </div>
@@ -182,8 +321,14 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#f56e204cd48apublic" role="tab" data-toggle="pill">
+        <a href="#d30b2bf0527cpublic" role="tab" data-toggle="pill">
           public
+        </a>
+      </li>
+    
+      <li>
+        <a href="#5e58e72fc308rates_read-rates_write" role="tab" data-toggle="pill">
+          rates_read / rates_write
         </a>
       </li>
     
@@ -191,7 +336,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="f56e204cd48apublic">
+      <div class="tab-pane active" id="d30b2bf0527cpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"taxes.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{taxes.account}"</span>
@@ -203,8 +348,35 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Tax"</span>
       <span class="p">},</span>
       <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-04-29T09:48:22Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-05-11T17:12:57Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-02-28T14:38:26Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-02-28T14:38:26Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-03-07"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2017-11-11"</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+      <div class="tab-pane " id="5e58e72fc308rates_read-rates_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"taxes.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{taxes.account}"</span>
+  <span class="p">},</span>
+  <span class="s2">"taxes"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Tax"</span>
+      <span class="p">},</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">"Private notes"</span><span class="p">,</span>
+      <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-02-28T14:38:26Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-02-28T14:38:26Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-03-07"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2017-11-11"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -227,8 +399,14 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#dce4651c097epublic" role="tab" data-toggle="pill">
+        <a href="#4012d1edbe7cpublic" role="tab" data-toggle="pill">
           public
+        </a>
+      </li>
+    
+      <li>
+        <a href="#3ca2370f4cddrates_read-rates_write" role="tab" data-toggle="pill">
+          rates_read / rates_write
         </a>
       </li>
     
@@ -236,7 +414,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="dce4651c097epublic">
+      <div class="tab-pane active" id="4012d1edbe7cpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"taxes.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{taxes.account}"</span>
@@ -248,8 +426,96 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Tax"</span>
       <span class="p">},</span>
       <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-04-29T09:48:22Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-05-11T17:12:57Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-02-28T14:38:26Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-02-28T14:38:26Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-03-07"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2017-11-11"</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+      <div class="tab-pane " id="3ca2370f4cddrates_read-rates_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"taxes.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{taxes.account}"</span>
+  <span class="p">},</span>
+  <span class="s2">"taxes"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Tax"</span>
+      <span class="p">},</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">"Private notes"</span><span class="p">,</span>
+      <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-02-28T14:38:26Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-02-28T14:38:26Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-03-07"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2017-11-11"</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="create-a-new-tax">Create a new tax</h3>
+
+<p>Returns a newly created tax.</p>
+
+<pre><code>POST /taxes
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#37c629cd7f71rates_write" role="tab" data-toggle="pill">
+          rates_write
+        </a>
+      </li>
+    
+  </ul><h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"taxes"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"name_en"</span><span class="o">:</span> <span class="s2">"Tax"</span><span class="p">,</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">"Private notes"</span><span class="p">,</span>
+      <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-03-07"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2017-11-11"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-2">Response</h4>
+<div class="tab-content">
+  
+    
+      <div class="tab-pane active" id="37c629cd7f71rates_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"taxes.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{taxes.account}"</span>
+  <span class="p">},</span>
+  <span class="s2">"taxes"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Tax"</span>
+      <span class="p">},</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">"Private notes"</span><span class="p">,</span>
+      <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-02-28T14:38:26Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-02-28T14:38:26Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-03-07"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2017-11-11"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
