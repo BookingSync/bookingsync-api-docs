@@ -1,0 +1,11 @@
+{
+  "taxes": [
+    {
+      "name_en": "Tax",
+      "start_date": "START_DATE",
+      "end_date": "END_DATE",
+      "notes": "Private notes",
+      "percentage": "10.0"
+    }
+  ]
+}
