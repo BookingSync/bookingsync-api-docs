@@ -1,5 +1,9 @@
 # Changelog
 
+## 2017-03-07
+
+* [api improvement] Show client's first name and last name in the `clients` endpoint.
+
 ## 2017-02-28
 
 * [doc update] Update `taxes` endpoint with create action.
