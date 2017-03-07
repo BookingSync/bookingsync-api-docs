@@ -3,6 +3,7 @@
 ## 2017-03-07
 
 * [api improvement] Show client's first name and last name in the `clients` endpoint.
+* [api improvement] Allow to edit rentals's `bookable_online` flag in the `rentals` endpoint.
 
 ## 2017-02-28
 

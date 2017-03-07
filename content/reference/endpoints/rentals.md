@@ -129,7 +129,7 @@ base_rate                       | [Decimal](/reference/enums#formats) | Read/Wri
 base_rate_kind                  | String   | Read/Write | Rental's rate type attached to the base rate. List of types described in [enums section](/reference/enums#rates-types).
 bathrooms_count                 | Integer  | Read/Write | Rental's bathrooms count. (between 0 and 100)
 bedrooms_count                  | Integer  | Read/Write | Rental's bedrooms count. (between 0 and 100)
-bookable_online                 | Boolean  | Read       | Rental's online booking status.
+bookable_online                 | Boolean  | Read/Write | Rental's online booking status.
 checkin_details                 | [Object](/reference/enums#formats)     | Read/Write       | Rental's check-in details, list of locales described in [enums section](/reference/enums#locales).
 checkout_details                | [Object](/reference/enums#formats)     | Read/Write       | Rental's check-out details, list of locales described in [enums section](/reference/enums#locales).
 checkin_time                    | Integer  | Read       | Rental's checkin time.
