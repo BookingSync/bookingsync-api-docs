@@ -22,6 +22,9 @@
       "grande_url": "http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/grande_1c4a6fb74004bb654fbb7972e4c78625.jpg",
       "giant_url": "http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/giant_1c4a6fb74004bb654fbb7972e4c78625.jpg",
       "position": 1,
+      "height": 2000,
+      "ratio": 1.5,
+      "width": 3000,
       "created_at": "CREATED_AT",
       "updated_at": "UPDATED_AT"
     }

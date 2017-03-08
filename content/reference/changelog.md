@@ -1,21 +1,25 @@
 # Changelog
 
+## 2017-03-08
+
+  * [api improvement] Add width, height and ratio to the `photos` endpoint.
+
 ## 2017-03-07
 
-* [api improvement] Show client's first name and last name in the `clients` endpoint.
-* [api improvement] Allow to edit rentals's `bookable_online` flag in the `rentals` endpoint.
+  * [api improvement] Show client's first name and last name in the `clients` endpoint.
+  * [api improvement] Allow to edit rentals's `bookable_online` flag in the `rentals` endpoint.
 
 ## 2017-02-28
 
-* [doc update] Update `taxes` endpoint with create action.
+  * [doc update] Update `taxes` endpoint with create action.
 
 ## 2017-02-26
 
-* [api improvement] Add translatable `website_url` to `rentals` endpoint.
+  * [api improvement] Add translatable `website_url` to `rentals` endpoint.
 
 ## 2017-02-09
 
-* [doc update] Update `fees` and `rentals_fees` endpoints with new actions and attributes.
+  * [doc update] Update `fees` and `rentals_fees` endpoints with new actions and attributes.
 
 ## 2017-02-07
 
