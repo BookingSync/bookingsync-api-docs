@@ -7,7 +7,7 @@
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
-  <li><a href="#rates_read" role="tab" data-toggle="pill">rates_write</a></li>
+  <li><a href="#rates_read" role="tab" data-toggle="pill">rates_read</a></li>
   <li><a href="#rates_write" role="tab" data-toggle="pill">rates_write</a></li>
 </ul>
 <div class="tab-content" markdown="1">
@@ -47,7 +47,7 @@ id               | Integer | Read       | Tax's id.
 -----------------|---------|------------|------------
 name             | [Object](/reference/enums#formats)   | Read/Write | Tax's name, list of locales described in [enums section](/reference/enums#locales).
 notes            | String  | Read/Write | Tax's private notes.
-percentage       | [Decimal](/reference/enums#formats)  | Read/Write | Tax's percentage.
+percentage       | [Decimal](/reference/enums#formats)  | Read/Write | Tax's percentage. Writable only during creation.
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Tax's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Tax's update time.
@@ -86,4 +86,15 @@ POST /taxes
 ~~~
 
 <%= render 'json_response', endpoint: "taxes", request: "create",
+  scopes: [{ rates_write: "rates_read-rates_write" }] %>
+
+## Update a tax
+
+Returns an updated tax identified by ID.
+
+~~~
+PUT /taxes/:tax_id
+~~~
+
+<%= render 'json_response', endpoint: "taxes", request: "update",
   scopes: [{ rates_write: "rates_read-rates_write" }] %>
