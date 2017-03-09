@@ -1,8 +1,9 @@
 # Changelog
 
-## 2017-03-08
+## 2017-03-09
 
   * [api improvement] Add width, height and ratio to the `photos` endpoint.
+  * [api improvement] Update `taxes` endpoint with update action.
 
 ## 2017-03-07
 
@@ -11,7 +12,7 @@
 
 ## 2017-02-28
 
-  * [doc update] Update `taxes` endpoint with create action.
+  * [api improvement] Update `taxes` endpoint with create action.
 
 ## 2017-02-26
 
@@ -19,7 +20,7 @@
 
 ## 2017-02-09
 
-  * [doc update] Update `fees` and `rentals_fees` endpoints with new actions and attributes.
+  * [api improvement] Update `fees` and `rentals_fees` endpoints with new actions and attributes.
 
 ## 2017-02-07
 
