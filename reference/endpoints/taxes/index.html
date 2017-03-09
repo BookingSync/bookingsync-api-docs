@@ -121,11 +121,12 @@
 <li><a href="#list-taxes">List taxes</a></li>
   <li><a href="#get-a-single-tax">Get a single tax</a></li>
   <li><a href="#create-a-new-tax">Create a new tax</a></li>
+  <li><a href="#update-a-tax">Update a tax</a></li>
 </ol><h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
-  <li><a href="#rates_read" role="tab" data-toggle="pill">rates_write</a></li>
+  <li><a href="#rates_read" role="tab" data-toggle="pill">rates_read</a></li>
   <li><a href="#rates_write" role="tab" data-toggle="pill">rates_write</a></li>
 </ul><div class="tab-content">
   <div class="tab-pane active" id="public">
@@ -277,7 +278,7 @@
 <td>percentage</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read/Write</td>
-          <td>Tax’s percentage.</td>
+          <td>Tax’s percentage. Writable only during creation.</td>
         </tr>
 </tbody>
 <tbody>
@@ -321,13 +322,13 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#bf358247b73epublic" role="tab" data-toggle="pill">
+        <a href="#0c26614d3b18public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
       <li>
-        <a href="#bf5861d7f03drates_read-rates_write" role="tab" data-toggle="pill">
+        <a href="#7694969957afrates_read-rates_write" role="tab" data-toggle="pill">
           rates_read / rates_write
         </a>
       </li>
@@ -336,7 +337,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="bf358247b73epublic">
+      <div class="tab-pane active" id="0c26614d3b18public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"taxes.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{taxes.account}"</span>
@@ -348,8 +349,8 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Tax"</span>
       <span class="p">},</span>
       <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:37:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:37:21Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:55:42Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:55:42Z"</span><span class="p">,</span>
       <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-03-16"</span><span class="p">,</span>
       <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2017-11-20"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
@@ -360,7 +361,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="bf5861d7f03drates_read-rates_write">
+      <div class="tab-pane " id="7694969957afrates_read-rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"taxes.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{taxes.account}"</span>
@@ -373,8 +374,8 @@
       <span class="p">},</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">"Private notes"</span><span class="p">,</span>
       <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:37:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:37:21Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:55:42Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:55:42Z"</span><span class="p">,</span>
       <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-03-16"</span><span class="p">,</span>
       <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2017-11-20"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
@@ -399,13 +400,13 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#25dd1a570760public" role="tab" data-toggle="pill">
+        <a href="#4952147dbff6public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
       <li>
-        <a href="#e2ac0661150frates_read-rates_write" role="tab" data-toggle="pill">
+        <a href="#7ab7929e6328rates_read-rates_write" role="tab" data-toggle="pill">
           rates_read / rates_write
         </a>
       </li>
@@ -414,7 +415,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="25dd1a570760public">
+      <div class="tab-pane active" id="4952147dbff6public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"taxes.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{taxes.account}"</span>
@@ -426,8 +427,8 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Tax"</span>
       <span class="p">},</span>
       <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:37:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:37:21Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:55:42Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:55:42Z"</span><span class="p">,</span>
       <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-03-16"</span><span class="p">,</span>
       <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2017-11-20"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
@@ -438,7 +439,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="e2ac0661150frates_read-rates_write">
+      <div class="tab-pane " id="7ab7929e6328rates_read-rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"taxes.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{taxes.account}"</span>
@@ -451,8 +452,8 @@
       <span class="p">},</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">"Private notes"</span><span class="p">,</span>
       <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:37:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:37:21Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:55:42Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:55:42Z"</span><span class="p">,</span>
       <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-03-16"</span><span class="p">,</span>
       <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2017-11-20"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
@@ -477,7 +478,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#2f2b89e43366rates_write" role="tab" data-toggle="pill">
+        <a href="#dafaf1215e0drates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
@@ -499,7 +500,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="2f2b89e43366rates_write">
+      <div class="tab-pane active" id="dafaf1215e0drates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"taxes.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{taxes.account}"</span>
@@ -512,8 +513,68 @@
       <span class="p">},</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">"Private notes"</span><span class="p">,</span>
       <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:37:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:37:21Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:55:42Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:55:42Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-03-16"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2017-11-20"</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="update-a-tax">Update a tax</h3>
+
+<p>Returns an updated tax identified by ID.</p>
+
+<pre><code>PUT /taxes/:tax_id
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#2ffb3cbf4145rates_write" role="tab" data-toggle="pill">
+          rates_write
+        </a>
+      </li>
+    
+  </ul><h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"taxes"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"name_en"</span><span class="o">:</span> <span class="s2">"Tax"</span><span class="p">,</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">"Private notes"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-03-16"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2017-11-20"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-3">Response</h4>
+<div class="tab-content">
+  
+    
+      <div class="tab-pane active" id="2ffb3cbf4145rates_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"taxes.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{taxes.account}"</span>
+  <span class="p">},</span>
+  <span class="s2">"taxes"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Tax"</span>
+      <span class="p">},</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">"Private notes"</span><span class="p">,</span>
+      <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:55:42Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-03-09T11:55:42Z"</span><span class="p">,</span>
       <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-03-16"</span><span class="p">,</span>
       <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2017-11-20"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
