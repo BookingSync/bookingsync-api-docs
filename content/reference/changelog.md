@@ -1,5 +1,9 @@
 # Changelog
 
+## 2017-03-22
+
+  * [doc update] Update `rentals/search` endpoint `id` param to `rental_id`.
+
 ## 2017-03-09
 
   * [api improvement] Add width, height and ratio to the `photos` endpoint.
