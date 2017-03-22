@@ -206,7 +206,6 @@ country_code      | String  |         | Rentals matching given country code, lis
 destination       | String  |         | List of comma separated destinations.
 direction         | String  |         | Direction to sort rentals, either `asc` or `desc`.
 guests            | Integer |         | Rentals with maximum number of sleeps above given number of guests.
-id                | String  |         | List of comma separated rental ids.
 include_tentative | Boolean | false   | Treat tentative periods as available ones.
 max_price         | Integer |         | Rentals with `max_price` below given price. Will use `final_price` if computed.
 min_price         | Integer |         | Rentals with `min_price` above given price. Will use `final_price` if computed.
@@ -214,6 +213,7 @@ page              | Integer |         | Used to browse multi-paged listings.
 per_page          | Integer |         | Limit amount of returned rentals to given number. Full list can then be browsed with `page` parameter.
 published_only    | Boolean | false   | Show only published rentals.
 reject_amenities  | String  |         | List of comma separated amenities to exclude.
+rental_id         | String  |         | List of comma separated rental ids.
 rental_type       | String  |         | List of comma separated types, all types described in [enums section](/reference/enums#rental-types).
 rentals_tags      | String  |         | List of comma separated rentals tags.
 sort              | String  |         | Sort rentals by given attribute. Possible values: `price`, `sleeps`.
