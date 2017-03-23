@@ -1,5 +1,9 @@
 # Changelog
 
+## 2017-03-23
+
+  * [doc update] Update `rentals/search` endpoint with `adults` and `children` params. Clarify `guests` param usage.
+
 ## 2017-03-22
 
   * [doc update] Update `rentals/search` endpoint `id` param to `rental_id`.
