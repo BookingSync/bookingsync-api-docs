@@ -201,6 +201,7 @@ amenities         | String  |         | List of comma separated amenities to inc
 adults            | Integer |         | Number of adults to take into account when calculating `final_price`.
 bb_ne             | Float   |         | Rentals located between `bb_sw` & `bb_ne`. Format `latitude, longitude`.
 bb_sw             | Float   |         | Rentals located between `bb_sw` & `bb_ne`. Format `latitude, longitude`.
+bedrooms_count    | Integer |         | Rentals with amount of bedrooms equal to or above given number.
 bookable_online   | Boolean | blank   | `true` to get rentals that are instantly bookable (requiring no human interaction), `false` to get those that are not.
 children          | Integer |         | Number of children to take into account when calculating `final_price`.
 city              | String  |         | Rentals matching given city.
