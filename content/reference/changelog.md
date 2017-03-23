@@ -3,6 +3,7 @@
 ## 2017-03-23
 
   * [doc update] Update `rentals/search` endpoint with `adults` and `children` params. Clarify `guests` param usage.
+  * [api_improvement] Add `bedrooms_count` to `rentals` search params.
 
 ## 2017-03-22
 
