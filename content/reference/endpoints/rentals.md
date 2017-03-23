@@ -198,14 +198,16 @@ GET /rentals/search?start_at=20140324&end_at=20140330
 Name              | Type    | Default | Description
 ------------------|---------|--------------
 amenities         | String  |         | List of comma separated amenities to include.
+adults            | Integer |         | Number of adults to take into account when calculating `final_price`.
 bb_ne             | Float   |         | Rentals located between `bb_sw` & `bb_ne`. Format `latitude, longitude`.
 bb_sw             | Float   |         | Rentals located between `bb_sw` & `bb_ne`. Format `latitude, longitude`.
 bookable_online   | Boolean | blank   | `true` to get rentals that are instantly bookable (requiring no human interaction), `false` to get those that are not.
+children          | Integer |         | Number of children to take into account when calculating `final_price`.
 city              | String  |         | Rentals matching given city.
 country_code      | String  |         | Rentals matching given country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
 destination       | String  |         | List of comma separated destinations.
 direction         | String  |         | Direction to sort rentals, either `asc` or `desc`.
-guests            | Integer |         | Rentals with maximum number of sleeps above given number of guests.
+guests            | Integer |         | Used to filter out rentals with maximum number of sleeps below given number of guests.
 include_tentative | Boolean | false   | Treat tentative periods as available ones.
 max_price         | Integer |         | Rentals with `max_price` below given price. Will use `final_price` if computed.
 min_price         | Integer |         | Rentals with `min_price` above given price. Will use `final_price` if computed.
