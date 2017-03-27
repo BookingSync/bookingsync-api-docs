@@ -209,6 +209,7 @@ country_code      | String  |         | Rentals matching given country code, lis
 destination       | String  |         | List of comma separated destinations.
 direction         | String  |         | Direction to sort rentals, either `asc` or `desc`.
 guests            | Integer |         | Used to filter out rentals with maximum number of sleeps below given number of guests.
+id                | String  |         | List of comma separated rental ids.
 include_tentative | Boolean | false   | Treat tentative periods as available ones.
 max_price         | Integer |         | Rentals with `max_price` below given price. Will use `final_price` if computed.
 min_price         | Integer |         | Rentals with `min_price` above given price. Will use `final_price` if computed.
