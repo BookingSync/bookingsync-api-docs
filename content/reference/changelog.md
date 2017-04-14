@@ -1,5 +1,9 @@
 # Changelog
 
+## 2017-04-13
+
+  * [api_improvement] Allow to filter `payments` by `order_id`.
+
 ## 2017-03-27
 
   * [doc update] Update `rentals/search` endpoint use `id` param like `rental_id`.

@@ -111,6 +111,23 @@ GET /payments
 <%= render 'json_response', endpoint: "payments",
   scopes: %w(payments_write_owned-payments_read-payments_write) %>
 
+## Search payments
+
+Search parameters allow to filter payments by specified fields.
+
+Example:
+
+~~~
+GET /payments?order_id=BS-abc-123
+~~~
+
+### Search Parameters
+
+Name             | Type    | Description
+-----------------|---------|--------------
+order_id         | String  | List of comma separated IDs. Returns only payments with this order_id(s)
+{: class="table table-bordered"}
+
 ## Get a single payment
 
 Returns a single payment identified by ID.
