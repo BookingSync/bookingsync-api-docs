@@ -5,7 +5,7 @@
 
 ## Accessing the API
 
-The BookingSync API can be accessed over HTTPS at
+The BookingSync API can be accessed over HTTPS with base URL at
 `https://www.bookingsync.com/api/v3/`.
 
 ## JSON
