@@ -1,5 +1,9 @@
 # Changelog
 
+## 2017-04-23
+
+  * [doc update] Clearly mention bookings list default limitations and highlight search parameters.
+
 ## 2017-04-13
 
   * [api_improvement] Allow to filter `payments` by `order_id`.
