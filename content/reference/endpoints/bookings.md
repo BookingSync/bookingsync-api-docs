@@ -124,7 +124,12 @@ Scope                    | Read Permissions
 `:bookings_write`        | Display all bookings
 {: class="table table-bordered"}
 
-Returns a list of all bookings for current account(s) starting after now.
+Returns a list of all bookings for current account(s).
+
+<div class="callout callout-info" markdown="1">
+  <h4>Returns only future and non-canceled bookings by default</h4>
+  By default this endpoint returns only future and non-canceled bookings, if you like to change this behavior, make sure to check the <a href="#search-parameters">search parameters</a>.
+</div>
 
 ~~~
 GET /bookings
