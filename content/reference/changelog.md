@@ -1,5 +1,9 @@
 # Changelog
 
+## 2017-04-26
+
+  * [doc update] Add docs for `rental_link_groups` and `rental_links` endpoints
+
 ## 2017-04-23
 
   * [doc update] Clearly mention bookings list default limitations and highlight search parameters.
