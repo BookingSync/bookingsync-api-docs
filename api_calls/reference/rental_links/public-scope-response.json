@@ -1,0 +1,23 @@
+{
+  "links": {
+    "rental_links.account" : "https://www.bookingsync.com/api/v3/accounts/{rental_links.account}",
+    "rental_links.destination_rental" : "https://www.bookingsync.com/api/v3/rentals/{rental_links.destination_rental}",
+    "rental_links.rental_link_group" : "https://www.bookingsync.com/api/v3/rental_link_groups/{rental_links.rental_link_group}",
+    "rental_links.source_rental" : "https://www.bookingsync.com/api/v3/rentals/{rental_links.source_rental}"
+  },
+  "rental_links": [
+    {
+      "links": {
+        "account": 1,
+        "destination_rental": 2,
+        "rental_link_group": 1,
+        "source_rental": 3
+      },
+      "id": 1,
+      "kind": "mirror",
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT"
+    }
+  ],
+  "meta": {}
+}

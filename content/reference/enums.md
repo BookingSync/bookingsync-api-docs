@@ -171,6 +171,13 @@ outside          | Outside's photo.
 surroundings     | Surroundings's photo.
 {: class="table table-bordered"}
 
+## Rental Link kinds
+
+Name                         | Description
+-----------------------------|------------
+mirror                       | Mirroring rental link
+{: class="table table-bordered"}
+
 ## Rates types
 
 Name             | Description
