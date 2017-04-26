@@ -95,6 +95,8 @@
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_links/">Rental Links</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_taxes/">Rentals Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
@@ -322,13 +324,13 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#3e373d7653bapublic" role="tab" data-toggle="pill">
+        <a href="#5162506c9607public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
       <li>
-        <a href="#9b198f0b7b3crates_read-rates_write" role="tab" data-toggle="pill">
+        <a href="#fecbdf402017rates_read-rates_write" role="tab" data-toggle="pill">
           rates_read / rates_write
         </a>
       </li>
@@ -337,7 +339,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="3e373d7653bapublic">
+      <div class="tab-pane active" id="5162506c9607public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"taxes.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{taxes.account}"</span>
@@ -349,10 +351,10 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Tax"</span>
       <span class="p">},</span>
       <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:58Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:58Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-04-30"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-01-04"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:08Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:08Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-05-03"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-01-07"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -361,7 +363,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="9b198f0b7b3crates_read-rates_write">
+      <div class="tab-pane " id="fecbdf402017rates_read-rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"taxes.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{taxes.account}"</span>
@@ -374,10 +376,10 @@
       <span class="p">},</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">"Private notes"</span><span class="p">,</span>
       <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:58Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:58Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-04-30"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-01-04"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:08Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:08Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-05-03"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-01-07"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -400,13 +402,13 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#078143a1fe3fpublic" role="tab" data-toggle="pill">
+        <a href="#a13b3e02f57bpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
       <li>
-        <a href="#1f7b4818a432rates_read-rates_write" role="tab" data-toggle="pill">
+        <a href="#96f953c43831rates_read-rates_write" role="tab" data-toggle="pill">
           rates_read / rates_write
         </a>
       </li>
@@ -415,7 +417,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="078143a1fe3fpublic">
+      <div class="tab-pane active" id="a13b3e02f57bpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"taxes.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{taxes.account}"</span>
@@ -427,10 +429,10 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Tax"</span>
       <span class="p">},</span>
       <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:58Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:58Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-04-30"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-01-04"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:08Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:08Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-05-03"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-01-07"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -439,7 +441,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="1f7b4818a432rates_read-rates_write">
+      <div class="tab-pane " id="96f953c43831rates_read-rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"taxes.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{taxes.account}"</span>
@@ -452,10 +454,10 @@
       <span class="p">},</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">"Private notes"</span><span class="p">,</span>
       <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:58Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:58Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-04-30"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-01-04"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:08Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:08Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-05-03"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-01-07"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -478,7 +480,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#712690774090rates_write" role="tab" data-toggle="pill">
+        <a href="#fe8eab384c13rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
@@ -490,8 +492,8 @@
       <span class="s2">"name_en"</span><span class="o">:</span> <span class="s2">"Tax"</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">"Private notes"</span><span class="p">,</span>
       <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-04-30"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-01-04"</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-05-03"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-01-07"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -500,7 +502,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="712690774090rates_write">
+      <div class="tab-pane active" id="fe8eab384c13rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"taxes.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{taxes.account}"</span>
@@ -513,10 +515,10 @@
       <span class="p">},</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">"Private notes"</span><span class="p">,</span>
       <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:58Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:58Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-04-30"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-01-04"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:08Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:08Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-05-03"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-01-07"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -539,7 +541,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#873460e0e0f9rates_write" role="tab" data-toggle="pill">
+        <a href="#6043acc5ba0erates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
@@ -550,8 +552,8 @@
     <span class="p">{</span>
       <span class="s2">"name_en"</span><span class="o">:</span> <span class="s2">"Tax"</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">"Private notes"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-04-30"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-01-04"</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-05-03"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-01-07"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -560,7 +562,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="873460e0e0f9rates_write">
+      <div class="tab-pane active" id="6043acc5ba0erates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"taxes.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{taxes.account}"</span>
@@ -573,10 +575,10 @@
       <span class="p">},</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">"Private notes"</span><span class="p">,</span>
       <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:58Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:58Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-04-30"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-01-04"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:08Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:08Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-05-03"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-01-07"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>

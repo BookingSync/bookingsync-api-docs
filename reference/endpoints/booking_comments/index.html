@@ -95,6 +95,8 @@
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_links/">Rental Links</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_taxes/">Rentals Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
@@ -242,13 +244,13 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#4f77b2ae4e7bbookings_read" role="tab" data-toggle="pill">
+        <a href="#53234f414827bookings_read" role="tab" data-toggle="pill">
           bookings_read
         </a>
       </li>
     
       <li>
-        <a href="#8b181bad98fbbookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#1834c0778f55bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_write / bookings_write_owned
         </a>
       </li>
@@ -257,7 +259,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="4f77b2ae4e7bbookings_read">
+      <div class="tab-pane active" id="53234f414827bookings_read">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"booking_comments.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{booking_comments.booking}"</span>
@@ -267,8 +269,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"content"</span><span class="o">:</span> <span class="s2">"Comment content"</span><span class="p">,</span>
       <span class="s2">"editable"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:57Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:57Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:06Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:06Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -279,7 +281,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="8b181bad98fbbookings_write-bookings_write_owned">
+      <div class="tab-pane " id="1834c0778f55bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"booking_comments.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{booking_comments.booking}"</span>
@@ -289,8 +291,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"content"</span><span class="o">:</span> <span class="s2">"Comment content"</span><span class="p">,</span>
       <span class="s2">"editable"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:57Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:57Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:06Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:06Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -315,13 +317,13 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#90f5b9126c2dbookings_read" role="tab" data-toggle="pill">
+        <a href="#2e3d20d7e65cbookings_read" role="tab" data-toggle="pill">
           bookings_read
         </a>
       </li>
     
       <li>
-        <a href="#b6e1b15d23e4bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#0e5f78586ababookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_write / bookings_write_owned
         </a>
       </li>
@@ -330,7 +332,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="90f5b9126c2dbookings_read">
+      <div class="tab-pane active" id="2e3d20d7e65cbookings_read">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"booking_comments.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{booking_comments.booking}"</span>
@@ -340,8 +342,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"content"</span><span class="o">:</span> <span class="s2">"Comment content"</span><span class="p">,</span>
       <span class="s2">"editable"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:57Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:57Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:06Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:06Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -352,7 +354,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="b6e1b15d23e4bookings_write-bookings_write_owned">
+      <div class="tab-pane " id="0e5f78586ababookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"booking_comments.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{booking_comments.booking}"</span>
@@ -362,8 +364,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"content"</span><span class="o">:</span> <span class="s2">"Comment content"</span><span class="p">,</span>
       <span class="s2">"editable"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:57Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:57Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:06Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:06Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -388,7 +390,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#1be62278cb26bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#77cedd0dd91cbookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_write / bookings_write_owned
         </a>
       </li>
@@ -407,7 +409,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="1be62278cb26bookings_write-bookings_write_owned">
+      <div class="tab-pane active" id="77cedd0dd91cbookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"booking_comments.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{booking_comments.booking}"</span>
@@ -417,8 +419,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"content"</span><span class="o">:</span> <span class="s2">"Comment content"</span><span class="p">,</span>
       <span class="s2">"editable"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:57Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:57Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:06Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:06Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -443,7 +445,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#3ffdcdf39a5dbookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#b7e4aff899c3bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_write / bookings_write_owned
         </a>
       </li>
@@ -461,7 +463,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="3ffdcdf39a5dbookings_write-bookings_write_owned">
+      <div class="tab-pane active" id="b7e4aff899c3bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"booking_comments.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{booking_comments.booking}"</span>
@@ -471,8 +473,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"content"</span><span class="o">:</span> <span class="s2">"Comment content"</span><span class="p">,</span>
       <span class="s2">"editable"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:57Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-23T13:13:57Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:06Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:06Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
