@@ -30,7 +30,7 @@ Group      | Subgroup | Name             | Type    | Read/Write | Description
            |          | created_at       | [Time](/reference/enums#formats)  | Read       | Account's create time.
            |          | updated_at       | [Time](/reference/enums#formats)  | Read       | Account's update time.
 -----------|----------|------------------|---------|------------|------------
-phones     |                  | Array   | Read                                 | Array of company's phone numbers.
+phones     |          |                  | Object  | Read                                 | Set of company's phone numbers.
            |          | phone            | String  | Read                                 | Company's phone number.
            |          | mobile           | String  | Read                                 | Company's mobile phone number.
            |          | fax              | String  | Read                                 | Company's fax number.
