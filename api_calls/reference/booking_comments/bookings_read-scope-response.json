@@ -1,10 +1,12 @@
 {
   "links": {
+    "booking_comments.account": "https://www.bookingsync.com/api/v3/accounts/{booking_comments.account}",
     "booking_comments.booking": "https://www.bookingsync.com/api/v3/bookings/{booking_comments.booking}"
   },
   "booking_comments": [
     {
       "links": {
+        "account": 3,
         "booking": 1
       },
       "id": 3,
