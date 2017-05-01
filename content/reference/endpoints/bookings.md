@@ -17,6 +17,8 @@ Name                    | Type    | Read/Write | Description
 ------------------------|---------|------------|------------
 id                      | Integer | Read       | Booking's id.
 ------------------------|---------|------------|------------
+reference               | String  | Read       | Booking's reference code.
+------------------------|---------|------------|------------
 status                  | String  | Read       | Booking's status.
 ------------------------|---------|------------|------------
 updated_at              | [Time](/reference/enums#formats) | Read       | Booking's update time.
@@ -33,21 +35,32 @@ source_id               | Integer | Write      | Source id related to the Bookin
 ------------------------|---------|------------|------------
 adults                  | Integer | Write      | Booking's number of adults.
 booked                  | Boolean | Write      | Booking's booked status, false by default. When set to true, marks a regular booking.
+channel_price           | Integer | Write      | Booking's channel price.
+charge_damage_deposit_on_arrival  | Boolean    | Write | Defines if charge damage deposite will be charged on arrival.
 children                | Integer | Write      | Booking's number of children.
+comission               | [Decimal](/reference/enums#formats) | Write | Booking's comission fee.
 currency                | String  | Write      | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies).
+damage_deposit          | [Decimal](/reference/enums#formats) | Write | Booking's damage deposit.
 discount                | String  | Write      | Booking's discount. (in percents e.g. 10%)
 door_key_code           | String  | Write      | Booking's rental door key code.
-downpayment             | [Decimal](/reference/enums#formats) | Write      | Booking's downpayment.
-final_price             | [Decimal](/reference/enums#formats) | Write      | Booking's final price. (after discount)
-initial_price           | [Decimal](/reference/enums#formats) | Write      | Booking's initial price.
+downpayment             | [Decimal](/reference/enums#formats) | Write | Booking's downpayment.
+expected_checkin_time   | String  | Write      | Expected guest's checkin time.
+expected_checkout_time  | String  | Write      | Expected guest's checkout time.
+final_payback_to_owner  | [Decimal](/reference/enums#formats) | Write | Final payback to rental owner.
+final_price             | [Decimal](/reference/enums#formats) | Write | Booking's final price. (after discount)
+initial_price           | [Decimal](/reference/enums#formats) | Write | Booking's initial price.
+locked                  | String  | Write      | Booking's locked status.
 notes                   | Text    | Write      | Booking's notes. (1000 characters max)
+reference               | String  | Read       | Booking's reference code.
+rental_payback_to_owner | [Decimal](/reference/enums#formats) | Write | Amount of money to pay back to owner (only rental, excluding fees).
 status                  | String  | Read       | Booking's status.
 unavailable             | Boolean | Write      | Booking's unavailable status, false by default. When set to true, marks the given period as unavailable. Commonly used for closed or maintenance periods.
 ------------------------|---------|------------|------------
 updated_at              | [Time](/reference/enums#formats) | Read       | Booking's update time.
 start_at                | [Time](/reference/enums#formats) | Read/Write | **Required**. Booking's start time.
 end_at                  | [Time](/reference/enums#formats) | Read/Write | **Required**. Booking's end time.
-tentative_expires_at    | [Time](/reference/enums#formats) | Write      | Booking's tentative expiry time, null by default. When set, it will mark the period as "on hold" until the given date. Once this date is passed, the period will automatically become available again.
+canceled_at             | [Time](/reference/enums#formats) | Write | Booking's cancel time.
+tentative_expires_at    | [Time](/reference/enums#formats) | Write | Booking's tentative expiry time, null by default. When set, it will mark the period as "on hold" until the given date. Once this date is passed, the period will automatically become available again.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="bookings_read" markdown="1">
@@ -58,26 +71,41 @@ id                      | Integer | Read       | Booking's id.
 adults                  | Integer | Read       | Booking's number of adults.
 booked                  | Boolean | Read       | Booking's booked status, false by default. When set to true, marks a regular booking.
 bookings_payments_count | Integer | Read       | Booking's number of payments.
+channel_price           | Integer | Read       | Booking's channel price.
+charge_damage_deposit_on_arrival | Boolean | Read | Defines if charge damage deposite will be charged on arrival.
 children                | Integer | Read       | Booking's number of children.
+comission               | [Decimal](/reference/enums#formats) | Read | Booking's comission fee.
 currency                | String  | Read       | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies).
+damage_deposit          | [Decimal](/reference/enums#formats) | Read | Booking's damage deposit.
 discount                | String  | Read       | Booking's discount. (in percents e.g. 10%)
 door_key_code           | String  | Read       | Booking's rental door key code.
 downpayment             | [Decimal](/reference/enums#formats) | Read       | Booking's downpayment.
+expected_checkin_time   | String  | Read       | Expected guest's checkin time.
+expected_checkout_time  | String  | Read       | Expected guest's checkout time.
+final_payback_to_owner  | [Decimal](/reference/enums#formats) | Read       | Final payback to rental owner.
 final_price             | [Decimal](/reference/enums#formats) | Read       | Booking's final price. (after discount)
+final_rental_price      | [Decimal](/reference/enums#formats) | Read       | initial_rental_price reduced by discount (taxes and fees not included).
 initial_price           | [Decimal](/reference/enums#formats) | Read       | Booking's initial price.
+initial_rental_price    | [Decimal](/reference/enums#formats) | Read       | An alias for initial_price
 locked                  | String  | Read       | Booking's locked status.
 notes                   | Text    | Read       | Booking's notes.
+owned_by_app            | Boolean | Read       | Defines whether booking was created by current app.
 paid_amount             | [Decimal](/reference/enums#formats) | Read       | Booking's amount that have already been paid.
+payment_url             | String  | Read       | Url for booking's payment.
+reference               | String  | Read       | Booking's reference code.
+rental_payback_to_owner | [Decimal](/reference/enums#formats) | Read       | Amount of money to pay back to owner (only rental, excluding fees).
 review_requests_count   | Integer | Read       | Booking's number of review requests.
 status                  | String  | Read       | Booking's status.
 unavailable             | Boolean | Read       | Booking's unavailable status, false by default. When set to true, marks the given period as unavailable. Commonly used for closed or maintenance periods.
 ------------------------|---------|------------|------------
+balance_due_at          | [Time](/reference/enums#formats) | Read       | Booking's payment deadline.
 created_at              | [Time](/reference/enums#formats) | Read       | Booking's create time.
 updated_at              | [Time](/reference/enums#formats) | Read       | Booking's update time.
 start_at                | [Time](/reference/enums#formats) | Read       | Booking's start time.
 end_at                  | [Time](/reference/enums#formats) | Read       | Booking's end time.
 canceled_at             | [Time](/reference/enums#formats) | Read       | Booking's cancel time.
 tentative_expires_at    | [Time](/reference/enums#formats) | Read       | Booking's tentative expiry time, null by default. When set, it will mark the period as "on hold" until the given date. Once this date is passed, the period will automatically become available again.
+contract_updated_at     | [Time](/reference/enums#formats) | Read       | Booking's contract update time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="bookings_write" markdown="1">
@@ -90,26 +118,41 @@ source_id               | Integer | Write      | Source id related to the Bookin
 adults                  | Integer | Read/Write | Booking's number of adults.
 booked                  | Boolean | Read/Write | Booking's booked status, false by default. When set to true, marks a regular booking.
 bookings_payments_count | Integer | Read       | Booking's number of payments.
+channel_price           | Integer | Read/Write | Booking's channel price.
+charge_damage_deposit_on_arrival | Boolean | Read/Write | Defines if charge damage deposite will be charged on arrival.
 children                | Integer | Read/Write | Booking's number of children.
+comission               | [Decimal](/reference/enums#formats) | Read/Write | Booking's comission fee.
 currency                | String  | Read/Write | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies).
+damage_deposit          | [Decimal](/reference/enums#formats) | Read/Write | Booking's damage deposit.
 discount                | String  | Read/Write | Booking's discount. (in percents e.g. 10%)
 door_key_code           | String  | Read/Write | Booking's rental door key code.
 downpayment             | [Decimal](/reference/enums#formats) | Read/Write | Booking's downpayment.
+expected_checkin_time   | String  | Read/Write | Expected guest's checkin time.
+expected_checkout_time  | String  | Read/Write | Expected guest's checkout time.
+final_payback_to_owner  | [Decimal](/reference/enums#formats) | Read/Write | Final payback to rental owner.
 final_price             | [Decimal](/reference/enums#formats) | Read/Write | Booking's final price. (after discount)
+final_rental_price      | [Decimal](/reference/enums#formats) | Read       | initial_rental_price reduced by discount (taxes and fees not included).
 initial_price           | [Decimal](/reference/enums#formats) | Read/Write | Booking's initial price.
+initial_rental_price    | [Decimal](/reference/enums#formats) | Read       | An alias for initial_price.
 locked                  | String  | Read/Write | Booking's locked status.
 notes                   | Text    | Read/Write | Booking's notes. (1000 characters max)
+owned_by_app            | Boolean | Read       | Defines whether booking was created by current app.
 paid_amount             | [Decimal](/reference/enums#formats) | Read       | Booking's amount that have already been paid.
+payment_url             | String  | Read       | Url for booking's payment.
+reference               | String  | Read       | Booking's reference code.
+rental_payback_to_owner | [Decimal](/reference/enums#formats) | Read/Write | Amount of money to pay back to owner (only rental, excluding fees).
 review_requests_count   | Integer | Read       | Booking's number of review requests.
 status                  | String  | Read       | Booking's status.
 unavailable             | Boolean | Read/Write | Booking's unavailable status, false by default. When set to true, marks the given period as unavailable. Commonly used for closed or maintenance periods.
 ------------------------|---------|------------|------------
+balance_due_at          | [Time](/reference/enums#formats) | Read       | Booking's payment deadline.
 created_at              | [Time](/reference/enums#formats) | Read       | Booking's create time.
 updated_at              | [Time](/reference/enums#formats) | Read       | Booking's update time.
 start_at                | [Time](/reference/enums#formats) | Read/Write | **Required**. Booking's start time.
 end_at                  | [Time](/reference/enums#formats) | Read/Write | **Required**. Booking's end time.
-canceled_at             | [Time](/reference/enums#formats) | Read       | Booking's cancel time.
+canceled_at             | [Time](/reference/enums#formats) | Read/Write | Booking's cancel time.
 tentative_expires_at    | [Time](/reference/enums#formats) | Read/Write | Booking's tentative expiry time, null by default. When set, it will mark the period as "on hold" until the given date. Once this date is passed, the period will automatically become available again.
+contract_updated_at     | [Time](/reference/enums#formats) | Read       | Booking's contract update time.
 {: class="table table-bordered"}
   </div>
 </div>
