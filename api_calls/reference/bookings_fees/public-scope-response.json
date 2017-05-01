@@ -1,13 +1,15 @@
 {
   "links": {
-    "bookings_fees.rentals_fee": "http://www.bookingsync.com/api/v3/rentals_fees/{bookings_fees.rentals_fee}",
-    "bookings_fees.booking": "http://www.bookingsync.com/api/v3/bookings/{bookings_fees.booking}",
-    "bookings_fees.fee": "http://www.bookingsync.com/api/v3/fees/{bookings_fees.fee}",
-    "bookings_fees.bookings_taxes": "http://www.bookingsync.com/api/v3/bookings_taxes/{bookings_fees.bookings_taxes}"
+    "bookings_fees.account": "https://www.bookingsync.com/api/v3/accounts/{bookings_fees.account}",
+    "bookings_fees.rentals_fee": "https://www.bookingsync.com/api/v3/rentals_fees/{bookings_fees.rentals_fee}",
+    "bookings_fees.booking": "https://www.bookingsync.com/api/v3/bookings/{bookings_fees.booking}",
+    "bookings_fees.fee": "https://www.bookingsync.com/api/v3/fees/{bookings_fees.fee}",
+    "bookings_fees.bookings_taxes": "https://www.bookingsync.com/api/v3/bookings_taxes/{bookings_fees.bookings_taxes}"
   },
   "bookings_fees": [
     {
       "links": {
+        "account": 3,
         "rentals_fee": 6,
         "booking": 1313,
         "fee": 9,

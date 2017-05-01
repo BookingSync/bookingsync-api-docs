@@ -26,6 +26,20 @@ updated_at       | [Time](/reference/enums#formats) | Read         | Bookings Fe
   </div>
 </div>
 
+## List bookings fees.
+
+Based on the OAuth token scopes bookings listing will be limited to a
+certain range.
+
+Scope                    | Read Permissions
+-------------------------|------------
+`:bookings_write_owned`  | Display fees only for bookings created by app that is making the request.
+`:bookings_read`         | Display fees for all bookings
+`:bookings_write`        | Display fees for all bookings
+{: class="table table-bordered"}
+
+Other scopes will return no results.
+
 ## List bookings fees
 
 List all bookings fees for given account(s).
