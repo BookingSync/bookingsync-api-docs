@@ -130,47 +130,213 @@
   <div class="tab-pane active" id="public">
     <table class="table table-bordered">
 <thead><tr>
-<th>Name</th>
+<th>Group</th>
+          <th>Subgroup</th>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
         </tr></thead>
 <tbody><tr>
-<td>id</td>
+<td> </td>
+          <td> </td>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Account’s id.</td>
         </tr></tbody>
-<tbody><tr>
-<td>business_name</td>
-          <td>Integer</td>
+<tbody>
+<tr>
+<td> </td>
+          <td> </td>
+          <td>address1</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Company’s address</td>
+        </tr>
+<tr>
+<td> </td>
+          <td> </td>
+          <td>address2</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Extension of company’s address.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td> </td>
+          <td>business_name</td>
+          <td>String</td>
           <td>Read</td>
           <td>Account’s business name.</td>
-        </tr></tbody>
-<tbody><tr>
-<td>email</td>
+        </tr>
+<tr>
+<td> </td>
+          <td> </td>
+          <td>city</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>City in which company is located.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td> </td>
+          <td>country_code</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Code of a country in which caompany is based in.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td> </td>
+          <td>default_locale</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Account’s default locale. List of all available locales is described in <a href="/reference/enums/#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td> </td>
+          <td>email</td>
           <td>String</td>
           <td>Read</td>
           <td>Account’s email.</td>
-        </tr></tbody>
-<tbody><tr>
-<td>status</td>
+        </tr>
+<tr>
+<td> </td>
+          <td> </td>
+          <td>selected_locales</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Array of all locales selected for this Account. List of all available locales is described in <a href="/reference/enums/#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td> </td>
+          <td>state</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>State in which company is located.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td> </td>
+          <td>status</td>
           <td>String</td>
           <td>Read</td>
           <td>Account’s status, list of statuses described in <a href="/reference/enums/#account-statuses">enums section</a>.</td>
-        </tr></tbody>
-<tbody><tr>
-<td>created_at</td>
+        </tr>
+<tr>
+<td> </td>
+          <td> </td>
+          <td>website</td>
+          <td>String</td>
+          <td> </td>
+          <td>Company’s website</td>
+        </tr>
+<tr>
+<td> </td>
+          <td> </td>
+          <td>zip</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Zip code.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td> </td>
+          <td> </td>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Account’s create time.</td>
-        </tr></tbody>
-<tbody><tr>
-<td>updated_at</td>
+        </tr>
+<tr>
+<td> </td>
+          <td> </td>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Account’s update time.</td>
-        </tr></tbody>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>phones</td>
+          <td> </td>
+          <td> </td>
+          <td>Object</td>
+          <td>Read</td>
+          <td>Set of company’s phone numbers.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td> </td>
+          <td>phone</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Company’s phone number.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td> </td>
+          <td>mobile</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Company’s mobile phone number.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td> </td>
+          <td>fax</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Company’s fax number.</td>
+        </tr>
+</tbody>
+<tbody>
+<tr>
+<td>prefrences</td>
+          <td> </td>
+          <td> </td>
+          <td>Object</td>
+          <td>Read</td>
+          <td>Set of account’s preferences.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>bookings</td>
+          <td> </td>
+          <td>Object</td>
+          <td>Read</td>
+          <td>Set of booking’s preferences.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td> </td>
+          <td>default_arrival_time</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Default checkin hour.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td> </td>
+          <td>default_departure_time</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Default checkout hour.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td> </td>
+          <td>default_communication_locale</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Default language locale for communication with customer. List of all available locales is described in <a href="/reference/enums/#locales">enums section</a>.</td>
+        </tr>
+</tbody>
 </table>
 </div>
 </div>
@@ -192,7 +358,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#875bca7867f0public" role="tab" data-toggle="pill">
+        <a href="#892afb4b243fpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -201,18 +367,44 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="875bca7867f0public">
+      <div class="tab-pane active" id="892afb4b243fpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"accounts"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"19 Les Robles"</span><span class="p">,</span>
+      <span class="s2">"address2"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
       <span class="s2">"business_name"</span><span class="o">:</span> <span class="s2">"Business Name"</span><span class="p">,</span>
+      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Nevache"</span><span class="p">,</span>
+      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"FR"</span><span class="p">,</span>
+      <span class="s2">"default_locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"email@example.com"</span><span class="p">,</span>
+      <span class="s2">"phones"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+        <span class="s2">"mobile"</span><span class="o">:</span> <span class="s2">"1234567890"</span><span class="p">,</span>
+        <span class="s2">"fax"</span><span class="o">:</span> <span class="s2">""</span>
+      <span class="p">},</span>
+      <span class="s2">"preferences"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">"default_arrival_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
+          <span class="s2">"default_departure_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+          <span class="s2">"default_communication_locale"</span><span class="o">:</span> <span class="s2">"en"</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="s2">"selected_locales"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"en"</span><span class="p">,</span>
+        <span class="s2">"fr"</span>
+      <span class="p">],</span>
+      <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Hautes-Alpes"</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"trial"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:06Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:06Z"</span>
+      <span class="s2">"website"</span><span class="o">:</span> <span class="s2">"http://www.superawesomevillas.com"</span><span class="p">,</span>
+      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:58Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:58Z"</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
     
@@ -230,7 +422,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#c4987395cd31public" role="tab" data-toggle="pill">
+        <a href="#56a6e982ae10public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -239,18 +431,44 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="c4987395cd31public">
+      <div class="tab-pane active" id="56a6e982ae10public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"accounts"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"19 Les Robles"</span><span class="p">,</span>
+      <span class="s2">"address2"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
       <span class="s2">"business_name"</span><span class="o">:</span> <span class="s2">"Business Name"</span><span class="p">,</span>
+      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Nevache"</span><span class="p">,</span>
+      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"FR"</span><span class="p">,</span>
+      <span class="s2">"default_locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"email@example.com"</span><span class="p">,</span>
+      <span class="s2">"phones"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"phone"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+        <span class="s2">"mobile"</span><span class="o">:</span> <span class="s2">"1234567890"</span><span class="p">,</span>
+        <span class="s2">"fax"</span><span class="o">:</span> <span class="s2">""</span>
+      <span class="p">},</span>
+      <span class="s2">"preferences"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">"default_arrival_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
+          <span class="s2">"default_departure_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+          <span class="s2">"default_communication_locale"</span><span class="o">:</span> <span class="s2">"en"</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="s2">"selected_locales"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"en"</span><span class="p">,</span>
+        <span class="s2">"fr"</span>
+      <span class="p">],</span>
+      <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Hautes-Alpes"</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"trial"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:06Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-04-26T13:00:06Z"</span>
+      <span class="s2">"website"</span><span class="o">:</span> <span class="s2">"http://www.superawesomevillas.com"</span><span class="p">,</span>
+      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:58Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:58Z"</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
     
