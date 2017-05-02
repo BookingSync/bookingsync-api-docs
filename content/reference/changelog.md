@@ -26,6 +26,13 @@
 ## 2017-05-02
 
   * [doc update] Update `accounts` endpoint with new attributes.
+  * [doc update] Update response of `bathrooms` endpoint.
+  * [doc update] Update response of `bedrooms` endpoint.
+  * [doc update] Update response of `booking_comments` endpoint.
+  * [doc update] Update `bookings` endpoint with new attributes.
+  * [doc update] Update `bookings_fees` endpoint.
+  * [api improvment] Add `bookings_tags` endpoint.
+  * [doc update] Update response of `bookings_taxes` endpoint.
 
 ## 2017-04-26
 
