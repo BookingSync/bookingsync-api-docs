@@ -1,8 +1,12 @@
 # Changelog
 
+## 2017-05-02
+
+  * [doc update] Update `accounts` endpoint with new attributes.
+
 ## 2017-04-26
 
-  * [doc update] Add docs for `rental_link_groups` and `rental_links` endpoints
+  * [doc update] Add docs for `rental_link_groups` and `rental_links` endpoints.
 
 ## 2017-04-23
 

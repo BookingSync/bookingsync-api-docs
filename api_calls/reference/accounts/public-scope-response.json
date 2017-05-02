@@ -2,11 +2,34 @@
   "accounts": [
     {
       "id": 7,
+      "address1": "19 Les Robles",
+      "address2": "",
       "business_name": "Business Name",
+      "city": "Nevache",
+      "country_code": "FR",
+      "default_locale": "en",
       "email": "email@example.com",
+      "selected_locales": ["en", "fr"],
+      "state": "Hautes-Alpes",
       "status":"trial",
+      "website": "http://www.superawesomevillas.com",
+      "zip": "05100",
       "created_at": "CREATED_AT",
-      "updated_at": "UPDATED_AT"
+      "updated_at": "UPDATED_AT",
+      "phones": {
+        "phone": "",
+        "mobile": "1234567890",
+        "fax": ""
+      },
+      "preferences": {
+        "bookings": {
+          "default_arrival_time": 16,
+          "default_departure_time": 10,
+          "default_communication_locale": "en"
+        }
+      }
     }
-  ]
+  ],
+  "meta": {
+  }
 }
