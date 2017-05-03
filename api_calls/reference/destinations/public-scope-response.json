@@ -12,9 +12,13 @@
         "en": "world/europe"
       },
       "aliases": {
-        "en": null
       },
-      "counter":1
+      "counter":1,
+      "ancestor_ids": [
+        1
+      ]
     }
-  ]
+  ],
+  "meta": {
+  }
 }

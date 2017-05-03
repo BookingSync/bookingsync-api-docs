@@ -15,7 +15,8 @@ Name                            | Type     | Read/Write | Description
 id                              | Integer  | Read       | Destination's id.
 --------------------------------|----------|-------------------------
 aliases                         | [Object](/reference/enums#formats)     | Read       | Destination's aliases, list of locales described in [enums section](/reference/enums#locales).
-counter                         | String   | Read       | Destination's use counter for rentals.
+ancestor_ids                    | Array    | Read       | Array of destination's ancestor destinations ids.
+counter                         | Integer  | Read       | Destination's use counter for rentals.
 fullname                        | [Object](/reference/enums#formats)     | Read       | Destination's fullname, list of locales described in [enums section](/reference/enums#locales).
 name                            | [Object](/reference/enums#formats)     | Read       | Destination's name, list of locales described in [enums section](/reference/enums#locales).
 permalink                       | [Object](/reference/enums#formats)     | Read       | Destination's permalink, list of locales described in [enums section](/reference/enums#locales).
