@@ -15,12 +15,14 @@ Group     | Name             | Type    | Read/Write | Description
 ----------|------------------|---------|------------|------------
           | id               | Integer | Read       | Client's id.
 ----------|------------------|---------|------------|------------
+          | company          | String  | Read       | Client's company name.
           | fullname         | String  | Read       | Client's fullname.
           | firstname        | String  | Read       | Client's first name.
           | lastname         | String  | Read       | Client's last name.
           | notes            | Text    | Read       | Client's notes.
           | passport         | String  | Read       | Client's passport id.
           | preferred_locale | String  | Read       | Client's contact language preference.
+          | vat_number       | String  | Read       | Client's company vat number.
 ----------|------------------|---------|------------|------------
           | created_at       | [Time](/reference/enums#formats) | Read       | Client's create time.
           | updated_at       | [Time](/reference/enums#formats) | Read       | Client's update time.
@@ -48,12 +50,14 @@ Group     | Name             | Type    | Read/Write | Description
 ----------|------------------|---------|------------|------------
           | id               | Integer | Read       | Client's id.
 ----------|------------------|---------|------------|------------
+          | company          | String  | Read/Write | Client's company name.
           | fullname         | String  | Read/Write | **Required**. Client's fullname. (150 characters max)
           | firstname        | String  | Read/Write | Client's first name. (150 characters max)
           | lastname         | String  | Read/Write | Client's last name. (150 characters max)
-          | notes            | Text    | Read/Write | Client's notes. (1000 characters max)
+          | notes            | Text    | Read/Write | Client's notes. (5000 characters max)
           | passport         | String  | Read/Write | Client's passport id. (50 characters max)
           | preferred_locale | String  | Read/Write | Client's contact language preference.
+          | vat_number       | String  | Read/Write | Client's company vat number.
 ----------|------------------|---------|------------|------------
           | created_at       | [Time](/reference/enums#formats) | Read       | Client's create time.
           | updated_at       | [Time](/reference/enums#formats) | Read       | Client's update time.
