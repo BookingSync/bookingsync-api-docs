@@ -24,7 +24,6 @@ lastname         | String  | Read       | Inquiry's client lastname.
 message          | Text    | Read       | Inquiry's message.
 phone            | String  | Read       | Inquiry's client phone number.
 locked           | String  | Read       | Inquiry's locked status.
-source_id        | Integer | Write      | Source id related to the Inquiry.
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Inquiry's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Inquiry's update time.
@@ -46,6 +45,7 @@ lastname         | String  | Read/Write | **Required**. Inquiry's client lastnam
 message          | Text    | Read/Write | Inquiry's message. (500 characters max)
 phone            | String  | Read/Write | Inquiry's client phone number.
 source_id        | Integer | Write      | Source id related to the Inquiry.
+rental_id        | Integer | Write      | **Only update** Id of rental related to the Inquiry
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Inquiry's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Inquiry's update time.
@@ -68,6 +68,7 @@ message          | Text    | Read/Write | Inquiry's message. (500 characters max
 phone            | String  | Read/Write | Inquiry's client phone number.
 locked           | String  | Read/Write | Inquiry's locked status.
 source_id        | Integer | Write      | Source id related to the Inquiry.
+rental_id        | Integer | Write      | **Only update** Id of rental related to the Inquiry
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Inquiry's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Inquiry's update time.

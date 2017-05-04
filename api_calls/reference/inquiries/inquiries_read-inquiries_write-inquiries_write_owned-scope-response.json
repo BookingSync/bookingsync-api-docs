@@ -1,11 +1,15 @@
 {
   "links": {
-    "inquiries.rental": "https://www.bookingsync.com/api/v3/rentals/{inquiries.rental}"
+    "inquiries.rental": "http://bookingsync.dev/api/v3/rentals/{inquiries.rental}",
+    "inquiries.source": "http://bookingsync.dev/api/v3/sources/{inquiries.source}",
+    "inquiries.booking": "http://bookingsync.dev/api/v3/bookings/{inquiries.booking}"
   },
   "inquiries": [
     {
       "links": {
-        "rental": 2
+        "booking": null,
+        "rental": 2,
+        "source": null
       },
       "id": 1,
       "firstname": "John",
@@ -18,8 +22,11 @@
       "adults": 4,
       "children": 2,
       "message": "Important message",
+      "locked": null,
       "created_at": "CREATED_AT",
       "updated_at": "UPDATED_AT"
     }
-  ]
+  ],
+  "meta": {
+  }
 }
