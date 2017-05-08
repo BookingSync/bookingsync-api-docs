@@ -33,6 +33,7 @@
       "updated_at": "UPDATED_AT",
       "rejected_at": null,
       "canceled_at": null,
+      "description": "Payment for Awesome Rental from Friday 01 Jun 2017, 04:00 PM to Friday 8 Jun 2017, 10:00 AM",
       "address1": "Bernhard Creek",
       "address2": null,
       "zip": "07671-8254",
