@@ -1,10 +1,12 @@
 {
   "links": {
+    "photos.account": "http://bookingsync.dev/api/v3/accounts/{photos.account}",
     "photos.rental": "https://www.bookingsync.com/api/v3/rentals/{photos.rental}"
   },
   "photos": [
     {
       "links": {
+        "account": 1,
         "rental": 3
       },
       "id": 1,
@@ -23,7 +25,7 @@
       "giant_url": "http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/giant_1c4a6fb74004bb654fbb7972e4c78625.jpg",
       "position": 1,
       "height": 2000,
-      "ratio": 1.5,
+      "ratio": "1.5",
       "width": 3000,
       "created_at": "CREATED_AT",
       "updated_at": "UPDATED_AT"
