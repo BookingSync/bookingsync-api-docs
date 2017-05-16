@@ -1,5 +1,9 @@
 # Changelog
 
+## 2017-05-17
+
+  * [api_improvement] Allow to assign `payment_gateway_id` to `rental`.
+
 ## 2017-05-02
 
   * [doc update] Update `accounts` endpoint with new attributes.
