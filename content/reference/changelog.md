@@ -3,6 +3,7 @@
 ## 2017-05-17
 
   * [api_improvement] Allow to assign `payment_gateway_id` to `rental`.
+  * [api improvement] Add `permit_number`to `rentals` endpoint.
 
 ## 2017-05-02
 
@@ -27,7 +28,7 @@
 ## 2017-03-23
 
   * [doc update] Update `rentals/search` endpoint with `adults` and `children` params. Clarify `guests` param usage.
-  * [api_improvement] Add `bedrooms_count` to `rentals` search params.
+  * [api improvement] Add `bedrooms_count` to `rentals` search params.
 
 ## 2017-03-22
 
