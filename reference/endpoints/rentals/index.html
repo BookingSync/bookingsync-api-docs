@@ -717,6 +717,12 @@
           <td>Destination id related to the rental.</td>
         </tr>
 <tr>
+<td>payment_gateway_id</td>
+          <td>Integer</td>
+          <td>Write</td>
+          <td>PaymentGateway id related to the rental.</td>
+        </tr>
+<tr>
 <td>rates_table_id</td>
           <td>Integer</td>
           <td>Write</td>
@@ -1025,13 +1031,13 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#c75acf1e09ffpublic" role="tab" data-toggle="pill">
+        <a href="#80b0bb02dd75public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
       <li>
-        <a href="#5fe75b1db978rentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#15a5a635895drentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
@@ -1040,7 +1046,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="c75acf1e09ffpublic">
+      <div class="tab-pane active" id="80b0bb02dd75public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -1111,9 +1117,9 @@
       <span class="s2">"website_url"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:59Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:59Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:59Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-05-17T13:59:10Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-05-17T13:59:10Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2017-05-17T13:59:10Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -1169,7 +1175,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="5fe75b1db978rentals_read-rentals_write">
+      <div class="tab-pane " id="15a5a635895drentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -1250,9 +1256,9 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:59Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:59Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:59Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-05-17T13:59:10Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-05-17T13:59:10Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2017-05-17T13:59:10Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -1495,7 +1501,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#26a6d758cef9public" role="tab" data-toggle="pill">
+        <a href="#e1e182378f17public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -1504,7 +1510,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="26a6d758cef9public">
+      <div class="tab-pane active" id="e1e182378f17public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -1751,13 +1757,13 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#db7b56c63e86public" role="tab" data-toggle="pill">
+        <a href="#623f79311936public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
       <li>
-        <a href="#8e5c9d4c792drentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#b986e8f941ccrentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
@@ -1766,7 +1772,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="db7b56c63e86public">
+      <div class="tab-pane active" id="623f79311936public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -1837,9 +1843,9 @@
       <span class="s2">"website_url"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:59Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:59Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:59Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-05-17T13:59:10Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-05-17T13:59:10Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2017-05-17T13:59:10Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -1895,7 +1901,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="8e5c9d4c792drentals_read-rentals_write">
+      <div class="tab-pane " id="b986e8f941ccrentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -1976,9 +1982,9 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:59Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:59Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:59Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-05-17T13:59:10Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-05-17T13:59:10Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2017-05-17T13:59:10Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -2055,7 +2061,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#ffc18a77aca6rentals_write" role="tab" data-toggle="pill">
+        <a href="#d94a6082a200rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -2086,7 +2092,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="ffc18a77aca6rentals_write">
+      <div class="tab-pane active" id="d94a6082a200rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -2167,9 +2173,9 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:59Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:59Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:59Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-05-17T13:59:10Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-05-17T13:59:10Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2017-05-17T13:59:10Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -2241,7 +2247,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#4a7cefaa5a51rentals_write" role="tab" data-toggle="pill">
+        <a href="#ce99110d4190rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -2272,7 +2278,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="4a7cefaa5a51rentals_write">
+      <div class="tab-pane active" id="ce99110d4190rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -2353,9 +2359,9 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:59Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:59Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T13:09:59Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-05-17T13:59:10Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-05-17T13:59:10Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2017-05-17T13:59:10Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
