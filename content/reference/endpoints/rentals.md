@@ -119,6 +119,7 @@ Name                            | Type     | Read/Write | Description
 id                              | Integer  | Read       | Rental's id.
 amenity_ids                     | Array    | Write      | Amenity ids related to the rental.
 destination_id                  | Integer  | Write      | Destination id related to the rental.
+payment_gateway_id              | Integer  | Write      | PaymentGateway id related to the rental.
 rates_table_id                  | Integer  | Write      | Rates Table id related to the rental.
 rentals_contact_id              | Integer  | Write      | Contact id related to the rental.
 --------------------------------|----------|------------|--------------
