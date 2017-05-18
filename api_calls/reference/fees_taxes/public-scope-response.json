@@ -1,7 +1,7 @@
 {
   "links": {
-    "fees_taxes.fee": "http://bookingsync.dev/api/v3/fees/{fees_taxes.fee}",
-    "fees_taxes.tax": "http://bookingsync.dev/api/v3/taxes/{fees_taxes.tax}"
+    "fees_taxes.fee": "https://www.bookingsync.com/api/v3/fees/{fees_taxes.fee}",
+    "fees_taxes.tax": "https://www.bookingsync.com/api/v3/taxes/{fees_taxes.tax}"
   },
   "fees_taxes": [
     {
