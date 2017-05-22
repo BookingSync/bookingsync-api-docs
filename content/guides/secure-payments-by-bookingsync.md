@@ -5,13 +5,15 @@
 
 ## Preface
 
-If you have an integration with BookingSync and you create bookings on your side according to the instant booking flow (i.e. a booking gets confirmed only when the credit card payment is executed successfully) and you don't have PCI DSS compliant platform for collecting credit card payments, you can use our Secure Payments By BookingSync flow for this purpose.
+If you have an integration with BookingSync and you create bookings on your side according to the instant booking flow (i.e. a booking gets confirmed only when the credit card payment is executed successfully) and you don't have PCI DSS compliant payment platform for collecting credit card payments, you can use our Secure Payments By BookingSync flow for this purpose.
 
 ## Requirements
 
-To handle integration with Secure Payments By BookingSync you need to have an application with `payments_write` or `payments_write_owned` scope. We recommend using `payments_write_owned` for this purpose to make sure the payment is not editable by anyone else, only by your application.
+To handle integration with Secure Payments By BookingSync you need to have an application with `payments_write` or `payments_write_owned` scope. We recommend using `payments_write_owned` for this purpose to make sure the payment is not editable by anyone else - only by your application.
 
-Also, the rental for which the booking will be created requires to be instantly bookable and the it needs to have a payment gateway assigned (which will be used for executing the credit card payment) which supports the currency that is set for the rental.
+Also, the rental for which the booking will be created requires to be instantly bookable and it requires to have a payment gateway assigned (which will be used for executing the credit card payment) which supports rental's currency.
+
+For client-to-server integration you need to be at least PCI-DSS 3.1 + SAQ-A compliant and for server-to-server integration you need to be SAQ-D compliant.
 
 ## Instant Booking Flow
 
@@ -21,36 +23,36 @@ Here are the steps that we recommend to follow for this flow:
 
 * Create a tentative booking
 * Create a tentative instant booking payment
-* Send credit card data and payment id to our PCI DSS platform for executing payment, which will confirm both booking and payment if the payment is successfully executed
+* Send credit card data and payment id to our PCI DSS compliant payment platform for executing the payment, which will confirm both booking and payment if the payment is successfully executed
 
 Let's focus on each point separately.
 
 ## Creating A Tentative Booking
 
-Instant Booking flow requires payment to confirm the booking, so we recommend creating a tentative booking and leaving the confirmation to our PCI DSS platform. The confirmation process should take up to few minutes, so we recommend to set tentative expire date to 5 or 10 minutes from now. To create a tentative booking you need to provide 2 params (besides the requires one):
+Instant Booking flow requires payment to confirm the booking, so we recommend creating a tentative booking and leaving the confirmation to our PCI DSS compliant platform. The confirmation process should take up to few minutes, so we recommend to set tentative expire date to 5 or 10 minutes from now. To create a tentative booking you need to provide 2 params (besides the requires one):
 
 * tentative_expires_at - to set the expiry date
 * booked - set it to `false`
 
-You can find more about the bookings' attributes and how to create them [here](/reference/endpoints/bookings/).
+You can find more about the bookings' attributes and how to create them in the [bookings endpoint documentation](/reference/endpoints/bookings/).
 
 ## Creating A Tentative Payment
 
 Another step would be creating a tentative payment (i.e. not confirmed payment) of `instant-booking` kind for the given booking. This payment will get confirmed once the successful credit card payment is executed. Here the essential attributes you need to provide for such payment:
 
 * amount_in_cents - amount in cents for the payment that will be charged
-* currency -  currency of the payment
+* currency -  currency of the payment (must be the same as booking's currency)
 * kind - use `instant-booking`
 
 We also recommend including more details like `fullname`, `email`, `zip` and other address related field.
 
-You can find more about the payments' attributes and how to create them [here](/reference/endpoints/payments/).
+You can find more about the payments' attributes and how to create themin the  [payments endpoint documentation](/reference/endpoints/payments/).
 
 ## Executing Payment
 
-Once you have created a payment, you need to take its id and collect the credit card data.
+Once you have created a payment, you need to execute the payment using its id and the credit card data.
 
-The URL of our PCI DSS platform for executing credit card payments is the following: `https://secure.bookingsync.com/api/bookingsync/instant_bookings`.
+The URL of our PCI DSS compliant payment platform for executing credit card payments is the following: `https://secure.bookingsync.com/api/bookingsync/instant_bookings`.
 
 To execute the payment you need to provide the following attributes:
 
@@ -74,11 +76,12 @@ Here's an example of the expected payload:
   "card_number": 4111111111111111,
   "cardholder_name": "John Doe",
   "expires_at_month": "12",
-  "expires_at_year": "2020"
+  "expires_at_year": "2020",
   "security_code": 123,
   "address1": "some address 1 / 10",
   "zip": "12312",
   "city": "San Francisco",
+  "state": "California",
   "country_code": "US"
 }
 ~~~
@@ -116,6 +119,14 @@ To indicate problems with authorizing the payment we use `payment` attribute, he
 
 There are 3 edgecases that shouldn't happen too often, but are possible:
 
-* API connection problem - if the PCI DSS platform cannot establish a connection with BookingSync API, the error will be returned for `api` attribute.
+* API connection problem - if the payment platform cannot establish a connection with BookingSync API, the error will be returned for `api` attribute.
 * Data problem - if the payment gateway was not set for the rental, the error will be returned for `data` attribute.
 * Other errors - if there is any different error, it will be returned for `server` attribute.
+
+## Testing Payment Execution
+
+For testing the payment flow we recommend switching to Bogus gateway, which will prevent from executing a real payment and using one of the following credit card numbers:
+
+* `4111 1111 1111 1111` - to Simulate an Approved Transaction
+* `4111 1111 1111 1112` - to Simulate a Declined Transaction
+* `4111 1111 1111 1113` - To Simulate a Gateway Failure
