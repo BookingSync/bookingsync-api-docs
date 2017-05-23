@@ -46,7 +46,7 @@ Another step would be creating a tentative payment (i.e. not confirmed payment) 
 
 We also recommend including more details like `fullname`, `email`, `zip` and other address related field.
 
-You can find more about the payments' attributes and how to create themin the  [payments endpoint documentation](/reference/endpoints/payments/).
+You can find more about the payments' attributes and how to create them in the [payments endpoint documentation](/reference/endpoints/payments/).
 
 ## Executing Payment
 
