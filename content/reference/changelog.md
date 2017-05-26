@@ -1,5 +1,10 @@
 # Changelog
 
+## 2017-05-30
+
+  * [api_improvement] Add docs for `applications` endpoint.
+  * [api improvement] Add `applications_read` scope.
+
 ## 2017-05-17
 
   * [api_improvement] Allow to assign `payment_gateway_id` to `rental`.
