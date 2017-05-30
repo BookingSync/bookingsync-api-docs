@@ -94,8 +94,8 @@
           <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
-          <a class="list-group-item active" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
-          <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item active" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
           <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
           <a class="list-group-item" href="/reference/endpoints/rental_links/">Rental Links</a>
@@ -119,21 +119,21 @@
     <div class="col-md-9 col-md-pull-3">
       <div class="panel panel-default">
         <div class="panel-body reference-body">
-          <h2 id="rentals-amenities">Rentals amenities</h2>
+          <h2 id="rentals-contents-overrides">Rentals Contents Overrides</h2>
 
 <ol id="markdown-toc">
-<li><a href="#list-rentals-amenities">List rentals amenities</a></li>
-  <li><a href="#get-a-single-rentals-amenity">Get a single rentals amenity</a></li>
-  <li><a href="#create-a-new-rentals-amenity">Create a new rentals amenity</a></li>
-  <li><a href="#update-a-rentals-amenity">Update a rentals amenity</a></li>
-  <li><a href="#destroy-a-rentals-amenity">Destroy a rentals amenity</a></li>
+<li><a href="#list-rentals-contents-overrides">List rentals contents overrides</a></li>
+  <li><a href="#get-a-single-rentals-content-override">Get a single rentals content override</a></li>
+  <li><a href="#create-a-new-rentals-content-override">Create a new rentals content override</a></li>
+  <li><a href="#update-a-rentals-content-override">Update a rentals content override</a></li>
+  <li><a href="#destroy-a-rentals-content-override">Destroy a rentals content override</a></li>
 </ol><h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
-  <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
+  <li class="active"><a href="#rentals_read" role="tab" data-toggle="pill">rentals_read</a></li>
   <li><a href="#rentals_write" role="tab" data-toggle="pill">rentals_write</a></li>
 </ul><div class="tab-content">
-  <div class="tab-pane active" id="public">
+  <div class="tab-pane active" id="rentals_read">
     <table class="table table-bordered">
 <thead><tr>
 <th>Name</th>
@@ -145,26 +145,40 @@
 <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Rentals Amenity’s id.</td>
+          <td>Rentals Contents Override’s id.</td>
         </tr></tbody>
-<tbody><tr>
-<td>details</td>
+<tbody>
+<tr>
+<td>description</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read</td>
-          <td>Rentals Amenity’s details, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
-        </tr></tbody>
+          <td>Description override for related application, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td>headline</td>
+          <td><a href="/reference/enums#formats">Object</a></td>
+          <td>Read</td>
+          <td>Headline override for related application, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td>summary</td>
+          <td><a href="/reference/enums#formats">Object</a></td>
+          <td>Read</td>
+          <td>Summary override for related application, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+</tbody>
 <tbody>
 <tr>
 <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Rentals Amenity’s create time.</td>
+          <td>Rentals Contents Override’s create time.</td>
         </tr>
 <tr>
 <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Rentals Amenity’s update time.</td>
+          <td>Rentals Contents Override’s update time.</td>
         </tr>
 </tbody>
 </table>
@@ -182,53 +196,72 @@
 <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Rentals Amenity’s id.</td>
+          <td>Rentals Contents Override’s id.</td>
         </tr>
 <tr>
-<td>amenity_id</td>
+<td>application_id</td>
           <td>Integer</td>
           <td>Write</td>
-          <td>
-<strong>Required</strong>. Amenity id related to the Rentals Amenity.</td>
+          <td>Application id related to the Rentals Contents Override.</td>
+        </tr>
+<tr>
+<td>rental_id</td>
+          <td>Integer</td>
+          <td>Write</td>
+          <td>Rental id related to the Rentals Contents Override.</td>
         </tr>
 </tbody>
-<tbody><tr>
-<td>details</td>
+<tbody>
+<tr>
+<td>description</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read/Write</td>
-          <td>Rentals Amenity’s details, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
-        </tr></tbody>
+          <td>Description override for related application, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td>headline</td>
+          <td><a href="/reference/enums#formats">Object</a></td>
+          <td>Read/Write</td>
+          <td>Headline override for related application, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+<tr>
+<td>summary</td>
+          <td><a href="/reference/enums#formats">Object</a></td>
+          <td>Read/Write</td>
+          <td>Summary override for related application, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+</tbody>
 <tbody>
 <tr>
 <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Rentals Amenity’s create time.</td>
+          <td>Rentals Contents Override’s create time.</td>
         </tr>
 <tr>
 <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Rentals Amenity’s update time.</td>
+          <td>Rentals Contents Override’s update time.</td>
         </tr>
 </tbody>
 </table>
 </div>
 </div>
 
-<h3 id="list-rentals-amenities">List rentals amenities</h3>
+<h3 id="list-rentals-contents-overrides">List rentals contents overrides</h3>
 
-<p>List all rentals amenities for given account.</p>
+<p>List all rentals contents overrides for given account(s).</p>
 
-<pre><code>GET /rentals_amenities
+<pre><code>GET /rentals_contents_overrides
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#f2dbafb4147fpublic" role="tab" data-toggle="pill">
-          public
+        <a href="#6cc602681f13rentals_read-rentals_write" role="tab" data-toggle="pill">
+          rentals_read / rentals_write
         </a>
       </li>
     
@@ -236,45 +269,53 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="f2dbafb4147fpublic">
+      <div class="tab-pane active" id="6cc602681f13rentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"rentals_amenities.amenity"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/amenities/{rentals_amenities.amenity}"</span><span class="p">,</span>
-    <span class="s2">"rentals_amenities.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rentals_amenities.rental}"</span>
+    <span class="s2">"rentals_contents_overrides.application"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/applications/{rentals_contents_overrides.application}"</span><span class="p">,</span>
+    <span class="s2">"rentals_contents_overrides.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rentals_contents_overrides.rental}"</span>
   <span class="p">},</span>
-  <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"rentals_contents_overrides"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="s2">"details"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Amenity details"</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 8 people with private pool. Situated in a pleasant residential area."</span>
+      <span class="p">},</span>
+      <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span>
+      <span class="p">},</span>
+      <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
       <span class="p">},</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-05-30T14:39:54Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-05-30T14:39:54Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"amenity"</span><span class="o">:</span> <span class="mi">82</span><span class="p">,</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"application"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
     
   
 </div>
 
-<h3 id="get-a-single-rentals-amenity">Get a single rentals amenity</h3>
+<h3 id="get-a-single-rentals-content-override">Get a single rentals content override</h3>
 
-<p>Returns a single rentals amenity identified by ID.</p>
+<p>Returns a single rentals content override identified by ID.</p>
 
-<pre><code>GET /rentals_amenities/:rentals_amenity_id
+<pre><code>GET /rentals_contents_overrides/:rentals_content_override_id
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#167cc76f8582public" role="tab" data-toggle="pill">
-          public
+        <a href="#75089948c5b9rentals_read-rentals_write" role="tab" data-toggle="pill">
+          rentals_read / rentals_write
         </a>
       </li>
     
@@ -282,54 +323,71 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="167cc76f8582public">
+      <div class="tab-pane active" id="75089948c5b9rentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"rentals_amenities.amenity"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/amenities/{rentals_amenities.amenity}"</span><span class="p">,</span>
-    <span class="s2">"rentals_amenities.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rentals_amenities.rental}"</span>
+    <span class="s2">"rentals_contents_overrides.application"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/applications/{rentals_contents_overrides.application}"</span><span class="p">,</span>
+    <span class="s2">"rentals_contents_overrides.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rentals_contents_overrides.rental}"</span>
   <span class="p">},</span>
-  <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"rentals_contents_overrides"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="s2">"details"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Amenity details"</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 8 people with private pool. Situated in a pleasant residential area."</span>
+      <span class="p">},</span>
+      <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span>
+      <span class="p">},</span>
+      <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
       <span class="p">},</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-05-30T14:39:54Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-05-30T14:39:54Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"amenity"</span><span class="o">:</span> <span class="mi">82</span><span class="p">,</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"application"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
     
   
 </div>
 
-<h3 id="create-a-new-rentals-amenity">Create a new rentals amenity</h3>
+<h3 id="create-a-new-rentals-content-override">Create a new rentals content override</h3>
 
-<p>Creates a rentals amenity for given rental.</p>
+<p>Creates a rentals content override for given rental.</p>
 
-<pre><code>POST /rentals/:rental_id/rentals_amenities
+<pre><code>POST /rentals_contents_overrides
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#11a0b9b2fc21rentals_write" role="tab" data-toggle="pill">
+        <a href="#a27d140c29d3rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
     
   </ul><h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"rentals_contents_overrides"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"amenity_id"</span><span class="o">:</span> <span class="s2">"82"</span><span class="p">,</span>
-      <span class="s2">"details_en"</span><span class="o">:</span> <span class="s2">"Amenity details"</span>
+      <span class="s2">"application_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 8 people with private pool. Situated in a pleasant residential area."</span>
+      <span class="p">},</span>
+      <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span>
+      <span class="p">},</span>
+      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
+      <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -338,54 +396,69 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="11a0b9b2fc21rentals_write">
+      <div class="tab-pane active" id="a27d140c29d3rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"rentals_amenities.amenity"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/amenities/{rentals_amenities.amenity}"</span><span class="p">,</span>
-    <span class="s2">"rentals_amenities.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rentals_amenities.rental}"</span>
+    <span class="s2">"rentals_contents_overrides.application"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/applications/{rentals_contents_overrides.application}"</span><span class="p">,</span>
+    <span class="s2">"rentals_contents_overrides.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rentals_contents_overrides.rental}"</span>
   <span class="p">},</span>
-  <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"rentals_contents_overrides"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="s2">"details"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Amenity details"</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 8 people with private pool. Situated in a pleasant residential area."</span>
+      <span class="p">},</span>
+      <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span>
+      <span class="p">},</span>
+      <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
       <span class="p">},</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-05-30T14:39:54Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-05-30T14:39:54Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"amenity"</span><span class="o">:</span> <span class="mi">82</span><span class="p">,</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"application"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
     
   
 </div>
 
-<h3 id="update-a-rentals-amenity">Update a rentals amenity</h3>
+<h3 id="update-a-rentals-content-override">Update a rentals content override</h3>
 
-<p>Returns an updated rentals amenity identified by ID.</p>
+<p>Returns an updated rentals content override identified by ID.</p>
 
-<pre><code>PUT /rentals_amenities/:rentals_amenity_id
+<pre><code>PUT /rentals_contents_overrides/:rentals_content_override_id
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#e63cfc35e028rentals_write" role="tab" data-toggle="pill">
+        <a href="#2006b5c00f7drentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
     
   </ul><h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"rentals_contents_overrides"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"amenity_id"</span><span class="o">:</span> <span class="s2">"82"</span><span class="p">,</span>
-      <span class="s2">"details_en"</span><span class="o">:</span> <span class="s2">"Amenity details"</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 8 people with private pool. Situated in a pleasant residential area."</span>
+      <span class="p">},</span>
+      <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span>
+      <span class="p">},</span>
+      <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
+      <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -394,39 +467,47 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="e63cfc35e028rentals_write">
+      <div class="tab-pane active" id="2006b5c00f7drentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"rentals_amenities.amenity"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/amenities/{rentals_amenities.amenity}"</span><span class="p">,</span>
-    <span class="s2">"rentals_amenities.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rentals_amenities.rental}"</span>
+    <span class="s2">"rentals_contents_overrides.application"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/applications/{rentals_contents_overrides.application}"</span><span class="p">,</span>
+    <span class="s2">"rentals_contents_overrides.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rentals_contents_overrides.rental}"</span>
   <span class="p">},</span>
-  <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"rentals_contents_overrides"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="s2">"details"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Amenity details"</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 8 people with private pool. Situated in a pleasant residential area."</span>
+      <span class="p">},</span>
+      <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span>
+      <span class="p">},</span>
+      <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
       <span class="p">},</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-05-30T14:39:54Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-05-30T14:39:54Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"amenity"</span><span class="o">:</span> <span class="mi">82</span><span class="p">,</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"application"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
     
   
 </div>
 
-<h3 id="destroy-a-rentals-amenity">Destroy a rentals amenity</h3>
+<h3 id="destroy-a-rentals-content-override">Destroy a rentals content override</h3>
 
 <p>Required OAuth scope: <code>:rentals_write</code></p>
 
-<p>Returns an empty response with ‘204 No Content’ status code on success.</p>
+<p>Returns empty response with ‘204 No Content’ status code on success.</p>
 
-<pre><code>DELETE /rentals_amenities/:rentals_amenity_id
+<pre><code>DELETE /rentals_contents_overrides/:rentals_content_override_id
 </code></pre>
         </div>
       </div>
