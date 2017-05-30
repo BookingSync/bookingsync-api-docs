@@ -51,6 +51,7 @@ access to public information.
 
 Additionally, the following scopes are available:
 
+* `applications_read`
 * `bookings_write_owned`
 * `bookings_read`
 * `bookings_write`
@@ -83,7 +84,7 @@ This is to be used for **Server-Side applications**, with special care taken to 
   <p>This authorization process is required only once. When your first set of tokens received, you will no longer need this process unless an account intentionnally uninstalled your application. The <a href="#refreshing-access-token">refresh token process</a> will then be used.</p>
 
   <hr>
-  
+
   <p>For more details, visit our <a href="/reference/testing_authorization/">Testing BookingSync Authorization</a> page for a step by step guide.</p>
 </div>
 
@@ -135,7 +136,7 @@ You can find your token lifetime (in seconds), by checking the `expires_in` attr
   <p>As the refresh token gives you lifelong access to an account, it must be stored securely.</p>
 
   <hr>
-  
+
   <p>For more details, visit our <a href="/reference/testing_authorization/">Testing BookingSync Authorization</a> page for a step by step guide.</p>
 </div>
 
