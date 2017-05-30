@@ -1,6 +1,6 @@
 {
   "links": {
-    "los_records.rental": "http://bookingsync.dev/api/v3/rentals/{los_records.rental}"
+    "los_records.rental": "https://www.bookingsync.com/api/v3/rentals/{los_records.rental}"
   },
   "los_records": [
     {

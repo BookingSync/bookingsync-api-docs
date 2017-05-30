@@ -4,6 +4,7 @@
 
   * [api_improvement] Add docs for `applications` endpoint.
   * [api improvement] Add `applications_read` scope.
+  * [api_improvement] Add docs for `rentals_contents_overrides` endpoint.
 
 ## 2017-05-17
 

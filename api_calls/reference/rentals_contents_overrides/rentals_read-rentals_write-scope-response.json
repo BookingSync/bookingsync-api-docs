@@ -1,0 +1,28 @@
+{
+  "links": {
+    "rentals_contents_overrides.application": "https://www.bookingsync.com/api/v3/applications/{rentals_contents_overrides.application}",
+    "rentals_contents_overrides.rental": "https://www.bookingsync.com/api/v3/rentals/{rentals_contents_overrides.rental}"
+  },
+  "rentals_contents_overrides": [
+    {
+      "links": {
+        "application": 1,
+        "rental": 2
+      },
+      "id": 3,
+      "headline": {
+        "en": "Villa in Nevache, France"
+      },
+      "summary": {
+        "en": "Great value. A place to enjoy peace and tranquility, away from mass tourism."
+      },
+      "description": {
+        "en": "First class Villa for 8 people with private pool. Situated in a pleasant residential area."
+      },
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT"
+    }
+  ],
+  "meta": {
+  }
+}

@@ -1,7 +1,7 @@
 {
   "links": {
-    "rentals_taxes.rental": "http://bookingsync.dev/api/v3/rentals/{rentals_taxes.rental}",
-    "rentals_taxes.tax": "http://bookingsync.dev/api/v3/taxes/{rentals_taxes.tax}"
+    "rentals_taxes.rental": "https://www.bookingsync.com/api/v3/rentals/{rentals_taxes.rental}",
+    "rentals_taxes.tax": "https://www.bookingsync.com/api/v3/taxes/{rentals_taxes.tax}"
   },
   "rentals_taxes": [
     {
