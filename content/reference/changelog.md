@@ -1,5 +1,8 @@
 # Changelog
 
+## 2017-06-01
+  * [doc update] Add description for the Rentals Contents Overrides endpoint.
+
 ## 2017-05-30
 
   * [api_improvement] Add docs for `applications` endpoint.
