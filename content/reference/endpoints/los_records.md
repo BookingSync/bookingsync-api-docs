@@ -12,25 +12,25 @@
   <div class="tab-pane active" id="public" markdown="1">
 Name                 | Type    | Read/Write | Description
 ---------------------|---------|------------|------------
-id                   | Integer | Read       | Uniq identifier.
+id                   | Integer | Read       | Unique identifier.
 ---------------------|---------|------------|------------
 kind                 | String  | Read       | LOS record's kind. For possible values visit the [enums section](/reference/enums#los-kinds).
-day                  | [Date](/reference/enums#formats) | Read       | Day for which LOS record is valid.
-min_occupancy        | Integer | Read       | Minimum occupancy for which the LOS record is valid.
-max_occupancy        | Integer | Read       | Maximum occupancy for which the LOS record is valid.
-original_currency    | String  | Read       | Currency in which the rates are originating from.<br>The list of codes can be found in the [enums section](/reference/enums#currencies).
-currency             | String  | Read       | Currency in which the rates are in the response.<br>The list of codes can be found in the [enums section](/reference/enums#currencies).
-exchange_rate        | [Decimal](/reference/enums#formats) | Read       | The rate used to convert from the `original_currency` to `currency`.
+day                  | [Date](/reference/enums#formats) | Read       | Day for which this LOS record is valid.
+min_occupancy        | Integer | Read       | Minimum occupancy for which this LOS record is valid.
+max_occupancy        | Integer | Read       | Maximum occupancy for which this LOS record is valid.
+original_currency    | String  | Read       | Currency of the rate being sent to BookingSync.<br>The list of codes can be found in the [enums section](/reference/enums#currencies).
+currency             | String  | Read       | Currency of the rate in the response.<br>The list of codes can be found in the [enums section](/reference/enums#currencies).
+exchange_rate        | [Decimal](/reference/enums#formats) | Read       | The rate used to convert from `original_currency` to `currency` by calculating `currency = original_currency * exchange_rate`.
 rates                | Array   | Read       | Starting from a one day length of stay, array lists rates up to 30 days. Rate will equal `0.0`, if corresponding length is invalid with `minimum_stay` setting.
 ---------------------|---------|------------|------------
-created_at           | [Time](/reference/enums#formats) | Read       | LOS record's create time.
+created_at           | [Time](/reference/enums#formats) | Read       | LOS record's creation time.
 {: class="table table-bordered"}
   </div>
 </div>
 
 ## List LOS records
 
-List all LOS records for given account(s).
+List all LOS records for (a) given account(s).
 
 ~~~
 GET /los_records
