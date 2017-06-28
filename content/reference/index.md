@@ -79,6 +79,8 @@ first | Shows the URL of the first page of results.
 prev  | Shows the URL of the immediate previous page of results.
 {: class="table table-bordered"}
 
+We've built in a default limit on results, you can use the `per_page` parameter to change how many results per page you want to get.
+
 ### Limiting Fields
 
 For retrieving collection of large resources, it is sometimes useful to limit
