@@ -212,7 +212,9 @@ X-Total-Pages: 3
       <td>Shows the URL of the immediate previous page of results.</td>
     </tr>
 </tbody>
-</table><h4 id="limiting-fields">Limiting Fields</h4>
+</table><p>We’ve built in a default limit on results, you can use the <code>per_page</code> parameter to change how many results per page you want to get. Large queries can hurt performance, so <code>per_page</code> is capped by the default limit. If you wish to retrieve more records, you should make multiple requests using the <code>page</code> parameter and combine the results within your application.</p>
+
+<h4 id="limiting-fields">Limiting Fields</h4>
 
 <p>For retrieving collection of large resources, it is sometimes useful to limit
 the attributes returned by the API. For example, if we wanted to get only the
