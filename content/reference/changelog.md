@@ -1,7 +1,7 @@
 # Changelog
 
 ## 2017-07-04
-* [doc fix] Use `name_en` attribute when creating a new bedroom instead of `name`
+  * [doc fix] Use `name_en` attribute when creating a new bedroom instead of `name`
 
 ## 2017-06-01
   * [doc update] Add description for the Rentals Contents Overrides endpoint.
