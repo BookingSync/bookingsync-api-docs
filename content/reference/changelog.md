@@ -1,5 +1,8 @@
 # Changelog
 
+## 2017-07-09
+  * [doc update] Update `los_records` endpoint `id` has been migrated to BigInteger.
+
 ## 2017-06-01
   * [doc update] Add description for the Rentals Contents Overrides endpoint.
 
