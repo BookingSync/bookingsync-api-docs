@@ -19,7 +19,7 @@ day                  | [Date](/reference/enums#formats) | Read       | Day for w
 min_occupancy        | Integer | Read       | Minimum occupancy for which this LOS record is valid.
 max_occupancy        | Integer | Read       | Maximum occupancy for which this LOS record is valid.
 original_currency    | String  | Read       | Original currency that LOS record was generated with (useful when using `exchange_to_currency` query param).<br>The list of codes can be found in the [enums section](/reference/enums#currencies).
-currency             | String  | Read       | Currency of the rate in the response.<br>The list of codes can be found in the [enums section](/reference/enums#currencies).
+currency             | String  | Read       | Requested currency of the LOS records, by default same as `original_currency`.<br>The list of codes can be found in the [enums section](/reference/enums#currencies).
 exchange_rate        | [Decimal](/reference/enums#formats) | Read       | The rate used to convert from `original_currency` to `currency` by calculating `currency = original_currency * exchange_rate`.
 rates                | Array   | Read       | Starting from a one day length of stay, array lists rates up to 30 days. Rate will equal `0.0`, if corresponding length is invalid with `minimum_stay` setting.
 ---------------------|---------|------------|------------
