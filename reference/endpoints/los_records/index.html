@@ -154,37 +154,37 @@
 <td>day</td>
           <td><a href="/reference/enums#formats">Date</a></td>
           <td>Read</td>
-          <td>Day for which LOS record is valid.</td>
+          <td>Day for which this LOS record is valid.</td>
         </tr>
 <tr>
 <td>min_occupancy</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Minimum occupancy for which the LOS record is valid.</td>
+          <td>Minimum occupancy for which this LOS record is valid.</td>
         </tr>
 <tr>
 <td>max_occupancy</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Maximum occupancy for which the LOS record is valid.</td>
+          <td>Maximum occupancy for which this LOS record is valid.</td>
         </tr>
 <tr>
 <td>original_currency</td>
           <td>String</td>
           <td>Read</td>
-          <td>Currency in which the rates are originating from.<br>The list of codes can be found in the <a href="/reference/enums#currencies">enums section</a>.</td>
+          <td>Original currency that LOS record was generated with (useful when using <code>exchange_to_currency</code> query param as a reference currency).<br>The list of codes can be found in the <a href="/reference/enums#currencies">enums section</a>.</td>
         </tr>
 <tr>
 <td>currency</td>
           <td>String</td>
           <td>Read</td>
-          <td>Currency in which the rates are in the response.<br>The list of codes can be found in the <a href="/reference/enums#currencies">enums section</a>.</td>
+          <td>Requested currency of the LOS records, by default same as <code>original_currency</code>.<br>The list of codes can be found in the <a href="/reference/enums#currencies">enums section</a>.</td>
         </tr>
 <tr>
 <td>exchange_rate</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
-          <td>The rate used to convert from the <code>original_currency</code> to <code>currency</code>.</td>
+          <td>The rate used to convert from <code>original_currency</code> to <code>currency</code>.</td>
         </tr>
 <tr>
 <td>rates</td>
@@ -197,7 +197,7 @@
 <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>LOS record’s create time.</td>
+          <td>LOS record’s creation time.</td>
         </tr></tbody>
 </table>
 </div>
@@ -205,7 +205,7 @@
 
 <h3 id="list-los-records">List LOS records</h3>
 
-<p>List all LOS records for given account(s).</p>
+<p>List all LOS records for (a) given account(s).</p>
 
 <pre><code>GET /los_records
 </code></pre>
@@ -214,7 +214,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#caf8754d9cd6public" role="tab" data-toggle="pill">
+        <a href="#2280615fb628public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -223,7 +223,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="caf8754d9cd6public">
+      <div class="tab-pane active" id="2280615fb628public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"los_records.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{los_records.rental}"</span>
