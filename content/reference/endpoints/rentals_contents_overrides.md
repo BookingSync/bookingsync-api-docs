@@ -1,4 +1,6 @@
 # Rentals Contents Overrides
+Rental content overrides endpoint was made so that different channels could have different length validations for our fields like `headline, summary, description`.
+By using those objects clients applications can use full available length at each channel.
 
 1. TOC
 {:toc}

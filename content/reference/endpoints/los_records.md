@@ -12,7 +12,7 @@
   <div class="tab-pane active" id="public" markdown="1">
 Name                 | Type    | Read/Write | Description
 ---------------------|---------|------------|------------
-id                   | Integer | Read       | Unique identifier.
+id                   | BigInteger | Read       | Uniq identifier.
 ---------------------|---------|------------|------------
 kind                 | String  | Read       | LOS record's kind. For possible values visit the [enums section](/reference/enums#los-kinds).
 day                  | [Date](/reference/enums#formats) | Read       | Day for which this LOS record is valid.
