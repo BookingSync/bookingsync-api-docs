@@ -5,6 +5,7 @@
 
 ## 2017-06-01
   * [doc update] Add description for the Rentals Contents Overrides endpoint.
+  * [doc update] Add calculation for `exchange_rate` in LOS records endpoint.
 
 ## 2017-05-30
 
