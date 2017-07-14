@@ -1,11 +1,13 @@
 # Changelog
 
+## 2017-07-13
+* [doc update] Add calculation for `exchange_rate` in LOS records endpoint.
+
 ## 2017-07-09
-  * [potentially breaking API change] `los_records.id` has been migrated from Integer (4 bytes, -2147483648 to +2147483647) to BigInteger (8 bytes, -9223372036854775808 to +9223372036854775807). Make sure to update the type of the column on your side accordingly to not experience integer overflow. 
+  * [potentially breaking API change] `los_records.id` has been migrated from Integer (4 bytes, -2147483648 to +2147483647) to BigInteger (8 bytes, -9223372036854775808 to +9223372036854775807). Make sure to update the type of the column on your side accordingly to not experience integer overflow.
 
 ## 2017-06-01
   * [doc update] Add description for the Rentals Contents Overrides endpoint.
-  * [doc update] Add calculation for `exchange_rate` in LOS records endpoint.
 
 ## 2017-05-30
 
