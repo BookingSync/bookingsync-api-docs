@@ -40,7 +40,7 @@ List all bookings taxes for current account(s).
 GET /bookings_taxes
 ~~~
 
-<%= render 'json_response', endpoint: "bookings_taxes", scopes: %w(public) %>
+<%= render 'json_response', endpoint: "bookings_taxes", scopes: %w(bookings_read-bookings_write-bookings_write_owned) %>
 
 ## Get a single bookings tax
 
@@ -50,4 +50,4 @@ Returns a single bookings tax identified by ID.
 GET /bookings_taxes/:bookings_tax_id
 ~~~
 
-<%= render 'json_response', endpoint: "bookings_taxes", scopes: %w(public) %>
+<%= render 'json_response', endpoint: "bookings_taxes", scopes: %w(bookings_read-bookings_write-bookings_write_owned) %>

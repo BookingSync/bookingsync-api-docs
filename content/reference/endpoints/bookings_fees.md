@@ -6,10 +6,10 @@
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
-  <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
+  <li class="active"><a href="#bookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">bookings_read/bookings_write/bookings_write_owned</a></li>
 </ul>
 <div class="tab-content" markdown="1">
-  <div class="tab-pane active" id="public" markdown="1">
+  <div class="tab-pane active" id="bookings_read-bookings_write-bookings_write_owned" markdown="1">
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | Bookings Fee's id.
@@ -26,21 +26,19 @@ updated_at       | [Time](/reference/enums#formats) | Read         | Bookings Fe
   </div>
 </div>
 
-## List bookings fees.
+## List bookings fees
 
-Based on the OAuth token scopes bookings listing will be limited to a
+Based on the OAuth token scopes bookings_fees will be limited to a
 certain range.
 
 Scope                    | Read Permissions
 -------------------------|------------
-`:bookings_write_owned`  | Display fees only for bookings created by app that is making the request.
+`:bookings_write_owned`  | Display fees only for bookings created by app that is making the request
 `:bookings_read`         | Display fees for all bookings
 `:bookings_write`        | Display fees for all bookings
 {: class="table table-bordered"}
 
 Other scopes will return no results.
-
-## List bookings fees
 
 List all bookings fees for given account(s).
 
@@ -48,7 +46,7 @@ List all bookings fees for given account(s).
 GET /bookings_fees
 ~~~
 
-<%= render 'json_response', endpoint: "bookings_fees", scopes: %w(public) %>
+<%= render 'json_response', endpoint: "bookings_fees", scopes: %w(bookings_read-bookings_write-bookings_write_owned) %>
 
 ## Get a single bookings fee
 
@@ -58,4 +56,4 @@ Returns a single bookings fee identified by ID.
 GET /bookings_fees/:bookings_fee_id
 ~~~
 
-<%= render 'json_response', endpoint: "bookings_fees", scopes: %w(public) %>
+<%= render 'json_response', endpoint: "bookings_fees", scopes: %w(bookings_read-bookings_write-bookings_write_owned) %>
