@@ -1,6 +1,6 @@
 {
   "links": {
-    "photos.account": "http://bookingsync.dev/api/v3/accounts/{photos.account}",
+    "photos.account": "https://www.bookingsync.com/api/v3/accounts/{photos.account}",
     "photos.rental": "https://www.bookingsync.com/api/v3/rentals/{photos.rental}"
   },
   "photos": [

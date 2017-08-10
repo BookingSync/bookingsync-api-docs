@@ -15,6 +15,8 @@
 Name                | Type     | Read/Write | Description
 --------------------|----------|------------|------------
 id                  | Integer  | Read       | Payment's id.
+order_id            | String   | Read       | Id of order (only for instant bookings managed by Bookingsync)
+transaction_id      | String   | Read/Write | Id of paypal transaction.
 --------------------|----------|------------|------------
 address1            | String   | Read/Write | Payer's first address. (100 characters max)
 address2            | String   | Read/Write | Payer's second address. (100 characters max)
@@ -30,10 +32,8 @@ fullname            | String   | Read/Write | Payer's fullname.
 ip                  | String   | Read       | Payer's ip.
 locale              | String   | Read/Write | Payer's preferred locale, list of locales described in [enums section](/reference/enums/#locales).
 notes               | Text     | Read/Write | Payment's additional information.
-order_id            | String   | Read       | Id of order (only for instant bookings managed by Bookingsync)
 state               | String   | Read/Write | Payer's state. (100 characters max, required if country_code set to `US`)
 test                | Boolean  | Read       | Payment's test status.
-transaction_id      | String   | Read/Write | Id of paypal transaction.
 zip                 | String   | Read/Write | Payer's zip code. (10 characters max)
 --------------------|----------|------------|------------
 created_at          | [Time](/reference/enums#formats) | Read       | Payment's create time.
@@ -47,6 +47,8 @@ paid_at             | [Time](/reference/enums#formats) | Read/Write | Payment's 
 Name                | Type     | Read/Write | Description
 --------------------|----------|------------|------------
 id                  | Integer  | Read       | Payment's id.
+order_id            | String   | Read       | Id of order (only for instant bookings managed by Bookingsync)
+transaction_id      | String   | Read       | Id of paypal transaction.
 --------------------|----------|------------|------------
 address1            | String   | Read       | Payer's first address.
 address2            | String   | Read       | Payer's second address.
@@ -62,10 +64,8 @@ fullname            | String   | Read       | Payer's fullname.
 ip                  | String   | Read       | Payer's ip.
 locale              | String   | Read       | Payer's preferred locale, list of locales described in [enums section](/reference/enums/#locales).
 notes               | Text     | Read       | Payment's additional information.
-order_id            | String   | Read       | Id of order (only for instant bookings managed by Bookingsync)
 state               | String   | Read       | Payer's state.
 test                | Boolean  | Read       | Payment's test status.
-transaction_id      | String   | Read       | Id of paypal transaction.
 zip                 | String   | Read       | Payer's zip code.
 --------------------|----------|------------|------------
 created_at          | [Time](/reference/enums#formats) | Read       | Payment's create time.
@@ -79,6 +79,8 @@ paid_at             | [Time](/reference/enums#formats) | Read       | Payment's 
 Name                | Type     | Read/Write | Description
 --------------------|----------|------------|------------
 id                  | Integer  | Read       | Payment's id.
+order_id            | String   | Read       | Id of order (only for instant bookings managed by Bookingsync)
+transaction_id      | String   | Read/Write | Id of paypal transaction.
 --------------------|----------|------------|------------
 address1            | String   | Read/Write | Payer's first address. (100 characters max)
 address2            | String   | Read/Write | Payer's second address. (100 characters max)
@@ -94,10 +96,8 @@ fullname            | String   | Read/Write | Payer's fullname.
 ip                  | String   | Read       | Payer's ip.
 locale              | String   | Read/Write | Payer's preferred locale, list of locales described in [enums section](/reference/enums/#locales).
 notes               | Text     | Read/Write | Payment's additional information.
-order_id            | String   | Read       | Id of order (only for instant bookings managed by Bookingsync)
 state               | String   | Read/Write | Payer's state. (100 characters max, required if country_code set to `US`)
 test                | Boolean  | Read       | Payment's test status.
-transaction_id      | String   | Read/Write | Id of paypal transaction.
 zip                 | String   | Read/Write | Payer's zip code. (10 characters max)
 --------------------|----------|------------|------------
 created_at          | [Time](/reference/enums#formats) | Read       | Payment's create time.

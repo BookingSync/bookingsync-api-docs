@@ -25,9 +25,9 @@ updated_at             | [Time](/reference/enums#formats) | Read       | Fees Ta
 Name                   | Type    | Read/Write | Description
 -----------------------|---------|------------|------------
 id                     | Integer | Read       | Fees Tax's id.
+tax_id                 | Integer | Write      | Tax's id.
 -----------------------|---------|------------|------------
 tax_included_in_rate   | Boolean | Read/Write | Tax amount already included in fee if set to true.
-tax_id                 | Integer | Write      | Tax's id.
 -----------------------|---------|------------|------------
 created_at             | [Time](/reference/enums#formats) | Read       | Fees Tax's create time.
 updated_at             | [Time](/reference/enums#formats) | Read       | Fees Tax's update time.

@@ -1,8 +1,8 @@
 {
   "links": {
-    "inquiries.rental": "http://bookingsync.dev/api/v3/rentals/{inquiries.rental}",
-    "inquiries.source": "http://bookingsync.dev/api/v3/sources/{inquiries.source}",
-    "inquiries.booking": "http://bookingsync.dev/api/v3/bookings/{inquiries.booking}"
+    "inquiries.rental": "https://www.bookingsync.com/api/v3/rentals/{inquiries.rental}",
+    "inquiries.source": "https://www.bookingsync.com/api/v3/sources/{inquiries.source}",
+    "inquiries.booking": "https://www.bookingsync.com/api/v3/bookings/{inquiries.booking}"
   },
   "inquiries": [
     {
@@ -26,7 +26,5 @@
       "created_at": "CREATED_AT",
       "updated_at": "UPDATED_AT"
     }
-  ],
-  "meta": {
-  }
+  ]
 }
