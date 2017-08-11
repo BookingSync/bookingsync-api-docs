@@ -1,5 +1,8 @@
 # Changelog
 
+## 2017-08-11
+* [api improvement] Add `door_key_code` attribute (Read/Write) for `booking`.
+
 ## 2017-07-13
 * [doc update] Improve descriptions of the LOS records attributes.
 
