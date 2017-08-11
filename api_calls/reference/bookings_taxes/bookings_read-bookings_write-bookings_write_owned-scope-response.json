@@ -8,6 +8,7 @@
   "bookings_taxes": [
     {
       "links": {
+        "account": 3,
         "booking": 1382,
         "tax": 7,
         "taxable": {
@@ -24,5 +25,6 @@
       "amount": "1565.2"
     }
   ],
-  "meta": {}
+  "meta": {
+  }
 }

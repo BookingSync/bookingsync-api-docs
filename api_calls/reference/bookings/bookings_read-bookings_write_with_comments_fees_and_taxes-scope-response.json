@@ -5,46 +5,165 @@
     "bookings.client": "https://www.bookingsync.com/api/v3/clients/{bookings.client}",
     "bookings.rental_agreement": "https://www.bookingsync.com/api/v3/rental_agreements/{bookings.rental_agreement}",
     "bookings.source": "https://www.bookingsync.com/api/v3/sources/{bookings.source}",
+    "bookings.inquiry": "https://www.bookingsync.com/api/v3/inquiries/{bookings.inquiry}",
+    "bookings.booking_comments": "https://www.bookingsync.com/api/v3/booking_comments/{bookings.booking_comments}",
     "bookings.bookings_fees": "https://www.bookingsync.com/api/v3/bookings_fees/{bookings.bookings_fees}",
     "bookings.bookings_taxes": "https://www.bookingsync.com/api/v3/bookings_taxes/{bookings.bookings_taxes}",
-    "bookings.bookings_tags": "https://www.bookingsync.com/api/v3/bookings_tags/{bookings.bookings_tags}",
-    "bookings.booking_comments": "https://www.bookingsync.com/api/v3/booking_comments/{bookings.booking_comments}"
+    "bookings.payments": "https://www.bookingsync.com/api/v3/payments/{bookings.payments}",
+    "bookings.bookings_payments": "https://www.bookingsync.com/api/v3/bookings_payments/{bookings.bookings_payments}",
+    "bookings.bookings_tags": "https://www.bookingsync.com/api/v3/bookings_tags/{bookings.bookings_tags}"
   },
   "bookings": [
     {
       "links": {
         "account": 1,
-        "rental": 16,
+        "rental": 1,
         "client": 37,
+        "inquiry": null,
         "rental_agreement": null,
         "source": null,
         "bookings_fees": [10, 11],
-        "bookings_taxes": [22, 23],
+        "bookings_payments": [23],
+        "bookings_taxes": [22, 23, 24],
         "bookings_tags": [],
-        "booking_comments": [1, 2]
+        "booking_comments": [1, 2],
+        "payments": [23]
       },
       "id": 80,
       "start_at": "START_AT",
       "end_at": "END_AT",
       "status": "Booked",
       "updated_at": "UPDATED_AT",
+      "reference": "0000EG",
       "booked": true,
       "unavailable": false,
       "tentative_expires_at": null,
       "initial_price": "3000.0",
+      "initial_rental_price": "3000.0",
+      "channel_price": null,
       "discount": "10%",
       "final_price": "2700.0",
+      "final_rental_price": "2700.0",
+      "damage_deposit": "0.0",
+      "charge_damage_deposit_on_arrival": true,
       "downpayment": null,
-      "paid_amount": "0.0",
+      "paid_amount": "2700.0",
       "currency": "USD",
       "notes": "",
       "adults": 5,
       "children": null,
-      "bookings_payments_count": 0,
+      "bookings_payments_count": 1,
       "review_requests_count": 0,
       "locked": null,
       "created_at": "CREATED_AT",
-      "canceled_at": null
+      "canceled_at": null,
+      "expected_checkin_time": "14:45",
+      "expected_checkout_time": "11:30",
+      "payment_url": null,
+      "balance_due_at": "BALANCE_DUE_AT",
+      "rental_payback_to_owner": null,
+      "final_payback_to_owner": "0.0",
+      "commission": null,
+      "contract_updated_at": "CONTRACT_UPDATED_AT",
+      "owned_by_app": false,
+      "bookings_fees": [
+        {
+          "links": {
+            "account": 1,
+            "booking": 80,
+            "bookings_taxes": [
+            ],
+            "fee": 1,
+            "rentals_fee": 10
+          },
+          "id": 10,
+          "name": {
+            "en": "Fee1"
+          },
+          "price": "50.0",
+          "required": null,
+          "included_in_price": true,
+          "times_booked": 2,
+          "created_at": "2017-08-10T09:36:10Z",
+          "updated_at": "2017-08-10T09:36:10Z"
+        },
+        {
+          "links": {
+            "account": 1,
+            "booking": 80,
+            "bookings_taxes": [
+            ],
+            "fee": 1,
+            "rentals_fee": 10
+          },
+          "id": 11,
+          "name": {
+            "en": "Fee2"
+          },
+          "price": "30.0",
+          "required": null,
+          "included_in_price": true,
+          "times_booked": 1,
+          "created_at": "2017-08-10T09:36:10Z",
+          "updated_at": "2017-08-10T09:36:10Z"
+        }
+      ],
+      "bookings_taxes": [
+        {
+          "links": {
+            "account": 1,
+            "booking": 80,
+            "tax": 5,
+            "taxable": {
+              "id": 1,
+              "type": "Rental"
+            }
+          },
+          "id": 22,
+          "name": {
+            "en": "Tax1"
+          },
+          "tax_included_in_price": false,
+          "percentage": "0.0",
+          "amount": "60.0"
+        },
+        {
+          "links": {
+            "account": 1,
+            "booking": 80,
+            "tax": 7,
+            "taxable": {
+              "id": 1,
+              "type": "Rental"
+            }
+          },
+          "id": 23,
+          "name": {
+            "en": "Tax2"
+          },
+          "tax_included_in_price": false,
+          "percentage": "0.0",
+          "amount": "40.0"
+        },
+        {
+          "links": {
+            "account": 1,
+            "booking": 80,
+            "tax": 4,
+            "taxable": {
+              "id": 1,
+              "type": "Rental"
+            }
+          },
+          "id": 24,
+          "name": {
+            "en": "Tax3"
+          },
+          "tax_included_in_price": true,
+          "percentage": "0.0",
+          "amount": "10.0"
+        }
+      ]
     }
   ],
   "meta": {

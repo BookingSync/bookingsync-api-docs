@@ -20,5 +20,7 @@
       "created_at": "CREATED_AT",
       "updated_at": "UPDATED_AT"
     }
-  ]
+  ],
+  "meta": {
+  }
 }

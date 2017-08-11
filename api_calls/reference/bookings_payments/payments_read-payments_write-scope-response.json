@@ -2,14 +2,16 @@
   "links": {
     "bookings_payments.account": "https://www.bookingsync.com/api/v3/accounts/{bookings_payments.account}",
     "bookings_payments.booking": "https://www.bookingsync.com/api/v3/bookings/{bookings_payments.booking}",
-    "bookings_payments.payment": "https://www.bookingsync.com/api/v3/payments/{bookings_payments.payment}"
+    "bookings_payments.payment": "https://www.bookingsync.com/api/v3/payments/{bookings_payments.payment}",
+    "bookings_payments.rental": "https://www.bookingsync.com/api/v3/rentals/{bookings_payments.rental}"
   },
   "bookings_payments": [
     {
       "links": {
         "account": 44,
         "booking": 22,
-        "payment": 11
+        "payment": 11,
+        "rental": 30
       },
       "id": 2,
       "amount_in_cents": 100000,
@@ -17,5 +19,7 @@
       "created_at": "CREATED_AT",
       "updated_at": "UPDATED_AT"
     }
-  ]
+  ],
+  "meta": {
+  }
 }
