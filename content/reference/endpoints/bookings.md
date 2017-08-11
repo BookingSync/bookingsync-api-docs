@@ -36,6 +36,7 @@ booked                  | Boolean | Write      | Booking's booked status, false 
 children                | Integer | Write      | Booking's number of children.
 currency                | String  | Write      | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies).
 discount                | String  | Write      | Booking's discount. (in percents e.g. 10%)
+door_key_code           | String  | Write      | Booking's rental door key code.
 downpayment             | [Decimal](/reference/enums#formats) | Write      | Booking's downpayment.
 final_price             | [Decimal](/reference/enums#formats) | Write      | Booking's final price. (after discount)
 initial_price           | [Decimal](/reference/enums#formats) | Write      | Booking's initial price.
@@ -60,6 +61,7 @@ bookings_payments_count | Integer | Read       | Booking's number of payments.
 children                | Integer | Read       | Booking's number of children.
 currency                | String  | Read       | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies).
 discount                | String  | Read       | Booking's discount. (in percents e.g. 10%)
+door_key_code           | String  | Read       | Booking's rental door key code.
 downpayment             | [Decimal](/reference/enums#formats) | Read       | Booking's downpayment.
 final_price             | [Decimal](/reference/enums#formats) | Read       | Booking's final price. (after discount)
 initial_price           | [Decimal](/reference/enums#formats) | Read       | Booking's initial price.
@@ -91,6 +93,7 @@ bookings_payments_count | Integer | Read       | Booking's number of payments.
 children                | Integer | Read/Write | Booking's number of children.
 currency                | String  | Read/Write | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies).
 discount                | String  | Read/Write | Booking's discount. (in percents e.g. 10%)
+door_key_code           | String  | Read/Write | Booking's rental door key code.
 downpayment             | [Decimal](/reference/enums#formats) | Read/Write | Booking's downpayment.
 final_price             | [Decimal](/reference/enums#formats) | Read/Write | Booking's final price. (after discount)
 initial_price           | [Decimal](/reference/enums#formats) | Read/Write | Booking's initial price.
