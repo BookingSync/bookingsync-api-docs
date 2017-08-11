@@ -77,6 +77,7 @@
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_tags/">Bookings Tags</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_taxes/">Bookings Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
           <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
@@ -210,7 +211,7 @@
         </tr>
 <tr>
 <td>ratio</td>
-          <td>Float</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Photo’s width to height ratio.</td>
         </tr>
@@ -333,7 +334,7 @@
         </tr>
 <tr>
 <td>ratio</td>
-          <td>Float</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Photo’s width to height ratio.</td>
         </tr>
@@ -392,7 +393,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#e71d7ecf8266public" role="tab" data-toggle="pill">
+        <a href="#32676e868925public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -401,9 +402,10 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="e71d7ecf8266public">
+      <div class="tab-pane active" id="32676e868925public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"photos.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{photos.account}"</span><span class="p">,</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
   <span class="p">},</span>
   <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
@@ -422,13 +424,14 @@
       <span class="s2">"medium_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/medium_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"micro_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"ratio"</span><span class="o">:</span> <span class="mf">1.5</span><span class="p">,</span>
+      <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.5"</span><span class="p">,</span>
       <span class="s2">"small_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/small_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"width"</span><span class="o">:</span> <span class="mi">3000</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
       <span class="p">}</span>
     <span class="p">}</span>
@@ -450,7 +453,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#15533f7cc594public" role="tab" data-toggle="pill">
+        <a href="#ea84d2b0fd2epublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -459,9 +462,10 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="15533f7cc594public">
+      <div class="tab-pane active" id="ea84d2b0fd2epublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"photos.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{photos.account}"</span><span class="p">,</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
   <span class="p">},</span>
   <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
@@ -480,13 +484,14 @@
       <span class="s2">"medium_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/medium_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"micro_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"ratio"</span><span class="o">:</span> <span class="mf">1.5</span><span class="p">,</span>
+      <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.5"</span><span class="p">,</span>
       <span class="s2">"small_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/small_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"width"</span><span class="o">:</span> <span class="mi">3000</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
       <span class="p">}</span>
     <span class="p">}</span>
@@ -515,7 +520,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#af3479bcd70brentals_write" role="tab" data-toggle="pill">
+        <a href="#2d416f51e146rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -537,9 +542,10 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="af3479bcd70brentals_write">
+      <div class="tab-pane active" id="2d416f51e146rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"photos.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{photos.account}"</span><span class="p">,</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
   <span class="p">},</span>
   <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
@@ -558,13 +564,14 @@
       <span class="s2">"medium_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/medium_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"micro_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"ratio"</span><span class="o">:</span> <span class="mf">1.5</span><span class="p">,</span>
+      <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.5"</span><span class="p">,</span>
       <span class="s2">"small_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/small_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"width"</span><span class="o">:</span> <span class="mi">3000</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
       <span class="p">}</span>
     <span class="p">}</span>
@@ -593,7 +600,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#93bd07749b73rentals_write" role="tab" data-toggle="pill">
+        <a href="#71e2b45ce87frentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -615,9 +622,10 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="93bd07749b73rentals_write">
+      <div class="tab-pane active" id="71e2b45ce87frentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"photos.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{photos.account}"</span><span class="p">,</span>
     <span class="s2">"photos.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{photos.rental}"</span>
   <span class="p">},</span>
   <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
@@ -636,13 +644,14 @@
       <span class="s2">"medium_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/medium_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"micro_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/micro_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"ratio"</span><span class="o">:</span> <span class="mf">1.5</span><span class="p">,</span>
+      <span class="s2">"ratio"</span><span class="o">:</span> <span class="s2">"1.5"</span><span class="p">,</span>
       <span class="s2">"small_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/small_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"width"</span><span class="o">:</span> <span class="mi">3000</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
       <span class="p">}</span>
     <span class="p">}</span>

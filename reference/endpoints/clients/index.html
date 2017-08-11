@@ -77,6 +77,7 @@
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_tags/">Bookings Tags</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_taxes/">Bookings Taxes</a>
           <a class="list-group-item active" href="/reference/endpoints/clients/">Clients</a>
           <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
@@ -151,6 +152,13 @@
 <tbody>
 <tr>
 <td> </td>
+          <td>company</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Client’s company name.</td>
+        </tr>
+<tr>
+<td> </td>
           <td>fullname</td>
           <td>String</td>
           <td>Read</td>
@@ -190,6 +198,13 @@
           <td>String</td>
           <td>Read</td>
           <td>Client’s contact language preference.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>vat_number</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Client’s company vat number.</td>
         </tr>
 </tbody>
 <tbody>
@@ -333,6 +348,13 @@
 <tbody>
 <tr>
 <td> </td>
+          <td>company</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Client’s company name.</td>
+        </tr>
+<tr>
+<td> </td>
           <td>fullname</td>
           <td>String</td>
           <td>Read/Write</td>
@@ -358,7 +380,7 @@
           <td>notes</td>
           <td>Text</td>
           <td>Read/Write</td>
-          <td>Client’s notes. (1000 characters max)</td>
+          <td>Client’s notes. (5000 characters max)</td>
         </tr>
 <tr>
 <td> </td>
@@ -373,6 +395,13 @@
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s contact language preference.</td>
+        </tr>
+<tr>
+<td> </td>
+          <td>vat_number</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Client’s company vat number.</td>
         </tr>
 </tbody>
 <tbody>
@@ -515,7 +544,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#7d43ad68fdf2clients_read-clients_write" role="tab" data-toggle="pill">
+        <a href="#d0b8ee04b735clients_read-clients_write" role="tab" data-toggle="pill">
           clients_read / clients_write
         </a>
       </li>
@@ -524,7 +553,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="7d43ad68fdf2clients_read-clients_write">
+      <div class="tab-pane active" id="d0b8ee04b735clients_read-clients_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -543,6 +572,7 @@
           <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"01363-9579"</span>
         <span class="p">}</span>
       <span class="p">],</span>
+      <span class="s2">"company"</span><span class="o">:</span> <span class="s2">"Great Company"</span><span class="p">,</span>
       <span class="s2">"emails"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
           <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"clementina_kling@example.com"</span><span class="p">,</span>
@@ -569,13 +599,16 @@
         <span class="p">}</span>
       <span class="p">],</span>
       <span class="s2">"preferred_locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"vat_number"</span><span class="o">:</span> <span class="s2">"ES65465465"</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-12-28T15:19:27Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-02T11:07:45Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
     
@@ -593,7 +626,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#ae91b0a69fb8clients_read-clients_write" role="tab" data-toggle="pill">
+        <a href="#c31b8ae53578clients_read-clients_write" role="tab" data-toggle="pill">
           clients_read / clients_write
         </a>
       </li>
@@ -602,7 +635,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="ae91b0a69fb8clients_read-clients_write">
+      <div class="tab-pane active" id="c31b8ae53578clients_read-clients_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -621,6 +654,7 @@
           <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"01363-9579"</span>
         <span class="p">}</span>
       <span class="p">],</span>
+      <span class="s2">"company"</span><span class="o">:</span> <span class="s2">"Great Company"</span><span class="p">,</span>
       <span class="s2">"emails"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
           <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"clementina_kling@example.com"</span><span class="p">,</span>
@@ -647,13 +681,16 @@
         <span class="p">}</span>
       <span class="p">],</span>
       <span class="s2">"preferred_locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"vat_number"</span><span class="o">:</span> <span class="s2">"ES65465465"</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-12-28T15:19:27Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-02T11:07:45Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
     
@@ -671,7 +708,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#b1e956948094clients_write" role="tab" data-toggle="pill">
+        <a href="#d956562e527dclients_write" role="tab" data-toggle="pill">
           clients_write
         </a>
       </li>
@@ -691,6 +728,7 @@
           <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"01363-9579"</span>
         <span class="p">}</span>
       <span class="p">],</span>
+      <span class="s2">"company"</span><span class="o">:</span> <span class="s2">"Great Company"</span><span class="p">,</span>
       <span class="s2">"emails"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
           <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"clementina_kling@example.com"</span><span class="p">,</span>
@@ -717,6 +755,7 @@
         <span class="p">}</span>
       <span class="p">],</span>
       <span class="s2">"preferred_locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"vat_number"</span><span class="o">:</span> <span class="s2">"ES65465465"</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-12-28T15:19:27Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-02T11:07:45Z"</span>
     <span class="p">}</span>
@@ -727,7 +766,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="b1e956948094clients_write">
+      <div class="tab-pane active" id="d956562e527dclients_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -746,6 +785,7 @@
           <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"01363-9579"</span>
         <span class="p">}</span>
       <span class="p">],</span>
+      <span class="s2">"company"</span><span class="o">:</span> <span class="s2">"Great Company"</span><span class="p">,</span>
       <span class="s2">"emails"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
           <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"clementina_kling@example.com"</span><span class="p">,</span>
@@ -772,13 +812,16 @@
         <span class="p">}</span>
       <span class="p">],</span>
       <span class="s2">"preferred_locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"vat_number"</span><span class="o">:</span> <span class="s2">"ES65465465"</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-12-28T15:19:27Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-02T11:07:45Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
     
@@ -802,7 +845,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#4a96f0fe1f3fclients_write" role="tab" data-toggle="pill">
+        <a href="#2b84ab7ef470clients_write" role="tab" data-toggle="pill">
           clients_write
         </a>
       </li>
@@ -822,6 +865,7 @@
           <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"01363-9579"</span>
         <span class="p">}</span>
       <span class="p">],</span>
+      <span class="s2">"company"</span><span class="o">:</span> <span class="s2">"Great Company"</span><span class="p">,</span>
       <span class="s2">"emails"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
           <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"clementina_kling@example.com"</span><span class="p">,</span>
@@ -848,6 +892,7 @@
         <span class="p">}</span>
       <span class="p">],</span>
       <span class="s2">"preferred_locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"vat_number"</span><span class="o">:</span> <span class="s2">"ES65465465"</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-12-28T15:19:27Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-02T11:07:45Z"</span>
     <span class="p">}</span>
@@ -858,7 +903,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="4a96f0fe1f3fclients_write">
+      <div class="tab-pane active" id="2b84ab7ef470clients_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -877,6 +922,7 @@
           <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"01363-9579"</span>
         <span class="p">}</span>
       <span class="p">],</span>
+      <span class="s2">"company"</span><span class="o">:</span> <span class="s2">"Great Company"</span><span class="p">,</span>
       <span class="s2">"emails"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
           <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"clementina_kling@example.com"</span><span class="p">,</span>
@@ -903,13 +949,16 @@
         <span class="p">}</span>
       <span class="p">],</span>
       <span class="s2">"preferred_locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
+      <span class="s2">"vat_number"</span><span class="o">:</span> <span class="s2">"ES65465465"</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-12-28T15:19:27Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-02T11:07:45Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
     

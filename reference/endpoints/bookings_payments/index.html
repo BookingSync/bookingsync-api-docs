@@ -77,6 +77,7 @@
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
           <a class="list-group-item active" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_tags/">Bookings Tags</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_taxes/">Bookings Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
           <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
@@ -188,7 +189,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#848d3a78ef89payments_read-payments_write" role="tab" data-toggle="pill">
+        <a href="#c7351cc5cc85payments_read-payments_write" role="tab" data-toggle="pill">
           payments_read / payments_write
         </a>
       </li>
@@ -197,27 +198,31 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="848d3a78ef89payments_read-payments_write">
+      <div class="tab-pane active" id="c7351cc5cc85payments_read-payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_payments.account}"</span><span class="p">,</span>
     <span class="s2">"bookings_payments.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{bookings_payments.booking}"</span><span class="p">,</span>
-    <span class="s2">"bookings_payments.payment"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payments/{bookings_payments.payment}"</span>
+    <span class="s2">"bookings_payments.payment"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payments/{bookings_payments.payment}"</span><span class="p">,</span>
+    <span class="s2">"bookings_payments.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bookings_payments.rental}"</span>
   <span class="p">},</span>
   <span class="s2">"bookings_payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">44</span><span class="p">,</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">22</span><span class="p">,</span>
-        <span class="s2">"payment"</span><span class="o">:</span> <span class="mi">11</span>
+        <span class="s2">"payment"</span><span class="o">:</span> <span class="mi">11</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">30</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
     
@@ -235,7 +240,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#6e28371e374fpayments_read-payments_write" role="tab" data-toggle="pill">
+        <a href="#0228a811bcffpayments_read-payments_write" role="tab" data-toggle="pill">
           payments_read / payments_write
         </a>
       </li>
@@ -244,27 +249,31 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="6e28371e374fpayments_read-payments_write">
+      <div class="tab-pane active" id="0228a811bcffpayments_read-payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_payments.account}"</span><span class="p">,</span>
     <span class="s2">"bookings_payments.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{bookings_payments.booking}"</span><span class="p">,</span>
-    <span class="s2">"bookings_payments.payment"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payments/{bookings_payments.payment}"</span>
+    <span class="s2">"bookings_payments.payment"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payments/{bookings_payments.payment}"</span><span class="p">,</span>
+    <span class="s2">"bookings_payments.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bookings_payments.rental}"</span>
   <span class="p">},</span>
   <span class="s2">"bookings_payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">44</span><span class="p">,</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">22</span><span class="p">,</span>
-        <span class="s2">"payment"</span><span class="o">:</span> <span class="mi">11</span>
+        <span class="s2">"payment"</span><span class="o">:</span> <span class="mi">11</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">30</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
     

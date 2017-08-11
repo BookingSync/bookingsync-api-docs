@@ -77,6 +77,7 @@
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_tags/">Bookings Tags</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_taxes/">Bookings Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
           <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
@@ -123,6 +124,7 @@
 
 <ol id="markdown-toc">
 <li><a href="#list-fees">List fees</a></li>
+  <li><a href="#change-fees-currency">Change fees currency</a></li>
   <li><a href="#get-a-single-fee">Get a single fee</a></li>
   <li><a href="#create-a-new-fee">Create a new fee</a></li>
   <li><a href="#update-a-fee">Update a fee</a></li>
@@ -149,10 +151,23 @@
         </tr></tbody>
 <tbody>
 <tr>
+<td>currency</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Requested fee’s currency, defaults to <code>original_currency</code>. List of currencies codes described in <a href="/reference/enums#currencies">enums section</a>
+</td>
+        </tr>
+<tr>
 <td>downpayment_percentage</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Fee’s downpayment percentage.</td>
+        </tr>
+<tr>
+<td>exchange_rate</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>The rate used to convert from the <code>original_currency</code> to <code>currency</code>.</td>
         </tr>
 <tr>
 <td>name</td>
@@ -165,6 +180,13 @@
           <td>String</td>
           <td>Read</td>
           <td>Fee’s kind, list of fee’s kinds described in <a href="/reference/enums#fee-kinds">enums section</a>
+</td>
+        </tr>
+<tr>
+<td>original_currency</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Fee’s original currency, list of currencies codes described in <a href="/reference/enums#currencies">enums section</a>
 </td>
         </tr>
 <tr>
@@ -218,16 +240,29 @@
         </tr></tbody>
 <tbody>
 <tr>
+<td>currency</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Requested fee’s currency, defaults to <code>original_currency</code>. List of currencies codes described in <a href="/reference/enums#currencies">enums section</a>
+</td>
+        </tr>
+<tr>
 <td>downpayment_percentage</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read/Write</td>
-          <td>Fee’s downpayment percentage.</td>
+          <td>** Required** Fee’s downpayment percentage.</td>
+        </tr>
+<tr>
+<td>exchange_rate</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>The rate used to convert from the <code>original_currency</code> to <code>currency</code>.</td>
         </tr>
 <tr>
 <td>name</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read/Write</td>
-          <td>Fee’s name, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+          <td>** Required** Fee’s name, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
         </tr>
 <tr>
 <td>kind</td>
@@ -237,16 +272,23 @@
 </td>
         </tr>
 <tr>
+<td>original_currency</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Fee’s original currency, list of currencies codes described in <a href="/reference/enums#currencies">enums section</a>
+</td>
+        </tr>
+<tr>
 <td>rate</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read/Write</td>
-          <td>Fee’s rate.</td>
+          <td>** Required** Fee’s rate.</td>
         </tr>
 <tr>
 <td>rate_kind</td>
           <td>String</td>
           <td>Read/Write</td>
-          <td>Fee’s rate kind, list of fee’s rate kinds described in <a href="/reference/enums#fee-rate-kinds">enums section</a>.</td>
+          <td>** Required** Fee’s rate kind, list of fee’s rate kinds described in <a href="/reference/enums#fee-rate-kinds">enums section</a>.</td>
         </tr>
 </tbody>
 <tbody>
@@ -284,7 +326,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#52989cd6c074public" role="tab" data-toggle="pill">
+        <a href="#2f57f866118bpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -293,7 +335,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="52989cd6c074public">
+      <div class="tab-pane active" id="2f57f866118bpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"fees.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{fees.account}"</span>
@@ -301,11 +343,14 @@
   <span class="s2">"fees"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
       <span class="s2">"downpayment_percentage"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
+      <span class="s2">"exchange_rate"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"other"</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Fee"</span>
       <span class="p">},</span>
+      <span class="s2">"original_currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
       <span class="s2">"rate"</span><span class="o">:</span> <span class="s2">"12.0"</span><span class="p">,</span>
       <span class="s2">"rate_kind"</span><span class="o">:</span> <span class="s2">"fixed"</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-03-18T09:33:45Z"</span><span class="p">,</span>
@@ -322,7 +367,31 @@
   
 </div>
 
-<h3 id="get-a-single-fee">Get a single fee</h3>
+<h3 id="change-fees-currency">Change fees currency</h3>
+
+<p>Coverts fee’s rate to defined currency.</p>
+
+<p>Example:</p>
+
+<pre><code>GET /fees?exchange_to_currency=USD
+</code></pre>
+
+<h4 id="exchange-parameters">Exchange Parameters</h4>
+
+<table>
+<thead><tr>
+<th>Name</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr></thead>
+<tbody><tr>
+<td>exchange_to_currency</td>
+      <td>String</td>
+      <td>original currency</td>
+      <td>Fees with exchanged rate value.</td>
+    </tr></tbody>
+</table><h3 id="get-a-single-fee">Get a single fee</h3>
 
 <p>Returns a single fee identified by ID.</p>
 
@@ -333,7 +402,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#ffa1621590b9public" role="tab" data-toggle="pill">
+        <a href="#d796a67109a0public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -342,7 +411,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="ffa1621590b9public">
+      <div class="tab-pane active" id="d796a67109a0public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"fees.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{fees.account}"</span>
@@ -350,11 +419,14 @@
   <span class="s2">"fees"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
       <span class="s2">"downpayment_percentage"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
+      <span class="s2">"exchange_rate"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"other"</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Fee"</span>
       <span class="p">},</span>
+      <span class="s2">"original_currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
       <span class="s2">"rate"</span><span class="o">:</span> <span class="s2">"12.0"</span><span class="p">,</span>
       <span class="s2">"rate_kind"</span><span class="o">:</span> <span class="s2">"fixed"</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-03-18T09:33:45Z"</span><span class="p">,</span>
@@ -382,7 +454,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#3d941b6483e7rates_write" role="tab" data-toggle="pill">
+        <a href="#731e52882502rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
@@ -391,6 +463,7 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"fees"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
       <span class="s2">"downpayment_percentage"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"other"</span><span class="p">,</span>
       <span class="s2">"name_en"</span><span class="o">:</span> <span class="s2">"Fee"</span><span class="p">,</span>
@@ -404,7 +477,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="3d941b6483e7rates_write">
+      <div class="tab-pane active" id="731e52882502rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"fees.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{fees.account}"</span>
@@ -412,11 +485,14 @@
   <span class="s2">"fees"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
       <span class="s2">"downpayment_percentage"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
+      <span class="s2">"exchange_rate"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"other"</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Fee"</span>
       <span class="p">},</span>
+      <span class="s2">"original_currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
       <span class="s2">"rate"</span><span class="o">:</span> <span class="s2">"12.0"</span><span class="p">,</span>
       <span class="s2">"rate_kind"</span><span class="o">:</span> <span class="s2">"fixed"</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-03-18T09:33:45Z"</span><span class="p">,</span>
@@ -444,7 +520,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#979aa72a5289rates_write" role="tab" data-toggle="pill">
+        <a href="#c69f1253ab24rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
@@ -453,6 +529,7 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"fees"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
       <span class="s2">"downpayment_percentage"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"other"</span><span class="p">,</span>
       <span class="s2">"name_en"</span><span class="o">:</span> <span class="s2">"Fee"</span><span class="p">,</span>
@@ -466,7 +543,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="979aa72a5289rates_write">
+      <div class="tab-pane active" id="c69f1253ab24rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"fees.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{fees.account}"</span>
@@ -474,11 +551,14 @@
   <span class="s2">"fees"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
       <span class="s2">"downpayment_percentage"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
+      <span class="s2">"exchange_rate"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"other"</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Fee"</span>
       <span class="p">},</span>
+      <span class="s2">"original_currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
       <span class="s2">"rate"</span><span class="o">:</span> <span class="s2">"12.0"</span><span class="p">,</span>
       <span class="s2">"rate_kind"</span><span class="o">:</span> <span class="s2">"fixed"</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-03-18T09:33:45Z"</span><span class="p">,</span>

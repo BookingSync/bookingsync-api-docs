@@ -77,6 +77,7 @@
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_tags/">Bookings Tags</a>
           <a class="list-group-item active" href="/reference/endpoints/bookings_taxes/">Bookings Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
           <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
@@ -127,9 +128,9 @@
 </ol><h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
-  <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
+  <li class="active"><a href="#bookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">bookings_read/bookings_write/bookings_write_owned</a></li>
 </ul><div class="tab-content">
-  <div class="tab-pane active" id="public">
+  <div class="tab-pane active" id="bookings_read-bookings_write-bookings_write_owned">
     <table class="table table-bordered">
 <thead><tr>
 <th>Name</th>
@@ -175,7 +176,29 @@
 
 <h3 id="list-bookings-taxes">List bookings taxes</h3>
 
-<p>List all bookings taxes for given account(s).</p>
+<p>Based on the OAuth token scopes bookings taxes will be limited to a
+certain range.</p>
+
+<table class="table table-bordered">
+<thead><tr>
+<th>Scope</th>
+      <th>Read Permissions</th>
+    </tr></thead>
+<tbody>
+<tr>
+<td><code>:bookings_write_owned</code></td>
+      <td>Display only bookings taxes for bookings created by app making the request</td>
+    </tr>
+<tr>
+<td><code>:bookings_read</code></td>
+      <td>Display all bookings taxes</td>
+    </tr>
+<tr>
+<td><code>:bookings_write</code></td>
+      <td>Display all bookings taxes</td>
+    </tr>
+</tbody>
+</table><p>List all bookings taxes for current account(s).</p>
 
 <pre><code>GET /bookings_taxes
 </code></pre>
@@ -184,8 +207,8 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#bc782ef782b3public" role="tab" data-toggle="pill">
-          public
+        <a href="#c8c58430f6bebookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+          bookings_read / bookings_write / bookings_write_owned
         </a>
       </li>
     
@@ -193,7 +216,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="bc782ef782b3public">
+      <div class="tab-pane active" id="c8c58430f6bebookings_read-bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_taxes.booking"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/bookings/{bookings_taxes.booking}"</span><span class="p">,</span>
@@ -211,6 +234,7 @@
       <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"455.0"</span><span class="p">,</span>
       <span class="s2">"tax_included_in_price"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">1382</span><span class="p">,</span>
         <span class="s2">"tax"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
         <span class="s2">"taxable"</span><span class="o">:</span> <span class="p">{</span>
@@ -239,8 +263,8 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#b365b4881307public" role="tab" data-toggle="pill">
-          public
+        <a href="#202aeca3cb89bookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+          bookings_read / bookings_write / bookings_write_owned
         </a>
       </li>
     
@@ -248,7 +272,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="b365b4881307public">
+      <div class="tab-pane active" id="202aeca3cb89bookings_read-bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_taxes.booking"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/bookings/{bookings_taxes.booking}"</span><span class="p">,</span>
@@ -266,6 +290,7 @@
       <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"455.0"</span><span class="p">,</span>
       <span class="s2">"tax_included_in_price"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">1382</span><span class="p">,</span>
         <span class="s2">"tax"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
         <span class="s2">"taxable"</span><span class="o">:</span> <span class="p">{</span>

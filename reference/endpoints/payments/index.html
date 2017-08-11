@@ -77,6 +77,7 @@
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_tags/">Bookings Tags</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_taxes/">Bookings Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
           <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
@@ -143,12 +144,26 @@
           <th>Read/Write</th>
           <th>Description</th>
         </tr></thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Payment’s id.</td>
-        </tr></tbody>
+        </tr>
+<tr>
+<td>order_id</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Id of order (only for instant bookings managed by Bookingsync)</td>
+        </tr>
+<tr>
+<td>transaction_id</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Id of paypal transaction.</td>
+        </tr>
+</tbody>
 <tbody>
 <tr>
 <td>address1</td>
@@ -172,7 +187,7 @@
 <tr>
 <td>card</td>
           <td>String</td>
-          <td>Read</td>
+          <td>Read/Write</td>
           <td>Payment’s card number, only the last 4 digits are visible. (example: <code>"XXXX-XXXX-XXXX-1234"</code>).</td>
         </tr>
 <tr>
@@ -192,6 +207,12 @@
           <td>String</td>
           <td>Read/Write</td>
           <td>Payment’s currency code, list of codes described in <a href="/reference/enums/#currencies">enums section</a>.</td>
+        </tr>
+<tr>
+<td>description</td>
+          <td>String</td>
+          <td>Read.</td>
+          <td>Combined descriptions of all booking payments (if managed by Bookingsync).</td>
         </tr>
 <tr>
 <td>kind</td>
@@ -291,12 +312,26 @@
           <th>Read/Write</th>
           <th>Description</th>
         </tr></thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Payment’s id.</td>
-        </tr></tbody>
+        </tr>
+<tr>
+<td>order_id</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Id of order (only for instant bookings managed by Bookingsync)</td>
+        </tr>
+<tr>
+<td>transaction_id</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Id of paypal transaction.</td>
+        </tr>
+</tbody>
 <tbody>
 <tr>
 <td>address1</td>
@@ -339,6 +374,12 @@
           <td>String</td>
           <td>Read</td>
           <td>Payment’s currency code, list of codes described in <a href="/reference/enums/#currencies">enums section</a>.</td>
+        </tr>
+<tr>
+<td>description</td>
+          <td>String</td>
+          <td>Read.</td>
+          <td>Combined descriptions of all booking payments (if managed by Bookingsync).</td>
         </tr>
 <tr>
 <td>kind</td>
@@ -437,12 +478,26 @@
           <th>Read/Write</th>
           <th>Description</th>
         </tr></thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Payment’s id.</td>
-        </tr></tbody>
+        </tr>
+<tr>
+<td>order_id</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Id of order (only for instant bookings managed by Bookingsync)</td>
+        </tr>
+<tr>
+<td>transaction_id</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Id of paypal transaction.</td>
+        </tr>
+</tbody>
 <tbody>
 <tr>
 <td>address1</td>
@@ -466,7 +521,7 @@
 <tr>
 <td>card</td>
           <td>String</td>
-          <td>Read</td>
+          <td>Read/Write</td>
           <td>Payment’s card number, only the last 4 digits are visible. (example: <code>"XXXX-XXXX-XXXX-1234"</code>).</td>
         </tr>
 <tr>
@@ -486,6 +541,12 @@
           <td>String</td>
           <td>Read/Write</td>
           <td>Payment’s currency code, list of codes described in <a href="/reference/enums/#currencies">enums section</a>.</td>
+        </tr>
+<tr>
+<td>description</td>
+          <td>String</td>
+          <td>Read.</td>
+          <td>Combined descriptions of all booking payments (if managed by Bookingsync).</td>
         </tr>
 <tr>
 <td>kind</td>
@@ -590,7 +651,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#0ac5d15fc5a8payments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
+        <a href="#6676ac715a61payments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
           payments_write_owned / payments_read / payments_write
         </a>
       </li>
@@ -599,7 +660,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="0ac5d15fc5a8payments_write_owned-payments_read-payments_write">
+      <div class="tab-pane active" id="6676ac715a61payments_write_owned-payments_read-payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -616,6 +677,7 @@
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Payment for Awesome Rental from Friday 01 Jun 2017, 04:00 PM to Friday 8 Jun 2017, 10:00 AM"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
       <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"John Doe"</span><span class="p">,</span>
       <span class="s2">"ip"</span><span class="o">:</span> <span class="s2">"192.0.2.1"</span><span class="p">,</span>
@@ -627,11 +689,11 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -682,7 +744,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#ff425482433apayments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
+        <a href="#f352ae6405f9payments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
           payments_write_owned / payments_read / payments_write
         </a>
       </li>
@@ -691,7 +753,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="ff425482433apayments_write_owned-payments_read-payments_write">
+      <div class="tab-pane active" id="f352ae6405f9payments_write_owned-payments_read-payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -708,6 +770,7 @@
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Payment for Awesome Rental from Friday 01 Jun 2017, 04:00 PM to Friday 8 Jun 2017, 10:00 AM"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
       <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"John Doe"</span><span class="p">,</span>
       <span class="s2">"ip"</span><span class="o">:</span> <span class="s2">"192.0.2.1"</span><span class="p">,</span>
@@ -719,11 +782,11 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -752,7 +815,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#13d9f6f2a099payments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
+        <a href="#cbec8efcc1a2payments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
           payments_write_owned / payments_write
         </a>
       </li>
@@ -773,7 +836,7 @@
       <span class="s2">"locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Monatana"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -782,7 +845,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="13d9f6f2a099payments_write_owned / payments_write">
+      <div class="tab-pane active" id="cbec8efcc1a2payments_write_owned / payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -799,6 +862,7 @@
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Payment for Awesome Rental from Friday 01 Jun 2017, 04:00 PM to Friday 8 Jun 2017, 10:00 AM"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
       <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"John Doe"</span><span class="p">,</span>
       <span class="s2">"ip"</span><span class="o">:</span> <span class="s2">"192.0.2.1"</span><span class="p">,</span>
@@ -810,11 +874,11 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -843,7 +907,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#ca9d65ff794fpayments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
+        <a href="#ba24222e21cdpayments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
           payments_write_owned / payments_write
         </a>
       </li>
@@ -864,7 +928,7 @@
       <span class="s2">"locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Monatana"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -873,7 +937,7 @@
 <div class="tab-content">
   
     
-      <div class="tab-pane active" id="ca9d65ff794fpayments_write_owned / payments_write">
+      <div class="tab-pane active" id="ba24222e21cdpayments_write_owned / payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -890,6 +954,7 @@
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+      <span class="s2">"description"</span><span class="o">:</span> <span class="s2">"Payment for Awesome Rental from Friday 01 Jun 2017, 04:00 PM to Friday 8 Jun 2017, 10:00 AM"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
       <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"John Doe"</span><span class="p">,</span>
       <span class="s2">"ip"</span><span class="o">:</span> <span class="s2">"192.0.2.1"</span><span class="p">,</span>
@@ -901,11 +966,11 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-07-13T11:58:19Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-08-11T10:44:59Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
