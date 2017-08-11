@@ -13,5 +13,7 @@
       "start_date": "BEGINNING_OF_MONTH",
       "updated_at": "UPDATED_AT"
     }
-  ]
+  ],
+  "meta": {
+  }
 }

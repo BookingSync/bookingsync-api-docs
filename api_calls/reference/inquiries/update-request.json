@@ -10,7 +10,8 @@
       "phone": 7273647616,
       "adults": 4,
       "children": 2,
-      "message": "Important message"
+      "message": "Important message",
+      "rental_id": 3
     }
   ]
 }

@@ -25,7 +25,7 @@ large_url          | String  | Read       | Photo's large size (1200x800) url.
 medium_url         | String  | Read       | Photo's medium size (768x512) url.
 micro_url          | String  | Read       | Photo's micro size (48x32) url.
 position           | Integer | Read       | Photo's position on the rental list.
-ratio              | Float   | Read       | Photo's width to height ratio.
+ratio              | [Decimal](/reference/enums#formats)   | Read       | Photo's width to height ratio.
 small_url          | String  | Read       | Photo's small size (192x128) url.
 thumb_url          | String  | Read       | Photo's thumb size (96x64) url.
 width              | Integer | Read       | Photo's width in pixels.
@@ -50,7 +50,7 @@ medium_url         | String  | Read       | Photo's medium size url.
 micro_url          | String  | Read       | Photo's micro size url.
 photo              | File    | Write      | **Required**. Photo's image. (`remote_photo_url` can be used instead)
 position           | Integer | Read/Write | Photo's position on the rental list.
-ratio              | Float   | Read       | Photo's width to height ratio.
+ratio              | [Decimal](/reference/enums#formats)   | Read       | Photo's width to height ratio.
 remote_photo_url   | String  | Write      | **Required**. Photo's remote url. (`photo` can be used instead)
 small_url          | String  | Read       | Photo's small size url.
 thumb_url          | String  | Read       | Photo's thumb size url.

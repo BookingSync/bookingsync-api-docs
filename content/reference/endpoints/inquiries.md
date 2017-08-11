@@ -24,7 +24,6 @@ lastname         | String  | Read       | Inquiry's client lastname.
 message          | Text    | Read       | Inquiry's message.
 phone            | String  | Read       | Inquiry's client phone number.
 locked           | String  | Read       | Inquiry's locked status.
-source_id        | Integer | Write      | Source id related to the Inquiry.
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Inquiry's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Inquiry's update time.
@@ -36,6 +35,8 @@ end_at           | [Time](/reference/enums#formats) | Read       | Inquiry's boo
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | Inquiry's id.
+source_id        | Integer | Write      | Source id related to the Inquiry.
+rental_id        | Integer | Write      | **Only update** Id of rental related to the Inquiry
 -----------------|---------|------------|------------
 adults           | Integer | Read/Write | Inquiry's booking number of adults.
 children         | Integer | Read/Write | Inquiry's booking number of children.
@@ -45,7 +46,6 @@ firstname        | String  | Read/Write | **Required**. Inquiry's client firstna
 lastname         | String  | Read/Write | **Required**. Inquiry's client lastname. (99 characters max)
 message          | Text    | Read/Write | Inquiry's message. (500 characters max)
 phone            | String  | Read/Write | Inquiry's client phone number.
-source_id        | Integer | Write      | Source id related to the Inquiry.
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Inquiry's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Inquiry's update time.
@@ -57,6 +57,8 @@ end_at           | [Time](/reference/enums#formats) | Read/Write | Inquiry's boo
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | Inquiry's id.
+source_id        | Integer | Write      | Source id related to the Inquiry.
+rental_id        | Integer | Write      | **Only update** Id of rental related to the Inquiry
 -----------------|---------|------------|------------
 adults           | Integer | Read/Write | Inquiry's booking number of adults.
 children         | Integer | Read/Write | Inquiry's booking number of children.
@@ -67,7 +69,6 @@ lastname         | String  | Read/Write | **Required**. Inquiry's client lastnam
 message          | Text    | Read/Write | Inquiry's message. (500 characters max)
 phone            | String  | Read/Write | Inquiry's client phone number.
 locked           | String  | Read/Write | Inquiry's locked status.
-source_id        | Integer | Write      | Source id related to the Inquiry.
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Inquiry's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Inquiry's update time.
@@ -78,6 +79,17 @@ end_at           | [Time](/reference/enums#formats) | Read/Write | Inquiry's boo
 </div>
 
 ## List inquiries
+
+
+Based on the OAuth token scopes bookings listing will be limited to a
+certain range.
+
+Scope                     | Read Permissions
+--------------------------|------------
+`:inquiries_write_owned`  | Display only inquiries created by application making the request
+`:inquiries_read`         | Display all inquiries
+`:inquiries_write`        | Display all inquiries
+{: class="table table-bordered"}
 
 Returns a list of all inquiries for current account(s).
 

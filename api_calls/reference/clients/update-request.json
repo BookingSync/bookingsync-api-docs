@@ -39,7 +39,9 @@
       "lastname": "Kling",
       "notes": "",
       "passport": "AHJ4678956",
-      "preferred_locale": "en"
+      "preferred_locale": "en",
+      "company": "Great Company",
+      "vat_number": "ES65465465"
     }
   ]
 }

@@ -10,6 +10,15 @@
   * [doc update] Update `bookings_fees` endpoint.
   * [api improvment] Add `bookings_tags` endpoint.
   * [doc update] Update response of `bookings_taxes` endpoint.
+  * [doc update] Update `clients` endpoint.
+  * [doc update] Update `destinations` endpoint.
+  * [doc update] Update `fees` endpoint.
+  * [doc update] Update `fees_taxes` endpoint.
+  * [doc update] Update `inuqiries` endpoint.
+  * [doc update] Update `living_rooms` endpoint.
+  * [doc update] Update `nightly_rate_maps` endpoint.
+  * [doc update] Update `payments` endpoint.
+  * [doc update] Update `photos` endpoint.
 
 ## 2017-07-13
 

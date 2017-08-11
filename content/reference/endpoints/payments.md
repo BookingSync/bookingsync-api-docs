@@ -15,14 +15,17 @@
 Name                | Type     | Read/Write | Description
 --------------------|----------|------------|------------
 id                  | Integer  | Read       | Payment's id.
+order_id            | String   | Read       | Id of order (only for instant bookings managed by Bookingsync)
+transaction_id      | String   | Read/Write | Id of paypal transaction.
 --------------------|----------|------------|------------
 address1            | String   | Read/Write | Payer's first address. (100 characters max)
 address2            | String   | Read/Write | Payer's second address. (100 characters max)
 amount_in_cents     | Integer  | Read/Write | **Required**. Payment's value.
-card                | String   | Read       | Payment's card number, only the last 4 digits are visible. (example: `"XXXX-XXXX-XXXX-1234"`).
+card                | String   | Read/Write | Payment's card number, only the last 4 digits are visible. (example: `"XXXX-XXXX-XXXX-1234"`).
 city                | String   | Read/Write | Payer's city. (100 characters max)
 country_code        | String   | Read/Write | Payer's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
 currency            | String   | Read/Write | Payment's currency code, list of codes described in [enums section](/reference/enums/#currencies).
+description         | String   | Read.      | Combined descriptions of all booking payments (if managed by Bookingsync).
 kind                | String   | Read/Write | **Required**. Payment's kind, list of kinds described in [enums section](/reference/enums/#payment-kinds).
 email               | String   | Read/Write | Payer's email.
 fullname            | String   | Read/Write | Payer's fullname.
@@ -44,6 +47,8 @@ paid_at             | [Time](/reference/enums#formats) | Read/Write | Payment's 
 Name                | Type     | Read/Write | Description
 --------------------|----------|------------|------------
 id                  | Integer  | Read       | Payment's id.
+order_id            | String   | Read       | Id of order (only for instant bookings managed by Bookingsync)
+transaction_id      | String   | Read       | Id of paypal transaction.
 --------------------|----------|------------|------------
 address1            | String   | Read       | Payer's first address.
 address2            | String   | Read       | Payer's second address.
@@ -52,6 +57,7 @@ card                | String   | Read       | Payment's card number, only the la
 city                | String   | Read       | Payer's city.
 country_code        | String   | Read       | Payer's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
 currency            | String   | Read       | Payment's currency code, list of codes described in [enums section](/reference/enums/#currencies).
+description         | String   | Read.      | Combined descriptions of all booking payments (if managed by Bookingsync).
 kind                | String   | Read       | Payment's kind, list of kinds described in [enums section](/reference/enums/#payment-kinds).
 email               | String   | Read       | Payer's email.
 fullname            | String   | Read       | Payer's fullname.
@@ -73,14 +79,17 @@ paid_at             | [Time](/reference/enums#formats) | Read       | Payment's 
 Name                | Type     | Read/Write | Description
 --------------------|----------|------------|------------
 id                  | Integer  | Read       | Payment's id.
+order_id            | String   | Read       | Id of order (only for instant bookings managed by Bookingsync)
+transaction_id      | String   | Read/Write | Id of paypal transaction.
 --------------------|----------|------------|------------
 address1            | String   | Read/Write | Payer's first address. (100 characters max)
 address2            | String   | Read/Write | Payer's second address. (100 characters max)
 amount_in_cents     | Integer  | Read/Write | **Required**. Payment's value.
-card                | String   | Read       | Payment's card number, only the last 4 digits are visible. (example: `"XXXX-XXXX-XXXX-1234"`).
+card                | String   | Read/Write | Payment's card number, only the last 4 digits are visible. (example: `"XXXX-XXXX-XXXX-1234"`).
 city                | String   | Read/Write | Payer's city. (100 characters max)
 country_code        | String   | Read/Write | Payer's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
 currency            | String   | Read/Write | Payment's currency code, list of codes described in [enums section](/reference/enums/#currencies).
+description         | String   | Read.      | Combined descriptions of all booking payments (if managed by Bookingsync).
 kind                | String   | Read/Write | **Required**. Payment's kind, list of kinds described in [enums section](/reference/enums/#payment-kinds).
 email               | String   | Read/Write | Payer's email.
 fullname            | String   | Read/Write | Payer's fullname.
