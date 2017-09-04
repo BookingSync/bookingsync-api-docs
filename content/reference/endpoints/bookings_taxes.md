@@ -17,7 +17,7 @@ id               | Integer | Read       | Bookings Tax's id.
 amount           | [Decimal](/reference/enums#formats)  | Read       | Bookings Tax's amount.
 name             | [Object](/reference/enums#formats)   | Read       | Bookings Tax's name, list of locales described in [enums section](/reference/enums#locales).
 percentage       | [Decimal](/reference/enums#formats)  | Read       | Bookings Tax's percentage.
-tax_included_in_price | Boolean | Read       | Tax amount already included in taxable(Rental or Bookings Fee) price if set to true.
+tax_included_in_price | Boolean | Read       | Tax amount already included in taxable(Rental or Bookings Fee) final price if set to true.
 {: class="table table-bordered"}
   </div>
 </div>

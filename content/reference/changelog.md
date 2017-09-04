@@ -3,6 +3,7 @@
 ## 2017-09-04
 
   * [doc update] Improve `booking.channel_price` description.
+  * [doc update] Improve `bookings_fees.included_in_price` and `bookings_taxes.included_in_price` description.
 
 ## 2017-08-11
 
