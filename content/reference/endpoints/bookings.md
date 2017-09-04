@@ -35,7 +35,7 @@ source_id               | Integer | Write      | Source id related to the Bookin
 ------------------------|---------|------------|------------
 adults                  | Integer | Write      | Booking's number of adults.
 booked                  | Boolean | Write      | Booking's booked status, false by default. When set to true, marks a regular booking.
-channel_price           | Integer | Write      | Booking's channel price.
+channel_price           | Integer | Write      | Price accepted by the traveler on the channel site, excluding traveler's fees (eg: Airbnb).
 charge_damage_deposit_on_arrival  | Boolean    | Write | Defines if charge damage deposite will be charged on arrival.
 children                | Integer | Write      | Booking's number of children.
 comission               | [Decimal](/reference/enums#formats) | Write | Booking's comission fee.
@@ -71,7 +71,7 @@ id                      | Integer | Read       | Booking's id.
 adults                  | Integer | Read       | Booking's number of adults.
 booked                  | Boolean | Read       | Booking's booked status, false by default. When set to true, marks a regular booking.
 bookings_payments_count | Integer | Read       | Booking's number of payments.
-channel_price           | Integer | Read       | Booking's channel price.
+channel_price           | Integer | Read       | Price accepted by the traveler on the channel site, excluding traveler's fees (eg: Airbnb).
 charge_damage_deposit_on_arrival | Boolean | Read | Defines if charge damage deposite will be charged on arrival.
 children                | Integer | Read       | Booking's number of children.
 comission               | [Decimal](/reference/enums#formats) | Read | Booking's comission fee.
@@ -118,7 +118,7 @@ source_id               | Integer | Write      | Source id related to the Bookin
 adults                  | Integer | Read/Write | Booking's number of adults.
 booked                  | Boolean | Read/Write | Booking's booked status, false by default. When set to true, marks a regular booking.
 bookings_payments_count | Integer | Read       | Booking's number of payments.
-channel_price           | Integer | Read/Write | Booking's channel price.
+channel_price           | Integer | Read/Write | Price accepted by the traveler on the channel site, excluding traveler's fees (eg: Airbnb).
 charge_damage_deposit_on_arrival | Boolean | Read/Write | Defines if charge damage deposite will be charged on arrival.
 children                | Integer | Read/Write | Booking's number of children.
 comission               | [Decimal](/reference/enums#formats) | Read/Write | Booking's comission fee.
