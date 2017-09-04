@@ -14,7 +14,7 @@ Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | Bookings Fee's id.
 -----------------|---------|------------|------------
-included_in_price| Boolean | Read       | Fee price already included in bookings price if set to true.
+included_in_price| Boolean | Read       | Fee price already included in booking's final price if set to true.
 name             | [Object](/reference/enums#formats)| Read       | Bookings Fee's name, list of locales described in [enums section](/reference/enums#locales).
 price            | [Decimal](/reference/enums#formats)  | Read       | Bookings Fee's price.
 required         | Boolean | Read       | Always included for new bookings if set to true.
