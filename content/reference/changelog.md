@@ -1,5 +1,9 @@
 # Changelog
 
+## 2017-09-04
+
+  * [doc update] Improve `booking.channel_price` description.
+
 ## 2017-08-11
 
   * [api improvement] Add `door_key_code` attribute (Read/Write) for `booking`.
