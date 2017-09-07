@@ -2,7 +2,7 @@
 
 ## 2017-09-07
 
-  * [doc fix] Fix typo on tax_rule endpoint
+  * [doc fix] Fix typo on `tax_rules` endpoint
 
 ## 2017-09-04
 
@@ -23,7 +23,7 @@
   * [doc update] Update `destinations` endpoint.
   * [doc update] Update `fees` endpoint.
   * [doc update] Update `fees_taxes` endpoint.
-  * [doc update] Update `inuqiries` endpoint.
+  * [doc update] Update `inquiries` endpoint.
   * [doc update] Update `living_rooms` endpoint.
   * [doc update] Update `nightly_rate_maps` endpoint.
   * [doc update] Update `payments` endpoint.
