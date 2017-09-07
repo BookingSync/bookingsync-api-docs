@@ -41,7 +41,7 @@ GET /tax_rules
 Returns a single tax rule identified by ID.
 
 ~~~
-GET /tax_rules/:fees_tax_id
+GET /tax_rules/:tax_rule_id
 ~~~
 
 <%= render 'json_response', endpoint: "tax_rules", scopes: %w(public) %>
