@@ -1,5 +1,9 @@
 # Changelog
 
+## 2017-09-07
+
+  * [doc fix] Fix typo on tax_rule endpoint
+
 ## 2017-09-04
 
   * [doc update] Improve `booking.channel_price` description.
