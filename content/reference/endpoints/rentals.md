@@ -199,36 +199,38 @@ GET /rentals/search?start_at=20140324&end_at=20140330
 
 ### Search Parameters
 
-Name              | Type    | Default | Description
-------------------|---------|--------------
-amenities         | String  |         | List of comma separated amenities to include.
-adults            | Integer |         | Number of adults to take into account when calculating `final_price`.
-bb_ne             | Float   |         | Rentals located between `bb_sw` & `bb_ne`. Format `latitude, longitude`.
-bb_sw             | Float   |         | Rentals located between `bb_sw` & `bb_ne`. Format `latitude, longitude`.
-bedrooms_count    | Integer |         | Rentals with amount of bedrooms equal to or above given number.
-bookable_online   | Boolean | blank   | `true` to get rentals that are instantly bookable (requiring no human interaction), `false` to get those that are not.
-children          | Integer |         | Number of children to take into account when calculating `final_price`.
-city              | String  |         | Rentals matching given city.
-country_code      | String  |         | Rentals matching given country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
-destination       | String  |         | List of comma separated destinations.
-direction         | String  |         | Direction to sort rentals, either `asc` or `desc`.
-guests            | Integer |         | Used to filter out rentals with maximum number of sleeps below given number of guests.
-id                | String  |         | List of comma separated rental ids.
-include_tentative | Boolean | false   | Treat tentative periods as available ones.
-max_price         | Integer |         | Rentals with `max_price` below given price. Will use `final_price` if computed.
-min_price         | Integer |         | Rentals with `min_price` above given price. Will use `final_price` if computed.
-page              | Integer |         | Used to browse multi-paged listings.
-per_page          | Integer |         | Limit amount of returned rentals to given number. Full list can then be browsed with `page` parameter.
-published_only    | Boolean | false   | Show only published rentals.
-reject_amenities  | String  |         | List of comma separated amenities to exclude.
-rental_id         | String  |         | List of comma separated rental ids.
-rental_type       | String  |         | List of comma separated types, all types described in [enums section](/reference/enums#rental-types).
-rentals_tags      | String  |         | List of comma separated rentals tags.
-sort              | String  |         | Sort rentals by given attribute. Possible values: `price`, `sleeps`.
-special_offers    | Boolean | false   | Show only rentals with special offers.
-------------------|---------|---------|---------------------------------------
-start_at          | [Time](/reference/enums#formats) |         | Rentals available between `start_at` & `end_at`.
-end_at            | [Time](/reference/enums#formats) |         | Rentals available between `start_at` & `end_at`.
+Name                    | Type    | Default | Description
+------------------------|---------|---------|--------------
+amenities               | String  |         | List of comma separated amenities to include.
+adults                  | Integer |         | Number of adults to take into account when calculating `final_price`.
+bb_ne                   | Float   |         | Rentals located between `bb_sw` & `bb_ne`. Format `latitude, longitude`.
+bb_sw                   | Float   |         | Rentals located between `bb_sw` & `bb_ne`. Format `latitude, longitude`.
+bedrooms_count          | Integer |         | Rentals with amount of bedrooms equal to or above given number.
+bookable_online         | Boolean | blank   | `true` to get rentals that are instantly bookable (requiring no human interaction), `false` to get those that are not.
+children                | Integer |         | Number of children to take into account when calculating `final_price`.
+city                    | String  |         | Rentals matching given city.
+country_code            | String  |         | Rentals matching given country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
+destination             | String  |         | List of comma separated destinations.
+direction               | String  |         | Direction to sort rentals, either `asc` or `desc`.
+exchange_to_currency    | String  |         | Convert amounts to the currency of your choice (ex: `EUR`, `USD`, ...)
+guests                  | Integer |         | Used to filter out rentals with maximum number of sleeps below given number of guests.
+id                      | String  |         | List of comma separated rental ids.
+include_not_available   | Boolean | false   | Include not available rentals in the response.
+include_tentative       | Boolean | false   | Treat tentative periods as available ones.
+max_price               | Integer |         | Rentals with `max_price` below given price. Will use `final_price` if computed.
+min_price               | Integer |         | Rentals with `min_price` above given price. Will use `final_price` if computed.
+page                    | Integer |         | Used to browse multi-paged listings.
+per_page                | Integer |         | Limit amount of returned rentals to given number. Full list can then be browsed with `page` parameter.
+published_only          | Boolean | false   | Show only published rentals.
+reject_amenities        | String  |         | List of comma separated amenities to exclude.
+rental_id               | String  |         | List of comma separated rental ids.
+rental_type             | String  |         | List of comma separated types, all types described in [enums section](/reference/enums#rental-types).
+rentals_tags            | String  |         | List of comma separated rentals tags.
+sort                    | String  |         | Sort rentals by given attribute. Possible values: `price`, `sleeps`.
+special_offers          | Boolean | false   | Show only rentals with special offers.
+------------------------|---------|---------|---------------------------------------
+start_at                | [Time](/reference/enums#formats) |         | Rentals available between `start_at` & `end_at`.
+end_at                  | [Time](/reference/enums#formats) |         | Rentals available between `start_at` & `end_at`.
 {: class="table table-bordered"}
 
 <%= render 'json_response', endpoint: "rentals", scopes: [{ public: "search" }] %>
@@ -237,6 +239,7 @@ end_at            | [Time](/reference/enums#formats) |         | Rentals availab
 
 Group          | Subgroup     | Name             | Type    | Description
 ---------------|--------------|------------------|---------|--------------
+               |              | damage_deposit   | Float   | Rental's required damage deposit.
                |              | final_price      | Float   | Rental's price with fees and taxes.
                |              | initial_price    | Float   | Rental's price.
                |              | price_to_pay_now | Float   | Part of the price to pay at this moment if the rental was to be booked now.
