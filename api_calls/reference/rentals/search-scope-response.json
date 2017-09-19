@@ -6,6 +6,7 @@
       },
       "id": 1,
       "currency": "EUR",
+      "damage_deposit": 35.5,
       "updated_at": "2014-01-21T11:46:15Z",
       "initial_price": 700.0,
       "final_price": 858.33,

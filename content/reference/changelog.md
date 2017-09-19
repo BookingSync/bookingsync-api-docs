@@ -1,5 +1,10 @@
 # Changelog
 
+## 2017-09-19
+
+  * [api improvement] Add `damage_deposit` attribute to `rental search` endpoint.
+  * [doc update] Add `include_not_available` and `exchange_to_currency` to the `rental search` parameters.
+
 ## 2017-09-07
 
   * [doc fix] Fix typo on `tax_rules` endpoint
