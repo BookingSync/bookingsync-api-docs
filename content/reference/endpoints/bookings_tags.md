@@ -43,3 +43,23 @@ GET /bookings_tags/:bookings_tag_id
 ~~~
 
 <%= render 'json_response', endpoint: "bookings_tags", scopes: %w(bookings_read) %>
+
+## Add a single bookings tag
+
+Adds a tag to an existing booking.
+
+~~~
+POST /bookings/:id/add_tag/:bookings_tag_id
+~~~
+
+Returns empty body with status: 201
+
+## Remove a single bookings tag
+
+Removes a tag from an existing booking.
+
+~~~
+DELETE /bookings/:id/remove_tag/:bookings_tag_id
+~~~
+
+Returns empty body with status: 204
