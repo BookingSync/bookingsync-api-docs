@@ -1,10 +1,8 @@
 # Changelog
 
 ## 2017-10-02
-  * [api improvement] Add `add_bookings_fees` endpoint
-  * [api improvement] Add `remove_bookings_fees` endpoint
-  * [doc update] Add `add_bookings_fees` endpoint
-  * [doc update] Add `remove_bookings_fees` endpoint
+  * [api improvement] Add `add_bookings_fees` and `remove_bookings_fees` endpoint
+  * [doc update] Add `add_bookings_fees` and `remove_bookings_fees` endpoint
 
 ## 2017-09-19
 
