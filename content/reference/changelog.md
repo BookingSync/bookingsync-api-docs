@@ -1,8 +1,7 @@
 # Changelog
 
-## 2017-10-02
-  * [doc update] Add `add_tags` endpoint
-  * [doc update] Add `remove_tags` endpoint
+## 2017-10-11
+  * [doc update] Add `add_tags` and `remove_tags` endpoint
 
 ## 2017-09-19
 
