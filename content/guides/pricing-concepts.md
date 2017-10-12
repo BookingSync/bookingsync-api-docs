@@ -5,7 +5,7 @@
 
 ## Preface
 
-Creating bookings/reservations is a very core of the vacation rental industry, so it's important to be flexible enough to provide multiple strategies for our partners in which they can calculate the price for the of the bookings and also manage rates of the rentals. Here is a brief overview of the pricing concepts and strategies that could be employed by your application.
+Creating bookings/reservations is a very core of the vacation rental industry, so it's important to be flexible enough to provide multiple strategies for our partners in which they can calculate the price of the bookings and also manage rates of the rentals. Here is a brief overview of the pricing concepts and strategies that could be employed by your application.
 
 ## Your application creates bookings
 
@@ -78,7 +78,7 @@ If the rental is available for the provided dates, you will get a non-empty resp
 }
 ~~~
 
-If the response contains any `taxes` or `price_details`, you MUST include them in the request body when [creating a booking](http://developers.bookingsync.com/reference/endpoints/bookings/#create-a-new-booking).
+If the response contains any `taxes` or `fees` inside `price_details`, you MUST include them in the request body when [creating a booking](http://developers.bookingsync.com/reference/endpoints/bookings/#create-a-new-booking).
 
 Keep in mind that `taxes` outside `price_details` are just grouped summed taxes of the same kind that should be used only for presentation purposes.
 
