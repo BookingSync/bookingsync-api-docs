@@ -2,7 +2,11 @@
 
 ## master
 
-* [doc update] Add guides for webhooks' subscriptions
+  * [doc update] Add guides for webhooks' subscriptions
+
+## 2017-10-02
+  * [api improvement] Add `add_bookings_fees` and `remove_bookings_fees` endpoint
+  * [doc update] Add `add_bookings_fees` and `remove_bookings_fees` endpoint
 
 ## 2017-09-19
 
@@ -26,7 +30,7 @@
   * [doc update] Update response of `booking_comments` endpoint.
   * [doc update] Update `bookings` endpoint with new attributes.
   * [doc update] Update `bookings_fees` endpoint.
-  * [api improvment] Add `bookings_tags` endpoint.
+  * [api improvement] Add `bookings_tags` endpoint.
   * [doc update] Update response of `bookings_taxes` endpoint.
   * [doc update] Update `clients` endpoint.
   * [doc update] Update `destinations` endpoint.

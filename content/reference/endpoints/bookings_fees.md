@@ -57,3 +57,23 @@ GET /bookings_fees/:bookings_fee_id
 ~~~
 
 <%= render 'json_response', endpoint: "bookings_fees", scopes: %w(bookings_read-bookings_write-bookings_write_owned) %>
+
+## Add a single bookings fee
+
+Adds a fee to an existing booking.
+
+~~~
+PATCH /bookings/:id/add_bookings_fee
+~~~
+
+<%= render 'json_response', endpoint: "bookings_fees", model_name: "bookings", request: "add_fee", scopes: [{bookings_write_owned: "add_fee"}, {bookings_write: "add_fee"}] %>
+
+## Remove a single bookings fee
+
+Removes a fee from an existing booking.
+
+~~~
+PATCH /bookings/:id/remove_bookings_fee/:bookings_fee_id
+~~~
+
+<%= render 'json_response', endpoint: "bookings_fees", model_name: "bookings", scopes: [{bookings_write_owned: "remove_fee"}, {bookings_write: "remove_fee"}] %>
