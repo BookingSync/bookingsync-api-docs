@@ -1,8 +1,8 @@
 # Changelog
 
 ## master
-
-  * [doc update] Add guides for webhooks' subscriptions
+  * [doc update] Add guide for OAuth scopes
+  * [doc update] Add guide for webhooks' subscriptions
 
 ## 2017-10-02
   * [api improvement] Add `add_bookings_fees` and `remove_bookings_fees` endpoint
