@@ -1,5 +1,9 @@
 # Changelog
 
+## master
+
+* [doc update] Add guides for webhooks' subscriptions
+
 ## 2017-09-19
 
   * [api improvement] Add `damage_deposit` attribute to `rental search` endpoint.
