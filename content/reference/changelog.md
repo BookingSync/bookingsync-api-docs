@@ -1,5 +1,9 @@
 # Changelog
 
+## master
+
+* [doc update] Add guides explainig pricing concepts
+
 ## 2017-10-02
   * [api improvement] Add `add_bookings_fees` and `remove_bookings_fees` endpoint
   * [doc update] Add `add_bookings_fees` and `remove_bookings_fees` endpoint
