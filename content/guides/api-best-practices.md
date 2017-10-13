@@ -15,6 +15,8 @@ Here's the set of practices we recommend to follow to make integration with Book
 
 * When creating a new booking, always provide `channel_price` attribute with a price equal to the amount that was confirmed by the traveller so that it is clear what was the price when the booking got created in your application. Most likely it will be initially equal to `final_price`. However, it might diverge later as some new fees can be added to the booking (e.g. from BookingSync UI), which will modify `final_price`. Without `channel_price`, there would not be a reference to the original price.
 
+* When creating a new booking, always provide exact check-in and check-out hours in the time part of `start_at` and `end_at` attributes (so that those won't be dates by date times, like `2017-10-01T16:00:00`). Both check-in and check-out hours are available in [/rentals enpoint](http://developers.bookingsync.com/reference/endpoints/rentals/) as `checkin_time` and `checkout_time` attributes.
+
 * Using Ruby on Rails? Don't reinvent the wheel! Take advantage of multiple gems we use for our internal applications:
 
 1. [**bookingsync-api**](https://github.com/BookingSync/bookingsync-api) - API client
