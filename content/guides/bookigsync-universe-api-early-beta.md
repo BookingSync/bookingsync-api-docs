@@ -32,7 +32,7 @@ To manage the custom schema for rentals and websites, you will need first to def
 Here is an example request how to define custom schema for rentals:
 
 ~~~
-curl --header 'Authorization: Bearer YOUR_TOKEN' --header 'Content-Type: application/vnd.api+json' --request PUT --data '{ "data": { "id": 1, "type": "websites", "attributes": { "rentals-custom-data-schema": { "pool_size": "integer" } } } }' https://website.apps.bookingsync.com/api/admin/v1/websites/1
+curl --header 'Authorization: Bearer YOUR_TOKEN' --header 'Content-Type: application/vnd.api+json' --request PUT --data '{ "data": { "id": 1, "type": "websites", "attributes": { "rentals-custom-data-schema": { "pool_size": "string" } } } }' https://website.apps.bookingsync.com/api/admin/v1/websites/1
 ~~~
 
 Now that the schema is defined, you can persist those attribute on rentals, which can be done under `custom-attributes` JSON field, which is a key-value store as well with attribute names as keys and their values as the values of the hash.
@@ -40,5 +40,5 @@ Now that the schema is defined, you can persist those attribute on rentals, whic
 Here is an example request how to define store custom attributes on rentals:
 
 ~~~
-curl --header 'Authorization: Bearer YOUR_TOKEN' --header 'Content-Type: application/vnd.api+json' --request PUT --data '{ "data": { "id": 1, "type": "rentals", "attributes": { "custom-attributes": { "pool_size": 1 } } } }' https://website.apps.bookingsync.com/api/admin/v1/rentals/1
+curl --header 'Authorization: Bearer YOUR_TOKEN' --header 'Content-Type: application/vnd.api+json' --request PUT --data '{ "data": { "id": 1, "type": "rentals", "attributes": { "custom-attributes": { "pool_size": "15x5" } } } }' https://website.apps.bookingsync.com/api/admin/v1/rentals/1
 ~~~
