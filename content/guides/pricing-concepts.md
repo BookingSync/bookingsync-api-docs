@@ -84,7 +84,7 @@ Keep in mind that `taxes` outside `price_details` are just grouped summed taxes 
 
 The response will contain three top-level attributes that are related to the price:
 
-* `initial_price` - the initial price (without taxes and fees). If you don't apply any discounts, this will be equal to the price for only the rental.
+* `initial_price` - the initial price (without excluded taxes and fees). If you don't apply any discounts, this will be equal to the price for only the rental.
 * `final_price` - the sum of initial price, required fees and excluded taxes.
 * `price_to_pay_now` - if you capture credit card payments in your application, this is the price that you should charge which is calculated based on the payment schedule (rental's balance due date - before that date you should charge the price based on the downpayment, after that the full price (`final_price`)). If you use Live Quote, you don't have to worry how this attribute is calculated.
 
@@ -101,20 +101,22 @@ There are three `kind`s of LOS records, but two of them are particularly importa
 
 ### 3. Rates and rates rules (not recommended).
 
-Besides LOS records, there is one more form of a distributed calculations cache - [rates](http://developers.bookingsync.com/reference/endpoints/rates/). They are in some sense similar to LOS records, but the rates are divided into the periods without a reference to the specific day for which they were calculated. That means that not all [rates rules](http://developers.bookingsync.com/reference/endpoints/rates_rules/) could have been applied when generating them (like `late_booking` or `early_booking`). If you **really** have to use rates, you should apply rates rules that make sense on top of them when calculating the price for a given booking, but even then the price most likely will not be the same as from LOS records or Live Quote.
+Besides LOS records, there is one more form of a distributed calculations cache - [rates](http://developers.bookingsync.com/reference/endpoints/rates/). They are in some sense similar to LOS records, but the rates are divided into the periods without a reference to the specific day for which they were calculated. That means that not all [rates rules](http://developers.bookingsync.com/reference/endpoints/rates_rules/) could have been applied when generating them,  so a potential price based on rates most likely will not be the same as from LOS records or Live Quote.
 
 ### 4. Nightly rates maps, seasons, periods and rates rules (not recommended and not supposed to be used for exact price).
 
-It is **absolutely** not recommended to use directly any of those to calculate the price of the booking; nevertheless, it might give you some insight how things work on a lower-level.
+It is **absolutely NOT recommended** and won't be accepted for channel applications to use directly any of those to calculate the price of the booking; nevertheless, it might give you some insight how things work on a lower-level.
 
 Seasons and periods are resources which modify rentals' base rate for given dates range. That way, you can get the exact "raw" nightly rate for the rental for a given day (which means without any rates rules applied). [Nightly rates map](http://developers.bookingsync.com/reference/endpoints/nightly_rate_maps/) is the equivalent resource to combined seasons and periods; the format is just more compact and much easier to manage outside the BookingSync, via a third-party application.
 
-[`Rates`](http://developers.bookingsync.com/reference/endpoints/rates/) are calculated based on the seasons/periods/nightly rates maps, so those resources should not be used for any calculation, they should be considered as an implementation detail.
+[`Rates`](http://developers.bookingsync.com/reference/endpoints/rates/) are calculated based on the seasons/periods/nightly rates maps/rates rules, so those resources should not be used for any calculation, they should be considered as an implementation detail.
 
 Internally, seasons and periods (which are manageable from BookingSync UI) are mapped to nightly rates maps, unless nightly rates maps are managed externally. In that case, nightly rates maps will be mapped to seasons/periods.
 
 ## Your application manages rentals' rates
 
-In that case, you need to create [nightly rates maps](http://developers.bookingsync.com/reference/endpoints/nightly_rate_maps/) which will contain the "raw" rates, without any rates rules applied. Keep in mind that property managers can apply rates rules on top of those nightly rates.
+In that case, you can create [nightly rates maps](http://developers.bookingsync.com/reference/endpoints/nightly_rate_maps/) which will contain the "raw" rates, without any rates rules applied. Keep in mind that property managers can apply rates rules on top of those nightly rates.
 
 If your application manages rates using nightly rates maps, property managers won't be able to create any seasons and periods in BookingSync. However, the nightly rates will be mapped to seasons and periods for internal usage.
+
+Another option would be directly using [seasons](http://developers.bookingsync.com/reference/endpoints/seasons/) and [periods](http://developers.bookingsync.com/reference/endpoints/periods/) resources.
