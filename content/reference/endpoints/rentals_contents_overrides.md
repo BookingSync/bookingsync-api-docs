@@ -44,7 +44,7 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Rentals Conte
 
 ## List rentals contents overrides
 
-List all rentals contents overrides for given account(s).
+List all rentals contents overrides for a given account(s).
 
 ~~~
 GET /rentals_contents_overrides

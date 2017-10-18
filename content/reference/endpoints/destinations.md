@@ -26,7 +26,7 @@ permalink                       | [Object](/reference/enums#formats)     | Read 
 
 ## List destinations
 
-List all destinations for given account(s).
+List all destinations for a given account(s).
 
 ~~~
 GET /destinations

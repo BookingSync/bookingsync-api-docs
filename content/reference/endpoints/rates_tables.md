@@ -38,7 +38,7 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Rate's update
 
 ## List rates tables
 
-List all rates tables for given account.
+List all rates tables for a given account.
 
 ~~~
 GET /rates_tables

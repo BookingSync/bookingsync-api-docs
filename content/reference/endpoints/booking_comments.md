@@ -41,7 +41,7 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Booking Comme
 
 ## List booking comments
 
-List all booking_comments for given account.
+List all booking_comments for a given account.
 
 ~~~
 GET /booking_comments

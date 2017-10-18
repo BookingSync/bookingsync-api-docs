@@ -48,7 +48,7 @@ updated_at          | [Time](/reference/enums#formats) | Read       | Bedroom's 
 
 ## List bedrooms
 
-List all bedrooms for given account.
+List all bedrooms for a given account.
 
 ~~~
 GET /bedrooms

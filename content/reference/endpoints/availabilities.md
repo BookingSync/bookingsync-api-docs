@@ -24,7 +24,7 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Availability'
 
 ## List availabilities
 
-List all availabilities for given account.
+List all availabilities for a given account.
 
 ~~~
 GET /availabilities

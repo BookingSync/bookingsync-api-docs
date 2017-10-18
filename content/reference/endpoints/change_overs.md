@@ -14,7 +14,7 @@ Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | ChangeOver's id.
 -----------------|---------|------------|------------
-map              | String  | Read       | ChangeOver's map of booking status. There is a total of 1096 characters, each representing one day. List of statuses described in [enums section](/reference/enums#change_over-map-statuses).
+map              | String  | Read       | ChangeOver's map of possible actions for a given day. There is a total of 1096 characters, each representing one day. List of statuses described in [enums section](/reference/enums#change_over-map-statuses).
 -----------------|---------|------------|------------
 start_date       | [Date](/reference/enums#formats) | Read       | ChangeOver's start date.
 updated_at       | [Time](/reference/enums#formats) | Read       | ChangeOver's update time.
@@ -24,7 +24,7 @@ updated_at       | [Time](/reference/enums#formats) | Read       | ChangeOver's 
 
 ## List change_overs
 
-List all change_overs for given account.
+List all change_overs for a given account.
 
 ~~~
 GET /change_overs

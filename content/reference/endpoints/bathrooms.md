@@ -42,7 +42,7 @@ updated_at          | [Time](/reference/enums#formats) | Read       | Bathroom's
 
 ## List bathrooms
 
-List all bathrooms for given account.
+List all bathrooms for a given account.
 
 ~~~
 GET /bathrooms
