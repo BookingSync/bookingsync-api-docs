@@ -22,6 +22,16 @@ Status           | Description
 3                | Unavailable
 {: class="table table-bordered"}
 
+## Change-over map statuses
+
+Status           | Description
+-----------------|------------
+X                | No action possible
+C                | Check-In and Check-Out
+O                | Check-Out only
+I                | Check-In only
+{: class="table table-bordered"}
+
 ## Booking statuses
 
 Status           | Description

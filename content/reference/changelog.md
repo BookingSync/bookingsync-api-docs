@@ -1,6 +1,10 @@
 # Changelog
 
-## master
+## 2017-18-10
+
+  * [api improvement] Add `chqnge_overs` endpoint.
+
+## 2017-12-10
 
   * [doc update] Add guides for webhooks' subscriptions
 
