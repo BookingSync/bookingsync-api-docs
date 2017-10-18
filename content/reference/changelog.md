@@ -2,7 +2,7 @@
 
 ## 2017-18-10
 
-  * [api improvement] Add `chqnge_overs` endpoint.
+  * [api improvement] Add `change_overs` endpoint.
 
 ## 2017-12-10
 
