@@ -57,7 +57,7 @@ end_date         | [Date](/reference/enums#formats) | Read/Write | Rentals Fee's
 
 ## List rentals fees
 
-List all rentals fees for given account(s).
+List all rentals fees for a given account(s).
 
 ~~~
 GET /rentals_fees

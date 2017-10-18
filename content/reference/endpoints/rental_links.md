@@ -24,7 +24,7 @@ updated_at         | [Time](/reference/enums#formats) | Read         | Rental li
 
 ## List rental links
 
-List all rental link for given account(s).
+List all rental link for a given account(s).
 
 ~~~
 GET /rental_links

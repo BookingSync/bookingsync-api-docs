@@ -22,7 +22,7 @@ title            | [Object](/reference/enums#formats)| Read       | Amenity's ti
 
 ## List amenities
 
-List all amenities for given account(s). Amenities can repeat because each
+List all amenities for a given account(s). Amenities can repeat because each
 rental has it's own set of amenities.
 
 ~~~

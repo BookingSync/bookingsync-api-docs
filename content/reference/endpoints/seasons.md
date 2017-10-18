@@ -44,7 +44,7 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Season's upda
 
 ## List seasons
 
-List all seasons for given account.
+List all seasons for a given account.
 
 ~~~
 GET /seasons

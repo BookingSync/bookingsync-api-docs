@@ -42,7 +42,7 @@ end_date             | [Date](/reference/enums#formats) | Read/Write | **Require
 
 ## List special offers
 
-List all special offers for given account(s).
+List all special offers for a given account(s).
 
 ~~~
 GET /special_offers

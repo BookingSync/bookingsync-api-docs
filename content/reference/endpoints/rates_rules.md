@@ -51,7 +51,7 @@ end_date             | [Date](/reference/enums#formats) | Read/Write | Rates Rul
 
 ## List rates rules
 
-List all rates rules for given account.
+List all rates rules for a given account.
 
 ~~~
 GET /rates_rules

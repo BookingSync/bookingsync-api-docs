@@ -26,7 +26,7 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Bookings Tag'
 
 ## List bookings tags
 
-List all bookings tags for given account(s).
+List all bookings tags for a given account(s).
 
 ~~~
 GET /bookings_tags

@@ -26,7 +26,7 @@ name             | String  | Read       | Application's name.
 
 ## List applications
 
-List all installed applications for given account.
+List all installed applications for a given account.
 
 ~~~
 GET /applications
