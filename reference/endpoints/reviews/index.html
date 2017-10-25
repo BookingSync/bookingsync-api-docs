@@ -79,6 +79,7 @@
           <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_tags/">Bookings Tags</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_taxes/">Bookings Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/change_overs/">Change Overs</a>
           <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
           <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
           <a class="list-group-item" href="/reference/endpoints/fees/">Fees</a>
@@ -262,7 +263,7 @@
 
 <h3 id="list-reviews">List reviews</h3>
 
-<p>List all reviews for given account(s).</p>
+<p>List all reviews for a given account(s).</p>
 
 <pre><code>GET /reviews
 </code></pre>
@@ -271,7 +272,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#002ec031b41bpublic" role="tab" data-toggle="pill">
+        <a href="#c014d73f123fpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -281,7 +282,7 @@
   
   
     
-      <div class="tab-pane active" id="002ec031b41bpublic">
+      <div class="tab-pane active" id="c014d73f123fpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"reviews.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{reviews.booking}"</span><span class="p">,</span>
@@ -295,8 +296,8 @@
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"John S."</span><span class="p">,</span>
       <span class="s2">"rating"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"Awesome"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-10-06T08:59:48Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-10-06T08:59:48Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-10-25T11:54:33Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-10-25T11:54:33Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">87</span>
@@ -320,7 +321,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#beee2ace5790public" role="tab" data-toggle="pill">
+        <a href="#8b2fe3b79c28public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -330,7 +331,7 @@
   
   
     
-      <div class="tab-pane active" id="beee2ace5790public">
+      <div class="tab-pane active" id="8b2fe3b79c28public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"reviews.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{reviews.booking}"</span><span class="p">,</span>
@@ -344,8 +345,8 @@
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"John S."</span><span class="p">,</span>
       <span class="s2">"rating"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"Awesome"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-10-06T08:59:48Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-10-06T08:59:48Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-10-25T11:54:33Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-10-25T11:54:33Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">87</span>
@@ -369,7 +370,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#b0ee68c4923creviews_write" role="tab" data-toggle="pill">
+        <a href="#a40e23ce4abereviews_write" role="tab" data-toggle="pill">
           reviews_write
         </a>
       </li>
@@ -390,7 +391,7 @@
   
   
     
-      <div class="tab-pane active" id="b0ee68c4923creviews_write">
+      <div class="tab-pane active" id="a40e23ce4abereviews_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"reviews.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{reviews.booking}"</span><span class="p">,</span>
@@ -404,8 +405,8 @@
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"John S."</span><span class="p">,</span>
       <span class="s2">"rating"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"title"</span><span class="o">:</span> <span class="s2">"Awesome"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-10-06T08:59:48Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-10-06T08:59:48Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-10-25T11:54:33Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-10-25T11:54:33Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">87</span>

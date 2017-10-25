@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BookingSync API documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/stylesheets/application.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/highlight.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="/assets/javascripts/application.js"></script>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.8.0">
+  </head>
+  <body class="flex-col">
+    <div class="page-wrapper flex-1 flex-col">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle sidebar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <img alt="BookingSync" src="/images/bookingsync.svg">
+              <span>Developers</span>
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active">
+                <a href="/guides/">Guides</a>
+              </li>
+              <li class="">
+                <a href="/reference/">API Reference</a>
+              </li>
+              <li><a href="https://www.bookingsync.com" target="_blank">BookingSync.com</a></li>
+              <li><a href="https://github.com/BookingSync/bookingsync-api-docs" target="_blank"><i class="fa fa-github fa-fw fa-2x"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+<div class="container content">
+  <div class="row">
+    <div class="col-md-3 col-md-push-9">
+      <div class="panel panel-default">
+        <div class="list-group">
+          <a class="list-group-item" href="/guides/">Introduction</a>
+          <a class="list-group-item" href="/guides/create-a-booking-with-a-source">Create a Booking with a Source</a>
+          <a class="list-group-item" href="/guides/read-all-authorized-accounts-at-once">Read all authorized accounts at once</a>
+          <a class="list-group-item" href="/guides/getting-started-with-php">Getting Started with PHP</a>
+          <a class="list-group-item" href="/guides/secure-payments-by-bookingsync">Secure Payments By BookingSync</a>
+          <a class="list-group-item" href="/guides/webhook-subscriptions">Webhook subscriptions</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 col-md-pull-3">
+      <div class="panel panel-default">
+        <div class="panel-body guide-body">
+          <h2 id="webhook-subscriptions">Webhook subscriptions</h2>
+
+<ol id="markdown-toc">
+<li><a href="#preface">Preface</a></li>
+  <li><a href="#requirements">Requirements</a></li>
+  <li><a href="#webhooks-getting-started">Webhooks: getting started</a></li>
+  <li><a href="#payload-content">Payload content</a></li>
+</ol><h3 id="preface">Preface</h3>
+
+<p>Periodically fetching data from API to keep all the objects in sync is not the most efficient solution. Ideally, data synchronization would be triggered by some specific event.</p>
+
+<p>Thanks to webhook subscriptions, you can be notified when some event occurs. You just need to select which events you want to subscribe to.</p>
+
+<h3 id="requirements">Requirements</h3>
+
+<p>None, if you are an API partner and you’ve already registered your application, there is nothing else you need to do.</p>
+
+<h3 id="webhooks-getting-started">Webhooks: getting started</h3>
+
+<h4 id="application-setting-page">Application setting page</h4>
+
+<p>First, go to <a href="https://www.bookingsync.com/en/partners/login">partner login page</a>.</p>
+
+<p>Once you are logged in, locate the application where you want to subscribe to webhooks and click the “Manage” button.</p>
+
+<h4 id="the-webhooks-tab">The “Webhooks” tab</h4>
+
+<p>You should see a “Webhooks” tab</p>
+
+<p><img src="/images/webhook-subscriptions/webhooks-tab.png" alt="webhooks-tab" style="width:70%"></p>
+
+<p>Now, go to the “Webhook” section and click “New Webhook” to access the webhook subscriptions form.</p>
+
+<h4 id="webhook-subscription-form">Webhook subscription form</h4>
+
+<p><img src="/images/webhook-subscriptions/webhooks-form.png" alt="webhooks-form" style="width:70%"></p>
+
+<h4 id="url">URL</h4>
+
+<p>The first step is to specify the URL where the webhooks will be delivered when the given event occurs.</p>
+
+<p>This endpoint should accept POST requests.</p>
+
+<h4 id="events">Events</h4>
+
+<p>The final step is to select the events to which you want to subscribe to.</p>
+
+<p>Here’s the list of supported events:</p>
+
+<ul>
+<li>account_destroyed</li>
+  <li>account_updated</li>
+  <li>amenity_created</li>
+  <li>amenity_destroyed</li>
+  <li>amenity_updated</li>
+  <li>availability_updated</li>
+  <li>booking_created</li>
+  <li>booking_destroyed</li>
+  <li>booking_updated</li>
+  <li>client_created</li>
+  <li>client_destroyed</li>
+  <li>client_updated</li>
+  <li>inquiry_created</li>
+  <li>inquiry_destroyed</li>
+  <li>inquiry_updated</li>
+  <li>photo_created</li>
+  <li>photo_destroyed</li>
+  <li>photo_updated</li>
+  <li>rental_created</li>
+  <li>rental_destroyed</li>
+  <li>rental_updated</li>
+  <li>rentals_amenity_created</li>
+  <li>rentals_amenity_destroyed</li>
+  <li>rentals_amenity_updated</li>
+</ul><h3 id="payload-content">Payload content</h3>
+
+<p>The request body of the webhook request will contain the serialized object in the same format as API v3 serializes objects and deserializes from.</p>
+
+<h4 id="header">Header</h4>
+
+<p>The request header follows the following pattern:</p>
+
+<pre><code class="language-json"><span class="p">{</span>
+  <span class="nt">"content_type"</span><span class="p">:</span> <span class="s2">"application/json"</span><span class="p">,</span>
+  <span class="nt">"X-Content-Signature"</span><span class="p">:</span> <span class="s2">"SIGNATURE"</span><span class="p">,</span>
+  <span class="nt">"user_agent"</span><span class="p">:</span> <span class="s2">"BookingSync Webhook Delivery"</span>
+<span class="p">}</span></code></pre>
+
+<p>where <code>SIGNATURE</code> is a signed value which could be used to ensure that the incoming request is genuinely coming from BookingSync, which is based on the encoded JSON payload and your application’s secret.</p>
+
+<p>In Ruby, the signature could be computed the following way:</p>
+
+<pre><code class="language-ruby"><span class="n">encoded_body</span> <span class="o">=</span> <span class="no">Base64</span><span class="o">.</span><span class="n">encode64</span><span class="p">(</span><span class="n">json_body</span><span class="p">)</span> <span class="c1"># assuming `json_body` comes from the request</span>
+<span class="no">OpenSSL</span><span class="o">::</span><span class="no">HMAC</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(</span><span class="no">OpenSSL</span><span class="o">::</span><span class="no">Digest</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">"sha1"</span><span class="p">),</span> <span class="no">YOUR_APPLICATION_SECRET</span><span class="p">,</span> <span class="n">encoded_body</span><span class="p">)</span></code></pre>
+
+<p>The request has valid origin only if the value of <code>X-Content-Signature</code> header is the same as the one computed in your application.</p>
+
+<h4 id="body">Body</h4>
+
+<p>The body will be a JSON object:</p>
+
+<pre><code class="language-json"><span class="p">{</span>
+  <span class="nt">"account_id"</span><span class="p">:</span> <span class="s2">"ACCOUNT_ID"</span><span class="p">,</span>
+  <span class="nt">"event"</span><span class="p">:</span> <span class="s2">"EVENT_NAME"</span><span class="p">,</span>
+  <span class="nt">"resource"</span><span class="p">:</span> <span class="s2">"SERIALIZED_RESOURCE"</span>
+<span class="p">}</span></code></pre>
+
+<p>Here is one example:</p>
+
+<pre><code class="language-json"><span class="p">{</span>
+  <span class="nt">"account_id"</span><span class="p">:</span> <span class="mi">1059638630</span><span class="p">,</span>
+  <span class="nt">"event"</span><span class="p">:</span> <span class="s2">"client_created"</span><span class="p">,</span>
+  <span class="nt">"resource"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">"links"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">"clients.account"</span><span class="p">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
+    <span class="p">},</span>
+    <span class="nt">"client"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">"links"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">"account"</span><span class="p">:</span> <span class="mi">1059638630</span>
+    <span class="p">},</span>
+    <span class="nt">"id"</span><span class="p">:</span> <span class="mi">995923932</span><span class="p">,</span>
+    <span class="nt">"addresses"</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="nt">"emails"</span><span class="p">:</span> <span class="p">[{</span><span class="nt">"label"</span><span class="p">:</span> <span class="s2">"default"</span><span class="p">,</span> <span class="nt">"email"</span><span class="p">:</span> <span class="s2">"client_5@example.com"</span><span class="p">}],</span>
+    <span class="nt">"phones"</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="nt">"created_at"</span><span class="p">:</span> <span class="s2">"2017-10-10T11:00:00Z"</span><span class="p">,</span>
+    <span class="nt">"updated_at"</span><span class="p">:</span> <span class="s2">"2017-10-10T11:00:00Z"</span><span class="p">,</span>
+    <span class="nt">"fullname"</span><span class="p">:</span> <span class="s2">"Robt Braun"</span><span class="p">,</span>
+    <span class="nt">"firstname"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"lastname"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"notes"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">"preferred_locale"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">"passport"</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">"company"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+    <span class="nt">"vat_number"</span><span class="p">:</span> <span class="s2">""</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </body>
+</html>
+

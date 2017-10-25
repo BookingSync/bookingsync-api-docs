@@ -60,7 +60,7 @@
           <a class="list-group-item" href="/reference/requirements/">Requirements</a>
           <a class="list-group-item" href="/reference/libraries/">Libraries</a>
           <a class="list-group-item" href="/reference/authorization/">Authorization</a>
-          <a class="list-group-item active" href="/reference/testing_authorization/">Testing the Authorization</a>
+          <a class="list-group-item" href="/reference/testing_authorization/">Testing the Authorization</a>
           <a class="list-group-item" href="/reference/enums/">Enumerables</a>
         </div>
         <div class="panel-heading">
@@ -79,7 +79,7 @@
           <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_tags/">Bookings Tags</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_taxes/">Bookings Taxes</a>
-          <a class="list-group-item" href="/reference/endpoints/change_overs/">Change Overs</a>
+          <a class="list-group-item active" href="/reference/endpoints/change_overs/">Change Overs</a>
           <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
           <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
           <a class="list-group-item" href="/reference/endpoints/fees/">Fees</a>
@@ -121,139 +121,139 @@
     <div class="col-md-9 col-md-pull-3">
       <div class="panel panel-default">
         <div class="panel-body reference-body">
-          <h2 id="testing-authorization">Testing Authorization</h2>
+          <h2 id="changeovers">ChangeOvers</h2>
 
 <ol id="markdown-toc">
-<li><a href="#preface">Preface</a></li>
-  <li><a href="#console">Console</a></li>
-</ol><h3 id="preface">Preface</h3>
-
-<p>For testing BookingSync API v3 you
-<a href="/reference/requirements/">must register an application on the BookinSync website</a>.</p>
-
-<p>While creating your test application to use in console,
-make sure to use the following <strong>redirect_uri</strong>:</p>
-
-<pre><code>urn:ietf:wg:oauth:2.0:oob
-</code></pre>
-
-<h3 id="console">Console</h3>
-
-<div class="embed-responsive embed-responsive-4by3">
- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/lRkllEnbV3E" allowfullscreen=""></iframe>
+<li><a href="#list-changeovers">List change_overs</a></li>
+  <li><a href="#get-a-single-changeover">Get a single change_over</a></li>
+</ol><h4 id="parameters">Parameters</h4>
+<ul class="nav nav-pills" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
+</ul><div class="tab-content">
+  <div class="tab-pane active" id="public">
+    <table class="table table-bordered">
+<thead><tr>
+<th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr></thead>
+<tbody><tr>
+<td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>ChangeOver’s id.</td>
+        </tr></tbody>
+<tbody><tr>
+<td>map</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>ChangeOver’s map of possible actions for a given day. There is a total of 1096 characters, each representing one day. List of statuses described in <a href="/reference/enums#change_over-map-statuses">enums section</a>.</td>
+        </tr></tbody>
+<tbody>
+<tr>
+<td>start_date</td>
+          <td><a href="/reference/enums#formats">Date</a></td>
+          <td>Read</td>
+          <td>ChangeOver’s start date.</td>
+        </tr>
+<tr>
+<td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>ChangeOver’s update time.</td>
+        </tr>
+</tbody>
+</table>
+</div>
 </div>
 
-<h4 id="authorize-your-application">1. Authorize your application</h4>
+<h3 id="list-changeovers">List change_overs</h3>
 
-<p>As a one time process, you will need to authorize your application by requesting the account owner to grant you access.</p>
+<p>List all change_overs for a given account.</p>
 
-<p>This process require user interaction but won’t be required any more, so you can perfectly run background jobs later on.</p>
-
-<p>This authorization can only be revoked if the account owner uninstall your application.</p>
-
-<h5 id="a-create-authorization-codes-request-url">1.a Create Authorization Code’s Request URL</h5>
-
-<p>Use the schema below with by replacing:</p>
-
-<ul>
-<li>
-<code>CLIENT ID</code>: Application’s Client ID</li>
-</ul><pre><code>https://www.bookingsync.com/oauth/authorize?client_id=CLIENT_ID&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=code
+<pre><code>GET /change_overs
 </code></pre>
 
-<p><strong>Note</strong>: To request authorization for <a href="/reference/authorization#scopes">custom scopes</a>,
-add at the end of this URL, a space separated list like:
-<code>&amp;scope=bookings_read%20rentals_read</code> (<code>%20</code> represent a <strong>space</strong> within URLs)</p>
-
-<h5 id="b-authorize-this-app-for-a-given-bookingsync-user">1.b Authorize this app for a given BookingSync User</h5>
-
-<p>Visit the generated URL, and authorize access to your test
-Application for a BookingSync user.</p>
-
-<h5 id="c-use-the-authorization-code-to-get-your-access-token">1.c Use the Authorization Code to get your Access Token</h5>
-
-<p>Use the schema below with by replacing:</p>
-
-<ul>
-<li>
-<code>CLIENT ID</code>: Application’s Client ID</li>
-  <li>
-<code>CLIENT_SECRET</code>: Application’s Client Secret <em>(do not share, same as password)</em>
-</li>
-  <li>
-<code>RETURNED_CODE</code>: Displayed Authorization Code</li>
-</ul><pre><code>https://www.bookingsync.com/oauth/token?client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;code=RETURNED_CODE&amp;grant_type=authorization_code&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob
-</code></pre>
-
-<p>Make a POST request to this URL to get your Authentication Token.</p>
-
-<p>Example with CURL:</p>
-
-<pre><code>curl -X POST -d "client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;code=RETURNED_CODE&amp;grant_type=authorization_code&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob" "https://www.bookingsync.com/oauth/token"
-</code></pre>
-
-<p>Sample response:</p>
-
-<pre><code class="language-json"><span class="p">{</span>
-  <span class="nt">"access_token"</span><span class="p">:</span> <span class="s2">"0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"</span><span class="p">,</span>
-  <span class="nt">"token_type"</span><span class="p">:</span> <span class="s2">"bearer"</span><span class="p">,</span>
-  <span class="nt">"expires_in"</span><span class="p">:</span> <span class="mi">7200</span><span class="p">,</span>
-  <span class="nt">"refresh_token"</span><span class="p">:</span> <span class="s2">"fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210"</span><span class="p">,</span>
-  <span class="nt">"scope"</span><span class="p">:</span> <span class="s2">"public"</span>
+<ul class="nav nav-pills" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#4dda1e9d2b5dpublic" role="tab" data-toggle="pill">
+          public
+        </a>
+      </li>
+    
+  </ul><h4 id="response">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="4dda1e9d2b5dpublic">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"change_overs.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{change_overs.rental}"</span>
+  <span class="p">},</span>
+  <span class="s2">"change_overs"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"map"</span><span class="o">:</span> <span class="s2">"CCOOOOCCCIIIIIIIIICCCCCCCCCCCXXXXCCCCCCCCCCCCCCCCCCCCCCCCCCCXXXXXXXXCCCCCCCCCCCCCCCCCCCCOOOOOOIIIIXXXCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-10-25T11:54:31Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-11-01"</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
 <span class="p">}</span></code></pre>
-
-<p><strong>Note</strong>: Tokens (<code>access_token</code>) are only <strong>valid for 2 hours</strong>, you then need to use the
-<strong>Refresh Token</strong> to regenerate and new set of <strong>Tokens</strong> or restart the flow you just used.</p>
-
-<h4 id="using-the-refresh-token-to-get-a-new-access-token">2. Using the Refresh Token to get a new Access Token</h4>
-
-<p>Once your application is authorized, you only need this single step to get a valid <code>access_token</code> if the one you have is expired.</p>
-
-<p>API calls made with expired <code>access_token</code> will return an HTTP Status Code 401 (Unauthorized).</p>
-
-<p>To prevent this from happening, you can request a new <code>access_token</code> using the <code>refresh_token</code> as demonstrated below before the <code>access_token</code> expiration.
-You can find your token lifetime (in seconds), by checking the <code>expires_in</code> attribute in authorization response.</p>
-
-<div class="callout callout-info">
-  <h4>Refresh Token Behavior</h4>
-  <p>A refresh token is valid as long as it's used (or your application is uninstalled), therefore <strong>you can also request a new set of tokens after expiration of your <code>access_token</code>.</strong></p>
-
-  <p>A new <code>refresh_token</code> will be generated after each refresh, therefore make sure to save it.</p>
-
-  <p>As the refresh token gives you lifelong access to an account, it must be stored securely.</p>
+      </div>
+    
+  
 </div>
 
-<h5 id="refresh-token-process">Refresh Token Process</h5>
+<h3 id="get-a-single-changeover">Get a single change_over</h3>
 
-<p>Use the schema below with by replacing:</p>
+<p>Returns a single change_over identified by ID.</p>
 
-<ul>
-<li>
-<code>CLIENT ID</code>: Application’s Client ID</li>
-  <li>
-<code>CLIENT_SECRET</code>: Application’s Client Secret <em>(do not share, same as password)</em>
-</li>
-  <li>
-<code>REFRESH_TOKEN</code>: Refresh Token given when you got your Access Token in the previous step</li>
-</ul><pre><code>https://www.bookingsync.com/oauth/token?client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;refresh_token=REFRESH_TOKEN&amp;grant_type=refresh_token&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob
+<pre><code>GET /change_overs/:change_over_id
 </code></pre>
 
-<p>Make a POST request to this URL to get your refreshed Authentication Token.</p>
-
-<p>Example with CURL:</p>
-
-<pre><code>curl -X POST -d "client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;refresh_token=REFRESH_TOKEN&amp;grant_type=refresh_token&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob" "https://www.bookingsync.com/oauth/token"
-</code></pre>
-
-<p>Sample response:</p>
-
-<pre><code class="language-json"><span class="p">{</span>
-  <span class="nt">"access_token"</span><span class="p">:</span> <span class="s2">"0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"</span><span class="p">,</span>
-  <span class="nt">"token_type"</span><span class="p">:</span> <span class="s2">"bearer"</span><span class="p">,</span>
-  <span class="nt">"expires_in"</span><span class="p">:</span> <span class="mi">7200</span><span class="p">,</span>
-  <span class="nt">"refresh_token"</span><span class="p">:</span> <span class="s2">"fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210"</span><span class="p">,</span>
-  <span class="nt">"scope"</span><span class="p">:</span> <span class="s2">"public"</span>
+<ul class="nav nav-pills" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#9ff078a1fa0apublic" role="tab" data-toggle="pill">
+          public
+        </a>
+      </li>
+    
+  </ul><h4 id="response-1">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="9ff078a1fa0apublic">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"change_overs.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{change_overs.rental}"</span>
+  <span class="p">},</span>
+  <span class="s2">"change_overs"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"map"</span><span class="o">:</span> <span class="s2">"CCOOOOCCCIIIIIIIIICCCCCCCCCCCXXXXCCCCCCCCCCCCCCCCCCCCCCCCCCCXXXXXXXXCCCCCCCCCCCCCCCCCCCCOOOOOOIIIIXXXCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-10-25T11:54:31Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-11-01"</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
 <span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
         </div>
       </div>
     </div>

@@ -79,6 +79,7 @@
           <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_tags/">Bookings Tags</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_taxes/">Bookings Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/change_overs/">Change Overs</a>
           <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
           <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
           <a class="list-group-item" href="/reference/endpoints/fees/">Fees</a>
@@ -222,7 +223,7 @@ certain range.</p>
 </tbody>
 </table><p>Other scopes will return no results.</p>
 
-<p>List all bookings fees for given account(s).</p>
+<p>List all bookings fees for a given account(s).</p>
 
 <pre><code>GET /bookings_fees
 </code></pre>
@@ -231,7 +232,7 @@ certain range.</p>
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#e2c2c1a9f4febookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#2e499e5e5b4cbookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_read / bookings_write / bookings_write_owned
         </a>
       </li>
@@ -241,7 +242,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="e2c2c1a9f4febookings_read-bookings_write-bookings_write_owned">
+      <div class="tab-pane active" id="2e499e5e5b4cbookings_read-bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_fees.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_fees.account}"</span><span class="p">,</span>
@@ -292,7 +293,7 @@ certain range.</p>
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#e1e38f7ea973bookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#c6e46cbf8f63bookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_read / bookings_write / bookings_write_owned
         </a>
       </li>
@@ -302,7 +303,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="e1e38f7ea973bookings_read-bookings_write-bookings_write_owned">
+      <div class="tab-pane active" id="c6e46cbf8f63bookings_read-bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_fees.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_fees.account}"</span><span class="p">,</span>
@@ -353,13 +354,13 @@ certain range.</p>
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#f8787a11abc2bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#94f24cd44ce0bookings_write_owned" role="tab" data-toggle="pill">
           bookings_write_owned
         </a>
       </li>
     
       <li>
-        <a href="#ef289eebaa49bookings_write" role="tab" data-toggle="pill">
+        <a href="#052a3a78bdf1bookings_write" role="tab" data-toggle="pill">
           bookings_write
         </a>
       </li>
@@ -381,7 +382,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="f8787a11abc2bookings_write_owned">
+      <div class="tab-pane active" id="94f24cd44ce0bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -429,7 +430,7 @@ certain range.</p>
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="ef289eebaa49bookings_write">
+      <div class="tab-pane " id="052a3a78bdf1bookings_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -491,13 +492,13 @@ certain range.</p>
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#000079bcc4c8bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#1f30cfb772d1bookings_write_owned" role="tab" data-toggle="pill">
           bookings_write_owned
         </a>
       </li>
     
       <li>
-        <a href="#447debe88614bookings_write" role="tab" data-toggle="pill">
+        <a href="#e25a0355e20bbookings_write" role="tab" data-toggle="pill">
           bookings_write
         </a>
       </li>
@@ -507,7 +508,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="000079bcc4c8bookings_write_owned">
+      <div class="tab-pane active" id="1f30cfb772d1bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -542,7 +543,7 @@ certain range.</p>
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="447debe88614bookings_write">
+      <div class="tab-pane " id="e25a0355e20bbookings_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
