@@ -69,6 +69,9 @@ Here's the list of supported events:
 * rentals_amenity_created
 * rentals_amenity_destroyed
 * rentals_amenity_updated
+* payment_created
+* payment_destroyed
+* payment_updated
 
 ## Payload content
 
