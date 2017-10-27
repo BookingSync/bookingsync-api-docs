@@ -12,10 +12,20 @@ If you are not a partner yet, it's [free to signup so join us :)](https://www.bo
 
 * Click on `New Application` button.
 * Fill in required details, `redirect_uri` being your apps OAuth callback URL and `admin_url` to your admin section.
-* Choose if application should open in a new window, or remain embedded in BookingSync frame.
+* Choose if application should open in a new window (`standalone`), or remain `embedded` in BookingSync frame.
 * Choose `Private` application, at least during your development and testing process.
 
 **Note**: BookingSync traditional Users have to input `private access code` in their Apps section to start using your private application. That code is automatically generated for you and is visible in your applications manage section.
+
+## Applications types
+
+### Embedded
+Embedded applications are rendered within an iframe on BookingSync.com.
+**You application needs to allow on embedding in `iframe`.**
+
+### Standalone
+Standalone applications will be working outside of BookingSync website. It means that they will be opened in a new window.
+While it's not the recommended approach, some applications can benefit from this.
 
 ## Published Applications
 
