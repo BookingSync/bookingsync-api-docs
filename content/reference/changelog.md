@@ -1,5 +1,8 @@
 # Changelog
 
+## 2017-11-08
+  * [doc update] Add `bookings_taxes percentage` to `bookings` endpoint
+
 ## master
 
   * [api improvement] Add `payment` webhooks
