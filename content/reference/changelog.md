@@ -1,13 +1,11 @@
 # Changelog
 
 ## 2017-11-08
+
   * [doc update] Add `bookings_taxes percentage` to `bookings` endpoint
-
-## master
-
   * [api improvement] Add `payment` webhooks
 
-## 2017-18-10
+## v3.5.0 (2017-18-10)
 
   * [api improvement] Add `change_overs` endpoint.
 
@@ -19,12 +17,12 @@
 
   * [doc update] Add `add_bookings_fees` and `remove_bookings_fees` to `bookings_fees` endpoint
 
-## 2017-09-19
+## v3.4.0 (2017-09-19)
 
   * [api improvement] Add `damage_deposit` attribute to `rental search` endpoint.
   * [doc update] Add `include_not_available` and `exchange_to_currency` to the `rental search` parameters.
 
-## 2017-09-07
+## v3.3.0 (2017-09-07)
 
   * [doc fix] Fix typo on `tax_rules` endpoint
 
@@ -33,7 +31,7 @@
   * [doc update] Improve `booking.channel_price` description.
   * [doc update] Improve `bookings_fees.included_in_price` and `bookings_taxes.included_in_price` description.
 
-## 2017-08-11
+## v3.2.0 (2017-08-11)
 
   * [api improvement] Add `door_key_code` attribute (Read/Write) for `booking`.
   * [doc update] Update response of `bathrooms` endpoint.
@@ -53,7 +51,7 @@
   * [doc update] Update `payments` endpoint.
   * [doc update] Update `photos` endpoint.
 
-## 2017-07-13
+## v3.1.0 (2017-07-13)
 
   * [doc update] Improve descriptions of the LOS records attributes.
 
