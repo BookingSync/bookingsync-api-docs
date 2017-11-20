@@ -24,7 +24,8 @@ Embedded applications are rendered within an iframe on BookingSync.com.
 **You application needs to allow on embedding in `iframe`.**
 
 ### Standalone
-Standalone applications will be working outside of BookingSync website. It means that they will be opened in a new window.
+Standalone applications will be working outside of BookingSync website. It means that they will be opened in a new window outside of the BookingSync app.
+
 While it's not the recommended approach, some applications can benefit from this.
 
 ## Published Applications
