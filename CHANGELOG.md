@@ -1,7 +1,14 @@
 # Change Log
 
-## [3.6.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.6.0) (2017-11-20)
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.5.0...3.6.0)
+## [3.7.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.7.0) (2017-12-18)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.6.0...3.7.0)
+
+**Merged pull requests:**
+
+- add docs for bookings\_tags [\#256](https://github.com/BookingSync/bookingsync-api-docs/pull/256) ([kaizencodes](https://github.com/kaizencodes))
+
+## [v3.6.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.6.0) (2017-11-20)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.5.0...v3.6.0)
 
 **Merged pull requests:**
 
