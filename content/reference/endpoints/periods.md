@@ -36,7 +36,7 @@ end_date         | [Date](/reference/enums#formats) | Read/Write | **Required**.
 
 ## List periods
 
-List all periods for given account.
+List all periods for a given account.
 
 ~~~
 GET /periods

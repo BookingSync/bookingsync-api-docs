@@ -37,7 +37,7 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Rentals Ameni
 
 ## List rentals amenities
 
-List all rentals amenities for given account.
+List all rentals amenities for a given account.
 
 ~~~
 GET /rentals_amenities

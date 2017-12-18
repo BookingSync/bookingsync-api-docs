@@ -46,7 +46,7 @@ updated_at          | [Time](/reference/enums#formats) | Read       | LivingRoom
 
 ## List living_rooms
 
-List all living_rooms for given account.
+List all living_rooms for a given account.
 
 ~~~
 GET /living_rooms

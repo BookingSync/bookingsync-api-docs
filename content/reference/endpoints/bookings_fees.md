@@ -40,7 +40,7 @@ Scope                    | Read Permissions
 
 Other scopes will return no results.
 
-List all bookings fees for given account(s).
+List all bookings fees for a given account(s).
 
 ~~~
 GET /bookings_fees

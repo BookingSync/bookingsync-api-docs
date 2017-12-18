@@ -124,7 +124,7 @@
             "en": "Tax1"
           },
           "tax_included_in_price": false,
-          "percentage": "0.0",
+          "percentage": "10.0",
           "amount": "60.0"
         },
         {

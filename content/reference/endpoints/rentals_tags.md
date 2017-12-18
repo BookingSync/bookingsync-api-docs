@@ -40,7 +40,7 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Rentals Tag's
 
 ## List rentals tags
 
-List all rentals tags for given account.
+List all rentals tags for a given account.
 
 ~~~
 GET /rentals_tags
@@ -77,7 +77,7 @@ POST /rentals_tags
 
 <%= render 'json_response', endpoint: "rentals_tags", request: "create",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
-  
+
 ## Update a rentals tag
 
 <div class="callout callout-info">

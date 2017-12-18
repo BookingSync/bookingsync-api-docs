@@ -44,7 +44,7 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Review's upda
 
 ## List reviews
 
-List all reviews for given account(s).
+List all reviews for a given account(s).
 
 ~~~
 GET /reviews
