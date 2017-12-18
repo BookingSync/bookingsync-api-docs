@@ -125,6 +125,7 @@
 
 <ol id="markdown-toc">
 <li><a href="#registering-applications">Registering Applications</a></li>
+  <li><a href="#applications-types">Applications types</a></li>
   <li><a href="#published-applications">Published Applications</a></li>
   <li><a href="#private-applications">Private Applications</a></li>
 </ol><h3 id="registering-applications">Registering Applications</h3>
@@ -137,9 +138,20 @@
 <ul>
 <li>Click on <code>New Application</code> button.</li>
   <li>Fill in required details, <code>redirect_uri</code> being your apps OAuth callback URL and <code>admin_url</code> to your admin section.</li>
-  <li>Choose if application should open in a new window, or remain embedded in BookingSync frame.</li>
+  <li>Choose if application should open in a new window (<code>standalone</code>), or remain <code>embedded</code> in BookingSync frame.</li>
   <li>Choose <code>Private</code> application, at least during your development and testing process.</li>
 </ul><p><strong>Note</strong>: BookingSync traditional Users have to input <code>private access code</code> in their Apps section to start using your private application. That code is automatically generated for you and is visible in your applications manage section.</p>
+
+<h3 id="applications-types">Applications types</h3>
+
+<h4 id="embedded">Embedded</h4>
+<p>Embedded applications are rendered within an iframe on BookingSync.com.
+<strong>You application needs to allow on embedding in <code>iframe</code>.</strong></p>
+
+<h4 id="standalone">Standalone</h4>
+<p>Standalone applications will be working outside of BookingSync website. It means that they will be opened in a new window outside of the BookingSync app.</p>
+
+<p>While it’s not the recommended approach, some applications can benefit from this.</p>
 
 <h3 id="published-applications">Published Applications</h3>
 

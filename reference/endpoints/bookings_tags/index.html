@@ -126,6 +126,8 @@
 <ol id="markdown-toc">
 <li><a href="#list-bookings-tags">List bookings tags</a></li>
   <li><a href="#get-a-single-bookings-tag">Get a single bookings tag</a></li>
+  <li><a href="#add-a-single-bookings-tag">Add a single bookings tag</a></li>
+  <li><a href="#remove-a-single-bookings-tag">Remove a single bookings tag</a></li>
 </ol><h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
 <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -194,7 +196,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#4913176cdfddbookings_read" role="tab" data-toggle="pill">
+        <a href="#619b5e6789febookings_read" role="tab" data-toggle="pill">
           bookings_read
         </a>
       </li>
@@ -204,7 +206,7 @@
   
   
     
-      <div class="tab-pane active" id="4913176cdfddbookings_read">
+      <div class="tab-pane active" id="619b5e6789febookings_read">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_tags.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_tags.account}"</span>
@@ -243,7 +245,7 @@
 <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#070b857ccbd0bookings_read" role="tab" data-toggle="pill">
+        <a href="#05582e44c2e3bookings_read" role="tab" data-toggle="pill">
           bookings_read
         </a>
       </li>
@@ -253,7 +255,7 @@
   
   
     
-      <div class="tab-pane active" id="070b857ccbd0bookings_read">
+      <div class="tab-pane active" id="05582e44c2e3bookings_read">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_tags.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_tags.account}"</span>
@@ -280,6 +282,24 @@
     
   
 </div>
+
+<h3 id="add-a-single-bookings-tag">Add a single bookings tag</h3>
+
+<p>Adds a tag to an existing booking.</p>
+
+<pre><code>POST /bookings/:id/add_tag/:bookings_tag_id
+</code></pre>
+
+<p>Returns empty body with status: 201</p>
+
+<h3 id="remove-a-single-bookings-tag">Remove a single bookings tag</h3>
+
+<p>Removes a tag from an existing booking.</p>
+
+<pre><code>DELETE /bookings/:id/remove_tag/:bookings_tag_id
+</code></pre>
+
+<p>Returns empty body with status: 204</p>
         </div>
       </div>
     </div>
