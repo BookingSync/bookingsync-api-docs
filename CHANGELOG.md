@@ -1,7 +1,14 @@
 # Change Log
 
-## [3.7.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.7.0) (2017-12-18)
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.6.0...3.7.0)
+## [3.8.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.8.0) (2017-12-19)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.7.0...3.8.0)
+
+**Merged pull requests:**
+
+- Update supported rental types list [\#268](https://github.com/BookingSync/bookingsync-api-docs/pull/268) ([StoneFrog](https://github.com/StoneFrog))
+
+## [v3.7.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.7.0) (2017-12-18)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.6.0...v3.7.0)
 
 **Merged pull requests:**
 
