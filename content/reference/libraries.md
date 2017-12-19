@@ -32,6 +32,7 @@ For Ruby users, we also developed nice gems ourselves to ease the integration of
 ### Python
 
 * [tapioca-bookingsync](https://github.com/PaoloC68/tapioca-bookingsync) is a library to use BookingSync API on top of [Tapioca Wrapper](https://github.com/vintasoftware/tapioca-wrapper). Contributed by [Fetch My Guest](http://www.fetchmyguest.com/).
+* [bookingsynclord](https://github.com/BNBLORD/bookingsynclord) BookingSync API Client (current status: BETA). Contributed by [Bnblord](https://www.bnblord.com).
 
 ### Elixir
 
