@@ -13,10 +13,12 @@
         ]
       },
       "id": 1,
+      "body": "Cancellation Policy: \nIn case of cancelation the downpayment paid upon booking is non-refundable.",
       "created_at": "CREATED_AT",
       "updated_at": "UPDATED_AT",
       "body_translations": {
-        "en": "CANCELLATIONS. \nAny cancellation must be sent by registered letter, on strength of postmark."
+        "en": "Cancellation Policy: \nIn case of cancelation the downpayment paid upon booking is non-refundable.",
+        "fr": "Annulation : \nEn cas d'annulation l'acompte payé lors de la réservation ne sera pas remboursé."
       }
     }
   ]

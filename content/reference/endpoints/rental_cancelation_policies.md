@@ -14,6 +14,7 @@ Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
 id               | Integer | Read       | Rental cancelation policy's id.
 -----------------|---------|------------|------------
+body             | String  | Read       | Rental cancelation policy's body in Account’s default locale.
 body_translations | [Object](/reference/enums#formats)     | Read       | Rental cancelation policy's body, list of locales described in [enums section](/reference/enums#locales).
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read         | Rental cancelation policy's create time.
