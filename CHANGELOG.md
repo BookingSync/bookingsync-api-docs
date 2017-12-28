@@ -1,7 +1,25 @@
 # Change Log
 
-## [3.8.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.8.0) (2017-12-19)
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.7.0...3.8.0)
+## [3.9.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.9.0) (2017-12-28)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.8.0...3.9.0)
+
+**Merged pull requests:**
+
+- fix vulnerabilities by updating nokogiri and pygments [\#274](https://github.com/BookingSync/bookingsync-api-docs/pull/274) ([StoneFrog](https://github.com/StoneFrog))
+- clarify that not everything is accessible with client credentials flow [\#273](https://github.com/BookingSync/bookingsync-api-docs/pull/273) ([Azdaroth](https://github.com/Azdaroth))
+- update vulnerable deps [\#272](https://github.com/BookingSync/bookingsync-api-docs/pull/272) ([Azdaroth](https://github.com/Azdaroth))
+- document booked\_at [\#271](https://github.com/BookingSync/bookingsync-api-docs/pull/271) ([Azdaroth](https://github.com/Azdaroth))
+- document rentals tags in bookings endpoint [\#270](https://github.com/BookingSync/bookingsync-api-docs/pull/270) ([Azdaroth](https://github.com/Azdaroth))
+- mention Python API client by Bnblord [\#269](https://github.com/BookingSync/bookingsync-api-docs/pull/269) ([Azdaroth](https://github.com/Azdaroth))
+- BookingSync Universe API docs [\#261](https://github.com/BookingSync/bookingsync-api-docs/pull/261) ([Azdaroth](https://github.com/Azdaroth))
+- explain oauth scopes [\#260](https://github.com/BookingSync/bookingsync-api-docs/pull/260) ([Azdaroth](https://github.com/Azdaroth))
+- document updated\_since [\#259](https://github.com/BookingSync/bookingsync-api-docs/pull/259) ([Azdaroth](https://github.com/Azdaroth))
+- add API for best practices [\#258](https://github.com/BookingSync/bookingsync-api-docs/pull/258) ([Azdaroth](https://github.com/Azdaroth))
+- Add bookings\_tag\_id param to bookings endpoint [\#247](https://github.com/BookingSync/bookingsync-api-docs/pull/247) ([StoneFrog](https://github.com/StoneFrog))
+- Add rental cancelation policies [\#156](https://github.com/BookingSync/bookingsync-api-docs/pull/156) ([ZenCocoon](https://github.com/ZenCocoon))
+
+## [v3.8.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.8.0) (2017-12-19)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.7.0...v3.8.0)
 
 **Merged pull requests:**
 
