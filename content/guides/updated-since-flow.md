@@ -5,7 +5,7 @@
 
 ## Preface
 
-In most cases, you will need to fetch the data from BookingSync API to efficiently use it your application. The problem is that some API endpoints may return large amounts of data which gets modified quite often. Obviously, fetching thousands of records every time you need to synchronize data is not an option. That's why we introduced `updated_since` flow - to let API consumers fetch the data that has been changed since the provided date of the last synchronization.
+In most cases, you will need to fetch the data recurringly from BookingSync API to efficiently use it in your application. The problem is that some API endpoints may return large amounts of data which gets modified quite often. Obviously, fetching thousands of records every time you need to synchronize data is not an option. That's why we introduced `updated_since` flow - to let API consumers fetch the data that has been changed since the provided date of the last synchronization.
 
 ## Prerequisites
 
