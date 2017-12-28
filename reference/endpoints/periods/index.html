@@ -96,6 +96,8 @@
           <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
@@ -124,103 +126,114 @@
           <h2 id="periods">Periods</h2>
 
 <ol id="markdown-toc">
-<li><a href="#list-periods">List periods</a></li>
+  <li><a href="#list-periods">List periods</a></li>
   <li><a href="#get-a-single-period">Get a single period</a></li>
   <li><a href="#create-a-new-period">Create a new period</a></li>
   <li><a href="#update-a-period">Update a period</a></li>
   <li><a href="#destroy-a-period">Destroy a period</a></li>
-</ol><h4 id="parameters">Parameters</h4>
+</ol>
+
+<h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#rates_read" role="tab" data-toggle="pill">rates_read</a></li>
   <li><a href="#rates_write" role="tab" data-toggle="pill">rates_write</a></li>
-</ul><div class="tab-content">
+</ul>
+<div class="tab-content">
   <div class="tab-pane active" id="rates_read">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody><tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Period’s id.</td>
-        </tr></tbody>
-<tbody>
-<tr>
-<td>created_at</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s update time.</td>
         </tr>
-<tr>
-<td>start_date</td>
+        <tr>
+          <td>start_date</td>
           <td><a href="/reference/enums#formats">Date</a></td>
           <td>Read</td>
           <td>Period’s start date.</td>
         </tr>
-<tr>
-<td>end_date</td>
+        <tr>
+          <td>end_date</td>
           <td><a href="/reference/enums#formats">Date</a></td>
           <td>Read</td>
           <td>Period’s end date.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
   <div class="tab-pane" id="rates_write">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody><tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Period’s id.</td>
-        </tr></tbody>
-<tbody>
-<tr>
-<td>created_at</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s update time.</td>
         </tr>
-<tr>
-<td>start_date</td>
+        <tr>
+          <td>start_date</td>
           <td><a href="/reference/enums#formats">Date</a></td>
           <td>Read/Write</td>
           <td>
 <strong>Required</strong>. Period’s start date.</td>
         </tr>
-<tr>
-<td>end_date</td>
+        <tr>
+          <td>end_date</td>
           <td><a href="/reference/enums#formats">Date</a></td>
           <td>Read/Write</td>
           <td>
 <strong>Required</strong>. Period’s end date.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <h3 id="list-periods">List periods</h3>
@@ -231,20 +244,22 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#57965bdef7derates_read-rates_write" role="tab" data-toggle="pill">
+        <a href="#91667bcfd24arates_read-rates_write" role="tab" data-toggle="pill">
           rates_read / rates_write
         </a>
       </li>
     
-  </ul><h4 id="response">Response</h4>
+  </ul>
+
+<h4 id="response">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="57965bdef7derates_read-rates_write">
+      <div class="tab-pane active" id="91667bcfd24arates_read-rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"periods.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{periods.rates_table}"</span><span class="p">,</span>
@@ -253,10 +268,10 @@
   <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">232</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-12-26"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-09-01"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2018-01-04"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-09-10"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s2">"season"</span><span class="o">:</span> <span class="mi">12</span>
@@ -277,20 +292,22 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#7f3e75a13e05rates_read-rates_write" role="tab" data-toggle="pill">
+        <a href="#0381d15c9565rates_read-rates_write" role="tab" data-toggle="pill">
           rates_read / rates_write
         </a>
       </li>
     
-  </ul><h4 id="response-1">Response</h4>
+  </ul>
+
+<h4 id="response-1">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="7f3e75a13e05rates_read-rates_write">
+      <div class="tab-pane active" id="0381d15c9565rates_read-rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"periods.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{periods.rates_table}"</span><span class="p">,</span>
@@ -299,10 +316,10 @@
   <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">232</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-12-26"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-09-01"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2018-01-04"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-09-10"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s2">"season"</span><span class="o">:</span> <span class="mi">12</span>
@@ -323,20 +340,22 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#7089f6fadc78rates_write" role="tab" data-toggle="pill">
+        <a href="#555c8382be1brates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-12-26"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-09-01"</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2018-01-04"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-09-10"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -346,7 +365,7 @@
   
   
     
-      <div class="tab-pane active" id="7089f6fadc78rates_write">
+      <div class="tab-pane active" id="555c8382be1brates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"periods.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{periods.rates_table}"</span><span class="p">,</span>
@@ -355,10 +374,10 @@
   <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">232</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-12-26"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-09-01"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2018-01-04"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-09-10"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s2">"season"</span><span class="o">:</span> <span class="mi">12</span>
@@ -379,20 +398,22 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#b38433c67c82rates_write" role="tab" data-toggle="pill">
+        <a href="#dd991a5afe9frates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-12-26"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-09-01"</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2018-01-04"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-09-10"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -402,7 +423,7 @@
   
   
     
-      <div class="tab-pane active" id="b38433c67c82rates_write">
+      <div class="tab-pane active" id="dd991a5afe9frates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"periods.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{periods.rates_table}"</span><span class="p">,</span>
@@ -411,10 +432,10 @@
   <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">232</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2017-12-26"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-09-01"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2018-01-04"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2018-09-10"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s2">"season"</span><span class="o">:</span> <span class="mi">12</span>
@@ -435,6 +456,7 @@
 
 <pre><code>DELETE /periods/:period_id
 </code></pre>
+
         </div>
       </div>
     </div>

@@ -96,6 +96,8 @@
           <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
@@ -124,9 +126,11 @@
           <h2 id="testing-authorization">Testing Authorization</h2>
 
 <ol id="markdown-toc">
-<li><a href="#preface">Preface</a></li>
+  <li><a href="#preface">Preface</a></li>
   <li><a href="#console">Console</a></li>
-</ol><h3 id="preface">Preface</h3>
+</ol>
+
+<h3 id="preface">Preface</h3>
 
 <p>For testing BookingSync API v3 you
 <a href="/reference/requirements/">must register an application on the BookinSync website</a>.</p>
@@ -156,9 +160,11 @@ make sure to use the following <strong>redirect_uri</strong>:</p>
 <p>Use the schema below with by replacing:</p>
 
 <ul>
-<li>
+  <li>
 <code>CLIENT ID</code>: Application’s Client ID</li>
-</ul><pre><code>https://www.bookingsync.com/oauth/authorize?client_id=CLIENT_ID&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=code
+</ul>
+
+<pre><code>https://www.bookingsync.com/oauth/authorize?client_id=CLIENT_ID&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob&amp;response_type=code
 </code></pre>
 
 <p><strong>Note</strong>: To request authorization for <a href="/reference/authorization#scopes">custom scopes</a>,
@@ -175,14 +181,16 @@ Application for a BookingSync user.</p>
 <p>Use the schema below with by replacing:</p>
 
 <ul>
-<li>
+  <li>
 <code>CLIENT ID</code>: Application’s Client ID</li>
   <li>
 <code>CLIENT_SECRET</code>: Application’s Client Secret <em>(do not share, same as password)</em>
 </li>
   <li>
 <code>RETURNED_CODE</code>: Displayed Authorization Code</li>
-</ul><pre><code>https://www.bookingsync.com/oauth/token?client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;code=RETURNED_CODE&amp;grant_type=authorization_code&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob
+</ul>
+
+<pre><code>https://www.bookingsync.com/oauth/token?client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;code=RETURNED_CODE&amp;grant_type=authorization_code&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob
 </code></pre>
 
 <p>Make a POST request to this URL to get your Authentication Token.</p>
@@ -228,14 +236,16 @@ You can find your token lifetime (in seconds), by checking the <code>expires_in<
 <p>Use the schema below with by replacing:</p>
 
 <ul>
-<li>
+  <li>
 <code>CLIENT ID</code>: Application’s Client ID</li>
   <li>
 <code>CLIENT_SECRET</code>: Application’s Client Secret <em>(do not share, same as password)</em>
 </li>
   <li>
 <code>REFRESH_TOKEN</code>: Refresh Token given when you got your Access Token in the previous step</li>
-</ul><pre><code>https://www.bookingsync.com/oauth/token?client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;refresh_token=REFRESH_TOKEN&amp;grant_type=refresh_token&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob
+</ul>
+
+<pre><code>https://www.bookingsync.com/oauth/token?client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;refresh_token=REFRESH_TOKEN&amp;grant_type=refresh_token&amp;redirect_uri=urn:ietf:wg:oauth:2.0:oob
 </code></pre>
 
 <p>Make a POST request to this URL to get your refreshed Authentication Token.</p>
@@ -254,6 +264,8 @@ You can find your token lifetime (in seconds), by checking the <code>expires_in<
   <span class="nt">"refresh_token"</span><span class="p">:</span> <span class="s2">"fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210"</span><span class="p">,</span>
   <span class="nt">"scope"</span><span class="p">:</span> <span class="s2">"public"</span>
 <span class="p">}</span></code></pre>
+
+
         </div>
       </div>
     </div>

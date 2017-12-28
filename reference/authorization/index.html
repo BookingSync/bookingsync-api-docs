@@ -96,6 +96,8 @@
           <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
@@ -124,7 +126,7 @@
           <h2 id="authorization">Authorization</h2>
 
 <ol id="markdown-toc">
-<li><a href="#oauth">OAuth</a></li>
+  <li><a href="#oauth">OAuth</a></li>
   <li><a href="#testing-the-authorization">Testing the Authorization</a></li>
   <li><a href="#embedded-application">Embedded Application</a></li>
   <li><a href="#scopes">Scopes</a></li>
@@ -133,7 +135,9 @@
   <li><a href="#client-credentials-flow">Client Credentials Flow</a></li>
   <li><a href="#authorization-errors">Authorization Errors</a></li>
   <li><a href="#pre-select-the-account-to-authorize">Pre-Select The Account To Authorize</a></li>
-</ol><h3 id="oauth">OAuth</h3>
+</ol>
+
+<h3 id="oauth">OAuth</h3>
 
 <p>The BookingSync API uses <a href="http://oauth.net/2/">OAuth 2.0</a> for authorization.</p>
 
@@ -165,9 +169,9 @@ able to show the authorization prompt within an iframe.</p>
 <p>Instead, embedded applications must use javascript to redirect to the auth
 screen:</p>
 
-<pre><code class="language-html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span><span class="nt">&gt;</span>
+<pre><code class="language-html"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">'text/javascript'</span><span class="p">&gt;</span>
   <span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="s1">'https://www.bookingsync.com/oauth/authorize'</span><span class="p">;</span>
-<span class="nt">&lt;/script&gt;</span></code></pre>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span></code></pre>
 
 <h3 id="scopes">Scopes</h3>
 
@@ -180,7 +184,7 @@ access to public information.</p>
 <p>Additionally, the following scopes are available:</p>
 
 <ul>
-<li><code>applications_read</code></li>
+  <li><code>applications_read</code></li>
   <li><code>bookings_write_owned</code></li>
   <li><code>bookings_read</code></li>
   <li><code>bookings_write</code></li>
@@ -197,7 +201,9 @@ access to public information.</p>
   <li><code>rentals_read</code></li>
   <li><code>rentals_write</code></li>
   <li><code>reviews_write</code></li>
-</ul><p><strong>Note</strong>: To request authorization for multiple scopes, use a space separated list.
+</ul>
+
+<p><strong>Note</strong>: To request authorization for multiple scopes, use a space separated list.
 In URLs it would look like <code>&amp;scope=bookings_read%20rentals_read</code> (<code>%20</code> represent a space within URLs)</p>
 
 <h3 id="authorization-code-flow">Authorization Code Flow</h3>
@@ -212,15 +218,16 @@ This is to be used for <strong>Server-Side applications</strong>, with special c
   <p>This authorization process is required only once. When your first set of tokens received, you will no longer need this process unless an account intentionnally uninstalled your application. The <a href="#refreshing-access-token">refresh token process</a> will then be used.</p>
 
   <hr>
-<p>For more details, visit our <a href="/reference/testing_authorization/">Testing BookingSync Authorization</a> page for a step by step guide.</p>
+
+  <p>For more details, visit our <a href="/reference/testing_authorization/">Testing BookingSync Authorization</a> page for a step by step guide.</p>
 </div>
 
 <p>The explicit OAuth 2.0 flow consists of the following steps:</p>
 
 <ol>
-<li>Send a user to <code>https://www.bookingsync.com/oauth/authorize</code>, with these query string parameters
+  <li>Send a user to <code>https://www.bookingsync.com/oauth/authorize</code>, with these query string parameters
     <ul>
-<li>client_id</li>
+      <li>client_id</li>
       <li>redirect_uri - must be under an apps registered domain</li>
       <li>response_type - must be <code>code</code>
 </li>
@@ -229,25 +236,27 @@ This is to be used for <strong>Server-Side applications</strong>, with special c
       <li>account_id - optional, used to force which account will be requested to authorize <a href="#pre-select-the-account-to-authorize">more details</a>
 </li>
     </ul>
-</li>
+  </li>
   <li>The user approves your app</li>
   <li>The user is redirected to <strong>redirect_uri</strong>, with these query string parameters
     <ul>
-<li>code</li>
+      <li>code</li>
       <li>state - optional, only returned if provided in the first step</li>
     </ul>
-</li>
+  </li>
   <li>POST (application/x-www-form-urlencoded) the following parameters to <code>https://www.bookingsync.com/oauth/token</code>
     <ul>
-<li>client_id</li>
+      <li>client_id</li>
       <li>client_secret</li>
       <li>code - from the previous step</li>
       <li>grant_type - must use <code>authorization_code</code>
 </li>
       <li>redirect_uri - must be the same as the provided in the first step</li>
     </ul>
-</li>
-</ol><p>This request is responded to with either an error (HTTP status code 401) or the following sample request:</p>
+  </li>
+</ol>
+
+<p>This request is responded to with either an error (HTTP status code 401) or the following sample request:</p>
 
 <pre><code>{
   "access_token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
@@ -274,21 +283,24 @@ You can find your token lifetime (in seconds), by checking the <code>expires_in<
   <p>As the refresh token gives you lifelong access to an account, it must be stored securely.</p>
 
   <hr>
-<p>For more details, visit our <a href="/reference/testing_authorization/">Testing BookingSync Authorization</a> page for a step by step guide.</p>
+
+  <p>For more details, visit our <a href="/reference/testing_authorization/">Testing BookingSync Authorization</a> page for a step by step guide.</p>
 </div>
 
 <ol>
-<li>POST (application/x-www-form-urlencoded) the following parameters to <code>https://www.bookingsync.com/oauth/token</code>
+  <li>POST (application/x-www-form-urlencoded) the following parameters to <code>https://www.bookingsync.com/oauth/token</code>
     <ul>
-<li>client_id</li>
+      <li>client_id</li>
       <li>client_secret</li>
       <li>refresh_token - from above section, step 4 response</li>
       <li>grant_type - must use <code>refresh_token</code>
 </li>
       <li>redirect_uri - must be the same as the provided in the first step</li>
     </ul>
-</li>
-</ol><p>This request responds with either an error (HTTP status code 401) or the following sample request:</p>
+  </li>
+</ol>
+
+<p>This request responds with either an error (HTTP status code 401) or the following sample request:</p>
 
 <pre><code>{
   "access_token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
@@ -309,9 +321,9 @@ This is recommended for <strong>Client-Side applications</strong>.</p>
 <p>The implicit OAuth 2.0 flow consists of the following steps:</p>
 
 <ol>
-<li>Open a new window at <code>https://www.bookingsync.com/oauth/authorize</code>, with these query string parameters
+  <li>Open a new window at <code>https://www.bookingsync.com/oauth/authorize</code>, with these query string parameters
     <ul>
-<li>client_id</li>
+      <li>client_id</li>
       <li>redirect_uri - must be under an apps registered domain</li>
       <li>response_type - must be <code>token</code>
 </li>
@@ -320,16 +332,18 @@ This is recommended for <strong>Client-Side applications</strong>.</p>
       <li>account_id - optional, used to force which account will be requested to authorize <a href="#pre-select-the-account-to-authorize">more details</a>
 </li>
     </ul>
-</li>
+  </li>
   <li>The user approves your app</li>
   <li>The user is redirected to <strong>redirect_uri</strong>, with these parameters in the hash
     <ul>
-<li>access_token</li>
+      <li>access_token</li>
       <li>token_type</li>
       <li>expires_in</li>
     </ul>
-</li>
-</ol><p>Once you have authenticated a user once, regardless of flow, subsequent re-authorizations will occur without requiring user action. Naturally, should a user revoke an applications permissions then further action will be required to re-authorize.</p>
+  </li>
+</ol>
+
+<p>Once you have authenticated a user once, regardless of flow, subsequent re-authorizations will occur without requiring user action. Naturally, should a user revoke an applications permissions then further action will be required to re-authorize.</p>
 
 <h3 id="client-credentials-flow">Client Credentials Flow</h3>
 
@@ -347,21 +361,23 @@ at once.</p>
 <div class="callout callout-info">
   <h4>Limitations</h4>
 
-  <p>Requests using a token obtained using the Client Credentials flow are limited to using only the <code>public</code> scope, but can access resources of all BookingSync Accounts that authorized the given Application.</p>
+  <p>Requests using a token obtained using the Client Credentials flow are limited to using only the <code>public</code> scope, but can access most of the resources of BookingSync Accounts that authorized the given Application as long as the access is not limited by other OAuth scopes.</p>
 </div>
 
 <p>The client credentials OAuth 2.0 flow consists of this single step:</p>
 
 <ol>
-<li>POST (application/x-www-form-urlencoded) the following parameters to <code>https://www.bookingsync.com/oauth/token</code>
+  <li>POST (application/x-www-form-urlencoded) the following parameters to <code>https://www.bookingsync.com/oauth/token</code>
     <ul>
-<li>client_id</li>
+      <li>client_id</li>
       <li>client_secret</li>
       <li>grant_type - must use <code>client_credentials</code>
 </li>
     </ul>
-</li>
-</ol><p>This request responds with either an error (HTTP status code 401) or the following sample request:</p>
+  </li>
+</ol>
+
+<p>This request responds with either an error (HTTP status code 401) or the following sample request:</p>
 
 <pre><code>{
   "access_token": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
@@ -381,6 +397,7 @@ action, the API will return a 403 response.</p>
 <h3 id="pre-select-the-account-to-authorize">Pre-Select The Account To Authorize</h3>
 
 <p>When calling your Admin URL, we pass the parameter <code>_bookingsync_account_id</code>. The value of this parameter can be used as the <code>account_id</code> parameter during the authorization process. Doing so will pre-select the account to authorize when using the <a href="#authorization-code-flow">Authorization Code Flow</a> or <a href="#implicit-flow">Implicit Flow</a>.</p>
+
         </div>
       </div>
     </div>

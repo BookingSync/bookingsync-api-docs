@@ -96,6 +96,8 @@
           <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
@@ -124,409 +126,420 @@
           <h2 id="clients">Clients</h2>
 
 <ol id="markdown-toc">
-<li><a href="#list-clients">List clients</a></li>
+  <li><a href="#list-clients">List clients</a></li>
   <li><a href="#get-a-single-client">Get a single client</a></li>
   <li><a href="#create-a-new-client">Create a new client</a></li>
   <li><a href="#update-a-client">Update a client</a></li>
-</ol><h4 id="parameters">Parameters</h4>
+</ol>
+
+<h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#clients_read" role="tab" data-toggle="pill">clients_read</a></li>
   <li><a href="#clients_write" role="tab" data-toggle="pill">clients_write</a></li>
-</ul><div class="tab-content">
+</ul>
+<div class="tab-content">
   <div class="tab-pane active" id="clients_read">
     <table class="table table-bordered">
-<thead><tr>
-<th>Group</th>
+      <thead>
+        <tr>
+          <th>Group</th>
           <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody><tr>
-<td> </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> </td>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Client’s id.</td>
-        </tr></tbody>
-<tbody>
-<tr>
-<td> </td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td> </td>
           <td>company</td>
           <td>String</td>
           <td>Read</td>
           <td>Client’s company name.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>fullname</td>
           <td>String</td>
           <td>Read</td>
           <td>Client’s fullname.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>firstname</td>
           <td>String</td>
           <td>Read</td>
           <td>Client’s first name.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>lastname</td>
           <td>String</td>
           <td>Read</td>
           <td>Client’s last name.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>notes</td>
           <td>Text</td>
           <td>Read</td>
           <td>Client’s notes.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>passport</td>
           <td>String</td>
           <td>Read</td>
           <td>Client’s passport id.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>preferred_locale</td>
           <td>String</td>
           <td>Read</td>
           <td>Client’s contact language preference.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>vat_number</td>
           <td>String</td>
           <td>Read</td>
           <td>Client’s company vat number.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td> </td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td> </td>
           <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Client’s create time.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Client’s update time.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>addresses</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>addresses</td>
           <td> </td>
           <td>Array</td>
           <td>Read</td>
           <td>Array of client’s addresses.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>address1</td>
           <td>String</td>
           <td>Read</td>
           <td>Client’s first address.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>address2</td>
           <td>String</td>
           <td>Read</td>
           <td>Client’s second address.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>city</td>
           <td>String</td>
           <td>Read</td>
           <td>Client’s city.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>country_code</td>
           <td>String</td>
           <td>Read</td>
           <td>Client’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>label</td>
           <td>String</td>
           <td>Read</td>
           <td>Address label.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>state</td>
           <td>String</td>
           <td>Read</td>
           <td>Client’s state.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>zip</td>
           <td>String</td>
           <td>Read</td>
           <td>Client’s zip.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>emails</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>emails</td>
           <td> </td>
           <td>Array</td>
           <td>Read</td>
           <td>Array of client’s emails.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>email</td>
           <td>String</td>
           <td>Read</td>
           <td>Client’s email.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>label</td>
           <td>String</td>
           <td>Read</td>
           <td>Email label.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>phones</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>phones</td>
           <td> </td>
           <td>Array</td>
           <td>Read</td>
           <td>Array of client’s phone numbers.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>label</td>
           <td>String</td>
           <td>Read</td>
           <td>Phone label.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>number</td>
           <td>String</td>
           <td>Read</td>
           <td>Client’s number.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
   <div class="tab-pane" id="clients_write">
     <table class="table table-bordered">
-<thead><tr>
-<th>Group</th>
+      <thead>
+        <tr>
+          <th>Group</th>
           <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody><tr>
-<td> </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> </td>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Client’s id.</td>
-        </tr></tbody>
-<tbody>
-<tr>
-<td> </td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td> </td>
           <td>company</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s company name.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>fullname</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>
 <strong>Required</strong>. Client’s fullname. (150 characters max)</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>firstname</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s first name. (150 characters max)</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>lastname</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s last name. (150 characters max)</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>notes</td>
           <td>Text</td>
           <td>Read/Write</td>
           <td>Client’s notes. (5000 characters max)</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>passport</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s passport id. (50 characters max)</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>preferred_locale</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s contact language preference.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>vat_number</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s company vat number.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td> </td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td> </td>
           <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Client’s create time.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Client’s update time.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>addresses</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>addresses</td>
           <td> </td>
           <td>Array</td>
           <td>Read/Write</td>
           <td>Array of client’s addresses.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>address1</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s first address.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>address2</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s second address.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>city</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s city.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>country_code</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>label</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Address label.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>state</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s state.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>zip</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s zip.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>emails</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>emails</td>
           <td> </td>
           <td>Array</td>
           <td>Read/Write</td>
           <td>Array of client’s emails.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>email</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s email.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>label</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Email label.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>phones</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>phones</td>
           <td> </td>
           <td>Array</td>
           <td>Read/Write</td>
           <td>Array of client’s phone numbers.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>label</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Phone label.</td>
         </tr>
-<tr>
-<td> </td>
+        <tr>
+          <td> </td>
           <td>number</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s number.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <div class="callout callout-info">
@@ -542,20 +555,22 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#74dc12cb38c8clients_read-clients_write" role="tab" data-toggle="pill">
+        <a href="#c0491ee9fffcclients_read-clients_write" role="tab" data-toggle="pill">
           clients_read / clients_write
         </a>
       </li>
     
-  </ul><h4 id="response">Response</h4>
+  </ul>
+
+<h4 id="response">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="74dc12cb38c8clients_read-clients_write">
+      <div class="tab-pane active" id="c0491ee9fffcclients_read-clients_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -625,20 +640,22 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#9c1bbbd57681clients_read-clients_write" role="tab" data-toggle="pill">
+        <a href="#5d87118694b2clients_read-clients_write" role="tab" data-toggle="pill">
           clients_read / clients_write
         </a>
       </li>
     
-  </ul><h4 id="response-1">Response</h4>
+  </ul>
+
+<h4 id="response-1">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="9c1bbbd57681clients_read-clients_write">
+      <div class="tab-pane active" id="5d87118694b2clients_read-clients_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -708,15 +725,17 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#dbcfcba2943aclients_write" role="tab" data-toggle="pill">
+        <a href="#90de8ddec3e9clients_write" role="tab" data-toggle="pill">
           clients_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -770,7 +789,7 @@
   
   
     
-      <div class="tab-pane active" id="dbcfcba2943aclients_write">
+      <div class="tab-pane active" id="90de8ddec3e9clients_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -846,15 +865,17 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#67a5da396ff4clients_write" role="tab" data-toggle="pill">
+        <a href="#c1cc734ac4dfclients_write" role="tab" data-toggle="pill">
           clients_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -908,7 +929,7 @@
   
   
     
-      <div class="tab-pane active" id="67a5da396ff4clients_write">
+      <div class="tab-pane active" id="c1cc734ac4dfclients_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -969,6 +990,8 @@
     
   
 </div>
+
+
         </div>
       </div>
     </div>

@@ -56,8 +56,12 @@
           <a class="list-group-item" href="/guides/create-a-booking-with-a-source">Create a Booking with a Source</a>
           <a class="list-group-item" href="/guides/read-all-authorized-accounts-at-once">Read all authorized accounts at once</a>
           <a class="list-group-item" href="/guides/getting-started-with-php">Getting Started with PHP</a>
+          <a class="list-group-item" href="/guides/api-best-practices">API best practices</a>
           <a class="list-group-item" href="/guides/secure-payments-by-bookingsync">Secure Payments By BookingSync</a>
           <a class="list-group-item" href="/guides/webhook-subscriptions">Webhook subscriptions</a>
+          <a class="list-group-item" href="/guides/oauth-scopes">OAuth scopes</a>
+          <a class="list-group-item" href="/guides/bookigsync-universe-api-early-beta">BookingSync Universe API [EARLY BETA]</a>
+          <a class="list-group-item" href="/guides/updated-since-flow">updated_since flow</a>
         </div>
       </div>
     </div>
@@ -67,12 +71,14 @@
           <h2 id="create-a-booking-with-a-source">Create a Booking with a Source</h2>
 
 <ol id="markdown-toc">
-<li><a href="#preface">Preface</a></li>
+  <li><a href="#preface">Preface</a></li>
   <li><a href="#requirements">Requirements</a></li>
   <li><a href="#find-a-source-by-name">Find a source by name</a></li>
   <li><a href="#create-source-if-not-existing">Create source if not existing</a></li>
   <li><a href="#create-a-booking-with-a-source-1">Create a booking with a source</a></li>
-</ol><h3 id="preface">Preface</h3>
+</ol>
+
+<h3 id="preface">Preface</h3>
 
 <p>For a Property Manager and Owner, having the source of a booking, where it originate from, is a really valuable information. To do so, <a href="/">BookingSync API</a> allows you to link a <a href="/reference/endpoints/bookings">booking</a> with a given <a href="/reference/endpoints/sources">source</a>.</p>
 
@@ -103,8 +109,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Airbnb"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:57Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:57Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:27Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:27Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -148,8 +154,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Booking.com"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:57Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:57Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:27Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:27Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -181,8 +187,8 @@
       <span class="s2">"final_price"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
       <span class="s2">"initial_price"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
       <span class="s2">"source_id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2017-12-26T13:10:57Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-02T13:10:57Z"</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2018-01-04T14:27:27Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-11T14:27:27Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -200,6 +206,7 @@
     <span class="s2">"bookings.client"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/clients/{bookings.client}"</span><span class="p">,</span>
     <span class="s2">"bookings.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}"</span><span class="p">,</span>
     <span class="s2">"bookings.rental_agreement"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_agreements/{bookings.rental_agreement}"</span><span class="p">,</span>
+    <span class="s2">"bookings.rentals_tags"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals_tags/{bookings.rentals_tags}"</span><span class="p">,</span>
     <span class="s2">"bookings.source"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/sources/{bookings.source}"</span>
   <span class="p">},</span>
   <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -220,10 +227,10 @@
       <span class="s2">"review_requests_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
       <span class="s2">"unavailable"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:57Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:57Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2017-12-26T13:10:57Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-02T13:10:57Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:27Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:27Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2018-01-04T14:27:27Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-11T14:27:27Z"</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"tentative_expires_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
@@ -240,6 +247,9 @@
         <span class="s2">"client"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
         <span class="s2">"source"</span><span class="o">:</span> <span class="mi">2</span>
       <span class="p">}</span>
     <span class="p">}</span>
@@ -249,6 +259,8 @@
 <span class="p">}</span></code></pre>
   
 </div>
+
+
         </div>
       </div>
     </div>

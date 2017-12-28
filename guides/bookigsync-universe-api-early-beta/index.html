@@ -68,72 +68,58 @@
     <div class="col-md-9 col-md-pull-3">
       <div class="panel panel-default">
         <div class="panel-body guide-body">
-          <h2 id="read-all-authorized-accounts-at-once">Read All Authorized Accounts At Once</h2>
+          <h2 id="bookingsync-universe-api-early-beta">BookingSync Universe API [Early Beta]</h2>
 
 <ol id="markdown-toc">
   <li><a href="#preface">Preface</a></li>
-  <li><a href="#requirements">Requirements</a></li>
-  <li><a href="#getting-a-client-credential-token">Getting A Client Credential Token</a></li>
-  <li><a href="#read-all-published-rentals">Read All Published Rentals</a></li>
+  <li><a href="#how-it-works">How It Works</a></li>
+  <li><a href="#examples-website-app---rentals-custom-schema">Examples: Website App - Rentals’ Custom Schema</a></li>
 </ol>
 
 <h3 id="preface">Preface</h3>
 
-<p>In some cases it can be very convenient to read information from all the accounts in a single query. This is possible for reading public information (behind the <code>public</code> scope) by using the <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a>.</p>
+<p>Since BookingSync ecosystem is much more than the central application which exposes API v3 (count in all the applications available in the store!), it would be certainly useful to have the API access to those apps as well. That’s why we developed <strong>BookingSync Universe API</strong>  which allows you to use one token to access multiple applications, as long as it has the proper OAuth scopes!</p>
 
-<h3 id="requirements">Requirements</h3>
+<h3 id="how-it-works">How It Works</h3>
 
-<p>As only public information are returned when using the <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a> you will need to make sure that your test accounts have <code>published</code> rentals as only those ones are returned.</p>
+<p>Each application defines certain scopes that allow you to access API, in the same way as it works for API v3. For your application to take advantage of BookingSync Universe API, you merely need to request those scopes during the authorization process, and that’s it! You can use the same OAuth scope to access both API v3 and APIs of the applications!</p>
 
-<p>To test the examples of this guide, you will need to authorize at least 2 test accounts.</p>
+<h3 id="examples-website-app---rentals-custom-schema">Examples: Website App - Rentals’ Custom Schema</h3>
 
-<h3 id="getting-a-client-credential-token">Getting A Client Credential Token</h3>
+<p>Currently, Website app offers limited support for BookingSync Universe API in its <code>/rentals</code> and <code>/websites</code> endpoints.  The API is fully <a href="http://jsonapi.org">JSONAPI 1.0 compliant</a>, which is a different format than the one for API v3.</p>
 
-<p>Use the schema below with by replacing:</p>
+<p>The API is accessible under the following domain: https://website.apps.bookingsync.com/api/admin/v1 and defines two sets of scopes:</p>
+
+<ol>
+  <li>Read/Write scopes for websites:</li>
+</ol>
 
 <ul>
-  <li>
-<code>CLIENT ID</code>: Application’s Client ID</li>
-  <li>
-<code>CLIENT_SECRET</code>: Application’s Client Secret <em>(do not share, same as password)</em>
-</li>
+  <li>__website__websites_read</li>
+  <li>__website__websites_write</li>
 </ul>
 
-<pre><code>https://www.bookingsync.com/oauth/token?client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;grant_type=client_credentials
+<ol>
+  <li>Read/Write scopes for rentals:</li>
+</ol>
+
+<ul>
+  <li>__website__rentals_read</li>
+  <li>__website__rentals_write</li>
+</ul>
+
+<p>To manage the custom schema for rentals and websites, you will need first to define the schema on website level, under <code>rentals-custom-data-schema</code> attribute. It is supposed to be a simple JSON field (key-value store), with attribute names as keys and types as values. You can use the following types: <code>string</code>, <code>integer</code> and <code>big_decimal</code>.</p>
+
+<p>Here is an example request how to define custom schema for rentals:</p>
+
+<pre><code>curl --header 'Authorization: Bearer YOUR_TOKEN' --header 'Content-Type: application/vnd.api+json' --request PUT --data '{ "data": { "id": 1, "type": "websites", "attributes": { "rentals-custom-data-schema": { "pool_size": "string" } } } }' https://website.apps.bookingsync.com/api/admin/v1/websites/1
 </code></pre>
 
-<p>Make a POST request to this URL to get your Authentication Token.</p>
+<p>Now that the schema is defined, you can persist those attribute on rentals, which can be done under <code>custom-attributes</code> JSON field, which is a key-value store as well with attribute names as keys and their values as the values of the hash.</p>
 
-<p>Example with CURL:</p>
+<p>Here is an example request how to define store custom attributes on rentals:</p>
 
-<pre><code>curl -X POST -d "client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;grant_type=client_credentials" "https://www.bookingsync.com/oauth/token"
-</code></pre>
-
-<p>Sample response:</p>
-
-<pre><code class="language-json"><span class="p">{</span>
-  <span class="nt">"access_token"</span><span class="p">:</span> <span class="s2">"0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"</span><span class="p">,</span>
-  <span class="nt">"token_type"</span><span class="p">:</span> <span class="s2">"bearer"</span><span class="p">,</span>
-  <span class="nt">"expires_in"</span><span class="p">:</span> <span class="mi">7200</span><span class="p">,</span>
-  <span class="nt">"scope"</span><span class="p">:</span> <span class="s2">"public"</span><span class="p">,</span>
-  <span class="nt">"created_at"</span><span class="p">:</span> <span class="mi">1466671142</span>
-<span class="p">}</span></code></pre>
-
-<p><strong>Note</strong>: Tokens (<code>access_token</code>) are only <strong>valid for 2 hours</strong>, you then need to request a new one.</p>
-
-<h3 id="read-all-published-rentals">Read All Published Rentals</h3>
-
-<p>Now that you have your <code>access_token</code>, you can read all the published rentals with the following request.</p>
-
-<div class="callout callout-info">
-  <h4>Pagination</h4>
-
-  <p>Do not forget that all <a href="/reference/#pagination">responses are paginated</a>.</p>
-</div>
-
-<p>Example with CURL:</p>
-
-<pre><code>curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' https://www.bookingsync.com/api/v3/rentals
+<pre><code>curl --header 'Authorization: Bearer YOUR_TOKEN' --header 'Content-Type: application/vnd.api+json' --request PUT --data '{ "data": { "id": 1, "type": "rentals", "attributes": { "custom-attributes": { "pool_size": "15x5" } } } }' https://website.apps.bookingsync.com/api/admin/v1/rentals/1
 </code></pre>
 
         </div>

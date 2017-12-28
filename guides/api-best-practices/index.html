@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BookingSync API documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/stylesheets/application.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/highlight.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="/assets/javascripts/application.js"></script>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.8.0">
+  </head>
+  <body class="flex-col">
+    <div class="page-wrapper flex-1 flex-col">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle sidebar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <img alt="BookingSync" src="/images/bookingsync.svg">
+              <span>Developers</span>
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active">
+                <a href="/guides/">Guides</a>
+              </li>
+              <li class="">
+                <a href="/reference/">API Reference</a>
+              </li>
+              <li><a href="https://www.bookingsync.com" target="_blank">BookingSync.com</a></li>
+              <li><a href="https://github.com/BookingSync/bookingsync-api-docs" target="_blank"><i class="fa fa-github fa-fw fa-2x"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+<div class="container content">
+  <div class="row">
+    <div class="col-md-3 col-md-push-9">
+      <div class="panel panel-default">
+        <div class="list-group">
+          <a class="list-group-item" href="/guides/">Introduction</a>
+          <a class="list-group-item" href="/guides/create-a-booking-with-a-source">Create a Booking with a Source</a>
+          <a class="list-group-item" href="/guides/read-all-authorized-accounts-at-once">Read all authorized accounts at once</a>
+          <a class="list-group-item" href="/guides/getting-started-with-php">Getting Started with PHP</a>
+          <a class="list-group-item" href="/guides/api-best-practices">API best practices</a>
+          <a class="list-group-item" href="/guides/secure-payments-by-bookingsync">Secure Payments By BookingSync</a>
+          <a class="list-group-item" href="/guides/webhook-subscriptions">Webhook subscriptions</a>
+          <a class="list-group-item" href="/guides/oauth-scopes">OAuth scopes</a>
+          <a class="list-group-item" href="/guides/bookigsync-universe-api-early-beta">BookingSync Universe API [EARLY BETA]</a>
+          <a class="list-group-item" href="/guides/updated-since-flow">updated_since flow</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 col-md-pull-3">
+      <div class="panel panel-default">
+        <div class="panel-body guide-body">
+          <h2 id="api-best-practices">API best practices</h2>
+
+
+<p>Here’s the set of practices we recommend to follow to make integration with BookingSync API possibly smooth:</p>
+
+<ul>
+  <li>
+    <p>Synchronize data often enough and persist the objects on your side if you perform a lot of queries. Using local projections of the data will be much better performance-wise and will provide better UX than synchronous calls to BookingSync API every time some piece of information is needed. It’s especially important if you are close to the rate limit (1000 requests/hour).</p>
+  </li>
+  <li>
+    <p>Fetch all the objects only during the initial synchronization. For all the consecutive synchronizations, use <code>updated_since</code> param to fetch only the records that have changed since the provided date and delete the ones that returned in <code>deleted_ids</code> array.</p>
+  </li>
+  <li>
+    <p>Instead of querying API every few minutes, take advantage of webhooks and get notified when some record is created, updated or deleted. However, the order of the webhooks’ delivery is not guaranteed (especially important when there are multiple updates in a short period), so we suggest to schedule a synchronization when the webhook is delivered, instead of trusting that the data from the last webhook represents the most recent projection of a given record. Nevertheless, if you use strategies similar to Event Sourcing and eventual consistency is good enough for your application, you can apply the events based on their timestamps and have the objects eventually consistent.</p>
+  </li>
+  <li>
+    <p>Webhook delivery might fail for various reasons (e.g., network problems, application servers being not reachable), it is still recommended to periodically synchronize data, even if you subscribe to all possible events your application needs.</p>
+  </li>
+  <li>
+    <p>When creating a new booking, always provide <code>channel_price</code> attribute with a price equal to the amount that was confirmed by the traveller so that it is clear what was the price when the booking got created in your application. Most likely it will be initially equal to <code>final_price</code>. However, it might diverge later as some new fees can be added to the booking (e.g. from BookingSync UI), which will modify <code>final_price</code>. Without <code>channel_price</code>, there would not be a reference to the original price.</p>
+  </li>
+  <li>
+    <p>When creating a new booking, always provide exact check-in and check-out hours in the time part of <code>start_at</code> and <code>end_at</code> attributes (so that those won’t be dates by date times, like <code>2017-10-01T16:00:00</code>). Both check-in and check-out hours are available in <a href="http://developers.bookingsync.com/reference/endpoints/rentals/">/rentals enpoint</a> as <code>checkin_time</code> and <code>checkout_time</code> attributes.</p>
+  </li>
+  <li>
+    <p>Using Ruby on Rails? Don’t reinvent the wheel! Take advantage of multiple gems we use for our internal applications:</p>
+  </li>
+</ul>
+
+<ol>
+  <li>
+<a href="https://github.com/BookingSync/bookingsync-api"><strong>bookingsync-api</strong></a> - API client</li>
+  <li>
+<a href="https://github.com/BookingSync/synced"><strong>synced</strong></a> - extension to ActiveRecord to keep records in sync.</li>
+  <li>
+<a href="https://github.com/BookingSync/bookingsync-engine"><strong>bookingsync-engine</strong></a> - a basic building block for the applications using BookingSync API, which handles OAuth-related processes.</li>
+  <li>
+<a href="https://github.com/BookingSync/bookingsync_application"><strong>bookingsync_application</strong></a> - an engine on top of <code>bookingsync-engine</code>, which helps kickstart any applications using BookingSync API</li>
+  <li>
+<a href="https://github.com/BookingSync/bookingsync_portal"><strong>bookingsync_portal</strong></a> - an engine on top of <code>bookingsync_application</code>, which helps kickstart channel-like applications using BookingSync API.</li>
+</ol>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </body>
+</html>
+

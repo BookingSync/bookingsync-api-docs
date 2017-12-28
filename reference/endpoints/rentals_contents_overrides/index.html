@@ -96,6 +96,8 @@
           <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item active" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
@@ -126,131 +128,140 @@
 By using those objects clients applications can use full available length at each channel.</p>
 
 <ol id="markdown-toc">
-<li><a href="#list-rentals-contents-overrides">List rentals contents overrides</a></li>
+  <li><a href="#list-rentals-contents-overrides">List rentals contents overrides</a></li>
   <li><a href="#get-a-single-rentals-content-override">Get a single rentals content override</a></li>
   <li><a href="#create-a-new-rentals-content-override">Create a new rentals content override</a></li>
   <li><a href="#update-a-rentals-content-override">Update a rentals content override</a></li>
   <li><a href="#destroy-a-rentals-content-override">Destroy a rentals content override</a></li>
-</ol><h4 id="parameters">Parameters</h4>
+</ol>
+
+<h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#rentals_read" role="tab" data-toggle="pill">rentals_read</a></li>
   <li><a href="#rentals_write" role="tab" data-toggle="pill">rentals_write</a></li>
-</ul><div class="tab-content">
+</ul>
+<div class="tab-content">
   <div class="tab-pane active" id="rentals_read">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody><tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Rentals Contents Override’s id.</td>
-        </tr></tbody>
-<tbody>
-<tr>
-<td>description</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>description</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read</td>
           <td>Description override for related application, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
         </tr>
-<tr>
-<td>headline</td>
+        <tr>
+          <td>headline</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read</td>
           <td>Headline override for related application, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
         </tr>
-<tr>
-<td>summary</td>
+        <tr>
+          <td>summary</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read</td>
           <td>Summary override for related application, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>created_at</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rentals Contents Override’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rentals Contents Override’s update time.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
   <div class="tab-pane" id="rentals_write">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody>
-<tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Rentals Contents Override’s id.</td>
         </tr>
-<tr>
-<td>application_id</td>
+        <tr>
+          <td>application_id</td>
           <td>Integer</td>
           <td>Write</td>
           <td>Application id related to the Rentals Contents Override.</td>
         </tr>
-<tr>
-<td>rental_id</td>
+        <tr>
+          <td>rental_id</td>
           <td>Integer</td>
           <td>Write</td>
           <td>Rental id related to the Rentals Contents Override.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>description</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>description</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read/Write</td>
           <td>Description override for related application, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
         </tr>
-<tr>
-<td>headline</td>
+        <tr>
+          <td>headline</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read/Write</td>
           <td>Headline override for related application, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
         </tr>
-<tr>
-<td>summary</td>
+        <tr>
+          <td>summary</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read/Write</td>
           <td>Summary override for related application, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>created_at</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rentals Contents Override’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rentals Contents Override’s update time.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <h3 id="list-rentals-contents-overrides">List rentals contents overrides</h3>
@@ -261,20 +272,22 @@ By using those objects clients applications can use full available length at eac
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#e1836be1a6e5rentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#29c39de64536rentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
     
-  </ul><h4 id="response">Response</h4>
+  </ul>
+
+<h4 id="response">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="e1836be1a6e5rentals_read-rentals_write">
+      <div class="tab-pane active" id="29c39de64536rentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_contents_overrides.application"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/applications/{rentals_contents_overrides.application}"</span><span class="p">,</span>
@@ -292,8 +305,8 @@ By using those objects clients applications can use full available length at eac
       <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:30Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:30Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"application"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
@@ -316,20 +329,22 @@ By using those objects clients applications can use full available length at eac
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#e3777f065e0frentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#0abf5eef9fd1rentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
     
-  </ul><h4 id="response-1">Response</h4>
+  </ul>
+
+<h4 id="response-1">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="e3777f065e0frentals_read-rentals_write">
+      <div class="tab-pane active" id="0abf5eef9fd1rentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_contents_overrides.application"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/applications/{rentals_contents_overrides.application}"</span><span class="p">,</span>
@@ -347,8 +362,8 @@ By using those objects clients applications can use full available length at eac
       <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:30Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:30Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"application"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
@@ -371,15 +386,17 @@ By using those objects clients applications can use full available length at eac
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#91c75b0c71fcrentals_write" role="tab" data-toggle="pill">
+        <a href="#c53eb714c07frentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rentals_contents_overrides"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -403,7 +420,7 @@ By using those objects clients applications can use full available length at eac
   
   
     
-      <div class="tab-pane active" id="91c75b0c71fcrentals_write">
+      <div class="tab-pane active" id="c53eb714c07frentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_contents_overrides.application"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/applications/{rentals_contents_overrides.application}"</span><span class="p">,</span>
@@ -421,8 +438,8 @@ By using those objects clients applications can use full available length at eac
       <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:30Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:30Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"application"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
@@ -445,15 +462,17 @@ By using those objects clients applications can use full available length at eac
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#667c63194179rentals_write" role="tab" data-toggle="pill">
+        <a href="#ad6ba046be2erentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rentals_contents_overrides"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -475,7 +494,7 @@ By using those objects clients applications can use full available length at eac
   
   
     
-      <div class="tab-pane active" id="667c63194179rentals_write">
+      <div class="tab-pane active" id="ad6ba046be2erentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_contents_overrides.application"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/applications/{rentals_contents_overrides.application}"</span><span class="p">,</span>
@@ -493,8 +512,8 @@ By using those objects clients applications can use full available length at eac
       <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:30Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:30Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"application"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
@@ -517,6 +536,7 @@ By using those objects clients applications can use full available length at eac
 
 <pre><code>DELETE /rentals_contents_overrides/:rentals_content_override_id
 </code></pre>
+
         </div>
       </div>
     </div>

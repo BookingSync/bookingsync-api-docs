@@ -96,6 +96,8 @@
           <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
@@ -124,263 +126,274 @@
           <h2 id="photos">Photos</h2>
 
 <ol id="markdown-toc">
-<li><a href="#list-photos">List photos</a></li>
+  <li><a href="#list-photos">List photos</a></li>
   <li><a href="#get-a-single-photo">Get a single photo</a></li>
   <li><a href="#create-a-new-photo">Create a new photo</a></li>
   <li><a href="#update-a-photo">Update a photo</a></li>
   <li><a href="#destroy-a-photo">Destroy a photo</a></li>
-</ol><h4 id="parameters">Parameters</h4>
+</ol>
+
+<h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
   <li><a href="#rentals_write" role="tab" data-toggle="pill">rentals_write</a></li>
-</ul><div class="tab-content">
+</ul>
+<div class="tab-content">
   <div class="tab-pane active" id="public">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody><tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Photo’s id.</td>
-        </tr></tbody>
-<tbody>
-<tr>
-<td>compact_url</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>compact_url</td>
           <td>String</td>
           <td>Read</td>
           <td>Photo’s compact size (384x256) url.</td>
         </tr>
-<tr>
-<td>description</td>
+        <tr>
+          <td>description</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read</td>
           <td>Photo’s description, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
         </tr>
-<tr>
-<td>giant_url</td>
+        <tr>
+          <td>giant_url</td>
           <td>String</td>
           <td>Read</td>
           <td>Photo’s giant size (2400x1600) url.</td>
         </tr>
-<tr>
-<td>grande_url</td>
+        <tr>
+          <td>grande_url</td>
           <td>String</td>
           <td>Read</td>
           <td>Photo’s grande size (1536x1024) url.</td>
         </tr>
-<tr>
-<td>height</td>
+        <tr>
+          <td>height</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Photo’s height in pixels.</td>
         </tr>
-<tr>
-<td>kind</td>
+        <tr>
+          <td>kind</td>
           <td>String</td>
           <td>Read</td>
           <td>Photo’s kind, list of kinds described in <a href="/reference/enums/#photo-kinds">enum section</a>.</td>
         </tr>
-<tr>
-<td>large_url</td>
+        <tr>
+          <td>large_url</td>
           <td>String</td>
           <td>Read</td>
           <td>Photo’s large size (1200x800) url.</td>
         </tr>
-<tr>
-<td>medium_url</td>
+        <tr>
+          <td>medium_url</td>
           <td>String</td>
           <td>Read</td>
           <td>Photo’s medium size (768x512) url.</td>
         </tr>
-<tr>
-<td>micro_url</td>
+        <tr>
+          <td>micro_url</td>
           <td>String</td>
           <td>Read</td>
           <td>Photo’s micro size (48x32) url.</td>
         </tr>
-<tr>
-<td>position</td>
+        <tr>
+          <td>position</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Photo’s position on the rental list.</td>
         </tr>
-<tr>
-<td>ratio</td>
+        <tr>
+          <td>ratio</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Photo’s width to height ratio.</td>
         </tr>
-<tr>
-<td>small_url</td>
+        <tr>
+          <td>small_url</td>
           <td>String</td>
           <td>Read</td>
           <td>Photo’s small size (192x128) url.</td>
         </tr>
-<tr>
-<td>thumb_url</td>
+        <tr>
+          <td>thumb_url</td>
           <td>String</td>
           <td>Read</td>
           <td>Photo’s thumb size (96x64) url.</td>
         </tr>
-<tr>
-<td>width</td>
+        <tr>
+          <td>width</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Photo’s width in pixels.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>created_at</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Photo’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Photo’s update time.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
   <div class="tab-pane" id="rentals_write">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody><tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Photo’s id.</td>
-        </tr></tbody>
-<tbody>
-<tr>
-<td>compact_url</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>compact_url</td>
           <td>String</td>
           <td>Read</td>
           <td>Photo’s compact size url.</td>
         </tr>
-<tr>
-<td>description</td>
+        <tr>
+          <td>description</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read/Write</td>
           <td>Photo’s description, list of locales described in <a href="/reference/enums#locales">enums section</a>. (80 characters max)</td>
         </tr>
-<tr>
-<td>giant_url</td>
+        <tr>
+          <td>giant_url</td>
           <td>String</td>
           <td>Read</td>
           <td>Photo’s giant size url.</td>
         </tr>
-<tr>
-<td>grande_url</td>
+        <tr>
+          <td>grande_url</td>
           <td>String</td>
           <td>Read</td>
           <td>Photo’s grande size url.</td>
         </tr>
-<tr>
-<td>height</td>
+        <tr>
+          <td>height</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Photo’s height in pixels.</td>
         </tr>
-<tr>
-<td>kind</td>
+        <tr>
+          <td>kind</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Photo’s kind, list of kinds described in <a href="/reference/enums/#photo-kinds">enum section</a>.</td>
         </tr>
-<tr>
-<td>large_url</td>
+        <tr>
+          <td>large_url</td>
           <td>String</td>
           <td>Read</td>
           <td>Photo’s large size url.</td>
         </tr>
-<tr>
-<td>medium_url</td>
+        <tr>
+          <td>medium_url</td>
           <td>String</td>
           <td>Read</td>
           <td>Photo’s medium size url.</td>
         </tr>
-<tr>
-<td>micro_url</td>
+        <tr>
+          <td>micro_url</td>
           <td>String</td>
           <td>Read</td>
           <td>Photo’s micro size url.</td>
         </tr>
-<tr>
-<td>photo</td>
+        <tr>
+          <td>photo</td>
           <td>File</td>
           <td>Write</td>
           <td>
 <strong>Required</strong>. Photo’s image. (<code>remote_photo_url</code> can be used instead)</td>
         </tr>
-<tr>
-<td>position</td>
+        <tr>
+          <td>position</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>Photo’s position on the rental list.</td>
         </tr>
-<tr>
-<td>ratio</td>
+        <tr>
+          <td>ratio</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Photo’s width to height ratio.</td>
         </tr>
-<tr>
-<td>remote_photo_url</td>
+        <tr>
+          <td>remote_photo_url</td>
           <td>String</td>
           <td>Write</td>
           <td>
 <strong>Required</strong>. Photo’s remote url. (<code>photo</code> can be used instead)</td>
         </tr>
-<tr>
-<td>small_url</td>
+        <tr>
+          <td>small_url</td>
           <td>String</td>
           <td>Read</td>
           <td>Photo’s small size url.</td>
         </tr>
-<tr>
-<td>thumb_url</td>
+        <tr>
+          <td>thumb_url</td>
           <td>String</td>
           <td>Read</td>
           <td>Photo’s thumb size url.</td>
         </tr>
-<tr>
-<td>width</td>
+        <tr>
+          <td>width</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Photo’s width in pixels.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>created_at</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Photo’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Photo’s update time.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <h3 id="list-photos">List photos</h3>
@@ -391,20 +404,22 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#93beec76b76dpublic" role="tab" data-toggle="pill">
+        <a href="#43823b6d89fepublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
-  </ul><h4 id="response">Response</h4>
+  </ul>
+
+<h4 id="response">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="93beec76b76dpublic">
+      <div class="tab-pane active" id="43823b6d89fepublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{photos.account}"</span><span class="p">,</span>
@@ -430,8 +445,8 @@
       <span class="s2">"small_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/small_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"width"</span><span class="o">:</span> <span class="mi">3000</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
@@ -452,20 +467,22 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#f49a05a1c7dapublic" role="tab" data-toggle="pill">
+        <a href="#1780bec0906apublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
-  </ul><h4 id="response-1">Response</h4>
+  </ul>
+
+<h4 id="response-1">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="f49a05a1c7dapublic">
+      <div class="tab-pane active" id="1780bec0906apublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{photos.account}"</span><span class="p">,</span>
@@ -491,8 +508,8 @@
       <span class="s2">"small_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/small_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"width"</span><span class="o">:</span> <span class="mi">3000</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
@@ -520,15 +537,17 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#bc68176b49abrentals_write" role="tab" data-toggle="pill">
+        <a href="#e3e14f683507rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -546,7 +565,7 @@
   
   
     
-      <div class="tab-pane active" id="bc68176b49abrentals_write">
+      <div class="tab-pane active" id="e3e14f683507rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{photos.account}"</span><span class="p">,</span>
@@ -572,8 +591,8 @@
       <span class="s2">"small_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/small_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"width"</span><span class="o">:</span> <span class="mi">3000</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
@@ -601,15 +620,17 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#60b8e0cc86f1rentals_write" role="tab" data-toggle="pill">
+        <a href="#8ca64b367d77rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -627,7 +648,7 @@
   
   
     
-      <div class="tab-pane active" id="60b8e0cc86f1rentals_write">
+      <div class="tab-pane active" id="8ca64b367d77rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{photos.account}"</span><span class="p">,</span>
@@ -653,8 +674,8 @@
       <span class="s2">"small_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/small_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"width"</span><span class="o">:</span> <span class="mi">3000</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
@@ -675,6 +696,7 @@
 
 <pre><code>DELETE /photos/:photo_id
 </code></pre>
+
         </div>
       </div>
     </div>

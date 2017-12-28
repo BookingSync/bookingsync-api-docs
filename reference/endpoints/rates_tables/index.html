@@ -96,6 +96,8 @@
           <a class="list-group-item active" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
@@ -124,106 +126,117 @@
           <h2 id="rates-tables">Rates Tables</h2>
 
 <ol id="markdown-toc">
-<li><a href="#list-rates-tables">List rates tables</a></li>
+  <li><a href="#list-rates-tables">List rates tables</a></li>
   <li><a href="#get-a-single-rates-table">Get a single rates table</a></li>
   <li><a href="#create-a-new-rates-table">Create a new rates table</a></li>
   <li><a href="#update-a-rates-table">Update a rates table</a></li>
   <li><a href="#destroy-a-rates-table">Destroy a rates table</a></li>
-</ol><h4 id="parameters">Parameters</h4>
+</ol>
+
+<h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#rates_read" role="tab" data-toggle="pill">rates_read</a></li>
   <li><a href="#rates_write" role="tab" data-toggle="pill">rates_write</a></li>
-</ul><div class="tab-content">
+</ul>
+<div class="tab-content">
   <div class="tab-pane active" id="rates_read">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody><tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Rates Table’s id.</td>
-        </tr></tbody>
-<tbody>
-<tr>
-<td>name</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>name</td>
           <td>String</td>
           <td>Read</td>
           <td>Rates Table’s name.</td>
         </tr>
-<tr>
-<td>shared</td>
+        <tr>
+          <td>shared</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Rates Table’s shared status.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>created_at</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rate’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rate’s update time.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
   <div class="tab-pane" id="rates_write">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody><tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Rates Table’s id.</td>
-        </tr></tbody>
-<tbody>
-<tr>
-<td>name</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>name</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>
 <strong>Required</strong>. Rates Table’s name. (50 characters max)</td>
         </tr>
-<tr>
-<td>shared</td>
+        <tr>
+          <td>shared</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Rates Table’s shared status. (Rates Table is made shared when creating or updating through api)</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>created_at</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rate’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rate’s update time.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <h3 id="list-rates-tables">List rates tables</h3>
@@ -234,20 +247,22 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#10fa88f15fc2rates_read-rates_write" role="tab" data-toggle="pill">
+        <a href="#7d09323a1807rates_read-rates_write" role="tab" data-toggle="pill">
           rates_read / rates_write
         </a>
       </li>
     
-  </ul><h4 id="response">Response</h4>
+  </ul>
+
+<h4 id="response">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="10fa88f15fc2rates_read-rates_write">
+      <div class="tab-pane active" id="7d09323a1807rates_read-rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates_tables.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rates_tables.account}"</span><span class="p">,</span>
@@ -260,8 +275,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span><span class="p">,</span>
       <span class="s2">"shared"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
@@ -293,20 +308,22 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#9ec8ce7e1b5crates_read-rates_write" role="tab" data-toggle="pill">
+        <a href="#fb2028c11192rates_read-rates_write" role="tab" data-toggle="pill">
           rates_read / rates_write
         </a>
       </li>
     
-  </ul><h4 id="response-1">Response</h4>
+  </ul>
+
+<h4 id="response-1">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="9ec8ce7e1b5crates_read-rates_write">
+      <div class="tab-pane active" id="fb2028c11192rates_read-rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates_tables.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rates_tables.account}"</span><span class="p">,</span>
@@ -319,8 +336,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span><span class="p">,</span>
       <span class="s2">"shared"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
@@ -357,15 +374,17 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#417e5752f077rates_write" role="tab" data-toggle="pill">
+        <a href="#1386dddd3823rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rates_tables"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -379,7 +398,7 @@
   
   
     
-      <div class="tab-pane active" id="417e5752f077rates_write">
+      <div class="tab-pane active" id="1386dddd3823rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates_tables.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rates_tables.account}"</span><span class="p">,</span>
@@ -392,8 +411,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span><span class="p">,</span>
       <span class="s2">"shared"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
@@ -425,15 +444,17 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#631fee32577crates_write" role="tab" data-toggle="pill">
+        <a href="#d905258f381crates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rates_tables"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -447,7 +468,7 @@
   
   
     
-      <div class="tab-pane active" id="631fee32577crates_write">
+      <div class="tab-pane active" id="d905258f381crates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates_tables.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rates_tables.account}"</span><span class="p">,</span>
@@ -460,8 +481,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Rates Table 2"</span><span class="p">,</span>
       <span class="s2">"shared"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
@@ -493,6 +514,7 @@
 
 <pre><code>DELETE /rates_tables/:rates_table_id
 </code></pre>
+
         </div>
       </div>
     </div>

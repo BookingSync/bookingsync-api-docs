@@ -56,8 +56,12 @@
           <a class="list-group-item" href="/guides/create-a-booking-with-a-source">Create a Booking with a Source</a>
           <a class="list-group-item" href="/guides/read-all-authorized-accounts-at-once">Read all authorized accounts at once</a>
           <a class="list-group-item" href="/guides/getting-started-with-php">Getting Started with PHP</a>
+          <a class="list-group-item" href="/guides/api-best-practices">API best practices</a>
           <a class="list-group-item" href="/guides/secure-payments-by-bookingsync">Secure Payments By BookingSync</a>
           <a class="list-group-item" href="/guides/webhook-subscriptions">Webhook subscriptions</a>
+          <a class="list-group-item" href="/guides/oauth-scopes">OAuth scopes</a>
+          <a class="list-group-item" href="/guides/bookigsync-universe-api-early-beta">BookingSync Universe API [EARLY BETA]</a>
+          <a class="list-group-item" href="/guides/updated-since-flow">updated_since flow</a>
         </div>
       </div>
     </div>
@@ -67,11 +71,13 @@
           <h2 id="webhook-subscriptions">Webhook subscriptions</h2>
 
 <ol id="markdown-toc">
-<li><a href="#preface">Preface</a></li>
+  <li><a href="#preface">Preface</a></li>
   <li><a href="#requirements">Requirements</a></li>
   <li><a href="#webhooks-getting-started">Webhooks: getting started</a></li>
   <li><a href="#payload-content">Payload content</a></li>
-</ol><h3 id="preface">Preface</h3>
+</ol>
+
+<h3 id="preface">Preface</h3>
 
 <p>Periodically fetching data from API to keep all the objects in sync is not the most efficient solution. Ideally, data synchronization would be triggered by some specific event.</p>
 
@@ -114,7 +120,7 @@
 <p>Here’s the list of supported events:</p>
 
 <ul>
-<li>account_destroyed</li>
+  <li>account_destroyed</li>
   <li>account_updated</li>
   <li>amenity_created</li>
   <li>amenity_destroyed</li>
@@ -141,7 +147,9 @@
   <li>payment_created</li>
   <li>payment_destroyed</li>
   <li>payment_updated</li>
-</ul><h3 id="payload-content">Payload content</h3>
+</ul>
+
+<h3 id="payload-content">Payload content</h3>
 
 <p>The request body of the webhook request will contain the serialized object in the same format as API v3 serializes objects and deserializes from.</p>
 
@@ -203,6 +211,7 @@
     <span class="nt">"vat_number"</span><span class="p">:</span> <span class="s2">""</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
+
         </div>
       </div>
     </div>

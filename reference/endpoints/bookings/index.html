@@ -96,6 +96,8 @@
           <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
@@ -124,766 +126,809 @@
           <h2 id="bookings">Bookings</h2>
 
 <ol id="markdown-toc">
-<li><a href="#list-bookings">List bookings</a></li>
+  <li><a href="#list-bookings">List bookings</a></li>
   <li><a href="#search-bookings">Search bookings</a></li>
   <li><a href="#get-a-single-booking">Get a single booking</a></li>
   <li><a href="#create-a-new-booking">Create a new booking</a></li>
   <li><a href="#update-a-booking">Update a booking</a></li>
   <li><a href="#cancel-a-booking">Cancel a booking</a></li>
-</ol><h4 id="parameters">Parameters</h4>
+</ol>
+
+<h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
   <li><a href="#bookings_write_owned" role="tab" data-toggle="pill">bookings_write_owned</a></li>
   <li><a href="#bookings_read" role="tab" data-toggle="pill">bookings_read</a></li>
   <li><a href="#bookings_write" role="tab" data-toggle="pill">bookings_write</a></li>
-</ul><div class="tab-content">
+</ul>
+<div class="tab-content">
   <div class="tab-pane active" id="public">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody><tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Booking’s id.</td>
-        </tr></tbody>
-<tbody><tr>
-<td>reference</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>reference</td>
           <td>String</td>
           <td>Read</td>
           <td>Booking’s reference code.</td>
-        </tr></tbody>
-<tbody><tr>
-<td>status</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>status</td>
           <td>String</td>
           <td>Read</td>
           <td>Booking’s status.</td>
-        </tr></tbody>
-<tbody>
-<tr>
-<td>updated_at</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Booking’s update time.</td>
         </tr>
-<tr>
-<td>start_at</td>
+        <tr>
+          <td>start_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Booking’s start time.</td>
         </tr>
-<tr>
-<td>end_at</td>
+        <tr>
+          <td>end_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Booking’s end time.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
   <div class="tab-pane" id="bookings_write_owned">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody>
-<tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Booking’s id.</td>
         </tr>
-<tr>
-<td>client_id</td>
+        <tr>
+          <td>client_id</td>
           <td>Integer</td>
           <td>Write</td>
           <td>Client id related to the Booking.</td>
         </tr>
-<tr>
-<td>source_id</td>
+        <tr>
+          <td>source_id</td>
           <td>Integer</td>
           <td>Write</td>
           <td>Source id related to the Booking.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>adults</td>
+        <tr>
+          <td>bookings_tag_ids</td>
+          <td>Array</td>
+          <td>Write</td>
+          <td>Array of bookings_tags ids associated with Booking.</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>adults</td>
           <td>Integer</td>
           <td>Write</td>
           <td>Booking’s number of adults.</td>
         </tr>
-<tr>
-<td>booked</td>
+        <tr>
+          <td>booked</td>
           <td>Boolean</td>
           <td>Write</td>
           <td>Booking’s booked status, false by default. When set to true, marks a regular booking.</td>
         </tr>
-<tr>
-<td>channel_price</td>
+        <tr>
+          <td>channel_price</td>
           <td>Integer</td>
           <td>Write</td>
           <td>Price accepted by the traveler on the channel site, excluding traveler’s fees (eg: Airbnb).</td>
         </tr>
-<tr>
-<td>charge_damage_deposit_on_arrival</td>
+        <tr>
+          <td>charge_damage_deposit_on_arrival</td>
           <td>Boolean</td>
           <td>Write</td>
           <td>Defines if charge damage deposite will be charged on arrival.</td>
         </tr>
-<tr>
-<td>children</td>
+        <tr>
+          <td>children</td>
           <td>Integer</td>
           <td>Write</td>
           <td>Booking’s number of children.</td>
         </tr>
-<tr>
-<td>comission</td>
+        <tr>
+          <td>comission</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Write</td>
           <td>Booking’s comission fee.</td>
         </tr>
-<tr>
-<td>currency</td>
+        <tr>
+          <td>currency</td>
           <td>String</td>
           <td>Write</td>
           <td>Booking’s currency code, list of codes described in <a href="/reference/enums#currencies">enums section</a>.</td>
         </tr>
-<tr>
-<td>damage_deposit</td>
+        <tr>
+          <td>damage_deposit</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Write</td>
           <td>Booking’s damage deposit.</td>
         </tr>
-<tr>
-<td>discount</td>
+        <tr>
+          <td>discount</td>
           <td>String</td>
           <td>Write</td>
           <td>Booking’s discount. (in percents e.g. 10%)</td>
         </tr>
-<tr>
-<td>door_key_code</td>
+        <tr>
+          <td>door_key_code</td>
           <td>String</td>
           <td>Write</td>
           <td>Booking’s rental door key code.</td>
         </tr>
-<tr>
-<td>downpayment</td>
+        <tr>
+          <td>downpayment</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Write</td>
           <td>Booking’s downpayment.</td>
         </tr>
-<tr>
-<td>expected_checkin_time</td>
+        <tr>
+          <td>expected_checkin_time</td>
           <td>String</td>
           <td>Write</td>
           <td>Expected guest’s checkin time.</td>
         </tr>
-<tr>
-<td>expected_checkout_time</td>
+        <tr>
+          <td>expected_checkout_time</td>
           <td>String</td>
           <td>Write</td>
           <td>Expected guest’s checkout time.</td>
         </tr>
-<tr>
-<td>final_payback_to_owner</td>
+        <tr>
+          <td>final_payback_to_owner</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Write</td>
           <td>Final payback to rental owner.</td>
         </tr>
-<tr>
-<td>final_price</td>
+        <tr>
+          <td>final_price</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Write</td>
           <td>Booking’s final price. (after discount)</td>
         </tr>
-<tr>
-<td>initial_price</td>
+        <tr>
+          <td>initial_price</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Write</td>
           <td>Booking’s initial price.</td>
         </tr>
-<tr>
-<td>locked</td>
+        <tr>
+          <td>locked</td>
           <td>String</td>
           <td>Write</td>
           <td>Booking’s locked status.</td>
         </tr>
-<tr>
-<td>notes</td>
+        <tr>
+          <td>notes</td>
           <td>Text</td>
           <td>Write</td>
           <td>Booking’s notes. (1000 characters max)</td>
         </tr>
-<tr>
-<td>reference</td>
+        <tr>
+          <td>reference</td>
           <td>String</td>
           <td>Read</td>
           <td>Booking’s reference code.</td>
         </tr>
-<tr>
-<td>rental_payback_to_owner</td>
+        <tr>
+          <td>rental_payback_to_owner</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Write</td>
           <td>Amount of money to pay back to owner (only rental, excluding fees).</td>
         </tr>
-<tr>
-<td>status</td>
+        <tr>
+          <td>status</td>
           <td>String</td>
           <td>Read</td>
           <td>Booking’s status.</td>
         </tr>
-<tr>
-<td>unavailable</td>
+        <tr>
+          <td>unavailable</td>
           <td>Boolean</td>
           <td>Write</td>
           <td>Booking’s unavailable status, false by default. When set to true, marks the given period as unavailable. Commonly used for closed or maintenance periods.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>updated_at</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Booking’s update time.</td>
         </tr>
-<tr>
-<td>start_at</td>
+        <tr>
+          <td>start_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read/Write</td>
           <td>
 <strong>Required</strong>. Booking’s start time.</td>
         </tr>
-<tr>
-<td>end_at</td>
+        <tr>
+          <td>end_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read/Write</td>
           <td>
 <strong>Required</strong>. Booking’s end time.</td>
         </tr>
-<tr>
-<td>canceled_at</td>
+        <tr>
+          <td>canceled_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Write</td>
           <td>Booking’s cancel time.</td>
         </tr>
-<tr>
-<td>tentative_expires_at</td>
+        <tr>
+          <td>tentative_expires_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Write</td>
           <td>Booking’s tentative expiry time, null by default. When set, it will mark the period as “on hold” until the given date. Once this date is passed, the period will automatically become available again.</td>
         </tr>
-</tbody>
-</table>
-</div>
+        <tr>
+          <td>booked_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Write</td>
+          <td>Exact timestamp when a booking was booked</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <div class="tab-pane" id="bookings_read">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody><tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Booking’s id.</td>
-        </tr></tbody>
-<tbody>
-<tr>
-<td>adults</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>adults</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Booking’s number of adults.</td>
         </tr>
-<tr>
-<td>booked</td>
+        <tr>
+          <td>booked</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Booking’s booked status, false by default. When set to true, marks a regular booking.</td>
         </tr>
-<tr>
-<td>bookings_payments_count</td>
+        <tr>
+          <td>bookings_payments_count</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Booking’s number of payments.</td>
         </tr>
-<tr>
-<td>channel_price</td>
+        <tr>
+          <td>channel_price</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Price accepted by the traveler on the channel site, excluding traveler’s fees (eg: Airbnb).</td>
         </tr>
-<tr>
-<td>charge_damage_deposit_on_arrival</td>
+        <tr>
+          <td>charge_damage_deposit_on_arrival</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Defines if charge damage deposite will be charged on arrival.</td>
         </tr>
-<tr>
-<td>children</td>
+        <tr>
+          <td>children</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Booking’s number of children.</td>
         </tr>
-<tr>
-<td>comission</td>
+        <tr>
+          <td>comission</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Booking’s comission fee.</td>
         </tr>
-<tr>
-<td>currency</td>
+        <tr>
+          <td>currency</td>
           <td>String</td>
           <td>Read</td>
           <td>Booking’s currency code, list of codes described in <a href="/reference/enums#currencies">enums section</a>.</td>
         </tr>
-<tr>
-<td>damage_deposit</td>
+        <tr>
+          <td>damage_deposit</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Booking’s damage deposit.</td>
         </tr>
-<tr>
-<td>discount</td>
+        <tr>
+          <td>discount</td>
           <td>String</td>
           <td>Read</td>
           <td>Booking’s discount. (in percents e.g. 10%)</td>
         </tr>
-<tr>
-<td>door_key_code</td>
+        <tr>
+          <td>door_key_code</td>
           <td>String</td>
           <td>Read</td>
           <td>Booking’s rental door key code.</td>
         </tr>
-<tr>
-<td>downpayment</td>
+        <tr>
+          <td>downpayment</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Booking’s downpayment.</td>
         </tr>
-<tr>
-<td>expected_checkin_time</td>
+        <tr>
+          <td>expected_checkin_time</td>
           <td>String</td>
           <td>Read</td>
           <td>Expected guest’s checkin time.</td>
         </tr>
-<tr>
-<td>expected_checkout_time</td>
+        <tr>
+          <td>expected_checkout_time</td>
           <td>String</td>
           <td>Read</td>
           <td>Expected guest’s checkout time.</td>
         </tr>
-<tr>
-<td>final_payback_to_owner</td>
+        <tr>
+          <td>final_payback_to_owner</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Final payback to rental owner.</td>
         </tr>
-<tr>
-<td>final_price</td>
+        <tr>
+          <td>final_price</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Booking’s final price. (after discount)</td>
         </tr>
-<tr>
-<td>final_rental_price</td>
+        <tr>
+          <td>final_rental_price</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>initial_rental_price reduced by discount (taxes and fees not included).</td>
         </tr>
-<tr>
-<td>initial_price</td>
+        <tr>
+          <td>initial_price</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Booking’s initial price.</td>
         </tr>
-<tr>
-<td>initial_rental_price</td>
+        <tr>
+          <td>initial_rental_price</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>An alias for initial_price</td>
         </tr>
-<tr>
-<td>locked</td>
+        <tr>
+          <td>locked</td>
           <td>String</td>
           <td>Read</td>
           <td>Booking’s locked status.</td>
         </tr>
-<tr>
-<td>notes</td>
+        <tr>
+          <td>notes</td>
           <td>Text</td>
           <td>Read</td>
           <td>Booking’s notes.</td>
         </tr>
-<tr>
-<td>owned_by_app</td>
+        <tr>
+          <td>owned_by_app</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Defines whether booking was created by current app.</td>
         </tr>
-<tr>
-<td>paid_amount</td>
+        <tr>
+          <td>paid_amount</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Booking’s amount that have already been paid.</td>
         </tr>
-<tr>
-<td>payment_url</td>
+        <tr>
+          <td>payment_url</td>
           <td>String</td>
           <td>Read</td>
           <td>Url for booking’s payment.</td>
         </tr>
-<tr>
-<td>reference</td>
+        <tr>
+          <td>reference</td>
           <td>String</td>
           <td>Read</td>
           <td>Booking’s reference code.</td>
         </tr>
-<tr>
-<td>rental_payback_to_owner</td>
+        <tr>
+          <td>rental_payback_to_owner</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Amount of money to pay back to owner (only rental, excluding fees).</td>
         </tr>
-<tr>
-<td>review_requests_count</td>
+        <tr>
+          <td>review_requests_count</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Booking’s number of review requests.</td>
         </tr>
-<tr>
-<td>status</td>
+        <tr>
+          <td>status</td>
           <td>String</td>
           <td>Read</td>
           <td>Booking’s status.</td>
         </tr>
-<tr>
-<td>unavailable</td>
+        <tr>
+          <td>unavailable</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Booking’s unavailable status, false by default. When set to true, marks the given period as unavailable. Commonly used for closed or maintenance periods.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>balance_due_at</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>balance_due_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Booking’s payment deadline.</td>
         </tr>
-<tr>
-<td>created_at</td>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Booking’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Booking’s update time.</td>
         </tr>
-<tr>
-<td>start_at</td>
+        <tr>
+          <td>start_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Booking’s start time.</td>
         </tr>
-<tr>
-<td>end_at</td>
+        <tr>
+          <td>end_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Booking’s end time.</td>
         </tr>
-<tr>
-<td>canceled_at</td>
+        <tr>
+          <td>canceled_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Booking’s cancel time.</td>
         </tr>
-<tr>
-<td>tentative_expires_at</td>
+        <tr>
+          <td>tentative_expires_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Booking’s tentative expiry time, null by default. When set, it will mark the period as “on hold” until the given date. Once this date is passed, the period will automatically become available again.</td>
         </tr>
-<tr>
-<td>contract_updated_at</td>
+        <tr>
+          <td>contract_updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Booking’s contract update time.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
   <div class="tab-pane" id="bookings_write">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody>
-<tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Booking’s id.</td>
         </tr>
-<tr>
-<td>client_id</td>
+        <tr>
+          <td>client_id</td>
           <td>Integer</td>
           <td>Write</td>
           <td>Client id related to the Booking.</td>
         </tr>
-<tr>
-<td>source_id</td>
+        <tr>
+          <td>source_id</td>
           <td>Integer</td>
           <td>Write</td>
           <td>Source id related to the Booking.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>adults</td>
+        <tr>
+          <td>bookings_tag_ids</td>
+          <td>Array</td>
+          <td>Write</td>
+          <td>Array of bookings_tags ids associated with Booking.</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>adults</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>Booking’s number of adults.</td>
         </tr>
-<tr>
-<td>booked</td>
+        <tr>
+          <td>booked</td>
           <td>Boolean</td>
           <td>Read/Write</td>
           <td>Booking’s booked status, false by default. When set to true, marks a regular booking.</td>
         </tr>
-<tr>
-<td>bookings_payments_count</td>
+        <tr>
+          <td>bookings_payments_count</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Booking’s number of payments.</td>
         </tr>
-<tr>
-<td>channel_price</td>
+        <tr>
+          <td>channel_price</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>Price accepted by the traveler on the channel site, excluding traveler’s fees (eg: Airbnb).</td>
         </tr>
-<tr>
-<td>charge_damage_deposit_on_arrival</td>
+        <tr>
+          <td>charge_damage_deposit_on_arrival</td>
           <td>Boolean</td>
           <td>Read/Write</td>
           <td>Defines if charge damage deposite will be charged on arrival.</td>
         </tr>
-<tr>
-<td>children</td>
+        <tr>
+          <td>children</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>Booking’s number of children.</td>
         </tr>
-<tr>
-<td>comission</td>
+        <tr>
+          <td>comission</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read/Write</td>
           <td>Booking’s comission fee.</td>
         </tr>
-<tr>
-<td>currency</td>
+        <tr>
+          <td>currency</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Booking’s currency code, list of codes described in <a href="/reference/enums#currencies">enums section</a>.</td>
         </tr>
-<tr>
-<td>damage_deposit</td>
+        <tr>
+          <td>damage_deposit</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read/Write</td>
           <td>Booking’s damage deposit.</td>
         </tr>
-<tr>
-<td>discount</td>
+        <tr>
+          <td>discount</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Booking’s discount. (in percents e.g. 10%)</td>
         </tr>
-<tr>
-<td>door_key_code</td>
+        <tr>
+          <td>door_key_code</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Booking’s rental door key code.</td>
         </tr>
-<tr>
-<td>downpayment</td>
+        <tr>
+          <td>downpayment</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read/Write</td>
           <td>Booking’s downpayment.</td>
         </tr>
-<tr>
-<td>expected_checkin_time</td>
+        <tr>
+          <td>expected_checkin_time</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Expected guest’s checkin time.</td>
         </tr>
-<tr>
-<td>expected_checkout_time</td>
+        <tr>
+          <td>expected_checkout_time</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Expected guest’s checkout time.</td>
         </tr>
-<tr>
-<td>final_payback_to_owner</td>
+        <tr>
+          <td>final_payback_to_owner</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read/Write</td>
           <td>Final payback to rental owner.</td>
         </tr>
-<tr>
-<td>final_price</td>
+        <tr>
+          <td>final_price</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read/Write</td>
           <td>Booking’s final price. (after discount)</td>
         </tr>
-<tr>
-<td>final_rental_price</td>
+        <tr>
+          <td>final_rental_price</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>initial_rental_price reduced by discount (taxes and fees not included).</td>
         </tr>
-<tr>
-<td>initial_price</td>
+        <tr>
+          <td>initial_price</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read/Write</td>
           <td>Booking’s initial price.</td>
         </tr>
-<tr>
-<td>initial_rental_price</td>
+        <tr>
+          <td>initial_rental_price</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>An alias for initial_price.</td>
         </tr>
-<tr>
-<td>locked</td>
+        <tr>
+          <td>locked</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Booking’s locked status.</td>
         </tr>
-<tr>
-<td>notes</td>
+        <tr>
+          <td>notes</td>
           <td>Text</td>
           <td>Read/Write</td>
           <td>Booking’s notes. (1000 characters max)</td>
         </tr>
-<tr>
-<td>owned_by_app</td>
+        <tr>
+          <td>owned_by_app</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Defines whether booking was created by current app.</td>
         </tr>
-<tr>
-<td>paid_amount</td>
+        <tr>
+          <td>paid_amount</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Booking’s amount that have already been paid.</td>
         </tr>
-<tr>
-<td>payment_url</td>
+        <tr>
+          <td>payment_url</td>
           <td>String</td>
           <td>Read</td>
           <td>Url for booking’s payment.</td>
         </tr>
-<tr>
-<td>reference</td>
+        <tr>
+          <td>reference</td>
           <td>String</td>
           <td>Read</td>
           <td>Booking’s reference code.</td>
         </tr>
-<tr>
-<td>rental_payback_to_owner</td>
+        <tr>
+          <td>rental_payback_to_owner</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read/Write</td>
           <td>Amount of money to pay back to owner (only rental, excluding fees).</td>
         </tr>
-<tr>
-<td>review_requests_count</td>
+        <tr>
+          <td>review_requests_count</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Booking’s number of review requests.</td>
         </tr>
-<tr>
-<td>status</td>
+        <tr>
+          <td>status</td>
           <td>String</td>
           <td>Read</td>
           <td>Booking’s status.</td>
         </tr>
-<tr>
-<td>unavailable</td>
+        <tr>
+          <td>unavailable</td>
           <td>Boolean</td>
           <td>Read/Write</td>
           <td>Booking’s unavailable status, false by default. When set to true, marks the given period as unavailable. Commonly used for closed or maintenance periods.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>balance_due_at</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>balance_due_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Booking’s payment deadline.</td>
         </tr>
-<tr>
-<td>created_at</td>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Booking’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Booking’s update time.</td>
         </tr>
-<tr>
-<td>start_at</td>
+        <tr>
+          <td>start_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read/Write</td>
           <td>
 <strong>Required</strong>. Booking’s start time.</td>
         </tr>
-<tr>
-<td>end_at</td>
+        <tr>
+          <td>end_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read/Write</td>
           <td>
 <strong>Required</strong>. Booking’s end time.</td>
         </tr>
-<tr>
-<td>canceled_at</td>
+        <tr>
+          <td>canceled_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read/Write</td>
           <td>Booking’s cancel time.</td>
         </tr>
-<tr>
-<td>tentative_expires_at</td>
+        <tr>
+          <td>tentative_expires_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read/Write</td>
           <td>Booking’s tentative expiry time, null by default. When set, it will mark the period as “on hold” until the given date. Once this date is passed, the period will automatically become available again.</td>
         </tr>
-<tr>
-<td>contract_updated_at</td>
+        <tr>
+          <td>contract_updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Booking’s contract update time.</td>
         </tr>
-</tbody>
-</table>
-</div>
+        <tr>
+          <td>booked_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Write</td>
+          <td>Exact timestamp when a booking was booked</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <h3 id="list-bookings">List bookings</h3>
@@ -892,29 +937,33 @@
 certain range.</p>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Scope</th>
+  <thead>
+    <tr>
+      <th>Scope</th>
       <th>Read Permissions</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td><code>:public</code></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>:public</code></td>
       <td>Display only future, not canceled bookings</td>
     </tr>
-<tr>
-<td><code>:bookings_write_owned</code></td>
+    <tr>
+      <td><code>:bookings_write_owned</code></td>
       <td>Display only future, not canceled bookings</td>
     </tr>
-<tr>
-<td><code>:bookings_read</code></td>
+    <tr>
+      <td><code>:bookings_read</code></td>
       <td>Display all bookings</td>
     </tr>
-<tr>
-<td><code>:bookings_write</code></td>
+    <tr>
+      <td><code>:bookings_write</code></td>
       <td>Display all bookings</td>
     </tr>
-</tbody>
-</table><p>Returns a list of all bookings for current account(s).</p>
+  </tbody>
+</table>
+
+<p>Returns a list of all bookings for current account(s).</p>
 
 <div class="callout callout-info">
   <h4>Returns only future and non-canceled bookings by default</h4>
@@ -925,46 +974,52 @@ certain range.</p>
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#b99ab2808f06public-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#d1e997afa148public-bookings_write_owned" role="tab" data-toggle="pill">
           public / bookings_write_owned
         </a>
       </li>
     
       <li>
-        <a href="#8bc9801a5c19bookings_read-bookings_write" role="tab" data-toggle="pill">
+        <a href="#db8035134a72bookings_read-bookings_write" role="tab" data-toggle="pill">
           bookings_read / bookings_write
         </a>
       </li>
     
-  </ul><h4 id="response">Response</h4>
+  </ul>
+
+<h4 id="response">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="b99ab2808f06public-bookings_write_owned">
+      <div class="tab-pane active" id="d1e997afa148public-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
     <span class="s2">"bookings.bookings_tags"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings_tags/{bookings.bookings_tags}"</span><span class="p">,</span>
-    <span class="s2">"bookings.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}"</span>
+    <span class="s2">"bookings.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}"</span><span class="p">,</span>
+    <span class="s2">"bookings.rentals_tags"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals_tags/{bookings.rentals_tags}"</span>
   <span class="p">},</span>
   <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">203</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2017-12-26T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-02T13:10:58Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2018-01-04T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-11T14:27:28Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"bookings_tags"</span><span class="o">:</span> <span class="p">[</span>
           <span class="mi">1</span><span class="p">,</span>
           <span class="mi">2</span>
         <span class="p">],</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">16</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">]</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -973,7 +1028,7 @@ certain range.</p>
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="8bc9801a5c19bookings_read-bookings_write">
+      <div class="tab-pane " id="db8035134a72bookings_read-bookings_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
@@ -987,6 +1042,7 @@ certain range.</p>
     <span class="s2">"bookings.payments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payments/{bookings.payments}"</span><span class="p">,</span>
     <span class="s2">"bookings.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}"</span><span class="p">,</span>
     <span class="s2">"bookings.rental_agreement"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_agreements/{bookings.rental_agreement}"</span><span class="p">,</span>
+    <span class="s2">"bookings.rentals_tags"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals_tags/{bookings.rentals_tags}"</span><span class="p">,</span>
     <span class="s2">"bookings.source"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/sources/{bookings.source}"</span>
   <span class="p">},</span>
   <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -1020,13 +1076,13 @@ certain range.</p>
       <span class="s2">"review_requests_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
       <span class="s2">"unavailable"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2017-12-26T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-02T13:10:58Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2018-01-04T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-11T14:27:28Z"</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"balance_due_at"</span><span class="o">:</span> <span class="s2">"BALANCE_DUE_AT"</span><span class="p">,</span>
-      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2017-12-19T13:10:58Z"</span><span class="p">,</span>
+      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2017-12-28T14:27:28Z"</span><span class="p">,</span>
       <span class="s2">"tentative_expires_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -1053,6 +1109,9 @@ certain range.</p>
         <span class="p">],</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
         <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
         <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span>
       <span class="p">}</span>
     <span class="p">}</span>
@@ -1077,63 +1136,67 @@ certain range.</p>
 <h4 id="search-parameters">Search Parameters</h4>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+  <thead>
+    <tr>
+      <th>Name</th>
       <th>Type</th>
       <th>Default</th>
       <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>from</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>from</td>
       <td><a href="/reference/enums#formats">Time</a></td>
       <td>now</td>
       <td>Bookings ending after given time. Default is now.</td>
     </tr>
-<tr>
-<td>until</td>
+    <tr>
+      <td>until</td>
       <td><a href="/reference/enums#formats">Time</a></td>
       <td> </td>
       <td>Bookings starting before given time.</td>
     </tr>
-<tr>
-<td>months</td>
+    <tr>
+      <td>months</td>
       <td>Integer</td>
       <td> </td>
       <td>Bookings starting before <code>:from</code> + <code>:months</code>.</td>
     </tr>
-<tr>
-<td>status</td>
+    <tr>
+      <td>status</td>
       <td>String</td>
       <td> </td>
       <td>List of comma separated statuses. Possible values: booked,unavailable,tentative.</td>
     </tr>
-<tr>
-<td>include_canceled</td>
+    <tr>
+      <td>include_canceled</td>
       <td>Boolean</td>
       <td>false</td>
       <td>Show also canceled bookings (requires <code>:bookings_read</code> or <code>:bookings_write</code> scope).</td>
     </tr>
-<tr>
-<td>rental_id</td>
+    <tr>
+      <td>rental_id</td>
       <td>String</td>
       <td> </td>
       <td>List of comma separated IDs. Returns only bookings for this rental(s)</td>
     </tr>
-<tr>
-<td>client_id</td>
+    <tr>
+      <td>client_id</td>
       <td>String</td>
       <td> </td>
       <td>List of comma separated IDs. Returns only bookings for this client(s)</td>
     </tr>
-<tr>
-<td>updated_since</td>
+    <tr>
+      <td>updated_since</td>
       <td><a href="/reference/enums#formats">Time</a></td>
       <td> </td>
       <td>Bookings updated after given time. Also includes ids of bookings canceled after given time.</td>
     </tr>
-</tbody>
-</table><h3 id="get-a-single-booking">Get a single booking</h3>
+  </tbody>
+</table>
+
+<h3 id="get-a-single-booking">Get a single booking</h3>
 
 <p>Returns a single booking identified by ID</p>
 
@@ -1141,46 +1204,52 @@ certain range.</p>
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#c57f129759e7public-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#72c8484298fapublic-bookings_write_owned" role="tab" data-toggle="pill">
           public / bookings_write_owned
         </a>
       </li>
     
       <li>
-        <a href="#3a63e99a5e5cbookings_read-bookings_write" role="tab" data-toggle="pill">
+        <a href="#435f62c5a940bookings_read-bookings_write" role="tab" data-toggle="pill">
           bookings_read / bookings_write
         </a>
       </li>
     
-  </ul><h4 id="response-1">Response</h4>
+  </ul>
+
+<h4 id="response-1">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="c57f129759e7public-bookings_write_owned">
+      <div class="tab-pane active" id="72c8484298fapublic-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
     <span class="s2">"bookings.bookings_tags"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings_tags/{bookings.bookings_tags}"</span><span class="p">,</span>
-    <span class="s2">"bookings.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}"</span>
+    <span class="s2">"bookings.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}"</span><span class="p">,</span>
+    <span class="s2">"bookings.rentals_tags"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals_tags/{bookings.rentals_tags}"</span>
   <span class="p">},</span>
   <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">203</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2017-12-26T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-02T13:10:58Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2018-01-04T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-11T14:27:28Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"bookings_tags"</span><span class="o">:</span> <span class="p">[</span>
           <span class="mi">1</span><span class="p">,</span>
           <span class="mi">2</span>
         <span class="p">],</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">16</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">]</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -1189,7 +1258,7 @@ certain range.</p>
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="3a63e99a5e5cbookings_read-bookings_write">
+      <div class="tab-pane " id="435f62c5a940bookings_read-bookings_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
@@ -1203,6 +1272,7 @@ certain range.</p>
     <span class="s2">"bookings.payments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payments/{bookings.payments}"</span><span class="p">,</span>
     <span class="s2">"bookings.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}"</span><span class="p">,</span>
     <span class="s2">"bookings.rental_agreement"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_agreements/{bookings.rental_agreement}"</span><span class="p">,</span>
+    <span class="s2">"bookings.rentals_tags"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals_tags/{bookings.rentals_tags}"</span><span class="p">,</span>
     <span class="s2">"bookings.source"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/sources/{bookings.source}"</span>
   <span class="p">},</span>
   <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -1236,13 +1306,13 @@ certain range.</p>
       <span class="s2">"review_requests_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
       <span class="s2">"unavailable"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2017-12-26T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-02T13:10:58Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2018-01-04T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-11T14:27:28Z"</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"balance_due_at"</span><span class="o">:</span> <span class="s2">"BALANCE_DUE_AT"</span><span class="p">,</span>
-      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2017-12-19T13:10:58Z"</span><span class="p">,</span>
+      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2017-12-28T14:27:28Z"</span><span class="p">,</span>
       <span class="s2">"tentative_expires_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -1269,6 +1339,9 @@ certain range.</p>
         <span class="p">],</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
         <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
         <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span>
       <span class="p">}</span>
     <span class="p">}</span>
@@ -1294,21 +1367,23 @@ certain range.</p>
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#dd7a337d5e71bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#50264361b225bookings_write_owned" role="tab" data-toggle="pill">
           bookings_write_owned
         </a>
       </li>
     
       <li>
-        <a href="#bdd33b3454cdbookings_write" role="tab" data-toggle="pill">
+        <a href="#f60362c9a9b6bookings_write" role="tab" data-toggle="pill">
           bookings_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -1323,8 +1398,8 @@ certain range.</p>
       <span class="s2">"discount"</span><span class="o">:</span> <span class="s2">"10%"</span><span class="p">,</span>
       <span class="s2">"final_price"</span><span class="o">:</span> <span class="s2">"2700.0"</span><span class="p">,</span>
       <span class="s2">"initial_price"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2017-12-26T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-02T13:10:58Z"</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2018-01-04T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-11T14:27:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -1334,36 +1409,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="dd7a337d5e71bookings_write_owned">
-        <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
-    <span class="s2">"bookings.bookings_tags"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings_tags/{bookings.bookings_tags}"</span><span class="p">,</span>
-    <span class="s2">"bookings.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}"</span>
-  <span class="p">},</span>
-  <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">203</span><span class="p">,</span>
-      <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2017-12-26T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-02T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"bookings_tags"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">1</span><span class="p">,</span>
-          <span class="mi">2</span>
-        <span class="p">],</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">16</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre>
-      </div>
-    
-      <div class="tab-pane " id="bdd33b3454cdbookings_write">
+      <div class="tab-pane active" id="50264361b225bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
@@ -1377,6 +1423,7 @@ certain range.</p>
     <span class="s2">"bookings.payments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payments/{bookings.payments}"</span><span class="p">,</span>
     <span class="s2">"bookings.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}"</span><span class="p">,</span>
     <span class="s2">"bookings.rental_agreement"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_agreements/{bookings.rental_agreement}"</span><span class="p">,</span>
+    <span class="s2">"bookings.rentals_tags"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals_tags/{bookings.rentals_tags}"</span><span class="p">,</span>
     <span class="s2">"bookings.source"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/sources/{bookings.source}"</span>
   <span class="p">},</span>
   <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -1410,13 +1457,13 @@ certain range.</p>
       <span class="s2">"review_requests_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
       <span class="s2">"unavailable"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2017-12-26T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-02T13:10:58Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2018-01-04T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-11T14:27:28Z"</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"balance_due_at"</span><span class="o">:</span> <span class="s2">"BALANCE_DUE_AT"</span><span class="p">,</span>
-      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2017-12-19T13:10:58Z"</span><span class="p">,</span>
+      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2017-12-28T14:27:28Z"</span><span class="p">,</span>
       <span class="s2">"tentative_expires_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -1443,6 +1490,102 @@ certain range.</p>
         <span class="p">],</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
         <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+      <div class="tab-pane " id="f60362c9a9b6bookings_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
+    <span class="s2">"bookings.booking_comments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/booking_comments/{bookings.booking_comments}"</span><span class="p">,</span>
+    <span class="s2">"bookings.bookings_fees"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings_fees/{bookings.bookings_fees}"</span><span class="p">,</span>
+    <span class="s2">"bookings.bookings_payments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings_payments/{bookings.bookings_payments}"</span><span class="p">,</span>
+    <span class="s2">"bookings.bookings_tags"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings_tags/{bookings.bookings_tags}"</span><span class="p">,</span>
+    <span class="s2">"bookings.bookings_taxes"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings_taxes/{bookings.bookings_taxes}"</span><span class="p">,</span>
+    <span class="s2">"bookings.client"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/clients/{bookings.client}"</span><span class="p">,</span>
+    <span class="s2">"bookings.inquiry"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inquiries/{bookings.inquiry}"</span><span class="p">,</span>
+    <span class="s2">"bookings.payments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payments/{bookings.payments}"</span><span class="p">,</span>
+    <span class="s2">"bookings.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}"</span><span class="p">,</span>
+    <span class="s2">"bookings.rental_agreement"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_agreements/{bookings.rental_agreement}"</span><span class="p">,</span>
+    <span class="s2">"bookings.rentals_tags"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals_tags/{bookings.rentals_tags}"</span><span class="p">,</span>
+    <span class="s2">"bookings.source"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/sources/{bookings.source}"</span>
+  <span class="p">},</span>
+  <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">80</span><span class="p">,</span>
+      <span class="s2">"adults"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"booked"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"bookings_payments_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"channel_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"charge_damage_deposit_on_arrival"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"children"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"commission"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+      <span class="s2">"damage_deposit"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
+      <span class="s2">"discount"</span><span class="o">:</span> <span class="s2">"10%"</span><span class="p">,</span>
+      <span class="s2">"downpayment"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"expected_checkin_time"</span><span class="o">:</span> <span class="s2">"14:45"</span><span class="p">,</span>
+      <span class="s2">"expected_checkout_time"</span><span class="o">:</span> <span class="s2">"11:30"</span><span class="p">,</span>
+      <span class="s2">"final_payback_to_owner"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
+      <span class="s2">"final_price"</span><span class="o">:</span> <span class="s2">"2700.0"</span><span class="p">,</span>
+      <span class="s2">"final_rental_price"</span><span class="o">:</span> <span class="s2">"2700.0"</span><span class="p">,</span>
+      <span class="s2">"initial_price"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
+      <span class="s2">"initial_rental_price"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
+      <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+      <span class="s2">"owned_by_app"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"paid_amount"</span><span class="o">:</span> <span class="s2">"2700.0"</span><span class="p">,</span>
+      <span class="s2">"payment_url"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"reference"</span><span class="o">:</span> <span class="s2">"0000EG"</span><span class="p">,</span>
+      <span class="s2">"rental_payback_to_owner"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"review_requests_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
+      <span class="s2">"unavailable"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2018-01-04T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-11T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"balance_due_at"</span><span class="o">:</span> <span class="s2">"BALANCE_DUE_AT"</span><span class="p">,</span>
+      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"tentative_expires_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"booking_comments"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"bookings_fees"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"bookings_payments"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">23</span>
+        <span class="p">],</span>
+        <span class="s2">"bookings_tags"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">1</span><span class="p">,</span>
+          <span class="mi">2</span>
+        <span class="p">],</span>
+        <span class="s2">"bookings_taxes"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"client"</span><span class="o">:</span> <span class="mi">37</span><span class="p">,</span>
+        <span class="s2">"inquiry"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">23</span>
+        <span class="p">],</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
         <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span>
       <span class="p">}</span>
     <span class="p">}</span>
@@ -1463,15 +1606,23 @@ certain range.</p>
 </div>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#ca42866255c4bookings_write" role="tab" data-toggle="pill">
+        <a href="#da55b572a61bbookings_write" role="tab" data-toggle="pill">
           bookings_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+      <li>
+        <a href="#acf630311370bookings_write_owned" role="tab" data-toggle="pill">
+          bookings_write_owned
+        </a>
+      </li>
+    
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -1531,8 +1682,8 @@ certain range.</p>
       <span class="s2">"discount"</span><span class="o">:</span> <span class="s2">"10%"</span><span class="p">,</span>
       <span class="s2">"final_price"</span><span class="o">:</span> <span class="s2">"2930.0"</span><span class="p">,</span>
       <span class="s2">"initial_price"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2017-12-26T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-02T13:10:58Z"</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2018-01-04T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-11T14:27:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -1542,7 +1693,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="ca42866255c4bookings_write">
+      <div class="tab-pane active" id="da55b572a61bbookings_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
@@ -1689,13 +1840,205 @@ certain range.</p>
       <span class="s2">"review_requests_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
       <span class="s2">"unavailable"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2017-12-26T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-02T13:10:58Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2018-01-04T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-11T14:27:28Z"</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"balance_due_at"</span><span class="o">:</span> <span class="s2">"BALANCE_DUE_AT"</span><span class="p">,</span>
-      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2017-12-19T13:10:58Z"</span><span class="p">,</span>
+      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"tentative_expires_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"booking_comments"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">1</span><span class="p">,</span>
+          <span class="mi">2</span>
+        <span class="p">],</span>
+        <span class="s2">"bookings_fees"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">10</span><span class="p">,</span>
+          <span class="mi">11</span>
+        <span class="p">],</span>
+        <span class="s2">"bookings_payments"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">23</span>
+        <span class="p">],</span>
+        <span class="s2">"bookings_tags"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"bookings_taxes"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">22</span><span class="p">,</span>
+          <span class="mi">23</span><span class="p">,</span>
+          <span class="mi">24</span>
+        <span class="p">],</span>
+        <span class="s2">"client"</span><span class="o">:</span> <span class="mi">37</span><span class="p">,</span>
+        <span class="s2">"inquiry"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">23</span>
+        <span class="p">],</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+      <div class="tab-pane " id="acf630311370bookings_write_owned">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
+    <span class="s2">"bookings.booking_comments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/booking_comments/{bookings.booking_comments}"</span><span class="p">,</span>
+    <span class="s2">"bookings.bookings_fees"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings_fees/{bookings.bookings_fees}"</span><span class="p">,</span>
+    <span class="s2">"bookings.bookings_payments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings_payments/{bookings.bookings_payments}"</span><span class="p">,</span>
+    <span class="s2">"bookings.bookings_tags"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings_tags/{bookings.bookings_tags}"</span><span class="p">,</span>
+    <span class="s2">"bookings.bookings_taxes"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings_taxes/{bookings.bookings_taxes}"</span><span class="p">,</span>
+    <span class="s2">"bookings.client"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/clients/{bookings.client}"</span><span class="p">,</span>
+    <span class="s2">"bookings.inquiry"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inquiries/{bookings.inquiry}"</span><span class="p">,</span>
+    <span class="s2">"bookings.payments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payments/{bookings.payments}"</span><span class="p">,</span>
+    <span class="s2">"bookings.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}"</span><span class="p">,</span>
+    <span class="s2">"bookings.rental_agreement"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_agreements/{bookings.rental_agreement}"</span><span class="p">,</span>
+    <span class="s2">"bookings.source"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/sources/{bookings.source}"</span>
+  <span class="p">},</span>
+  <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">80</span><span class="p">,</span>
+      <span class="s2">"adults"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"booked"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"bookings_fees"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="s2">"bookings_taxes"</span><span class="o">:</span> <span class="p">[</span>
+
+            <span class="p">],</span>
+            <span class="s2">"fee"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">"rentals_fee"</span><span class="o">:</span> <span class="mi">10</span>
+          <span class="p">},</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+          <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Fee1"</span>
+          <span class="p">},</span>
+          <span class="s2">"price"</span><span class="o">:</span> <span class="s2">"50.0"</span><span class="p">,</span>
+          <span class="s2">"required"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="s2">"included_in_price"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="s2">"times_booked"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+          <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-08-10T09:36:10Z"</span><span class="p">,</span>
+          <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-08-10T09:36:10Z"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="s2">"bookings_taxes"</span><span class="o">:</span> <span class="p">[</span>
+
+            <span class="p">],</span>
+            <span class="s2">"fee"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">"rentals_fee"</span><span class="o">:</span> <span class="mi">10</span>
+          <span class="p">},</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">11</span><span class="p">,</span>
+          <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Fee2"</span>
+          <span class="p">},</span>
+          <span class="s2">"price"</span><span class="o">:</span> <span class="s2">"30.0"</span><span class="p">,</span>
+          <span class="s2">"required"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+          <span class="s2">"included_in_price"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="s2">"times_booked"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-08-10T09:36:10Z"</span><span class="p">,</span>
+          <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-08-10T09:36:10Z"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"bookings_payments_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"bookings_taxes"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="s2">"tax"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="s2">"taxable"</span><span class="o">:</span> <span class="p">{</span>
+              <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"Rental"</span>
+            <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">22</span><span class="p">,</span>
+          <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Tax1"</span>
+          <span class="p">},</span>
+          <span class="s2">"tax_included_in_price"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
+          <span class="s2">"amount"</span><span class="o">:</span> <span class="s2">"60.0"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="s2">"tax"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+            <span class="s2">"taxable"</span><span class="o">:</span> <span class="p">{</span>
+              <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"Rental"</span>
+            <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">23</span><span class="p">,</span>
+          <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Tax2"</span>
+          <span class="p">},</span>
+          <span class="s2">"tax_included_in_price"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+          <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
+          <span class="s2">"amount"</span><span class="o">:</span> <span class="s2">"40.0"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="s2">"tax"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="s2">"taxable"</span><span class="o">:</span> <span class="p">{</span>
+              <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"Rental"</span>
+            <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">24</span><span class="p">,</span>
+          <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Tax3"</span>
+          <span class="p">},</span>
+          <span class="s2">"tax_included_in_price"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+          <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
+          <span class="s2">"amount"</span><span class="o">:</span> <span class="s2">"10.0"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"channel_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"charge_damage_deposit_on_arrival"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"children"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"commission"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
+      <span class="s2">"damage_deposit"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
+      <span class="s2">"discount"</span><span class="o">:</span> <span class="s2">"10%"</span><span class="p">,</span>
+      <span class="s2">"downpayment"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"expected_checkin_time"</span><span class="o">:</span> <span class="s2">"14:45"</span><span class="p">,</span>
+      <span class="s2">"expected_checkout_time"</span><span class="o">:</span> <span class="s2">"11:30"</span><span class="p">,</span>
+      <span class="s2">"final_payback_to_owner"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
+      <span class="s2">"final_price"</span><span class="o">:</span> <span class="s2">"2700.0"</span><span class="p">,</span>
+      <span class="s2">"final_rental_price"</span><span class="o">:</span> <span class="s2">"2700.0"</span><span class="p">,</span>
+      <span class="s2">"initial_price"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
+      <span class="s2">"initial_rental_price"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
+      <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">""</span><span class="p">,</span>
+      <span class="s2">"owned_by_app"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"paid_amount"</span><span class="o">:</span> <span class="s2">"2700.0"</span><span class="p">,</span>
+      <span class="s2">"payment_url"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"reference"</span><span class="o">:</span> <span class="s2">"0000EG"</span><span class="p">,</span>
+      <span class="s2">"rental_payback_to_owner"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"review_requests_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
+      <span class="s2">"unavailable"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2018-01-04T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-11T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"balance_due_at"</span><span class="o">:</span> <span class="s2">"BALANCE_DUE_AT"</span><span class="p">,</span>
+      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2017-12-28T14:27:28Z"</span><span class="p">,</span>
       <span class="s2">"tentative_expires_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -1745,21 +2088,23 @@ certain range.</p>
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#76c424384744bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#587465401836bookings_write_owned" role="tab" data-toggle="pill">
           bookings_write_owned
         </a>
       </li>
     
       <li>
-        <a href="#d994482fc958bookings_write" role="tab" data-toggle="pill">
+        <a href="#b62f46278c41bookings_write" role="tab" data-toggle="pill">
           bookings_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -1770,8 +2115,8 @@ certain range.</p>
       <span class="s2">"discount"</span><span class="o">:</span> <span class="s2">"10%"</span><span class="p">,</span>
       <span class="s2">"final_price"</span><span class="o">:</span> <span class="s2">"2700.0"</span><span class="p">,</span>
       <span class="s2">"initial_price"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2017-12-26T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-02T13:10:58Z"</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2018-01-04T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-11T14:27:28Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -1781,27 +2126,31 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="76c424384744bookings_write_owned">
+      <div class="tab-pane active" id="587465401836bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
     <span class="s2">"bookings.bookings_tags"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings_tags/{bookings.bookings_tags}"</span><span class="p">,</span>
-    <span class="s2">"bookings.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}"</span>
+    <span class="s2">"bookings.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}"</span><span class="p">,</span>
+    <span class="s2">"bookings.rentals_tags"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals_tags/{bookings.rentals_tags}"</span>
   <span class="p">},</span>
   <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">203</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2017-12-26T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-02T13:10:58Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2018-01-04T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-11T14:27:28Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"bookings_tags"</span><span class="o">:</span> <span class="p">[</span>
           <span class="mi">1</span><span class="p">,</span>
           <span class="mi">2</span>
         <span class="p">],</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">16</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
+        <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">]</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -1810,7 +2159,7 @@ certain range.</p>
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="d994482fc958bookings_write">
+      <div class="tab-pane " id="b62f46278c41bookings_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
@@ -1824,6 +2173,7 @@ certain range.</p>
     <span class="s2">"bookings.payments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payments/{bookings.payments}"</span><span class="p">,</span>
     <span class="s2">"bookings.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bookings.rental}"</span><span class="p">,</span>
     <span class="s2">"bookings.rental_agreement"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_agreements/{bookings.rental_agreement}"</span><span class="p">,</span>
+    <span class="s2">"bookings.rentals_tags"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals_tags/{bookings.rentals_tags}"</span><span class="p">,</span>
     <span class="s2">"bookings.source"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/sources/{bookings.source}"</span>
   <span class="p">},</span>
   <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -1857,13 +2207,13 @@ certain range.</p>
       <span class="s2">"review_requests_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
       <span class="s2">"unavailable"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2017-12-26T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-02T13:10:58Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2018-01-04T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2018-01-11T14:27:28Z"</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"balance_due_at"</span><span class="o">:</span> <span class="s2">"BALANCE_DUE_AT"</span><span class="p">,</span>
-      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2017-12-19T13:10:58Z"</span><span class="p">,</span>
+      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2017-12-28T14:27:28Z"</span><span class="p">,</span>
       <span class="s2">"tentative_expires_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -1890,6 +2240,9 @@ certain range.</p>
         <span class="p">],</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
         <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
         <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span>
       <span class="p">}</span>
     <span class="p">}</span>
@@ -1910,6 +2263,7 @@ certain range.</p>
 
 <pre><code>DELETE /bookings/:booking_id
 </code></pre>
+
         </div>
       </div>
     </div>

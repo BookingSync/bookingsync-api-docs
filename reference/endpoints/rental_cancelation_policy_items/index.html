@@ -86,7 +86,7 @@
           <a class="list-group-item" href="/reference/endpoints/fees_taxes/">Fees Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
           <a class="list-group-item" href="/reference/endpoints/living_rooms/">Living Rooms</a>
-          <a class="list-group-item active" href="/reference/endpoints/los_records/">LOS Records</a>
+          <a class="list-group-item" href="/reference/endpoints/los_records/">LOS Records</a>
           <a class="list-group-item" href="/reference/endpoints/nightly_rate_maps/">Nightly Rate Maps</a>
           <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
@@ -97,7 +97,7 @@
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
-          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
+          <a class="list-group-item active" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
@@ -123,11 +123,11 @@
     <div class="col-md-9 col-md-pull-3">
       <div class="panel panel-default">
         <div class="panel-body reference-body">
-          <h2 id="los-records">LOS Records</h2>
+          <h2 id="rental-cancelation-policy-items">Rental Cancelation Policy Items</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#list-los-records">List LOS records</a></li>
-  <li><a href="#search-los-records">Search LOS records</a></li>
+  <li><a href="#list-rental-cancelation-policy-items">List rental cancelation policy items</a></li>
+  <li><a href="#get-a-single-rental-cancelation-policy-item">Get a single rental cancelation policy item</a></li>
 </ol>
 
 <h4 id="parameters">Parameters</h4>
@@ -149,59 +149,23 @@
       <tbody>
         <tr>
           <td>id</td>
-          <td>BigInteger</td>
+          <td>Integer</td>
           <td>Read</td>
-          <td>Uniq identifier.</td>
+          <td>Rental cancelation policy item’s id.</td>
         </tr>
       </tbody>
       <tbody>
         <tr>
-          <td>kind</td>
-          <td>String</td>
-          <td>Read</td>
-          <td>LOS record’s kind. For possible values visit the <a href="/reference/enums#los-kinds">enums section</a>.</td>
-        </tr>
-        <tr>
-          <td>day</td>
-          <td><a href="/reference/enums#formats">Date</a></td>
-          <td>Read</td>
-          <td>Day for which this LOS record is valid.</td>
-        </tr>
-        <tr>
-          <td>min_occupancy</td>
+          <td>eligible_days</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Minimum occupancy for which this LOS record is valid.</td>
+          <td>Number of days before the check-in from which the penalty applies.</td>
         </tr>
         <tr>
-          <td>max_occupancy</td>
-          <td>Integer</td>
-          <td>Read</td>
-          <td>Maximum occupancy for which this LOS record is valid.</td>
-        </tr>
-        <tr>
-          <td>original_currency</td>
-          <td>String</td>
-          <td>Read</td>
-          <td>Original currency that LOS record was generated with (useful when using <code>exchange_to_currency</code> query param as a reference currency).<br>The list of codes can be found in the <a href="/reference/enums#currencies">enums section</a>.</td>
-        </tr>
-        <tr>
-          <td>currency</td>
-          <td>String</td>
-          <td>Read</td>
-          <td>Requested currency of the LOS records, by default same as <code>original_currency</code>.<br>The list of codes can be found in the <a href="/reference/enums#currencies">enums section</a>.</td>
-        </tr>
-        <tr>
-          <td>exchange_rate</td>
+          <td>penalty_percentage</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
-          <td>The rate used to convert from <code>original_currency</code> to <code>currency</code>.</td>
-        </tr>
-        <tr>
-          <td>rates</td>
-          <td>Array</td>
-          <td>Read</td>
-          <td>Starting from a one day length of stay, array lists rates up to 30 days. Rate will equal <code>0.0</code>, if corresponding length is invalid with <code>minimum_stay</code> setting.</td>
+          <td>Percentage of penalty from the booking price.</td>
         </tr>
       </tbody>
       <tbody>
@@ -209,25 +173,31 @@
           <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>LOS record’s creation time.</td>
+          <td>Rental cancelation policy’s create time.</td>
+        </tr>
+        <tr>
+          <td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Rental cancelation policy’s update time.</td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<h3 id="list-los-records">List LOS records</h3>
+<h3 id="list-rental-cancelation-policy-items">List rental cancelation policy items</h3>
 
-<p>List all LOS records for (a) given account(s).</p>
+<p>List all rental cancelation policy items for given account(s).</p>
 
-<pre><code>GET /los_records
+<pre><code>GET /rental_cancelation_policy_items
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#2a7ec517433fpublic" role="tab" data-toggle="pill">
+        <a href="#6e1f90946090public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -239,114 +209,75 @@
   
   
     
-      <div class="tab-pane active" id="2a7ec517433fpublic">
+      <div class="tab-pane active" id="6e1f90946090public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"los_records.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{los_records.rental}"</span>
+    <span class="s2">"rental_cancelation_policy_items.rental_cancelation_policy"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_cancelation_policies/{rental_cancelation_policy_items.rental_cancelation_policy}"</span>
   <span class="p">},</span>
-  <span class="s2">"los_records"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"rental_cancelation_policy_items"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">705</span><span class="p">,</span>
-      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
-      <span class="s2">"day"</span><span class="o">:</span> <span class="s2">"2016-07-13"</span><span class="p">,</span>
-      <span class="s2">"exchange_rate"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
-      <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"final_price"</span><span class="p">,</span>
-      <span class="s2">"max_occupancy"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
-      <span class="s2">"min_occupancy"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
-      <span class="s2">"original_currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
-      <span class="s2">"rates"</span><span class="o">:</span> <span class="p">[</span>
-        <span class="s2">"0.0"</span><span class="p">,</span>
-        <span class="s2">"50.0"</span><span class="p">,</span>
-        <span class="s2">"75.0"</span><span class="p">,</span>
-        <span class="s2">"100.0"</span><span class="p">,</span>
-        <span class="s2">"125.0"</span><span class="p">,</span>
-        <span class="s2">"150.0"</span><span class="p">,</span>
-        <span class="s2">"175.0"</span><span class="p">,</span>
-        <span class="s2">"200.0"</span><span class="p">,</span>
-        <span class="s2">"225.0"</span><span class="p">,</span>
-        <span class="s2">"250.0"</span><span class="p">,</span>
-        <span class="s2">"275.0"</span><span class="p">,</span>
-        <span class="s2">"300.0"</span><span class="p">,</span>
-        <span class="s2">"325.0"</span><span class="p">,</span>
-        <span class="s2">"350.0"</span><span class="p">,</span>
-        <span class="s2">"375.0"</span><span class="p">,</span>
-        <span class="s2">"400.0"</span><span class="p">,</span>
-        <span class="s2">"425.0"</span><span class="p">,</span>
-        <span class="s2">"450.0"</span><span class="p">,</span>
-        <span class="s2">"475.0"</span><span class="p">,</span>
-        <span class="s2">"500.0"</span><span class="p">,</span>
-        <span class="s2">"525.0"</span><span class="p">,</span>
-        <span class="s2">"550.0"</span><span class="p">,</span>
-        <span class="s2">"575.0"</span><span class="p">,</span>
-        <span class="s2">"600.0"</span><span class="p">,</span>
-        <span class="s2">"625.0"</span><span class="p">,</span>
-        <span class="s2">"650.0"</span><span class="p">,</span>
-        <span class="s2">"675.0"</span><span class="p">,</span>
-        <span class="s2">"700.0"</span><span class="p">,</span>
-        <span class="s2">"725.0"</span><span class="p">,</span>
-        <span class="s2">"750.0"</span>
-      <span class="p">],</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-07-27T19:20:10Z"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"eligible_days"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+      <span class="s2">"penalty_percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"rental_cancelation_policy"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">],</span>
-  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
-  <span class="p">}</span>
+  <span class="p">]</span>
 <span class="p">}</span></code></pre>
       </div>
     
   
 </div>
 
-<h3 id="search-los-records">Search LOS records</h3>
+<h3 id="get-a-single-rental-cancelation-policy-item">Get a single rental cancelation policy item</h3>
 
-<p>Search parameters allow to filter LOS records by specified fields.</p>
+<p>Returns a single rental cancelation policy item identified by ID.</p>
 
-<p>Example:</p>
-
-<pre><code>GET /los_records?rental_id=1&amp;kinds=rental_price_before_special_offers,rental_price&amp;exchange_currency_to=EUR
+<pre><code>GET /rental_cancelation_policy_items/:rental_cancelation_policy_item_id
 </code></pre>
 
-<h4 id="search-parameters">Search Parameters</h4>
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#8b5c9db2eacfpublic" role="tab" data-toggle="pill">
+          public
+        </a>
+      </li>
+    
+  </ul>
 
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
-      <th>Default</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>exchange_to_currency</td>
-      <td>String</td>
-      <td> </td>
-      <td>Code of the currency in which the rates are to be returned.<br>The accepted codes can be found in the <a href="/reference/enums#currencies">enums section</a>.</td>
-    </tr>
-    <tr>
-      <td>kinds</td>
-      <td>String</td>
-      <td> </td>
-      <td>List of comma separated kinds. Returns only LOS records for this kind(s).<br>For possible values visit the <a href="/reference/enums#los-kinds">enums section</a>.</td>
-    </tr>
-    <tr>
-      <td>rental_id</td>
-      <td>String</td>
-      <td> </td>
-      <td>List of comma separated IDs. Returns only LOS records for this rental(s)</td>
-    </tr>
-    <tr>
-      <td>updated_since</td>
-      <td><a href="/reference/enums#formats">Time</a></td>
-      <td> </td>
-      <td>Only LOS records updated after given time.</td>
-    </tr>
-  </tbody>
-</table>
+<h4 id="response-1">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="8b5c9db2eacfpublic">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"rental_cancelation_policy_items.rental_cancelation_policy"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_cancelation_policies/{rental_cancelation_policy_items.rental_cancelation_policy}"</span>
+  <span class="p">},</span>
+  <span class="s2">"rental_cancelation_policy_items"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"eligible_days"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+      <span class="s2">"penalty_percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental_cancelation_policy"</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
 
         </div>
       </div>

@@ -96,6 +96,8 @@
           <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
@@ -124,521 +126,530 @@
           <h2 id="payments">Payments</h2>
 
 <ol id="markdown-toc">
-<li><a href="#list-payments">List payments</a></li>
+  <li><a href="#list-payments">List payments</a></li>
   <li><a href="#search-payments">Search payments</a></li>
   <li><a href="#get-a-single-payment">Get a single payment</a></li>
   <li><a href="#create-a-new-payment">Create a new payment</a></li>
   <li><a href="#update-a-payment">Update a payment</a></li>
   <li><a href="#cancel-a-payment">Cancel a payment</a></li>
-</ol><h4 id="parameters">Parameters</h4>
+</ol>
+
+<h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="disabled"><a>OAuth Scopes:</a></li>
   <li><a href="#payments_write_owned" role="tab" data-toggle="pill">payments_write_owned</a></li>
   <li class="active"><a href="#payments_read" role="tab" data-toggle="pill">payments_read</a></li>
   <li><a href="#payments_write" role="tab" data-toggle="pill">payments_write</a></li>
-</ul><div class="tab-content">
+</ul>
+<div class="tab-content">
   <div class="tab-pane" id="payments_write_owned">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody>
-<tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Payment’s id.</td>
         </tr>
-<tr>
-<td>order_id</td>
+        <tr>
+          <td>order_id</td>
           <td>String</td>
           <td>Read</td>
           <td>Id of order (only for instant bookings managed by Bookingsync)</td>
         </tr>
-<tr>
-<td>transaction_id</td>
+        <tr>
+          <td>transaction_id</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Id of paypal transaction.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>address1</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>address1</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s first address. (100 characters max)</td>
         </tr>
-<tr>
-<td>address2</td>
+        <tr>
+          <td>address2</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s second address. (100 characters max)</td>
         </tr>
-<tr>
-<td>amount_in_cents</td>
+        <tr>
+          <td>amount_in_cents</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>
 <strong>Required</strong>. Payment’s value.</td>
         </tr>
-<tr>
-<td>card</td>
+        <tr>
+          <td>card</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payment’s card number, only the last 4 digits are visible. (example: <code>"XXXX-XXXX-XXXX-1234"</code>).</td>
         </tr>
-<tr>
-<td>city</td>
+        <tr>
+          <td>city</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s city. (100 characters max)</td>
         </tr>
-<tr>
-<td>country_code</td>
+        <tr>
+          <td>country_code</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
         </tr>
-<tr>
-<td>currency</td>
+        <tr>
+          <td>currency</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payment’s currency code, list of codes described in <a href="/reference/enums/#currencies">enums section</a>.</td>
         </tr>
-<tr>
-<td>description</td>
+        <tr>
+          <td>description</td>
           <td>String</td>
           <td>Read.</td>
           <td>Combined descriptions of all booking payments (if managed by Bookingsync).</td>
         </tr>
-<tr>
-<td>kind</td>
+        <tr>
+          <td>kind</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>
 <strong>Required</strong>. Payment’s kind, list of kinds described in <a href="/reference/enums/#payment-kinds">enums section</a>.</td>
         </tr>
-<tr>
-<td>email</td>
+        <tr>
+          <td>email</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s email.</td>
         </tr>
-<tr>
-<td>fullname</td>
+        <tr>
+          <td>fullname</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s fullname.</td>
         </tr>
-<tr>
-<td>ip</td>
+        <tr>
+          <td>ip</td>
           <td>String</td>
           <td>Read</td>
           <td>Payer’s ip.</td>
         </tr>
-<tr>
-<td>locale</td>
+        <tr>
+          <td>locale</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s preferred locale, list of locales described in <a href="/reference/enums/#locales">enums section</a>.</td>
         </tr>
-<tr>
-<td>notes</td>
+        <tr>
+          <td>notes</td>
           <td>Text</td>
           <td>Read/Write</td>
           <td>Payment’s additional information.</td>
         </tr>
-<tr>
-<td>state</td>
+        <tr>
+          <td>state</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s state. (100 characters max, required if country_code set to <code>US</code>)</td>
         </tr>
-<tr>
-<td>test</td>
+        <tr>
+          <td>test</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Payment’s test status.</td>
         </tr>
-<tr>
-<td>zip</td>
+        <tr>
+          <td>zip</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s zip code. (10 characters max)</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>created_at</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s update time.</td>
         </tr>
-<tr>
-<td>rejected_at</td>
+        <tr>
+          <td>rejected_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s reject time.</td>
         </tr>
-<tr>
-<td>canceled_at</td>
+        <tr>
+          <td>canceled_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s cancel time.</td>
         </tr>
-<tr>
-<td>paid_at</td>
+        <tr>
+          <td>paid_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read/Write</td>
           <td>Payment’s issue time.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
   <div class="tab-pane active" id="payments_read">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody>
-<tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Payment’s id.</td>
         </tr>
-<tr>
-<td>order_id</td>
+        <tr>
+          <td>order_id</td>
           <td>String</td>
           <td>Read</td>
           <td>Id of order (only for instant bookings managed by Bookingsync)</td>
         </tr>
-<tr>
-<td>transaction_id</td>
+        <tr>
+          <td>transaction_id</td>
           <td>String</td>
           <td>Read</td>
           <td>Id of paypal transaction.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>address1</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>address1</td>
           <td>String</td>
           <td>Read</td>
           <td>Payer’s first address.</td>
         </tr>
-<tr>
-<td>address2</td>
+        <tr>
+          <td>address2</td>
           <td>String</td>
           <td>Read</td>
           <td>Payer’s second address.</td>
         </tr>
-<tr>
-<td>amount_in_cents</td>
+        <tr>
+          <td>amount_in_cents</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Payment’s value.</td>
         </tr>
-<tr>
-<td>card</td>
+        <tr>
+          <td>card</td>
           <td>String</td>
           <td>Read</td>
           <td>Payment’s card number, only the last 4 digits are visible. (example: <code>"XXXX-XXXX-XXXX-1234"</code>).</td>
         </tr>
-<tr>
-<td>city</td>
+        <tr>
+          <td>city</td>
           <td>String</td>
           <td>Read</td>
           <td>Payer’s city.</td>
         </tr>
-<tr>
-<td>country_code</td>
+        <tr>
+          <td>country_code</td>
           <td>String</td>
           <td>Read</td>
           <td>Payer’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
         </tr>
-<tr>
-<td>currency</td>
+        <tr>
+          <td>currency</td>
           <td>String</td>
           <td>Read</td>
           <td>Payment’s currency code, list of codes described in <a href="/reference/enums/#currencies">enums section</a>.</td>
         </tr>
-<tr>
-<td>description</td>
+        <tr>
+          <td>description</td>
           <td>String</td>
           <td>Read.</td>
           <td>Combined descriptions of all booking payments (if managed by Bookingsync).</td>
         </tr>
-<tr>
-<td>kind</td>
+        <tr>
+          <td>kind</td>
           <td>String</td>
           <td>Read</td>
           <td>Payment’s kind, list of kinds described in <a href="/reference/enums/#payment-kinds">enums section</a>.</td>
         </tr>
-<tr>
-<td>email</td>
+        <tr>
+          <td>email</td>
           <td>String</td>
           <td>Read</td>
           <td>Payer’s email.</td>
         </tr>
-<tr>
-<td>fullname</td>
+        <tr>
+          <td>fullname</td>
           <td>String</td>
           <td>Read</td>
           <td>Payer’s fullname.</td>
         </tr>
-<tr>
-<td>ip</td>
+        <tr>
+          <td>ip</td>
           <td>String</td>
           <td>Read</td>
           <td>Payer’s ip.</td>
         </tr>
-<tr>
-<td>locale</td>
+        <tr>
+          <td>locale</td>
           <td>String</td>
           <td>Read</td>
           <td>Payer’s preferred locale, list of locales described in <a href="/reference/enums/#locales">enums section</a>.</td>
         </tr>
-<tr>
-<td>notes</td>
+        <tr>
+          <td>notes</td>
           <td>Text</td>
           <td>Read</td>
           <td>Payment’s additional information.</td>
         </tr>
-<tr>
-<td>state</td>
+        <tr>
+          <td>state</td>
           <td>String</td>
           <td>Read</td>
           <td>Payer’s state.</td>
         </tr>
-<tr>
-<td>test</td>
+        <tr>
+          <td>test</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Payment’s test status.</td>
         </tr>
-<tr>
-<td>zip</td>
+        <tr>
+          <td>zip</td>
           <td>String</td>
           <td>Read</td>
           <td>Payer’s zip code.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>created_at</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s update time.</td>
         </tr>
-<tr>
-<td>rejected_at</td>
+        <tr>
+          <td>rejected_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s reject time.</td>
         </tr>
-<tr>
-<td>canceled_at</td>
+        <tr>
+          <td>canceled_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s cancel time.</td>
         </tr>
-<tr>
-<td>paid_at</td>
+        <tr>
+          <td>paid_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s issue time.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
   <div class="tab-pane" id="payments_write">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody>
-<tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Payment’s id.</td>
         </tr>
-<tr>
-<td>order_id</td>
+        <tr>
+          <td>order_id</td>
           <td>String</td>
           <td>Read</td>
           <td>Id of order (only for instant bookings managed by Bookingsync)</td>
         </tr>
-<tr>
-<td>transaction_id</td>
+        <tr>
+          <td>transaction_id</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Id of paypal transaction.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>address1</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>address1</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s first address. (100 characters max)</td>
         </tr>
-<tr>
-<td>address2</td>
+        <tr>
+          <td>address2</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s second address. (100 characters max)</td>
         </tr>
-<tr>
-<td>amount_in_cents</td>
+        <tr>
+          <td>amount_in_cents</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>
 <strong>Required</strong>. Payment’s value.</td>
         </tr>
-<tr>
-<td>card</td>
+        <tr>
+          <td>card</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payment’s card number, only the last 4 digits are visible. (example: <code>"XXXX-XXXX-XXXX-1234"</code>).</td>
         </tr>
-<tr>
-<td>city</td>
+        <tr>
+          <td>city</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s city. (100 characters max)</td>
         </tr>
-<tr>
-<td>country_code</td>
+        <tr>
+          <td>country_code</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
         </tr>
-<tr>
-<td>currency</td>
+        <tr>
+          <td>currency</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payment’s currency code, list of codes described in <a href="/reference/enums/#currencies">enums section</a>.</td>
         </tr>
-<tr>
-<td>description</td>
+        <tr>
+          <td>description</td>
           <td>String</td>
           <td>Read.</td>
           <td>Combined descriptions of all booking payments (if managed by Bookingsync).</td>
         </tr>
-<tr>
-<td>kind</td>
+        <tr>
+          <td>kind</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>
 <strong>Required</strong>. Payment’s kind, list of kinds described in <a href="/reference/enums/#payment-kinds">enums section</a>.</td>
         </tr>
-<tr>
-<td>email</td>
+        <tr>
+          <td>email</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s email.</td>
         </tr>
-<tr>
-<td>fullname</td>
+        <tr>
+          <td>fullname</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s fullname.</td>
         </tr>
-<tr>
-<td>ip</td>
+        <tr>
+          <td>ip</td>
           <td>String</td>
           <td>Read</td>
           <td>Payer’s ip.</td>
         </tr>
-<tr>
-<td>locale</td>
+        <tr>
+          <td>locale</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s preferred locale, list of locales described in <a href="/reference/enums/#locales">enums section</a>.</td>
         </tr>
-<tr>
-<td>notes</td>
+        <tr>
+          <td>notes</td>
           <td>Text</td>
           <td>Read/Write</td>
           <td>Payment’s additional information.</td>
         </tr>
-<tr>
-<td>state</td>
+        <tr>
+          <td>state</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s state. (100 characters max, required if country_code set to <code>US</code>)</td>
         </tr>
-<tr>
-<td>test</td>
+        <tr>
+          <td>test</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Payment’s test status.</td>
         </tr>
-<tr>
-<td>zip</td>
+        <tr>
+          <td>zip</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s zip code. (10 characters max)</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>created_at</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s update time.</td>
         </tr>
-<tr>
-<td>rejected_at</td>
+        <tr>
+          <td>rejected_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s reject time.</td>
         </tr>
-<tr>
-<td>canceled_at</td>
+        <tr>
+          <td>canceled_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s cancel time.</td>
         </tr>
-<tr>
-<td>paid_at</td>
+        <tr>
+          <td>paid_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read/Write</td>
           <td>Payment’s issue time.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <h3 id="list-payments">List payments</h3>
@@ -649,20 +660,22 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#05f5e0c4ba64payments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
+        <a href="#05b8fc79abb8payments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
           payments_write_owned / payments_read / payments_write
         </a>
       </li>
     
-  </ul><h4 id="response">Response</h4>
+  </ul>
+
+<h4 id="response">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="05f5e0c4ba64payments_write_owned-payments_read-payments_write">
+      <div class="tab-pane active" id="05b8fc79abb8payments_write_owned-payments_read-payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -691,11 +704,11 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -725,17 +738,23 @@
 <h4 id="search-parameters">Search Parameters</h4>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+  <thead>
+    <tr>
+      <th>Name</th>
       <th>Type</th>
       <th>Description</th>
-    </tr></thead>
-<tbody><tr>
-<td>order_id</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>order_id</td>
       <td>String</td>
       <td>List of comma separated IDs. Returns only payments with this order_id(s)</td>
-    </tr></tbody>
-</table><h3 id="get-a-single-payment">Get a single payment</h3>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="get-a-single-payment">Get a single payment</h3>
 
 <p>Returns a single payment identified by ID.</p>
 
@@ -743,20 +762,22 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#c53114cbdea0payments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
+        <a href="#80b8266f583fpayments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
           payments_write_owned / payments_read / payments_write
         </a>
       </li>
     
-  </ul><h4 id="response-1">Response</h4>
+  </ul>
+
+<h4 id="response-1">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="c53114cbdea0payments_write_owned-payments_read-payments_write">
+      <div class="tab-pane active" id="80b8266f583fpayments_write_owned-payments_read-payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -785,11 +806,11 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -815,15 +836,17 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#33d09e44776bpayments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
+        <a href="#280b30cffcf4payments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
           payments_write_owned / payments_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -839,7 +862,7 @@
       <span class="s2">"locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Monatana"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -849,7 +872,7 @@
   
   
     
-      <div class="tab-pane active" id="33d09e44776bpayments_write_owned / payments_write">
+      <div class="tab-pane active" id="280b30cffcf4payments_write_owned / payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -878,11 +901,11 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -908,15 +931,17 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#dc6b7ebd6859payments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
+        <a href="#df2bf4f20717payments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
           payments_write_owned / payments_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -932,7 +957,7 @@
       <span class="s2">"locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Monatana"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -942,7 +967,7 @@
   
   
     
-      <div class="tab-pane active" id="dc6b7ebd6859payments_write_owned / payments_write">
+      <div class="tab-pane active" id="df2bf4f20717payments_write_owned / payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -971,11 +996,11 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:59Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:29Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -1001,6 +1026,7 @@
 
 <pre><code>DELETE /payments/:payment_id
 </code></pre>
+
         </div>
       </div>
     </div>

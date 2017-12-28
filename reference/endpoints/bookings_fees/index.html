@@ -96,6 +96,8 @@
           <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
@@ -124,77 +126,84 @@
           <h2 id="bookings-fees">Bookings Fees</h2>
 
 <ol id="markdown-toc">
-<li><a href="#list-bookings-fees">List bookings fees</a></li>
+  <li><a href="#list-bookings-fees">List bookings fees</a></li>
   <li><a href="#get-a-single-bookings-fee">Get a single bookings fee</a></li>
   <li><a href="#add-a-single-bookings-fee">Add a single bookings fee</a></li>
   <li><a href="#remove-a-single-bookings-fee">Remove a single bookings fee</a></li>
-</ol><h4 id="parameters">Parameters</h4>
+</ol>
+
+<h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#bookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">bookings_read/bookings_write/bookings_write_owned</a></li>
-</ul><div class="tab-content">
+</ul>
+<div class="tab-content">
   <div class="tab-pane active" id="bookings_read-bookings_write-bookings_write_owned">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody><tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Bookings Fee’s id.</td>
-        </tr></tbody>
-<tbody>
-<tr>
-<td>included_in_price</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>included_in_price</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Fee price already included in booking’s final price if set to true.</td>
         </tr>
-<tr>
-<td>name</td>
+        <tr>
+          <td>name</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read</td>
           <td>Bookings Fee’s name, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
         </tr>
-<tr>
-<td>price</td>
+        <tr>
+          <td>price</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Bookings Fee’s price.</td>
         </tr>
-<tr>
-<td>required</td>
+        <tr>
+          <td>required</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Always included for new bookings if set to true.</td>
         </tr>
-<tr>
-<td>times_booked</td>
+        <tr>
+          <td>times_booked</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Bookings Fee’s times booked count.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>created_at</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Bookings Fee’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Bookings Fee’s update time.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <h3 id="list-bookings-fees">List bookings fees</h3>
@@ -203,25 +212,29 @@
 certain range.</p>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Scope</th>
+  <thead>
+    <tr>
+      <th>Scope</th>
       <th>Read Permissions</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td><code>:bookings_write_owned</code></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>:bookings_write_owned</code></td>
       <td>Display fees only for bookings created by app that is making the request</td>
     </tr>
-<tr>
-<td><code>:bookings_read</code></td>
+    <tr>
+      <td><code>:bookings_read</code></td>
       <td>Display fees for all bookings</td>
     </tr>
-<tr>
-<td><code>:bookings_write</code></td>
+    <tr>
+      <td><code>:bookings_write</code></td>
       <td>Display fees for all bookings</td>
     </tr>
-</tbody>
-</table><p>Other scopes will return no results.</p>
+  </tbody>
+</table>
+
+<p>Other scopes will return no results.</p>
 
 <p>List all bookings fees for a given account(s).</p>
 
@@ -229,20 +242,22 @@ certain range.</p>
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#404f0fc070ccbookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#b2b26fb2deb8bookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_read / bookings_write / bookings_write_owned
         </a>
       </li>
     
-  </ul><h4 id="response">Response</h4>
+  </ul>
+
+<h4 id="response">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="404f0fc070ccbookings_read-bookings_write-bookings_write_owned">
+      <div class="tab-pane active" id="b2b26fb2deb8bookings_read-bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_fees.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_fees.account}"</span><span class="p">,</span>
@@ -290,20 +305,22 @@ certain range.</p>
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#51a061f9b642bookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#852ca63641debookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_read / bookings_write / bookings_write_owned
         </a>
       </li>
     
-  </ul><h4 id="response-1">Response</h4>
+  </ul>
+
+<h4 id="response-1">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="51a061f9b642bookings_read-bookings_write-bookings_write_owned">
+      <div class="tab-pane active" id="852ca63641debookings_read-bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_fees.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_fees.account}"</span><span class="p">,</span>
@@ -351,21 +368,23 @@ certain range.</p>
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#25a495aee283bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#466401968557bookings_write_owned" role="tab" data-toggle="pill">
           bookings_write_owned
         </a>
       </li>
     
       <li>
-        <a href="#0501bd75f4aebookings_write" role="tab" data-toggle="pill">
+        <a href="#2115974325b7bookings_write" role="tab" data-toggle="pill">
           bookings_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
   <span class="s2">"bookings_fees"</span><span class="o">:</span> <span class="p">[</span>
@@ -382,7 +401,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="25a495aee283bookings_write_owned">
+      <div class="tab-pane active" id="466401968557bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -430,7 +449,7 @@ certain range.</p>
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="0501bd75f4aebookings_write">
+      <div class="tab-pane " id="2115974325b7bookings_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -489,26 +508,28 @@ certain range.</p>
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#a5db5eed7864bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#895ce8f8b9a0bookings_write_owned" role="tab" data-toggle="pill">
           bookings_write_owned
         </a>
       </li>
     
       <li>
-        <a href="#6231d555aaf4bookings_write" role="tab" data-toggle="pill">
+        <a href="#6406de0cbddbbookings_write" role="tab" data-toggle="pill">
           bookings_write
         </a>
       </li>
     
-  </ul><h4 id="response-3">Response</h4>
+  </ul>
+
+<h4 id="response-3">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="a5db5eed7864bookings_write_owned">
+      <div class="tab-pane active" id="895ce8f8b9a0bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -543,7 +564,7 @@ certain range.</p>
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="6231d555aaf4bookings_write">
+      <div class="tab-pane " id="6406de0cbddbbookings_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -580,6 +601,8 @@ certain range.</p>
     
   
 </div>
+
+
         </div>
       </div>
     </div>

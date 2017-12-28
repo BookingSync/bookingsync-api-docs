@@ -96,6 +96,8 @@
           <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
@@ -124,13 +126,15 @@
           <h2 id="api-reference">API Reference</h2>
 
 <ol id="markdown-toc">
-<li><a href="#accessing-the-api">Accessing the API</a></li>
+  <li><a href="#accessing-the-api">Accessing the API</a></li>
   <li><a href="#json">JSON</a></li>
   <li><a href="#example-curl-requests">Example cURL requests</a></li>
   <li><a href="#request-options">Request Options</a></li>
   <li><a href="#https">HTTPS</a></li>
   <li><a href="#rate-limiting">Rate limiting</a></li>
-</ol><h3 id="accessing-the-api">Accessing the API</h3>
+</ol>
+
+<h3 id="accessing-the-api">Accessing the API</h3>
 
 <p>The BookingSync API can be accessed over HTTPS with base URL at
 <code>https://www.bookingsync.com/api/v3/</code>.</p>
@@ -192,29 +196,33 @@ X-Total-Pages: 3
 <p>The possible <code>rel</code> values are:</p>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+  <thead>
+    <tr>
+      <th>Name</th>
       <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>next</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>next</td>
       <td>Shows the URL of the immediate next page of results.</td>
     </tr>
-<tr>
-<td>last</td>
+    <tr>
+      <td>last</td>
       <td>Shows the URL of the last page of results.</td>
     </tr>
-<tr>
-<td>first</td>
+    <tr>
+      <td>first</td>
       <td>Shows the URL of the first page of results.</td>
     </tr>
-<tr>
-<td>prev</td>
+    <tr>
+      <td>prev</td>
       <td>Shows the URL of the immediate previous page of results.</td>
     </tr>
-</tbody>
-</table><p>We’ve built in a default limit on results, you can use the <code>per_page</code> parameter to change how many results per page you want to get. Large queries can hurt performance, so <code>per_page</code> is capped by the default limit. If you wish to retrieve more records, you should make multiple requests using the <code>page</code> parameter and combine the results within your application.</p>
+  </tbody>
+</table>
+
+<p>We’ve built in a default limit on results, you can use the <code>per_page</code> parameter to change how many results per page you want to get. Large queries can hurt performance, so <code>per_page</code> is capped by the default limit. If you wish to retrieve more records, you should make multiple requests using the <code>page</code> parameter and combine the results within your application.</p>
 
 <h4 id="limiting-fields">Limiting Fields</h4>
 
@@ -254,6 +262,7 @@ X-RateLimit-Reset: 1395140400
 <p><code>X-RateLimit-Reset</code> is the UNIX time at which the next limit reset happens.</p>
 
 <p><em>Note</em>: Reaching the rate limit, will return an error message <code>API v3 rate limit exceeded.</code> with <code>429 Too Many Requests</code> status code.</p>
+
         </div>
       </div>
     </div>

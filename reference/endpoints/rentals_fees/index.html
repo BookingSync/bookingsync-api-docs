@@ -96,6 +96,8 @@
           <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item active" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
@@ -124,221 +126,230 @@
           <h2 id="rentals-fees">Rentals Fees</h2>
 
 <ol id="markdown-toc">
-<li><a href="#list-rentals-fees">List rentals fees</a></li>
+  <li><a href="#list-rentals-fees">List rentals fees</a></li>
   <li><a href="#get-a-single-rentals-fee">Get a single rentals fee</a></li>
   <li><a href="#create-a-new-rentals-fee">Create a new rentals fee</a></li>
   <li><a href="#update-a-rentals-fee">Update a rentals fee</a></li>
   <li><a href="#archive-a-rentals-fee">Archive a rentals fee</a></li>
-</ol><h4 id="parameters">Parameters</h4>
+</ol>
+
+<h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
   <li><a href="#rentals_write" role="tab" data-toggle="pill">rentals_write</a></li>
-</ul><div class="tab-content">
+</ul>
+<div class="tab-content">
   <div class="tab-pane active" id="public">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody><tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Rentals Fee’s id.</td>
-        </tr></tbody>
-<tbody>
-<tr>
-<td>always_applied</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>always_applied</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Available to all seasons and periods if set to true.</td>
         </tr>
-<tr>
-<td>maximum_bookable</td>
+        <tr>
+          <td>maximum_bookable</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Rentals Fee’s maximum booked count.</td>
         </tr>
-<tr>
-<td>name</td>
+        <tr>
+          <td>name</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read</td>
           <td>Rentals Fee’s name, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
         </tr>
-<tr>
-<td>public</td>
+        <tr>
+          <td>public</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Publicly bookable by client if set to true.</td>
         </tr>
-<tr>
-<td>rate</td>
+        <tr>
+          <td>rate</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Rentals Fee’s rate.</td>
         </tr>
-<tr>
-<td>rate_kind</td>
+        <tr>
+          <td>rate_kind</td>
           <td>String</td>
           <td>Read</td>
           <td>Rentals Fee’s rate kind, list of fee’s rate kinds described in <a href="/reference/enums#fee-rate-kinds">enums section</a>.</td>
         </tr>
-<tr>
-<td>required</td>
+        <tr>
+          <td>required</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Always included for new bookings, also public if set to true.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>archived_at</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>archived_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rentals Fee’s archive time.</td>
         </tr>
-<tr>
-<td>created_at</td>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rentals Fee’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rentals Fee’s update time.</td>
         </tr>
-<tr>
-<td>start_date</td>
+        <tr>
+          <td>start_date</td>
           <td><a href="/reference/enums#formats">Date</a></td>
           <td>Read</td>
           <td>Rentals Fee’s start date.</td>
         </tr>
-<tr>
-<td>end_date</td>
+        <tr>
+          <td>end_date</td>
           <td><a href="/reference/enums#formats">Date</a></td>
           <td>Read</td>
           <td>Rentals Fee’s end date.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
   <div class="tab-pane" id="rentals_write">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody>
-<tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Rentals Fee’s id.</td>
         </tr>
-<tr>
-<td>fee_id</td>
+        <tr>
+          <td>fee_id</td>
           <td>Integer</td>
           <td>Write</td>
           <td>Fee id related to the Rentals Fee.</td>
         </tr>
-<tr>
-<td>season_ids</td>
+        <tr>
+          <td>season_ids</td>
           <td>Array</td>
           <td>Write</td>
           <td>Season ids related to the Rentals Fee.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>always_applied</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>always_applied</td>
           <td>Boolean</td>
           <td>Read/Write</td>
           <td>Available to all seasons and periods if set to true.</td>
         </tr>
-<tr>
-<td>maximum_bookable</td>
+        <tr>
+          <td>maximum_bookable</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>Rentals Fee’s maximum booked count.</td>
         </tr>
-<tr>
-<td>name</td>
+        <tr>
+          <td>name</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read</td>
           <td>Rentals Fee’s name, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
         </tr>
-<tr>
-<td>public</td>
+        <tr>
+          <td>public</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Publicly bookable by client if set to true.</td>
         </tr>
-<tr>
-<td>rate</td>
+        <tr>
+          <td>rate</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Rentals Fee’s rate.</td>
         </tr>
-<tr>
-<td>rate_kind</td>
+        <tr>
+          <td>rate_kind</td>
           <td>String</td>
           <td>Read</td>
           <td>Rentals Fee’s rate kind, list of fee’s rate kinds described in <a href="/reference/enums#fee-rate-kinds">enums section</a>.</td>
         </tr>
-<tr>
-<td>required</td>
+        <tr>
+          <td>required</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Always included for new bookings, also public if set to true.</td>
         </tr>
-<tr>
-<td>status</td>
+        <tr>
+          <td>status</td>
           <td>Boolean</td>
           <td>Write</td>
           <td>Possible values are <code>public</code>, <code>required</code> or <code>private</code>.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>archived_at</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>archived_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rentals Fee’s archive time.</td>
         </tr>
-<tr>
-<td>created_at</td>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rentals Fee’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rentals Fee’s update time.</td>
         </tr>
-<tr>
-<td>start_date</td>
+        <tr>
+          <td>start_date</td>
           <td><a href="/reference/enums#formats">Date</a></td>
           <td>Read/Write</td>
           <td>Rentals Fee’s start date.</td>
         </tr>
-<tr>
-<td>end_date</td>
+        <tr>
+          <td>end_date</td>
           <td><a href="/reference/enums#formats">Date</a></td>
           <td>Read/Write</td>
           <td>Rentals Fee’s end date.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <h3 id="list-rentals-fees">List rentals fees</h3>
@@ -349,20 +360,22 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#378c2c77cf0epublic" role="tab" data-toggle="pill">
+        <a href="#aaceeb07bebcpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
-  </ul><h4 id="response">Response</h4>
+  </ul>
+
+<h4 id="response">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="378c2c77cf0epublic">
+      <div class="tab-pane active" id="aaceeb07bebcpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_fees.fee"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/fees/{rentals_fees.fee}"</span><span class="p">,</span>
@@ -409,20 +422,22 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#bfed983d8795public" role="tab" data-toggle="pill">
+        <a href="#bcb310cc108dpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
-  </ul><h4 id="response-1">Response</h4>
+  </ul>
+
+<h4 id="response-1">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="bfed983d8795public">
+      <div class="tab-pane active" id="bcb310cc108dpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_fees.fee"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/fees/{rentals_fees.fee}"</span><span class="p">,</span>
@@ -469,15 +484,17 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#fbcbdc275dc8rentals_write" role="tab" data-toggle="pill">
+        <a href="#da79939f65f4rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rentals_fees"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -494,7 +511,7 @@
   
   
     
-      <div class="tab-pane active" id="fbcbdc275dc8rentals_write">
+      <div class="tab-pane active" id="da79939f65f4rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_fees.fee"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/fees/{rentals_fees.fee}"</span><span class="p">,</span>
@@ -541,15 +558,17 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#ec6b6ee089d7rentals_write" role="tab" data-toggle="pill">
+        <a href="#ed46e9993036rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rentals_fees"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -565,7 +584,7 @@
   
   
     
-      <div class="tab-pane active" id="ec6b6ee089d7rentals_write">
+      <div class="tab-pane active" id="ed46e9993036rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_fees.fee"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/fees/{rentals_fees.fee}"</span><span class="p">,</span>
@@ -612,6 +631,7 @@
 
 <pre><code>DELETE /rentals_fees/:rentals_fee_id
 </code></pre>
+
         </div>
       </div>
     </div>

@@ -96,6 +96,8 @@
           <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
@@ -124,7 +126,7 @@
           <h2 id="enumerables">Enumerables</h2>
 
 <ol id="markdown-toc">
-<li><a href="#account-statuses">Account statuses</a></li>
+  <li><a href="#account-statuses">Account statuses</a></li>
   <li><a href="#availability-map-statuses">Availability map statuses</a></li>
   <li><a href="#change-over-map-statuses">Change-over map statuses</a></li>
   <li><a href="#booking-statuses">Booking statuses</a></li>
@@ -140,735 +142,802 @@
   <li><a href="#rates-types">Rates types</a></li>
   <li><a href="#rates-rules-types">Rates Rules types</a></li>
   <li><a href="#rental-types">Rental types</a></li>
-</ol><h3 id="account-statuses">Account statuses</h3>
+</ol>
+
+<h3 id="account-statuses">Account statuses</h3>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Status</th>
+  <thead>
+    <tr>
+      <th>Status</th>
       <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>trial</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>trial</td>
       <td>Account currently in trial period</td>
     </tr>
-<tr>
-<td>paying</td>
+    <tr>
+      <td>paying</td>
       <td>Account active and paying</td>
     </tr>
-<tr>
-<td>suspended</td>
+    <tr>
+      <td>suspended</td>
       <td>Suspended account, it might get active again if payment made</td>
     </tr>
-</tbody>
-</table><h3 id="availability-map-statuses">Availability map statuses</h3>
+  </tbody>
+</table>
+
+<h3 id="availability-map-statuses">Availability map statuses</h3>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Status</th>
+  <thead>
+    <tr>
+      <th>Status</th>
       <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>0</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
       <td>Available</td>
     </tr>
-<tr>
-<td>1</td>
+    <tr>
+      <td>1</td>
       <td>Booked</td>
     </tr>
-<tr>
-<td>2</td>
+    <tr>
+      <td>2</td>
       <td>Tentative</td>
     </tr>
-<tr>
-<td>3</td>
+    <tr>
+      <td>3</td>
       <td>Unavailable</td>
     </tr>
-</tbody>
-</table><h3 id="change-over-map-statuses">Change-over map statuses</h3>
+  </tbody>
+</table>
+
+<h3 id="change-over-map-statuses">Change-over map statuses</h3>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Status</th>
+  <thead>
+    <tr>
+      <th>Status</th>
       <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>X</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>X</td>
       <td>No action possible</td>
     </tr>
-<tr>
-<td>C</td>
+    <tr>
+      <td>C</td>
       <td>Check-In and Check-Out</td>
     </tr>
-<tr>
-<td>O</td>
+    <tr>
+      <td>O</td>
       <td>Check-Out only</td>
     </tr>
-<tr>
-<td>I</td>
+    <tr>
+      <td>I</td>
       <td>Check-In only</td>
     </tr>
-</tbody>
-</table><h3 id="booking-statuses">Booking statuses</h3>
+  </tbody>
+</table>
+
+<h3 id="booking-statuses">Booking statuses</h3>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Status</th>
+  <thead>
+    <tr>
+      <th>Status</th>
       <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>Booked</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Booked</td>
       <td>A regular reservation</td>
     </tr>
-<tr>
-<td>Tentative</td>
+    <tr>
+      <td>Tentative</td>
       <td>Tentative, this is a hold for a certain length of time</td>
     </tr>
-<tr>
-<td>Unavailable</td>
+    <tr>
+      <td>Unavailable</td>
       <td>Unavailable period, often used to mark closed seasons or maintenance</td>
     </tr>
-<tr>
-<td>Locked</td>
+    <tr>
+      <td>Locked</td>
       <td>Booking is locked by an other application or user</td>
     </tr>
-<tr>
-<td>Canceled</td>
+    <tr>
+      <td>Canceled</td>
       <td>This booking have been canceled</td>
     </tr>
-</tbody>
-</table><h3 id="currencies">Currencies</h3>
+  </tbody>
+</table>
+
+<h3 id="currencies">Currencies</h3>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Currency</th>
+  <thead>
+    <tr>
+      <th>Currency</th>
       <th>Code</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>إ.د</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>إ.د</td>
       <td>AED</td>
     </tr>
-<tr>
-<td>A$</td>
+    <tr>
+      <td>A$</td>
       <td>AUD</td>
     </tr>
-<tr>
-<td>R$</td>
+    <tr>
+      <td>R$</td>
       <td>BRL</td>
     </tr>
-<tr>
-<td>C$</td>
+    <tr>
+      <td>C$</td>
       <td>CAD</td>
     </tr>
-<tr>
-<td>CHF</td>
+    <tr>
+      <td>CHF</td>
       <td>CHF</td>
     </tr>
-<tr>
-<td>Kč</td>
+    <tr>
+      <td>Kč</td>
       <td>CZK</td>
     </tr>
-<tr>
-<td>kr</td>
+    <tr>
+      <td>kr</td>
       <td>DKK</td>
     </tr>
-<tr>
-<td>€</td>
+    <tr>
+      <td>€</td>
       <td>EUR</td>
     </tr>
-<tr>
-<td>£</td>
+    <tr>
+      <td>£</td>
       <td>GBP</td>
     </tr>
-<tr>
-<td>Ft</td>
+    <tr>
+      <td>Ft</td>
       <td>HUF</td>
     </tr>
-<tr>
-<td>Rp</td>
+    <tr>
+      <td>Rp</td>
       <td>IDR</td>
     </tr>
-<tr>
-<td>₹</td>
+    <tr>
+      <td>₹</td>
       <td>INR</td>
     </tr>
-<tr>
-<td>¥</td>
+    <tr>
+      <td>¥</td>
       <td>JPY</td>
     </tr>
-<tr>
-<td>RM</td>
+    <tr>
+      <td>RM</td>
       <td>MYR</td>
     </tr>
-<tr>
-<td>NZ$</td>
+    <tr>
+      <td>NZ$</td>
       <td>NZD</td>
     </tr>
-<tr>
-<td>zł</td>
+    <tr>
+      <td>zł</td>
       <td>PLN</td>
     </tr>
-<tr>
-<td>₽</td>
+    <tr>
+      <td>₽</td>
       <td>RUB</td>
     </tr>
-<tr>
-<td>฿</td>
+    <tr>
+      <td>฿</td>
       <td>THB</td>
     </tr>
-<tr>
-<td>₴</td>
+    <tr>
+      <td>₴</td>
       <td>UAH</td>
     </tr>
-<tr>
-<td>$</td>
+    <tr>
+      <td>$</td>
       <td>USD</td>
     </tr>
-</tbody>
-</table><h3 id="formats">Formats</h3>
+  </tbody>
+</table>
+
+<h3 id="formats">Formats</h3>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+  <thead>
+    <tr>
+      <th>Name</th>
       <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>date</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>date</td>
       <td>
 <a href="http://en.wikipedia.org/wiki/ISO_8601#Dates">ISO 8601</a> compatible <code>%Y-%m-%d</code> <code>2014-08-21</code>
 </td>
     </tr>
-<tr>
-<td>decimal</td>
+    <tr>
+      <td>decimal</td>
       <td>Decimal value returned as a string. Big.js is recommended for Javascript users.</td>
     </tr>
-<tr>
-<td>object</td>
+    <tr>
+      <td>object</td>
       <td>A Javascript Object.</td>
     </tr>
-<tr>
-<td>time</td>
+    <tr>
+      <td>time</td>
       <td>
 <a href="http://en.wikipedia.org/wiki/ISO_8601#UTC">ISO 8601</a> compatible <code>%Y-%m-%dT%H:%M:%SZ</code> <code>2014-08-21T08:40:44Z</code>
 </td>
     </tr>
-</tbody>
-</table><p><em>Note</em>: Translation objects are having locales as string keys and translations as string values. <code>{"en": "Wonderful living room", "fr": "Merveilleux séjour"}</code></p>
+  </tbody>
+</table>
+
+<p><em>Note</em>: Translation objects are having locales as string keys and translations as string values. <code>{"en": "Wonderful living room", "fr": "Merveilleux séjour"}</code></p>
 
 <h3 id="locales">Locales</h3>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Code</th>
+  <thead>
+    <tr>
+      <th>Code</th>
       <th>Name</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>bg</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>bg</td>
       <td>Bulgarian</td>
     </tr>
-<tr>
-<td>cs</td>
+    <tr>
+      <td>cs</td>
       <td>Czech</td>
     </tr>
-<tr>
-<td>da</td>
+    <tr>
+      <td>da</td>
       <td>Danish</td>
     </tr>
-<tr>
-<td>de</td>
+    <tr>
+      <td>de</td>
       <td>German</td>
     </tr>
-<tr>
-<td>el</td>
+    <tr>
+      <td>el</td>
       <td>Greek</td>
     </tr>
-<tr>
-<td>en</td>
+    <tr>
+      <td>en</td>
       <td>English</td>
     </tr>
-<tr>
-<td>es</td>
+    <tr>
+      <td>es</td>
       <td>Spanish</td>
     </tr>
-<tr>
-<td>fi</td>
+    <tr>
+      <td>fi</td>
       <td>Finish</td>
     </tr>
-<tr>
-<td>fr</td>
+    <tr>
+      <td>fr</td>
       <td>French</td>
     </tr>
-<tr>
-<td>hu</td>
+    <tr>
+      <td>hu</td>
       <td>Hungarian</td>
     </tr>
-<tr>
-<td>id</td>
+    <tr>
+      <td>id</td>
       <td>Bahasa Indonesian</td>
     </tr>
-<tr>
-<td>it</td>
+    <tr>
+      <td>it</td>
       <td>Italian</td>
     </tr>
-<tr>
-<td>ja</td>
+    <tr>
+      <td>ja</td>
       <td>Japanese</td>
     </tr>
-<tr>
-<td>ko</td>
+    <tr>
+      <td>ko</td>
       <td>Korean</td>
     </tr>
-<tr>
-<td>lt</td>
+    <tr>
+      <td>lt</td>
       <td>Lithuanian</td>
     </tr>
-<tr>
-<td>lv</td>
+    <tr>
+      <td>lv</td>
       <td>Latvian</td>
     </tr>
-<tr>
-<td>mk</td>
+    <tr>
+      <td>mk</td>
       <td>Macedonian</td>
     </tr>
-<tr>
-<td>nb</td>
+    <tr>
+      <td>nb</td>
       <td>Norvegian</td>
     </tr>
-<tr>
-<td>nl</td>
+    <tr>
+      <td>nl</td>
       <td>Dutch</td>
     </tr>
-<tr>
-<td>pl</td>
+    <tr>
+      <td>pl</td>
       <td>Polish</td>
     </tr>
-<tr>
-<td>pt</td>
+    <tr>
+      <td>pt</td>
       <td>Portuguese</td>
     </tr>
-<tr>
-<td>ro</td>
+    <tr>
+      <td>ro</td>
       <td>Romanian</td>
     </tr>
-<tr>
-<td>rs</td>
+    <tr>
+      <td>rs</td>
       <td>Serbian</td>
     </tr>
-<tr>
-<td>ru</td>
+    <tr>
+      <td>ru</td>
       <td>Russian</td>
     </tr>
-<tr>
-<td>sk</td>
+    <tr>
+      <td>sk</td>
       <td>Slovak</td>
     </tr>
-<tr>
-<td>sv</td>
+    <tr>
+      <td>sv</td>
       <td>Swedish</td>
     </tr>
-<tr>
-<td>uk</td>
+    <tr>
+      <td>uk</td>
       <td>Ukrainian</td>
     </tr>
-<tr>
-<td>zh</td>
+    <tr>
+      <td>zh</td>
       <td>Simplified Chinese</td>
     </tr>
-<tr>
-<td>zh-TW</td>
+    <tr>
+      <td>zh-TW</td>
       <td>Traditional Chinese</td>
     </tr>
-</tbody>
-</table><h3 id="los-kinds">LOS kinds</h3>
+  </tbody>
+</table>
+
+<h3 id="los-kinds">LOS kinds</h3>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+  <thead>
+    <tr>
+      <th>Name</th>
       <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>rental_price_before_special_offers</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rental_price_before_special_offers</td>
       <td>Price for the rent only, before special offers discounts being applied.</td>
     </tr>
-<tr>
-<td>rental_price</td>
+    <tr>
+      <td>rental_price</td>
       <td>Price for the rent only, after all discounts applied.</td>
     </tr>
-<tr>
-<td>final_price</td>
+    <tr>
+      <td>final_price</td>
       <td>Price including all required fees and taxes.</td>
     </tr>
-</tbody>
-</table><h3 id="fee-kinds">Fee kinds</h3>
+  </tbody>
+</table>
+
+<h3 id="fee-kinds">Fee kinds</h3>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+  <thead>
+    <tr>
+      <th>Name</th>
       <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>cleaning</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>cleaning</td>
       <td>Cleaning fee</td>
     </tr>
-<tr>
-<td>other</td>
+    <tr>
+      <td>other</td>
       <td>Any other type of fee</td>
     </tr>
-</tbody>
-</table><h3 id="fee-rate-kinds">Fee rate kinds</h3>
+  </tbody>
+</table>
+
+<h3 id="fee-rate-kinds">Fee rate kinds</h3>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+  <thead>
+    <tr>
+      <th>Name</th>
       <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>fixed</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>fixed</td>
       <td>Fixed price</td>
     </tr>
-<tr>
-<td>fixed_per_person</td>
+    <tr>
+      <td>fixed_per_person</td>
       <td>Fixed price per person</td>
     </tr>
-<tr>
-<td>fixed_per_adult</td>
+    <tr>
+      <td>fixed_per_adult</td>
       <td>Fixed price per adult</td>
     </tr>
-<tr>
-<td>fixed_per_child</td>
+    <tr>
+      <td>fixed_per_child</td>
       <td>Fixed price per child</td>
     </tr>
-<tr>
-<td>fixed_per_night</td>
+    <tr>
+      <td>fixed_per_night</td>
       <td>Fixed price per night</td>
     </tr>
-<tr>
-<td>fixed_per_person_per_night</td>
+    <tr>
+      <td>fixed_per_person_per_night</td>
       <td>Fixed price per person per night</td>
     </tr>
-<tr>
-<td>fixed_per_adult_per_night</td>
+    <tr>
+      <td>fixed_per_adult_per_night</td>
       <td>Fixed price per adult per night</td>
     </tr>
-<tr>
-<td>fixed_per_child_per_night</td>
+    <tr>
+      <td>fixed_per_child_per_night</td>
       <td>Fixed price per child per night</td>
     </tr>
-<tr>
-<td>percentage</td>
+    <tr>
+      <td>percentage</td>
       <td>Percentage of the rental price</td>
     </tr>
-<tr>
-<td>percentage_per_person</td>
+    <tr>
+      <td>percentage_per_person</td>
       <td>Percentage of the rental price per person</td>
     </tr>
-<tr>
-<td>percentage_per_adult</td>
+    <tr>
+      <td>percentage_per_adult</td>
       <td>Percentage of the rental price per adult</td>
     </tr>
-<tr>
-<td>percentage_per_child</td>
+    <tr>
+      <td>percentage_per_child</td>
       <td>Percentage of the rental price per child</td>
     </tr>
-</tbody>
-</table><h3 id="payment-kinds">Payment kinds</h3>
+  </tbody>
+</table>
+
+<h3 id="payment-kinds">Payment kinds</h3>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+  <thead>
+    <tr>
+      <th>Name</th>
       <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>bookingsync</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>bookingsync</td>
       <td>Payment made through BookingSync.</td>
     </tr>
-<tr>
-<td>cash</td>
+    <tr>
+      <td>cash</td>
       <td>Payment made by Cash.</td>
     </tr>
-<tr>
-<td>cheque</td>
+    <tr>
+      <td>cheque</td>
       <td>Payment made by Cheque.</td>
     </tr>
-<tr>
-<td>credits</td>
+    <tr>
+      <td>credits</td>
       <td>Payment made using Credits. Credits are money you might have kept from your guest after a cancellation.</td>
     </tr>
-<tr>
-<td>credit-card</td>
+    <tr>
+      <td>credit-card</td>
       <td>Payment made by Credit Card.</td>
     </tr>
-<tr>
-<td>online</td>
+    <tr>
+      <td>online</td>
       <td>Payment made Online, outside of BookingSync.</td>
     </tr>
-<tr>
-<td>paypal</td>
+    <tr>
+      <td>paypal</td>
       <td>Payment made with PayPal, outside of BookingSync.</td>
     </tr>
-<tr>
-<td>travel-cheque</td>
+    <tr>
+      <td>travel-cheque</td>
       <td>Payment made by Travel Cheque.</td>
     </tr>
-<tr>
-<td>wiretransfer</td>
+    <tr>
+      <td>wiretransfer</td>
       <td>Payment made by Wire Transfer.</td>
     </tr>
-</tbody>
-</table><h3 id="photo-kinds">Photo kinds</h3>
+  </tbody>
+</table>
+
+<h3 id="photo-kinds">Photo kinds</h3>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+  <thead>
+    <tr>
+      <th>Name</th>
       <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>bathroom</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>bathroom</td>
       <td>Bathroom’s photo.</td>
     </tr>
-<tr>
-<td>bedroom</td>
+    <tr>
+      <td>bedroom</td>
       <td>Bedroom’s photo.</td>
     </tr>
-<tr>
-<td>floor_plan</td>
+    <tr>
+      <td>floor_plan</td>
       <td>Floor plan</td>
     </tr>
-<tr>
-<td>inside</td>
+    <tr>
+      <td>inside</td>
       <td>Inside’s photo.</td>
     </tr>
-<tr>
-<td>kitchen</td>
+    <tr>
+      <td>kitchen</td>
       <td>Kitchen’s photo.</td>
     </tr>
-<tr>
-<td>livingroom</td>
+    <tr>
+      <td>livingroom</td>
       <td>Livingroom’s photo.</td>
     </tr>
-<tr>
-<td>outside</td>
+    <tr>
+      <td>outside</td>
       <td>Outside’s photo.</td>
     </tr>
-<tr>
-<td>surroundings</td>
+    <tr>
+      <td>surroundings</td>
       <td>Surroundings’s photo.</td>
     </tr>
-</tbody>
-</table><h3 id="rental-link-kinds">Rental Link kinds</h3>
+  </tbody>
+</table>
+
+<h3 id="rental-link-kinds">Rental Link kinds</h3>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+  <thead>
+    <tr>
+      <th>Name</th>
       <th>Description</th>
-    </tr></thead>
-<tbody><tr>
-<td>mirror</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>mirror</td>
       <td>Mirroring rental link</td>
-    </tr></tbody>
-</table><h3 id="rates-types">Rates types</h3>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="rates-types">Rates types</h3>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+  <thead>
+    <tr>
+      <th>Name</th>
       <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>nightly</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>nightly</td>
       <td>The reference rate is nightly based.</td>
     </tr>
-<tr>
-<td>weekly</td>
+    <tr>
+      <td>weekly</td>
       <td>The reference rate is weekly based.</td>
     </tr>
-</tbody>
-</table><h3 id="rates-rules-types">Rates Rules types</h3>
+  </tbody>
+</table>
+
+<h3 id="rates-rules-types">Rates Rules types</h3>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+  <thead>
+    <tr>
+      <th>Name</th>
       <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>arrival_only</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>arrival_only</td>
       <td>Rule applied on arrival.</td>
     </tr>
-<tr>
-<td>departure_only</td>
+    <tr>
+      <td>departure_only</td>
       <td>Rule applied on departure.</td>
     </tr>
-<tr>
-<td>early_booking</td>
+    <tr>
+      <td>early_booking</td>
       <td>Rule applied on early booking.</td>
     </tr>
-<tr>
-<td>full_period_only</td>
+    <tr>
+      <td>full_period_only</td>
       <td>Rule applied for full period.</td>
     </tr>
-<tr>
-<td>late_booking</td>
+    <tr>
+      <td>late_booking</td>
       <td>Rule applied for late booking.</td>
     </tr>
-<tr>
-<td>prevent_if_booked_ahead_of</td>
+    <tr>
+      <td>prevent_if_booked_ahead_of</td>
       <td>Rule applied if booked ahead.</td>
     </tr>
-<tr>
-<td>stay_at_least</td>
+    <tr>
+      <td>stay_at_least</td>
       <td>Rule applied for minimum stay.</td>
     </tr>
-<tr>
-<td>strict_minimum_price_per_night</td>
+    <tr>
+      <td>strict_minimum_price_per_night</td>
       <td>Rule applied for minimum price per night.</td>
     </tr>
-<tr>
-<td>weekend_night</td>
+    <tr>
+      <td>weekend_night</td>
       <td>Rule applied for weekend night.</td>
     </tr>
-</tbody>
-</table><h3 id="rental-types">Rental types</h3>
+  </tbody>
+</table>
+
+<h3 id="rental-types">Rental types</h3>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+  <thead>
+    <tr>
+      <th>Name</th>
       <th>Description</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td>apartment</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>apartment</td>
       <td>Apartment</td>
     </tr>
-<tr>
-<td>boat</td>
+    <tr>
+      <td>boat</td>
       <td>Boat</td>
     </tr>
-<tr>
-<td>bungalow</td>
+    <tr>
+      <td>bungalow</td>
       <td>Bungalow</td>
     </tr>
-<tr>
-<td>cabin</td>
+    <tr>
+      <td>cabin</td>
       <td>Cabin</td>
     </tr>
-<tr>
-<td>castle</td>
+    <tr>
+      <td>castle</td>
       <td>Castle</td>
     </tr>
-<tr>
-<td>cave</td>
+    <tr>
+      <td>cave</td>
       <td>Cave</td>
     </tr>
-<tr>
-<td>chalet</td>
+    <tr>
+      <td>chalet</td>
       <td>Chalet</td>
     </tr>
-<tr>
-<td>condominium</td>
+    <tr>
+      <td>condominium</td>
       <td>Condominium</td>
     </tr>
-<tr>
-<td>cottage</td>
+    <tr>
+      <td>cottage</td>
       <td>Cottage</td>
     </tr>
-<tr>
-<td>dormitory</td>
+    <tr>
+      <td>dormitory</td>
       <td>Dormitory</td>
     </tr>
-<tr>
-<td>earth-house</td>
+    <tr>
+      <td>earth-house</td>
       <td>Earth House</td>
     </tr>
-<tr>
-<td>farmhouse</td>
+    <tr>
+      <td>farmhouse</td>
       <td>Farmhouse</td>
     </tr>
-<tr>
-<td>holiday-home</td>
+    <tr>
+      <td>holiday-home</td>
       <td>Holiday Home</td>
     </tr>
-<tr>
-<td>house</td>
+    <tr>
+      <td>house</td>
       <td>House</td>
     </tr>
-<tr>
-<td>hut</td>
+    <tr>
+      <td>hut</td>
       <td>Hut</td>
     </tr>
-<tr>
-<td>igloo</td>
+    <tr>
+      <td>igloo</td>
       <td>Igloo</td>
     </tr>
-<tr>
-<td>island</td>
+    <tr>
+      <td>island</td>
       <td>Island</td>
     </tr>
-<tr>
-<td>lighthouse</td>
+    <tr>
+      <td>lighthouse</td>
       <td>Lighthouse</td>
     </tr>
-<tr>
-<td>loft</td>
+    <tr>
+      <td>loft</td>
       <td>Loft</td>
     </tr>
-<tr>
-<td>plane</td>
+    <tr>
+      <td>plane</td>
       <td>Plane</td>
     </tr>
-<tr>
-<td>private-room</td>
+    <tr>
+      <td>private-room</td>
       <td>Private room</td>
     </tr>
-<tr>
-<td>recreational-vehicle</td>
+    <tr>
+      <td>recreational-vehicle</td>
       <td>Camper/RV</td>
     </tr>
-<tr>
-<td>studio</td>
+    <tr>
+      <td>studio</td>
       <td>Studio</td>
     </tr>
-<tr>
-<td>tent</td>
+    <tr>
+      <td>tent</td>
       <td>Tent</td>
     </tr>
-<tr>
-<td>tipi</td>
+    <tr>
+      <td>tipi</td>
       <td>Tipi</td>
     </tr>
-<tr>
-<td>townhouse</td>
+    <tr>
+      <td>townhouse</td>
       <td>Townhouse</td>
     </tr>
-<tr>
-<td>train</td>
+    <tr>
+      <td>train</td>
       <td>Train</td>
     </tr>
-<tr>
-<td>treehouse</td>
+    <tr>
+      <td>treehouse</td>
       <td>Treehouse</td>
     </tr>
-<tr>
-<td>villa</td>
+    <tr>
+      <td>villa</td>
       <td>Villa</td>
     </tr>
-<tr>
-<td>yurt</td>
+    <tr>
+      <td>yurt</td>
       <td>Yurt</td>
     </tr>
-</tbody>
+  </tbody>
 </table>
+
         </div>
       </div>
     </div>

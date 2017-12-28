@@ -96,6 +96,8 @@
           <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
@@ -124,97 +126,110 @@
           <h2 id="fees-taxes">Fees Taxes</h2>
 
 <ol id="markdown-toc">
-<li><a href="#list-fees-taxes">List fees taxes</a></li>
+  <li><a href="#list-fees-taxes">List fees taxes</a></li>
   <li><a href="#get-a-single-fees-tax">Get a single fees tax</a></li>
   <li><a href="#create-a-new-fees-tax">Create a new fees tax</a></li>
   <li><a href="#update-a-fees-tax">Update a fees tax</a></li>
   <li><a href="#delete-fees-tax">Delete fees tax</a></li>
-</ol><h4 id="parameters">Parameters</h4>
+</ol>
+
+<h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
   <li><a href="#rates_write" role="tab" data-toggle="pill">rates_write</a></li>
-</ul><div class="tab-content">
+</ul>
+<div class="tab-content">
   <div class="tab-pane active" id="public">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody><tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Fees Tax’s id.</td>
-        </tr></tbody>
-<tbody><tr>
-<td>tax_included_in_rate</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>tax_included_in_rate</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Tax amount already included in fee if set to true.</td>
-        </tr></tbody>
-<tbody>
-<tr>
-<td>created_at</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Fees Tax’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Fees Tax’s update time.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
   <div class="tab-pane" id="rates_write">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody>
-<tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Fees Tax’s id.</td>
         </tr>
-<tr>
-<td>tax_id</td>
+        <tr>
+          <td>tax_id</td>
           <td>Integer</td>
           <td>Write</td>
           <td>Tax’s id.</td>
         </tr>
-</tbody>
-<tbody><tr>
-<td>tax_included_in_rate</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>tax_included_in_rate</td>
           <td>Boolean</td>
           <td>Read/Write</td>
           <td>Tax amount already included in fee if set to true.</td>
-        </tr></tbody>
-<tbody>
-<tr>
-<td>created_at</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Fees Tax’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Fees Tax’s update time.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <h3 id="list-fees-taxes">List fees taxes</h3>
@@ -225,20 +240,22 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#eee3b948bederates_write" role="tab" data-toggle="pill">
+        <a href="#ccde779d7e73rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
     
-  </ul><h4 id="response">Response</h4>
+  </ul>
+
+<h4 id="response">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="eee3b948bederates_write">
+      <div class="tab-pane active" id="ccde779d7e73rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"fees_taxes.fee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/fees/{fees_taxes.fee}"</span><span class="p">,</span>
@@ -272,20 +289,22 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#6d7532602cf0rates_write" role="tab" data-toggle="pill">
+        <a href="#8c8386275132rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
     
-  </ul><h4 id="response-1">Response</h4>
+  </ul>
+
+<h4 id="response-1">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="6d7532602cf0rates_write">
+      <div class="tab-pane active" id="8c8386275132rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"fees_taxes.fee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/fees/{fees_taxes.fee}"</span><span class="p">,</span>
@@ -319,15 +338,17 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#c77dc7a99d9crates_write" role="tab" data-toggle="pill">
+        <a href="#ec71eeb18938rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"fees_taxes"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -342,7 +363,7 @@
   
   
     
-      <div class="tab-pane active" id="c77dc7a99d9crates_write">
+      <div class="tab-pane active" id="ec71eeb18938rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"fees_taxes.fee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/fees/{fees_taxes.fee}"</span><span class="p">,</span>
@@ -376,15 +397,17 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#deb1fb16b77frates_write" role="tab" data-toggle="pill">
+        <a href="#1a2cef152f5frates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"fees_taxes"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -399,7 +422,7 @@
   
   
     
-      <div class="tab-pane active" id="deb1fb16b77frates_write">
+      <div class="tab-pane active" id="1a2cef152f5frates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"fees_taxes.fee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/fees/{fees_taxes.fee}"</span><span class="p">,</span>
@@ -433,6 +456,7 @@
 
 <pre><code>DELETE /fees_taxes/:fees_tax_id
 </code></pre>
+
         </div>
       </div>
     </div>

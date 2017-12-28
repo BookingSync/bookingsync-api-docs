@@ -68,73 +68,51 @@
     <div class="col-md-9 col-md-pull-3">
       <div class="panel panel-default">
         <div class="panel-body guide-body">
-          <h2 id="read-all-authorized-accounts-at-once">Read All Authorized Accounts At Once</h2>
+          <h2 id="oauth-scopes">OAuth Scopes</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#preface">Preface</a></li>
-  <li><a href="#requirements">Requirements</a></li>
-  <li><a href="#getting-a-client-credential-token">Getting A Client Credential Token</a></li>
-  <li><a href="#read-all-published-rentals">Read All Published Rentals</a></li>
+  <li><a href="#explanation">Explanation</a></li>
+  <li><a href="#additional-comments">Additional Comments</a></li>
 </ol>
 
-<h3 id="preface">Preface</h3>
+<h3 id="explanation">Explanation</h3>
 
-<p>In some cases it can be very convenient to read information from all the accounts in a single query. This is possible for reading public information (behind the <code>public</code> scope) by using the <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a>.</p>
+<p>For authorizing read and write access to most of the endpoints, BookingSync API requires proper OAuth scopes. There are three kinds of scopes: <code>read</code> scope, <code>write</code> scope and <code>write owned</code> scope.</p>
 
-<h3 id="requirements">Requirements</h3>
+<p>The first two are self-explanatory: for reading, the read scope is required (however, write scope also gives the permission to read resources), for writing the write scope is necessary (the read scope won’t be enough).</p>
 
-<p>As only public information are returned when using the <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a> you will need to make sure that your test accounts have <code>published</code> rentals as only those ones are returned.</p>
+<p>The last one, <code>write owned</code> is not that obvious. It is still similar to <code>write</code> scope in the sense that it allows write and read actions, but the behavior is slightly different. When creating a new record with owned scope, your application will acquire a lock on the record preventing it from being modified by any other application, besides the attributes that are always whitelisted for editing (check <a href="#additional-comments">Additional Comments section</a> for reference). For example, when you create a booking with <code>bookings_write_owned</code> scope, only your application will be able to modify its prices’. Another difference is for <code>read</code> actions - the response might be limited for some resources, and all sensitive data for given resource will be removed (check Additional Comments section for reference). Such behavior prevents applications from accessing the sensitive data when it is not necessary for them. It is <strong>strongly</strong> recommended to use <code>write owned</code> scopes by default (if applicable for given resource, not all of them have the owned scope) as <code>write</code> scopes with full access might discourage property managers from installing your application.</p>
 
-<p>To test the examples of this guide, you will need to authorize at least 2 test accounts.</p>
+<h3 id="additional-comments">Additional Comments</h3>
 
-<h3 id="getting-a-client-credential-token">Getting A Client Credential Token</h3>
+<h4 id="whitelisted-attributes-for-update">Whitelisted attributes for update</h4>
 
-<p>Use the schema below with by replacing:</p>
+<p>In case of bookings, there are certain attributes that are always whitelisted for editing, even when the booking is locked:</p>
 
 <ul>
-  <li>
-<code>CLIENT ID</code>: Application’s Client ID</li>
-  <li>
-<code>CLIENT_SECRET</code>: Application’s Client Secret <em>(do not share, same as password)</em>
-</li>
+  <li><code>expected_checkin_time</code></li>
+  <li><code>expected_checkout_time</code></li>
+  <li><code>rental_payback_to_owner</code></li>
 </ul>
 
-<pre><code>https://www.bookingsync.com/oauth/token?client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;grant_type=client_credentials
-</code></pre>
+<p>It is also possible to add new bookings fees to the locked bookings. However, editing non-owned bookings fees is not permitted.</p>
 
-<p>Make a POST request to this URL to get your Authentication Token.</p>
+<h4 id="limited-read-access">Limited read access</h4>
 
-<p>Example with CURL:</p>
+<p>In case of bookings and bookings taxes, <code>bookings_write_owned</code> impacts the response body when reading the bookings that are not owned by your application and the sensitive data won’t be returned. For bookings, the response body will contain only the following attributes for non-owned records:</p>
 
-<pre><code>curl -X POST -d "client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;grant_type=client_credentials" "https://www.bookingsync.com/oauth/token"
-</code></pre>
+<ul>
+  <li><code>id</code></li>
+  <li><code>start_at</code></li>
+  <li><code>end_at</code></li>
+  <li><code>status</code></li>
+  <li><code>updated_at</code></li>
+  <li><code>reference</code></li>
+</ul>
 
-<p>Sample response:</p>
+<p>In that way, <code>bookings_write_owned</code> scope acts like a <code>public</code> scope.</p>
 
-<pre><code class="language-json"><span class="p">{</span>
-  <span class="nt">"access_token"</span><span class="p">:</span> <span class="s2">"0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"</span><span class="p">,</span>
-  <span class="nt">"token_type"</span><span class="p">:</span> <span class="s2">"bearer"</span><span class="p">,</span>
-  <span class="nt">"expires_in"</span><span class="p">:</span> <span class="mi">7200</span><span class="p">,</span>
-  <span class="nt">"scope"</span><span class="p">:</span> <span class="s2">"public"</span><span class="p">,</span>
-  <span class="nt">"created_at"</span><span class="p">:</span> <span class="mi">1466671142</span>
-<span class="p">}</span></code></pre>
-
-<p><strong>Note</strong>: Tokens (<code>access_token</code>) are only <strong>valid for 2 hours</strong>, you then need to request a new one.</p>
-
-<h3 id="read-all-published-rentals">Read All Published Rentals</h3>
-
-<p>Now that you have your <code>access_token</code>, you can read all the published rentals with the following request.</p>
-
-<div class="callout callout-info">
-  <h4>Pagination</h4>
-
-  <p>Do not forget that all <a href="/reference/#pagination">responses are paginated</a>.</p>
-</div>
-
-<p>Example with CURL:</p>
-
-<pre><code>curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' https://www.bookingsync.com/api/v3/rentals
-</code></pre>
+<p>For bookings taxes, no attributes will be returned.</p>
 
         </div>
       </div>

@@ -96,6 +96,8 @@
           <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
           <a class="list-group-item active" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
@@ -124,98 +126,111 @@
           <h2 id="rentals-amenities">Rentals amenities</h2>
 
 <ol id="markdown-toc">
-<li><a href="#list-rentals-amenities">List rentals amenities</a></li>
+  <li><a href="#list-rentals-amenities">List rentals amenities</a></li>
   <li><a href="#get-a-single-rentals-amenity">Get a single rentals amenity</a></li>
   <li><a href="#create-a-new-rentals-amenity">Create a new rentals amenity</a></li>
   <li><a href="#update-a-rentals-amenity">Update a rentals amenity</a></li>
   <li><a href="#destroy-a-rentals-amenity">Destroy a rentals amenity</a></li>
-</ol><h4 id="parameters">Parameters</h4>
+</ol>
+
+<h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
   <li><a href="#rentals_write" role="tab" data-toggle="pill">rentals_write</a></li>
-</ul><div class="tab-content">
+</ul>
+<div class="tab-content">
   <div class="tab-pane active" id="public">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody><tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Rentals Amenity’s id.</td>
-        </tr></tbody>
-<tbody><tr>
-<td>details</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>details</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read</td>
           <td>Rentals Amenity’s details, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
-        </tr></tbody>
-<tbody>
-<tr>
-<td>created_at</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rentals Amenity’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rentals Amenity’s update time.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
   <div class="tab-pane" id="rentals_write">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody>
-<tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Rentals Amenity’s id.</td>
         </tr>
-<tr>
-<td>amenity_id</td>
+        <tr>
+          <td>amenity_id</td>
           <td>Integer</td>
           <td>Write</td>
           <td>
 <strong>Required</strong>. Amenity id related to the Rentals Amenity.</td>
         </tr>
-</tbody>
-<tbody><tr>
-<td>details</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>details</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read/Write</td>
           <td>Rentals Amenity’s details, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
-        </tr></tbody>
-<tbody>
-<tr>
-<td>created_at</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rentals Amenity’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rentals Amenity’s update time.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <h3 id="list-rentals-amenities">List rentals amenities</h3>
@@ -226,20 +241,22 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#43cffb7a1133public" role="tab" data-toggle="pill">
+        <a href="#ffe7da6f0615public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
-  </ul><h4 id="response">Response</h4>
+  </ul>
+
+<h4 id="response">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="43cffb7a1133public">
+      <div class="tab-pane active" id="ffe7da6f0615public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_amenities.amenity"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/amenities/{rentals_amenities.amenity}"</span><span class="p">,</span>
@@ -251,8 +268,8 @@
       <span class="s2">"details"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Amenity details"</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:30Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:30Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"amenity"</span><span class="o">:</span> <span class="mi">82</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
@@ -273,20 +290,22 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#8c56c62dd850public" role="tab" data-toggle="pill">
+        <a href="#f11bf9d5781bpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
-  </ul><h4 id="response-1">Response</h4>
+  </ul>
+
+<h4 id="response-1">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="8c56c62dd850public">
+      <div class="tab-pane active" id="f11bf9d5781bpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_amenities.amenity"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/amenities/{rentals_amenities.amenity}"</span><span class="p">,</span>
@@ -298,8 +317,8 @@
       <span class="s2">"details"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Amenity details"</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:30Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:30Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"amenity"</span><span class="o">:</span> <span class="mi">82</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
@@ -320,15 +339,17 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#defa9e7344d3rentals_write" role="tab" data-toggle="pill">
+        <a href="#0b5623a3aa8crentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -343,7 +364,7 @@
   
   
     
-      <div class="tab-pane active" id="defa9e7344d3rentals_write">
+      <div class="tab-pane active" id="0b5623a3aa8crentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_amenities.amenity"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/amenities/{rentals_amenities.amenity}"</span><span class="p">,</span>
@@ -355,8 +376,8 @@
       <span class="s2">"details"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Amenity details"</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:30Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:30Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"amenity"</span><span class="o">:</span> <span class="mi">82</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
@@ -377,15 +398,17 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#855d1083fc31rentals_write" role="tab" data-toggle="pill">
+        <a href="#7a0382ac7860rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -400,7 +423,7 @@
   
   
     
-      <div class="tab-pane active" id="855d1083fc31rentals_write">
+      <div class="tab-pane active" id="7a0382ac7860rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_amenities.amenity"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/amenities/{rentals_amenities.amenity}"</span><span class="p">,</span>
@@ -412,8 +435,8 @@
       <span class="s2">"details"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Amenity details"</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:11:00Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:30Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:30Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"amenity"</span><span class="o">:</span> <span class="mi">82</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
@@ -434,6 +457,7 @@
 
 <pre><code>DELETE /rentals_amenities/:rentals_amenity_id
 </code></pre>
+
         </div>
       </div>
     </div>

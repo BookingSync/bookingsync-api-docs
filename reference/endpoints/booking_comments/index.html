@@ -96,6 +96,8 @@
           <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
@@ -124,117 +126,126 @@
           <h2 id="booking-comments">Booking Comments</h2>
 
 <ol id="markdown-toc">
-<li><a href="#list-booking-comments">List booking comments</a></li>
+  <li><a href="#list-booking-comments">List booking comments</a></li>
   <li><a href="#get-a-single-booking-comment">Get a single booking comment</a></li>
   <li><a href="#create-a-new-booking-comment">Create a new booking comment</a></li>
   <li><a href="#update-a-booking-comment">Update a booking comment</a></li>
   <li><a href="#destroy-a-booking-comment">Destroy a booking comment</a></li>
-</ol><h4 id="parameters">Parameters</h4>
+</ol>
+
+<h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#bookings_read" role="tab" data-toggle="pill">bookings_read</a></li>
   <li><a href="#bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
     bookings_write / bookings_write_owned
   </a></li>
-</ul><div class="tab-content">
+</ul>
+<div class="tab-content">
   <div class="tab-pane active" id="bookings_read">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody><tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Booking Comment’s id.</td>
-        </tr></tbody>
-<tbody>
-<tr>
-<td>content</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>content</td>
           <td>String</td>
           <td>Read</td>
           <td>Booking Comment’s content.</td>
         </tr>
-<tr>
-<td>editable</td>
+        <tr>
+          <td>editable</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Booking Comment can be edited if true is returned.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>created_at</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Booking Comment’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Booking Comment’s update time.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
   <div class="tab-pane" id="bookings_write-bookings_write_owned">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody>
-<tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Booking Comment’s id.</td>
         </tr>
-<tr>
-<td>booking_id</td>
+        <tr>
+          <td>booking_id</td>
           <td>Integer</td>
           <td>Write</td>
           <td>
 <strong>Required</strong>. Booking id related to the Booking Comment.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>content</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>content</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>
 <strong>Required</strong>. Booking Comment’s content.</td>
         </tr>
-<tr>
-<td>editable</td>
+        <tr>
+          <td>editable</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Booking Comment can be edited if true is returned.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>created_at</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Booking Comment’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Booking Comment’s update time.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <h3 id="list-booking-comments">List booking comments</h3>
@@ -245,26 +256,28 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#e6989472a67cbookings_read" role="tab" data-toggle="pill">
+        <a href="#27db7939c30dbookings_read" role="tab" data-toggle="pill">
           bookings_read
         </a>
       </li>
     
       <li>
-        <a href="#492e8c63c006bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#553a8924d352bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_write / bookings_write_owned
         </a>
       </li>
     
-  </ul><h4 id="response">Response</h4>
+  </ul>
+
+<h4 id="response">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="e6989472a67cbookings_read">
+      <div class="tab-pane active" id="27db7939c30dbookings_read">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"booking_comments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{booking_comments.account}"</span><span class="p">,</span>
@@ -275,8 +288,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"content"</span><span class="o">:</span> <span class="s2">"Comment content"</span><span class="p">,</span>
       <span class="s2">"editable"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">1</span>
@@ -288,7 +301,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="492e8c63c006bookings_write-bookings_write_owned">
+      <div class="tab-pane " id="553a8924d352bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"booking_comments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{booking_comments.account}"</span><span class="p">,</span>
@@ -299,8 +312,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"content"</span><span class="o">:</span> <span class="s2">"Comment content"</span><span class="p">,</span>
       <span class="s2">"editable"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">1</span>
@@ -323,26 +336,28 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#1867e4f918a2bookings_read" role="tab" data-toggle="pill">
+        <a href="#69e26f685814bookings_read" role="tab" data-toggle="pill">
           bookings_read
         </a>
       </li>
     
       <li>
-        <a href="#a4d2d2c7b8e8bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#9a3a9f543305bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_write / bookings_write_owned
         </a>
       </li>
     
-  </ul><h4 id="response-1">Response</h4>
+  </ul>
+
+<h4 id="response-1">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="1867e4f918a2bookings_read">
+      <div class="tab-pane active" id="69e26f685814bookings_read">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"booking_comments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{booking_comments.account}"</span><span class="p">,</span>
@@ -353,8 +368,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"content"</span><span class="o">:</span> <span class="s2">"Comment content"</span><span class="p">,</span>
       <span class="s2">"editable"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">1</span>
@@ -366,7 +381,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="a4d2d2c7b8e8bookings_write-bookings_write_owned">
+      <div class="tab-pane " id="9a3a9f543305bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"booking_comments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{booking_comments.account}"</span><span class="p">,</span>
@@ -377,8 +392,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"content"</span><span class="o">:</span> <span class="s2">"Comment content"</span><span class="p">,</span>
       <span class="s2">"editable"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">1</span>
@@ -401,15 +416,17 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#63ee8f23f6d3bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#eabb08ae27e6bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_write / bookings_write_owned
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"booking_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
   <span class="s2">"booking_comments"</span><span class="o">:</span> <span class="p">[</span>
@@ -424,7 +441,7 @@
   
   
     
-      <div class="tab-pane active" id="63ee8f23f6d3bookings_write-bookings_write_owned">
+      <div class="tab-pane active" id="eabb08ae27e6bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"booking_comments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{booking_comments.account}"</span><span class="p">,</span>
@@ -435,8 +452,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"content"</span><span class="o">:</span> <span class="s2">"Comment content"</span><span class="p">,</span>
       <span class="s2">"editable"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">1</span>
@@ -459,15 +476,17 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#662958f35464bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#5fa44f6609f0bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_write / bookings_write_owned
         </a>
       </li>
     
-  </ul><h4>Example JSON request</h4>
+  </ul>
+
+<h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"booking_comments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -481,7 +500,7 @@
   
   
     
-      <div class="tab-pane active" id="662958f35464bookings_write-bookings_write_owned">
+      <div class="tab-pane active" id="5fa44f6609f0bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"booking_comments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{booking_comments.account}"</span><span class="p">,</span>
@@ -492,8 +511,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"content"</span><span class="o">:</span> <span class="s2">"Comment content"</span><span class="p">,</span>
       <span class="s2">"editable"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-19T13:10:58Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-12-28T14:27:28Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">1</span>
@@ -516,6 +535,7 @@
 
 <pre><code>DELETE /booking_comments/:booking_comment_id
 </code></pre>
+
         </div>
       </div>
     </div>

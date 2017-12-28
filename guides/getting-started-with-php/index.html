@@ -56,8 +56,12 @@
           <a class="list-group-item" href="/guides/create-a-booking-with-a-source">Create a Booking with a Source</a>
           <a class="list-group-item" href="/guides/read-all-authorized-accounts-at-once">Read all authorized accounts at once</a>
           <a class="list-group-item" href="/guides/getting-started-with-php">Getting Started with PHP</a>
+          <a class="list-group-item" href="/guides/api-best-practices">API best practices</a>
           <a class="list-group-item" href="/guides/secure-payments-by-bookingsync">Secure Payments By BookingSync</a>
           <a class="list-group-item" href="/guides/webhook-subscriptions">Webhook subscriptions</a>
+          <a class="list-group-item" href="/guides/oauth-scopes">OAuth scopes</a>
+          <a class="list-group-item" href="/guides/bookigsync-universe-api-early-beta">BookingSync Universe API [EARLY BETA]</a>
+          <a class="list-group-item" href="/guides/updated-since-flow">updated_since flow</a>
         </div>
       </div>
     </div>
@@ -67,11 +71,13 @@
           <h2 id="getting-started-with-php">Getting Started with PHP</h2>
 
 <ol id="markdown-toc">
-<li><a href="#preface">Preface</a></li>
+  <li><a href="#preface">Preface</a></li>
   <li><a href="#requirements">Requirements</a></li>
   <li><a href="#create-the-application">Create the application</a></li>
   <li><a href="#using-bookingsync-api">Using BookingSync API</a></li>
-</ol><h3 id="preface">Preface</h3>
+</ol>
+
+<h3 id="preface">Preface</h3>
 
 <p>In this guide, we will learn how to use BookingSync API using PHP language and our dedicated <a href="https://github.com/BookingSync/rest-request-php">PHP lib</a>.</p>
 
@@ -80,13 +86,15 @@
 <h3 id="requirements">Requirements</h3>
 
 <ol>
-<li>
+  <li>
     <p>Clone <a href="https://github.com/BookingSync/rest-request-php">this repository</a> into your web server. e.g: <code>/var/www/</code></p>
   </li>
   <li>
     <p>Create a new Vhost</p>
   </li>
-</ol><pre><code>&lt;VirtualHost *:80&gt;
+</ol>
+
+<pre><code>&lt;VirtualHost *:80&gt;
     ServerName bsa-rest-php.dev
 
     DocumentRoot /var/www/rest-request-php/examples/api-v3/
@@ -108,11 +116,13 @@
 <p>Click on <code>New Application</code> button</p>
 
 <ul>
-<li>Name: Choose a name for your application. e.g: <code>REST PHP</code>
+  <li>Name: Choose a name for your application. e.g: <code>REST PHP</code>
 </li>
   <li>Admin url: Same as Redirect URI, opening the app from BookingSync admin dashboard will run the script.</li>
   <li>Redirect URI: We want to run <code>get_rentals</code> example, so: https://bsa-rest-php.dev/get_rentals.php</li>
-</ul><p>On the right side, select <code>Standalone</code> and <code>Private</code></p>
+</ul>
+
+<p>On the right side, select <code>Standalone</code> and <code>Private</code></p>
 
 <p>Once your application is created, copy the <code>Private App Access Code</code>. Then go to the <code>Admin panel &gt; Apps</code> and paste this code inside <code>Instal a Private App</code>.</p>
 
@@ -125,6 +135,7 @@
 <p>Go to you <code>Partner Panel</code> and click on <code>manage</code> and copy/paste <code>Client ID</code> and <code>Client Secret</code> into this file. Same for <code>redirectUri</code>.</p>
 
 <p>If you go now to <code>https://bsa-rest-php.dev/get_rentals.php</code> you should be able to see the result of this example.</p>
+
         </div>
       </div>
     </div>

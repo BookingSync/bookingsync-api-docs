@@ -96,6 +96,8 @@
           <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
@@ -124,75 +126,82 @@
           <h2 id="tax-rules">Tax Rules</h2>
 
 <ol id="markdown-toc">
-<li><a href="#list-tax-rules">List tax rules</a></li>
+  <li><a href="#list-tax-rules">List tax rules</a></li>
   <li><a href="#get-a-single-tax-rule">Get a single tax rule</a></li>
-</ol><h4 id="parameters">Parameters</h4>
+</ol>
+
+<h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
-</ul><div class="tab-content">
+</ul>
+<div class="tab-content">
   <div class="tab-pane active" id="public">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody><tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Tax Rule’s id.</td>
-        </tr></tbody>
-<tbody>
-<tr>
-<td>comparator</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>comparator</td>
           <td>String</td>
           <td>Read</td>
           <td>Sign used to compare, possible values: <code>&lt;</code> <code>&lt;=</code> <code>==</code> <code>&gt;=</code> <code>&gt;</code>.</td>
         </tr>
-<tr>
-<td>compared_attribute</td>
+        <tr>
+          <td>compared_attribute</td>
           <td>String</td>
           <td>Read</td>
           <td>Name of the attribute to compare.</td>
         </tr>
-<tr>
-<td>ruleable_id</td>
+        <tr>
+          <td>ruleable_id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Id of the owner of the Tax Rule.</td>
         </tr>
-<tr>
-<td>ruleable_type</td>
+        <tr>
+          <td>ruleable_type</td>
           <td>String</td>
           <td>Read</td>
           <td>Type of the owner of the Tax Rule, either <code>RentalsTax</code> or <code>Tax</code>.</td>
         </tr>
-<tr>
-<td>value</td>
+        <tr>
+          <td>value</td>
           <td>String</td>
           <td>Read</td>
           <td>Value of the <code>compared_attribute</code>.</td>
         </tr>
-</tbody>
-<tbody>
-<tr>
-<td>created_at</td>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Tax Rule’s create time.</td>
         </tr>
-<tr>
-<td>updated_at</td>
+        <tr>
+          <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Tax Rule’s update time.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <h3 id="list-tax-rules">List tax rules</h3>
@@ -203,20 +212,22 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#ce463f1420c4public" role="tab" data-toggle="pill">
+        <a href="#ee5d829044aapublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
-  </ul><h4 id="response">Response</h4>
+  </ul>
+
+<h4 id="response">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="ce463f1420c4public">
+      <div class="tab-pane active" id="ee5d829044aapublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"tax_rules"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -244,20 +255,22 @@
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#fd2625f30208public" role="tab" data-toggle="pill">
+        <a href="#66511a454fdcpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
-  </ul><h4 id="response-1">Response</h4>
+  </ul>
+
+<h4 id="response-1">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="fd2625f30208public">
+      <div class="tab-pane active" id="66511a454fdcpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"tax_rules"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -276,6 +289,8 @@
     
   
 </div>
+
+
         </div>
       </div>
     </div>

@@ -96,6 +96,8 @@
           <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
@@ -124,11 +126,13 @@
           <h2 id="requirements">Requirements</h2>
 
 <ol id="markdown-toc">
-<li><a href="#registering-applications">Registering Applications</a></li>
+  <li><a href="#registering-applications">Registering Applications</a></li>
   <li><a href="#applications-types">Applications types</a></li>
   <li><a href="#published-applications">Published Applications</a></li>
   <li><a href="#private-applications">Private Applications</a></li>
-</ol><h3 id="registering-applications">Registering Applications</h3>
+</ol>
+
+<h3 id="registering-applications">Registering Applications</h3>
 
 <p>Applications that want to use the API need to be registered in the
 <a href="https://www.bookingsync.com/en/partners/applications">partner panel on BookingSync.com</a>.</p>
@@ -136,11 +140,13 @@
 <p>If you are not a partner yet, it’s <a href="https://www.bookingsync.com/en/partners/signup">free to signup so join us :)</a></p>
 
 <ul>
-<li>Click on <code>New Application</code> button.</li>
+  <li>Click on <code>New Application</code> button.</li>
   <li>Fill in required details, <code>redirect_uri</code> being your apps OAuth callback URL and <code>admin_url</code> to your admin section.</li>
   <li>Choose if application should open in a new window (<code>standalone</code>), or remain <code>embedded</code> in BookingSync frame.</li>
   <li>Choose <code>Private</code> application, at least during your development and testing process.</li>
-</ul><p><strong>Note</strong>: BookingSync traditional Users have to input <code>private access code</code> in their Apps section to start using your private application. That code is automatically generated for you and is visible in your applications manage section.</p>
+</ul>
+
+<p><strong>Note</strong>: BookingSync traditional Users have to input <code>private access code</code> in their Apps section to start using your private application. That code is automatically generated for you and is visible in your applications manage section.</p>
 
 <h3 id="applications-types">Applications types</h3>
 
@@ -156,15 +162,21 @@
 <h3 id="published-applications">Published Applications</h3>
 
 <ul>
-<li>All published applications are available by default for all accounts.</li>
-</ul><p><strong>Note</strong>: When first accessing the application, you will be asked to authorize the permissions.</p>
+  <li>All published applications are available by default for all accounts.</li>
+</ul>
+
+<p><strong>Note</strong>: When first accessing the application, you will be asked to authorize the permissions.</p>
 
 <h3 id="private-applications">Private Applications</h3>
 
 <ul>
-<li>First obtain <code>private access code</code> from the application owner.</li>
+  <li>First obtain <code>private access code</code> from the application owner.</li>
   <li>Input the code in your Apps section.</li>
-</ul><p><strong>Note</strong>: When first accessing the application, you will be asked to authorize the permissions. After the first authorization, you will be able to keep access to their account until they manually request to revoke your access.</p>
+</ul>
+
+<p><strong>Note</strong>: When first accessing the application, you will be asked to authorize the permissions. After the first authorization, you will be able to keep access to their account until they manually request to revoke your access.</p>
+
+
         </div>
       </div>
     </div>

@@ -96,6 +96,8 @@
           <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
@@ -124,55 +126,62 @@
           <h2 id="bookings-taxes">Bookings Taxes</h2>
 
 <ol id="markdown-toc">
-<li><a href="#list-bookings-taxes">List bookings taxes</a></li>
+  <li><a href="#list-bookings-taxes">List bookings taxes</a></li>
   <li><a href="#get-a-single-bookings-tax">Get a single bookings tax</a></li>
-</ol><h4 id="parameters">Parameters</h4>
+</ol>
+
+<h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#bookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">bookings_read/bookings_write/bookings_write_owned</a></li>
-</ul><div class="tab-content">
+</ul>
+<div class="tab-content">
   <div class="tab-pane active" id="bookings_read-bookings_write-bookings_write_owned">
     <table class="table table-bordered">
-<thead><tr>
-<th>Name</th>
+      <thead>
+        <tr>
+          <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
-        </tr></thead>
-<tbody><tr>
-<td>id</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Bookings Tax’s id.</td>
-        </tr></tbody>
-<tbody>
-<tr>
-<td>amount</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>amount</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Bookings Tax’s amount.</td>
         </tr>
-<tr>
-<td>name</td>
+        <tr>
+          <td>name</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read</td>
           <td>Bookings Tax’s name, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
         </tr>
-<tr>
-<td>percentage</td>
+        <tr>
+          <td>percentage</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Bookings Tax’s percentage.</td>
         </tr>
-<tr>
-<td>tax_included_in_price</td>
+        <tr>
+          <td>tax_included_in_price</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Tax amount already included in taxable(Rental or Bookings Fee) final price if set to true.</td>
         </tr>
-</tbody>
-</table>
-</div>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <h3 id="list-bookings-taxes">List bookings taxes</h3>
@@ -181,44 +190,50 @@
 certain range.</p>
 
 <table class="table table-bordered">
-<thead><tr>
-<th>Scope</th>
+  <thead>
+    <tr>
+      <th>Scope</th>
       <th>Read Permissions</th>
-    </tr></thead>
-<tbody>
-<tr>
-<td><code>:bookings_write_owned</code></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>:bookings_write_owned</code></td>
       <td>Display only bookings taxes for bookings created by app making the request</td>
     </tr>
-<tr>
-<td><code>:bookings_read</code></td>
+    <tr>
+      <td><code>:bookings_read</code></td>
       <td>Display all bookings taxes</td>
     </tr>
-<tr>
-<td><code>:bookings_write</code></td>
+    <tr>
+      <td><code>:bookings_write</code></td>
       <td>Display all bookings taxes</td>
     </tr>
-</tbody>
-</table><p>List all bookings taxes for current account(s).</p>
+  </tbody>
+</table>
+
+<p>List all bookings taxes for current account(s).</p>
 
 <pre><code>GET /bookings_taxes
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#fbd46e18f892bookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#cdee4d1a551abookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_read / bookings_write / bookings_write_owned
         </a>
       </li>
     
-  </ul><h4 id="response">Response</h4>
+  </ul>
+
+<h4 id="response">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="fbd46e18f892bookings_read-bookings_write-bookings_write_owned">
+      <div class="tab-pane active" id="cdee4d1a551abookings_read-bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_taxes.booking"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/bookings/{bookings_taxes.booking}"</span><span class="p">,</span>
@@ -262,20 +277,22 @@ certain range.</p>
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
-<li class="disabled"><a>OAuth Scopes:</a></li>
+    <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#97747a872cefbookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#03d1ae8cb043bookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_read / bookings_write / bookings_write_owned
         </a>
       </li>
     
-  </ul><h4 id="response-1">Response</h4>
+  </ul>
+
+<h4 id="response-1">Response</h4>
 <div class="tab-content">
   
   
     
-      <div class="tab-pane active" id="97747a872cefbookings_read-bookings_write-bookings_write_owned">
+      <div class="tab-pane active" id="03d1ae8cb043bookings_read-bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_taxes.booking"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/bookings/{bookings_taxes.booking}"</span><span class="p">,</span>
@@ -310,6 +327,8 @@ certain range.</p>
     
   
 </div>
+
+
         </div>
       </div>
     </div>

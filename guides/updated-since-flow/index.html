@@ -68,73 +68,27 @@
     <div class="col-md-9 col-md-pull-3">
       <div class="panel panel-default">
         <div class="panel-body guide-body">
-          <h2 id="read-all-authorized-accounts-at-once">Read All Authorized Accounts At Once</h2>
+          <h2 id="updatedsince-flow">updated_since flow</h2>
 
 <ol id="markdown-toc">
   <li><a href="#preface">Preface</a></li>
-  <li><a href="#requirements">Requirements</a></li>
-  <li><a href="#getting-a-client-credential-token">Getting A Client Credential Token</a></li>
-  <li><a href="#read-all-published-rentals">Read All Published Rentals</a></li>
+  <li><a href="#prerequisites">Prerequisites</a></li>
+  <li><a href="#how-to-use-it">How to use it</a></li>
 </ol>
 
 <h3 id="preface">Preface</h3>
 
-<p>In some cases it can be very convenient to read information from all the accounts in a single query. This is possible for reading public information (behind the <code>public</code> scope) by using the <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a>.</p>
+<p>In most cases, you will need to fetch the data recurringly from BookingSync API to efficiently use it in your application. The problem is that some API endpoints may return large amounts of data which gets modified quite often. Obviously, fetching thousands of records every time you need to synchronize data is not an option. That’s why we introduced <code>updated_since</code> flow - to let API consumers fetch the data that has been changed since the provided date of the last synchronization.</p>
 
-<h3 id="requirements">Requirements</h3>
+<h3 id="prerequisites">Prerequisites</h3>
 
-<p>As only public information are returned when using the <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a> you will need to make sure that your test accounts have <code>published</code> rentals as only those ones are returned.</p>
+<p>To take advantage of this feature, you need to fetch all the records from BookingSync API and persist them locally along with the timestamp of the synchronization time. Since the time on the API consumer might be different than the time on the API server, we recommend using <code>x-updated-since-request-synced-at</code> response header which will contain the timestamp that you can persist as the date of the latest synchronization - that way you will avoid the case of missing some update due to the slight time differences between consumer and server.</p>
 
-<p>To test the examples of this guide, you will need to authorize at least 2 test accounts.</p>
+<h3 id="how-to-use-it">How to use it</h3>
 
-<h3 id="getting-a-client-credential-token">Getting A Client Credential Token</h3>
+<p>Just provide <code>updated_since</code> query param when fetching the records with the value equal to the time of the latest synchronization.</p>
 
-<p>Use the schema below with by replacing:</p>
-
-<ul>
-  <li>
-<code>CLIENT ID</code>: Application’s Client ID</li>
-  <li>
-<code>CLIENT_SECRET</code>: Application’s Client Secret <em>(do not share, same as password)</em>
-</li>
-</ul>
-
-<pre><code>https://www.bookingsync.com/oauth/token?client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;grant_type=client_credentials
-</code></pre>
-
-<p>Make a POST request to this URL to get your Authentication Token.</p>
-
-<p>Example with CURL:</p>
-
-<pre><code>curl -X POST -d "client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;grant_type=client_credentials" "https://www.bookingsync.com/oauth/token"
-</code></pre>
-
-<p>Sample response:</p>
-
-<pre><code class="language-json"><span class="p">{</span>
-  <span class="nt">"access_token"</span><span class="p">:</span> <span class="s2">"0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"</span><span class="p">,</span>
-  <span class="nt">"token_type"</span><span class="p">:</span> <span class="s2">"bearer"</span><span class="p">,</span>
-  <span class="nt">"expires_in"</span><span class="p">:</span> <span class="mi">7200</span><span class="p">,</span>
-  <span class="nt">"scope"</span><span class="p">:</span> <span class="s2">"public"</span><span class="p">,</span>
-  <span class="nt">"created_at"</span><span class="p">:</span> <span class="mi">1466671142</span>
-<span class="p">}</span></code></pre>
-
-<p><strong>Note</strong>: Tokens (<code>access_token</code>) are only <strong>valid for 2 hours</strong>, you then need to request a new one.</p>
-
-<h3 id="read-all-published-rentals">Read All Published Rentals</h3>
-
-<p>Now that you have your <code>access_token</code>, you can read all the published rentals with the following request.</p>
-
-<div class="callout callout-info">
-  <h4>Pagination</h4>
-
-  <p>Do not forget that all <a href="/reference/#pagination">responses are paginated</a>.</p>
-</div>
-
-<p>Example with CURL:</p>
-
-<pre><code>curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' https://www.bookingsync.com/api/v3/rentals
-</code></pre>
+<p>Also, when <code>updated_since</code> value is provided, the response will contain <code>meta</code> object with <code>deleted_ids</code> array containing the list of soft-deleted records since the given time. Thanks to that, you can safely remove all the records on your side with those ids.</p>
 
         </div>
       </div>
