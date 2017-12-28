@@ -39,7 +39,7 @@ end_date             | [Date](/reference/enums#formats) | Read       | Rate's en
 
 ## List rates
 
-List all rates for given account(s).
+List all rates for a given account(s).
 
 ~~~
 GET /rates

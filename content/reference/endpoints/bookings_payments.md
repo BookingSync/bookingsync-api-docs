@@ -27,7 +27,7 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Bookings Paym
 
 ## List bookings payments
 
-List all bookings payments for given account.
+List all bookings payments for a given account.
 
 ~~~
 GET /bookings_payments

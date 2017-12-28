@@ -111,7 +111,7 @@ paid_at             | [Time](/reference/enums#formats) | Read/Write | Payment's 
 
 ## List payments
 
-List all payments for given account.
+List all payments for a given account.
 
 ~~~
 GET /payments

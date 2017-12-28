@@ -14,4 +14,7 @@ This works best with pow.
 
 ## Publishing
 
-Just run `rake publish`.
+Make sure to be on the master branch and having pulled the latest changes, then run `bundle exec rake publish` from your local machine.
+
+You will need to wait few minutes before the changes are live on the documentation side.
+

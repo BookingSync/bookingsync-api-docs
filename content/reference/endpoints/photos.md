@@ -64,7 +64,7 @@ updated_at         | [Time](/reference/enums#formats) | Read       | Photo's upd
 
 ## List photos
 
-List all photos for given account(s).
+List all photos for a given account(s).
 
 ~~~
 GET /photos

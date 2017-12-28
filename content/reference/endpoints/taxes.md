@@ -59,7 +59,7 @@ end_date         | [Date](/reference/enums#formats) | Read/Write | Ending of the
 
 ## List taxes
 
-List all taxes for given account(s).
+List all taxes for a given account(s).
 
 ~~~
 GET /taxes
