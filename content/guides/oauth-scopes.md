@@ -9,7 +9,7 @@ For authorizing read and write access to most of the endpoints, BookingSync API 
 
 The first two are self-explanatory: for reading, the read scope is required (however, write scope also gives the permission to read resources), for writing the write scope is necessary (the read scope won't be enough).
 
-The last one, `write owned` is not that obvious. It is still similar to `write` scope in the sense that it allows write and read actions, but the behavior is slightly different. When creating a new record with owned scope, your application will acquire a lock on the record preventing it from being modified by any other application, besides the attributes that are always whitelisted for editing (check Additional Comments section for reference). For example, when you create a booking with `bookings_write_owned` scope, only your application will be able to modify its prices'. Another difference is for `read` actions - the response might be limited for some resources, and all sensitive data for given resource will be removed (check Additional Comments section for reference). Such behavior prevents applications from accessing the sensitive data when it is not necessary for them. It is **strongly** recommended to use `write owned` scopes by default (if applicable for given resource, not all of them have the owned scope) as `write` scopes with full access might discourage property managers from installing your application.
+The last one, `write owned` is not that obvious. It is still similar to `write` scope in the sense that it allows write and read actions, but the behavior is slightly different. When creating a new record with owned scope, your application will acquire a lock on the record preventing it from being modified by any other application, besides the attributes that are always whitelisted for editing (check [Additional Comments section](#additional-comments) for reference). For example, when you create a booking with `bookings_write_owned` scope, only your application will be able to modify its prices'. Another difference is for `read` actions - the response might be limited for some resources, and all sensitive data for given resource will be removed (check Additional Comments section for reference). Such behavior prevents applications from accessing the sensitive data when it is not necessary for them. It is **strongly** recommended to use `write owned` scopes by default (if applicable for given resource, not all of them have the owned scope) as `write` scopes with full access might discourage property managers from installing your application.
 
 ## Additional Comments
 
@@ -33,5 +33,7 @@ In case of bookings and bookings taxes, `bookings_write_owned` impacts the respo
 * `status`
 * `updated_at`
 * `reference`
+
+In that way, `bookings_write_owned` scope acts like a `public` scope.
 
 For bookings taxes, no attributes will be returned.
