@@ -16,8 +16,8 @@ In that case, you need to calculate the price based on BookingSync data. Dependi
 Live Quote is the best way to get the exact price for given rental for specified dates as it operates on the data that is always up-to-date, not a cached one, and also offers a precise breakdown of the way how the price has been calculated. To take advantage of this feature, you just need to send a request to [`/rentals/search` endpoint](http://developers.bookingsync.com/reference/endpoints/rentals/#search-rentals) with the following params:
 
 * `rental_id` (required) - BookingSync id of the rental you want to create the booking for
-* `start_at` (required) - the start date of the booking
-* `end_at` (required) - the end date of the booking
+* `start_at` (required) - the start date and time of the booking
+* `end_at` (required) - the end date and time of the booking
 * `adults` (required) - the number of adults for the booking
 * `children` (optional) - the number of children for the booking
 
@@ -107,7 +107,7 @@ Besides LOS records, there is one more form of a distributed calculations cache 
 
 It is **absolutely NOT recommended** and won't be accepted for channel applications to use directly any of those to calculate the price of the booking; nevertheless, it might give you some insight how things work on a lower-level.
 
-Seasons and periods are resources which modify rentals' base rate for given dates range. That way, you can get the exact "raw" nightly rate for the rental for a given day (which means without any rates rules applied). [Nightly rates map](http://developers.bookingsync.com/reference/endpoints/nightly_rate_maps/) is the equivalent resource to combined seasons and periods; the format is just more compact and much easier to manage outside the BookingSync, via a third-party application.
+Seasons and periods are resources which modify rentals' base rate for given date ranges. That way, you can get the exact "raw" nightly rate for the rental for a given day (which means without any rates rules applied). [Nightly rates map](http://developers.bookingsync.com/reference/endpoints/nightly_rate_maps/) is the equivalent resource to combined seasons and periods; the format is just more compact and much easier to manage outside the BookingSync, via a third-party application.
 
 [`Rates`](http://developers.bookingsync.com/reference/endpoints/rates/) are calculated based on the seasons/periods/nightly rates maps/rates rules, so those resources should not be used for any calculation, they should be considered as an implementation detail.
 
@@ -115,7 +115,7 @@ Internally, seasons and periods (which are manageable from BookingSync UI) are m
 
 ## Your application manages rentals' rates
 
-In that case, you can create [nightly rates maps](http://developers.bookingsync.com/reference/endpoints/nightly_rate_maps/) which will contain the "raw" rates, without any rates rules applied. Keep in mind that property managers can apply rates rules on top of those nightly rates.
+In that case, you can create [nightly rates maps](http://developers.bookingsync.com/reference/endpoints/nightly_rate_maps/) which will contain the "raw" nightly rates, without any rates rules applied. Keep in mind that property managers can apply rates rules on top of those nightly rates.
 
 If your application manages rates using nightly rates maps, property managers won't be able to create any seasons and periods in BookingSync. However, the nightly rates will be mapped to seasons and periods for internal usage.
 
