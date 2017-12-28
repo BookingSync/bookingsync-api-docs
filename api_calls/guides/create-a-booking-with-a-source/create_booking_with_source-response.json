@@ -7,7 +7,8 @@
     "bookings.source": "https://www.bookingsync.com/api/v3/sources/{bookings.source}",
     "bookings.bookings_fees": "https://www.bookingsync.com/api/v3/bookings_fees/{bookings.bookings_fees}",
     "bookings.bookings_taxes": "https://www.bookingsync.com/api/v3/bookings_taxes/{bookings.bookings_taxes}",
-    "bookings.bookings_tags": "https://www.bookingsync.com/api/v3/bookings_tags/{bookings.bookings_tags}"
+    "bookings.bookings_tags": "https://www.bookingsync.com/api/v3/bookings_tags/{bookings.bookings_tags}",
+    "bookings.rentals_tags": "https://www.bookingsync.com/api/v3/rentals_tags/{bookings.rentals_tags}"
   },
   "bookings": [
     {
@@ -19,7 +20,8 @@
         "source": 2,
         "bookings_fees": [],
         "bookings_taxes": [],
-        "bookings_tags": []
+        "bookings_tags": [],
+        "rentals_tags": []
       },
       "id": 1,
       "start_at": "START_AT",
