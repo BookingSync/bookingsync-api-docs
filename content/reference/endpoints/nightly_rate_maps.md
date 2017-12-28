@@ -38,7 +38,7 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Nightly Rate 
 
 ## List nightly rate maps
 
-List all nightly rate maps for given account.
+List all nightly rate maps for a given account.
 
 ~~~
 GET /nightly_rate_maps

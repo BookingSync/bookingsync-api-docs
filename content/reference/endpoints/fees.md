@@ -52,7 +52,7 @@ updated_at        | [Time](/reference/enums#formats) | Read         | Fee's upda
 
 ## List fees
 
-List all fees for given account(s).
+List all fees for a given account(s).
 
 ~~~
 GET /fees

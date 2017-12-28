@@ -38,7 +38,7 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Source's upda
 
 ## List sources
 
-List all sources for given account.
+List all sources for a given account.
 
 ~~~
 GET /sources

@@ -89,7 +89,7 @@ phones    |                  | Array   | Read/Write | Array of client's phone nu
 
 ## List clients
 
-List all clients for given account.
+List all clients for a given account.
 
 ~~~
 GET /clients

@@ -24,7 +24,7 @@ updated_at             | [Time](/reference/enums#formats) | Read       | Rentals
 
 ## List rentals taxes
 
-List all rentals taxes for given account(s).
+List all rentals taxes for a given account(s).
 
 ~~~
 GET /rentals_taxes

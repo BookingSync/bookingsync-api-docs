@@ -28,7 +28,7 @@ updated_at             | [Time](/reference/enums#formats) | Read       | Tax Rul
 
 ## List tax rules
 
-List all tax rules for given account(s).
+List all tax rules for a given account(s).
 
 ~~~
 GET /tax_rules
