@@ -199,7 +199,7 @@ You still need each account to be authorize your application by using the [Autho
 <div class="callout callout-info">
   <h4>Limitations</h4>
 
-  <p>Requests using a token obtained using the Client Credentials flow are limited to using only the <code>public</code> scope, but can access resources of all BookingSync Accounts that authorized the given Application.</p>
+  <p>Requests using a token obtained using the Client Credentials flow are limited to using only the <code>public</code> scope, but can access most of the resources of BookingSync Accounts that authorized the given Application as long as the access is not limited by other OAuth scopes.</p>
 </div>
 
 The client credentials OAuth 2.0 flow consists of this single step:
