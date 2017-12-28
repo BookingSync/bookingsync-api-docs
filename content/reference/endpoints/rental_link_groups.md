@@ -38,7 +38,7 @@ updated_at       | [Time](/reference/enums#formats) | Read         | Rental link
 
 ## List rental link groups
 
-List all rental link groups for given account(s).
+List all rental link groups for a given account(s).
 
 ~~~
 GET /rental_link_groups

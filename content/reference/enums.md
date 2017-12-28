@@ -22,6 +22,16 @@ Status           | Description
 3                | Unavailable
 {: class="table table-bordered"}
 
+## Change-over map statuses
+
+Status           | Description
+-----------------|------------
+X                | No action possible
+C                | Check-In and Check-Out
+O                | Check-Out only
+I                | Check-In only
+{: class="table table-bordered"}
+
 ## Booking statuses
 
 Status           | Description
@@ -203,19 +213,36 @@ weekend_night                  | Rule applied for weekend night.
 
 ## Rental types
 
-Name             | Description
------------------|------------
-apartment        | Apartment
-boat             | Boat
-bungalow         | Bungalow
-cabin            | Cabin
-castle           | Castle
-chalet           | Chalet
-cottage          | Cottage
-farmhouse        | Farmhouse
-holiday-home     | Holiday Home
-house            | House
-private-room     | Private room
-studio           | Studio
-villa            | Villa
+Name                 | Description
+---------------------|------------
+apartment            | Apartment
+boat                 | Boat
+bungalow             | Bungalow
+cabin                | Cabin
+castle               | Castle
+cave                 | Cave
+chalet               | Chalet
+condominium          | Condominium
+cottage              | Cottage
+dormitory            | Dormitory
+earth-house          | Earth House
+farmhouse            | Farmhouse
+holiday-home         | Holiday Home
+house                | House
+hut                  | Hut
+igloo                | Igloo
+island               | Island
+lighthouse           | Lighthouse
+loft                 | Loft
+plane                | Plane
+private-room         | Private room
+recreational-vehicle | Camper/RV
+studio               | Studio
+tent                 | Tent
+tipi                 | Tipi
+townhouse            | Townhouse
+train                | Train
+treehouse            | Treehouse
+villa                | Villa
+yurt                 | Yurt
 {: class="table table-bordered"}

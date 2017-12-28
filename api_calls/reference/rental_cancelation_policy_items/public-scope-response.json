@@ -1,0 +1,17 @@
+{
+  "links": {
+    "rental_cancelation_policy_items.rental_cancelation_policy": "https://www.bookingsync.com/api/v3/rental_cancelation_policies/{rental_cancelation_policy_items.rental_cancelation_policy}"
+  },
+  "rental_cancelation_policy_items": [
+    {
+      "links": {
+        "rental_cancelation_policy": 1
+      },
+      "id": 1,
+      "eligible_days": 120,
+      "penalty_percentage": "10.0",
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT"
+    }
+  ]
+}

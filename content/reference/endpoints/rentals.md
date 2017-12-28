@@ -179,7 +179,7 @@ published_at                    | [Time](/reference/enums#formats) | Read       
 
 ## List rentals
 
-List all rentals for given account(s).
+List all rentals for a given account(s).
 
 ~~~
 GET /rentals

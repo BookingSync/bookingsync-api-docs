@@ -37,7 +37,7 @@ updated_at             | [Time](/reference/enums#formats) | Read       | Fees Ta
 
 ## List fees taxes
 
-List all fees taxes for given account(s).
+List all fees taxes for a given account(s).
 
 ~~~
 GET /fees_taxes

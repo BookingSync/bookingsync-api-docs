@@ -32,6 +32,7 @@ Name                    | Type    | Read/Write | Description
 id                      | Integer | Read       | Booking's id.
 client_id               | Integer | Write      | Client id related to the Booking.
 source_id               | Integer | Write      | Source id related to the Booking.
+bookings_tag_ids        | Array   | Write      | Array of bookings_tags ids associated with Booking.
 ------------------------|---------|------------|------------
 adults                  | Integer | Write      | Booking's number of adults.
 booked                  | Boolean | Write      | Booking's booked status, false by default. When set to true, marks a regular booking.
@@ -61,6 +62,7 @@ start_at                | [Time](/reference/enums#formats) | Read/Write | **Requ
 end_at                  | [Time](/reference/enums#formats) | Read/Write | **Required**. Booking's end time.
 canceled_at             | [Time](/reference/enums#formats) | Write | Booking's cancel time.
 tentative_expires_at    | [Time](/reference/enums#formats) | Write | Booking's tentative expiry time, null by default. When set, it will mark the period as "on hold" until the given date. Once this date is passed, the period will automatically become available again.
+booked_at               | [Time](/reference/enums#formats) | Write      | Exact timestamp when a booking was booked
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="bookings_read" markdown="1">
@@ -114,6 +116,7 @@ Name                    | Type    | Read/Write | Description
 id                      | Integer | Read       | Booking's id.
 client_id               | Integer | Write      | Client id related to the Booking.
 source_id               | Integer | Write      | Source id related to the Booking.
+bookings_tag_ids        | Array   | Write      | Array of bookings_tags ids associated with Booking.
 ------------------------|---------|------------|------------
 adults                  | Integer | Read/Write | Booking's number of adults.
 booked                  | Boolean | Read/Write | Booking's booked status, false by default. When set to true, marks a regular booking.
@@ -153,6 +156,7 @@ end_at                  | [Time](/reference/enums#formats) | Read/Write | **Requ
 canceled_at             | [Time](/reference/enums#formats) | Read/Write | Booking's cancel time.
 tentative_expires_at    | [Time](/reference/enums#formats) | Read/Write | Booking's tentative expiry time, null by default. When set, it will mark the period as "on hold" until the given date. Once this date is passed, the period will automatically become available again.
 contract_updated_at     | [Time](/reference/enums#formats) | Read       | Booking's contract update time.
+booked_at               | [Time](/reference/enums#formats) | Write      | Exact timestamp when a booking was booked
 {: class="table table-bordered"}
   </div>
 </div>
@@ -234,7 +238,7 @@ POST /rentals/:rental_id/bookings
 
 <%= render 'json_response', endpoint: "bookings", request: "create",
   scopes: [
-    { bookings_write_owned: "public-bookings_write_owned" },
+    { bookings_write_owned: "bookings_read-bookings_write" },
     { bookings_write: "bookings_read-bookings_write" }
   ] %>
 
@@ -247,7 +251,8 @@ POST /rentals/:rental_id/bookings
 
 <%= render 'json_response', endpoint: "bookings", request: "create_with_comments_fees_and_taxes",
   scopes: [
-    { bookings_write: "bookings_read-bookings_write_with_comments_fees_and_taxes" }
+    { bookings_write: "bookings_read-bookings_write_with_comments_fees_and_taxes" },
+    { bookings_write_owned: "bookings_read-bookings_write_with_comments_fees_and_taxes" }
   ] %>
 
 ## Update a booking
