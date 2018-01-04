@@ -1,7 +1,15 @@
 # Change Log
 
-## [3.9.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.9.0) (2017-12-28)
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.8.0...3.9.0)
+## [3.10.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.10.0) (2018-01-04)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.9.0...3.10.0)
+
+**Merged pull requests:**
+
+- add github\_changelog\_generator to Gemfile [\#275](https://github.com/BookingSync/bookingsync-api-docs/pull/275) ([Azdaroth](https://github.com/Azdaroth))
+- add docs explaining pricing concepts [\#257](https://github.com/BookingSync/bookingsync-api-docs/pull/257) ([Azdaroth](https://github.com/Azdaroth))
+
+## [v3.9.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.9.0) (2017-12-28)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.8.0...v3.9.0)
 
 **Merged pull requests:**
 
