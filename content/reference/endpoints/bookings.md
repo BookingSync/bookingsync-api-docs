@@ -108,6 +108,7 @@ end_at                  | [Time](/reference/enums#formats) | Read       | Bookin
 canceled_at             | [Time](/reference/enums#formats) | Read       | Booking's cancel time.
 tentative_expires_at    | [Time](/reference/enums#formats) | Read       | Booking's tentative expiry time, null by default. When set, it will mark the period as "on hold" until the given date. Once this date is passed, the period will automatically become available again.
 contract_updated_at     | [Time](/reference/enums#formats) | Read       | Booking's contract update time.
+payment_left_to_collect | [Decimal](/reference/enums#formats) | Read    | Booking's payment left to collect
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="bookings_write" markdown="1">
