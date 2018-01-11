@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BookingSync API documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/stylesheets/application.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/highlight.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="/assets/javascripts/application.js"></script>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.8.0">
+  </head>
+  <body class="flex-col">
+    <div class="page-wrapper flex-1 flex-col">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle sidebar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <img alt="BookingSync" src="/images/bookingsync.svg">
+              <span>Developers</span>
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active">
+                <a href="/guides/">Guides</a>
+              </li>
+              <li class="">
+                <a href="/reference/">API Reference</a>
+              </li>
+              <li><a href="https://www.bookingsync.com" target="_blank">BookingSync.com</a></li>
+              <li><a href="https://github.com/BookingSync/bookingsync-api-docs" target="_blank"><i class="fa fa-github fa-fw fa-2x"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+<div class="container content">
+  <div class="row">
+    <div class="col-md-3 col-md-push-9">
+      <div class="panel panel-default">
+        <div class="list-group">
+          <a class="list-group-item" href="/guides/">Introduction</a>
+          <a class="list-group-item" href="/guides/create-a-booking-with-a-source">Create a Booking with a Source</a>
+          <a class="list-group-item" href="/guides/read-all-authorized-accounts-at-once">Read all authorized accounts at once</a>
+          <a class="list-group-item" href="/guides/getting-started-with-php">Getting Started with PHP</a>
+          <a class="list-group-item" href="/guides/pricing-concepts">Pricing concepts</a>
+          <a class="list-group-item" href="/guides/api-best-practices">API best practices</a>
+          <a class="list-group-item" href="/guides/secure-payments-by-bookingsync">Secure Payments By BookingSync</a>
+          <a class="list-group-item" href="/guides/webhook-subscriptions">Webhook subscriptions</a>
+          <a class="list-group-item" href="/guides/oauth-scopes">OAuth scopes</a>
+          <a class="list-group-item" href="/guides/bookigsync-universe-api-early-beta">BookingSync Universe API [EARLY BETA]</a>
+          <a class="list-group-item" href="/guides/updated-since-flow">updated_since flow</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 col-md-pull-3">
+      <div class="panel panel-default">
+        <div class="panel-body guide-body">
+          <h2 id="pricing-concepts">Pricing concepts</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#preface">Preface</a></li>
+  <li><a href="#your-application-creates-bookings">Your application creates bookings</a></li>
+  <li><a href="#your-application-manages-rentals-rates">Your application manages rentals’ rates</a></li>
+</ol>
+
+<h3 id="preface">Preface</h3>
+
+<p>Creating bookings/reservations is a very core of the vacation rental industry, so it’s important to be flexible enough to provide multiple strategies for our partners in which they can calculate the price of the bookings and also manage rates of the rentals. Here is a brief overview of the pricing concepts and strategies that could be employed by your application.</p>
+
+<h3 id="your-application-creates-bookings">Your application creates bookings</h3>
+
+<p>In that case, you need to calculate the price based on BookingSync data. Depending on the synchronous (live quote request) or asynchronous (cached rates) nature of your application’s flow, there are few ways to do it:</p>
+
+<h4 id="live-quote-request-recommended-for-synchronous-flow">1. Live Quote request (recommended for synchronous flow)</h4>
+
+<p>Live Quote is the best way to get the exact price for given rental for specified dates as it operates on the data that is always up-to-date, not a cached one, and also offers a precise breakdown of the way how the price has been calculated. To take advantage of this feature, you just need to send a request to <a href="http://developers.bookingsync.com/reference/endpoints/rentals/#search-rentals"><code>/rentals/search</code> endpoint</a> with the following params:</p>
+
+<ul>
+  <li>
+<code>rental_id</code> (required) - BookingSync id of the rental you want to create the booking for</li>
+  <li>
+<code>start_at</code> (required) - the start date and time of the booking</li>
+  <li>
+<code>end_at</code> (required) - the end date and time of the booking</li>
+  <li>
+<code>adults</code> (required) - the number of adults for the booking</li>
+  <li>
+<code>children</code> (optional) - the number of children for the booking</li>
+</ul>
+
+<p>If the rental is available for the provided dates, you will get a non-empty response body looking like this:</p>
+
+<pre><code class="language-json"><span class="p">{</span>
+  <span class="nt">"rentals"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">"id"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">"currency"</span><span class="p">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
+      <span class="nt">"damage_deposit"</span><span class="p">:</span> <span class="mf">35.5</span><span class="p">,</span>
+      <span class="nt">"final_price"</span><span class="p">:</span> <span class="mf">858.33</span><span class="p">,</span>
+      <span class="nt">"initial_price"</span><span class="p">:</span> <span class="mf">700.0</span><span class="p">,</span>
+      <span class="nt">"price_details"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"taxes"</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="nt">"name"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">"en"</span><span class="p">:</span> <span class="s2">"VAT"</span>
+            <span class="p">},</span>
+            <span class="nt">"percentage"</span><span class="p">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
+            <span class="nt">"amount"</span><span class="p">:</span> <span class="s2">"58.33"</span><span class="p">,</span>
+            <span class="nt">"taxable_type"</span><span class="p">:</span> <span class="s2">"Rental"</span><span class="p">,</span>
+            <span class="nt">"taxable_id"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">"tax_id"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">"included"</span><span class="p">:</span> <span class="kc">false</span>
+          <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="nt">"fees"</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="nt">"name"</span><span class="p">:</span> <span class="p">{</span>
+              <span class="nt">"en"</span><span class="p">:</span> <span class="s2">"some fee"</span>
+            <span class="p">},</span>
+            <span class="nt">"required"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">"price"</span><span class="p">:</span> <span class="s2">"100.0"</span><span class="p">,</span>
+            <span class="nt">"quantity"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">"id"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="nt">"rentals_fee_id"</span><span class="p">:</span> <span class="mi">12</span>
+          <span class="p">}</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="nt">"price_to_pay_now"</span><span class="p">:</span> <span class="mf">858.33</span><span class="p">,</span>
+      <span class="nt">"taxes"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nt">"name"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">"en"</span><span class="p">:</span> <span class="s2">"VAT"</span>
+          <span class="p">},</span>
+          <span class="nt">"percentage"</span><span class="p">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
+          <span class="nt">"amount"</span><span class="p">:</span> <span class="s2">"58.33"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="nt">"updated_at"</span><span class="p">:</span> <span class="s2">"2014-01-21T11:46:15Z"</span><span class="p">,</span>
+      <span class="nt">"links"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"rentals_fees"</span><span class="p">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/rentals_fees/{rentals.rentals_fees}"</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<p>If the response contains any <code>taxes</code> or <code>fees</code> inside <code>price_details</code>, you MUST include them in the request body when <a href="http://developers.bookingsync.com/reference/endpoints/bookings/#create-a-new-booking">creating a booking</a>.</p>
+
+<p>Keep in mind that <code>taxes</code> outside <code>price_details</code> are just grouped summed taxes of the same kind that should be used only for presentation purposes.</p>
+
+<p>The response will contain three top-level attributes that are related to the price:</p>
+
+<ul>
+  <li>
+<code>initial_price</code> - the initial price (without excluded taxes and fees). If you don’t apply any discounts, this will be equal to the price for only the rental.</li>
+  <li>
+<code>final_price</code> - the sum of initial price, required fees and excluded taxes.</li>
+  <li>
+<code>price_to_pay_now</code> - if you capture credit card payments in your application, this is the price that you should charge which is calculated based on the payment schedule (rental’s balance due date - before that date you should charge the price based on the downpayment, after that the full price (<code>final_price</code>)). If you use Live Quote, you don’t have to worry how this attribute is calculated.</li>
+</ul>
+
+<h4 id="distributed-calculation-cache---los-records-recommended-for-asynchronous-flow">2. Distributed calculation cache - LOS records (recommended for asynchronous flow)</h4>
+
+<p>Sometimes you can’t perform a live quote before creating a booking, but still need the best approximation of the price. In that case, you can take advantage of <a href="http://developers.bookingsync.com/reference/endpoints/los_records/">LOS records</a>, which are a distributed cache of the prices for the next consecutive 30 days in reference to a given <code>day</code> when the booking is created. Most likely this day will be today’s date if you use LOS records for price calculation before creating a booking.</p>
+
+<p>The way LOS records’ <code>rates</code> work is the following: each consecutive rate is the price for the given length of stay (hence Length Of Stay Records). For a one-day stay, the price will be equal to the first rate, for a two-day stay, the price will be equal to the second rate and so forth.</p>
+
+<p>There are three <code>kind</code>s of LOS records, but two of them are particularly important:</p>
+
+<ul>
+  <li>
+<code>rental_price</code> - the LOS records will contain the rates for booking’s <code>initial_price</code> (check Live Quote docs for reference).</li>
+  <li>
+<code>final_price </code> - the LOS records will contain the rates for booking’s <code>final_price</code>, which means it covers excluded taxes and required fees as well (check Live Quote docs for reference).</li>
+</ul>
+
+<h4 id="rates-and-rates-rules-not-recommended">3. Rates and rates rules (not recommended).</h4>
+
+<p>Besides LOS records, there is one more form of a distributed calculations cache - <a href="http://developers.bookingsync.com/reference/endpoints/rates/">rates</a>. They are in some sense similar to LOS records, but the rates are divided into the periods without a reference to the specific day for which they were calculated. That means that not all <a href="http://developers.bookingsync.com/reference/endpoints/rates_rules/">rates rules</a> could have been applied when generating them,  so a potential price based on rates most likely will not be the same as from LOS records or Live Quote.</p>
+
+<h4 id="nightly-rates-maps-seasons-periods-and-rates-rules-not-recommended-and-not-supposed-to-be-used-for-exact-price">4. Nightly rates maps, seasons, periods and rates rules (not recommended and not supposed to be used for exact price).</h4>
+
+<p>It is <strong>absolutely NOT recommended</strong> and won’t be accepted for channel applications to use directly any of those to calculate the price of the booking; nevertheless, it might give you some insight how things work on a lower-level.</p>
+
+<p>Seasons and periods are resources which modify rentals’ base rate for given date ranges. That way, you can get the exact “raw” nightly rate for the rental for a given day (which means without any rates rules applied). <a href="http://developers.bookingsync.com/reference/endpoints/nightly_rate_maps/">Nightly rates map</a> is the equivalent resource to combined seasons and periods; the format is just more compact and much easier to manage outside the BookingSync, via a third-party application.</p>
+
+<p><a href="http://developers.bookingsync.com/reference/endpoints/rates/"><code>Rates</code></a> are calculated based on the seasons/periods/nightly rates maps/rates rules, so those resources should not be used for any calculation, they should be considered as an implementation detail.</p>
+
+<p>Internally, seasons and periods (which are manageable from BookingSync UI) are mapped to nightly rates maps, unless nightly rates maps are managed externally. In that case, nightly rates maps will be mapped to seasons/periods.</p>
+
+<h3 id="your-application-manages-rentals-rates">Your application manages rentals’ rates</h3>
+
+<p>In that case, you can create <a href="http://developers.bookingsync.com/reference/endpoints/nightly_rate_maps/">nightly rates maps</a> which will contain the “raw” nightly rates, without any rates rules applied. Keep in mind that property managers can apply rates rules on top of those nightly rates.</p>
+
+<p>If your application manages rates using nightly rates maps, property managers won’t be able to create any seasons and periods in BookingSync. However, the nightly rates will be mapped to seasons and periods for internal usage.</p>
+
+<p>Another option would be directly using <a href="http://developers.bookingsync.com/reference/endpoints/seasons/">seasons</a> and <a href="http://developers.bookingsync.com/reference/endpoints/periods/">periods</a> resources.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </body>
+</html>
+
