@@ -63,6 +63,7 @@ end_at                  | [Time](/reference/enums#formats) | Read/Write | **Requ
 canceled_at             | [Time](/reference/enums#formats) | Write | Booking's cancel time.
 tentative_expires_at    | [Time](/reference/enums#formats) | Write | Booking's tentative expiry time, null by default. When set, it will mark the period as "on hold" until the given date. Once this date is passed, the period will automatically become available again.
 booked_at               | [Time](/reference/enums#formats) | Write      | Exact timestamp when a booking was booked
+payment_left_to_collect | [Decimal](/reference/enums#formats) | Read    | Booking's payment left to collect.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="bookings_read" markdown="1">
@@ -108,7 +109,7 @@ end_at                  | [Time](/reference/enums#formats) | Read       | Bookin
 canceled_at             | [Time](/reference/enums#formats) | Read       | Booking's cancel time.
 tentative_expires_at    | [Time](/reference/enums#formats) | Read       | Booking's tentative expiry time, null by default. When set, it will mark the period as "on hold" until the given date. Once this date is passed, the period will automatically become available again.
 contract_updated_at     | [Time](/reference/enums#formats) | Read       | Booking's contract update time.
-payment_left_to_collect | [Decimal](/reference/enums#formats) | Read    | Booking's payment left to collect
+payment_left_to_collect | [Decimal](/reference/enums#formats) | Read    | Booking's payment left to collect.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="bookings_write" markdown="1">
@@ -158,6 +159,7 @@ canceled_at             | [Time](/reference/enums#formats) | Read/Write | Bookin
 tentative_expires_at    | [Time](/reference/enums#formats) | Read/Write | Booking's tentative expiry time, null by default. When set, it will mark the period as "on hold" until the given date. Once this date is passed, the period will automatically become available again.
 contract_updated_at     | [Time](/reference/enums#formats) | Read       | Booking's contract update time.
 booked_at               | [Time](/reference/enums#formats) | Write      | Exact timestamp when a booking was booked
+payment_left_to_collect | [Decimal](/reference/enums#formats) | Read    | Booking's payment left to collect.
 {: class="table table-bordered"}
   </div>
 </div>
