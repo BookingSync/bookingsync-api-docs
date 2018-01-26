@@ -1,7 +1,14 @@
 # Change Log
 
-## [3.10.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.10.0) (2018-01-04)
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.9.0...3.10.0)
+## [3.11.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.11.0) (2018-01-26)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v.3.10.0...3.11.0)
+
+**Merged pull requests:**
+
+- Documented payment left to collect for booking [\#276](https://github.com/BookingSync/bookingsync-api-docs/pull/276) ([JovicaSusa](https://github.com/JovicaSusa))
+
+## [v.3.10.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v.3.10.0) (2018-01-04)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.9.0...v.3.10.0)
 
 **Merged pull requests:**
 
