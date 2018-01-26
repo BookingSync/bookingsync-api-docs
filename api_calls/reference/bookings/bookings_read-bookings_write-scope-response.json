@@ -67,7 +67,8 @@
       "final_payback_to_owner": "0.0",
       "commission": null,
       "contract_updated_at": "CONTRACT_UPDATED_AT",
-      "owned_by_app": false
+      "owned_by_app": false,
+      "payment_left_to_collect": "0.0"
     }
   ],
   "meta": {

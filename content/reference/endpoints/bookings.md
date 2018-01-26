@@ -50,6 +50,7 @@ expected_checkout_time  | String  | Write      | Expected guest's checkout time.
 final_payback_to_owner  | [Decimal](/reference/enums#formats) | Write | Final payback to rental owner.
 final_price             | [Decimal](/reference/enums#formats) | Write | Booking's final price. (after discount)
 initial_price           | [Decimal](/reference/enums#formats) | Write | Booking's initial price.
+payment_left_to_collect | [Decimal](/reference/enums#formats) | Read  | Booking's payment left to collect.
 locked                  | String  | Write      | Booking's locked status.
 notes                   | Text    | Write      | Booking's notes. (1000 characters max)
 reference               | String  | Read       | Booking's reference code.
@@ -89,6 +90,7 @@ final_price             | [Decimal](/reference/enums#formats) | Read       | Boo
 final_rental_price      | [Decimal](/reference/enums#formats) | Read       | initial_rental_price reduced by discount (taxes and fees not included).
 initial_price           | [Decimal](/reference/enums#formats) | Read       | Booking's initial price.
 initial_rental_price    | [Decimal](/reference/enums#formats) | Read       | An alias for initial_price
+payment_left_to_collect | [Decimal](/reference/enums#formats) | Read       | Booking's payment left to collect.
 locked                  | String  | Read       | Booking's locked status.
 notes                   | Text    | Read       | Booking's notes.
 owned_by_app            | Boolean | Read       | Defines whether booking was created by current app.
@@ -137,6 +139,7 @@ final_price             | [Decimal](/reference/enums#formats) | Read/Write | Boo
 final_rental_price      | [Decimal](/reference/enums#formats) | Read       | initial_rental_price reduced by discount (taxes and fees not included).
 initial_price           | [Decimal](/reference/enums#formats) | Read/Write | Booking's initial price.
 initial_rental_price    | [Decimal](/reference/enums#formats) | Read       | An alias for initial_price.
+payment_left_to_collect | [Decimal](/reference/enums#formats) | Read       | Booking's payment left to collect.
 locked                  | String  | Read/Write | Booking's locked status.
 notes                   | Text    | Read/Write | Booking's notes. (1000 characters max)
 owned_by_app            | Boolean | Read       | Defines whether booking was created by current app.
