@@ -1,0 +1,19 @@
+{
+  "links" : {
+    "payment_gateways.account" : "http://test.host/api/v3/accounts/{payment_gateways.account}"
+  },
+  "payment_gateways": [{
+    "links": {
+      "account": "2"
+    },
+    "name": "My gateway",
+    "test": true,
+    "gateway_name": "omise",
+    "credentials": "CREDENTIALS",
+    "supported_cardtypes": ["visa", "master"],
+    "supported_currencies": ["EUR", "USD"],
+    "tokenize_credit_card_details": false,
+    "created_at": "CREATED_AT",
+    "updated_at": "UPDATED_AT"
+  }]
+}
