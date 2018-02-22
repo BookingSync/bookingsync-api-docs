@@ -125,11 +125,64 @@ rental_price                       | Price for the rent only, after all discount
 final_price                        | Price including all required fees and taxes.
 {: class="table table-bordered"}
 
+## Tax kinds
+
+Name                            | Description
+--------------------------------|------------
+value_added                     | Value added tax (VAT)
+city                            | City tax
+goods_and_services              | Goods and services tax
+government                      | Government tax
+spa                             | Spa tax
+hot_spring                      | Hot spring tax
+residential                     | Residential tax
+sauna_fitness_facilities        | Sauna/fitness facilities tax
+local_council                   | Local council tax
+provincial_sales                | Provincial sales tax
+harmonized_sales                | Harmonized sales tax
+other                           | Any other type of tax
+{: class="table table-bordered"}
+
 ## Fee kinds
 
 Name                         | Description
 -----------------------------|------------
-cleaning                     | Cleaning fee
+city_tax                     | City tax fee
+resort                       | Resort fee
+service_charge               | Service charge
+tourism                      | Tourism fee
+destination                  | Destination fee
+environment                  | Environment fee
+municipality                 | Municipality fee
+public_transit_day_ticket    | Public transit day ticket
+heritage_charge              | Heritage charge
+cleaning                     | Cleaning
+towel_charge                 | Towel charge
+electricity                  | Electricity fee
+bed_linen                    | Bed linen fee
+gas                          | Gas fee
+oil                          | Oil fee
+wood                         | Wood fee
+water_usage                  | Water usage fee
+transfer                     | Transfer fee
+linen_package                | Linen package fee
+heating                      | Heating fee
+air_conditioning             | Air conditioning fee
+kitchen_linen                | Kitchen linen fee
+housekeeping                 | Housekeeping fee
+airport_shuttle              | Airport shuttle fee
+shuttle_boat                 | Shuttle boat fee
+sea_plane                    | Sea plane fee
+ski_pass                     | Ski pass
+final_cleaning               | Final cleaning fee
+wristband                    | Wristband fee
+visa_support                 | Visa support fee
+water_park                   | Water park fee
+club_card                    | Club card fee
+conservation                 | Conservation fee
+credit_card                  | Credit card fee
+internet                     | Internet fee
+parking                      | Parking fee
 other                        | Any other type of fee
 {: class="table table-bordered"}
 

@@ -17,6 +17,7 @@ Name             | Type    | Read/Write | Description
 id               | Integer | Read       | Tax's id.
 -----------------|---------|------------|------------
 name             | [Object](/reference/enums#formats)   | Read       | Tax's name, list of locales described in [enums section](/reference/enums#locales).
+kind             | String  | Read       | Tax's kind, list of tax's kinds described in [enums section](/reference/enums#tax-kinds)
 percentage       | [Decimal](/reference/enums#formats)  | Read       | Tax's percentage.
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Tax's create time.
@@ -31,6 +32,7 @@ Name             | Type    | Read/Write | Description
 id               | Integer | Read       | Tax's id.
 -----------------|---------|------------|------------
 name             | [Object](/reference/enums#formats)   | Read       | Tax's name, list of locales described in [enums section](/reference/enums#locales).
+kind             | String  | Read       | Tax's kind, list of tax's kinds described in [enums section](/reference/enums#tax-kinds)
 notes            | String  | Read       | Tax's private notes.
 percentage       | [Decimal](/reference/enums#formats)  | Read       | Tax's percentage.
 -----------------|---------|------------|------------
@@ -46,6 +48,7 @@ Name             | Type    | Read/Write | Description
 id               | Integer | Read       | Tax's id.
 -----------------|---------|------------|------------
 name             | [Object](/reference/enums#formats)   | Read/Write | Tax's name, list of locales described in [enums section](/reference/enums#locales).
+kind             | String  | Read/Write | Tax's kind, list of tax's kinds described in [enums section](/reference/enums#tax-kinds)
 notes            | String  | Read/Write | Tax's private notes.
 percentage       | [Decimal](/reference/enums#formats)  | Read/Write | Tax's percentage. Writable only during creation.
 -----------------|---------|------------|------------
