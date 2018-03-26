@@ -198,17 +198,25 @@ weekly           | The reference rate is weekly based.
 
 ## Rates Rules types
 
-Name                           | Description
--------------------------------|------------
-arrival_only                   | Rule applied on arrival.
-departure_only                 | Rule applied on departure.
-early_booking                  | Rule applied on early booking.
-full_period_only               | Rule applied for full period.
-late_booking                   | Rule applied for late booking.
-prevent_if_booked_ahead_of     | Rule applied if booked ahead.
-stay_at_least                  | Rule applied for minimum stay.
-strict_minimum_price_per_night | Rule applied for minimum price per night.
-weekend_night                  | Rule applied for weekend night.
+Name                              | Description
+----------------------------------|------------
+additional_person_fixed_per_night | Rule for extra persons
+arrival_only                      | Rule applied on arrival.
+charge_at_least                   | Rule to charge at least for the defined length of time.
+charge_at_least_if_available      | Rule to charge at least for the defined length of time, if available.
+charge_at_least_full_period       | Rule to charge at least for given period.
+departure_only                    | Rule applied on departure.
+early_booking                     | Rule applied on early booking.
+full_period_only                  | Rule applied for full period.
+late_booking                      | Rule applied for late booking.
+prevent_gap                       | Rule prevents the guest to book if it leaves a gap between the number of days defined in the rule.
+prevent_if_booked_ahead_of        | Rule applied if booked ahead.
+prevent_if_booked_less_than       | Rule prevents booking for less than the defined length.
+occupation_less_than              | Rule applies for less than the defined people.
+stay_at_least                     | Rule applied for minimum stay.
+stay_shorter_than                 | Rule applies for less than the defined length of stay.
+strict_minimum_price_per_night    | Rule applied for minimum price per night.
+weekend_night                     | Rule applied for weekend night.
 {: class="table table-bordered"}
 
 ## Rental types
