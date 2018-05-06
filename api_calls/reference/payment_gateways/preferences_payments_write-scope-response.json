@@ -1,0 +1,24 @@
+{
+  "links": {
+    "payment_gateways.account": "https://www.bookingsync.com/api/v3/accounts/{payment_gateways.account}"
+  },
+  "payment_gateways": [
+    {
+      "links": {
+        "account": 1
+      },
+      "id": 1,
+      "test": false,
+      "name": "Payment Gateway",
+      "gateway_name": "Gateway name",
+      "credentials": "login: 12345",
+      "supported_cardtypes": ["visa", "mastercard"],
+      "supported_currencies": ["EUR", "USD"],
+      "tokenize_credit_card_details": "token",
+      "created_at": "2017-08-10T09:36:10Z",
+      "updated_at": "2017-08-10T09:36:10Z"
+    }
+  ],
+  "meta": {
+  }
+}

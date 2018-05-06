@@ -1,0 +1,12 @@
+{
+  "payment_gateways": [
+    {
+      "name": "Payment Gateway",
+      "gateway_name": "stripe",
+      "credentials": { "login": "login" },
+      "supported_cardtypes": ["visa", "mastercard"],
+      "supported_currencies": ["EUR", "USD"],
+      "test": false
+    }
+  ]
+}
