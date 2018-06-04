@@ -15,7 +15,7 @@ Name                          | Type    | Read/Write | Description
 ------------------------------|---------|------------|------------
 id                            | Integer | Read       | Payment Gateway's id.
 account_id                    | Integer | Read      | Account id related to the payment gateway.
-gateway_name                  | String  | Write      | Name of the gateway. Accepted gateways:authorize_net, blue_pay, bogus, braintree, moneris, moneris_us, ogone, omise, paybox_direct, paybox_direct_plus, paymill, paypal, paypal_ca, payu_latam, quickpay, sage, stripe, vacaypay, wepay
+gateway_name                  | String  | Write      | Name of the gateway. Accepted gateways:authorize_net, blue_pay, bogus, braintree, moneris, moneris_us, ogone, omise, paybox_direct, paybox_direct_plus, paymill, paypal, paypal_ca, quickpay, sage, stripe, vacaypay, wepay
 credentials                   | Array   | Write      | List of credentials. accepted keys: login, password, merchant_id, public_key, private_key, user, signature, signature_encryptor, secret_key, account_id, api_login, api_key, account_uuid, publishable_key, client_id, access_token
 supported_cardtypes           | Array   | Write      | List of supported card types. Accepted types depend on the gateway.
 supported_currencies          | Array   | Write      | List of supported currencies.
