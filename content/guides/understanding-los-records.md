@@ -72,11 +72,24 @@ rates: 0,0,150,200,250,300,350,400,450,500,...
 
 ### Meaning
 
-When checking in on 2000 January 1 you must stay for 3 nights at least.
+When checking in on 2000 January 1 you must stay for at least 3 nights.
 
 ---
 
-## (5) No check-out
+## (5) Maximum stay
+
+~~~
+day: 2000-01-01
+rates: 50,100,150,200,250,300,350,0,...,0
+~~~
+
+### Meaning
+
+When checking in on 2000 January 1 you can't stay for more than 7 nights.
+
+---
+
+## (6) No check-out
 
 ~~~
 day: 2000-01-01
