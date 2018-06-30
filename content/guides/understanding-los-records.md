@@ -102,3 +102,28 @@ When the check-in date is 2000 January 1 checking out on the 3rd or 4th night is
 This is how it looks when gaps are prevented in the calendar, or a period must be rented fully.
 
 [Check out Prevent Gap and Full Period Only rate rules in our manual](https://manual.bookingsync.com/hc/en-us/articles/360005324073-Rentals-Rate-rules).
+
+## (7) Example to demonstrate flexibility
+
+The power of LOS Records is that it considers all the possible inputs that can affect the price:
+
+ - booking date
+ - check-in date
+ - check-out date
+ - length of stay
+ - number of guests
+
+No matter how complex your rules are, it will be accurate. Say we have the following set of rules:
+
+ - booking must be made at least 2 days prior to check-in day
+ - minimum stay 3 nights
+ - charge at least 7 nights
+ - no check-in on every 2nd Sunday
+ - no check-out on the 17th night if check-in was on Wed or Sat (silly rule just for the heck of it)
+
+If today is Monday the 1st:
+<p><img src="/images/understanding-los/complex-example-1-1.png" alt="complex example 1-1" style="width:100%"></p>
+
+If today is Tuesday the 2nd, then Monday's record gets outdated and because of the first rule,
+you can't check-in on Wednesday:
+<p><img src="/images/understanding-los/complex-example-1-2.png" alt="complex example 1-2" style="width:100%"></p>
