@@ -3,6 +3,12 @@
 1. TOC
 {:toc}
 
+## Note
+
+<code>
+From 1st of August 2018, Seasons and Periods will no longer be a reliable source for rates and minimum stays for Rentals with rates managed by a third party through Nightly Rate Maps, as we'll stop generating them from the maps. We advise you to start using the <a href="https://developers.bookingsync.com/reference/endpoints/nightly_rate_maps/" target="_blank">Nightly Rates Maps endpoint</a> instead. Rates Rules and Rentals Fees will keep using Seasons and Periods. If you need any further assistance, please reach out to <a href="mailto:apisupport@bookingsync.com">apisupport@bookingsync.com</a>.
+</code>
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
