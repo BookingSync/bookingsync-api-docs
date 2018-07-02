@@ -6,7 +6,7 @@
 ## Note
 
 <code>
-From 1st of August 2018, <a href="/reference/endpoints/seasons/" target="_blank">seasons</a> and <a href="/reference/endpoints/periods/" target="_blank">periods</a> endpoints will be deprecated for the use case of getting info about rates influence and minimum stays. If you don't create seasons and/or periods yourself (which will still be used internally for price calculations), the only use case for reading data from these endpoints would be to get the Seasons for which Rates Rules and Rentals Fees are applied if it happens that any of them is applied per given Season record. The recommended way to obtain data for minimum stays and rates is to use <a href="https://developers.bookingsync.com/reference/endpoints/nightly_rate_maps/" target="_blank">Nightly Rates Maps endpoint</a>. If you need any further assistance, please reach out to <a href="mailto:apisupport@bookingsync.com">apisupport@bookingsync.com</a>.
+From 1st of August 2018, Seasons and Periods will no longer be a reliable source for rates and minimum stays for Rentals with rates managed by a third party through Nightly Rate Maps, as we'll stop generating them from the maps. We advise you to start using the <a href="https://developers.bookingsync.com/reference/endpoints/nightly_rate_maps/" target="_blank">Nightly Rates Maps endpoint</a> instead. Rates Rules and Rentals Fees will keep using Seasons and Periods. If you need any further assistance, please reach out to <a href="mailto:apisupport@bookingsync.com">apisupport@bookingsync.com</a>.
 </code>
 
 ### Parameters
