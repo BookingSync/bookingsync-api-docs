@@ -126,12 +126,19 @@
           <h2 id="seasons">Seasons</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#note">Note</a></li>
   <li><a href="#list-seasons">List seasons</a></li>
   <li><a href="#get-a-single-season">Get a single season</a></li>
   <li><a href="#create-a-new-season">Create a new season</a></li>
   <li><a href="#update-a-season">Update a season</a></li>
   <li><a href="#destroy-a-season">Destroy a season</a></li>
 </ol>
+
+<h3 id="note">Note</h3>
+
+<p><code>
+From 1st of August 2018, Seasons and Periods will no longer be a reliable source for rates and minimum stays for Rentals with rates managed by a third party through Nightly Rate Maps, as we'll stop generating them from the maps. We advise you to start using the <a href="https://developers.bookingsync.com/reference/endpoints/nightly_rate_maps/" target="_blank">Nightly Rates Maps endpoint</a> instead. Rates Rules and Rentals Fees will keep using Seasons and Periods. If you need any further assistance, please reach out to <a href="mailto:apisupport@bookingsync.com">apisupport@bookingsync.com</a>.
+</code></p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -276,7 +283,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#9ceef2f0c526rates_read-rates_write" role="tab" data-toggle="pill">
+        <a href="#148138d0bb4brates_read-rates_write" role="tab" data-toggle="pill">
           rates_read / rates_write
         </a>
       </li>
@@ -288,7 +295,7 @@
   
   
     
-      <div class="tab-pane active" id="9ceef2f0c526rates_read-rates_write">
+      <div class="tab-pane active" id="148138d0bb4brates_read-rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.periods"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/periods/{seasons.periods}"</span><span class="p">,</span>
@@ -304,8 +311,8 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Season 2"</span>
       <span class="p">},</span>
       <span class="s2">"ratio_percentage"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-07-02T08:08:03Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-07-02T08:08:03Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-07-02T13:54:03Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-07-02T13:54:03Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
           <span class="mi">4</span><span class="p">,</span>
@@ -336,7 +343,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#fc6b1bd9d9bcrates_read-rates_write" role="tab" data-toggle="pill">
+        <a href="#55ea3fcd3e19rates_read-rates_write" role="tab" data-toggle="pill">
           rates_read / rates_write
         </a>
       </li>
@@ -348,7 +355,7 @@
   
   
     
-      <div class="tab-pane active" id="fc6b1bd9d9bcrates_read-rates_write">
+      <div class="tab-pane active" id="55ea3fcd3e19rates_read-rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.periods"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/periods/{seasons.periods}"</span><span class="p">,</span>
@@ -364,8 +371,8 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Season 2"</span>
       <span class="p">},</span>
       <span class="s2">"ratio_percentage"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-07-02T08:08:03Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-07-02T08:08:03Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-07-02T13:54:03Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-07-02T13:54:03Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
           <span class="mi">4</span><span class="p">,</span>
@@ -396,7 +403,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#0e84e2f82da5rates_write" role="tab" data-toggle="pill">
+        <a href="#ba068b80d3e0rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
@@ -419,7 +426,7 @@
   
   
     
-      <div class="tab-pane active" id="0e84e2f82da5rates_write">
+      <div class="tab-pane active" id="ba068b80d3e0rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.periods"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/periods/{seasons.periods}"</span><span class="p">,</span>
@@ -435,8 +442,8 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Season 2"</span>
       <span class="p">},</span>
       <span class="s2">"ratio_percentage"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-07-02T08:08:03Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-07-02T08:08:03Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-07-02T13:54:03Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-07-02T13:54:03Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
           <span class="mi">4</span><span class="p">,</span>
@@ -467,7 +474,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#a096506dfd1erates_write" role="tab" data-toggle="pill">
+        <a href="#9664e8941592rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
@@ -490,7 +497,7 @@
   
   
     
-      <div class="tab-pane active" id="a096506dfd1erates_write">
+      <div class="tab-pane active" id="9664e8941592rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.periods"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/periods/{seasons.periods}"</span><span class="p">,</span>
@@ -506,8 +513,8 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Season 2"</span>
       <span class="p">},</span>
       <span class="s2">"ratio_percentage"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-07-02T08:08:03Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-07-02T08:08:03Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-07-02T13:54:03Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-07-02T13:54:03Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
           <span class="mi">4</span><span class="p">,</span>
