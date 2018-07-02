@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BookingSync API documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/stylesheets/application.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/highlight.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="/assets/javascripts/application.js"></script>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.8.0">
+  </head>
+  <body class="flex-col">
+    <div class="page-wrapper flex-1 flex-col">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle sidebar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <img alt="BookingSync" src="/images/bookingsync.svg">
+              <span>Developers</span>
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active">
+                <a href="/guides/">Guides</a>
+              </li>
+              <li class="">
+                <a href="/reference/">API Reference</a>
+              </li>
+              <li><a href="https://www.bookingsync.com" target="_blank">BookingSync.com</a></li>
+              <li><a href="https://github.com/BookingSync/bookingsync-api-docs" target="_blank"><i class="fa fa-github fa-fw fa-2x"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+<div class="container content">
+  <div class="row">
+    <div class="col-md-3 col-md-push-9">
+      <div class="panel panel-default">
+        <div class="list-group">
+          <a class="list-group-item" href="/guides/">Introduction</a>
+          <a class="list-group-item" href="/guides/create-a-booking-with-a-source">Create a Booking with a Source</a>
+          <a class="list-group-item" href="/guides/read-all-authorized-accounts-at-once">Read all authorized accounts at once</a>
+          <a class="list-group-item" href="/guides/getting-started-with-php">Getting Started with PHP</a>
+          <a class="list-group-item" href="/guides/pricing-concepts">Pricing concepts</a>
+          <a class="list-group-item" href="/guides/api-best-practices">API best practices</a>
+          <a class="list-group-item" href="/guides/secure-payments-by-bookingsync">Secure Payments By BookingSync</a>
+          <a class="list-group-item" href="/guides/webhook-subscriptions">Webhook subscriptions</a>
+          <a class="list-group-item" href="/guides/oauth-scopes">OAuth scopes</a>
+          <a class="list-group-item" href="/guides/bookigsync-universe-api-early-beta">BookingSync Universe API [EARLY BETA]</a>
+          <a class="list-group-item" href="/guides/updated-since-flow">updated_since flow</a>
+          <a class="list-group-item" href="/guides/understanding-los-records">Understanding LOS Records</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 col-md-pull-3">
+      <div class="panel panel-default">
+        <div class="panel-body guide-body">
+          <h2 id="understanding-los-records">Understanding LOS Records</h2>
+
+<h3 id="what-is-los">What is LOS?</h3>
+
+<p>LOS stands for Length Of Stay and LOS Records are a simple but powerful way to define rates.
+It is a precomputed cache of prices for consecutive days for a given day, best explained through examples.</p>
+
+<h3 id="basic-example">(1) Basic example</h3>
+<p>Let’s take an LOS Record:</p>
+
+<pre><code>day: 2000-01-01
+min_occupancy: 1
+max_occupancy: 4
+rates: 50,100,150,200,250,300,350,400,450,500,...
+</code></pre>
+
+<h4 id="meaning">Meaning</h4>
+
+<p>When the check-in date is 2000-01-01 and the number of guests is between 1 and 4 (inclusive), then the price is:</p>
+
+<pre><code>50 for 1 night
+100 for 2 nights
+150 for 3 nights
+...
+500 for 10 nights
+</code></pre>
+
+<hr>
+
+<h3 id="additional-guest">(2) Additional guest</h3>
+
+<pre><code>day: 2000-01-01
+min_occupancy: 1
+max_occupancy: 4
+rates: 50,100,150,200,250,300,350,400,450,500,...
+
+day: 2000-01-01
+min_occupancy: 5
+max_occupancy: 5
+rates: 60,120,180,240,300,360,420,480,540,600,...
+</code></pre>
+
+<h4 id="meaning-1">Meaning</h4>
+
+<p>We can see that the daily price increased by 10 from adding an extra guest.</p>
+
+<hr>
+
+<h3 id="no-check-in">(3) No check-in</h3>
+
+<pre><code>day: 2000-01-01
+rates: 0,0,0,0,0,...,0
+</code></pre>
+
+<h4 id="meaning-2">Meaning</h4>
+
+<p>You can’t check in on 2000 January 1.</p>
+
+<hr>
+
+<h3 id="minimum-stay">(4) Minimum stay</h3>
+
+<pre><code>day: 2000-01-01
+rates: 0,0,150,200,250,300,350,400,450,500,...
+</code></pre>
+
+<h4 id="meaning-3">Meaning</h4>
+
+<p>When checking in on 2000 January 1 you must stay for at least 3 nights.</p>
+
+<hr>
+
+<h3 id="maximum-stay">(5) Maximum stay</h3>
+
+<pre><code>day: 2000-01-01
+rates: 50,100,150,200,250,300,350,0,...,0
+</code></pre>
+
+<h4 id="meaning-4">Meaning</h4>
+
+<p>When checking in on 2000 January 1 you can’t stay for more than 7 nights.</p>
+
+<hr>
+
+<h3 id="no-check-out">(6) No check-out</h3>
+
+<pre><code>day: 2000-01-01
+rates: 50,100,0,0,250,300,350,400,450,500,...
+</code></pre>
+
+<h4 id="meaning-5">Meaning</h4>
+
+<p>When the check-in date is 2000 January 1 checking out on the 3rd or 4th night is not possible.
+This is how it looks when gaps are prevented in the calendar, or a period must be rented fully.</p>
+
+<p><a href="https://manual.bookingsync.com/hc/en-us/articles/360005324073-Rentals-Rate-rules">Check out Prevent Gap and Full Period Only rate rules in our manual</a>.</p>
+
+<h3 id="example-to-demonstrate-flexibility">(7) Example to demonstrate flexibility</h3>
+
+<p>The power of LOS Records is that it considers all the possible inputs that can affect the price:</p>
+
+<ul>
+  <li>booking date</li>
+  <li>check-in date</li>
+  <li>check-out date</li>
+  <li>length of stay</li>
+  <li>number of guests</li>
+</ul>
+
+<p>No matter how complex your rules are, it will be accurate. Say we have the following set of rules:</p>
+
+<ol>
+  <li>booking must be made at least 2 days prior to check-in day</li>
+  <li>minimum stay 3 nights</li>
+  <li>charge at least 7 nights</li>
+  <li>no check-in on every 2nd Sunday</li>
+  <li>no check-out on the 17th night if check-in was on Wed or Sat (intentionally weird rule)</li>
+</ol>
+
+<p>On the following tables, rows represent the length of stay and each column is an LOS record for the given check-in day.
+These rules are not affected by occupancy so that is ommitted.</p>
+
+<p>If today is Monday the 1st:</p>
+
+<p>Because of rule 1, Mon Tue check-in is impossible - all zeroes.</p>
+
+<p>Because of rule 2, staying for 1 or 2 nights is impossible - first two rows all zeroes.</p>
+
+<p>Because of rule 3, staying for 3 to 7 nights is the same price - 700.</p>
+
+<p>Because of rule 4, the second Sunday is all zeroes - no check-in.</p>
+
+<p>Because of rule 5, you can see zero when length of stay is 17 and the day is Wed or Sat.</p>
+
+<p><img src="/images/understanding-los/complex-example-1-1.png" alt="complex example 1-1" style="width:100%"></p>
+
+<p>If today is Tuesday the 2nd:</p>
+
+<p>Monday’s record is in the past, it’s obsolete.</p>
+
+<p>Because of rule 1, today (Tue) and tomorrow (Wed) check-in becomes not possible.</p>
+
+<p><img src="/images/understanding-los/complex-example-1-2.png" alt="complex example 1-2" style="width:100%"></p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </body>
+</html>
+
