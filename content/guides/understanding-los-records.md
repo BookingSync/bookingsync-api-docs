@@ -3,8 +3,7 @@
 ## What is LOS?
 
 LOS stands for Length Of Stay and LOS Records are a simple but powerful way to define rates.
-
-It's best explained through examples.
+It is a precomputed cache of prices for consecutive days for a given day, best explained through examples.
 
 ## (1) Basic example
 Let's take an LOS Record:
