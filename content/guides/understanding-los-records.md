@@ -115,15 +115,33 @@ The power of LOS Records is that it considers all the possible inputs that can a
 
 No matter how complex your rules are, it will be accurate. Say we have the following set of rules:
 
- - booking must be made at least 2 days prior to check-in day
- - minimum stay 3 nights
- - charge at least 7 nights
- - no check-in on every 2nd Sunday
- - no check-out on the 17th night if check-in was on Wed or Sat (silly rule just for the heck of it)
+ 1. booking must be made at least 2 days prior to check-in day
+ 2. minimum stay 3 nights
+ 3. charge at least 7 nights
+ 4. no check-in on every 2nd Sunday
+ 5. no check-out on the 17th night if check-in was on Wed or Sat (intentionally weird rule)
+
+On the following tables, rows represent the length of stay and each column is an LOS record for the given check-in day.
+These rules are not affected by occupancy so that is ommitted.
 
 If today is Monday the 1st:
+
+Because of rule 1, Mon Tue check-in is impossible - all zeroes.
+
+Because of rule 2, staying for 1 or 2 nights is impossible - first two rows all zeroes.
+
+Because of rule 3, staying for 3 to 7 nights is the same price - 700.
+
+Because of rule 4, the second Sunday is all zeroes - no check-in.
+
+Because of rule 5, you can see zero when length of stay is 17 and the day is Wed or Sat.
+
 <p><img src="/images/understanding-los/complex-example-1-1.png" alt="complex example 1-1" style="width:100%"></p>
 
-If today is Tuesday the 2nd, then Monday's record gets outdated and because of the first rule,
-you can't check-in on Wednesday:
+If today is Tuesday the 2nd:
+
+Monday's record is in the past, it's obsolete.
+
+Because of rule 1, today (Tue) and tomorrow (Wed) check-in becomes not possible.
+
 <p><img src="/images/understanding-los/complex-example-1-2.png" alt="complex example 1-2" style="width:100%"></p>
