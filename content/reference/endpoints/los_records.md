@@ -3,6 +3,10 @@
 1. TOC
 {:toc}
 
+### Understanding LOS Records
+
+Check out our guide: [Understanding LOS Records](/guides/understanding-los-records/)
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
