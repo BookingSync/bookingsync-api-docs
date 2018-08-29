@@ -248,8 +248,6 @@ POST /rentals/:rental_id/bookings
 <div class="callout callout-info" markdown="1">
   <h4>Comments, Fees and Taxes</h4>
   You can also pass comments, bookings fees and bookings taxes directly during a booking creation using the parameters:  `comments`, `bookings_fees` and `bookings_taxes`.
-
-  _**Note**: the sum of `initial_price` plus `bookings_fees` (`price * times_booked`) and `bookings_taxes` (`amount`) minus `discount` must equal the given `final_price`. Otherwise booking is not valid._
 </div>
 
 <%= render 'json_response', endpoint: "bookings", request: "create_with_comments_fees_and_taxes",
