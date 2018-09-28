@@ -11,7 +11,7 @@ OAuth2 is a protocol that lets external apps request authorization to private
 details in a user’s BookingSync account without getting their password.
 
 All applications that want to use the API
-[must be registered on the BookinSync website](/reference/requirements/).
+[must be registered on the BookingSync website](/reference/requirements/).
 
 Each registered application is assigned a unique Client ID and Client Secret.
 It is important that the Client Secret is not shared with anyone and not
