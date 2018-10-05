@@ -37,7 +37,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday-http-cache (2.0.0)
       faraday (~> 0.8)
-    ffi (1.9.3)
+    ffi (1.9.25)
     formatador (0.2.4)
     github_changelog_generator (1.14.3)
       activesupport
@@ -142,4 +142,4 @@ DEPENDENCIES
   uglifier
 
 BUNDLED WITH
-   1.16.2
+   1.16.3
