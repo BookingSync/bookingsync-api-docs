@@ -1,35 +1,76 @@
 {
   "clients": [
     {
+      "links": {
+        "account": 1
+      },
+      "id": 1,
       "addresses": [
         {
+          "id": 1,
+          "client_id": 1,
+          "label": "default",
           "address1": "Kutch Stravenue",
           "address2": "Building 1",
           "city": "North Jacey",
-          "country_code": "US",
-          "label": "default",
           "state": "Illinois",
-          "zip": "01363-9579"
+          "zip": "01363-9579",
+          "country_code": "US",
+          "created_at": "2018-12-04T12:33:36Z",
+          "updated_at": "2018-12-04T12:33:36Z",
+          "canceled_at": null,
+          "primary": true
         }
       ],
       "emails": [
         {
+          "id": 1,
+          "client_id": 1,
+          "label": "default",
           "email": "clementina_kling@example.com",
-          "label": "default"
+          "created_at": "2018-12-04T12:33:36Z",
+          "updated_at": "2018-12-04T12:33:36Z",
+          "canceled_at": null,
+          "primary": true,
+          "locked": null
         }
       ],
       "phones": [
         {
+          "id": 1,
+          "client_id": 1,
           "label": "phone",
-          "number": "(153)070-6105"
+          "number": "(153)070-6105",
+          "country_code": "VG",
+          "created_at": "2018-12-04T12:33:36Z",
+          "updated_at": "2018-12-04T12:33:36Z",
+          "canceled_at": null,
+          "primary": true,
+          "locked": null
         },
         {
+          "id": 2,
+          "client_id": 1,
           "label": "mobile",
-          "number": "(153)070-6106"
+          "number": "(153)070-6106",
+          "country_code": "VG",
+          "created_at": "2018-12-04T12:33:36Z",
+          "updated_at": "2018-12-04T12:33:36Z",
+          "canceled_at": null,
+          "primary": true,
+          "locked": null
         },
         {
+          "id": 3,
+          "client_id": 1,
           "label": "fax",
-          "number": "(153)070-6107"
+          "number": "(153)070-6107",
+          "country_code": "VG",
+          "created_at": "2018-12-04T12:33:36Z",
+          "updated_at": "2018-12-04T12:33:36Z",
+          "canceled_at": null,
+          "primary": true,
+          "locked": null
         }
       ],
       "created_at": "2014-12-28T15:19:27Z",
