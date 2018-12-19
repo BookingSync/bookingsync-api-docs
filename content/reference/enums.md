@@ -246,3 +246,13 @@ treehouse            | Treehouse
 villa                | Villa
 yurt                 | Yurt
 {: class="table table-bordered"}
+
+## Rental residency categories
+
+Name                | Description
+--------------------|------------
+primary_residence   | Primary residence.
+secondary_residence | Secondary residence.
+non_residential     | Non residential.
+{: class="table table-bordered"}
+
