@@ -1,0 +1,11 @@
+{
+  "participants": [
+    {
+      "last_message_sent_at": "2018-12-15T10:42:17Z",
+      "member_id": 5,
+      "member_type": "Host",
+      "conversation_id": 3,
+      "read": "true"
+    }
+  ]
+}
