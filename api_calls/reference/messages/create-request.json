@@ -1,0 +1,13 @@
+{
+  "messages": [
+    {
+      "content": "Message Content",
+      "origin": "email",
+      "visibility": "external",
+      "conversation_id": 7,
+      "sender_id": 5,
+      "channel": "email",
+      "sent_at": "2018-12-21T09:21:52Z"
+    }
+  ]
+}

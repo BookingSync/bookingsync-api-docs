@@ -1,0 +1,9 @@
+{
+  "messages": [
+    {
+      "origin": "email",
+      "visibility": "external",
+      "channel": "email"
+    }
+  ]
+}
