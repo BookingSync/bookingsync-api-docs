@@ -56,6 +56,16 @@ GET /inbox/attachments
 
 <%= render 'json_response', endpoint: "attachments", scopes: %w(inbox_read-inbox_write) %>
 
+## Get a single Attachment
+
+Returns a single attachment identified by ID.
+
+~~~
+GET /inbox/attachments/:attachment_id
+~~~
+
+<%= render 'json_response', endpoint: "attachments", scopes: %w(inbox_read-inbox_write) %>
+
 ## Create a new attachment
 
 Creates an attachment.
