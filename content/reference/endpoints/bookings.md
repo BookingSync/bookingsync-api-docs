@@ -57,6 +57,7 @@ reference               | String  | Read       | Booking's reference code.
 rental_payback_to_owner | [Decimal](/reference/enums#formats) | Write | Amount of money to pay back to owner (only rental, excluding fees).
 status                  | String  | Read       | Booking's status.
 unavailable             | Boolean | Write      | Booking's unavailable status, false by default. When set to true, marks the given period as unavailable. Commonly used for closed or maintenance periods.
+external_reference      | String  | Read/Write | Booking's reference from the source channel.
 ------------------------|---------|------------|------------
 updated_at              | [Time](/reference/enums#formats) | Read       | Booking's update time.
 start_at                | [Time](/reference/enums#formats) | Read/Write | **Required**. Booking's start time.
@@ -101,6 +102,7 @@ rental_payback_to_owner | [Decimal](/reference/enums#formats) | Read       | Amo
 review_requests_count   | Integer | Read       | Booking's number of review requests.
 status                  | String  | Read       | Booking's status.
 unavailable             | Boolean | Read       | Booking's unavailable status, false by default. When set to true, marks the given period as unavailable. Commonly used for closed or maintenance periods.
+external_reference      | String  | Read       | Booking's reference from the source channel.
 ------------------------|---------|------------|------------
 balance_due_at          | [Time](/reference/enums#formats) | Read       | Booking's payment deadline.
 created_at              | [Time](/reference/enums#formats) | Read       | Booking's create time.
@@ -150,6 +152,7 @@ rental_payback_to_owner | [Decimal](/reference/enums#formats) | Read/Write | Amo
 review_requests_count   | Integer | Read       | Booking's number of review requests.
 status                  | String  | Read       | Booking's status.
 unavailable             | Boolean | Read/Write | Booking's unavailable status, false by default. When set to true, marks the given period as unavailable. Commonly used for closed or maintenance periods.
+external_reference      | String  | Read/Write | Booking's reference from the source channel.
 ------------------------|---------|------------|------------
 balance_due_at          | [Time](/reference/enums#formats) | Read       | Booking's payment deadline.
 created_at              | [Time](/reference/enums#formats) | Read       | Booking's create time.

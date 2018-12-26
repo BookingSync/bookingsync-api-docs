@@ -113,6 +113,7 @@
       "absolute_min_price": "300.0",
       "stories_count": 2,
       "floor": "A",
+      "residency_category": "primary_residence",
       "nightly_rates_managed_externally": false,
       "website_url" : {
         "en": "https://example.com/en/rentals/123-rental-headline"

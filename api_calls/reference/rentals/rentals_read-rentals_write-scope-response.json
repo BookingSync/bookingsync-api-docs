@@ -103,6 +103,7 @@
       "address1": "58 Ville Haute",
       "address2": null,
       "zip": "05100",
+      "residency_category": "primary_residence",
       "checkin_details": {
         "en": "Please call us 15 min before your arrival so we can welcome you at the villa."
       },
