@@ -1,7 +1,7 @@
 {
   "links": {
-    "attachments.account": "http://test.host/api/v3/accounts/{attachments.account}",
-    "attachments.messages": "http://test.host/api/v3/inbox/messages/{attachments.messages}"
+    "attachments.account": "https://www.bookingsync.com/api/v3/accounts/{attachments.account}",
+    "attachments.messages": "https://www.bookingsync.com/api/v3/inbox/messages/{attachments.messages}"
   },
   "attachments": [
     {
@@ -21,7 +21,7 @@
   ],
   "meta": {
     "Link": {
-      "first": "http://test.host/api/v3/inbox/attachments?page=1", "last": "http://test.host/api/v3/inbox/attachments?page=1"
+      "first": "https://www.bookingsync.com/api/v3/inbox/attachments?page=1", "last": "https://www.bookingsync.com/api/v3/inbox/attachments?page=1"
     },
     "X-Total-Pages": "1",
     "X-Total-Count": "1",

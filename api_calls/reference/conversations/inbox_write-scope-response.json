@@ -1,10 +1,10 @@
 {
   "links": {
-    "conversations.account": "http://test.host/api/v3/accounts/{conversations.account}",
-    "conversations.assignee": "http://test.host/api/v3/hosts/{conversations.assignee}",
-    "conversations.source": "http://test.host/api/v3/sources/{conversations.source}",
-    "conversations.bookings": "http://test.host/api/v3/bookings/{conversations.bookings}",
-    "conversations.inquiries": "http://test.host/api/v3/inquiries/{conversations.inquiries}"
+    "conversations.account": "https://www.bookingsync.com/api/v3/accounts/{conversations.account}",
+    "conversations.assignee": "https://www.bookingsync.com/api/v3/hosts/{conversations.assignee}",
+    "conversations.source": "https://www.bookingsync.com/api/v3/sources/{conversations.source}",
+    "conversations.bookings": "https://www.bookingsync.com/api/v3/bookings/{conversations.bookings}",
+    "conversations.inquiries": "https://www.bookingsync.com/api/v3/inquiries/{conversations.inquiries}"
   },
   "conversations": [
     {
@@ -28,8 +28,8 @@
   ],
   "meta": {
     "Link": {
-      "first": "http://test.host/api/v3/inbox/conversations?page=1",
-      "last": "http://test.host/api/v3/inbox/conversations?page=1"
+      "first": "https://www.bookingsync.com/api/v3/inbox/conversations?page=1",
+      "last": "https://www.bookingsync.com/api/v3/inbox/conversations?page=1"
     },
     "X-Total-Pages": "1",
     "X-Total-Count": "1",

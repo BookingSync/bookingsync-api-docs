@@ -1,8 +1,8 @@
 {
   "links": {
-    "participants.conversation": "http://test.host/api/v3/inbox/conversations/{participants.conversation}",
-    "participants.client": "http://test.host/api/v3/clients/{participants.member.id}",
-    "participants.host": "http://test.host/api/v3/hosts/{participants.member.id}"
+    "participants.conversation": "https://www.bookingsync.com/api/v3/inbox/conversations/{participants.conversation}",
+    "participants.client": "https://www.bookingsync.com/api/v3/clients/{participants.member.id}",
+    "participants.host": "https://www.bookingsync.com/api/v3/hosts/{participants.member.id}"
   },
   "participants": [
     {
@@ -22,8 +22,8 @@
   ],
   "meta": {
     "Link": {
-      "first": "http://test.host/api/v3/inbox/participants?page=1",
-      "last": "http://test.host/api/v3/inbox/participants?page=1"
+      "first": "https://www.bookingsync.com/api/v3/inbox/participants?page=1",
+      "last": "https://www.bookingsync.com/api/v3/inbox/participants?page=1"
     },
     "X-Total-Pages": "1",
     "X-Total-Count": "1",

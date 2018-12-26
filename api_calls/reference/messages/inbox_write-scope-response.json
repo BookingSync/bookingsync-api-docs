@@ -1,8 +1,8 @@
 {
   "links": {
-    "messages.attachments": "http://test.host/api/v3/inbox/attachments/{messages.attachments}",
-    "messages.conversation": "http://test.host/api/v3/inbox/conversations/{messages.conversation}",
-    "messages.sender": "http://test.host/api/v3/inbox/participants/{messages.sender}"
+    "messages.attachments": "https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}",
+    "messages.conversation": "https://www.bookingsync.com/api/v3/inbox/conversations/{messages.conversation}",
+    "messages.sender": "https://www.bookingsync.com/api/v3/inbox/participants/{messages.sender}"
   },
   "messages": [
     {
@@ -23,8 +23,8 @@
   ],
   "meta": {
     "Link": {
-      "first": "http://test.host/api/v3/inbox/messages?page=1",
-      "last": "http://test.host/api/v3/inbox/messages?page=1"
+      "first": "https://www.bookingsync.com/api/v3/inbox/messages?page=1",
+      "last": "https://www.bookingsync.com/api/v3/inbox/messages?page=1"
     },
     "X-Total-Pages": "1",
     "X-Total-Count": "1",
