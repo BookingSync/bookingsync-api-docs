@@ -27,12 +27,5 @@
     }
   ],
   "meta": {
-    "Link": {
-      "first": "https://www.bookingsync.com/api/v3/inbox/conversations?page=1",
-      "last": "https://www.bookingsync.com/api/v3/inbox/conversations?page=1"
-    },
-    "X-Total-Pages": "1",
-    "X-Total-Count": "1",
-    "X-Per-Page": "100"
   }
 }
