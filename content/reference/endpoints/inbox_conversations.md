@@ -20,10 +20,10 @@ subject              | String  | Read       | Conversation's subject.
 ---------------------|---------|------------|------------
 created_at           | [Time](/reference/enums#formats) | Read       | Conversation's create time.
 updated_at           | [Time](/reference/enums#formats) | Read       | Conversation's update time.
-closed_at            | [Time](/reference/enums#formats) | Read       | Time when Converstation has been closed at.
+closed_at            | [Time](/reference/enums#formats) | Read       | Time when Converstation was closed at.
 deadline_response_at | [Time](/reference/enums#formats) | Read       | Conversation's deadline response time.
 last_message_at      | [Time](/reference/enums#formats) | Read       | Conversation's last message time.
-marked_as_spam_at    | [Time](/reference/enums#formats) | Read       | Time when Conversation has been marked as spam.
+marked_as_spam_at    | [Time](/reference/enums#formats) | Read       | Time when Conversation was marked as spam.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="inbox_write" markdown="1">
@@ -39,10 +39,10 @@ assignee_id          | Integer | Write      | Conversation's subject.
 ---------------------|---------|------------|------------
 created_at           | [Time](/reference/enums#formats) | Read       | Conversation's create time.
 updated_at           | [Time](/reference/enums#formats) | Read       | Conversation's update time.
-closed_at            | [Time](/reference/enums#formats) | Read       | Time when Converstation has been closed at.
+closed_at            | [Time](/reference/enums#formats) | Read       | Time when Converstation was closed at.
 deadline_response_at | [Time](/reference/enums#formats) | Read/Write | Conversation's deadline response time.
 last_message_at      | [Time](/reference/enums#formats) | Read       | Conversation's last message time.
-marked_as_spam_at    | [Time](/reference/enums#formats) | Read/Write | Time when Conversation has been marked as spam.
+marked_as_spam_at    | [Time](/reference/enums#formats) | Read/Write | Time when Conversation was marked as spam.
 {: class="table table-bordered"}
   </div>
 </div>

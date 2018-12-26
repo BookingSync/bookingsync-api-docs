@@ -28,13 +28,13 @@ id                   | Integer | Read       | Participant's id.
 member_id            | Integer | Read/Write | Participant's Member id.
 conversation_id      | Integer | Read/Write | Participant's Conversation id.
 ---------------------|---------|------------|------------
-read                 | Boolean | Read/Write | Is related to Participant's read_at attribute.
+read                 | Boolean | Write      | Is related to Participant's read_at attribute.
 member_type          | Integer | Read/Write | Participant's member type (`Client` or `Host`).
 ---------------------|---------|------------|------------
 created_at           | [Time](/reference/enums#formats) | Read       | Participant's create time.
 updated_at           | [Time](/reference/enums#formats) | Read       | Participant's update time.
 last_message_sent_at | [Time](/reference/enums#formats) | Read       | Participant's last sent message time.
-read_at              | [Time](/reference/enums#formats) | Read       | Time when Participant read last message.
+read_at              | [Time](/reference/enums#formats) | Read/Write | Time when Participant read last message.
 {: class="table table-bordered"}
   </div>
 </div>

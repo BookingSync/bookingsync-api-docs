@@ -15,14 +15,14 @@ Name                 | Type    | Read/Write | Description
 ---------------------|---------|------------|------------
 id                   | Integer | Read       | Message's id.
 ---------------------|---------|------------|------------
-channel              | String  | Read       | Message's channel.
+channel              | String  | Read       | Message's channel, list of Channels described in [enums section](/reference/enums#inbox-message-channels)
 content              | Text    | Read       | Message's content.
-origin               | String  | Read       | Message's origin.
-visibility           | String  | Read       | Message's visibility.
+origin               | String  | Read       | Message's origin, list of Origins described in [enums section](/reference/enums#inbox-message-origins)
+visibility           | String  | Read       | Message's visibility, list of Visibilities described in [enums section](/reference/enums#inbox-message-visibilities)
 ---------------------|---------|------------|------------
 created_at           | [Time](/reference/enums#formats) | Read       | Message's create time.
 updated_at           | [Time](/reference/enums#formats) | Read       | Message's update time.
-sent_at              | [Time](/reference/enums#formats) | Read       | Time when Message has been sent at.
+sent_at              | [Time](/reference/enums#formats) | Read       | Time when Message was sent at.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="inbox_write" markdown="1">
@@ -32,14 +32,14 @@ id                   | Integer | Read       | Message's id.
 conversation_id      | String  | Write      | Message's conversation id.
 sender_id            | String  | Write      | Message's sender id.
 ---------------------|---------|------------|------------
-channel              | String  | Read/Write | Message's channel.
+channel              | String  | Read/Write | Message's channel, list of Channels described in [enums section](/reference/enums#inbox-message-channels)
 content              | String  | Read/Write | Message's content.
-origin               | String  | Read/Write | Message's origin.
-visibility           | String  | Read/Write | Message's visibility.
+origin               | String  | Read/Write | Message's origin, list of Origins described in [enums section](/reference/enums#inbox-message-origins)
+visibility           | String  | Read/Write | Message's visibility, list of Visibilities described in [enums section](/reference/enums#inbox-message-visibilities)
 ---------------------|---------|------------|------------
 created_at           | [Time](/reference/enums#formats) | Read       | Message's create time.
 updated_at           | [Time](/reference/enums#formats) | Read       | Message's update time.
-sent_at              | [Time](/reference/enums#formats) | Read/Write | Time when Message has been sent at.
+sent_at              | [Time](/reference/enums#formats) | Read/Write | Time when Message was sent at.
 {: class="table table-bordered"}
   </div>
 </div>
