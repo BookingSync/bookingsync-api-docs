@@ -65,6 +65,7 @@
       "final_payback_to_owner": "0.0",
       "commission": null,
       "contract_updated_at": "CONTRACT_UPDATED_AT",
+      "external_reference": null,
       "owned_by_app": false,
       "bookings_fees": [
         {

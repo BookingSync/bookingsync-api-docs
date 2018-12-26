@@ -247,6 +247,15 @@ villa                | Villa
 yurt                 | Yurt
 {: class="table table-bordered"}
 
+## Rental residency categories
+
+Name                | Description
+--------------------|------------
+primary_residence   | Primary residence.
+secondary_residence | Secondary residence.
+non_residential     | Non residential.
+{: class="table table-bordered"}
+
 ## Inbox Message Channels
 
 Name             | Description
@@ -280,5 +289,3 @@ Name             | Description
 internal         | Internal visibility
 external         | External visibility
 {: class="table table-bordered"}
-       
-                
