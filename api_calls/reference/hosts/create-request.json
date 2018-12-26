@@ -1,0 +1,10 @@
+{
+  "hosts": [
+    {
+      "firstname": "Jan",
+      "lastname": "Kowalski",
+      "email": "host1@example.com",
+      "user_id": 2
+    }
+  ]
+}
