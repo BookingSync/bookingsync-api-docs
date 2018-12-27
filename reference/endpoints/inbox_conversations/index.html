@@ -1,0 +1,599 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BookingSync API documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/stylesheets/application.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/highlight.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="/assets/javascripts/application.js"></script>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.8.0">
+  </head>
+  <body class="flex-col">
+    <div class="page-wrapper flex-1 flex-col">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle sidebar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <img alt="BookingSync" src="/images/bookingsync.svg">
+              <span>Developers</span>
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="">
+                <a href="/guides/">Guides</a>
+              </li>
+              <li class="active">
+                <a href="/reference/">API Reference</a>
+              </li>
+              <li><a href="https://www.bookingsync.com" target="_blank">BookingSync.com</a></li>
+              <li><a href="https://github.com/BookingSync/bookingsync-api-docs" target="_blank"><i class="fa fa-github fa-fw fa-2x"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+<div class="container content">
+  <div class="row">
+    <div class="col-md-3 col-md-push-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Overview</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="/reference/">Introduction</a>
+          <a class="list-group-item" href="/reference/changelog/">Changelog</a>
+          <a class="list-group-item" href="/reference/requirements/">Requirements</a>
+          <a class="list-group-item" href="/reference/libraries/">Libraries</a>
+          <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+          <a class="list-group-item" href="/reference/testing_authorization/">Testing the Authorization</a>
+          <a class="list-group-item" href="/reference/enums/">Enumerables</a>
+        </div>
+        <div class="panel-heading">
+          <h3 class="panel-title">Endpoints</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
+          <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/applications/">Applications</a>
+          <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
+          <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
+          <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_tags/">Bookings Tags</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_taxes/">Bookings Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/change_overs/">Change Overs</a>
+          <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
+          <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
+          <a class="list-group-item" href="/reference/endpoints/fees/">Fees</a>
+          <a class="list-group-item" href="/reference/endpoints/fees_taxes/">Fees Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/hosts/">Hosts</a>
+          <a class="list-group-item" href="/reference/endpoints/inbox_attachments/">Inbox Attachments</a>
+          <a class="list-group-item active" href="/reference/endpoints/inbox_conversations/">Inbox Conversations</a>
+          <a class="list-group-item" href="/reference/endpoints/inbox_messages/">Inbox Messages</a>
+          <a class="list-group-item" href="/reference/endpoints/inbox_participants/">Inbox Participants</a>
+          <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
+          <a class="list-group-item" href="/reference/endpoints/living_rooms/">Living Rooms</a>
+          <a class="list-group-item" href="/reference/endpoints/los_records/">LOS Records</a>
+          <a class="list-group-item" href="/reference/endpoints/nightly_rate_maps/">Nightly Rate Maps</a>
+          <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
+          <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
+          <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_links/">Rental Links</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_taxes/">Rentals Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
+          <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
+          <a class="list-group-item" href="/reference/endpoints/sources/">Sources</a>
+          <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
+          <a class="list-group-item" href="/reference/endpoints/taxes/">Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/tax_rules/">Tax Rules</a>
+        </div>
+        <div class="panel-heading">
+          <h3 class="panel-title">Deprecated APIs</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 col-md-pull-3">
+      <div class="panel panel-default">
+        <div class="panel-body reference-body">
+          <h2 id="inbox-conversations">Inbox Conversations</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#list-conversations">List Conversations</a></li>
+  <li><a href="#get-a-single-conversation">Get a single Conversation</a></li>
+  <li><a href="#create-a-new-conversation">Create a new Conversation</a></li>
+  <li><a href="#update-a-conversation">Update a Conversation</a></li>
+</ol>
+
+<h4 id="parameters">Parameters</h4>
+<ul class="nav nav-pills" role="tablist">
+  <li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="active"><a href="#inbox_read" role="tab" data-toggle="pill">inbox_read</a></li>
+  <li><a href="#inbox_write" role="tab" data-toggle="pill">inbox_write</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane active" id="inbox_read">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Conversation’s id.</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>default_channel</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Conversation’s default channel.</td>
+        </tr>
+        <tr>
+          <td>subject</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Conversation’s subject.</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Conversation’s create time.</td>
+        </tr>
+        <tr>
+          <td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Conversation’s update time.</td>
+        </tr>
+        <tr>
+          <td>closed_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Time when Converstation was closed at.</td>
+        </tr>
+        <tr>
+          <td>deadline_response_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Conversation’s deadline response time.</td>
+        </tr>
+        <tr>
+          <td>last_message_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Conversation’s last message time.</td>
+        </tr>
+        <tr>
+          <td>marked_as_spam_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Time when Conversation was marked as spam.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tab-pane" id="inbox_write">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Conversation’s id.</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>default_channel</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Conversation’s default channel.</td>
+        </tr>
+        <tr>
+          <td>subject</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Conversation’s subject.</td>
+        </tr>
+        <tr>
+          <td>closed</td>
+          <td>Boolean</td>
+          <td>Write</td>
+          <td>Conversation’s subject.</td>
+        </tr>
+        <tr>
+          <td>source_id</td>
+          <td>Integer</td>
+          <td>Write</td>
+          <td>Conversation’s subject.</td>
+        </tr>
+        <tr>
+          <td>assignee_id</td>
+          <td>Integer</td>
+          <td>Write</td>
+          <td>Conversation’s subject.</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Conversation’s create time.</td>
+        </tr>
+        <tr>
+          <td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Conversation’s update time.</td>
+        </tr>
+        <tr>
+          <td>closed_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Time when Converstation was closed at.</td>
+        </tr>
+        <tr>
+          <td>deadline_response_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read/Write</td>
+          <td>Conversation’s deadline response time.</td>
+        </tr>
+        <tr>
+          <td>last_message_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Conversation’s last message time.</td>
+        </tr>
+        <tr>
+          <td>marked_as_spam_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read/Write</td>
+          <td>Time when Conversation was marked as spam.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3 id="list-conversations">List Conversations</h3>
+
+<pre><code>GET /inbox/conversations
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#8bc5db1abf04inbox_read-inbox_write" role="tab" data-toggle="pill">
+          inbox_read / inbox_write
+        </a>
+      </li>
+    
+  </ul>
+
+<h4 id="response">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="8bc5db1abf04inbox_read-inbox_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
+    <span class="s2">"conversations.assignee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/hosts/{conversations.assignee}"</span><span class="p">,</span>
+    <span class="s2">"conversations.bookings"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{conversations.bookings}"</span><span class="p">,</span>
+    <span class="s2">"conversations.inquiries"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inquiries/{conversations.inquiries}"</span><span class="p">,</span>
+    <span class="s2">"conversations.source"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/sources/{conversations.source}"</span>
+  <span class="p">},</span>
+  <span class="s2">"conversations"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"default_channel"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"subject"</span><span class="o">:</span> <span class="s2">"Here goes subject of conversation."</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-20T14:25:57Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-20T14:25:57Z"</span><span class="p">,</span>
+      <span class="s2">"closed_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"deadline_response_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"last_message_at"</span><span class="o">:</span> <span class="s2">"2018-11-22T12:19:57Z"</span><span class="p">,</span>
+      <span class="s2">"marked_as_spam_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"assignee"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"inquiries"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="get-a-single-conversation">Get a single Conversation</h3>
+
+<p>Returns a single conversation identified by ID.</p>
+
+<pre><code>GET /inbox/conversations/:conversation_id
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#7b99493f26a3inbox_read-inbox_write" role="tab" data-toggle="pill">
+          inbox_read / inbox_write
+        </a>
+      </li>
+    
+  </ul>
+
+<h4 id="response-1">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="7b99493f26a3inbox_read-inbox_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
+    <span class="s2">"conversations.assignee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/hosts/{conversations.assignee}"</span><span class="p">,</span>
+    <span class="s2">"conversations.bookings"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{conversations.bookings}"</span><span class="p">,</span>
+    <span class="s2">"conversations.inquiries"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inquiries/{conversations.inquiries}"</span><span class="p">,</span>
+    <span class="s2">"conversations.source"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/sources/{conversations.source}"</span>
+  <span class="p">},</span>
+  <span class="s2">"conversations"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"default_channel"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"subject"</span><span class="o">:</span> <span class="s2">"Here goes subject of conversation."</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-20T14:25:57Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-20T14:25:57Z"</span><span class="p">,</span>
+      <span class="s2">"closed_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"deadline_response_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"last_message_at"</span><span class="o">:</span> <span class="s2">"2018-11-22T12:19:57Z"</span><span class="p">,</span>
+      <span class="s2">"marked_as_spam_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"assignee"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"inquiries"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="create-a-new-conversation">Create a new Conversation</h3>
+
+<p>Creates a Conversation.</p>
+
+<pre><code>POST /inbox/conversations
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#2272cec412efinbox_write" role="tab" data-toggle="pill">
+          inbox_write
+        </a>
+      </li>
+    
+  </ul>
+
+<h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"conversations"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"default_channel"</span><span class="o">:</span> <span class="s2">"channelname"</span><span class="p">,</span>
+      <span class="s2">"subject"</span><span class="o">:</span> <span class="s2">"Subject."</span><span class="p">,</span>
+      <span class="s2">"last_message_at"</span><span class="o">:</span> <span class="s2">"2018-12-20T14:25:57Z"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-2">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="2272cec412efinbox_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
+    <span class="s2">"conversations.assignee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/hosts/{conversations.assignee}"</span><span class="p">,</span>
+    <span class="s2">"conversations.bookings"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{conversations.bookings}"</span><span class="p">,</span>
+    <span class="s2">"conversations.inquiries"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inquiries/{conversations.inquiries}"</span><span class="p">,</span>
+    <span class="s2">"conversations.source"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/sources/{conversations.source}"</span>
+  <span class="p">},</span>
+  <span class="s2">"conversations"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"default_channel"</span><span class="o">:</span> <span class="s2">"channelname"</span><span class="p">,</span>
+      <span class="s2">"subject"</span><span class="o">:</span> <span class="s2">"Subject."</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-20T14:25:57Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-20T14:25:57Z"</span><span class="p">,</span>
+      <span class="s2">"closed_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"deadline_response_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"last_message_at"</span><span class="o">:</span> <span class="s2">"2018-12-20T14:25:57Z"</span><span class="p">,</span>
+      <span class="s2">"marked_as_spam_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"assignee"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"inquiries"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="update-a-conversation">Update a Conversation</h3>
+
+<p>Returns an updated conversation identified by ID.</p>
+
+<pre><code>PUT /inbox/conversations/:conversation_id
+</code></pre>
+
+<div class="callout callout-info">
+  <h4>Restrictions on updatable parameters</h4>
+  <p>Only <code>:assignee_id, :closed, :default_channel, :marked_as_spam</code> attributes are allowed.</p>
+</div>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#88aad788b2b4inbox_write" role="tab" data-toggle="pill">
+          inbox_write
+        </a>
+      </li>
+    
+  </ul>
+
+<h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"conversations"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"default_channel"</span><span class="o">:</span> <span class="s2">"channelname"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-3">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="88aad788b2b4inbox_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
+    <span class="s2">"conversations.assignee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/hosts/{conversations.assignee}"</span><span class="p">,</span>
+    <span class="s2">"conversations.bookings"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{conversations.bookings}"</span><span class="p">,</span>
+    <span class="s2">"conversations.inquiries"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inquiries/{conversations.inquiries}"</span><span class="p">,</span>
+    <span class="s2">"conversations.source"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/sources/{conversations.source}"</span>
+  <span class="p">},</span>
+  <span class="s2">"conversations"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"default_channel"</span><span class="o">:</span> <span class="s2">"channelname"</span><span class="p">,</span>
+      <span class="s2">"subject"</span><span class="o">:</span> <span class="s2">"Subject."</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-20T14:25:57Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-20T14:25:57Z"</span><span class="p">,</span>
+      <span class="s2">"closed_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"deadline_response_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"last_message_at"</span><span class="o">:</span> <span class="s2">"2018-12-20T14:25:57Z"</span><span class="p">,</span>
+      <span class="s2">"marked_as_spam_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"assignee"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"inquiries"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </body>
+</html>
+

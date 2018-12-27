@@ -71,7 +71,7 @@
           <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/applications/">Applications</a>
           <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
-          <a class="list-group-item active" href="/reference/endpoints/bathrooms/">Bathrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
@@ -84,7 +84,7 @@
           <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
           <a class="list-group-item" href="/reference/endpoints/fees/">Fees</a>
           <a class="list-group-item" href="/reference/endpoints/fees_taxes/">Fees Taxes</a>
-          <a class="list-group-item" href="/reference/endpoints/hosts/">Hosts</a>
+          <a class="list-group-item active" href="/reference/endpoints/hosts/">Hosts</a>
           <a class="list-group-item" href="/reference/endpoints/inbox_attachments/">Inbox Attachments</a>
           <a class="list-group-item" href="/reference/endpoints/inbox_conversations/">Inbox Conversations</a>
           <a class="list-group-item" href="/reference/endpoints/inbox_messages/">Inbox Messages</a>
@@ -128,24 +128,23 @@
     <div class="col-md-9 col-md-pull-3">
       <div class="panel panel-default">
         <div class="panel-body reference-body">
-          <h2 id="bathrooms">Bathrooms</h2>
+          <h2 id="hosts">Hosts</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#list-bathrooms">List bathrooms</a></li>
-  <li><a href="#get-a-single-bathroom">Get a single bathroom</a></li>
-  <li><a href="#create-a-new-bathroom">Create a new bathroom</a></li>
-  <li><a href="#update-a-bathroom">Update a bathroom</a></li>
-  <li><a href="#destroy-a-bathroom">Destroy a bathroom</a></li>
+  <li><a href="#list-hosts">List Hosts</a></li>
+  <li><a href="#get-a-single-host">Get a single Host</a></li>
+  <li><a href="#create-a-new-host">Create a new Host</a></li>
+  <li><a href="#update-a-host">Update a Host</a></li>
 </ol>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
-  <li class="disabled"><a>OAuth Scopes:</a></li>
-  <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
-  <li><a href="#rentals_write" role="tab" data-toggle="pill">rentals_write</a></li>
+<li class="disabled"><a>OAuth Scopes:</a></li>
+<li class="active"><a href="#inbox_read" role="tab" data-toggle="pill">inbox_read</a></li>
+<li><a href="#inbox_write" role="tab" data-toggle="pill">inbox_write</a></li>
 </ul>
 <div class="tab-content">
-  <div class="tab-pane active" id="public">
+  <div class="tab-pane active" id="inbox_read">
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -160,33 +159,27 @@
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Bathroom’s id.</td>
+          <td>Host’s id.</td>
         </tr>
       </tbody>
       <tbody>
         <tr>
-          <td>name</td>
-          <td><a href="/reference/enums#formats">Object</a></td>
+          <td>firstname</td>
+          <td>String</td>
           <td>Read</td>
-          <td>Bathroom’s name, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+          <td>Host’s first name.</td>
         </tr>
         <tr>
-          <td>bath_count</td>
-          <td>Integer</td>
+          <td>lastname</td>
+          <td>String</td>
           <td>Read</td>
-          <td>Bathroom’s number of baths.</td>
+          <td>Host’s last name.</td>
         </tr>
         <tr>
-          <td>shower_count</td>
-          <td>Integer</td>
+          <td>email</td>
+          <td>String</td>
           <td>Read</td>
-          <td>Bathroom’s number of showers.</td>
-        </tr>
-        <tr>
-          <td>wc_count</td>
-          <td>Integer</td>
-          <td>Read</td>
-          <td>Bathroom’s number of wc’s.</td>
+          <td>Host’s email.</td>
         </tr>
       </tbody>
       <tbody>
@@ -194,18 +187,30 @@
           <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Bathroom’s create time.</td>
+          <td>Host’s create time.</td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Bathroom’s update time.</td>
+          <td>Host’s update time.</td>
+        </tr>
+        <tr>
+          <td>forget_me_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Host’s forget time.</td>
+        </tr>
+        <tr>
+          <td>processing_restricted_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Host’s processing restriction time.</td>
         </tr>
       </tbody>
     </table>
   </div>
-  <div class="tab-pane" id="rentals_write">
+  <div class="tab-pane" id="inbox_write">
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -220,34 +225,39 @@
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Bathroom’s id.</td>
+          <td>Host’s id.</td>
+        </tr>
+        <tr>
+          <td>user_id</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>Host’s user id.</td>
+        </tr>
+        <tr>
+          <td>source_id</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>Host’s source id.</td>
         </tr>
       </tbody>
       <tbody>
         <tr>
-          <td>name</td>
-          <td><a href="/reference/enums#formats">Object</a></td>
+          <td>firstname</td>
+          <td>String</td>
           <td>Read/Write</td>
-          <td>
-<strong>Required</strong>. Bathroom’s name, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+          <td>Host’s first name.</td>
         </tr>
         <tr>
-          <td>bath_count</td>
-          <td>Integer</td>
+          <td>lastname</td>
+          <td>String</td>
           <td>Read/Write</td>
-          <td>Bathroom’s number of baths.</td>
+          <td>Host’s last name.</td>
         </tr>
         <tr>
-          <td>shower_count</td>
-          <td>Integer</td>
+          <td>email</td>
+          <td>String</td>
           <td>Read/Write</td>
-          <td>Bathroom’s number of showers.</td>
-        </tr>
-        <tr>
-          <td>wc_count</td>
-          <td>Integer</td>
-          <td>Read/Write</td>
-          <td>Bathroom’s number of wc’s.</td>
+          <td>Host’s email.</td>
         </tr>
       </tbody>
       <tbody>
@@ -255,32 +265,42 @@
           <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Bathroom’s create time.</td>
+          <td>Host’s create time.</td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Bathroom’s update time.</td>
+          <td>Host’s update time.</td>
+        </tr>
+        <tr>
+          <td>forget_me_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Host’s forget time.</td>
+        </tr>
+        <tr>
+          <td>processing_restricted_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Host’s processing restriction time.</td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<h3 id="list-bathrooms">List bathrooms</h3>
+<h3 id="list-hosts">List Hosts</h3>
 
-<p>List all bathrooms for a given account.</p>
-
-<pre><code>GET /bathrooms
+<pre><code>GET /hosts
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#e6c7fb8bb47fpublic" role="tab" data-toggle="pill">
-          public
+        <a href="#907da657db14inbox_read-inbox_write" role="tab" data-toggle="pill">
+          inbox_read / inbox_write
         </a>
       </li>
     
@@ -291,24 +311,31 @@
   
   
     
-      <div class="tab-pane active" id="e6c7fb8bb47fpublic">
+      <div class="tab-pane active" id="907da657db14inbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"bathrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"</span>
+    <span class="s2">"hosts.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{hosts.account}"</span><span class="p">,</span>
+    <span class="s2">"hosts.participants"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/participants/{hosts.participants}"</span><span class="p">,</span>
+    <span class="s2">"hosts.source"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/sources/{hosts.source}"</span><span class="p">,</span>
+    <span class="s2">"hosts.user"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/users/{hosts.user}"</span>
   <span class="p">},</span>
-  <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"hosts"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"bathroom"</span>
-      <span class="p">},</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:35Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:35Z"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"host1@example.com"</span><span class="p">,</span>
+      <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"Jan"</span><span class="p">,</span>
+      <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"Kowalski"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-26T19:51:24Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-26T19:51:24Z"</span><span class="p">,</span>
+      <span class="s2">"forget_me_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"processing_restricted_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"participants"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">"user"</span><span class="o">:</span> <span class="kc">null</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -320,19 +347,19 @@
   
 </div>
 
-<h3 id="get-a-single-bathroom">Get a single bathroom</h3>
+<h3 id="get-a-single-host">Get a single Host</h3>
 
-<p>Returns a single bathroom identified by ID.</p>
+<p>Returns a single host identified by ID.</p>
 
-<pre><code>GET /bathrooms/:bathroom_id
+<pre><code>GET /hosts/:host_id
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#c11a5b4ea723public" role="tab" data-toggle="pill">
-          public
+        <a href="#e31a982988c7inbox_read-inbox_write" role="tab" data-toggle="pill">
+          inbox_read / inbox_write
         </a>
       </li>
     
@@ -343,24 +370,31 @@
   
   
     
-      <div class="tab-pane active" id="c11a5b4ea723public">
+      <div class="tab-pane active" id="e31a982988c7inbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"bathrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"</span>
+    <span class="s2">"hosts.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{hosts.account}"</span><span class="p">,</span>
+    <span class="s2">"hosts.participants"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/participants/{hosts.participants}"</span><span class="p">,</span>
+    <span class="s2">"hosts.source"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/sources/{hosts.source}"</span><span class="p">,</span>
+    <span class="s2">"hosts.user"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/users/{hosts.user}"</span>
   <span class="p">},</span>
-  <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"hosts"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"bathroom"</span>
-      <span class="p">},</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:35Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:35Z"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"host1@example.com"</span><span class="p">,</span>
+      <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"Jan"</span><span class="p">,</span>
+      <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"Kowalski"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-26T19:51:24Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-26T19:51:24Z"</span><span class="p">,</span>
+      <span class="s2">"forget_me_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"processing_restricted_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"participants"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">"user"</span><span class="o">:</span> <span class="kc">null</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -372,19 +406,19 @@
   
 </div>
 
-<h3 id="create-a-new-bathroom">Create a new bathroom</h3>
+<h3 id="create-a-new-host">Create a new Host</h3>
 
-<p>Creates a bathroom for given rental.</p>
+<p>Creates an host.</p>
 
-<pre><code>POST /rentals/:rental_id/bathrooms
+<pre><code>POST /hosts
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#fa220faa0857rentals_write" role="tab" data-toggle="pill">
-          rentals_write
+        <a href="#3cad339a73a0inbox_write" role="tab" data-toggle="pill">
+          inbox_write
         </a>
       </li>
     
@@ -392,12 +426,12 @@
 
 <h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"hosts"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"bathroom"</span><span class="p">,</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"host1@example.com"</span><span class="p">,</span>
+      <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"Jan"</span><span class="p">,</span>
+      <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"Kowalski"</span><span class="p">,</span>
+      <span class="s2">"user_id"</span><span class="o">:</span> <span class="mi">2</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -407,24 +441,31 @@
   
   
     
-      <div class="tab-pane active" id="fa220faa0857rentals_write">
+      <div class="tab-pane active" id="3cad339a73a0inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"bathrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"</span>
+    <span class="s2">"hosts.account"</span><span class="o">:</span> <span class="s2">"http://test.host/api/v3/accounts/{hosts.account}"</span><span class="p">,</span>
+    <span class="s2">"hosts.participants"</span><span class="o">:</span> <span class="s2">"http://test.host/api/v3/inbox/participants/{hosts.participants}"</span><span class="p">,</span>
+    <span class="s2">"hosts.source"</span><span class="o">:</span> <span class="s2">"http://test.host/api/v3/sources/{hosts.source}"</span><span class="p">,</span>
+    <span class="s2">"hosts.user"</span><span class="o">:</span> <span class="s2">"http://test.host/api/v3/users/{hosts.user}"</span>
   <span class="p">},</span>
-  <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"hosts"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"bathroom"</span>
-      <span class="p">},</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:35Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:35Z"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"host1@example.com"</span><span class="p">,</span>
+      <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"Jan"</span><span class="p">,</span>
+      <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"Kowalski"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-26T20:03:54Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-26T20:03:54Z"</span><span class="p">,</span>
+      <span class="s2">"forget_me_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"processing_restricted_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"participants"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">"user"</span><span class="o">:</span> <span class="mi">2</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -436,19 +477,19 @@
   
 </div>
 
-<h3 id="update-a-bathroom">Update a bathroom</h3>
+<h3 id="update-a-host">Update a Host</h3>
 
-<p>Returns an updated bathroom identified by ID.</p>
+<p>Returns an updated host identified by ID.</p>
 
-<pre><code>PUT /bathrooms/:bathroom_id
+<pre><code>PUT /hosts/:host_id
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#711a4ac2fcafrentals_write" role="tab" data-toggle="pill">
-          rentals_write
+        <a href="#4674c565a7a6inbox_write" role="tab" data-toggle="pill">
+          inbox_write
         </a>
       </li>
     
@@ -456,12 +497,12 @@
 
 <h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"hosts"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"bathroom"</span><span class="p">,</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"host1@example.com"</span><span class="p">,</span>
+      <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"Jan"</span><span class="p">,</span>
+      <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"Kowalski"</span><span class="p">,</span>
+      <span class="s2">"user_id"</span><span class="o">:</span> <span class="mi">2</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -471,24 +512,31 @@
   
   
     
-      <div class="tab-pane active" id="711a4ac2fcafrentals_write">
+      <div class="tab-pane active" id="4674c565a7a6inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"bathrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"</span>
+    <span class="s2">"hosts.account"</span><span class="o">:</span> <span class="s2">"http://test.host/api/v3/accounts/{hosts.account}"</span><span class="p">,</span>
+    <span class="s2">"hosts.participants"</span><span class="o">:</span> <span class="s2">"http://test.host/api/v3/inbox/participants/{hosts.participants}"</span><span class="p">,</span>
+    <span class="s2">"hosts.source"</span><span class="o">:</span> <span class="s2">"http://test.host/api/v3/sources/{hosts.source}"</span><span class="p">,</span>
+    <span class="s2">"hosts.user"</span><span class="o">:</span> <span class="s2">"http://test.host/api/v3/users/{hosts.user}"</span>
   <span class="p">},</span>
-  <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"hosts"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"bathroom"</span>
-      <span class="p">},</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:35Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:35Z"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"host1@example.com"</span><span class="p">,</span>
+      <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"Jan"</span><span class="p">,</span>
+      <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"Kowalski"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-26T20:03:54Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-26T20:03:54Z"</span><span class="p">,</span>
+      <span class="s2">"forget_me_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"processing_restricted_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"participants"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="s2">"user"</span><span class="o">:</span> <span class="mi">2</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -500,14 +548,6 @@
   
 </div>
 
-<h3 id="destroy-a-bathroom">Destroy a bathroom</h3>
-
-<p>Required OAuth scope: <code>:rentals_write</code></p>
-
-<p>Returns an empty response with ‘204 No Content’ status code on success.</p>
-
-<pre><code>DELETE /bathrooms/:bathroom_id
-</code></pre>
 
         </div>
       </div>

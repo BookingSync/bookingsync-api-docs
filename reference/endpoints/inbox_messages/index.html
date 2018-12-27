@@ -71,7 +71,7 @@
           <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
           <a class="list-group-item" href="/reference/endpoints/applications/">Applications</a>
           <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
-          <a class="list-group-item active" href="/reference/endpoints/bathrooms/">Bathrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
@@ -87,7 +87,7 @@
           <a class="list-group-item" href="/reference/endpoints/hosts/">Hosts</a>
           <a class="list-group-item" href="/reference/endpoints/inbox_attachments/">Inbox Attachments</a>
           <a class="list-group-item" href="/reference/endpoints/inbox_conversations/">Inbox Conversations</a>
-          <a class="list-group-item" href="/reference/endpoints/inbox_messages/">Inbox Messages</a>
+          <a class="list-group-item active" href="/reference/endpoints/inbox_messages/">Inbox Messages</a>
           <a class="list-group-item" href="/reference/endpoints/inbox_participants/">Inbox Participants</a>
           <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
           <a class="list-group-item" href="/reference/endpoints/living_rooms/">Living Rooms</a>
@@ -128,24 +128,23 @@
     <div class="col-md-9 col-md-pull-3">
       <div class="panel panel-default">
         <div class="panel-body reference-body">
-          <h2 id="bathrooms">Bathrooms</h2>
+          <h2 id="inbox-messages">Inbox Messages</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#list-bathrooms">List bathrooms</a></li>
-  <li><a href="#get-a-single-bathroom">Get a single bathroom</a></li>
-  <li><a href="#create-a-new-bathroom">Create a new bathroom</a></li>
-  <li><a href="#update-a-bathroom">Update a bathroom</a></li>
-  <li><a href="#destroy-a-bathroom">Destroy a bathroom</a></li>
+  <li><a href="#list-messages">List Messages</a></li>
+  <li><a href="#get-a-single-message">Get a single Message</a></li>
+  <li><a href="#create-a-new-message">Create a new Message</a></li>
+  <li><a href="#update-a-conversation">Update a Conversation</a></li>
 </ol>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
-  <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
-  <li><a href="#rentals_write" role="tab" data-toggle="pill">rentals_write</a></li>
+  <li class="active"><a href="#inbox_read" role="tab" data-toggle="pill">inbox_read</a></li>
+  <li><a href="#inbox_write" role="tab" data-toggle="pill">inbox_write</a></li>
 </ul>
 <div class="tab-content">
-  <div class="tab-pane active" id="public">
+  <div class="tab-pane active" id="inbox_read">
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -160,33 +159,36 @@
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Bathroom’s id.</td>
+          <td>Message’s id.</td>
         </tr>
       </tbody>
       <tbody>
         <tr>
-          <td>name</td>
-          <td><a href="/reference/enums#formats">Object</a></td>
+          <td>channel</td>
+          <td>String</td>
           <td>Read</td>
-          <td>Bathroom’s name, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+          <td>Message’s channel, list of Channels described in <a href="/reference/enums#inbox-message-channels">enums section</a>
+</td>
         </tr>
         <tr>
-          <td>bath_count</td>
-          <td>Integer</td>
+          <td>content</td>
+          <td>Text</td>
           <td>Read</td>
-          <td>Bathroom’s number of baths.</td>
+          <td>Message’s content.</td>
         </tr>
         <tr>
-          <td>shower_count</td>
-          <td>Integer</td>
+          <td>origin</td>
+          <td>String</td>
           <td>Read</td>
-          <td>Bathroom’s number of showers.</td>
+          <td>Message’s origin, list of Origins described in <a href="/reference/enums#inbox-message-origins">enums section</a>
+</td>
         </tr>
         <tr>
-          <td>wc_count</td>
-          <td>Integer</td>
+          <td>visibility</td>
+          <td>String</td>
           <td>Read</td>
-          <td>Bathroom’s number of wc’s.</td>
+          <td>Message’s visibility, list of Visibilities described in <a href="/reference/enums#inbox-message-visibilities">enums section</a>
+</td>
         </tr>
       </tbody>
       <tbody>
@@ -194,18 +196,24 @@
           <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Bathroom’s create time.</td>
+          <td>Message’s create time.</td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Bathroom’s update time.</td>
+          <td>Message’s update time.</td>
+        </tr>
+        <tr>
+          <td>sent_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Time when Message was sent at.</td>
         </tr>
       </tbody>
     </table>
   </div>
-  <div class="tab-pane" id="rentals_write">
+  <div class="tab-pane" id="inbox_write">
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -220,34 +228,48 @@
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Bathroom’s id.</td>
+          <td>Message’s id.</td>
+        </tr>
+        <tr>
+          <td>conversation_id</td>
+          <td>String</td>
+          <td>Write</td>
+          <td>Message’s conversation id.</td>
+        </tr>
+        <tr>
+          <td>sender_id</td>
+          <td>String</td>
+          <td>Write</td>
+          <td>Message’s sender id.</td>
         </tr>
       </tbody>
       <tbody>
         <tr>
-          <td>name</td>
-          <td><a href="/reference/enums#formats">Object</a></td>
+          <td>channel</td>
+          <td>String</td>
           <td>Read/Write</td>
-          <td>
-<strong>Required</strong>. Bathroom’s name, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+          <td>Message’s channel, list of Channels described in <a href="/reference/enums#inbox-message-channels">enums section</a>
+</td>
         </tr>
         <tr>
-          <td>bath_count</td>
-          <td>Integer</td>
+          <td>content</td>
+          <td>String</td>
           <td>Read/Write</td>
-          <td>Bathroom’s number of baths.</td>
+          <td>Message’s content.</td>
         </tr>
         <tr>
-          <td>shower_count</td>
-          <td>Integer</td>
+          <td>origin</td>
+          <td>String</td>
           <td>Read/Write</td>
-          <td>Bathroom’s number of showers.</td>
+          <td>Message’s origin, list of Origins described in <a href="/reference/enums#inbox-message-origins">enums section</a>
+</td>
         </tr>
         <tr>
-          <td>wc_count</td>
-          <td>Integer</td>
+          <td>visibility</td>
+          <td>String</td>
           <td>Read/Write</td>
-          <td>Bathroom’s number of wc’s.</td>
+          <td>Message’s visibility, list of Visibilities described in <a href="/reference/enums#inbox-message-visibilities">enums section</a>
+</td>
         </tr>
       </tbody>
       <tbody>
@@ -255,32 +277,36 @@
           <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Bathroom’s create time.</td>
+          <td>Message’s create time.</td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Bathroom’s update time.</td>
+          <td>Message’s update time.</td>
+        </tr>
+        <tr>
+          <td>sent_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read/Write</td>
+          <td>Time when Message was sent at.</td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<h3 id="list-bathrooms">List bathrooms</h3>
+<h3 id="list-messages">List Messages</h3>
 
-<p>List all bathrooms for a given account.</p>
-
-<pre><code>GET /bathrooms
+<pre><code>GET /inbox/messages
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#e6c7fb8bb47fpublic" role="tab" data-toggle="pill">
-          public
+        <a href="#4cf1c6361ffainbox_read-inbox_write" role="tab" data-toggle="pill">
+          inbox_read / inbox_write
         </a>
       </li>
     
@@ -291,24 +317,29 @@
   
   
     
-      <div class="tab-pane active" id="e6c7fb8bb47fpublic">
+      <div class="tab-pane active" id="4cf1c6361ffainbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"bathrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"</span>
+    <span class="s2">"messages.attachments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}"</span><span class="p">,</span>
+    <span class="s2">"messages.conversation"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/conversations/{messages.conversation}"</span><span class="p">,</span>
+    <span class="s2">"messages.sender"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/participants/{messages.sender}"</span>
   <span class="p">},</span>
-  <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"messages"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"bathroom"</span>
-      <span class="p">},</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:35Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:35Z"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"channel"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"content"</span><span class="o">:</span> <span class="s2">"Some content."</span><span class="p">,</span>
+      <span class="s2">"origin"</span><span class="o">:</span> <span class="s2">"email"</span><span class="p">,</span>
+      <span class="s2">"visibility"</span><span class="o">:</span> <span class="s2">"external"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T09:21:52Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T09:21:52Z"</span><span class="p">,</span>
+      <span class="s2">"sent_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"attachments"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"conversation"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s2">"sender"</span><span class="o">:</span> <span class="mi">5</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -320,19 +351,19 @@
   
 </div>
 
-<h3 id="get-a-single-bathroom">Get a single bathroom</h3>
+<h3 id="get-a-single-message">Get a single Message</h3>
 
-<p>Returns a single bathroom identified by ID.</p>
+<p>Returns a single conversation identified by ID.</p>
 
-<pre><code>GET /bathrooms/:bathroom_id
+<pre><code>GET /inbox/messages/:message_id
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#c11a5b4ea723public" role="tab" data-toggle="pill">
-          public
+        <a href="#e8aacde372a3inbox_read-inbox_write" role="tab" data-toggle="pill">
+          inbox_read / inbox_write
         </a>
       </li>
     
@@ -343,24 +374,29 @@
   
   
     
-      <div class="tab-pane active" id="c11a5b4ea723public">
+      <div class="tab-pane active" id="e8aacde372a3inbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"bathrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"</span>
+    <span class="s2">"messages.attachments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}"</span><span class="p">,</span>
+    <span class="s2">"messages.conversation"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/conversations/{messages.conversation}"</span><span class="p">,</span>
+    <span class="s2">"messages.sender"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/participants/{messages.sender}"</span>
   <span class="p">},</span>
-  <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"messages"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"bathroom"</span>
-      <span class="p">},</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:35Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:35Z"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"channel"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"content"</span><span class="o">:</span> <span class="s2">"Some content."</span><span class="p">,</span>
+      <span class="s2">"origin"</span><span class="o">:</span> <span class="s2">"email"</span><span class="p">,</span>
+      <span class="s2">"visibility"</span><span class="o">:</span> <span class="s2">"external"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T09:21:52Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T09:21:52Z"</span><span class="p">,</span>
+      <span class="s2">"sent_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"attachments"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"conversation"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s2">"sender"</span><span class="o">:</span> <span class="mi">5</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -372,19 +408,19 @@
   
 </div>
 
-<h3 id="create-a-new-bathroom">Create a new bathroom</h3>
+<h3 id="create-a-new-message">Create a new Message</h3>
 
-<p>Creates a bathroom for given rental.</p>
+<p>Creates a Conversation.</p>
 
-<pre><code>POST /rentals/:rental_id/bathrooms
+<pre><code>POST /inbox/messages
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#fa220faa0857rentals_write" role="tab" data-toggle="pill">
-          rentals_write
+        <a href="#df9dfb285a27inbox_write" role="tab" data-toggle="pill">
+          inbox_write
         </a>
       </li>
     
@@ -392,12 +428,15 @@
 
 <h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"messages"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"bathroom"</span><span class="p">,</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="s2">"channel"</span><span class="o">:</span> <span class="s2">"email"</span><span class="p">,</span>
+      <span class="s2">"content"</span><span class="o">:</span> <span class="s2">"Message Content"</span><span class="p">,</span>
+      <span class="s2">"conversation_id"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+      <span class="s2">"origin"</span><span class="o">:</span> <span class="s2">"email"</span><span class="p">,</span>
+      <span class="s2">"sender_id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"visibility"</span><span class="o">:</span> <span class="s2">"external"</span><span class="p">,</span>
+      <span class="s2">"sent_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T09:21:52Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -407,24 +446,29 @@
   
   
     
-      <div class="tab-pane active" id="fa220faa0857rentals_write">
+      <div class="tab-pane active" id="df9dfb285a27inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"bathrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"</span>
+    <span class="s2">"messages.attachments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}"</span><span class="p">,</span>
+    <span class="s2">"messages.conversation"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/conversations/{messages.conversation}"</span><span class="p">,</span>
+    <span class="s2">"messages.sender"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/participants/{messages.sender}"</span>
   <span class="p">},</span>
-  <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"messages"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"bathroom"</span>
-      <span class="p">},</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:35Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:35Z"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"channel"</span><span class="o">:</span> <span class="s2">"email"</span><span class="p">,</span>
+      <span class="s2">"content"</span><span class="o">:</span> <span class="s2">"Message Content"</span><span class="p">,</span>
+      <span class="s2">"origin"</span><span class="o">:</span> <span class="s2">"email"</span><span class="p">,</span>
+      <span class="s2">"visibility"</span><span class="o">:</span> <span class="s2">"external"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T09:21:52Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T09:21:52Z"</span><span class="p">,</span>
+      <span class="s2">"sent_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T09:21:52Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"attachments"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"conversation"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s2">"sender"</span><span class="o">:</span> <span class="mi">5</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -436,19 +480,19 @@
   
 </div>
 
-<h3 id="update-a-bathroom">Update a bathroom</h3>
+<h3 id="update-a-conversation">Update a Conversation</h3>
 
-<p>Returns an updated bathroom identified by ID.</p>
+<p>Returns an updated conversation identified by ID.</p>
 
-<pre><code>PUT /bathrooms/:bathroom_id
+<pre><code>PUT /inbox/messages/:message_id
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#711a4ac2fcafrentals_write" role="tab" data-toggle="pill">
-          rentals_write
+        <a href="#085420b2b8ccinbox_write" role="tab" data-toggle="pill">
+          inbox_write
         </a>
       </li>
     
@@ -456,12 +500,11 @@
 
 <h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"messages"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"bathroom"</span><span class="p">,</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="s2">"channel"</span><span class="o">:</span> <span class="s2">"email"</span><span class="p">,</span>
+      <span class="s2">"origin"</span><span class="o">:</span> <span class="s2">"email"</span><span class="p">,</span>
+      <span class="s2">"visibility"</span><span class="o">:</span> <span class="s2">"external"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -471,24 +514,29 @@
   
   
     
-      <div class="tab-pane active" id="711a4ac2fcafrentals_write">
+      <div class="tab-pane active" id="085420b2b8ccinbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"bathrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"</span>
+    <span class="s2">"messages.attachments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}"</span><span class="p">,</span>
+    <span class="s2">"messages.conversation"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/conversations/{messages.conversation}"</span><span class="p">,</span>
+    <span class="s2">"messages.sender"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/participants/{messages.sender}"</span>
   <span class="p">},</span>
-  <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"messages"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"bathroom"</span>
-      <span class="p">},</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:35Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:35Z"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"channel"</span><span class="o">:</span> <span class="s2">"email"</span><span class="p">,</span>
+      <span class="s2">"content"</span><span class="o">:</span> <span class="s2">"Message Content"</span><span class="p">,</span>
+      <span class="s2">"origin"</span><span class="o">:</span> <span class="s2">"email"</span><span class="p">,</span>
+      <span class="s2">"visibility"</span><span class="o">:</span> <span class="s2">"external"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T09:21:52Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T09:21:52Z"</span><span class="p">,</span>
+      <span class="s2">"sent_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T09:21:52Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"attachments"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"conversation"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s2">"sender"</span><span class="o">:</span> <span class="mi">5</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -500,14 +548,6 @@
   
 </div>
 
-<h3 id="destroy-a-bathroom">Destroy a bathroom</h3>
-
-<p>Required OAuth scope: <code>:rentals_write</code></p>
-
-<p>Returns an empty response with ‘204 No Content’ status code on success.</p>
-
-<pre><code>DELETE /bathrooms/:bathroom_id
-</code></pre>
 
         </div>
       </div>

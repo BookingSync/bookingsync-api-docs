@@ -85,7 +85,7 @@
           <a class="list-group-item" href="/reference/endpoints/fees/">Fees</a>
           <a class="list-group-item" href="/reference/endpoints/fees_taxes/">Fees Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/hosts/">Hosts</a>
-          <a class="list-group-item" href="/reference/endpoints/inbox_attachments/">Inbox Attachments</a>
+          <a class="list-group-item active" href="/reference/endpoints/inbox_attachments/">Inbox Attachments</a>
           <a class="list-group-item" href="/reference/endpoints/inbox_conversations/">Inbox Conversations</a>
           <a class="list-group-item" href="/reference/endpoints/inbox_messages/">Inbox Messages</a>
           <a class="list-group-item" href="/reference/endpoints/inbox_participants/">Inbox Participants</a>
@@ -108,7 +108,7 @@
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
           <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
           <a class="list-group-item" href="/reference/endpoints/rental_links/">Rental Links</a>
-          <a class="list-group-item active" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_taxes/">Rentals Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
           <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
@@ -128,23 +128,23 @@
     <div class="col-md-9 col-md-pull-3">
       <div class="panel panel-default">
         <div class="panel-body reference-body">
-          <h2 id="rentals-tags">Rentals tags</h2>
+          <h2 id="inbox-attachments">Inbox Attachments</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#list-rentals-tags">List rentals tags</a></li>
-  <li><a href="#get-a-single-rentals-tag">Get a single rentals tag</a></li>
-  <li><a href="#create-new-rentals-tags">Create new rentals tags</a></li>
-  <li><a href="#update-a-rentals-tag">Update a rentals tag</a></li>
+  <li><a href="#list-attachments">List Attachments</a></li>
+  <li><a href="#get-a-single-attachment">Get a single Attachment</a></li>
+  <li><a href="#create-a-new-attachment">Create a new attachment</a></li>
+  <li><a href="#update-an-attachment">Update an attachment</a></li>
 </ol>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
-  <li class="active"><a href="#rentals_read" role="tab" data-toggle="pill">rentals_read</a></li>
-  <li><a href="#rentals_write" role="tab" data-toggle="pill">rentals_write</a></li>
+  <li class="active"><a href="#inbox_read" role="tab" data-toggle="pill">inbox_read</a></li>
+  <li><a href="#inbox_write" role="tab" data-toggle="pill">inbox_write</a></li>
 </ul>
 <div class="tab-content">
-  <div class="tab-pane active" id="rentals_read">
+  <div class="tab-pane active" id="inbox_read">
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -159,27 +159,51 @@
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Rentals Tag’s id.</td>
+          <td>Attachment’s id.</td>
+        </tr>
+        <tr>
+          <td>account_id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Id of Account Attachment belongs to.</td>
         </tr>
       </tbody>
       <tbody>
         <tr>
+          <td>url</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Attachment’s url address.</td>
+        </tr>
+        <tr>
           <td>name</td>
-          <td><a href="/reference/enums#formats">Object</a></td>
-          <td>Read</td>
-          <td>Rentals Tag’s title, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
-        </tr>
-        <tr>
-          <td>logo</td>
           <td>String</td>
           <td>Read</td>
-          <td>Rentals Tag’s logo (Font Awesome class).</td>
+          <td>Attachment’s name.</td>
         </tr>
         <tr>
-          <td>color</td>
+          <td>image_width</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Attachment’s image width in pixels.</td>
+        </tr>
+        <tr>
+          <td>image_height</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Attachment’s image height in pixels.</td>
+        </tr>
+        <tr>
+          <td>file_size</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Attachment’s file size in bytes.</td>
+        </tr>
+        <tr>
+          <td>file_content_type</td>
           <td>String</td>
           <td>Read</td>
-          <td>Rentals Tag’s color (hex).</td>
+          <td>Attachment’s file content type.</td>
         </tr>
       </tbody>
       <tbody>
@@ -187,18 +211,18 @@
           <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Rentals Tag’s create time.</td>
+          <td>Attachment’s create time.</td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Rentals Tag’s update time.</td>
+          <td>Attachment’s update time.</td>
         </tr>
       </tbody>
     </table>
   </div>
-  <div class="tab-pane" id="rentals_write">
+  <div class="tab-pane" id="inbox_write">
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -213,27 +237,63 @@
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Rentals Tag’s id.</td>
+          <td>Attachment’s id.</td>
+        </tr>
+        <tr>
+          <td>account_id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Id of Account Attachment belongs to.</td>
         </tr>
       </tbody>
       <tbody>
         <tr>
+          <td>remote_file_url</td>
+          <td>String</td>
+          <td>Write</td>
+          <td>Attachment’s remote url address.</td>
+        </tr>
+        <tr>
+          <td>file</td>
+          <td>String</td>
+          <td>Write</td>
+          <td>Attachment’s Base64 encoded file.</td>
+        </tr>
+        <tr>
+          <td>url</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Attachment’s url address.</td>
+        </tr>
+        <tr>
           <td>name</td>
-          <td><a href="/reference/enums#formats">Object</a></td>
-          <td>Read/Write</td>
-          <td>Rentals Tag’s title, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
-        </tr>
-        <tr>
-          <td>logo</td>
           <td>String</td>
           <td>Read/Write</td>
-          <td>Rentals Tag’s logo (Font Awesome class).</td>
+          <td>Attachment’s name.</td>
         </tr>
         <tr>
-          <td>color</td>
+          <td>image_width</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Attachment’s image width in pixels.</td>
+        </tr>
+        <tr>
+          <td>image_height</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Attachment’s image height in pixels.</td>
+        </tr>
+        <tr>
+          <td>file_size</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Attachment’s file size in bytes.</td>
+        </tr>
+        <tr>
+          <td>file_content_type</td>
           <td>String</td>
-          <td>Read/Write</td>
-          <td>Rentals Tag’s color (hex).</td>
+          <td>Read</td>
+          <td>Attachment’s file content type.</td>
         </tr>
       </tbody>
       <tbody>
@@ -241,32 +301,30 @@
           <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Rentals Tag’s create time.</td>
+          <td>Attachment’s create time.</td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Rentals Tag’s update time.</td>
+          <td>Attachment’s update time.</td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<h3 id="list-rentals-tags">List rentals tags</h3>
+<h3 id="list-attachments">List Attachments</h3>
 
-<p>List all rentals tags for a given account.</p>
-
-<pre><code>GET /rentals_tags
+<pre><code>GET /inbox/attachments
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#9078e6532d94public" role="tab" data-toggle="pill">
-          public
+        <a href="#b3e38e2346ebinbox_read-inbox_write" role="tab" data-toggle="pill">
+          inbox_read / inbox_write
         </a>
       </li>
     
@@ -277,45 +335,52 @@
   
   
     
-      <div class="tab-pane active" id="9078e6532d94public">
+      <div class="tab-pane active" id="b3e38e2346ebinbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"rentals_tags.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals_tags.account}"</span>
+    <span class="s2">"attachments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{attachments.account}"</span><span class="p">,</span>
+    <span class="s2">"attachments.messages"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/messages/{attachments.messages}"</span>
   <span class="p">},</span>
-  <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"attachments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"color"</span><span class="o">:</span> <span class="s2">"#FFFFFF"</span><span class="p">,</span>
-      <span class="s2">"logo"</span><span class="o">:</span> <span class="s2">"fa-rocket"</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"tag"</span>
-      <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:34Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:34Z"</span><span class="p">,</span>
+      <span class="s2">"file_content_type"</span><span class="o">:</span> <span class="s2">"text/plain"</span><span class="p">,</span>
+      <span class="s2">"file_size"</span><span class="o">:</span> <span class="mi">1400</span><span class="p">,</span>
+      <span class="s2">"image_height"</span><span class="o">:</span> <span class="mi">480</span><span class="p">,</span>
+      <span class="s2">"image_width"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"example.jpg"</span><span class="p">,</span>
+      <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"/path/to/image/example"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-19T12:58:53Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-19T12:58:53Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"messages"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">]</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
     
   
 </div>
 
-<h3 id="get-a-single-rentals-tag">Get a single rentals tag</h3>
+<h3 id="get-a-single-attachment">Get a single Attachment</h3>
 
-<p>Returns a single rentals tag identified by ID.</p>
+<p>Returns a single attachment identified by ID.</p>
 
-<pre><code>GET /rentals_tags/:rentals_tag_id
+<pre><code>GET /inbox/attachments/:attachment_id
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#555fbb25cffbpublic" role="tab" data-toggle="pill">
-          public
+        <a href="#97646e7d98eainbox_read-inbox_write" role="tab" data-toggle="pill">
+          inbox_read / inbox_write
         </a>
       </li>
     
@@ -326,52 +391,52 @@
   
   
     
-      <div class="tab-pane active" id="555fbb25cffbpublic">
+      <div class="tab-pane active" id="97646e7d98eainbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"rentals_tags.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals_tags.account}"</span>
+    <span class="s2">"attachments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{attachments.account}"</span><span class="p">,</span>
+    <span class="s2">"attachments.messages"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/messages/{attachments.messages}"</span>
   <span class="p">},</span>
-  <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"attachments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"color"</span><span class="o">:</span> <span class="s2">"#FFFFFF"</span><span class="p">,</span>
-      <span class="s2">"logo"</span><span class="o">:</span> <span class="s2">"fa-rocket"</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"tag"</span>
-      <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:34Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:34Z"</span><span class="p">,</span>
+      <span class="s2">"file_content_type"</span><span class="o">:</span> <span class="s2">"text/plain"</span><span class="p">,</span>
+      <span class="s2">"file_size"</span><span class="o">:</span> <span class="mi">1400</span><span class="p">,</span>
+      <span class="s2">"image_height"</span><span class="o">:</span> <span class="mi">480</span><span class="p">,</span>
+      <span class="s2">"image_width"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"example.jpg"</span><span class="p">,</span>
+      <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"/path/to/image/example"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-19T12:58:53Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-19T12:58:53Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"messages"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">]</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
     
   
 </div>
 
-<h3 id="create-new-rentals-tags">Create new rentals tags</h3>
+<h3 id="create-a-new-attachment">Create a new attachment</h3>
 
-<div class="callout callout-info">
-  <h4>Translated attributes</h4>
-  <p>Please note that translated attributes are updated differenly than you read them.<br>
-  To set the English name, locale <code>en</code>, you need to use the <code>name_en</code> attribute.</p>
-  <p>List of locales described in <a href="/reference/enums#locales">enums section</a>.</p>
-</div>
+<p>Creates an attachment.</p>
 
-<p>Returns the newly created rentals tags.</p>
-
-<pre><code>POST /rentals_tags
+<pre><code>POST /inbox/attachments
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#28cdcf932912rentals_write" role="tab" data-toggle="pill">
-          rentals_write
+        <a href="#6722778b2a0dinbox_write" role="tab" data-toggle="pill">
+          inbox_write
         </a>
       </li>
     
@@ -379,11 +444,10 @@
 
 <h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"attachments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"color"</span><span class="o">:</span> <span class="s2">"#FFFFFF"</span><span class="p">,</span>
-      <span class="s2">"logo"</span><span class="o">:</span> <span class="s2">"fa-rocket"</span><span class="p">,</span>
-      <span class="s2">"name_en"</span><span class="o">:</span> <span class="s2">"tag"</span>
+      <span class="s2">"file"</span><span class="o">:</span> <span class="s2">"here goes encoded file"</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"filename"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -393,52 +457,52 @@
   
   
     
-      <div class="tab-pane active" id="28cdcf932912rentals_write">
+      <div class="tab-pane active" id="6722778b2a0dinbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"rentals_tags.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals_tags.account}"</span>
+    <span class="s2">"attachments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{attachments.account}"</span><span class="p">,</span>
+    <span class="s2">"attachments.messages"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/messages/{attachments.messages}"</span>
   <span class="p">},</span>
-  <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"attachments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"color"</span><span class="o">:</span> <span class="s2">"#FFFFFF"</span><span class="p">,</span>
-      <span class="s2">"logo"</span><span class="o">:</span> <span class="s2">"fa-rocket"</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"tag"</span>
-      <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:34Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:34Z"</span><span class="p">,</span>
+      <span class="s2">"file_content_type"</span><span class="o">:</span> <span class="s2">"text/plain"</span><span class="p">,</span>
+      <span class="s2">"file_size"</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
+      <span class="s2">"image_height"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"image_width"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"filename"</span><span class="p">,</span>
+      <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"url/to/the/file"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-19T12:58:53Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-19T12:58:53Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"messages"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">]</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
     
   
 </div>
 
-<h3 id="update-a-rentals-tag">Update a rentals tag</h3>
+<h3 id="update-an-attachment">Update an attachment</h3>
 
-<div class="callout callout-info">
-  <h4>Translated attributes</h4>
-  <p>Please note that translated attributes are updated differenly than you read them.<br>
-  To set the English name, locale <code>en</code>, you need to use the <code>name_en</code> attribute.</p>
-  <p>List of locales described in <a href="/reference/enums#locales">enums section</a>.</p>
-</div>
+<p>Returns an updated attachment identified by ID.</p>
 
-<p>Returns an updated rentals tag identified by ID.</p>
-
-<pre><code>PUT /rentals_tags/:rentals_tag_id
+<pre><code>PUT /inbox/attachments/:id
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#ce1fe42baeedrentals_write" role="tab" data-toggle="pill">
-          rentals_write
+        <a href="#7780f8b1202binbox_write" role="tab" data-toggle="pill">
+          inbox_write
         </a>
       </li>
     
@@ -446,11 +510,10 @@
 
 <h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"attachments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"color"</span><span class="o">:</span> <span class="s2">"#FFFFFF"</span><span class="p">,</span>
-      <span class="s2">"logo"</span><span class="o">:</span> <span class="s2">"fa-rocket"</span><span class="p">,</span>
-      <span class="s2">"name_en"</span><span class="o">:</span> <span class="s2">"tag"</span>
+      <span class="s2">"file"</span><span class="o">:</span> <span class="s2">"here goes encoded file"</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"filename"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -460,26 +523,33 @@
   
   
     
-      <div class="tab-pane active" id="ce1fe42baeedrentals_write">
+      <div class="tab-pane active" id="7780f8b1202binbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"rentals_tags.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals_tags.account}"</span>
+    <span class="s2">"attachments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{attachments.account}"</span><span class="p">,</span>
+    <span class="s2">"attachments.messages"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/messages/{attachments.messages}"</span>
   <span class="p">},</span>
-  <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"attachments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"color"</span><span class="o">:</span> <span class="s2">"#FFFFFF"</span><span class="p">,</span>
-      <span class="s2">"logo"</span><span class="o">:</span> <span class="s2">"fa-rocket"</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"tag"</span>
-      <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:34Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:34Z"</span><span class="p">,</span>
+      <span class="s2">"file_content_type"</span><span class="o">:</span> <span class="s2">"text/plain"</span><span class="p">,</span>
+      <span class="s2">"file_size"</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
+      <span class="s2">"image_height"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"image_width"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"filename"</span><span class="p">,</span>
+      <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"url/to/the/file"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-19T12:58:53Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-19T12:58:53Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"messages"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">]</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
     

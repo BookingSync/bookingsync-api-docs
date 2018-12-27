@@ -88,7 +88,7 @@
           <a class="list-group-item" href="/reference/endpoints/inbox_attachments/">Inbox Attachments</a>
           <a class="list-group-item" href="/reference/endpoints/inbox_conversations/">Inbox Conversations</a>
           <a class="list-group-item" href="/reference/endpoints/inbox_messages/">Inbox Messages</a>
-          <a class="list-group-item" href="/reference/endpoints/inbox_participants/">Inbox Participants</a>
+          <a class="list-group-item active" href="/reference/endpoints/inbox_participants/">Inbox Participants</a>
           <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
           <a class="list-group-item" href="/reference/endpoints/living_rooms/">Living Rooms</a>
           <a class="list-group-item" href="/reference/endpoints/los_records/">LOS Records</a>
@@ -108,7 +108,7 @@
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
           <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
           <a class="list-group-item" href="/reference/endpoints/rental_links/">Rental Links</a>
-          <a class="list-group-item active" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_taxes/">Rentals Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
           <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
@@ -128,23 +128,23 @@
     <div class="col-md-9 col-md-pull-3">
       <div class="panel panel-default">
         <div class="panel-body reference-body">
-          <h2 id="rentals-tags">Rentals tags</h2>
+          <h2 id="inbox-participants">Inbox Participants</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#list-rentals-tags">List rentals tags</a></li>
-  <li><a href="#get-a-single-rentals-tag">Get a single rentals tag</a></li>
-  <li><a href="#create-new-rentals-tags">Create new rentals tags</a></li>
-  <li><a href="#update-a-rentals-tag">Update a rentals tag</a></li>
+  <li><a href="#list-participants">List Participants</a></li>
+  <li><a href="#get-a-single-participant">Get a single Participant</a></li>
+  <li><a href="#create-a-new-participant">Create a new Participant</a></li>
+  <li><a href="#update-a-participant">Update a Participant</a></li>
 </ol>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
-  <li class="active"><a href="#rentals_read" role="tab" data-toggle="pill">rentals_read</a></li>
-  <li><a href="#rentals_write" role="tab" data-toggle="pill">rentals_write</a></li>
+  <li class="active"><a href="#inbox_read" role="tab" data-toggle="pill">inbox_read</a></li>
+  <li><a href="#inbox_write" role="tab" data-toggle="pill">inbox_write</a></li>
 </ul>
 <div class="tab-content">
-  <div class="tab-pane active" id="rentals_read">
+  <div class="tab-pane active" id="inbox_read">
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -159,27 +159,7 @@
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Rentals Tag’s id.</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td>name</td>
-          <td><a href="/reference/enums#formats">Object</a></td>
-          <td>Read</td>
-          <td>Rentals Tag’s title, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
-        </tr>
-        <tr>
-          <td>logo</td>
-          <td>String</td>
-          <td>Read</td>
-          <td>Rentals Tag’s logo (Font Awesome class).</td>
-        </tr>
-        <tr>
-          <td>color</td>
-          <td>String</td>
-          <td>Read</td>
-          <td>Rentals Tag’s color (hex).</td>
+          <td>Participant’s id.</td>
         </tr>
       </tbody>
       <tbody>
@@ -187,18 +167,30 @@
           <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Rentals Tag’s create time.</td>
+          <td>Participant’s create time.</td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Rentals Tag’s update time.</td>
+          <td>Participant’s update time.</td>
+        </tr>
+        <tr>
+          <td>last_message_sent_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Participant’s last sent message time.</td>
+        </tr>
+        <tr>
+          <td>read_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Time when Participant read last message.</td>
         </tr>
       </tbody>
     </table>
   </div>
-  <div class="tab-pane" id="rentals_write">
+  <div class="tab-pane" id="inbox_write">
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -213,27 +205,33 @@
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Rentals Tag’s id.</td>
+          <td>Participant’s id.</td>
+        </tr>
+        <tr>
+          <td>member_id</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>Participant’s Member id.</td>
+        </tr>
+        <tr>
+          <td>conversation_id</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>Participant’s Conversation id.</td>
         </tr>
       </tbody>
       <tbody>
         <tr>
-          <td>name</td>
-          <td><a href="/reference/enums#formats">Object</a></td>
-          <td>Read/Write</td>
-          <td>Rentals Tag’s title, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+          <td>read</td>
+          <td>Boolean</td>
+          <td>Write</td>
+          <td>Is related to Participant’s read_at attribute.</td>
         </tr>
         <tr>
-          <td>logo</td>
-          <td>String</td>
+          <td>member_type</td>
+          <td>Integer</td>
           <td>Read/Write</td>
-          <td>Rentals Tag’s logo (Font Awesome class).</td>
-        </tr>
-        <tr>
-          <td>color</td>
-          <td>String</td>
-          <td>Read/Write</td>
-          <td>Rentals Tag’s color (hex).</td>
+          <td>Participant’s member type (<code>Client</code> or <code>Host</code>).</td>
         </tr>
       </tbody>
       <tbody>
@@ -241,32 +239,42 @@
           <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Rentals Tag’s create time.</td>
+          <td>Participant’s create time.</td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Rentals Tag’s update time.</td>
+          <td>Participant’s update time.</td>
+        </tr>
+        <tr>
+          <td>last_message_sent_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Participant’s last sent message time.</td>
+        </tr>
+        <tr>
+          <td>read_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read/Write</td>
+          <td>Time when Participant read last message.</td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<h3 id="list-rentals-tags">List rentals tags</h3>
+<h3 id="list-participants">List Participants</h3>
 
-<p>List all rentals tags for a given account.</p>
-
-<pre><code>GET /rentals_tags
+<pre><code>GET /inbox/participants
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#9078e6532d94public" role="tab" data-toggle="pill">
-          public
+        <a href="#3c1a2c83ac1finbox_read-inbox_write" role="tab" data-toggle="pill">
+          inbox_read / inbox_write
         </a>
       </li>
     
@@ -277,45 +285,50 @@
   
   
     
-      <div class="tab-pane active" id="9078e6532d94public">
+      <div class="tab-pane active" id="3c1a2c83ac1finbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"rentals_tags.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals_tags.account}"</span>
+    <span class="s2">"participants.client"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/clients/{participants.member.id}"</span><span class="p">,</span>
+    <span class="s2">"participants.conversation"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/conversations/{participants.conversation}"</span><span class="p">,</span>
+    <span class="s2">"participants.host"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/hosts/{participants.member.id}"</span>
   <span class="p">},</span>
-  <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"participants"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"color"</span><span class="o">:</span> <span class="s2">"#FFFFFF"</span><span class="p">,</span>
-      <span class="s2">"logo"</span><span class="o">:</span> <span class="s2">"fa-rocket"</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"tag"</span>
-      <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:34Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:34Z"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T10:42:17Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T10:42:17Z"</span><span class="p">,</span>
+      <span class="s2">"last_message_sent_at"</span><span class="o">:</span> <span class="s2">"2018-12-15T10:42:17Z"</span><span class="p">,</span>
+      <span class="s2">"read_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"conversation"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s2">"member"</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+          <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"Host"</span>
+        <span class="p">}</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
     
   
 </div>
 
-<h3 id="get-a-single-rentals-tag">Get a single rentals tag</h3>
+<h3 id="get-a-single-participant">Get a single Participant</h3>
 
-<p>Returns a single rentals tag identified by ID.</p>
+<p>Returns a single participant identified by ID.</p>
 
-<pre><code>GET /rentals_tags/:rentals_tag_id
+<pre><code>GET /inbox/participants/:participant_id
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#555fbb25cffbpublic" role="tab" data-toggle="pill">
-          public
+        <a href="#6d2a31ebfd31inbox_read-inbox_write" role="tab" data-toggle="pill">
+          inbox_read / inbox_write
         </a>
       </li>
     
@@ -326,52 +339,50 @@
   
   
     
-      <div class="tab-pane active" id="555fbb25cffbpublic">
+      <div class="tab-pane active" id="6d2a31ebfd31inbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"rentals_tags.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals_tags.account}"</span>
+    <span class="s2">"participants.client"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/clients/{participants.member.id}"</span><span class="p">,</span>
+    <span class="s2">"participants.conversation"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/conversations/{participants.conversation}"</span><span class="p">,</span>
+    <span class="s2">"participants.host"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/hosts/{participants.member.id}"</span>
   <span class="p">},</span>
-  <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"participants"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"color"</span><span class="o">:</span> <span class="s2">"#FFFFFF"</span><span class="p">,</span>
-      <span class="s2">"logo"</span><span class="o">:</span> <span class="s2">"fa-rocket"</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"tag"</span>
-      <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:34Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:34Z"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T10:42:17Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T10:42:17Z"</span><span class="p">,</span>
+      <span class="s2">"last_message_sent_at"</span><span class="o">:</span> <span class="s2">"2018-12-15T10:42:17Z"</span><span class="p">,</span>
+      <span class="s2">"read_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"conversation"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s2">"member"</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+          <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"Host"</span>
+        <span class="p">}</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
     
   
 </div>
 
-<h3 id="create-new-rentals-tags">Create new rentals tags</h3>
+<h3 id="create-a-new-participant">Create a new Participant</h3>
 
-<div class="callout callout-info">
-  <h4>Translated attributes</h4>
-  <p>Please note that translated attributes are updated differenly than you read them.<br>
-  To set the English name, locale <code>en</code>, you need to use the <code>name_en</code> attribute.</p>
-  <p>List of locales described in <a href="/reference/enums#locales">enums section</a>.</p>
-</div>
+<p>Creates a Participant.</p>
 
-<p>Returns the newly created rentals tags.</p>
-
-<pre><code>POST /rentals_tags
+<pre><code>POST /inbox/participants
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#28cdcf932912rentals_write" role="tab" data-toggle="pill">
-          rentals_write
+        <a href="#311991d10be6inbox_write" role="tab" data-toggle="pill">
+          inbox_write
         </a>
       </li>
     
@@ -379,11 +390,13 @@
 
 <h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"participants"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"color"</span><span class="o">:</span> <span class="s2">"#FFFFFF"</span><span class="p">,</span>
-      <span class="s2">"logo"</span><span class="o">:</span> <span class="s2">"fa-rocket"</span><span class="p">,</span>
-      <span class="s2">"name_en"</span><span class="o">:</span> <span class="s2">"tag"</span>
+      <span class="s2">"conversation_id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"member_id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"member_type"</span><span class="o">:</span> <span class="s2">"Host"</span><span class="p">,</span>
+      <span class="s2">"read"</span><span class="o">:</span> <span class="s2">"true"</span><span class="p">,</span>
+      <span class="s2">"last_message_sent_at"</span><span class="o">:</span> <span class="s2">"2018-12-15T10:42:17Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -393,52 +406,55 @@
   
   
     
-      <div class="tab-pane active" id="28cdcf932912rentals_write">
+      <div class="tab-pane active" id="311991d10be6inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"rentals_tags.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals_tags.account}"</span>
+    <span class="s2">"participants.client"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/clients/{participants.member.id}"</span><span class="p">,</span>
+    <span class="s2">"participants.conversation"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/conversations/{participants.conversation}"</span><span class="p">,</span>
+    <span class="s2">"participants.host"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/hosts/{participants.member.id}"</span>
   <span class="p">},</span>
-  <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"participants"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"color"</span><span class="o">:</span> <span class="s2">"#FFFFFF"</span><span class="p">,</span>
-      <span class="s2">"logo"</span><span class="o">:</span> <span class="s2">"fa-rocket"</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"tag"</span>
-      <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:34Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:34Z"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T10:42:17Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T10:42:17Z"</span><span class="p">,</span>
+      <span class="s2">"last_message_sent_at"</span><span class="o">:</span> <span class="s2">"2018-12-15T10:42:17Z"</span><span class="p">,</span>
+      <span class="s2">"read_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T10:42:17Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"conversation"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s2">"member"</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+          <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"Host"</span>
+        <span class="p">}</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
     
   
 </div>
 
-<h3 id="update-a-rentals-tag">Update a rentals tag</h3>
+<h3 id="update-a-participant">Update a Participant</h3>
+
+<p>Returns an updated participant identified by ID.</p>
+
+<pre><code>PUT /inbox/participants/:participant_id
+</code></pre>
 
 <div class="callout callout-info">
-  <h4>Translated attributes</h4>
-  <p>Please note that translated attributes are updated differenly than you read them.<br>
-  To set the English name, locale <code>en</code>, you need to use the <code>name_en</code> attribute.</p>
-  <p>List of locales described in <a href="/reference/enums#locales">enums section</a>.</p>
+  <h4>Restrictions on updatable parameters</h4>
+  <p>Only <code>:read</code> attribute is allowed.</p>
 </div>
-
-<p>Returns an updated rentals tag identified by ID.</p>
-
-<pre><code>PUT /rentals_tags/:rentals_tag_id
-</code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#ce1fe42baeedrentals_write" role="tab" data-toggle="pill">
-          rentals_write
+        <a href="#af584a7cff95inbox_write" role="tab" data-toggle="pill">
+          inbox_write
         </a>
       </li>
     
@@ -446,11 +462,9 @@
 
 <h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"participants"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"color"</span><span class="o">:</span> <span class="s2">"#FFFFFF"</span><span class="p">,</span>
-      <span class="s2">"logo"</span><span class="o">:</span> <span class="s2">"fa-rocket"</span><span class="p">,</span>
-      <span class="s2">"name_en"</span><span class="o">:</span> <span class="s2">"tag"</span>
+      <span class="s2">"read"</span><span class="o">:</span> <span class="s2">"true"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -460,26 +474,31 @@
   
   
     
-      <div class="tab-pane active" id="ce1fe42baeedrentals_write">
+      <div class="tab-pane active" id="af584a7cff95inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"rentals_tags.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals_tags.account}"</span>
+    <span class="s2">"participants.client"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/clients/{participants.member.id}"</span><span class="p">,</span>
+    <span class="s2">"participants.conversation"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/conversations/{participants.conversation}"</span><span class="p">,</span>
+    <span class="s2">"participants.host"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/hosts/{participants.member.id}"</span>
   <span class="p">},</span>
-  <span class="s2">"rentals_tags"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"participants"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"color"</span><span class="o">:</span> <span class="s2">"#FFFFFF"</span><span class="p">,</span>
-      <span class="s2">"logo"</span><span class="o">:</span> <span class="s2">"fa-rocket"</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"tag"</span>
-      <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:34Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-27T08:47:34Z"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T10:42:17Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T10:42:17Z"</span><span class="p">,</span>
+      <span class="s2">"last_message_sent_at"</span><span class="o">:</span> <span class="s2">"2018-12-15T10:42:17Z"</span><span class="p">,</span>
+      <span class="s2">"read_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T10:42:17Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"conversation"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s2">"member"</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+          <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"Host"</span>
+        <span class="p">}</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">]</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
     

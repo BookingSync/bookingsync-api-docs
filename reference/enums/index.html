@@ -84,6 +84,11 @@
           <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
           <a class="list-group-item" href="/reference/endpoints/fees/">Fees</a>
           <a class="list-group-item" href="/reference/endpoints/fees_taxes/">Fees Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/hosts/">Hosts</a>
+          <a class="list-group-item" href="/reference/endpoints/inbox_attachments/">Inbox Attachments</a>
+          <a class="list-group-item" href="/reference/endpoints/inbox_conversations/">Inbox Conversations</a>
+          <a class="list-group-item" href="/reference/endpoints/inbox_messages/">Inbox Messages</a>
+          <a class="list-group-item" href="/reference/endpoints/inbox_participants/">Inbox Participants</a>
           <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
           <a class="list-group-item" href="/reference/endpoints/living_rooms/">Living Rooms</a>
           <a class="list-group-item" href="/reference/endpoints/los_records/">LOS Records</a>
@@ -142,6 +147,10 @@
   <li><a href="#rates-types">Rates types</a></li>
   <li><a href="#rates-rules-types">Rates Rules types</a></li>
   <li><a href="#rental-types">Rental types</a></li>
+  <li><a href="#rental-residency-categories">Rental residency categories</a></li>
+  <li><a href="#inbox-message-channels">Inbox Message Channels</a></li>
+  <li><a href="#inbox-message-origins">Inbox Message Origins</a></li>
+  <li><a href="#inbox-message-visibilities">Inbox Message visibilities</a></li>
 </ol>
 
 <h3 id="account-statuses">Account statuses</h3>
@@ -934,6 +943,134 @@
     <tr>
       <td>yurt</td>
       <td>Yurt</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="rental-residency-categories">Rental residency categories</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>primary_residence</td>
+      <td>Primary residence.</td>
+    </tr>
+    <tr>
+      <td>secondary_residence</td>
+      <td>Secondary residence.</td>
+    </tr>
+    <tr>
+      <td>non_residential</td>
+      <td>Non residential.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="inbox-message-channels">Inbox Message Channels</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>airbnb</td>
+      <td>Airbnb</td>
+    </tr>
+    <tr>
+      <td>homeaway</td>
+      <td>HomeAway</td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td>Email</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="inbox-message-origins">Inbox Message Origins</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Origin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>bookingsync_inbox</td>
+      <td>BookingSync Inbox</td>
+    </tr>
+    <tr>
+      <td>airbnb_message</td>
+      <td>Airbnb message</td>
+    </tr>
+    <tr>
+      <td>airbnb_email</td>
+      <td>Airbnb email</td>
+    </tr>
+    <tr>
+      <td>booking-com</td>
+      <td>Booking.com</td>
+    </tr>
+    <tr>
+      <td>homeaway</td>
+      <td>HomeAway</td>
+    </tr>
+    <tr>
+      <td>tripadvisor</td>
+      <td>TripAdvisor</td>
+    </tr>
+    <tr>
+      <td>email</td>
+      <td>Email</td>
+    </tr>
+    <tr>
+      <td>messenger</td>
+      <td>Messenger</td>
+    </tr>
+    <tr>
+      <td>whatsapp</td>
+      <td>WhatsApp</td>
+    </tr>
+    <tr>
+      <td>inquiry</td>
+      <td>Inquiry</td>
+    </tr>
+    <tr>
+      <td>sms</td>
+      <td>SMS</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="inbox-message-visibilities">Inbox Message visibilities</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>internal</td>
+      <td>Internal visibility</td>
+    </tr>
+    <tr>
+      <td>external</td>
+      <td>External visibility</td>
     </tr>
   </tbody>
 </table>
