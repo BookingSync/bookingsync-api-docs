@@ -1,0 +1,28 @@
+{
+  "links": {
+    "hosts.user": "https://www.bookingsync.com/api/v3/users/{hosts.user}",
+    "hosts.source": "https://www.bookingsync.com/api/v3/sources/{hosts.source}",
+    "hosts.account": "https://www.bookingsync.com/api/v3/accounts/{hosts.account}",
+    "hosts.participants": "https://www.bookingsync.com/api/v3/inbox/participants/{hosts.participants}"
+  },
+  "hosts": [
+    {
+      "links": {
+        "account": 1,
+        "participants": [],
+        "source": null,
+        "user": null
+      },
+      "id": 2,
+      "firstname": "Jan",
+      "lastname": "Kowalski",
+      "email": "host1@example.com",
+      "created_at": "2018-12-26T19:51:24Z",
+      "updated_at": "2018-12-26T19:51:24Z",
+      "forget_me_at": null,
+      "processing_restricted_at": null
+    }
+  ],
+  "meta": {
+  }
+}
