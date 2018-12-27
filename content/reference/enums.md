@@ -256,3 +256,36 @@ secondary_residence | Secondary residence.
 non_residential     | Non residential.
 {: class="table table-bordered"}
 
+## Inbox Message Channels
+
+Name             | Description
+-----------------|------------
+airbnb           | Airbnb
+homeaway         | HomeAway
+email            | Email
+{: class="table table-bordered"}
+
+## Inbox Message Origins
+
+Name              | Origin
+------------------|------------
+bookingsync_inbox | BookingSync Inbox
+airbnb_message    | Airbnb message
+airbnb_email      | Airbnb email
+booking-com       | Booking.com
+homeaway          | HomeAway
+tripadvisor       | TripAdvisor
+email             | Email
+messenger         | Messenger
+whatsapp          | WhatsApp
+inquiry           | Inquiry
+sms               | SMS
+{: class="table table-bordered"}
+
+## Inbox Message visibilities
+
+Name             | Description
+-----------------|------------
+internal         | Internal visibility
+external         | External visibility
+{: class="table table-bordered"}
