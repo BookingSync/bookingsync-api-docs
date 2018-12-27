@@ -1,7 +1,24 @@
 # Change Log
 
-## [3.11.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.11.0) (2018-01-26)
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v.3.10.0...3.11.0)
+## [3.12.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.12.0) (2018-12-27)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.11.0...3.12.0)
+
+**Merged pull requests:**
+
+- Add hosts endpoint docs [\#296](https://github.com/BookingSync/bookingsync-api-docs/pull/296) ([adamgrad](https://github.com/adamgrad))
+- Add inbox Attachment docs [\#295](https://github.com/BookingSync/bookingsync-api-docs/pull/295) ([adamgrad](https://github.com/adamgrad))
+- Add Rental's residency category docs [\#294](https://github.com/BookingSync/bookingsync-api-docs/pull/294) ([adamgrad](https://github.com/adamgrad))
+- Add booking's external reference doc [\#293](https://github.com/BookingSync/bookingsync-api-docs/pull/293) ([adamgrad](https://github.com/adamgrad))
+- Fixed typo [\#290](https://github.com/BookingSync/bookingsync-api-docs/pull/290) ([samvaughton](https://github.com/samvaughton))
+- update vulnerable dependencies [\#289](https://github.com/BookingSync/bookingsync-api-docs/pull/289) ([Azdaroth](https://github.com/Azdaroth))
+- CORE-240 remove comment about bookings create validation [\#288](https://github.com/BookingSync/bookingsync-api-docs/pull/288) ([thilonel](https://github.com/thilonel))
+- \[MERGE AFTER AUGUST\] Remove notes from periods and seasons pages [\#287](https://github.com/BookingSync/bookingsync-api-docs/pull/287) ([adamgrad](https://github.com/adamgrad))
+- Understanding LOS Records guide [\#286](https://github.com/BookingSync/bookingsync-api-docs/pull/286) ([thilonel](https://github.com/thilonel))
+- update sprockets [\#285](https://github.com/BookingSync/bookingsync-api-docs/pull/285) ([Azdaroth](https://github.com/Azdaroth))
+- add deprecation note about seasons and periods [\#284](https://github.com/BookingSync/bookingsync-api-docs/pull/284) ([Azdaroth](https://github.com/Azdaroth))
+
+## [v3.11.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.11.0) (2018-01-26)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v.3.10.0...v3.11.0)
 
 **Merged pull requests:**
 
