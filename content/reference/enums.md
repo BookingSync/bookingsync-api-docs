@@ -272,7 +272,7 @@ Name              | Origin
 bookingsync_inbox | BookingSync Inbox
 airbnb_message    | Airbnb message
 airbnb_email      | Airbnb email
-booking-com       | booking.com
+booking-com       | Booking.com
 homeaway          | HomeAway
 tripadvisor       | TripAdvisor
 email             | Email
