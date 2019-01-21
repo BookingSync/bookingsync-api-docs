@@ -91,3 +91,29 @@ PUT /inbox/conversations/:conversation_id
 
 <%= render 'json_response', endpoint: "conversations", request: "update",
   scopes: %w(inbox_write) %>
+
+## Add Bookings to a Conversation
+
+Returns an updated conversation identified by ID.
+
+~~~
+PUT /inbox/conversations/:conversation_id/connect_booking
+~~~
+
+<%= render 'json_response', endpoint: "conversations", request: "connect_booking",
+  scopes: [
+      { inbox_write: "connect-booking-inbox_write" },
+    ] %>
+    
+## Remove Bookings from a Conversation
+
+Returns an updated conversation identified by ID.
+
+~~~
+PUT /inbox/conversations/:conversation_id/disconnect_booking
+~~~
+
+<%= render 'json_response', endpoint: "conversations", request: "connect_booking",
+  scopes: [
+      { inbox_write: "inbox_write" },
+    ] %>
