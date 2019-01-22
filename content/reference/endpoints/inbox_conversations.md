@@ -113,7 +113,5 @@ Returns an updated conversation identified by ID.
 PUT /inbox/conversations/:conversation_id/disconnect_booking
 ~~~
 
-<%= render 'json_response', endpoint: "conversations", request: "connect_booking",
-  scopes: [
-      { inbox_write: "inbox_write" },
-    ] %>
+<%= render 'json_response', endpoint: "conversations", request: "disconnect_booking",
+  scopes: %w(inbox_write) %>

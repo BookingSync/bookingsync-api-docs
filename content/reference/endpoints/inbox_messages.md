@@ -54,7 +54,7 @@ GET /inbox/messages
 
 ## Get a single Message
 
-Returns a single conversation identified by ID.
+Returns a single message identified by ID.
 
 ~~~
 GET /inbox/messages/:message_id
@@ -64,7 +64,7 @@ GET /inbox/messages/:message_id
 
 ## Create a new Message
 
-Creates a Conversation.
+Returns a created message identified by ID.
 
 ~~~~
 POST /inbox/messages
@@ -73,9 +73,9 @@ POST /inbox/messages
 <%= render 'json_response', endpoint: "messages", request: "create",
   scopes: %w(inbox_write) %>
 
-## Update a Conversation
+## Update a Message
 
-Returns an updated conversation identified by ID.
+Returns an updated message identified by ID.
 
 ~~~
 PUT /inbox/messages/:message_id
@@ -83,3 +83,17 @@ PUT /inbox/messages/:message_id
 
 <%= render 'json_response', endpoint: "messages", request: "update",
   scopes: %w(inbox_write) %>
+  
+## Add Attachment to a Message
+
+Returns an updated message identified by ID.
+
+~~~
+PUT inbox/messages/:id/add_attachment
+~~~
+
+<%= render 'json_response', endpoint: "messages", request: "add_attachment",
+scopes: [
+    { inbox_write: "add_attachment-inbox_write" },
+  ] %>
+  
