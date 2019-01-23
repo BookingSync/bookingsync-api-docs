@@ -134,7 +134,8 @@
   <li><a href="#list-messages">List Messages</a></li>
   <li><a href="#get-a-single-message">Get a single Message</a></li>
   <li><a href="#create-a-new-message">Create a new Message</a></li>
-  <li><a href="#update-a-conversation">Update a Conversation</a></li>
+  <li><a href="#update-a-message">Update a Message</a></li>
+  <li><a href="#add-attachment-to-a-message">Add Attachment to a Message</a></li>
 </ol>
 
 <h4 id="parameters">Parameters</h4>
@@ -305,7 +306,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#4cf1c6361ffainbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#7f8388c2467einbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -317,7 +318,7 @@
   
   
     
-      <div class="tab-pane active" id="4cf1c6361ffainbox_read-inbox_write">
+      <div class="tab-pane active" id="7f8388c2467einbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"messages.attachments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}"</span><span class="p">,</span>
@@ -353,7 +354,7 @@
 
 <h3 id="get-a-single-message">Get a single Message</h3>
 
-<p>Returns a single conversation identified by ID.</p>
+<p>Returns a single message identified by ID.</p>
 
 <pre><code>GET /inbox/messages/:message_id
 </code></pre>
@@ -362,7 +363,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#e8aacde372a3inbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#188e63ef076cinbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -374,7 +375,7 @@
   
   
     
-      <div class="tab-pane active" id="e8aacde372a3inbox_read-inbox_write">
+      <div class="tab-pane active" id="188e63ef076cinbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"messages.attachments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}"</span><span class="p">,</span>
@@ -410,7 +411,7 @@
 
 <h3 id="create-a-new-message">Create a new Message</h3>
 
-<p>Creates a Conversation.</p>
+<p>Returns a created message identified by ID.</p>
 
 <pre><code>POST /inbox/messages
 </code></pre>
@@ -419,7 +420,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#df9dfb285a27inbox_write" role="tab" data-toggle="pill">
+        <a href="#f57cb752d77dinbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -446,7 +447,7 @@
   
   
     
-      <div class="tab-pane active" id="df9dfb285a27inbox_write">
+      <div class="tab-pane active" id="f57cb752d77dinbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"messages.attachments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}"</span><span class="p">,</span>
@@ -480,9 +481,9 @@
   
 </div>
 
-<h3 id="update-a-conversation">Update a Conversation</h3>
+<h3 id="update-a-message">Update a Message</h3>
 
-<p>Returns an updated conversation identified by ID.</p>
+<p>Returns an updated message identified by ID.</p>
 
 <pre><code>PUT /inbox/messages/:message_id
 </code></pre>
@@ -491,7 +492,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#085420b2b8ccinbox_write" role="tab" data-toggle="pill">
+        <a href="#7b0a899a92deinbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -514,7 +515,7 @@
   
   
     
-      <div class="tab-pane active" id="085420b2b8ccinbox_write">
+      <div class="tab-pane active" id="7b0a899a92deinbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"messages.attachments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}"</span><span class="p">,</span>
@@ -534,6 +535,72 @@
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"attachments"</span><span class="o">:</span> <span class="p">[</span>
 
+        <span class="p">],</span>
+        <span class="s2">"conversation"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s2">"sender"</span><span class="o">:</span> <span class="mi">5</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="add-attachment-to-a-message">Add Attachment to a Message</h3>
+
+<p>Returns an updated message identified by ID.</p>
+
+<pre><code>PUT inbox/messages/:id/add_attachment
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#f1a4a96a71b8inbox_write" role="tab" data-toggle="pill">
+          inbox_write
+        </a>
+      </li>
+    
+  </ul>
+
+<h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"attachments"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">5</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-4">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="f1a4a96a71b8inbox_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"messages.attachments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}"</span><span class="p">,</span>
+    <span class="s2">"messages.conversation"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/conversations/{messages.conversation}"</span><span class="p">,</span>
+    <span class="s2">"messages.sender"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/participants/{messages.sender}"</span>
+  <span class="p">},</span>
+  <span class="s2">"messages"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"channel"</span><span class="o">:</span> <span class="s2">"email"</span><span class="p">,</span>
+      <span class="s2">"content"</span><span class="o">:</span> <span class="s2">"Message Content"</span><span class="p">,</span>
+      <span class="s2">"origin"</span><span class="o">:</span> <span class="s2">"email"</span><span class="p">,</span>
+      <span class="s2">"visibility"</span><span class="o">:</span> <span class="s2">"external"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T09:21:52Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T09:21:52Z"</span><span class="p">,</span>
+      <span class="s2">"sent_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T09:21:52Z"</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"attachments"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">5</span>
         <span class="p">],</span>
         <span class="s2">"conversation"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
         <span class="s2">"sender"</span><span class="o">:</span> <span class="mi">5</span>
