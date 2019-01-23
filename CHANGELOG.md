@@ -1,7 +1,14 @@
 # Change Log
 
-## [3.12.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.12.0) (2018-12-27)
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.11.0...3.12.0)
+## [3.13.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.13.0) (2019-01-23)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.12.0...3.13.0)
+
+**Merged pull requests:**
+
+- Add conversation docs for connect and disconnect bookings [\#297](https://github.com/BookingSync/bookingsync-api-docs/pull/297) ([adamgrad](https://github.com/adamgrad))
+
+## [v3.12.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.12.0) (2018-12-27)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.11.0...v3.12.0)
 
 **Merged pull requests:**
 
