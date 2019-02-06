@@ -1,15 +1,12 @@
 {
   "rentals_contents_overrides": [
     {
-      "headline": {
-        "en": "Villa in Nevache, France"
-      },
-      "summary": {
-        "en": "Great value. A place to enjoy peace and tranquility, away from mass tourism."
-      },
-      "description": {
-        "en": "First class Villa for 8 people with private pool. Situated in a pleasant residential area."
-      }
+      "headline_en": "Villa in Nevache, France",
+      "headline_fr": "Villa à Névache, France",
+      "summary_en": "Great value. A place to enjoy peace and tranquility, away from mass tourism.",
+      "summary_fr": "Grande valeur. Profitez d'un cadre agréable en plein nature.",
+      "description_en": "First class Villa for 8 people with private pool. Situated in a pleasant residential area.",
+      "description_fr": "Villa de première classe pour 8 personnes avec piscine privée. Situé dans un quartier résidentiel agréable."
     }
   ]
 }
