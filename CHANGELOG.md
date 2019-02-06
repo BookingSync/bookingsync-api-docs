@@ -1,7 +1,14 @@
 # Change Log
 
-## [3.13.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.13.0) (2019-01-23)
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.12.0...3.13.0)
+## [3.14.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.14.0) (2019-02-06)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.13.0...3.14.0)
+
+**Merged pull requests:**
+
+- Fix rentals contents overrides translatable attributes docs [\#298](https://github.com/BookingSync/bookingsync-api-docs/pull/298) ([adamgrad](https://github.com/adamgrad))
+
+## [v3.13.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.13.0) (2019-01-23)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.12.0...v3.13.0)
 
 **Merged pull requests:**
 
