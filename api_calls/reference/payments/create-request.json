@@ -13,7 +13,8 @@
       "zip": "07671-8254",
       "city": "East Winifred",
       "state": "Monatana",
-      "country_code": "US"
+      "country_code": "US",
+      "gateway_id": 1,
     }
   ]
 }

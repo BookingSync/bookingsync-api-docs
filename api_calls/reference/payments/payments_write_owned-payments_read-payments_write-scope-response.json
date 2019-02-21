@@ -1,6 +1,7 @@
 {
   "links": {
     "payments.account": "https://www.bookingsync.com/api/v3/accounts/{payments.account}",
+    "payments.payment_gateway": "https://www.bookingsync.com/api/v3/payment_gateways/{payments.payment_gateway}",
     "payments.bookings": "https://www.bookingsync.com/api/v3/bookings/{payments.bookings}",
     "payments.bookings_payments": "https://www.bookingsync.com/api/v3/bookings_payments/{payments.bookings_payments}"
   },
@@ -8,6 +9,7 @@
     {
       "links": {
         "account": 33,
+        "payment_gateway": 1,
         "bookings": [
           21
         ],
@@ -39,7 +41,8 @@
       "zip": "07671-8254",
       "city": "East Winifred",
       "state": "Monatana",
-      "country_code": "US"
+      "country_code": "US",
+      "credit_card_token": "credit_card_token"
     }
   ]
 }
