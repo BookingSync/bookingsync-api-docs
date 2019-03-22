@@ -1,0 +1,10 @@
+{
+  "rental_id": 2,
+  "rental_contacts": [
+    {
+      "kind": "manager",
+      "roles": ["requests"],
+      "contact_id": 10
+    }
+  ]
+}

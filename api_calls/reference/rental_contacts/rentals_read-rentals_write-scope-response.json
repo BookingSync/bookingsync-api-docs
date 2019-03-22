@@ -1,0 +1,28 @@
+{ "links": {
+    "rental_contacts.rental": "http://test.host/api/v3/rentals/{rental_contacts.rental}",
+    "rental_contacts.contact": "http://test.host/api/v3/contacts/{rental_contacts.contact}"
+  },
+ "rental_contacts": [
+   {
+     "links": {
+       "contact": 10,
+       "rental": 2
+     },
+     "id": 1,
+     "kind": "manager",
+     "roles": ["requests"],
+     "created_at": "2019-03-21T14:37:39Z",
+     "updated_at": "2019-03-21T14:37:39Z",
+     "canceled_at": null
+   }
+ ],
+ "meta": {
+   "Link": {
+     "first": "http://test.host/api/v3/rental_contacts?page=1",
+     "last": "http://test.host/api/v3/rental_contacts?page=1"
+   },
+   "X-Total-Pages": "1",
+   "X-Total-Count": "2",
+   "X-Per-Page": "100"
+ }
+}
