@@ -1,0 +1,15 @@
+{
+  "payment_gateways": [
+    {
+      "name": "My gateway",
+      "test": true,
+      "gateway_name": "omise",
+      "credentials": "CREDENTIALS",
+      "supported_cardtypes": ["visa", "master"],
+      "supported_currencies": ["EUR", "USD"],
+      "tokenize_credit_card_details": false,
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT"
+    }
+  ]
+}
