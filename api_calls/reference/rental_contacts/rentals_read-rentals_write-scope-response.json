@@ -1,6 +1,6 @@
 { "links": {
-    "rental_contacts.rental": "http://test.host/api/v3/rentals/{rental_contacts.rental}",
-    "rental_contacts.contact": "http://test.host/api/v3/contacts/{rental_contacts.contact}"
+    "rental_contacts.rental": "https://www.bookingsync.com/api/v3/rentals/{rental_contacts.rental}",
+    "rental_contacts.contact": "https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"
   },
  "rental_contacts": [
    {
@@ -18,8 +18,8 @@
  ],
  "meta": {
    "Link": {
-     "first": "http://test.host/api/v3/rental_contacts?page=1",
-     "last": "http://test.host/api/v3/rental_contacts?page=1"
+     "first": "https://www.bookingsync.com/api/v3/rental_contacts?page=1",
+     "last": "https://www.bookingsync.com/api/v3/rental_contacts?page=1"
    },
    "X-Total-Pages": "1",
    "X-Total-Count": "2",

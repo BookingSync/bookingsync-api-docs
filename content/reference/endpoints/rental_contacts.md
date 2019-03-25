@@ -20,9 +20,9 @@ contact_id                      | Integer  | Read       | Contact's id.
 kind                            | [String](/reference/enums#rental-contact-kinds) | Read | Rental contact's kind
 roles                           | [Array of Strings](/reference/enums#rental-contact-roles) | Read | Rental contact's roles
 --------------------------------|----------|------------|--------------
-created_at                      | [Time](/reference/enums#formats) | Read         | Rental's create time.
-updated_at                      | [Time](/reference/enums#formats) | Read         | Rental's update time.
-canceled_at                     | [Time](/reference/enums#formats) | Read         | Rental's canceled time if canceled.
+created_at                      | [Time](/reference/enums#formats) | Read         | Rental contact's create time.
+updated_at                      | [Time](/reference/enums#formats) | Read         | Rental contact's update time.
+canceled_at                     | [Time](/reference/enums#formats) | Read         | Rental contact's canceled time if canceled.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rentals_read" markdown="1">
@@ -34,23 +34,23 @@ contact_id                      | Integer  | Read       | Contact's id.
 kind                            | [String](/reference/enums#rental-contact-kinds) | Read | Rental contact's kind
 roles                           | [Array of Strings](/reference/enums#rental-contact-roles) | Read | Rental contact's roles
 --------------------------------|----------|------------|--------------
-created_at                      | [Time](/reference/enums#formats) | Read         | Rental's create time.
-updated_at                      | [Time](/reference/enums#formats) | Read         | Rental's update time.
-canceled_at                     | [Time](/reference/enums#formats) | Read         | Rental's canceled time if canceled.
+created_at                      | [Time](/reference/enums#formats) | Read         | Rental contact's create time.
+updated_at                      | [Time](/reference/enums#formats) | Read         | Rental contact's update time.
+canceled_at                     | [Time](/reference/enums#formats) | Read         | Rental contact's canceled time if canceled.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rentals_write" markdown="1">
 Name                            | Type     | Read/Write | Description
 --------------------------------|----------|------------|------------
-id                              | Integer  | Read       | Rental's id.
+id                              | Integer  | Read       | Rental contact's id.
 contact_id                      | Integer  | Write      | Contact's id.
 --------------------------------|----------|------------|--------------
 kind                            | [String](/reference/enums#rental-contact-kinds) | Read/Write | Rental contact's kind
 roles                           | [Array of Strings](/reference/enums#rental-contact-roles) | Read/Write | Rental contact's roles
 --------------------------------|----------|------------|--------------
-created_at                      | [Time](/reference/enums#formats) | Read         | Rental's create time.
-updated_at                      | [Time](/reference/enums#formats) | Read         | Rental's update time.
-canceled_at                     | [Time](/reference/enums#formats) | Read         | Rental's canceled time if canceled.
+created_at                      | [Time](/reference/enums#formats) | Read         | Rental contact's create time.
+updated_at                      | [Time](/reference/enums#formats) | Read         | Rental contact's update time.
+canceled_at                     | [Time](/reference/enums#formats) | Read         | Rental contact's canceled time if canceled.
 {: class="table table-bordered"}
   </div>
 </div>
@@ -86,9 +86,9 @@ POST /rental_contact
 <%= render 'json_response', endpoint: "rental_contacts", request: "create",
   scopes: [{ rentals_write: "rentals_read-rentals_write" }] %>
 
-## Update a rental
+## Update a rental contact
 
-Returns an updated rental identified by ID.
+Returns an updated rental contact identified by ID.
 
 ~~~
 PUT /rental_contacts/:rental_contact_id
