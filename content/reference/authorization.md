@@ -57,17 +57,27 @@ Additionally, the following scopes are available:
 * `bookings_write`
 * `clients_read`
 * `clients_write`
+* `inbox_read`
+* `inbox_write`
 * `inquiries_write_owned`
 * `inquiries_read`
 * `inquiries_write`
 * `payments_write_owned`
 * `payments_read`
 * `payments_write`
+* `preferences_general_settings_read`
+* `preferences_general_settings_write`
+* `preferences_payments_read`
+* `preferences_payments_write`
 * `rates_read`
 * `rates_write`
 * `rentals_read`
 * `rentals_write`
+* `reviews_read`
 * `reviews_write`
+* `webhooks_read`
+* `webhooks_write`
+* `webhooks_write_owned`
 
 **Note**: To request authorization for multiple scopes, use a space separated list.
 In URLs it would look like `&scope=bookings_read%20rentals_read` (`%20` represent a space within URLs)
