@@ -1,4 +1,5 @@
-{ "links": {
+{
+  "links": {
     "rental_contacts.rental": "https://www.bookingsync.com/api/v3/rentals/{rental_contacts.rental}",
     "rental_contacts.contact": "https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"
   },
