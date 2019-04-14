@@ -1,0 +1,696 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BookingSync API documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/stylesheets/application.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/highlight.css">
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="/assets/javascripts/application.js"></script>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.8.0">
+  </head>
+  <body class="flex-col">
+    <div class="page-wrapper flex-1 flex-col">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle sidebar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <img alt="BookingSync" src="/images/bookingsync.svg">
+              <span>Developers</span>
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="">
+                <a href="/guides/">Guides</a>
+              </li>
+              <li class="active">
+                <a href="/reference/">API Reference</a>
+              </li>
+              <li><a href="https://www.bookingsync.com" target="_blank">BookingSync.com</a></li>
+              <li><a href="https://github.com/BookingSync/bookingsync-api-docs" target="_blank"><i class="fa fa-github fa-fw fa-2x"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+<div class="container content">
+  <div class="row">
+    <div class="col-md-3 col-md-push-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Overview</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="/reference/">Introduction</a>
+          <a class="list-group-item" href="https://github.com/BookingSync/bookingsync-api-docs/releases">Changelog</a>
+          <a class="list-group-item" href="/reference/requirements/">Requirements</a>
+          <a class="list-group-item" href="/reference/libraries/">Libraries</a>
+          <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+          <a class="list-group-item" href="/reference/testing_authorization/">Testing the Authorization</a>
+          <a class="list-group-item" href="/reference/enums/">Enumerables</a>
+        </div>
+        <div class="panel-heading">
+          <h3 class="panel-title">Endpoints</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
+          <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/applications/">Applications</a>
+          <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
+          <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
+          <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_tags/">Bookings Tags</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_taxes/">Bookings Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/change_overs/">Change Overs</a>
+          <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
+          <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
+          <a class="list-group-item" href="/reference/endpoints/fees/">Fees</a>
+          <a class="list-group-item" href="/reference/endpoints/fees_taxes/">Fees Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/hosts/">Hosts</a>
+          <a class="list-group-item" href="/reference/endpoints/inbox_attachments/">Inbox Attachments</a>
+          <a class="list-group-item" href="/reference/endpoints/inbox_conversations/">Inbox Conversations</a>
+          <a class="list-group-item" href="/reference/endpoints/inbox_messages/">Inbox Messages</a>
+          <a class="list-group-item" href="/reference/endpoints/inbox_participants/">Inbox Participants</a>
+          <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
+          <a class="list-group-item" href="/reference/endpoints/living_rooms/">Living Rooms</a>
+          <a class="list-group-item" href="/reference/endpoints/los_records/">LOS Records</a>
+          <a class="list-group-item" href="/reference/endpoints/nightly_rate_maps/">Nightly Rate Maps</a>
+          <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
+          <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
+          <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
+          <a class="list-group-item active" href="/reference/endpoints/rental_contacts/">Rental Contacts</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_links/">Rental Links</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_taxes/">Rentals Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
+          <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
+          <a class="list-group-item" href="/reference/endpoints/sources/">Sources</a>
+          <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
+          <a class="list-group-item" href="/reference/endpoints/taxes/">Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/tax_rules/">Tax Rules</a>
+        </div>
+        <div class="panel-heading">
+          <h3 class="panel-title">Deprecated APIs</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 col-md-pull-3">
+      <div class="panel panel-default">
+        <div class="panel-body reference-body">
+          <h2 id="rental-contacts">Rental contacts</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#list-rental-contacts">List rental contacts</a></li>
+  <li><a href="#get-a-single-rental-contact">Get a single rental contact</a></li>
+  <li><a href="#create-a-new-rental-contact">Create a new rental contact</a></li>
+  <li><a href="#update-a-rental-contact">Update a rental contact</a></li>
+  <li><a href="#destroy-a-rental-contact">Destroy a rental contact</a></li>
+</ol>
+
+<h4 id="parameters">Parameters</h4>
+<ul class="nav nav-pills" role="tablist">
+  <li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
+  <li><a href="#rentals_read" role="tab" data-toggle="pill">rentals_read</a></li>
+  <li><a href="#rentals_write" role="tab" data-toggle="pill">rentals_write</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane active" id="public">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental contact’s id.</td>
+        </tr>
+        <tr>
+          <td>contact_id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Contact’s id.</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>kind</td>
+          <td><a href="/reference/enums#rental-contact-kinds">String</a></td>
+          <td>Read</td>
+          <td>Rental contact’s kind</td>
+        </tr>
+        <tr>
+          <td>roles</td>
+          <td><a href="/reference/enums#rental-contact-roles">Array of Strings</a></td>
+          <td>Read</td>
+          <td>Rental contact’s roles</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Rental contact’s create time.</td>
+        </tr>
+        <tr>
+          <td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Rental contact’s update time.</td>
+        </tr>
+        <tr>
+          <td>canceled_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Rental contact’s canceled time if canceled.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tab-pane" id="rentals_read">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental contact’s id.</td>
+        </tr>
+        <tr>
+          <td>contact_id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Contact’s id.</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>kind</td>
+          <td><a href="/reference/enums#rental-contact-kinds">String</a></td>
+          <td>Read</td>
+          <td>Rental contact’s kind</td>
+        </tr>
+        <tr>
+          <td>roles</td>
+          <td><a href="/reference/enums#rental-contact-roles">Array of Strings</a></td>
+          <td>Read</td>
+          <td>Rental contact’s roles</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Rental contact’s create time.</td>
+        </tr>
+        <tr>
+          <td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Rental contact’s update time.</td>
+        </tr>
+        <tr>
+          <td>canceled_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Rental contact’s canceled time if canceled.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tab-pane" id="rentals_write">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental contact’s id.</td>
+        </tr>
+        <tr>
+          <td>contact_id</td>
+          <td>Integer</td>
+          <td>Write</td>
+          <td>Contact’s id.</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>kind</td>
+          <td><a href="/reference/enums#rental-contact-kinds">String</a></td>
+          <td>Read/Write</td>
+          <td>Rental contact’s kind</td>
+        </tr>
+        <tr>
+          <td>roles</td>
+          <td><a href="/reference/enums#rental-contact-roles">Array of Strings</a></td>
+          <td>Read/Write</td>
+          <td>Rental contact’s roles</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Rental contact’s create time.</td>
+        </tr>
+        <tr>
+          <td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Rental contact’s update time.</td>
+        </tr>
+        <tr>
+          <td>canceled_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Rental contact’s canceled time if canceled.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3 id="list-rental-contacts">List rental contacts</h3>
+
+<p>List all rental contacts for a given account(s).</p>
+
+<pre><code>GET /rental_contacts
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#fc139a071dfapublic" role="tab" data-toggle="pill">
+          public
+        </a>
+      </li>
+    
+      <li>
+        <a href="#6057107227carentals_read-rentals_write" role="tab" data-toggle="pill">
+          rentals_read / rentals_write
+        </a>
+      </li>
+    
+  </ul>
+
+<h4 id="response">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="fc139a071dfapublic">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
+    <span class="s2">"rental_contacts.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rental_contacts.rental}"</span>
+  <span class="p">},</span>
+  <span class="s2">"rental_contacts"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"manager"</span><span class="p">,</span>
+      <span class="s2">"roles"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"requests"</span>
+      <span class="p">],</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2019-03-21T14:37:39Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2019-03-21T14:37:39Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"contact"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"Link"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"first"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_contacts?page=1"</span><span class="p">,</span>
+      <span class="s2">"last"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_contacts?page=1"</span>
+    <span class="p">},</span>
+    <span class="s2">"X-Per-Page"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Count"</span><span class="o">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Pages"</span><span class="o">:</span> <span class="s2">"1"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+      <div class="tab-pane " id="6057107227carentals_read-rentals_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
+    <span class="s2">"rental_contacts.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rental_contacts.rental}"</span>
+  <span class="p">},</span>
+  <span class="s2">"rental_contacts"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"manager"</span><span class="p">,</span>
+      <span class="s2">"roles"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"requests"</span>
+      <span class="p">],</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2019-03-21T14:37:39Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2019-03-21T14:37:39Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"contact"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"Link"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"first"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_contacts?page=1"</span><span class="p">,</span>
+      <span class="s2">"last"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_contacts?page=1"</span>
+    <span class="p">},</span>
+    <span class="s2">"X-Per-Page"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Count"</span><span class="o">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Pages"</span><span class="o">:</span> <span class="s2">"1"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="get-a-single-rental-contact">Get a single rental contact</h3>
+
+<p>Returns a single rental contact identified by ID.</p>
+
+<pre><code>GET /rental_contacts/:rental_contact_id
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#94e0ec81c42dpublic" role="tab" data-toggle="pill">
+          public
+        </a>
+      </li>
+    
+      <li>
+        <a href="#3842a34d967frentals_read-rentals_write" role="tab" data-toggle="pill">
+          rentals_read / rentals_write
+        </a>
+      </li>
+    
+  </ul>
+
+<h4 id="response-1">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="94e0ec81c42dpublic">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
+    <span class="s2">"rental_contacts.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rental_contacts.rental}"</span>
+  <span class="p">},</span>
+  <span class="s2">"rental_contacts"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"manager"</span><span class="p">,</span>
+      <span class="s2">"roles"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"requests"</span>
+      <span class="p">],</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2019-03-21T14:37:39Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2019-03-21T14:37:39Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"contact"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"Link"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"first"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_contacts?page=1"</span><span class="p">,</span>
+      <span class="s2">"last"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_contacts?page=1"</span>
+    <span class="p">},</span>
+    <span class="s2">"X-Per-Page"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Count"</span><span class="o">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Pages"</span><span class="o">:</span> <span class="s2">"1"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+      <div class="tab-pane " id="3842a34d967frentals_read-rentals_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
+    <span class="s2">"rental_contacts.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rental_contacts.rental}"</span>
+  <span class="p">},</span>
+  <span class="s2">"rental_contacts"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"manager"</span><span class="p">,</span>
+      <span class="s2">"roles"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"requests"</span>
+      <span class="p">],</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2019-03-21T14:37:39Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2019-03-21T14:37:39Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"contact"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"Link"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"first"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_contacts?page=1"</span><span class="p">,</span>
+      <span class="s2">"last"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_contacts?page=1"</span>
+    <span class="p">},</span>
+    <span class="s2">"X-Per-Page"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Count"</span><span class="o">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Pages"</span><span class="o">:</span> <span class="s2">"1"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="create-a-new-rental-contact">Create a new rental contact</h3>
+
+<p>Returns a newly created rental contact.</p>
+
+<pre><code>POST /rental_contact
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#f8def8d1d2f8rentals_write" role="tab" data-toggle="pill">
+          rentals_write
+        </a>
+      </li>
+    
+  </ul>
+
+<h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="s2">"rental_contacts"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"contact_id"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"manager"</span><span class="p">,</span>
+      <span class="s2">"roles"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"requests"</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-2">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="f8def8d1d2f8rentals_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
+    <span class="s2">"rental_contacts.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rental_contacts.rental}"</span>
+  <span class="p">},</span>
+  <span class="s2">"rental_contacts"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"manager"</span><span class="p">,</span>
+      <span class="s2">"roles"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"requests"</span>
+      <span class="p">],</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2019-03-21T14:37:39Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2019-03-21T14:37:39Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"contact"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"Link"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"first"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_contacts?page=1"</span><span class="p">,</span>
+      <span class="s2">"last"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_contacts?page=1"</span>
+    <span class="p">},</span>
+    <span class="s2">"X-Per-Page"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Count"</span><span class="o">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Pages"</span><span class="o">:</span> <span class="s2">"1"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="update-a-rental-contact">Update a rental contact</h3>
+
+<p>Returns an updated rental contact identified by ID.</p>
+
+<pre><code>PUT /rental_contacts/:rental_contact_id
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#a702fbaea923rentals_write" role="tab" data-toggle="pill">
+          rentals_write
+        </a>
+      </li>
+    
+  </ul>
+
+<h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">"rental_contacts"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"owner"</span><span class="p">,</span>
+      <span class="s2">"roles"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"requests"</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-3">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="a702fbaea923rentals_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
+    <span class="s2">"rental_contacts.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rental_contacts.rental}"</span>
+  <span class="p">},</span>
+  <span class="s2">"rental_contacts"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"manager"</span><span class="p">,</span>
+      <span class="s2">"roles"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"requests"</span>
+      <span class="p">],</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2019-03-21T14:37:39Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2019-03-21T14:37:39Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"contact"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"Link"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"first"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_contacts?page=1"</span><span class="p">,</span>
+      <span class="s2">"last"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_contacts?page=1"</span>
+    <span class="p">},</span>
+    <span class="s2">"X-Per-Page"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Count"</span><span class="o">:</span> <span class="s2">"2"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Pages"</span><span class="o">:</span> <span class="s2">"1"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="destroy-a-rental-contact">Destroy a rental contact</h3>
+
+<p>Required OAuth scope: <code>:rentals_write</code></p>
+
+<p>Returns an empty response with ‘204 No Content’ status code on success.</p>
+
+<pre><code>DELETE /rental_contacts/:rental_contact_id
+</code></pre>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </body>
+</html>
+

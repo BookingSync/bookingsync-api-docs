@@ -56,7 +56,7 @@
         </div>
         <div class="list-group">
           <a class="list-group-item" href="/reference/">Introduction</a>
-          <a class="list-group-item" href="/reference/changelog/">Changelog</a>
+          <a class="list-group-item" href="https://github.com/BookingSync/bookingsync-api-docs/releases">Changelog</a>
           <a class="list-group-item" href="/reference/requirements/">Requirements</a>
           <a class="list-group-item" href="/reference/libraries/">Libraries</a>
           <a class="list-group-item" href="/reference/authorization/">Authorization</a>
@@ -100,6 +100,7 @@
           <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
           <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
           <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_contacts/">Rental Contacts</a>
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
@@ -151,6 +152,8 @@
   <li><a href="#inbox-message-channels">Inbox Message Channels</a></li>
   <li><a href="#inbox-message-origins">Inbox Message Origins</a></li>
   <li><a href="#inbox-message-visibilities">Inbox Message visibilities</a></li>
+  <li><a href="#rental-contact-kinds">Rental Contact kinds</a></li>
+  <li><a href="#rental-contact-roles">Rental Contact roles</a></li>
 </ol>
 
 <h3 id="account-statuses">Account statuses</h3>
@@ -1071,6 +1074,76 @@
     <tr>
       <td>external</td>
       <td>External visibility</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="rental-contact-kinds">Rental Contact kinds</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>owner</td>
+      <td>Contact is an owner</td>
+    </tr>
+    <tr>
+      <td>manager</td>
+      <td>Contact is a manager</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="rental-contact-roles">Rental Contact roles</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>general</td>
+      <td>For general purposes</td>
+    </tr>
+    <tr>
+      <td>contract</td>
+      <td>For contract</td>
+    </tr>
+    <tr>
+      <td>reservations</td>
+      <td>For reservations information</td>
+    </tr>
+    <tr>
+      <td>invoices</td>
+      <td>Regarding invoice</td>
+    </tr>
+    <tr>
+      <td>availability</td>
+      <td>Regarding availability</td>
+    </tr>
+    <tr>
+      <td>site_content</td>
+      <td>Regarding site content</td>
+    </tr>
+    <tr>
+      <td>parity</td>
+      <td>For parity information</td>
+    </tr>
+    <tr>
+      <td>requests</td>
+      <td>Handling requests</td>
+    </tr>
+    <tr>
+      <td>central_reservations</td>
+      <td>Regarding central reservations</td>
     </tr>
   </tbody>
 </table>
