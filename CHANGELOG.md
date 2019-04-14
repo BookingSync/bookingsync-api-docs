@@ -1,7 +1,18 @@
 # Change Log
 
-## [3.14.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.14.0) (2019-02-06)
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.13.0...3.14.0)
+## [3.15.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.15.0) (2019-04-14)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.14.0...3.15.0)
+
+**Merged pull requests:**
+
+- change link to Changelog [\#303](https://github.com/BookingSync/bookingsync-api-docs/pull/303) ([Azdaroth](https://github.com/Azdaroth))
+- document missing scopes [\#302](https://github.com/BookingSync/bookingsync-api-docs/pull/302) ([Azdaroth](https://github.com/Azdaroth))
+- add rental contact [\#301](https://github.com/BookingSync/bookingsync-api-docs/pull/301) ([hauska7](https://github.com/hauska7))
+- security updates [\#299](https://github.com/BookingSync/bookingsync-api-docs/pull/299) ([Azdaroth](https://github.com/Azdaroth))
+- update clients samples [\#292](https://github.com/BookingSync/bookingsync-api-docs/pull/292) ([thilonel](https://github.com/thilonel))
+
+## [v3.14.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.14.0) (2019-02-06)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.13.0...v3.14.0)
 
 **Merged pull requests:**
 
