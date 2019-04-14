@@ -1,0 +1,9 @@
+{
+  "id": 1,
+  "rental_contacts": [
+    {
+      "kind": "owner",
+      "roles": ["requests"]
+    }
+  ]
+}

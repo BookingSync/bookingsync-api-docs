@@ -289,3 +289,26 @@ Name             | Description
 internal         | Internal visibility
 external         | External visibility
 {: class="table table-bordered"}
+
+## Rental Contact kinds
+
+Name             | Description
+-----------------|------------
+owner            | Contact is an owner
+manager          | Contact is a manager
+{: class="table table-bordered"}
+
+## Rental Contact roles
+
+Name             | Description
+-----------------|------------
+general          | For general purposes
+contract         | For contract
+reservations     | For reservations information
+invoices         | Regarding invoice
+availability     | Regarding availability
+site_content     | Regarding site content
+parity           | For parity information
+requests         | Handling requests
+central_reservations | Regarding central reservations
+{: class="table table-bordered"}
