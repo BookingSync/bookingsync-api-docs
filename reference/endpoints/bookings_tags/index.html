@@ -134,6 +134,8 @@
 <ol id="markdown-toc">
   <li><a href="#list-bookings-tags">List bookings tags</a></li>
   <li><a href="#get-a-single-bookings-tag">Get a single bookings tag</a></li>
+  <li><a href="#create-a-new-bookings-tag">Create a new bookings tag</a></li>
+  <li><a href="#update-a-bookings-tag">Update a bookings tag</a></li>
   <li><a href="#add-a-single-bookings-tag">Add a single bookings tag</a></li>
   <li><a href="#remove-a-single-bookings-tag">Remove a single bookings tag</a></li>
 </ol>
@@ -211,7 +213,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#4279117cc64fbookings_read" role="tab" data-toggle="pill">
+        <a href="#1fe4ae992b84bookings_read" role="tab" data-toggle="pill">
           bookings_read
         </a>
       </li>
@@ -223,7 +225,7 @@
   
   
     
-      <div class="tab-pane active" id="4279117cc64fbookings_read">
+      <div class="tab-pane active" id="1fe4ae992b84bookings_read">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_tags.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_tags.account}"</span>
@@ -262,7 +264,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#1a73efa74c93bookings_read" role="tab" data-toggle="pill">
+        <a href="#6f541cdaecd1bookings_read" role="tab" data-toggle="pill">
           bookings_read
         </a>
       </li>
@@ -274,7 +276,7 @@
   
   
     
-      <div class="tab-pane active" id="1a73efa74c93bookings_read">
+      <div class="tab-pane active" id="6f541cdaecd1bookings_read">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_tags.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_tags.account}"</span>
@@ -291,6 +293,128 @@
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2017-05-02T09:41:51Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">3</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="create-a-new-bookings-tag">Create a new bookings tag</h3>
+
+<p>Creates a bookings tag for account.</p>
+
+<pre><code>POST /bookings_tags
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#6570e3e4a2f4bookings_write" role="tab" data-toggle="pill">
+          bookings_write
+        </a>
+      </li>
+    
+  </ul>
+
+<h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"bookings_tags"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"color"</span><span class="o">:</span> <span class="s2">"#008080"</span><span class="p">,</span>
+      <span class="s2">"name_en"</span><span class="o">:</span> <span class="s2">"tag_name"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-2">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="6570e3e4a2f4bookings_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"bookings_tags.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_tags.account}"</span>
+  <span class="p">},</span>
+  <span class="s2">"bookings_tags"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"color"</span><span class="o">:</span> <span class="s2">"#008080"</span><span class="p">,</span>
+      <span class="s2">"logo"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"tag_name"</span>
+      <span class="p">},</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2019-04-25T02:26:42Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2019-04-25T02:26:42Z"</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="update-a-bookings-tag">Update a bookings tag</h3>
+
+<p>Returns an updated bookings tag identified by ID.</p>
+
+<pre><code>PUT /bookings_tags/:bookings_tag_id
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#0892e04eca07bookings_write" role="tab" data-toggle="pill">
+          bookings_write
+        </a>
+      </li>
+    
+  </ul>
+
+<h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"bookings_tags"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"color"</span><span class="o">:</span> <span class="s2">"#008080"</span><span class="p">,</span>
+      <span class="s2">"name_en"</span><span class="o">:</span> <span class="s2">"tag_name"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-3">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="0892e04eca07bookings_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"bookings_tags.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_tags.account}"</span>
+  <span class="p">},</span>
+  <span class="s2">"bookings_tags"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"color"</span><span class="o">:</span> <span class="s2">"#008080"</span><span class="p">,</span>
+      <span class="s2">"logo"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"tag_name"</span>
+      <span class="p">},</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2019-04-25T02:26:42Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2019-04-25T02:26:42Z"</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
