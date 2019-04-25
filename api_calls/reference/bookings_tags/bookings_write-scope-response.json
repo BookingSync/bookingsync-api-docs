@@ -1,0 +1,21 @@
+{
+  "links": {
+    "bookings_tags.account": "https://www.bookingsync.com/api/v3/accounts/{bookings_tags.account}"
+  },
+  "bookings_tags": [
+    {
+      "links": {
+        "account": 1
+      },
+      "id": 5,
+      "name": {
+        "en": "tag_name"
+      },
+      "color": "#008080",
+      "logo": null,
+      "created_at": "2019-04-25T02:26:42Z",
+      "updated_at": "2019-04-25T02:26:42Z"
+    }
+  ],
+  "meta": {}
+}
