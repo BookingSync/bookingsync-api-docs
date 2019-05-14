@@ -36,8 +36,8 @@ headline                        | [Object](/reference/enums#formats)     | Read 
 initial_price                   | Integer  | Read       | Rental's initial price. Available only for a search query with valid dates, for other cases please refer to `base_rate` and `base_rate_kind`.
 lat                             | Float    | Read       | Rental's latitude.
 lng                             | Float    | Read       | Rental's longitude.
-max_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's maximum price.
-min_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's minimum price.
+max_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's maximum weekly or nightly price, depending on the base_rate_kind.
+min_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's minimum weekly or nightly price, depending on the base_rate_kind.
 name                            | String   | Read       | Rental's name.
 nightly_rates_managed_externally | Boolean  | Read       | Defines whether `nightly_rate_map` can be updated via API. Defaults to `false`.
 permit_number                   | String   | Read       | Rental's Registration/License/Permit number.
