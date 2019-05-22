@@ -23,7 +23,7 @@ kind                   | String  | Read       | Fee's kind, list of fee's kinds 
 original_currency      | String  | Read       | Fee's original currency, list of currencies codes described in [enums section](/reference/enums#currencies)
 rate                   | [Decimal](/reference/enums#formats)  | Read       | Fee's rate.
 rate_kind              | String  | Read       | Fee's rate kind, list of fee's rate kinds described in [enums section](/reference/enums#fee-rate-kinds).
-maximum_possible_rate  | [Decimal](/reference/enums#formats) | Read       | Fee's maximum possible rate, calculated value won't exceed amount present on this attribute.
+maximum_possible_rate  | [Decimal](/reference/enums#formats) | Read       | Fee's maximum possible rate, calculated value won't exceed amount present on this attribute. It is applied only for percentage kinds, list of kinds is described in [enums section](/reference/enums#fee-kinds)
 -----------------------|---------|------------|------------
 archived_at            | [Time](/reference/enums#formats) | Read         | Fee's archive time.
 created_at             | [Time](/reference/enums#formats) | Read         | Fee's create time.
@@ -43,7 +43,7 @@ kind                   | String  | Read/Write | Fee's kind, list of fee's kinds 
 original_currency      | String  | Read       | Fee's original currency, list of currencies codes described in [enums section](/reference/enums#currencies)
 rate                   | [Decimal](/reference/enums#formats)  | Read/Write |  ** Required** Fee's rate.
 rate_kind              | String  | Read/Write |  ** Required** Fee's rate kind, list of fee's rate kinds described in [enums section](/reference/enums#fee-rate-kinds).
-maximum_possible_rate  | [Decimal](/reference/enums#formats) | Read/Write | Fee's maximum possible rate, calculated value won't exceed amount present on this attribute.
+maximum_possible_rate  | [Decimal](/reference/enums#formats) | Read/Write | Fee's maximum possible rate, calculated value won't exceed amount present on this attribute. It is applied only for percentage kinds, list of kinds is described in [enums section](/reference/enums#fee-kinds)
 -----------------------|---------|------------|------------
 archived_at            | [Time](/reference/enums#formats) | Read         | Fee's archive time.
 created_at             | [Time](/reference/enums#formats) | Read         | Fee's create time.
