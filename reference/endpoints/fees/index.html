@@ -217,6 +217,13 @@
           <td>Read</td>
           <td>Fee’s rate kind, list of fee’s rate kinds described in <a href="/reference/enums#fee-rate-kinds">enums section</a>.</td>
         </tr>
+        <tr>
+          <td>maximum_possible_rate</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Fee’s maximum possible rate, calculated value won’t exceed amount present on this attribute. It is applied only for percentage kinds, list of kinds is described in <a href="/reference/enums#fee-kinds">enums section</a>
+</td>
+        </tr>
       </tbody>
       <tbody>
         <tr>
@@ -310,6 +317,13 @@
           <td>Read/Write</td>
           <td>** Required** Fee’s rate kind, list of fee’s rate kinds described in <a href="/reference/enums#fee-rate-kinds">enums section</a>.</td>
         </tr>
+        <tr>
+          <td>maximum_possible_rate</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read/Write</td>
+          <td>Fee’s maximum possible rate, calculated value won’t exceed amount present on this attribute. It is applied only for percentage kinds, list of kinds is described in <a href="/reference/enums#fee-kinds">enums section</a>
+</td>
+        </tr>
       </tbody>
       <tbody>
         <tr>
@@ -346,7 +360,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#f13e33f9257bpublic" role="tab" data-toggle="pill">
+        <a href="#34e82e9e327bpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -358,7 +372,7 @@
   
   
     
-      <div class="tab-pane active" id="f13e33f9257bpublic">
+      <div class="tab-pane active" id="34e82e9e327bpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"fees.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{fees.account}"</span>
@@ -370,6 +384,7 @@
       <span class="s2">"downpayment_percentage"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
       <span class="s2">"exchange_rate"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"other"</span><span class="p">,</span>
+      <span class="s2">"maximum_possible_rate"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Fee"</span>
       <span class="p">},</span>
@@ -431,7 +446,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#33a278660cd4public" role="tab" data-toggle="pill">
+        <a href="#90cb6b79c69cpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -443,7 +458,7 @@
   
   
     
-      <div class="tab-pane active" id="33a278660cd4public">
+      <div class="tab-pane active" id="90cb6b79c69cpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"fees.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{fees.account}"</span>
@@ -455,6 +470,7 @@
       <span class="s2">"downpayment_percentage"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
       <span class="s2">"exchange_rate"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"other"</span><span class="p">,</span>
+      <span class="s2">"maximum_possible_rate"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Fee"</span>
       <span class="p">},</span>
@@ -486,7 +502,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#a9da79c20f01rates_write" role="tab" data-toggle="pill">
+        <a href="#4f328d4d14b6rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
@@ -512,7 +528,7 @@
   
   
     
-      <div class="tab-pane active" id="a9da79c20f01rates_write">
+      <div class="tab-pane active" id="4f328d4d14b6rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"fees.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{fees.account}"</span>
@@ -524,6 +540,7 @@
       <span class="s2">"downpayment_percentage"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
       <span class="s2">"exchange_rate"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"other"</span><span class="p">,</span>
+      <span class="s2">"maximum_possible_rate"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Fee"</span>
       <span class="p">},</span>
@@ -555,7 +572,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#e26fca0bab78rates_write" role="tab" data-toggle="pill">
+        <a href="#05e6e1fc7cd2rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
@@ -581,7 +598,7 @@
   
   
     
-      <div class="tab-pane active" id="e26fca0bab78rates_write">
+      <div class="tab-pane active" id="05e6e1fc7cd2rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"fees.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{fees.account}"</span>
@@ -593,6 +610,7 @@
       <span class="s2">"downpayment_percentage"</span><span class="o">:</span> <span class="s2">"0.0"</span><span class="p">,</span>
       <span class="s2">"exchange_rate"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"other"</span><span class="p">,</span>
+      <span class="s2">"maximum_possible_rate"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Fee"</span>
       <span class="p">},</span>
