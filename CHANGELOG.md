@@ -1,7 +1,16 @@
 # Change Log
 
-## [3.15.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.15.0) (2019-04-14)
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.14.0...3.15.0)
+## [3.16.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.16.0) (2019-05-23)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.15.0...3.16.0)
+
+**Merged pull requests:**
+
+- Add individual percentage per adult [\#307](https://github.com/BookingSync/bookingsync-api-docs/pull/307) ([adamgrad](https://github.com/adamgrad))
+- add some extra info about the Rental's min and max price [\#306](https://github.com/BookingSync/bookingsync-api-docs/pull/306) ([thilonel](https://github.com/thilonel))
+- Add bookings tags post and patch [\#305](https://github.com/BookingSync/bookingsync-api-docs/pull/305) ([adamgrad](https://github.com/adamgrad))
+
+## [v3.15.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.15.0) (2019-04-14)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.14.0...v3.15.0)
 
 **Merged pull requests:**
 
