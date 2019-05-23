@@ -20,7 +20,8 @@
       "downpayment_percentage": "0.0",
       "currency": "EUR",
       "original_currency": "EUR",
-      "exchange_rate": "1.0"
+      "exchange_rate": "1.0",
+      "maximum_possible_rate": null
     }
   ]
 }
