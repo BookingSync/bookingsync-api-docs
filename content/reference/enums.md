@@ -214,38 +214,47 @@ weekend_night                  | Rule applied for weekend night.
 
 ## Rental types
 
+<div class="callout callout-warning" markdown="1">
+  <h4>New Rental types</h4>
+  <p>From 1st of October 2019 three new rental types will be available:</p>
+  `bed-and-breakfast`, `private-room-in-apartment`, `private-room-in-house`
+</div>
+
 Name                 | Description
 ---------------------|------------
-apartment            | Apartment
-boat                 | Boat
-bungalow             | Bungalow
-cabin                | Cabin
-castle               | Castle
-cave                 | Cave
-chalet               | Chalet
-condominium          | Condominium
-cottage              | Cottage
-dormitory            | Dormitory
-earth-house          | Earth House
-farmhouse            | Farmhouse
-holiday-home         | Holiday Home
-house                | House
-hut                  | Hut
-igloo                | Igloo
-island               | Island
-lighthouse           | Lighthouse
-loft                 | Loft
-plane                | Plane
-private-room         | Private room
-recreational-vehicle | Camper/RV
-studio               | Studio
-tent                 | Tent
-tipi                 | Tipi
-townhouse            | Townhouse
-train                | Train
-treehouse            | Treehouse
-villa                | Villa
-yurt                 | Yurt
+apartment                   | Apartment
+boat                        | Boat
+bungalow                    | Bungalow
+bed-and-breakfast           | Bed & breakfast
+cabin                       | Cabin
+castle                      | Castle
+cave                        | Cave
+chalet                      | Chalet
+condominium                 | Condominium
+cottage                     | Cottage
+dormitory                   | Dormitory
+earth-house                 | Earth House
+farmhouse                   | Farmhouse
+holiday-home                | Holiday Home
+house                       | House
+hut                         | Hut
+igloo                       | Igloo
+island                      | Island
+lighthouse                  | Lighthouse
+loft                        | Loft
+plane                       | Plane
+private-room                | Private room
+private-room-in-apartment   | Private room in an apartment
+private-room-in-house       | Private room in a house
+recreational-vehicle        | Camper/RV
+studio                      | Studio
+tent                        | Tent
+tipi                        | Tipi
+townhouse                   | Townhouse
+train                       | Train
+treehouse                   | Treehouse
+villa                       | Villa
+yurt                        | Yurt
 {: class="table table-bordered"}
 
 ## Rental residency categories
