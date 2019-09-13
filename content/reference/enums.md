@@ -182,6 +182,7 @@ Name             | Description
 booking_pay      | BookingPay gateway.
 ogone            | Ogone gateway.
 stripe           | Stripe gateway.
+bogus            | Bogus gateway.
 {: class="table table-bordered"}
 
 ## Photo kinds

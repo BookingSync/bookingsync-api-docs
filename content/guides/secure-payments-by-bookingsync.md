@@ -84,7 +84,8 @@ Here's an example of the expected payload:
   "state": "California",
   "country_code": "US",
   "gateway_id": "123",
-  "gateway_name": "payment_gateway_name"
+  "gateway_name": "payment_gateway_name",
+  "gateway_type": "PaymentGateway"
 }
 ~~~
 
