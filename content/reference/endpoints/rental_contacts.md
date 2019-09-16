@@ -80,7 +80,7 @@ GET /rental_contacts/:rental_contact_id
 Returns a newly created rental contact.
 
 ~~~~
-POST /rental_contact
+POST /rentals/:rental_id/rental_contacts
 ~~~~
 
 <%= render 'json_response', endpoint: "rental_contacts", request: "create",
