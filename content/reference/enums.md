@@ -155,9 +155,16 @@ individual_percentage_per_adult | Percentage of the rental price per adult per n
 
 ## Payment kinds
 
+<div class="callout callout-warning" markdown="1">
+  <h4>Warning</h4>
+  Internal payment kinds are not allowed to be used outside of our PCI DSS compliant payment platform flow, for more details please refer to [secure payments by BookingSync](/guides/secure-payments-by-bookingsync/).
+  
+</div>
+
 Name             | Description
 -----------------|------------
-bookingsync      | Payment made through BookingSync.
+bookingsync      | **Internal** payment made through BookingSync.
+instant-booking  | **Internal** payment made during Instant Booking flow, through BookingSync.
 cash             | Payment made by Cash.
 cheque           | Payment made by Cheque.
 credits          | Payment made using Credits. Credits are money you might have kept from your guest after a cancellation.
@@ -166,6 +173,16 @@ online           | Payment made Online, outside of BookingSync.
 paypal           | Payment made with PayPal, outside of BookingSync.
 travel-cheque    | Payment made by Travel Cheque.
 wiretransfer     | Payment made by Wire Transfer.
+{: class="table table-bordered"}
+
+## Payment gateway names
+
+Name             | Description
+-----------------|------------
+booking_pay      | BookingPay gateway.
+ogone            | Ogone gateway.
+stripe           | Stripe gateway.
+bogus            | Bogus gateway.
 {: class="table table-bordered"}
 
 ## Photo kinds
