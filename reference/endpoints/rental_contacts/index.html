@@ -93,6 +93,7 @@
           <a class="list-group-item" href="/reference/endpoints/living_rooms/">Living Rooms</a>
           <a class="list-group-item" href="/reference/endpoints/los_records/">LOS Records</a>
           <a class="list-group-item" href="/reference/endpoints/nightly_rate_maps/">Nightly Rate Maps</a>
+          <a class="list-group-item" href="/reference/endpoints/payment_gateways/">Payment Gateways</a>
           <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
           <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
@@ -340,13 +341,13 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#a9389e45da34public" role="tab" data-toggle="pill">
+        <a href="#66ba376358eapublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
       <li>
-        <a href="#c468b937b2e3rentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#afb4a7ca8914rentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
@@ -358,7 +359,7 @@
   
   
     
-      <div class="tab-pane active" id="a9389e45da34public">
+      <div class="tab-pane active" id="66ba376358eapublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
@@ -392,7 +393,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="c468b937b2e3rentals_read-rentals_write">
+      <div class="tab-pane " id="afb4a7ca8914rentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
@@ -440,13 +441,13 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#1ef3a18a12bdpublic" role="tab" data-toggle="pill">
+        <a href="#9321b9971ec4public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
       <li>
-        <a href="#ede88f700a1erentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#65a97196787drentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
@@ -458,7 +459,7 @@
   
   
     
-      <div class="tab-pane active" id="1ef3a18a12bdpublic">
+      <div class="tab-pane active" id="9321b9971ec4public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
@@ -492,7 +493,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="ede88f700a1erentals_read-rentals_write">
+      <div class="tab-pane " id="65a97196787drentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
@@ -533,14 +534,14 @@
 
 <p>Returns a newly created rental contact.</p>
 
-<pre><code>POST /rental_contact
+<pre><code>POST /rentals/:rental_id/rental_contacts
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#c9fddd223907rentals_write" role="tab" data-toggle="pill">
+        <a href="#69443faefb13rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -566,7 +567,7 @@
   
   
     
-      <div class="tab-pane active" id="c9fddd223907rentals_write">
+      <div class="tab-pane active" id="69443faefb13rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
@@ -614,7 +615,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#c8711a72ec4brentals_write" role="tab" data-toggle="pill">
+        <a href="#fd0b1ca8df07rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -639,7 +640,7 @@
   
   
     
-      <div class="tab-pane active" id="c8711a72ec4brentals_write">
+      <div class="tab-pane active" id="fd0b1ca8df07rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>

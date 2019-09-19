@@ -93,6 +93,7 @@
           <a class="list-group-item" href="/reference/endpoints/living_rooms/">Living Rooms</a>
           <a class="list-group-item" href="/reference/endpoints/los_records/">LOS Records</a>
           <a class="list-group-item" href="/reference/endpoints/nightly_rate_maps/">Nightly Rate Maps</a>
+          <a class="list-group-item" href="/reference/endpoints/payment_gateways/">Payment Gateways</a>
           <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
           <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
@@ -320,7 +321,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#2b6c666d3f72inbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#32d6093b0d16inbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -332,13 +333,15 @@
   
   
     
-      <div class="tab-pane active" id="2b6c666d3f72inbox_read-inbox_write">
+      <div class="tab-pane active" id="32d6093b0d16inbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
     <span class="s2">"conversations.assignee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/hosts/{conversations.assignee}"</span><span class="p">,</span>
     <span class="s2">"conversations.bookings"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{conversations.bookings}"</span><span class="p">,</span>
     <span class="s2">"conversations.inquiries"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inquiries/{conversations.inquiries}"</span><span class="p">,</span>
+    <span class="s2">"conversations.messages"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/messages/{conversations.messages}"</span><span class="p">,</span>
+    <span class="s2">"conversations.participants"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/participants/{conversations.participants}"</span><span class="p">,</span>
     <span class="s2">"conversations.source"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/sources/{conversations.source}"</span>
   <span class="p">},</span>
   <span class="s2">"conversations"</span><span class="o">:</span> <span class="p">[</span>
@@ -359,6 +362,12 @@
 
         <span class="p">],</span>
         <span class="s2">"inquiries"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"messages"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"participants"</span><span class="o">:</span> <span class="p">[</span>
 
         <span class="p">],</span>
         <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span>
@@ -384,7 +393,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#a1cc42fc12b1inbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#b656921faf64inbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -396,13 +405,15 @@
   
   
     
-      <div class="tab-pane active" id="a1cc42fc12b1inbox_read-inbox_write">
+      <div class="tab-pane active" id="b656921faf64inbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
     <span class="s2">"conversations.assignee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/hosts/{conversations.assignee}"</span><span class="p">,</span>
     <span class="s2">"conversations.bookings"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{conversations.bookings}"</span><span class="p">,</span>
     <span class="s2">"conversations.inquiries"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inquiries/{conversations.inquiries}"</span><span class="p">,</span>
+    <span class="s2">"conversations.messages"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/messages/{conversations.messages}"</span><span class="p">,</span>
+    <span class="s2">"conversations.participants"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/participants/{conversations.participants}"</span><span class="p">,</span>
     <span class="s2">"conversations.source"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/sources/{conversations.source}"</span>
   <span class="p">},</span>
   <span class="s2">"conversations"</span><span class="o">:</span> <span class="p">[</span>
@@ -423,6 +434,12 @@
 
         <span class="p">],</span>
         <span class="s2">"inquiries"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"messages"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"participants"</span><span class="o">:</span> <span class="p">[</span>
 
         <span class="p">],</span>
         <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span>
@@ -448,7 +465,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#051593fea840inbox_write" role="tab" data-toggle="pill">
+        <a href="#1cc0a65c827finbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -471,13 +488,15 @@
   
   
     
-      <div class="tab-pane active" id="051593fea840inbox_write">
+      <div class="tab-pane active" id="1cc0a65c827finbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
     <span class="s2">"conversations.assignee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/hosts/{conversations.assignee}"</span><span class="p">,</span>
     <span class="s2">"conversations.bookings"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{conversations.bookings}"</span><span class="p">,</span>
     <span class="s2">"conversations.inquiries"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inquiries/{conversations.inquiries}"</span><span class="p">,</span>
+    <span class="s2">"conversations.messages"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/messages/{conversations.messages}"</span><span class="p">,</span>
+    <span class="s2">"conversations.participants"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/participants/{conversations.participants}"</span><span class="p">,</span>
     <span class="s2">"conversations.source"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/sources/{conversations.source}"</span>
   <span class="p">},</span>
   <span class="s2">"conversations"</span><span class="o">:</span> <span class="p">[</span>
@@ -498,6 +517,12 @@
 
         <span class="p">],</span>
         <span class="s2">"inquiries"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"messages"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"participants"</span><span class="o">:</span> <span class="p">[</span>
 
         <span class="p">],</span>
         <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span>
@@ -528,7 +553,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#efc6ceb838ebinbox_write" role="tab" data-toggle="pill">
+        <a href="#d830622c3619inbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -549,13 +574,15 @@
   
   
     
-      <div class="tab-pane active" id="efc6ceb838ebinbox_write">
+      <div class="tab-pane active" id="d830622c3619inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
     <span class="s2">"conversations.assignee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/hosts/{conversations.assignee}"</span><span class="p">,</span>
     <span class="s2">"conversations.bookings"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{conversations.bookings}"</span><span class="p">,</span>
     <span class="s2">"conversations.inquiries"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inquiries/{conversations.inquiries}"</span><span class="p">,</span>
+    <span class="s2">"conversations.messages"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/messages/{conversations.messages}"</span><span class="p">,</span>
+    <span class="s2">"conversations.participants"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/participants/{conversations.participants}"</span><span class="p">,</span>
     <span class="s2">"conversations.source"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/sources/{conversations.source}"</span>
   <span class="p">},</span>
   <span class="s2">"conversations"</span><span class="o">:</span> <span class="p">[</span>
@@ -576,6 +603,12 @@
 
         <span class="p">],</span>
         <span class="s2">"inquiries"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"messages"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"participants"</span><span class="o">:</span> <span class="p">[</span>
 
         <span class="p">],</span>
         <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span>
@@ -601,7 +634,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#e34214d44dc5inbox_write" role="tab" data-toggle="pill">
+        <a href="#9bf10f3b01fcinbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -622,13 +655,15 @@
   
   
     
-      <div class="tab-pane active" id="e34214d44dc5inbox_write">
+      <div class="tab-pane active" id="9bf10f3b01fcinbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
     <span class="s2">"conversations.assignee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/hosts/{conversations.assignee}"</span><span class="p">,</span>
     <span class="s2">"conversations.bookings"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{conversations.bookings}"</span><span class="p">,</span>
     <span class="s2">"conversations.inquiries"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inquiries/{conversations.inquiries}"</span><span class="p">,</span>
+    <span class="s2">"conversations.messages"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/messages/{conversations.messages}"</span><span class="p">,</span>
+    <span class="s2">"conversations.participants"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/participants/{conversations.participants}"</span><span class="p">,</span>
     <span class="s2">"conversations.source"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/sources/{conversations.source}"</span>
   <span class="p">},</span>
   <span class="s2">"conversations"</span><span class="o">:</span> <span class="p">[</span>
@@ -649,6 +684,12 @@
           <span class="mi">15</span>
         <span class="p">],</span>
         <span class="s2">"inquiries"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"messages"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"participants"</span><span class="o">:</span> <span class="p">[</span>
 
         <span class="p">],</span>
         <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span>
@@ -674,7 +715,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#98db86a14c6einbox_write" role="tab" data-toggle="pill">
+        <a href="#ff912dbce979inbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -695,13 +736,15 @@
   
   
     
-      <div class="tab-pane active" id="98db86a14c6einbox_write">
+      <div class="tab-pane active" id="ff912dbce979inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
     <span class="s2">"conversations.assignee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/hosts/{conversations.assignee}"</span><span class="p">,</span>
     <span class="s2">"conversations.bookings"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{conversations.bookings}"</span><span class="p">,</span>
     <span class="s2">"conversations.inquiries"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inquiries/{conversations.inquiries}"</span><span class="p">,</span>
+    <span class="s2">"conversations.messages"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/messages/{conversations.messages}"</span><span class="p">,</span>
+    <span class="s2">"conversations.participants"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/participants/{conversations.participants}"</span><span class="p">,</span>
     <span class="s2">"conversations.source"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/sources/{conversations.source}"</span>
   <span class="p">},</span>
   <span class="s2">"conversations"</span><span class="o">:</span> <span class="p">[</span>
@@ -722,6 +765,12 @@
 
         <span class="p">],</span>
         <span class="s2">"inquiries"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"messages"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"participants"</span><span class="o">:</span> <span class="p">[</span>
 
         <span class="p">],</span>
         <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span>

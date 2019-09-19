@@ -93,6 +93,7 @@
           <a class="list-group-item" href="/reference/endpoints/living_rooms/">Living Rooms</a>
           <a class="list-group-item" href="/reference/endpoints/los_records/">LOS Records</a>
           <a class="list-group-item" href="/reference/endpoints/nightly_rate_maps/">Nightly Rate Maps</a>
+          <a class="list-group-item" href="/reference/endpoints/payment_gateways/">Payment Gateways</a>
           <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
           <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
           <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
@@ -143,6 +144,7 @@
   <li><a href="#fee-kinds">Fee kinds</a></li>
   <li><a href="#fee-rate-kinds">Fee rate kinds</a></li>
   <li><a href="#payment-kinds">Payment kinds</a></li>
+  <li><a href="#payment-gateway-names">Payment gateway names</a></li>
   <li><a href="#photo-kinds">Photo kinds</a></li>
   <li><a href="#rental-link-kinds">Rental Link kinds</a></li>
   <li><a href="#rates-types">Rates types</a></li>
@@ -642,6 +644,12 @@
 
 <h3 id="payment-kinds">Payment kinds</h3>
 
+<div class="callout callout-warning">
+  <h4>Warning</h4>
+  <p>Internal payment kinds are not allowed to be used outside of our PCI DSS compliant payment platform flow, for more details please refer to <a href="/guides/secure-payments-by-bookingsync/">secure payments by BookingSync</a>.</p>
+
+</div>
+
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -652,7 +660,13 @@
   <tbody>
     <tr>
       <td>bookingsync</td>
-      <td>Payment made through BookingSync.</td>
+      <td>
+<strong>Internal</strong> payment made through BookingSync.</td>
+    </tr>
+    <tr>
+      <td>instant-booking</td>
+      <td>
+<strong>Internal</strong> payment made during Instant Booking flow, through BookingSync.</td>
     </tr>
     <tr>
       <td>cash</td>
@@ -685,6 +699,35 @@
     <tr>
       <td>wiretransfer</td>
       <td>Payment made by Wire Transfer.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="payment-gateway-names">Payment gateway names</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>booking_pay</td>
+      <td>BookingPay gateway.</td>
+    </tr>
+    <tr>
+      <td>ogone</td>
+      <td>Ogone gateway.</td>
+    </tr>
+    <tr>
+      <td>stripe</td>
+      <td>Stripe gateway.</td>
+    </tr>
+    <tr>
+      <td>bogus</td>
+      <td>Bogus gateway.</td>
     </tr>
   </tbody>
 </table>
@@ -823,6 +866,12 @@
 
 <h3 id="rental-types">Rental types</h3>
 
+<div class="callout callout-warning">
+  <h4>New Rental types</h4>
+  <p>From 1st of October 2019 three new rental types will be available:</p>
+  <p><code>bed-and-breakfast</code>, <code>private-room-in-apartment</code>, <code>private-room-in-house</code></p>
+</div>
+
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -842,6 +891,10 @@
     <tr>
       <td>bungalow</td>
       <td>Bungalow</td>
+    </tr>
+    <tr>
+      <td>bed-and-breakfast</td>
+      <td>Bed &amp; breakfast</td>
     </tr>
     <tr>
       <td>cabin</td>
@@ -914,6 +967,14 @@
     <tr>
       <td>private-room</td>
       <td>Private room</td>
+    </tr>
+    <tr>
+      <td>private-room-in-apartment</td>
+      <td>Private room in an apartment</td>
+    </tr>
+    <tr>
+      <td>private-room-in-house</td>
+      <td>Private room in a house</td>
     </tr>
     <tr>
       <td>recreational-vehicle</td>
