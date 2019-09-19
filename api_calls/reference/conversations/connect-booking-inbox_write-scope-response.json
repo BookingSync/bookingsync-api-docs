@@ -4,7 +4,9 @@
     "conversations.assignee": "https://www.bookingsync.com/api/v3/hosts/{conversations.assignee}",
     "conversations.source": "https://www.bookingsync.com/api/v3/sources/{conversations.source}",
     "conversations.bookings": "https://www.bookingsync.com/api/v3/bookings/{conversations.bookings}",
-    "conversations.inquiries": "https://www.bookingsync.com/api/v3/inquiries/{conversations.inquiries}"
+    "conversations.inquiries": "https://www.bookingsync.com/api/v3/inquiries/{conversations.inquiries}",
+    "conversations.messages": "https://www.bookingsync.com/api/v3/inbox/messages/{conversations.messages}",
+    "conversations.participants": "https://www.bookingsync.com/api/v3/inbox/participants/{conversations.participants}"
   },
   "conversations": [
     {
@@ -15,7 +17,9 @@
           15
         ],
         "inquiries": [],
-        "source": null
+        "source": null,
+        "messages": [],
+        "participants": []
       },
       "closed_at": null,
       "created_at": "2018-12-20T14:25:57Z",
