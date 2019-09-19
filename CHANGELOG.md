@@ -1,7 +1,18 @@
 # Change Log
 
-## [3.16.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.16.0) (2019-05-23)
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.15.0...3.16.0)
+## [3.17.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.17.0) (2019-09-19)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.16.0...3.17.0)
+
+**Merged pull requests:**
+
+- fix create url for rental\_contacts [\#310](https://github.com/BookingSync/bookingsync-api-docs/pull/310) ([radekzawada](https://github.com/radekzawada))
+- Add Payment Gateway docs, improve Secure Payments and enums [\#309](https://github.com/BookingSync/bookingsync-api-docs/pull/309) ([adamgrad](https://github.com/adamgrad))
+- Add new rental types [\#308](https://github.com/BookingSync/bookingsync-api-docs/pull/308) ([adamgrad](https://github.com/adamgrad))
+- docs new links for inbox [\#304](https://github.com/BookingSync/bookingsync-api-docs/pull/304) ([hauska7](https://github.com/hauska7))
+- update ffi [\#291](https://github.com/BookingSync/bookingsync-api-docs/pull/291) ([Azdaroth](https://github.com/Azdaroth))
+
+## [v3.16.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.16.0) (2019-05-23)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.15.0...v3.16.0)
 
 **Merged pull requests:**
 
