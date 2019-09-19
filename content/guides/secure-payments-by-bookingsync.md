@@ -82,7 +82,10 @@ Here's an example of the expected payload:
   "zip": "12312",
   "city": "San Francisco",
   "state": "California",
-  "country_code": "US"
+  "country_code": "US",
+  "gateway_id": "123",
+  "gateway_name": "payment_gateway_name",
+  "gateway_type": "PaymentGateway"
 }
 ~~~
 

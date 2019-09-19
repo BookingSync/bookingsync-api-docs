@@ -1,0 +1,28 @@
+{
+  "links": {
+    "hosts.user": "http://test.host/api/v3/users/{hosts.user}",
+    "hosts.source": "http://test.host/api/v3/sources/{hosts.source}",
+    "hosts.account": "http://test.host/api/v3/accounts/{hosts.account}",
+    "hosts.participants": "http://test.host/api/v3/inbox/participants/{hosts.participants}"
+  },
+  "hosts": [
+    {
+      "links": {
+        "account": 1,
+        "participants": [],
+        "source": null,
+        "user": 2
+      },
+      "id": 2,
+      "firstname": "Jan",
+      "lastname": "Kowalski",
+      "email": "host1@example.com",
+      "created_at": "2018-12-26T20:03:54Z",
+      "updated_at": "2018-12-26T20:03:54Z",
+      "forget_me_at": null,
+      "processing_restricted_at": null
+    }
+  ],
+  "meta": {
+  }
+}

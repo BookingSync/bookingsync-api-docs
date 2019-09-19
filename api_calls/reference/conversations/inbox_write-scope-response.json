@@ -1,0 +1,35 @@
+{
+  "links": {
+    "conversations.account": "https://www.bookingsync.com/api/v3/accounts/{conversations.account}",
+    "conversations.assignee": "https://www.bookingsync.com/api/v3/hosts/{conversations.assignee}",
+    "conversations.source": "https://www.bookingsync.com/api/v3/sources/{conversations.source}",
+    "conversations.bookings": "https://www.bookingsync.com/api/v3/bookings/{conversations.bookings}",
+    "conversations.inquiries": "https://www.bookingsync.com/api/v3/inquiries/{conversations.inquiries}",
+    "conversations.messages": "https://www.bookingsync.com/api/v3/inbox/messages/{conversations.messages}",
+    "conversations.participants": "https://www.bookingsync.com/api/v3/inbox/participants/{conversations.participants}"
+  },
+  "conversations": [
+    {
+      "links": {
+        "account": 1,
+        "assignee": null,
+        "bookings": [],
+        "inquiries": [],
+        "source": null,
+        "messages": [],
+        "participants": []
+      },
+      "closed_at": null,
+      "created_at": "2018-12-20T14:25:57Z",
+      "deadline_response_at": null,
+      "default_channel": "channelname",
+      "id": 5,
+      "last_message_at": "2018-12-20T14:25:57Z",
+      "marked_as_spam_at": null,
+      "subject": "Subject.",
+      "updated_at": "2018-12-20T14:25:57Z"
+    }
+  ],
+  "meta": {
+  }
+}

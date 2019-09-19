@@ -1,7 +1,58 @@
 # Change Log
 
-## [3.11.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.11.0) (2018-01-26)
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v.3.10.0...3.11.0)
+## [3.16.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.16.0) (2019-05-23)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.15.0...3.16.0)
+
+**Merged pull requests:**
+
+- Add individual percentage per adult [\#307](https://github.com/BookingSync/bookingsync-api-docs/pull/307) ([adamgrad](https://github.com/adamgrad))
+- add some extra info about the Rental's min and max price [\#306](https://github.com/BookingSync/bookingsync-api-docs/pull/306) ([thilonel](https://github.com/thilonel))
+- Add bookings tags post and patch [\#305](https://github.com/BookingSync/bookingsync-api-docs/pull/305) ([adamgrad](https://github.com/adamgrad))
+
+## [v3.15.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.15.0) (2019-04-14)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.14.0...v3.15.0)
+
+**Merged pull requests:**
+
+- change link to Changelog [\#303](https://github.com/BookingSync/bookingsync-api-docs/pull/303) ([Azdaroth](https://github.com/Azdaroth))
+- document missing scopes [\#302](https://github.com/BookingSync/bookingsync-api-docs/pull/302) ([Azdaroth](https://github.com/Azdaroth))
+- add rental contact [\#301](https://github.com/BookingSync/bookingsync-api-docs/pull/301) ([hauska7](https://github.com/hauska7))
+- security updates [\#299](https://github.com/BookingSync/bookingsync-api-docs/pull/299) ([Azdaroth](https://github.com/Azdaroth))
+- update clients samples [\#292](https://github.com/BookingSync/bookingsync-api-docs/pull/292) ([thilonel](https://github.com/thilonel))
+
+## [v3.14.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.14.0) (2019-02-06)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.13.0...v3.14.0)
+
+**Merged pull requests:**
+
+- Fix rentals contents overrides translatable attributes docs [\#298](https://github.com/BookingSync/bookingsync-api-docs/pull/298) ([adamgrad](https://github.com/adamgrad))
+
+## [v3.13.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.13.0) (2019-01-23)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.12.0...v3.13.0)
+
+**Merged pull requests:**
+
+- Add conversation docs for connect and disconnect bookings [\#297](https://github.com/BookingSync/bookingsync-api-docs/pull/297) ([adamgrad](https://github.com/adamgrad))
+
+## [v3.12.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.12.0) (2018-12-27)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.11.0...v3.12.0)
+
+**Merged pull requests:**
+
+- Add hosts endpoint docs [\#296](https://github.com/BookingSync/bookingsync-api-docs/pull/296) ([adamgrad](https://github.com/adamgrad))
+- Add inbox Attachment docs [\#295](https://github.com/BookingSync/bookingsync-api-docs/pull/295) ([adamgrad](https://github.com/adamgrad))
+- Add Rental's residency category docs [\#294](https://github.com/BookingSync/bookingsync-api-docs/pull/294) ([adamgrad](https://github.com/adamgrad))
+- Add booking's external reference doc [\#293](https://github.com/BookingSync/bookingsync-api-docs/pull/293) ([adamgrad](https://github.com/adamgrad))
+- Fixed typo [\#290](https://github.com/BookingSync/bookingsync-api-docs/pull/290) ([samvaughton](https://github.com/samvaughton))
+- update vulnerable dependencies [\#289](https://github.com/BookingSync/bookingsync-api-docs/pull/289) ([Azdaroth](https://github.com/Azdaroth))
+- CORE-240 remove comment about bookings create validation [\#288](https://github.com/BookingSync/bookingsync-api-docs/pull/288) ([thilonel](https://github.com/thilonel))
+- \[MERGE AFTER AUGUST\] Remove notes from periods and seasons pages [\#287](https://github.com/BookingSync/bookingsync-api-docs/pull/287) ([adamgrad](https://github.com/adamgrad))
+- Understanding LOS Records guide [\#286](https://github.com/BookingSync/bookingsync-api-docs/pull/286) ([thilonel](https://github.com/thilonel))
+- update sprockets [\#285](https://github.com/BookingSync/bookingsync-api-docs/pull/285) ([Azdaroth](https://github.com/Azdaroth))
+- add deprecation note about seasons and periods [\#284](https://github.com/BookingSync/bookingsync-api-docs/pull/284) ([Azdaroth](https://github.com/Azdaroth))
+
+## [v3.11.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.11.0) (2018-01-26)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v.3.10.0...v3.11.0)
 
 **Merged pull requests:**
 

@@ -1,0 +1,25 @@
+{
+  "links": {
+    "participants.conversation": "https://www.bookingsync.com/api/v3/inbox/conversations/{participants.conversation}",
+    "participants.client": "https://www.bookingsync.com/api/v3/clients/{participants.member.id}",
+    "participants.host": "https://www.bookingsync.com/api/v3/hosts/{participants.member.id}"
+  },
+  "participants": [
+    {
+      "links": {
+      "conversation": 3,
+        "member": {
+          "id": 5,
+          "type": "Host"
+        }
+      },
+      "created_at": "2018-12-21T10:42:17Z",
+      "id": 10,
+      "last_message_sent_at": "2018-12-15T10:42:17Z",
+      "read_at": null,
+      "updated_at": "2018-12-21T10:42:17Z"
+    }
+  ],
+  "meta": {
+  }
+}

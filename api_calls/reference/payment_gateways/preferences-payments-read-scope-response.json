@@ -1,0 +1,40 @@
+{
+  "links": {
+    "payment_gateways.account": "https://www.bookingsync.com/api/v3/accounts/{payment_gateways.account}"
+  },
+  "payment_gateways": [
+    {
+      "links": {
+        "account": 1
+      },
+      "id": 1,
+      "name": "TestingGatewayName",
+      "test": true,
+      "gateway_name": "gateway_name",
+      "credentials": {
+        "login": "login"
+      },
+      "supported_cardtypes": [
+        "visa",
+        "master"
+      ],
+      "supported_currencies": [
+        "EUR",
+        "THB"
+      ],
+      "tokenize_credit_card_details": true,
+      "host_booking_pay_wallet_id": null,
+      "created_at": "2019-08-15T14:27:48Z",
+      "updated_at": "2019-08-21T16:07:47Z"
+    }
+  ],
+  "meta": {
+    "Link": {
+      "first": "https://www.bookingsync.com/api/v3/payment_gateways/1.json?bookings%5B%5D%5Bcanceled_at%5D=&page=1",
+      "last": "https://www.bookingsync.com/api/v3/payment_gateways/1.json?bookings%5B%5D%5Bcanceled_at%5D=&page=1"
+    },
+    "X-Total-Pages": "1",
+    "X-Total-Count": "1",
+    "X-Per-Page": "100"
+  }
+}

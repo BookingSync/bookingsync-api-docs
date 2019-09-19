@@ -1,0 +1,9 @@
+{
+  "conversations": [
+    {
+      "subject": "Subject.",
+      "default_channel": "channelname",
+      "last_message_at": "2018-12-20T14:25:57Z"
+    }
+  ]
+}

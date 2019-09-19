@@ -136,27 +136,35 @@ other                        | Any other type of fee
 
 ## Fee rate kinds
 
-Name                         | Description
------------------------------|------------
-fixed                        | Fixed price
-fixed_per_person             | Fixed price per person
-fixed_per_adult              | Fixed price per adult
-fixed_per_child              | Fixed price per child
-fixed_per_night              | Fixed price per night
-fixed_per_person_per_night   | Fixed price per person per night
-fixed_per_adult_per_night    | Fixed price per adult per night
-fixed_per_child_per_night    | Fixed price per child per night
-percentage                   | Percentage of the rental price
-percentage_per_person        | Percentage of the rental price per person
-percentage_per_adult         | Percentage of the rental price per adult
-percentage_per_child         | Percentage of the rental price per child
+Name                            | Description
+--------------------------------|------------
+fixed                           | Fixed price
+fixed_per_person                | Fixed price per person
+fixed_per_adult                 | Fixed price per adult
+fixed_per_child                 | Fixed price per child
+fixed_per_night                 | Fixed price per night
+fixed_per_person_per_night      | Fixed price per person per night
+fixed_per_adult_per_night       | Fixed price per adult per night
+fixed_per_child_per_night       | Fixed price per child per night
+percentage                      | Percentage of the rental price
+percentage_per_person           | Percentage of the rental price per person
+percentage_per_adult            | Percentage of the rental price per adult
+percentage_per_child            | Percentage of the rental price per child
+individual_percentage_per_adult | Percentage of the rental price per adult per night
 {: class="table table-bordered"}
 
 ## Payment kinds
 
+<div class="callout callout-warning" markdown="1">
+  <h4>Warning</h4>
+  Internal payment kinds are not allowed to be used outside of our PCI DSS compliant payment platform flow, for more details please refer to [secure payments by BookingSync](/guides/secure-payments-by-bookingsync/).
+  
+</div>
+
 Name             | Description
 -----------------|------------
-bookingsync      | Payment made through BookingSync.
+bookingsync      | **Internal** payment made through BookingSync.
+instant-booking  | **Internal** payment made during Instant Booking flow, through BookingSync.
 cash             | Payment made by Cash.
 cheque           | Payment made by Cheque.
 credits          | Payment made using Credits. Credits are money you might have kept from your guest after a cancellation.
@@ -165,6 +173,16 @@ online           | Payment made Online, outside of BookingSync.
 paypal           | Payment made with PayPal, outside of BookingSync.
 travel-cheque    | Payment made by Travel Cheque.
 wiretransfer     | Payment made by Wire Transfer.
+{: class="table table-bordered"}
+
+## Payment gateway names
+
+Name             | Description
+-----------------|------------
+booking_pay      | BookingPay gateway.
+ogone            | Ogone gateway.
+stripe           | Stripe gateway.
+bogus            | Bogus gateway.
 {: class="table table-bordered"}
 
 ## Photo kinds
@@ -213,36 +231,111 @@ weekend_night                  | Rule applied for weekend night.
 
 ## Rental types
 
+<div class="callout callout-warning" markdown="1">
+  <h4>New Rental types</h4>
+  <p>From 1st of October 2019 three new rental types will be available:</p>
+  `bed-and-breakfast`, `private-room-in-apartment`, `private-room-in-house`
+</div>
+
 Name                 | Description
 ---------------------|------------
-apartment            | Apartment
-boat                 | Boat
-bungalow             | Bungalow
-cabin                | Cabin
-castle               | Castle
-cave                 | Cave
-chalet               | Chalet
-condominium          | Condominium
-cottage              | Cottage
-dormitory            | Dormitory
-earth-house          | Earth House
-farmhouse            | Farmhouse
-holiday-home         | Holiday Home
-house                | House
-hut                  | Hut
-igloo                | Igloo
-island               | Island
-lighthouse           | Lighthouse
-loft                 | Loft
-plane                | Plane
-private-room         | Private room
-recreational-vehicle | Camper/RV
-studio               | Studio
-tent                 | Tent
-tipi                 | Tipi
-townhouse            | Townhouse
-train                | Train
-treehouse            | Treehouse
-villa                | Villa
-yurt                 | Yurt
+apartment                   | Apartment
+boat                        | Boat
+bungalow                    | Bungalow
+bed-and-breakfast           | Bed & breakfast
+cabin                       | Cabin
+castle                      | Castle
+cave                        | Cave
+chalet                      | Chalet
+condominium                 | Condominium
+cottage                     | Cottage
+dormitory                   | Dormitory
+earth-house                 | Earth House
+farmhouse                   | Farmhouse
+holiday-home                | Holiday Home
+house                       | House
+hut                         | Hut
+igloo                       | Igloo
+island                      | Island
+lighthouse                  | Lighthouse
+loft                        | Loft
+plane                       | Plane
+private-room                | Private room
+private-room-in-apartment   | Private room in an apartment
+private-room-in-house       | Private room in a house
+recreational-vehicle        | Camper/RV
+studio                      | Studio
+tent                        | Tent
+tipi                        | Tipi
+townhouse                   | Townhouse
+train                       | Train
+treehouse                   | Treehouse
+villa                       | Villa
+yurt                        | Yurt
+{: class="table table-bordered"}
+
+## Rental residency categories
+
+Name                | Description
+--------------------|------------
+primary_residence   | Primary residence.
+secondary_residence | Secondary residence.
+non_residential     | Non residential.
+{: class="table table-bordered"}
+
+## Inbox Message Channels
+
+Name             | Description
+-----------------|------------
+airbnb           | Airbnb
+homeaway         | HomeAway
+email            | Email
+{: class="table table-bordered"}
+
+## Inbox Message Origins
+
+Name              | Origin
+------------------|------------
+bookingsync_inbox | BookingSync Inbox
+airbnb_message    | Airbnb message
+airbnb_email      | Airbnb email
+booking-com       | Booking.com
+homeaway          | HomeAway
+tripadvisor       | TripAdvisor
+email             | Email
+messenger         | Messenger
+whatsapp          | WhatsApp
+inquiry           | Inquiry
+sms               | SMS
+{: class="table table-bordered"}
+
+## Inbox Message visibilities
+
+Name             | Description
+-----------------|------------
+internal         | Internal visibility
+external         | External visibility
+{: class="table table-bordered"}
+
+## Rental Contact kinds
+
+Name             | Description
+-----------------|------------
+owner            | Contact is an owner
+manager          | Contact is a manager
+{: class="table table-bordered"}
+
+## Rental Contact roles
+
+Name             | Description
+-----------------|------------
+general          | For general purposes
+contract         | For contract
+reservations     | For reservations information
+invoices         | Regarding invoice
+availability     | Regarding availability
+site_content     | Regarding site content
+parity           | For parity information
+requests         | Handling requests
+central_reservations | Regarding central reservations
 {: class="table table-bordered"}
