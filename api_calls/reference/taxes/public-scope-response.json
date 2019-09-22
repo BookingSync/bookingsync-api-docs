@@ -8,6 +8,7 @@
         "account": 1
       },
       "id": 4,
+      "kind": "other",
       "percentage": "10.0",
       "created_at": "CREATED_AT",
       "updated_at": "UPDATED_AT",

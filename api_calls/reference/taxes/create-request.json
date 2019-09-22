@@ -2,6 +2,7 @@
   "taxes": [
     {
       "name_en": "Tax",
+      "kind": "other",
       "start_date": "START_DATE",
       "end_date": "END_DATE",
       "notes": "Private notes",

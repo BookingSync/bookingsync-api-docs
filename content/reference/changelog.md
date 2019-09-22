@@ -1,5 +1,10 @@
 # Changelog
 
+## 2018-02-01
+
+  * [api improvement] Add `kind` on `taxes` endpoint.
+  * [api improvement] Extend list of `kinds` on `fees` enums.
+
 ## 2017-11-08
 
   * [doc update] Add `bookings_taxes percentage` to `bookings` endpoint
