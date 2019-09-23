@@ -156,6 +156,9 @@
   <li>city - <strong>required</strong> - city for the billing info</li>
   <li>state - state for the billing info</li>
   <li>country_code - <strong>required</strong> - country code for the billing info</li>
+  <li>gateway_id - <strong>required</strong> - id of used payment gateway</li>
+  <li>gateway_name - <strong>required</strong> - name of used payment gateway</li>
+  <li>gateway_type - <strong>required</strong> - type of used payment gateway</li>
 </ul>
 
 <p>Here’s an example of the expected payload:</p>
@@ -176,15 +179,57 @@
   <span class="nt">"gateway_type"</span><span class="p">:</span> <span class="s2">"PaymentGateway"</span>
 <span class="p">}</span></code></pre>
 
-<p>There are 2 possible responses:</p>
+<p>There are 3 possible responses:</p>
 
 <ol>
   <li>
     <p>Successful - with status code <code>200</code> and no response body - it means that the payment has been successfully authorized and has been enqueued to be captured asynchronously. Once the credit card payment is captured, it will be confirmed on the BookingSync side - the payment will be updated with <code>transaction_id</code> and <code>paid_at</code> values and the related booking will be confirmed - marked as booked.</p>
   </li>
   <li>
-    <p>Failure - with status code <code>422</code> and validation errors inside response body. Here’s an example of possible validation errors:</p>
+    <p>Partial Success - with status code <code>202</code> and response body dependent on Payment Gateway. This status means that payment requires authentication.</p>
   </li>
+</ol>
+
+<p>BookingPay Gateway</p>
+
+<pre><code class="language-json"><span class="p">{</span>
+  <span class="nt">"enrollmentId"</span><span class="p">:</span> <span class="s2">"sample_enrollment_id_123"</span><span class="p">,</span>
+  <span class="nt">"acsURL"</span><span class="p">:</span> <span class="s2">"https://test-threedsecure.centralpay.net/acs"</span><span class="p">,</span>
+  <span class="nt">"paReq"</span><span class="p">:</span> <span class="s2">"paReq"</span><span class="p">,</span>
+  <span class="nt">"gateway_name"</span><span class="p">:</span> <span class="s2">"booking_pay"</span><span class="p">,</span>
+  <span class="nt">"uuid"</span><span class="p">:</span> <span class="s2">"lapw8u3k-9583-38l3-m5d9-51c0af5df8cb"</span><span class="p">,</span>
+  <span class="nt">"order_id"</span><span class="p">:</span> <span class="s2">"BS-123"</span>
+<span class="p">}</span></code></pre>
+
+<p>Ogone Gateway</p>
+
+<pre><code class="language-json"><span class="p">{</span>
+  <span class="nt">"gateway_name"</span><span class="p">:</span> <span class="s2">"ogone"</span><span class="p">,</span>
+  <span class="nt">"HTML_ANSWER"</span><span class="p">:</span> <span class="s2">"html_answer_that_is_Base64_encoded_form"</span><span class="p">,</span>
+  <span class="nt">"uuid"</span><span class="p">:</span> <span class="s2">"lapw8u3k-9583-38l3-m5d9-51c0af5df8cb"</span>
+<span class="p">}</span></code></pre>
+
+<p>Stripe Gateway</p>
+
+<pre><code class="language-json"><span class="p">{</span>
+  <span class="nt">"gateway_name"</span><span class="p">:</span> <span class="s2">"stripe"</span><span class="p">,</span>
+  <span class="nt">"uuid"</span><span class="p">:</span> <span class="s2">"0fc0476e-1267-49e7-a1f4-43c0df5dc8fd"</span><span class="p">,</span>
+  <span class="nt">"next_action"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">"redirect_to_url"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">"return_url"</span><span class="p">:</span> <span class="s2">"https://bookingsync.com?order_id=BS-123-1562441767"</span><span class="p">,</span>
+      <span class="nt">"url"</span><span class="p">:</span> <span class="s2">"https://hooks.stripe.com/..."</span>
+    <span class="p">},</span>
+    <span class="nt">"type"</span><span class="p">:</span> <span class="s2">"redirect_to_url"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+
+<div class="callout callout-info">
+  <h4>Successful authentication after 202 status</h4>
+  <p>After successful authentication a traveller will be redirected to BookingSync success page. There is no possibility to customize this redirection.</p>
+</div>
+
+<ol start="3">
+  <li>Failure - with status code <code>422</code> and validation errors inside response body. Here’s an example of possible validation errors:</li>
 </ol>
 
 <pre><code class="language-json"><span class="p">{</span>
