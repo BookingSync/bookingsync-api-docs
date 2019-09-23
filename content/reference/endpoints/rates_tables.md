@@ -16,6 +16,7 @@ Name             | Type    | Read/Write | Description
 id               | Integer | Read       | Rates Table's id.
 -----------------|---------|-------------------------
 name             | String  | Read       | Rates Table's name.
+public_notes     | Text    | Read       | Rates Table's public notes.
 shared           | Boolean | Read       | Rates Table's shared status.
 -----------------|---------|-------------------------
 created_at       | [Time](/reference/enums#formats) | Read       | Rate's create time.
@@ -28,6 +29,7 @@ Name             | Type    | Read/Write | Description
 id               | Integer | Read       | Rates Table's id.
 -----------------|---------|-------------------------
 name             | String  | Read/Write | **Required**. Rates Table's name. (50 characters max)
+public_notes     | Text    | Read       | Rates Table's public notes.
 shared           | Boolean | Read       | Rates Table's shared status. (Rates Table is made shared when creating or updating through api)
 -----------------|---------|-------------------------
 created_at       | [Time](/reference/enums#formats) | Read       | Rate's create time.
