@@ -117,7 +117,7 @@ Ogone Gateway
 ~~~json
 {
   "gateway_name": "ogone",
-  "HTML_ANSWER": "html_answer_that_is_encoded_form",
+  "HTML_ANSWER": "html_answer_that_is_Base64_encoded_form",
   "uuid": "lapw8u3k-9583-38l3-m5d9-51c0af5df8cb"
 }
 ~~~
@@ -140,7 +140,7 @@ Stripe Gateway
 
 <div class="callout callout-info">
   <h4>Successful authentication after 202 status</h4>
-  <p>After successful authentication user will be redirected to BookingSync success page. There is no possibility to customize this redirection.</p>
+  <p>After successful authentication a traveller will be redirected to BookingSync success page. There is no possibility to customize this redirection.</p>
 </div>
 
 {:start="3"}
