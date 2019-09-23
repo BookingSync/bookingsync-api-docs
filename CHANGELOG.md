@@ -1,7 +1,14 @@
 # Change Log
 
-## [3.17.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.17.0) (2019-09-19)
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.16.0...3.17.0)
+## [3.18.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.18.0) (2019-09-23)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v.3.17.0...3.18.0)
+
+**Merged pull requests:**
+
+- Add 202 status description to secure payments guide [\#311](https://github.com/BookingSync/bookingsync-api-docs/pull/311) ([adamgrad](https://github.com/adamgrad))
+
+## [v.3.17.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v.3.17.0) (2019-09-19)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.16.0...v.3.17.0)
 
 **Merged pull requests:**
 
