@@ -68,6 +68,9 @@ To execute the payment you need to provide the following attributes:
 * city - **required** - city for the billing info
 * state - state for the billing info
 * country_code - **required** - country code for the billing info
+* gateway_id - **required** - id of used payment gateway
+* gateway_name - **required** - name of used payment gateway
+* gateway_type - **required** - type of used payment gateway
 
 Here's an example of the expected payload:
 
@@ -90,11 +93,58 @@ Here's an example of the expected payload:
 ~~~
 
 
-There are 2 possible responses:
+There are 3 possible responses:
 
 1. Successful - with status code `200` and no response body - it means that the payment has been successfully authorized and has been enqueued to be captured asynchronously. Once the credit card payment is captured, it will be confirmed on the BookingSync side - the payment will be updated with `transaction_id` and `paid_at` values and the related booking will be confirmed - marked as booked.
 
-2. Failure - with status code `422` and validation errors inside response body. Here's an example of possible validation errors:
+2. Partial Success - with status code `202` and response body dependent on Payment Gateway. This status means that payment requires authentication.
+
+BookingPay Gateway
+
+~~~json
+{
+  "enrollmentId": "sample_enrollment_id_123",
+  "acsURL": "https://test-threedsecure.centralpay.net/acs",
+  "paReq": "paReq",
+  "gateway_name": "booking_pay",
+  "uuid": "lapw8u3k-9583-38l3-m5d9-51c0af5df8cb",
+  "order_id": "BS-123"
+}
+~~~
+
+Ogone Gateway
+
+~~~json
+{
+  "gateway_name": "ogone",
+  "HTML_ANSWER": "html_answer_that_is_Base64_encoded_form",
+  "uuid": "lapw8u3k-9583-38l3-m5d9-51c0af5df8cb"
+}
+~~~
+
+Stripe Gateway
+
+~~~json
+{
+  "gateway_name": "stripe",
+  "uuid": "0fc0476e-1267-49e7-a1f4-43c0df5dc8fd",
+  "next_action": {
+    "redirect_to_url": {
+      "return_url": "https://bookingsync.com?order_id=BS-123-1562441767",
+      "url": "https://hooks.stripe.com/..."
+    },
+    "type": "redirect_to_url"
+  }
+}
+~~~
+
+<div class="callout callout-info">
+  <h4>Successful authentication after 202 status</h4>
+  <p>After successful authentication a traveller will be redirected to BookingSync success page. There is no possibility to customize this redirection.</p>
+</div>
+
+{:start="3"}
+3. Failure - with status code `422` and validation errors inside response body. Here's an example of possible validation errors:
 
 ~~~json
 {
