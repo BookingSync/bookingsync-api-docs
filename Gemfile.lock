@@ -86,7 +86,7 @@ GEM
     nanoc-sprockets3 (1.0.5)
       sprockets (~> 3.2, >= 3.0.0)
     nio4r (1.2.1)
-    nokogiri (1.10.1)
+    nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     octokit (4.8.0)
       sawyer (~> 0.8.0, >= 0.5.3)
