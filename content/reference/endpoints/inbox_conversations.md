@@ -33,9 +33,9 @@ id                   | Integer | Read       | Conversation's id.
 ---------------------|---------|------------|------------
 default_channel      | String  | Read/Write | Conversation's default channel.
 subject              | String  | Read/Write | Conversation's subject.
-closed               | Boolean | Write      | Conversation's subject.
-source_id            | Integer | Write      | Conversation's subject.
-assignee_id          | Integer | Write      | Conversation's subject.
+closed               | Boolean | Write      | Conversation is closed if set to true.
+source_id            | Integer | Write      | Conversation's source.
+assignee_id          | Integer | Write      | Assignee id related to the Host.
 ---------------------|---------|------------|------------
 created_at           | [Time](/reference/enums#formats) | Read       | Conversation's create time.
 updated_at           | [Time](/reference/enums#formats) | Read       | Conversation's update time.
