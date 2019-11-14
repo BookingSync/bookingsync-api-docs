@@ -85,7 +85,7 @@ POST /rates_tables/:rates_table_id/rates_rules
 Returns an updated rates rule identified by ID.
 
 ~~~
-PUT /rates_rules/:rates_table_id
+PUT /rates_rules/:rates_rule_id
 ~~~
 
 <%= render 'json_response', endpoint: "rates_rules", request: "update",
@@ -98,5 +98,5 @@ Required OAuth scope: `:rates_write`
 Returns empty response with '204 No Content' status code on success.
 
 ~~~~~~
-DELETE /rates_rules/:rates_table_id
+DELETE /rates_rules/:rates_rule_id
 ~~~~~~
