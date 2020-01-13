@@ -32,16 +32,6 @@ created_at           | [Time](/reference/enums#formats) | Read       | LOS recor
   </div>
 </div>
 
-## List LOS records
-
-List all LOS records for (a) given account(s).
-
-~~~
-GET /los_records
-~~~
-
-<%= render 'json_response', endpoint: "los_records", scopes: %w(public) %>
-
 ## Search LOS records
 
 Search parameters allow to filter LOS records by specified fields.
@@ -51,6 +41,8 @@ Example:
 ~~~
 GET /los_records?rental_id=1&kinds=rental_price_before_special_offers,rental_price&exchange_currency_to=EUR
 ~~~
+
+<%= render 'json_response', endpoint: "los_records", scopes: %w(public) %>
 
 ### Search Parameters
 
