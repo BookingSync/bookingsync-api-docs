@@ -58,6 +58,6 @@ Name                 | Type    | Default | Description
 ---------------------|---------|---------|-------------
 exchange_to_currency | String  |         | Code of the currency in which the rates are to be returned.<br>The accepted codes can be found in the [enums section](/reference/enums#currencies).
 kinds                | String  |         | List of comma separated kinds. Returns only LOS records for this kind(s).<br>For possible values visit the [enums section](/reference/enums#los-kinds).
-rental_id            | String  |         | List of comma separated IDs. Returns only LOS records for this rental(s)
+rental_id            | String  |         | **Required** list of comma separated IDs. Returns only LOS records for this rental(s)
 updated_since        | [Time](/reference/enums#formats) |         | Only LOS records updated after given time.
 {: class="table table-bordered"}
