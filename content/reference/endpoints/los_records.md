@@ -32,16 +32,6 @@ created_at           | [Time](/reference/enums#formats) | Read       | LOS recor
   </div>
 </div>
 
-## List LOS records
-
-List all LOS records for (a) given account(s).
-
-~~~
-GET /los_records
-~~~
-
-<%= render 'json_response', endpoint: "los_records", scopes: %w(public) %>
-
 ## Search LOS records
 
 Search parameters allow to filter LOS records by specified fields.
@@ -52,12 +42,14 @@ Example:
 GET /los_records?rental_id=1&kinds=rental_price_before_special_offers,rental_price&exchange_currency_to=EUR
 ~~~
 
+<%= render 'json_response', endpoint: "los_records", scopes: %w(public) %>
+
 ### Search Parameters
 
 Name                 | Type    | Default | Description
 ---------------------|---------|---------|-------------
 exchange_to_currency | String  |         | Code of the currency in which the rates are to be returned.<br>The accepted codes can be found in the [enums section](/reference/enums#currencies).
 kinds                | String  |         | List of comma separated kinds. Returns only LOS records for this kind(s).<br>For possible values visit the [enums section](/reference/enums#los-kinds).
-rental_id            | String  |         | List of comma separated IDs. Returns only LOS records for this rental(s)
+rental_id            | String  |         | **Required** list of comma separated IDs. Returns only LOS records for this rental(s)
 updated_since        | [Time](/reference/enums#formats) |         | Only LOS records updated after given time.
 {: class="table table-bordered"}
