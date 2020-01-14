@@ -133,7 +133,6 @@
           <h2 id="los-records">LOS Records</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#list-los-records">List LOS records</a></li>
   <li><a href="#search-los-records">Search LOS records</a></li>
 </ol>
 
@@ -227,18 +226,20 @@
   </div>
 </div>
 
-<h3 id="list-los-records">List LOS records</h3>
+<h3 id="search-los-records">Search LOS records</h3>
 
-<p>List all LOS records for (a) given account(s).</p>
+<p>Search parameters allow to filter LOS records by specified fields.</p>
 
-<pre><code>GET /los_records
+<p>Example:</p>
+
+<pre><code>GET /los_records?rental_id=1&amp;kinds=rental_price_before_special_offers,rental_price&amp;exchange_currency_to=EUR
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#919100a6f54bpublic" role="tab" data-toggle="pill">
+        <a href="#7bfcbf37f7bfpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -250,7 +251,7 @@
   
   
     
-      <div class="tab-pane active" id="919100a6f54bpublic">
+      <div class="tab-pane active" id="7bfcbf37f7bfpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"los_records.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{los_records.rental}"</span>
@@ -311,15 +312,6 @@
   
 </div>
 
-<h3 id="search-los-records">Search LOS records</h3>
-
-<p>Search parameters allow to filter LOS records by specified fields.</p>
-
-<p>Example:</p>
-
-<pre><code>GET /los_records?rental_id=1&amp;kinds=rental_price_before_special_offers,rental_price&amp;exchange_currency_to=EUR
-</code></pre>
-
 <h4 id="search-parameters">Search Parameters</h4>
 
 <table class="table table-bordered">
@@ -348,7 +340,8 @@
       <td>rental_id</td>
       <td>String</td>
       <td> </td>
-      <td>List of comma separated IDs. Returns only LOS records for this rental(s)</td>
+      <td>
+<strong>Required</strong> list of comma separated IDs. Returns only LOS records for this rental(s)</td>
     </tr>
     <tr>
       <td>updated_since</td>
