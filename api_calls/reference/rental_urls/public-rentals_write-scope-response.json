@@ -1,0 +1,33 @@
+{
+  "links": {
+    "rental_urls.rental": "https://www.bookingsync.com/api/v3/rentals/{rental_urls.rental}",
+    "rental_urls.account": "https://www.bookingsync.com/api/v3/accounts/{rental_urls.account}"
+  },
+  "rental_urls": [
+    {
+      "links": {
+        "account": 1,
+        "rental": 2
+      },
+      "id": "090fc7dd-f677-4a6f-b6df-8035f00b4108",
+      "label": "Example OTA",
+      "url": "https://ota.example.com/rentals/333",
+      "lock": {
+        "record": "doorkeeper/application-2",
+        "attributes": {}
+      },
+      "canceled_at": null,
+      "created_at": "2020-02-06T03:49:53Z",
+      "updated_at": "2020-02-06T03:49:53Z"
+    }
+  ],
+  "meta": {
+    "Link": {
+      "first": "https://www.bookingsync.com/api/v3/rental_urls?page=1",
+      "last": "https://www.bookingsync.com/api/v3/rental_urls?page=1"
+    },
+    "X-Total-Pages": "1",
+    "X-Total-Count": "1",
+    "X-Per-Page": "100"
+  }
+}
