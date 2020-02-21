@@ -90,7 +90,7 @@
           <a class="list-group-item" href="/reference/endpoints/inbox_messages/">Inbox Messages</a>
           <a class="list-group-item" href="/reference/endpoints/inbox_participants/">Inbox Participants</a>
           <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
-          <a class="list-group-item active" href="/reference/endpoints/living_rooms/">Living Rooms</a>
+          <a class="list-group-item" href="/reference/endpoints/living_rooms/">Living Rooms</a>
           <a class="list-group-item" href="/reference/endpoints/los_records/">LOS Records</a>
           <a class="list-group-item" href="/reference/endpoints/nightly_rate_maps/">Nightly Rate Maps</a>
           <a class="list-group-item" href="/reference/endpoints/payment_gateways/">Payment Gateways</a>
@@ -112,7 +112,7 @@
           <a class="list-group-item" href="/reference/endpoints/rental_links/">Rental Links</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_taxes/">Rentals Taxes</a>
-          <a class="list-group-item" href="/reference/endpoints/rental_urls/">Rental URLs</a>
+          <a class="list-group-item active" href="/reference/endpoints/rental_urls/">Rental URLs</a>
           <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
           <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
           <a class="list-group-item" href="/reference/endpoints/sources/">Sources</a>
@@ -131,14 +131,14 @@
     <div class="col-md-9 col-md-pull-3">
       <div class="panel panel-default">
         <div class="panel-body reference-body">
-          <h2 id="livingrooms">LivingRooms</h2>
+          <h2 id="rental-urls">Rental URLs</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#list-livingrooms">List living_rooms</a></li>
-  <li><a href="#get-a-single-livingroom">Get a single living_room</a></li>
-  <li><a href="#create-a-new-livingroom">Create a new living_room</a></li>
-  <li><a href="#update-a-livingroom">Update a living_room</a></li>
-  <li><a href="#destroy-a-livingroom">Destroy a living_room</a></li>
+  <li><a href="#list-rentalurls">List RentalURLs</a></li>
+  <li><a href="#get-a-single-rentalurl">Get a single RentalURL</a></li>
+  <li><a href="#create-a-new-rentalurl">Create a new RentalURL</a></li>
+  <li><a href="#update-a-rentalurl">Update a RentalURL</a></li>
+  <li><a href="#destroy-a-rentalurl">Destroy a RentalURL</a></li>
 </ol>
 
 <h4 id="parameters">Parameters</h4>
@@ -163,59 +163,47 @@
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>LivingRoom’s id.</td>
+          <td>RentalURL’s id.</td>
         </tr>
       </tbody>
       <tbody>
         <tr>
-          <td>bunk_beds_count</td>
-          <td>Integer</td>
+          <td>label</td>
+          <td>String</td>
           <td>Read</td>
-          <td>LivingRoom’s number of bunk beds.</td>
+          <td>Usually equals the application’s name.</td>
         </tr>
         <tr>
-          <td>double_beds_count</td>
-          <td>Integer</td>
+          <td>url</td>
+          <td>String</td>
           <td>Read</td>
-          <td>LivingRoom’s number of double beds.</td>
+          <td>The URL where the rental is visible on the channel’s website.</td>
         </tr>
         <tr>
-          <td>kingsize_beds_count</td>
-          <td>Integer</td>
+          <td>lock</td>
+          <td>Object</td>
           <td>Read</td>
-          <td>LivingRoom’s number of kingsize beds.</td>
-        </tr>
-        <tr>
-          <td>queensize_beds_count</td>
-          <td>Integer</td>
-          <td>Read</td>
-          <td>LivingRoom’s number of queensize beds.</td>
-        </tr>
-        <tr>
-          <td>single_beds_count</td>
-          <td>Integer</td>
-          <td>Read</td>
-          <td>LivingRoom’s number of single beds.</td>
-        </tr>
-        <tr>
-          <td>sofa_beds_count</td>
-          <td>Integer</td>
-          <td>Read</td>
-          <td>LivingRoom’s number of sofa beds.</td>
+          <td>Lock shows what’s not editable.</td>
         </tr>
       </tbody>
       <tbody>
+        <tr>
+          <td>canceled_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Time of soft delete.</td>
+        </tr>
         <tr>
           <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>LivingRoom’s create time.</td>
+          <td>Photo’s create time.</td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>LivingRoom’s update time.</td>
+          <td>Photo’s update time.</td>
         </tr>
       </tbody>
     </table>
@@ -235,77 +223,71 @@
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>LivingRoom’s id.</td>
+          <td>RentalURL’s id.</td>
         </tr>
       </tbody>
       <tbody>
         <tr>
-          <td>bunk_beds_count</td>
-          <td>Integer</td>
-          <td>Read/Write</td>
-          <td>LivingRoom’s number of bunk beds.</td>
+          <td>label</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Usually equals the application’s name.</td>
         </tr>
         <tr>
-          <td>double_beds_count</td>
-          <td>Integer</td>
-          <td>Read/Write</td>
-          <td>LivingRoom’s number of double beds.</td>
+          <td>url</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>The URL where the rental is visible on the channel’s website.</td>
         </tr>
         <tr>
-          <td>kingsize_beds_count</td>
-          <td>Integer</td>
-          <td>Read/Write</td>
-          <td>LivingRoom’s number of kingsize beds.</td>
+          <td>lock</td>
+          <td>Object</td>
+          <td>Read</td>
+          <td>Lock shows what’s not editable.</td>
         </tr>
         <tr>
-          <td>queensize_beds_count</td>
-          <td>Integer</td>
-          <td>Read/Write</td>
-          <td>LivingRoom’s number of queensize beds.</td>
-        </tr>
-        <tr>
-          <td>single_beds_count</td>
-          <td>Integer</td>
-          <td>Read/Write</td>
-          <td>LivingRoom’s number of single beds.</td>
-        </tr>
-        <tr>
-          <td>sofa_beds_count</td>
-          <td>Integer</td>
-          <td>Read/Write</td>
-          <td>LivingRoom’s number of sofa beds.</td>
+          <td>locked</td>
+          <td>Boolean</td>
+          <td>Write</td>
+          <td>Setting locked to true means that other apps won’t be able to modify this resource.</td>
         </tr>
       </tbody>
       <tbody>
+        <tr>
+          <td>canceled_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Time of soft delete.</td>
+        </tr>
         <tr>
           <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>LivingRoom’s create time.</td>
+          <td>Photo’s create time.</td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>LivingRoom’s update time.</td>
+          <td>Photo’s update time.</td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<h3 id="list-livingrooms">List living_rooms</h3>
+<h3 id="list-rentalurls">List RentalURLs</h3>
 
-<p>List all living_rooms for a given account.</p>
+<p>List all RentalURLs for a given account(s).</p>
 
-<pre><code>GET /living_rooms
+<pre><code>GET /rental_urls
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#6ffcecd3ae6apublic" role="tab" data-toggle="pill">
+        <a href="#1f51f3e48ee9public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -317,28 +299,39 @@
   
   
     
-      <div class="tab-pane active" id="6ffcecd3ae6apublic">
+      <div class="tab-pane active" id="1f51f3e48ee9public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"living_rooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{living_rooms.rental}"</span>
+    <span class="s2">"rental_urls.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rental_urls.account}"</span><span class="p">,</span>
+    <span class="s2">"rental_urls.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rental_urls.rental}"</span>
   <span class="p">},</span>
-  <span class="s2">"living_rooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"rental_urls"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bunk_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"double_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"kingsize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"queensize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"single_beds_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"sofa_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2020-02-21T07:42:08Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2020-02-21T07:42:08Z"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"090fc7dd-f677-4a6f-b6df-8035f00b4108"</span><span class="p">,</span>
+      <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"Example OTA"</span><span class="p">,</span>
+      <span class="s2">"lock"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"record"</span><span class="o">:</span> <span class="s2">"doorkeeper/application-2"</span><span class="p">,</span>
+        <span class="s2">"attributes"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"https://ota.example.com/rentals/333"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2020-02-06T03:49:53Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2020-02-06T03:49:53Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
   <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"Link"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"first"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_urls?page=1"</span><span class="p">,</span>
+      <span class="s2">"last"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_urls?page=1"</span>
+    <span class="p">},</span>
+    <span class="s2">"X-Per-Page"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Count"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Pages"</span><span class="o">:</span> <span class="s2">"1"</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
@@ -346,18 +339,18 @@
   
 </div>
 
-<h3 id="get-a-single-livingroom">Get a single living_room</h3>
+<h3 id="get-a-single-rentalurl">Get a single RentalURL</h3>
 
-<p>Returns a single living_room identified by ID.</p>
+<p>Returns a single RentalURL identified by ID.</p>
 
-<pre><code>GET /living_rooms/:living_room_id
+<pre><code>GET /rental_urls/:rental_url_id
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#8e93ddb8a9acpublic" role="tab" data-toggle="pill">
+        <a href="#460878b29b12public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -369,28 +362,39 @@
   
   
     
-      <div class="tab-pane active" id="8e93ddb8a9acpublic">
+      <div class="tab-pane active" id="460878b29b12public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"living_rooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{living_rooms.rental}"</span>
+    <span class="s2">"rental_urls.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rental_urls.account}"</span><span class="p">,</span>
+    <span class="s2">"rental_urls.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rental_urls.rental}"</span>
   <span class="p">},</span>
-  <span class="s2">"living_rooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"rental_urls"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bunk_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"double_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"kingsize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"queensize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"single_beds_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"sofa_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2020-02-21T07:42:08Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2020-02-21T07:42:08Z"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"090fc7dd-f677-4a6f-b6df-8035f00b4108"</span><span class="p">,</span>
+      <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"Example OTA"</span><span class="p">,</span>
+      <span class="s2">"lock"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"record"</span><span class="o">:</span> <span class="s2">"doorkeeper/application-2"</span><span class="p">,</span>
+        <span class="s2">"attributes"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"https://ota.example.com/rentals/333"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2020-02-06T03:49:53Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2020-02-06T03:49:53Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
   <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"Link"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"first"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_urls?page=1"</span><span class="p">,</span>
+      <span class="s2">"last"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_urls?page=1"</span>
+    <span class="p">},</span>
+    <span class="s2">"X-Per-Page"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Count"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Pages"</span><span class="o">:</span> <span class="s2">"1"</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
@@ -398,18 +402,18 @@
   
 </div>
 
-<h3 id="create-a-new-livingroom">Create a new living_room</h3>
+<h3 id="create-a-new-rentalurl">Create a new RentalURL</h3>
 
-<p>Creates a living_room for given rental.</p>
+<p>Returns a newly created RentalURL for given rental.</p>
 
-<pre><code>POST /rentals/:rental_id/living_rooms
+<pre><code>POST /rentals/:rental_id/rental_urls
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#c51a54304d8crentals_write" role="tab" data-toggle="pill">
+        <a href="#ab041dfb6183rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -418,14 +422,11 @@
 
 <h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"living_rooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"rental_urls"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"bunk_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"double_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"kingsize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"queensize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"single_beds_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"sofa_beds_count"</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"Example OTA"</span><span class="p">,</span>
+      <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"https://ota.example.com/rentals/333"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -435,28 +436,39 @@
   
   
     
-      <div class="tab-pane active" id="c51a54304d8crentals_write">
+      <div class="tab-pane active" id="ab041dfb6183rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"living_rooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{living_rooms.rental}"</span>
+    <span class="s2">"rental_urls.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rental_urls.account}"</span><span class="p">,</span>
+    <span class="s2">"rental_urls.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rental_urls.rental}"</span>
   <span class="p">},</span>
-  <span class="s2">"living_rooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"rental_urls"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bunk_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"double_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"kingsize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"queensize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"single_beds_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"sofa_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2020-02-21T07:42:08Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2020-02-21T07:42:08Z"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"090fc7dd-f677-4a6f-b6df-8035f00b4108"</span><span class="p">,</span>
+      <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"Example OTA"</span><span class="p">,</span>
+      <span class="s2">"lock"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"record"</span><span class="o">:</span> <span class="s2">"doorkeeper/application-2"</span><span class="p">,</span>
+        <span class="s2">"attributes"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"https://ota.example.com/rentals/333"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2020-02-06T03:49:53Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2020-02-06T03:49:53Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
   <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"Link"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"first"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_urls?page=1"</span><span class="p">,</span>
+      <span class="s2">"last"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_urls?page=1"</span>
+    <span class="p">},</span>
+    <span class="s2">"X-Per-Page"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Count"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Pages"</span><span class="o">:</span> <span class="s2">"1"</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
@@ -464,18 +476,18 @@
   
 </div>
 
-<h3 id="update-a-livingroom">Update a living_room</h3>
+<h3 id="update-a-rentalurl">Update a RentalURL</h3>
 
-<p>Returns an updated living_room identified by ID.</p>
+<p>Returns an updated RentalURL identified by ID.</p>
 
-<pre><code>PUT /living_rooms/:living_room_id
+<pre><code>PUT /rental_urls/:rental_url_id
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#32a845256e1crentals_write" role="tab" data-toggle="pill">
+        <a href="#ea36651a7489rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -484,14 +496,9 @@
 
 <h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"living_rooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"rental_urls"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"bunk_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"double_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"kingsize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"queensize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"single_beds_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"sofa_beds_count"</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"https://ota.example.com/rentals/333"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -501,28 +508,39 @@
   
   
     
-      <div class="tab-pane active" id="32a845256e1crentals_write">
+      <div class="tab-pane active" id="ea36651a7489rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">"living_rooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{living_rooms.rental}"</span>
+    <span class="s2">"rental_urls.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rental_urls.account}"</span><span class="p">,</span>
+    <span class="s2">"rental_urls.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rental_urls.rental}"</span>
   <span class="p">},</span>
-  <span class="s2">"living_rooms"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"rental_urls"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bunk_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"double_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"kingsize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"queensize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"single_beds_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"sofa_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2020-02-21T07:42:08Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2020-02-21T07:42:08Z"</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"090fc7dd-f677-4a6f-b6df-8035f00b4108"</span><span class="p">,</span>
+      <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"Example OTA"</span><span class="p">,</span>
+      <span class="s2">"lock"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"record"</span><span class="o">:</span> <span class="s2">"doorkeeper/application-2"</span><span class="p">,</span>
+        <span class="s2">"attributes"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="s2">"url"</span><span class="o">:</span> <span class="s2">"https://ota.example.com/rentals/333"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2020-02-06T03:49:53Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2020-02-06T03:49:53Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
   <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"Link"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"first"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_urls?page=1"</span><span class="p">,</span>
+      <span class="s2">"last"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rental_urls?page=1"</span>
+    <span class="p">},</span>
+    <span class="s2">"X-Per-Page"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Count"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Pages"</span><span class="o">:</span> <span class="s2">"1"</span>
   <span class="p">}</span>
 <span class="p">}</span></code></pre>
       </div>
@@ -530,13 +548,13 @@
   
 </div>
 
-<h3 id="destroy-a-livingroom">Destroy a living_room</h3>
+<h3 id="destroy-a-rentalurl">Destroy a RentalURL</h3>
 
 <p>Required OAuth scope: <code>:rentals_write</code></p>
 
 <p>Returns an empty response with ‘204 No Content’ status code on success.</p>
 
-<pre><code>DELETE /living_rooms/:living_room_id
+<pre><code>DELETE /rental_urls/:rental_url_id
 </code></pre>
 
         </div>
