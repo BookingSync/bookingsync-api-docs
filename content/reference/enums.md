@@ -129,8 +129,43 @@ final_price                        | Price including all required fees and taxes
 
 Name                         | Description
 -----------------------------|------------
-cleaning                     | Cleaning fee
 other                        | Any other type of fee
+air_conditioning             | AC
+airport_shuttle              | Airport shuttle
+bed_linen                    | Bed sheets and such
+city_tax                     | City tax where it's a fixed amount
+cleaning                     | Cleaning fee
+club_card                    | Club card
+conservation                 | Conservation
+credit_card                  | Credit card
+destination                  | Destination
+electricity                  | Electricity
+environment                  | Environment
+final_cleaning               | Final cleaning
+gas                          | Gas
+heating                      | Heating
+heritage_charge              | Heritage charge
+housekeeping                 | Housekeeping
+internet                     | Internet
+kitchen_linen                | Kitchen towels and such
+linen_package                | All linens
+municipality                 | Municipality
+oil                          | Oil
+parking                      | Parking
+public_transit_day_ticket    | Public transport day ticket
+resort                       | Resort
+sea_plane                    | Sea plane
+service_charge               | Service charge
+shuttle_boat                 | Shuttle boat
+ski_pass                     | Ski pass
+tourism                      | Tourism
+towel_charge                 | Towel
+transfer                     | Transfer
+visa_support                 | Visa support
+water_park                   | Water park
+water_usage                  | Water usage
+wood                         | Wood
+wristband                    | Wristband 
 {: class="table table-bordered"}
 
 

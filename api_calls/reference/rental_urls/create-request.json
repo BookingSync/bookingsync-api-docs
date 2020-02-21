@@ -1,0 +1,9 @@
+{
+  "rental_urls": [
+    {
+      "label": "Example OTA",
+      "url": "https://ota.example.com/rentals/333",
+      "locked": true
+    }
+  ]
+}
