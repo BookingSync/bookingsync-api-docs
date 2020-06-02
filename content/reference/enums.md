@@ -268,13 +268,14 @@ weekend_night                  | Rule applied for weekend night.
 
 <div class="callout callout-warning" markdown="1">
   <h4>New Rental types</h4>
-  <p>From 1st of October 2019 three new rental types will be available:</p>
-  `bed-and-breakfast`, `private-room-in-apartment`, `private-room-in-house`
+  <p>From 3rd of June 2020 six new rental types will be available:</p>
+  `mill`, `manor`, `bastide`, `longere`, `gite`, `mas`
 </div>
 
 Name                 | Description
 ---------------------|------------
 apartment                   | Apartment
+bastide                     | Bastide
 boat                        | Boat
 bungalow                    | Bungalow
 bed-and-breakfast           | Bed & breakfast
@@ -287,6 +288,7 @@ cottage                     | Cottage
 dormitory                   | Dormitory
 earth-house                 | Earth House
 farmhouse                   | Farmhouse
+gite                        | Gite
 holiday-home                | Holiday Home
 house                       | House
 hut                         | Hut
@@ -294,6 +296,10 @@ igloo                       | Igloo
 island                      | Island
 lighthouse                  | Lighthouse
 loft                        | Loft
+longere                     | Longere
+manor                       | Manor
+mas                         | Mas
+mill                        | Mill
 plane                       | Plane
 private-room                | Private room
 private-room-in-apartment   | Private room in an apartment
