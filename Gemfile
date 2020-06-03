@@ -11,6 +11,7 @@ gem "kramdown"
 gem "pygments.rb"
 gem "nokogiri"
 gem 'uglifier'
+gem "sass"
 gem 'nanoc-sprockets3'
 gem "bootstrap-bookingsync-sass"
 gem "rake"
