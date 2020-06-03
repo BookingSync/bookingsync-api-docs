@@ -1,8 +1,16 @@
 # Changelog
 
-## [3.19.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.19.0) (2020-06-02)
+## [3.19.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.19.0) (2020-06-03)
 
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.18.0...3.19.0)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.19.0...3.19.0)
+
+**Merged pull requests:**
+
+- bump ruby version, add sass [\#324](https://github.com/BookingSync/bookingsync-api-docs/pull/324) ([adamgrad](https://github.com/adamgrad))
+
+## [v3.19.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.19.0) (2020-06-02)
+
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.18.0...v3.19.0)
 
 **Merged pull requests:**
 
