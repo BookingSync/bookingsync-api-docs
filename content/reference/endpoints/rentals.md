@@ -38,6 +38,7 @@ lat                             | Float    | Read       | Rental's latitude.
 lng                             | Float    | Read       | Rental's longitude.
 max_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's maximum weekly or nightly price, depending on the base_rate_kind.
 min_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's minimum weekly or nightly price, depending on the base_rate_kind.
+mid_term_pricing_active         | Boolean  | Read       | Defines whether [Midterm Pricing](/guides/understanding-midterm-pricing/) is activated for specifc rental
 name                            | String   | Read       | Rental's name.
 nightly_rates_managed_externally | Boolean  | Read       | Defines whether `nightly_rate_map` can be updated via API. Defaults to `false`.
 permit_number                   | String   | Read       | Rental's Registration/License/Permit number.
@@ -92,6 +93,7 @@ lat                             | Float    | Read       | Rental's latitude.
 lng                             | Float    | Read       | Rental's longitude.
 max_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's maximum price.
 min_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's minimum price.
+mid_term_pricing_active         | Boolean  | Read       | Defines whether [Midterm Pricing](/guides/understanding-midterm-pricing/) is activated for specifc rental
 name                            | String   | Read       | Rental's name.
 nightly_rates_managed_externally | Boolean  | Read       | Defines whether `nightly_rate_map` can be updated via API. Defaults to `false`.
 notes                           | Text     | Read       | Rental's private notes.
@@ -153,6 +155,7 @@ lat                             | Float    | Read/Write | Rental's latitude. (be
 lng                             | Float    | Read/Write | Rental's longitude. (between -180 and 180)
 max_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's maximum price.
 min_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's minimum price.
+mid_term_pricing_active         | Boolean  | Read       | Defines whether [Midterm Pricing](/guides/understanding-midterm-pricing/) is activated for specifc rental
 name                            | String   | Read/Write | **Required**. Rental's name. (3 min, 40 max characters)
 nightly_rates_managed_externally | Boolean  | Read/Write | Defines whether `nightly_rate_map` can be updated via API. Defaults to `false`.
 notes                           | Text     | Read/Write | Rental's private notes. (1000 characters max)

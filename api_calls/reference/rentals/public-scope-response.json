@@ -16,7 +16,8 @@
     "rentals.bedrooms": "https://www.bookingsync.com/api/v3/bedrooms/{rentals.bedrooms}",
     "rentals.rentals_tags": "https://www.bookingsync.com/api/v3/rentals_tags/{rentals.rentals_tags}",
     "rentals.change_over": "https://www.bookingsync.com/api/v3/change_overs/{rentals.change_over}",
-    "rentals.nightly_rate_map": "https://www.bookingsync.com/api/v3/nightly_rate_maps/{rentals.nightly_rate_map}"
+    "rentals.nightly_rate_map": "https://www.bookingsync.com/api/v3/nightly_rate_maps/{rentals.nightly_rate_map}",
+    "rentals.mid_term_rate_map": "http://test.host/api/v3/mid_term_rate_maps/{rentals.mid_term_rate_map}"
   },
   "rentals": [
     {
@@ -64,7 +65,8 @@
         "rentals_tags": [
         ],
         "change_over": 1,
-        "nightly_rate_map": 1
+        "nightly_rate_map": 1,
+        "mid_term_rate_map": "b5a18408-20fa-43da-aec6-f2ad9a5078c4"
       },
       "id": 1,
       "name": "Cottage 1",
@@ -88,6 +90,7 @@
       "bookable_online": false,
       "min_price": "420.0",
       "max_price": "600.0",
+      "mid_term_pricing_active": false,
       "base_rate": "600.0",
       "base_rate_kind": "weekly",
       "currency": "EUR",
