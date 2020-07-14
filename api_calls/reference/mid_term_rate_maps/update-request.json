@@ -1,0 +1,8 @@
+{
+  "mid_term_rate_maps": [
+    {
+      "map": "100,100,100,100,50,50,100,100,100,100,0",
+      "start_date": "BEGINNING_OF_MONTH"
+    }
+  ]
+}
