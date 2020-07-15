@@ -3,6 +3,10 @@
 1. TOC
 {:toc}
 
+### Understanding Midterm Pricing
+
+Check out our guide: [Understanding Midterm Pricing](/guides/understanding-midterm-pricing/)
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
