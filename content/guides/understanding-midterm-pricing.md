@@ -36,7 +36,7 @@ What will not work:
 
 A midterm rate map is a simple object that consists of two main attributes:
 
-  * `start_date` The date of the first price from the map. It's refreshed every day.
+  * `start_date` The date of the first price from the map. It's refreshed every day at 00:25.
   * `map` Contains 1096 (~ 3 years) prices for consecutive days since start_date. Values are comma-separated, decimal values are supported with dot as decimal separator. If a value is `0`, it means that midterm pricing is not defined for that date, and therefore no 31+ days long stay covering this date is not possible.
 
 To calculate a midterm price for a given stay of X days, find price corresponding to booking start date, and sum X consecutive values, making sure none of them is zero.
