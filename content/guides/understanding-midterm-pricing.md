@@ -25,7 +25,7 @@ Even though consulted with our users, we acknowledge the fact that for some reas
 If this is the case, there are still ways to allow midterm bookings:
 
   * Live quote (via [rentals_search endpoint](/reference/endpoints/rentals/#search-rentals)) - includes all rates rules, yet cannot be cached and may affect integration performance and overall user experience
-  * [Rates](/reference/endpoints/rates/) - it's a nightly price, independent of the length of stay. To protect users from losing money, it calculates the highest possible daily pricing. Because of that midterm pricing discounts (such as a discount for a stay over 30 days will not be applied here) will not be included here, which may lead to less attractive pricing
+  * [Rates](/reference/endpoints/rates/) - it's a nightly price, independent of the length of stay. Therefore, they do not include all available rates rules which may lead to [inaccurate pricing](/guides/pricing-concepts/#rates-and-rates-rules-not-recommended).
 
 What will not work:
 
