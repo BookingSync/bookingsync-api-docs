@@ -117,6 +117,7 @@
       "position": 1,
       "notes": "Private comments.",
       "absolute_min_price": "300.0",
+      "mid_term_pricing_active": false,
       "stories_count": 2,
       "floor": "A",
       "nightly_rates_managed_externally": false,
