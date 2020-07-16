@@ -17,7 +17,7 @@ Check out our guide: [Understanding Midterm Pricing](/guides/understanding-midte
   <div class="tab-pane active" id="rates_read" markdown="1">
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
-id               | String  | Read       | Mid Term Rate Map's id.
+id               | BigInteger  | Read       | Mid Term Rate Map's id.
 -----------------|---------|------------|------------
 map              | String  | Read       | Mid Term Rate Map's map of rates. There is a total of 1096 characters, each representing one day. `0` rate represents a day without rate assigned.
 -----------------|---------|------------|------------
@@ -29,7 +29,7 @@ created_at       | [Time](/reference/enums#formats) | Read       | Mid Term Rate
   <div class="tab-pane" id="rates_write" markdown="1">
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
-id               | String  | Read       | Mid Term Rate Map's id.
+id               | BigInteger  | Read       | Mid Term Rate Map's id.
 -----------------|---------|------------|------------
 map              | String  | Read/Write | Mid Term Rate Map's map of rates. There is a total of 1096 characters, each representing one day. `0` rate represents a day without rate assigned.
 -----------------|---------|------------|------------
