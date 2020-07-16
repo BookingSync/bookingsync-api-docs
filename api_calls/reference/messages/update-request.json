@@ -3,7 +3,8 @@
     {
       "origin": "email",
       "visibility": "external",
-      "channel": "email"
+      "channel": "email",
+      "attachments_ids": [1,3,6]
     }
   ]
 }

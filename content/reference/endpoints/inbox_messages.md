@@ -31,6 +31,7 @@ Name                 | Type    | Read/Write | Description
 id                   | Integer | Read       | Message's id.
 conversation_id      | String  | Write      | Message's conversation id.
 sender_id            | String  | Write      | Message's sender id.
+attachment_ids       | Array   | Write      | Message's attachments ids.
 ---------------------|---------|------------|------------
 channel              | String  | Read/Write | Message's channel, list of Channels described in [enums section](/reference/enums#inbox-message-channels)
 content              | String  | Read/Write | Message's content.
