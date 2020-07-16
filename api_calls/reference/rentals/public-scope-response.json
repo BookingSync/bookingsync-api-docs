@@ -114,6 +114,7 @@
       "stories_count": 2,
       "floor": "A",
       "residency_category": "primary_residence",
+      "mid_term_pricing_active": false,
       "nightly_rates_managed_externally": false,
       "website_url" : {
         "en": "https://example.com/en/rentals/123-rental-headline"
