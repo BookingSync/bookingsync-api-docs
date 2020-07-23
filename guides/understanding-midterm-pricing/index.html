@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BookingSync API documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/stylesheets/application.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/highlight.css">
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="/assets/javascripts/application.js"></script>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.8.0">
+  </head>
+  <body class="flex-col">
+    <div class="page-wrapper flex-1 flex-col">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle sidebar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <img alt="BookingSync" src="/images/bookingsync.svg">
+              <span>Developers</span>
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active">
+                <a href="/guides/">Guides</a>
+              </li>
+              <li class="">
+                <a href="/reference/">API Reference</a>
+              </li>
+              <li><a href="https://www.bookingsync.com" target="_blank">BookingSync.com</a></li>
+              <li><a href="https://github.com/BookingSync/bookingsync-api-docs" target="_blank"><i class="fa fa-github fa-fw fa-2x"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+<div class="container content">
+  <div class="row">
+    <div class="col-md-3 col-md-push-9">
+      <div class="panel panel-default">
+        <div class="list-group">
+          <a class="list-group-item" href="/guides/">Introduction</a>
+          <a class="list-group-item" href="/guides/create-a-booking-with-a-source">Create a Booking with a Source</a>
+          <a class="list-group-item" href="/guides/read-all-authorized-accounts-at-once">Read all authorized accounts at once</a>
+          <a class="list-group-item" href="/guides/getting-started-with-php">Getting Started with PHP</a>
+          <a class="list-group-item" href="/guides/pricing-concepts">Pricing concepts</a>
+          <a class="list-group-item" href="/guides/api-best-practices">API best practices</a>
+          <a class="list-group-item" href="/guides/secure-payments-by-bookingsync">Secure Payments By BookingSync</a>
+          <a class="list-group-item" href="/guides/webhook-subscriptions">Webhook subscriptions</a>
+          <a class="list-group-item" href="/guides/oauth-scopes">OAuth scopes</a>
+          <a class="list-group-item" href="/guides/bookigsync-universe-api-early-beta">BookingSync Universe API [EARLY BETA]</a>
+          <a class="list-group-item" href="/guides/updated-since-flow">updated_since flow</a>
+          <a class="list-group-item" href="/guides/understanding-los-records">Understanding LOS Records</a>
+          <a class="list-group-item" href="/guides/understanding-midterm-pricing">Understanding Midterm Pricing</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 col-md-pull-3">
+      <div class="panel panel-default">
+        <div class="panel-body guide-body">
+          <h2 id="understanding-midterm-pricing">Understanding Midterm Pricing</h2>
+
+<h3 id="assumptions">Assumptions</h3>
+
+<p>The length of stay of 31 days is considered by BookingSync as a threshold between short-term and midterm stay.
+Since the midterm stay is no longer the subject of short-term rates rules, the price is calculated differently.</p>
+
+<p>Here is a comparison of what’s supported and what’s not:</p>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th><strong>Price factors</strong></th>
+      <th><strong>Short-term</strong></th>
+      <th><strong>Midterm</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Rates rules (availability, price, occupancy)</td>
+      <td>Supported</td>
+      <td>Not supported</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>Seasonality</td>
+      <td>Supported (via Seasons + Periods or Nightly Rate Map)</td>
+      <td>Supported (via Midterm Rate Map)</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>Price increase per application</td>
+      <td>Supported</td>
+      <td>Supported</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Of course user can still opt out from midterm pricig (by chnaging Rental’s <code>mid_term_pricing_active</code> <a href="/reference/endpoints/rentals/">attribute</a> to <code>false</code>)</p>
+
+<h3 id="what-happens-when-midterm-pricing-is-disabled">What happens when midterm pricing is disabled?</h3>
+
+<p>Even though consulted with our users, we acknowledge the fact that for some reason this approach may not work for all of them, therefore they can opt-out of midterm pricing.</p>
+
+<p>If this is the case, there are still ways to allow midterm bookings:</p>
+
+<ul>
+  <li>Live quote (via <a href="/reference/endpoints/rentals/#search-rentals">rentals_search endpoint</a>) - includes all rates rules, yet cannot be cached and may affect integration performance and overall user experience</li>
+  <li>
+<a href="/reference/endpoints/rates/">Rates</a> - it’s a nightly price, independent of the length of stay. Therefore, they do not include all available rates rules which may lead to <a href="/guides/pricing-concepts/#rates-and-rates-rules-not-recommended">inaccurate pricing</a>.</li>
+</ul>
+
+<p>What will not work:</p>
+
+<ul>
+  <li>
+<a href="/reference/endpoints/los_records/">LOS record</a> - Pricing is limited to 30 days only, therefore it’s not possible to use it for longer stays.</li>
+</ul>
+
+<h3 id="how-to-use-midterm-rate-map">How to use midterm rate map?</h3>
+
+<p>A midterm rate map is a simple object that consists of two main attributes:</p>
+
+<ul>
+  <li>
+<code>start_date</code> The date of the first price from the map. It’s refreshed every day at 00:25.</li>
+  <li>
+<code>map</code> Contains 1096 (~ 3 years) prices for consecutive days since start_date. Values are comma-separated, decimal values are supported with dot as decimal separator. If a value is <code>0</code>, it means that midterm pricing is not defined for that date, and therefore no 31+ days long stay covering this date is not possible.</li>
+</ul>
+
+<p>To calculate a midterm price for a given stay of X days, find price corresponding to booking start date, and sum X consecutive values, making sure none of them is zero.</p>
+
+<h3 id="example">Example</h3>
+
+<p>Let’s consider the midterm rate mam with the following attributes:</p>
+
+<pre><code class="language-ruby"><span class="p">{</span>
+  <span class="s2">"start_date"</span><span class="p">:</span> <span class="s2">"2020-05-02"</span><span class="p">,</span>
+  <span class="s2">"map"</span><span class="p">:</span> <span class="s2">"0,0,0,0,0,100,100,100,100,100,100,100,100,100,100,50,50,50,50,50,50,50,50,50,50,300,300,100,100,100,100,100,100,100,100,100,100,0,100,100,100,100,100,100,100,100,100,100,50,50,50,50,50,50,50,50,50,50,300,300,100,100,100,100,100,100,100,100,100,100"</span><span class="p">,</span>
+  <span class="o">...</span>
+<span class="p">}</span></code></pre>
+
+<p>It could be converted to:</p>
+
+<ul>
+  <li>&lt;2020-05-02, 2020-05-07) - Booking not possible (5 nights)</li>
+  <li>&lt;2020-05-07, 2020-05-17) - Nightly price is 100 (10 nights)</li>
+  <li>&lt;2020-05-17, 2020-05-27) - Nightly price is 50 (10 nights)</li>
+  <li>&lt;2020-05-27, 2020-05-29) - Nightly price is 300 (2 nights)</li>
+  <li>&lt;2020-05-29, 2020-06-08) - Nightly price is 100 (10 nights)</li>
+  <li>&lt;2020-06-08, 2020-06-09) - Booking not possible (1 night)</li>
+  <li>&lt;2020-06-09, 2020-06-19) - Nightly price is 100 (10 nights)</li>
+  <li>&lt;2020-06-19, 2020-06-29) - Nightly price is 50 (10 nights)</li>
+  <li>&lt;2020-06-29, 2020-07-01) - Nightly price is 300 (2 nights)</li>
+  <li>&lt;2020-07-01, 2020-07-11) - Nightly price is 100 (10 nights)</li>
+  <li>&lt;2020-07-11, 2023-05-03) - Booking not possible (1026 nights)</li>
+</ul>
+
+<p>Below there are few examples of expected results:</p>
+
+<ol>
+  <li>
+    <p><strong>Booking &lt;2020-05-17, 2020-05-18&gt;</strong></p>
+
+    <p>Stay too short, midterm pricing shouldn’t be applied.</p>
+  </li>
+  <li>
+    <p><strong>Booking &lt;2020-05-07, 2020-06-08&gt;</strong></p>
+
+    <p><code>10 * 100 + 10 * 50 + 2 * 300 + 10 * 100 = 3100</code></p>
+  </li>
+  <li>
+    <p><strong>Booking &lt;2020-05-07, 2020-06-09&gt;</strong></p>
+
+    <p>Impossible to book since there is no midterm price defined for 2020-06-08</p>
+  </li>
+</ol>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </body>
+</html>
+
