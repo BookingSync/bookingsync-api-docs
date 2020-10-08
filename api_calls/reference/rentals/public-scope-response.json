@@ -119,7 +119,10 @@
       "website_url" : {
         "en": "https://example.com/en/rentals/123-rental-headline"
       },
-      "permit_number": "AQD9382857"
+      "permit_number": "AQD9382857",
+      "certifications": {
+        "meubles_de_tourisme": ["1_etoile", "2_etoiles", "3_etoiles", "4_etoiles"]
+      }
     }
   ],
   "meta": {

@@ -56,6 +56,7 @@ surface                         | Integer  | Read       | Rental's surface area.
 surface_unit                    | String   | Read       | Rental's surface area unit, either <i>metric</i> or <i>imperial</i>.
 website_url                     | [Object](/reference/enums#formats)   | Read       | Rental's primary website url, list of locales described in [enums section](/reference/enums#locales).
 residency_category              | String   | Read       | Rental's residency category. All types are described in [enums section](/reference/enums#rental-residency-categories)
+certifications                  | [Object](/reference/enums#formats) | Read | Rental's certifications, all allowed values described in [enums section](/reference/enums#rental-certifications).
 --------------------------------|----------|------------|--------------
 created_at                      | [Time](/reference/enums#formats) | Read         | Rental's create time.
 updated_at                      | [Time](/reference/enums#formats) | Read         | Rental's update time.
@@ -113,6 +114,7 @@ surface_unit                    | String   | Read       | Rental's surface area 
 website_url                     | [Object](/reference/enums#formats)   | Read       | Rental's primary website url, list of locales described in [enums section](/reference/enums#locales).
 zip                             | String   | Read       | Rental's zip code.
 residency_category              | String   | Read       | Rental's residency category. All types are described in [enums section](/reference/enums#rental-residency-categories)
+certifications                  | [Object](/reference/enums#formats) | Read | Rental's certifications, all allowed values described in [enums section](/reference/enums#rental-certifications).
 --------------------------------|----------|------------|--------------
 created_at                      | [Time](/reference/enums#formats) | Read         | Rental's create time.
 updated_at                      | [Time](/reference/enums#formats) | Read         | Rental's update time.
@@ -175,6 +177,7 @@ surface_unit                    | String   | Read/Write | Rental's surface area 
 website_url                     | [Object](/reference/enums#formats)   | Read/Write | Rental's primary website url, list of locales described in [enums section](/reference/enums#locales).
 zip                             | String   | Read/Write | Rental's zip code.
 residency_category              | String   | Read       | Rental's residency category. All types are described in [enums section](/reference/enums#rental-residency-categories)
+certifications                  | [Object](/reference/enums#formats) | Read/Write | Rental's certifications, all allowed values described in [enums section](/reference/enums#rental-certifications).
 --------------------------------|----------|------------|--------------
 created_at                      | [Time](/reference/enums#formats) | Read         | Rental's create time.
 updated_at                      | [Time](/reference/enums#formats) | Read         | Rental's update time.

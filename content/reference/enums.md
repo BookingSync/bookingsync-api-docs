@@ -380,3 +380,13 @@ parity           | For parity information
 requests         | Handling requests
 central_reservations | Regarding central reservations
 {: class="table table-bordered"}
+
+## Rental Certifications
+
+Key                 | Allowed values
+--------------------|------------
+meubles_de_tourisme | 1_etoile 2_etoiles 3_etoiles 4_etoiles 5_etoiles
+gites_de_france     | 1_epi 2_epis 3_epis 4_epis
+clevacances         | 1_cle 2_cles 3_cles 4_cles
+accueil_velo        | accueil_velo
+{: class="table table-bordered"}

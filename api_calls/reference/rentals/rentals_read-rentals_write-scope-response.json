@@ -123,6 +123,9 @@
       "nightly_rates_managed_externally": false,
       "website_url" : {
         "en": "https://example.com/en/rentals/123-rental-headline"
+      },
+      "certifications": {
+        "meubles_de_tourisme": ["1_etoile", "2_etoiles", "3_etoiles", "4_etoiles"]
       }
     }
   ],
