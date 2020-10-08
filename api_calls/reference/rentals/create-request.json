@@ -14,7 +14,10 @@
       "stories_count": 2,
       "amenity_ids": [
         4
-      ]
+      ],
+      "certifications": {
+        "meubles_de_tourisme": ["1_etoile", "2_etoiles", "3_etoiles", "4_etoiles"]
+      }
     }
   ]
 }
