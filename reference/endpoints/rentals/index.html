@@ -411,6 +411,12 @@
           <td>Rental’s residency category. All types are described in <a href="/reference/enums#rental-residency-categories">enums section</a>
 </td>
         </tr>
+        <tr>
+          <td>certifications</td>
+          <td><a href="/reference/enums#formats">Object</a></td>
+          <td>Read</td>
+          <td>Rental’s certifications, all allowed values described in <a href="/reference/enums#rental-certifications">enums section</a>.</td>
+        </tr>
       </tbody>
       <tbody>
         <tr>
@@ -729,6 +735,12 @@
           <td>Read</td>
           <td>Rental’s residency category. All types are described in <a href="/reference/enums#rental-residency-categories">enums section</a>
 </td>
+        </tr>
+        <tr>
+          <td>certifications</td>
+          <td><a href="/reference/enums#formats">Object</a></td>
+          <td>Read</td>
+          <td>Rental’s certifications, all allowed values described in <a href="/reference/enums#rental-certifications">enums section</a>.</td>
         </tr>
       </tbody>
       <tbody>
@@ -1080,6 +1092,12 @@
           <td>Rental’s residency category. All types are described in <a href="/reference/enums#rental-residency-categories">enums section</a>
 </td>
         </tr>
+        <tr>
+          <td>certifications</td>
+          <td><a href="/reference/enums#formats">Object</a></td>
+          <td>Read/Write</td>
+          <td>Rental’s certifications, all allowed values described in <a href="/reference/enums#rental-certifications">enums section</a>.</td>
+        </tr>
       </tbody>
       <tbody>
         <tr>
@@ -1116,13 +1134,13 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#baed3ba7a4fdpublic" role="tab" data-toggle="pill">
+        <a href="#03c6cd755aefpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
       <li>
-        <a href="#d346fe18657brentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#37298a5b6623rentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
@@ -1134,7 +1152,7 @@
   
   
     
-      <div class="tab-pane active" id="baed3ba7a4fdpublic">
+      <div class="tab-pane active" id="03c6cd755aefpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -1164,6 +1182,14 @@
       <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
       <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"certifications"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"meubles_de_tourisme"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="s2">"1_etoile"</span><span class="p">,</span>
+          <span class="s2">"2_etoiles"</span><span class="p">,</span>
+          <span class="s2">"3_etoiles"</span><span class="p">,</span>
+          <span class="s2">"4_etoiles"</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
       <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
       <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Nevache"</span><span class="p">,</span>
@@ -1208,9 +1234,9 @@
       <span class="s2">"website_url"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2020-07-23T12:27:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2020-07-23T12:27:18Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2020-07-23T12:27:18Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2020-10-13T10:55:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2020-10-13T10:55:28Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2020-10-13T10:55:28Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -1266,7 +1292,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="d346fe18657brentals_read-rentals_write">
+      <div class="tab-pane " id="37298a5b6623rentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -1298,6 +1324,14 @@
       <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"certifications"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"meubles_de_tourisme"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="s2">"1_etoile"</span><span class="p">,</span>
+          <span class="s2">"2_etoiles"</span><span class="p">,</span>
+          <span class="s2">"3_etoiles"</span><span class="p">,</span>
+          <span class="s2">"4_etoiles"</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
       <span class="s2">"checkin_details"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Please call us 15 min before your arrival so we can welcome you at the villa."</span>
       <span class="p">},</span>
@@ -1349,9 +1383,9 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2020-07-23T12:27:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2020-07-23T12:27:18Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2020-07-23T12:27:18Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2020-10-13T10:55:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2020-10-13T10:55:28Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2020-10-13T10:55:28Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -1610,7 +1644,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#59fc4ef0e4d1public" role="tab" data-toggle="pill">
+        <a href="#e9ff2e967f92public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -1622,7 +1656,7 @@
   
   
     
-      <div class="tab-pane active" id="59fc4ef0e4d1public">
+      <div class="tab-pane active" id="e9ff2e967f92public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -1883,13 +1917,13 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#412d02433a70public" role="tab" data-toggle="pill">
+        <a href="#adbbaa8c598epublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
       <li>
-        <a href="#14b03fa2f151rentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#edc6fb021b98rentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
@@ -1901,7 +1935,7 @@
   
   
     
-      <div class="tab-pane active" id="412d02433a70public">
+      <div class="tab-pane active" id="adbbaa8c598epublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -1931,6 +1965,14 @@
       <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
       <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"certifications"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"meubles_de_tourisme"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="s2">"1_etoile"</span><span class="p">,</span>
+          <span class="s2">"2_etoiles"</span><span class="p">,</span>
+          <span class="s2">"3_etoiles"</span><span class="p">,</span>
+          <span class="s2">"4_etoiles"</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
       <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
       <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Nevache"</span><span class="p">,</span>
@@ -1975,9 +2017,9 @@
       <span class="s2">"website_url"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2020-07-23T12:27:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2020-07-23T12:27:18Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2020-07-23T12:27:18Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2020-10-13T10:55:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2020-10-13T10:55:28Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2020-10-13T10:55:28Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -2033,7 +2075,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="14b03fa2f151rentals_read-rentals_write">
+      <div class="tab-pane " id="edc6fb021b98rentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -2065,6 +2107,14 @@
       <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"certifications"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"meubles_de_tourisme"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="s2">"1_etoile"</span><span class="p">,</span>
+          <span class="s2">"2_etoiles"</span><span class="p">,</span>
+          <span class="s2">"3_etoiles"</span><span class="p">,</span>
+          <span class="s2">"4_etoiles"</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
       <span class="s2">"checkin_details"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Please call us 15 min before your arrival so we can welcome you at the villa."</span>
       <span class="p">},</span>
@@ -2116,9 +2166,9 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2020-07-23T12:27:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2020-07-23T12:27:18Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2020-07-23T12:27:18Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2020-10-13T10:55:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2020-10-13T10:55:28Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2020-10-13T10:55:28Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -2195,7 +2245,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#b5d6e93e3c9arentals_write" role="tab" data-toggle="pill">
+        <a href="#b44ea4be21cdrentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -2212,6 +2262,14 @@
       <span class="p">],</span>
       <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"certifications"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"meubles_de_tourisme"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="s2">"1_etoile"</span><span class="p">,</span>
+          <span class="s2">"2_etoiles"</span><span class="p">,</span>
+          <span class="s2">"3_etoiles"</span><span class="p">,</span>
+          <span class="s2">"4_etoiles"</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
       <span class="s2">"headline_en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span><span class="p">,</span>
       <span class="s2">"lat"</span><span class="o">:</span> <span class="mf">45.02</span><span class="p">,</span>
       <span class="s2">"lng"</span><span class="o">:</span> <span class="mf">6.6</span><span class="p">,</span>
@@ -2229,7 +2287,7 @@
   
   
     
-      <div class="tab-pane active" id="b5d6e93e3c9arentals_write">
+      <div class="tab-pane active" id="b44ea4be21cdrentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -2261,6 +2319,14 @@
       <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"certifications"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"meubles_de_tourisme"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="s2">"1_etoile"</span><span class="p">,</span>
+          <span class="s2">"2_etoiles"</span><span class="p">,</span>
+          <span class="s2">"3_etoiles"</span><span class="p">,</span>
+          <span class="s2">"4_etoiles"</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
       <span class="s2">"checkin_details"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Please call us 15 min before your arrival so we can welcome you at the villa."</span>
       <span class="p">},</span>
@@ -2312,9 +2378,9 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2020-07-23T12:27:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2020-07-23T12:27:18Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2020-07-23T12:27:18Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2020-10-13T10:55:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2020-10-13T10:55:28Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2020-10-13T10:55:28Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -2386,7 +2452,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#569053033177rentals_write" role="tab" data-toggle="pill">
+        <a href="#ae3cf57c841erentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -2403,6 +2469,14 @@
       <span class="p">],</span>
       <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"certifications"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"meubles_de_tourisme"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="s2">"1_etoile"</span><span class="p">,</span>
+          <span class="s2">"2_etoiles"</span><span class="p">,</span>
+          <span class="s2">"3_etoiles"</span><span class="p">,</span>
+          <span class="s2">"4_etoiles"</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
       <span class="s2">"headline_en"</span><span class="o">:</span> <span class="s2">"Villa in Nevache, France"</span><span class="p">,</span>
       <span class="s2">"lat"</span><span class="o">:</span> <span class="mf">45.02</span><span class="p">,</span>
       <span class="s2">"lng"</span><span class="o">:</span> <span class="mf">6.6</span><span class="p">,</span>
@@ -2420,7 +2494,7 @@
   
   
     
-      <div class="tab-pane active" id="569053033177rentals_write">
+      <div class="tab-pane active" id="ae3cf57c841erentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -2452,6 +2526,14 @@
       <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
       <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
       <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"certifications"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"meubles_de_tourisme"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="s2">"1_etoile"</span><span class="p">,</span>
+          <span class="s2">"2_etoiles"</span><span class="p">,</span>
+          <span class="s2">"3_etoiles"</span><span class="p">,</span>
+          <span class="s2">"4_etoiles"</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
       <span class="s2">"checkin_details"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Please call us 15 min before your arrival so we can welcome you at the villa."</span>
       <span class="p">},</span>
@@ -2503,9 +2585,9 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2020-07-23T12:27:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2020-07-23T12:27:18Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2020-07-23T12:27:18Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2020-10-13T10:55:28Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2020-10-13T10:55:28Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2020-10-13T10:55:28Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
