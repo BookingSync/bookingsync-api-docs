@@ -1,7 +1,22 @@
 # Change Log
 
-## [3.19.1](https://github.com/BookingSync/bookingsync-api-docs/tree/3.19.1) (2020-06-03)
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.19.0...3.19.1)
+## [3.21.1](https://github.com/BookingSync/bookingsync-api-docs/tree/3.21.1) (2020-10-13)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.20.1...3.21.1)
+
+**Merged pull requests:**
+
+- \[core-3881\] add documentation for certifications [\#330](https://github.com/BookingSync/bookingsync-api-docs/pull/330) ([radekzawada](https://github.com/radekzawada))
+
+## [v3.20.1](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.20.1) (2020-07-23)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.19.1...v3.20.1)
+
+**Merged pull requests:**
+
+- \[core-3533\]update message endpoint documentation [\#328](https://github.com/BookingSync/bookingsync-api-docs/pull/328) ([radekzawada](https://github.com/radekzawada))
+- \[core-3582\] add mid term rate maps docs [\#327](https://github.com/BookingSync/bookingsync-api-docs/pull/327) ([radekzawada](https://github.com/radekzawada))
+
+## [v3.19.1](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.19.1) (2020-06-03)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.19.0...v3.19.1)
 
 **Merged pull requests:**
 
