@@ -24,7 +24,7 @@ closed_at            | [Time](/reference/enums#formats) | Read       | Time when
 deadline_response_at | [Time](/reference/enums#formats) | Read       | Conversation's deadline response time.
 last_message_at      | [Time](/reference/enums#formats) | Read       | Conversation's last message time.
 marked_as_spam_at    | [Time](/reference/enums#formats) | Read       | Time when Conversation was marked as spam.
-read_at              | [Time](/reference/enums#formats) | Read       | Conversation's read time.
+read_at              | [Time](/reference/enums#formats) | Read       | Time when conversations was viewed
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="inbox_write" markdown="1">
@@ -44,7 +44,7 @@ closed_at            | [Time](/reference/enums#formats) | Read       | Time when
 deadline_response_at | [Time](/reference/enums#formats) | Read/Write | Conversation's deadline response time.
 last_message_at      | [Time](/reference/enums#formats) | Read       | Conversation's last message time.
 marked_as_spam_at    | [Time](/reference/enums#formats) | Read/Write | Time when Conversation was marked as spam.
-read_at              | [Time](/reference/enums#formats) | Read       | Conversation's read time.
+read_at              | [Time](/reference/enums#formats) | Read       | Time when conversations was viewed
 {: class="table table-bordered"}
   </div>
 </div>
