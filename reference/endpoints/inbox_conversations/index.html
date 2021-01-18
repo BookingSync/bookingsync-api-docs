@@ -219,6 +219,12 @@
           <td>Read</td>
           <td>Time when Conversation was marked as spam.</td>
         </tr>
+        <tr>
+          <td>read_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Time when conversations was viewed</td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -309,6 +315,12 @@
           <td>Read/Write</td>
           <td>Time when Conversation was marked as spam.</td>
         </tr>
+        <tr>
+          <td>read_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Time when conversations was viewed</td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -323,7 +335,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#f579f6d22293inbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#681c962e8d4binbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -335,7 +347,7 @@
   
   
     
-      <div class="tab-pane active" id="f579f6d22293inbox_read-inbox_write">
+      <div class="tab-pane active" id="681c962e8d4binbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
@@ -357,6 +369,7 @@
       <span class="s2">"deadline_response_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"last_message_at"</span><span class="o">:</span> <span class="s2">"2018-11-22T12:19:57Z"</span><span class="p">,</span>
       <span class="s2">"marked_as_spam_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"read_at"</span><span class="o">:</span> <span class="s2">"2018-12-22T14:25:57Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"assignee"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
@@ -395,7 +408,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#dbdd806d614cinbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#647fb459db25inbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -407,7 +420,7 @@
   
   
     
-      <div class="tab-pane active" id="dbdd806d614cinbox_read-inbox_write">
+      <div class="tab-pane active" id="647fb459db25inbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
@@ -429,6 +442,7 @@
       <span class="s2">"deadline_response_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"last_message_at"</span><span class="o">:</span> <span class="s2">"2018-11-22T12:19:57Z"</span><span class="p">,</span>
       <span class="s2">"marked_as_spam_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"read_at"</span><span class="o">:</span> <span class="s2">"2018-12-22T14:25:57Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"assignee"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
@@ -467,7 +481,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#b5507c567693inbox_write" role="tab" data-toggle="pill">
+        <a href="#0eabcec0fd4finbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -490,7 +504,7 @@
   
   
     
-      <div class="tab-pane active" id="b5507c567693inbox_write">
+      <div class="tab-pane active" id="0eabcec0fd4finbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
@@ -512,6 +526,7 @@
       <span class="s2">"deadline_response_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"last_message_at"</span><span class="o">:</span> <span class="s2">"2018-12-20T14:25:57Z"</span><span class="p">,</span>
       <span class="s2">"marked_as_spam_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"read_at"</span><span class="o">:</span> <span class="s2">"2018-12-22T14:25:57Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"assignee"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
@@ -555,7 +570,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#47bfd82b4597inbox_write" role="tab" data-toggle="pill">
+        <a href="#74f519444cb8inbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -576,7 +591,7 @@
   
   
     
-      <div class="tab-pane active" id="47bfd82b4597inbox_write">
+      <div class="tab-pane active" id="74f519444cb8inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
@@ -598,6 +613,7 @@
       <span class="s2">"deadline_response_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"last_message_at"</span><span class="o">:</span> <span class="s2">"2018-12-20T14:25:57Z"</span><span class="p">,</span>
       <span class="s2">"marked_as_spam_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"read_at"</span><span class="o">:</span> <span class="s2">"2018-12-22T14:25:57Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"assignee"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
@@ -636,7 +652,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#b48b0bd421c5inbox_write" role="tab" data-toggle="pill">
+        <a href="#4874b5a73567inbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -657,7 +673,7 @@
   
   
     
-      <div class="tab-pane active" id="b48b0bd421c5inbox_write">
+      <div class="tab-pane active" id="4874b5a73567inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
@@ -679,6 +695,7 @@
       <span class="s2">"deadline_response_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"last_message_at"</span><span class="o">:</span> <span class="s2">"2018-12-20T14:25:57Z"</span><span class="p">,</span>
       <span class="s2">"marked_as_spam_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"read_at"</span><span class="o">:</span> <span class="s2">"2018-12-22T14:25:57Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"assignee"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
@@ -717,7 +734,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#e245f32c4522inbox_write" role="tab" data-toggle="pill">
+        <a href="#13749c10a6bcinbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -738,7 +755,7 @@
   
   
     
-      <div class="tab-pane active" id="e245f32c4522inbox_write">
+      <div class="tab-pane active" id="13749c10a6bcinbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
@@ -760,6 +777,7 @@
       <span class="s2">"deadline_response_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"last_message_at"</span><span class="o">:</span> <span class="s2">"2018-12-20T14:25:57Z"</span><span class="p">,</span>
       <span class="s2">"marked_as_spam_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"read_at"</span><span class="o">:</span> <span class="s2">"2018-12-22T14:25:57Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"assignee"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
