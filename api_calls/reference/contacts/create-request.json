@@ -1,0 +1,33 @@
+{
+  "contacts": [
+    {
+      "email": "some@email.com",
+      "website": "http://example.com",
+      "private_notes": "Lorem",
+      "gender": "male",
+      "firstname": "FirstName1",
+      "lastname": "LastName1",
+      "address1": "Nilsa Crossroad",
+      "address2": null,
+      "city": "New Margarettafurt",
+      "state": "Nevada",
+      "zip": "44147",
+      "country_code": "US",
+      "spoken_languages": ["en","fr"],
+      "phones": [
+        {
+          "label": "phone",
+          "number": "+33 (0)6 123.123.123"
+        },
+        {
+          "label": "mobile",
+          "number": "+33 (0)6 123.123.123"
+        },
+        {
+          "label": "fax",
+          "number": "+33 (0)6 123.123.123"
+        }
+      ]
+    }
+  ]
+}
