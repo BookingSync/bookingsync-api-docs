@@ -1,0 +1,846 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BookingSync API documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/stylesheets/application.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/highlight.css">
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="/assets/javascripts/application.js"></script>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.8.0">
+  </head>
+  <body class="flex-col">
+    <div class="page-wrapper flex-1 flex-col">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle sidebar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <img alt="BookingSync" src="/images/bookingsync.svg">
+              <span>Developers</span>
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="">
+                <a href="/guides/">Guides</a>
+              </li>
+              <li class="active">
+                <a href="/reference/">API Reference</a>
+              </li>
+              <li><a href="https://www.bookingsync.com" target="_blank">BookingSync.com</a></li>
+              <li><a href="https://github.com/BookingSync/bookingsync-api-docs" target="_blank"><i class="fa fa-github fa-fw fa-2x"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+<div class="container content">
+  <div class="row">
+    <div class="col-md-3 col-md-push-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Overview</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="/reference/">Introduction</a>
+          <a class="list-group-item" href="https://github.com/BookingSync/bookingsync-api-docs/releases">Changelog</a>
+          <a class="list-group-item" href="/reference/requirements/">Requirements</a>
+          <a class="list-group-item" href="/reference/libraries/">Libraries</a>
+          <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+          <a class="list-group-item" href="/reference/testing_authorization/">Testing the Authorization</a>
+          <a class="list-group-item" href="/reference/enums/">Enumerables</a>
+        </div>
+        <div class="panel-heading">
+          <h3 class="panel-title">Endpoints</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
+          <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/applications/">Applications</a>
+          <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
+          <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
+          <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_tags/">Bookings Tags</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_taxes/">Bookings Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/change_overs/">Change Overs</a>
+          <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
+          <a class="list-group-item active" href="/reference/endpoints/contacts/">Contacts</a>
+          <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
+          <a class="list-group-item" href="/reference/endpoints/fees/">Fees</a>
+          <a class="list-group-item" href="/reference/endpoints/fees_taxes/">Fees Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/hosts/">Hosts</a>
+          <a class="list-group-item" href="/reference/endpoints/inbox_attachments/">Inbox Attachments</a>
+          <a class="list-group-item" href="/reference/endpoints/inbox_conversations/">Inbox Conversations</a>
+          <a class="list-group-item" href="/reference/endpoints/inbox_messages/">Inbox Messages</a>
+          <a class="list-group-item" href="/reference/endpoints/inbox_participants/">Inbox Participants</a>
+          <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
+          <a class="list-group-item" href="/reference/endpoints/living_rooms/">Living Rooms</a>
+          <a class="list-group-item" href="/reference/endpoints/los_records/">LOS Records</a>
+          <a class="list-group-item" href="/reference/endpoints/mid_term_rate_maps/">Mid Term Rate Maps</a>
+          <a class="list-group-item" href="/reference/endpoints/nightly_rate_maps/">Nightly Rate Maps</a>
+          <a class="list-group-item" href="/reference/endpoints/payment_gateways/">Payment Gateways</a>
+          <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
+          <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
+          <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_contacts/">Rental Contacts</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_links/">Rental Links</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_taxes/">Rentals Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_urls/">Rental URLs</a>
+          <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
+          <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
+          <a class="list-group-item" href="/reference/endpoints/sources/">Sources</a>
+          <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
+          <a class="list-group-item" href="/reference/endpoints/taxes/">Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/tax_rules/">Tax Rules</a>
+        </div>
+        <div class="panel-heading">
+          <h3 class="panel-title">Deprecated APIs</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 col-md-pull-3">
+      <div class="panel panel-default">
+        <div class="panel-body reference-body">
+          <h2 id="contacts">Contacts</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#list-contacts">List contacts</a></li>
+  <li><a href="#get-a-single-contact">Get a single contact</a></li>
+  <li><a href="#create-a-new-contact">Create a new contact</a></li>
+  <li><a href="#update-a-contact">Update a contact</a></li>
+  <li><a href="#destroy-a-contact">Destroy a contact</a></li>
+</ol>
+
+<h4 id="parameters">Parameters</h4>
+<ul class="nav nav-pills" role="tablist">
+  <li class="disabled"><a>OAuth Scopes:</a></li>
+  <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
+  <li><a href="#rentals_write" role="tab" data-toggle="pill">rentals_write</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane active" id="public">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Contact’s id.</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>email</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Contact’s email address.</td>
+        </tr>
+        <tr>
+          <td>website</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Contact’s website url.</td>
+        </tr>
+        <tr>
+          <td>private_notes</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Contact’s annotations.</td>
+        </tr>
+        <tr>
+          <td>gender</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Contact’s gender. List of possible values described in <a href="/reference/enums#genders">enums section</a>.</td>
+        </tr>
+        <tr>
+          <td>firstname</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Contact’s firstname</td>
+        </tr>
+        <tr>
+          <td>lastname</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Contact’s lastname</td>
+        </tr>
+        <tr>
+          <td>fullname</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Contact’s fullname</td>
+        </tr>
+        <tr>
+          <td>address1</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Contact’s address</td>
+        </tr>
+        <tr>
+          <td>address2</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>extension of Contact’s address</td>
+        </tr>
+        <tr>
+          <td>city</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Contact’s city</td>
+        </tr>
+        <tr>
+          <td>country_code</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Contact’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+        </tr>
+        <tr>
+          <td>state</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Contact’s state</td>
+        </tr>
+        <tr>
+          <td>zip</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Contact’s zip code</td>
+        </tr>
+        <tr>
+          <td>spoken_languages</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>List of all available languages is described in <a href="/reference/enums/#locales">enums section</a>.</td>
+        </tr>
+        <tr>
+          <td>phones</td>
+          <td>Array of <a href="/reference/enums#formats">Object</a>
+</td>
+          <td>Read</td>
+          <td>Contact’s phones</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Contact’s create time.</td>
+        </tr>
+        <tr>
+          <td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Contact’s update time.</td>
+        </tr>
+        <tr>
+          <td>canceled_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Contact’s cancel time.</td>
+        </tr>
+        <tr>
+          <td>forget_me_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Contact’s forget time.</td>
+        </tr>
+        <tr>
+          <td>processing_restricted_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Contact’s processing restriction time.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tab-pane" id="rentals_write">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Contact’s id.</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>email</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Contact’s email address.</td>
+        </tr>
+        <tr>
+          <td>website</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Contact’s website url.</td>
+        </tr>
+        <tr>
+          <td>private_notes</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Contact’s annotations.</td>
+        </tr>
+        <tr>
+          <td>gender</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Contact’s gender. List of possible values described in <a href="/reference/enums#genders">enums section</a>.</td>
+        </tr>
+        <tr>
+          <td>firstname</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Contact’s firstname</td>
+        </tr>
+        <tr>
+          <td>lastname</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Contact’s lastname</td>
+        </tr>
+        <tr>
+          <td>fullname</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Contact’s fullname</td>
+        </tr>
+        <tr>
+          <td>address1</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Contact’s address</td>
+        </tr>
+        <tr>
+          <td>address2</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>extension of Contact’s address</td>
+        </tr>
+        <tr>
+          <td>city</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Contact’s city</td>
+        </tr>
+        <tr>
+          <td>country_code</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Contact’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+        </tr>
+        <tr>
+          <td>state</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Contact’s state</td>
+        </tr>
+        <tr>
+          <td>zip</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Contact’s zip code</td>
+        </tr>
+        <tr>
+          <td>spoken_languages</td>
+          <td>Array</td>
+          <td>Read/Write</td>
+          <td>List of all available languages is described in <a href="/reference/enums/#locales">enums section</a>.</td>
+        </tr>
+        <tr>
+          <td>phones</td>
+          <td>Array of <a href="/reference/enums#formats">Object</a>
+</td>
+          <td>Read/Write</td>
+          <td>Contact’s phones</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Contact’s create time.</td>
+        </tr>
+        <tr>
+          <td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Contact’s update time.</td>
+        </tr>
+        <tr>
+          <td>canceled_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Contact’s cancel time.</td>
+        </tr>
+        <tr>
+          <td>forget_me_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Contact’s forget time.</td>
+        </tr>
+        <tr>
+          <td>processing_restricted_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Contact’s processing restriction time.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3 id="list-contacts">List contacts</h3>
+
+<p>List all contacts for a given account(s).</p>
+
+<pre><code>GET /contacts
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#7591da8cfbe0public" role="tab" data-toggle="pill">
+          public
+        </a>
+      </li>
+    
+  </ul>
+
+<h4 id="response">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="7591da8cfbe0public">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"contacts.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{contacts.account}"</span>
+  <span class="p">},</span>
+  <span class="s2">"contacts"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Nilsa Crossroad"</span><span class="p">,</span>
+      <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"New Margarettafurt"</span><span class="p">,</span>
+      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"cornelia@nienow.co.uk"</span><span class="p">,</span>
+      <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"FirstName1"</span><span class="p">,</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"FirstName1 LastName1"</span><span class="p">,</span>
+      <span class="s2">"gender"</span><span class="o">:</span> <span class="s2">"male"</span><span class="p">,</span>
+      <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"LastName1"</span><span class="p">,</span>
+      <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"+33 (0)6 123.123.123"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"mobile"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"+33 (0)6 123.123.123"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"fax"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"+33 (0)6 123.123.123"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"private_notes"</span><span class="o">:</span> <span class="s2">"Lorem"</span><span class="p">,</span>
+      <span class="s2">"spoken_languages"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"en"</span><span class="p">,</span>
+        <span class="s2">"fr"</span>
+      <span class="p">],</span>
+      <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Nevada"</span><span class="p">,</span>
+      <span class="s2">"website"</span><span class="o">:</span> <span class="s2">"http://example.com"</span><span class="p">,</span>
+      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"44147"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2021-01-22T08:40:20Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2021-01-22T08:40:20Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"forget_me_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"processing_restricted_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"Link"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"first"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts?page=1"</span><span class="p">,</span>
+      <span class="s2">"last"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts?page=1"</span>
+    <span class="p">},</span>
+    <span class="s2">"X-Per-Page"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Count"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Pages"</span><span class="o">:</span> <span class="s2">"1"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="get-a-single-contact">Get a single contact</h3>
+
+<p>Returns a single contact identified by ID.</p>
+
+<pre><code>GET /contacts/:contact_id
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#f898c54b665dpublic" role="tab" data-toggle="pill">
+          public
+        </a>
+      </li>
+    
+  </ul>
+
+<h4 id="response-1">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="f898c54b665dpublic">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"contacts.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{contacts.account}"</span>
+  <span class="p">},</span>
+  <span class="s2">"contacts"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Nilsa Crossroad"</span><span class="p">,</span>
+      <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"New Margarettafurt"</span><span class="p">,</span>
+      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"cornelia@nienow.co.uk"</span><span class="p">,</span>
+      <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"FirstName1"</span><span class="p">,</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"FirstName1 LastName1"</span><span class="p">,</span>
+      <span class="s2">"gender"</span><span class="o">:</span> <span class="s2">"male"</span><span class="p">,</span>
+      <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"LastName1"</span><span class="p">,</span>
+      <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"+33 (0)6 123.123.123"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"mobile"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"+33 (0)6 123.123.123"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"fax"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"+33 (0)6 123.123.123"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"private_notes"</span><span class="o">:</span> <span class="s2">"Lorem"</span><span class="p">,</span>
+      <span class="s2">"spoken_languages"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"en"</span><span class="p">,</span>
+        <span class="s2">"fr"</span>
+      <span class="p">],</span>
+      <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Nevada"</span><span class="p">,</span>
+      <span class="s2">"website"</span><span class="o">:</span> <span class="s2">"http://example.com"</span><span class="p">,</span>
+      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"44147"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2021-01-22T08:40:20Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2021-01-22T08:40:20Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"forget_me_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"processing_restricted_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"Link"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"first"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts?page=1"</span><span class="p">,</span>
+      <span class="s2">"last"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts?page=1"</span>
+    <span class="p">},</span>
+    <span class="s2">"X-Per-Page"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Count"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Pages"</span><span class="o">:</span> <span class="s2">"1"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="create-a-new-contact">Create a new contact</h3>
+
+<p>Creates a contact</p>
+
+<pre><code>POST /contacts
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#0c1c5d5ee4f5rentals_write" role="tab" data-toggle="pill">
+          rentals_write
+        </a>
+      </li>
+    
+  </ul>
+
+<h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"contacts"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Nilsa Crossroad"</span><span class="p">,</span>
+      <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"New Margarettafurt"</span><span class="p">,</span>
+      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"some@email.com"</span><span class="p">,</span>
+      <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"FirstName1"</span><span class="p">,</span>
+      <span class="s2">"gender"</span><span class="o">:</span> <span class="s2">"male"</span><span class="p">,</span>
+      <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"LastName1"</span><span class="p">,</span>
+      <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"+33 (0)6 123.123.123"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"mobile"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"+33 (0)6 123.123.123"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"fax"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"+33 (0)6 123.123.123"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"private_notes"</span><span class="o">:</span> <span class="s2">"Lorem"</span><span class="p">,</span>
+      <span class="s2">"spoken_languages"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"en"</span><span class="p">,</span>
+        <span class="s2">"fr"</span>
+      <span class="p">],</span>
+      <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Nevada"</span><span class="p">,</span>
+      <span class="s2">"website"</span><span class="o">:</span> <span class="s2">"http://example.com"</span><span class="p">,</span>
+      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"44147"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-2">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="0c1c5d5ee4f5rentals_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"contacts.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{contacts.account}"</span>
+  <span class="p">},</span>
+  <span class="s2">"contacts"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Nilsa Crossroad"</span><span class="p">,</span>
+      <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"New Margarettafurt"</span><span class="p">,</span>
+      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"cornelia@nienow.co.uk"</span><span class="p">,</span>
+      <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"FirstName1"</span><span class="p">,</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"FirstName1 LastName1"</span><span class="p">,</span>
+      <span class="s2">"gender"</span><span class="o">:</span> <span class="s2">"male"</span><span class="p">,</span>
+      <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"LastName1"</span><span class="p">,</span>
+      <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"+33 (0)6 123.123.123"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"mobile"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"+33 (0)6 123.123.123"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"fax"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"+33 (0)6 123.123.123"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"private_notes"</span><span class="o">:</span> <span class="s2">"Lorem"</span><span class="p">,</span>
+      <span class="s2">"spoken_languages"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"en"</span><span class="p">,</span>
+        <span class="s2">"fr"</span>
+      <span class="p">],</span>
+      <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Nevada"</span><span class="p">,</span>
+      <span class="s2">"website"</span><span class="o">:</span> <span class="s2">"http://example.com"</span><span class="p">,</span>
+      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"44147"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2021-01-22T08:40:20Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2021-01-22T08:40:20Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"forget_me_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"processing_restricted_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="update-a-contact">Update a contact</h3>
+
+<p>Returns an updated contact identified by ID.</p>
+
+<pre><code>PUT /contact/:contact_id
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#977d9354e33arentals_write" role="tab" data-toggle="pill">
+          rentals_write
+        </a>
+      </li>
+    
+  </ul>
+
+<h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"contacts"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"New Margarettafurt"</span><span class="p">,</span>
+      <span class="s2">"private_notes"</span><span class="o">:</span> <span class="s2">"Lorem"</span><span class="p">,</span>
+      <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Nevada"</span><span class="p">,</span>
+      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"44147"</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-3">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="977d9354e33arentals_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"contacts.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{contacts.account}"</span>
+  <span class="p">},</span>
+  <span class="s2">"contacts"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Nilsa Crossroad"</span><span class="p">,</span>
+      <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"New Margarettafurt"</span><span class="p">,</span>
+      <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
+      <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"cornelia@nienow.co.uk"</span><span class="p">,</span>
+      <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"FirstName1"</span><span class="p">,</span>
+      <span class="s2">"fullname"</span><span class="o">:</span> <span class="s2">"FirstName1 LastName1"</span><span class="p">,</span>
+      <span class="s2">"gender"</span><span class="o">:</span> <span class="s2">"male"</span><span class="p">,</span>
+      <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"LastName1"</span><span class="p">,</span>
+      <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"+33 (0)6 123.123.123"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"mobile"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"+33 (0)6 123.123.123"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"fax"</span><span class="p">,</span>
+          <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"+33 (0)6 123.123.123"</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">"private_notes"</span><span class="o">:</span> <span class="s2">"Lorem"</span><span class="p">,</span>
+      <span class="s2">"spoken_languages"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"en"</span><span class="p">,</span>
+        <span class="s2">"fr"</span>
+      <span class="p">],</span>
+      <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Nevada"</span><span class="p">,</span>
+      <span class="s2">"website"</span><span class="o">:</span> <span class="s2">"http://example.com"</span><span class="p">,</span>
+      <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"44147"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2021-01-22T08:40:20Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2021-01-22T08:40:20Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"forget_me_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"processing_restricted_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="destroy-a-contact">Destroy a contact</h3>
+
+<p>Required OAuth scope: <code>:rentals_write</code></p>
+
+<p>Returns empty response with ‘204 No Content’ status code on success.</p>
+
+<pre><code>DELETE /contacts/:contact_id
+</code></pre>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </body>
+</html>
+
