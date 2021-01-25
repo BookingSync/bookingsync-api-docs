@@ -1,0 +1,58 @@
+{
+  "links": {
+      "contacts.account": "https://www.bookingsync.com/api/v3/accounts/{contacts.account}"
+  },
+  "contacts": [
+      {
+          "links": {
+              "account": 1
+          },
+          "id": 1,
+          "fullname": "FirstName1 LastName1",
+          "spoken_languages": [
+              "en",
+              "fr"
+          ],
+          "email": "cornelia@nienow.co.uk",
+          "phones": [
+            {
+              "label": "phone",
+              "number": "+33 (0)6 123.123.123"
+            },
+            {
+              "label": "mobile",
+              "number": "+33 (0)6 123.123.123"
+            },
+            {
+              "label": "fax",
+              "number": "+33 (0)6 123.123.123"
+            }
+          ],
+          "website": "http://example.com",
+          "private_notes": "Lorem",
+          "address1": "Nilsa Crossroad",
+          "address2": null,
+          "city": "New Margarettafurt",
+          "state": "Nevada",
+          "zip": "44147",
+          "country_code": "US",
+          "firstname": "FirstName1",
+          "lastname": "LastName1",
+          "gender": "male",
+          "created_at": "2021-01-22T08:40:20Z",
+          "updated_at": "2021-01-22T08:40:20Z",
+          "canceled_at": null,
+          "forget_me_at": null,
+          "processing_restricted_at": null
+      }
+  ],
+  "meta": {
+      "Link": {
+          "first": "https://www.bookingsync.com/api/v3/contacts?page=1",
+          "last": "https://www.bookingsync.com/api/v3/contacts?page=1"
+      },
+      "X-Total-Pages": "1",
+      "X-Total-Count": "1",
+      "X-Per-Page": "100"
+  }
+}

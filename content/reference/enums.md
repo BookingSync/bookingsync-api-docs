@@ -81,6 +81,14 @@ time             | [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601#UTC) compati
 
 _Note_: Translation objects are having locales as string keys and translations as string values. `{"en": "Wonderful living room", "fr": "Merveilleux séjour"}`
 
+## Genders
+
+Value  |
+-------|
+male   |
+female |
+{: class="table table-bordered"}
+
 ## Locales
 
 Code             | Name
