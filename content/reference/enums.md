@@ -332,6 +332,14 @@ secondary_residence | Secondary residence.
 non_residential     | Non residential.
 {: class="table table-bordered"}
 
+## Rental management type
+
+Name             | Description
+-----------------|------------
+professional     | Professional.
+non_professional | Non professional.
+{: class="table table-bordered"}
+
 ## Inbox Message Channels
 
 Name             | Description
