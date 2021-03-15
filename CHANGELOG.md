@@ -1,11 +1,25 @@
 # Change Log
 
-## [3.22.1](https://github.com/BookingSync/bookingsync-api-docs/tree/3.22.1) (2021-01-11)
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.21.1...3.22.1)
+## [3.24.1](https://github.com/BookingSync/bookingsync-api-docs/tree/3.24.1) (2021-03-15)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.23.1...3.24.1)
 
 **Merged pull requests:**
 
-- \[core-4206\] expose read\_at in inbox endpoint [\#331](https://github.com/BookingSync/bookingsync-api-docs/pull/331) ([radekzawada](https://github.com/radekzawada))
+- \[core-4406\] add rentals management\_type description  [\#336](https://github.com/BookingSync/bookingsync-api-docs/pull/336) ([radekzawada](https://github.com/radekzawada))
+
+## [v3.23.1](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.23.1) (2021-01-25)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.22.1...v3.23.1)
+
+**Merged pull requests:**
+
+- \[core-4256\] add contacts endpoint [\#333](https://github.com/BookingSync/bookingsync-api-docs/pull/333) ([radekzawada](https://github.com/radekzawada))
+
+## [v3.22.1](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.22.1) (2021-01-11)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.21.1...v3.22.1)
+
+**Merged pull requests:**
+
+- \[core-4206\] add read\_at to inboc documentation [\#331](https://github.com/BookingSync/bookingsync-api-docs/pull/331) ([radekzawada](https://github.com/radekzawada))
 
 ## [v3.21.1](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.21.1) (2020-10-13)
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.20.1...v3.21.1)
