@@ -1,4 +1,4 @@
-# Secure Payments By BookingSync
+# GDPR
 
 1. TOC
 {:toc}
