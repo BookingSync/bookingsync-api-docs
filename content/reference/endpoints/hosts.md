@@ -11,6 +11,7 @@
 </ul>
 <div class="tab-content" markdown="1">
 <div class="tab-pane active" id="inbox_read" markdown="1">
+
 Name                     | Type    | Read/Write | Description
 -------------------------|---------|------------|------------
 id                       | Integer | Read       | Host's id.
@@ -21,8 +22,8 @@ email                    | String  | Read       | Host's email.
 -------------------------|---------|------------|------------
 created_at               | [Time](/reference/enums#formats) | Read       | Host's create time.
 updated_at               | [Time](/reference/enums#formats) | Read       | Host's update time.
-forget_me_at             | [Time](/reference/enums#formats) | Read       | Host's forget time.
-processing_restricted_at | [Time](/reference/enums#formats) | Read       | Host's processing restriction time.
+forget_me_at             | [Time](/reference/enums#formats) | Read       | Refer to [GDPR guide](/guides/gdpr)
+processing_restricted_at | [Time](/reference/enums#formats) | Read       | Refer to [GDPR guide](/guides/gdpr)
 {: class="table table-bordered"}
 </div>
 <div class="tab-pane" id="inbox_write" markdown="1">
