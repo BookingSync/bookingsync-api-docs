@@ -36,12 +36,12 @@ state               | String   | Read/Write | Payer's state. (100 characters max
 test                | Boolean  | Read       | Payment's test status.
 zip                 | String   | Read/Write | Payer's zip code. (10 characters max)
 --------------------|----------|------------|------------
-created_at          | [Time](/reference/enums#formats) | Read       | Payment's create time.
-updated_at          | [Time](/reference/enums#formats) | Read       | Payment's update time.
-rejected_at         | [Time](/reference/enums#formats) | Read       | Payment's reject time.
-canceled_at         | [Time](/reference/enums#formats) | Read       | Payment's cancel time.
-paid_at             | [Time](/reference/enums#formats) | Read/Write | Payment's issue time.
-forget_me_at     | [Time](/reference/enums#formats) | Read       | Refer to [GDPR guide](/guides/gdpr).
+created_at               | [Time](/reference/enums#formats) | Read       | Payment's create time.
+updated_at               | [Time](/reference/enums#formats) | Read       | Payment's update time.
+rejected_at              | [Time](/reference/enums#formats) | Read       | Payment's reject time.
+canceled_at              | [Time](/reference/enums#formats) | Read       | Payment's cancel time.
+paid_at                  | [Time](/reference/enums#formats) | Read/Write | Payment's issue time.
+forget_me_at             | [Time](/reference/enums#formats) | Read       | Refer to [GDPR guide](/guides/gdpr).
 processing_restricted_at | [Time](/reference/enums#formats) | Read       | Refer to [GDPR guide](/guides/gdpr).
 {: class="table table-bordered"}
   </div>

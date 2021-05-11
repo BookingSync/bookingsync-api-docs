@@ -31,10 +31,10 @@ zip                  | String  | Read       | Contact's zip code
 spoken_languages     | Array   | Read       | List of all available languages is described in [enums section](/reference/enums/#locales).
 phones               | Array of [Object](/reference/enums#formats) | Read | Contact's phones
 ---------------------|---------|------------|------------
-created_at           | [Time](/reference/enums#formats) | Read       | Contact's create time.
-updated_at           | [Time](/reference/enums#formats) | Read       | Contact's update time.
-canceled_at          | [Time](/reference/enums#formats) | Read       | Contact's cancel time.
-forget_me_at         | [Time](/reference/enums#formats) | Read       | Refer to [GDPR guide](/guides/gdpr)
+created_at               | [Time](/reference/enums#formats) | Read       | Contact's create time.
+updated_at               | [Time](/reference/enums#formats) | Read       | Contact's update time.
+canceled_at              | [Time](/reference/enums#formats) | Read       | Contact's cancel time.
+forget_me_at             | [Time](/reference/enums#formats) | Read       | Refer to [GDPR guide](/guides/gdpr)
 processing_restricted_at | [Time](/reference/enums#formats) | Read       | Refer to [GDPR guide](/guides/gdpr)
 {: class="table table-bordered"}
   </div>
