@@ -1,7 +1,21 @@
 # Change Log
 
-## [3.24.1](https://github.com/BookingSync/bookingsync-api-docs/tree/3.24.1) (2021-03-15)
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.23.1...3.24.1)
+## [3.25.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.25.0) (2021-05-11)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.24.1...3.25.0)
+
+**Closed issues:**
+
+- Include rental\_url in rentals [\#340](https://github.com/BookingSync/bookingsync-api-docs/issues/340)
+- Get booking by reference/external\_reference [\#338](https://github.com/BookingSync/bookingsync-api-docs/issues/338)
+- No bookings for bookingId reported by a payment [\#337](https://github.com/BookingSync/bookingsync-api-docs/issues/337)
+
+**Merged pull requests:**
+
+- fix syntax in response json [\#343](https://github.com/BookingSync/bookingsync-api-docs/pull/343) ([Azdaroth](https://github.com/Azdaroth))
+- add docs about GDPR-related fields [\#342](https://github.com/BookingSync/bookingsync-api-docs/pull/342) ([Azdaroth](https://github.com/Azdaroth))
+
+## [v3.24.1](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.24.1) (2021-03-15)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.23.1...v3.24.1)
 
 **Merged pull requests:**
 
