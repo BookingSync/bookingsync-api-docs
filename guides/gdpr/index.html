@@ -52,7 +52,7 @@
     <div class="col-md-3 col-md-push-9">
       <div class="panel panel-default">
         <div class="list-group">
-          <a class="list-group-item active" href="/guides/">Introduction</a>
+          <a class="list-group-item" href="/guides/">Introduction</a>
             <a class="list-group-item" href="/guides/gdpr">GDPR</a>
           <a class="list-group-item" href="/guides/create-a-booking-with-a-source">Create a Booking with a Source</a>
           <a class="list-group-item" href="/guides/read-all-authorized-accounts-at-once">Read all authorized accounts at once</a>
@@ -72,9 +72,21 @@
     <div class="col-md-9 col-md-pull-3">
       <div class="panel panel-default">
         <div class="panel-body guide-body">
-          <h2 id="guides-and-tutorials">Guides and Tutorials</h2>
+          <h2 id="gdpr">GDPR</h2>
 
-<p>Welcome to BookingSync API guides!</p>
+
+<p>All resources containing personal data have two special attributes corresponding to the <strong>EU G(eneral)D(ata)P(rotection)R(egulation)</strong>:</p>
+
+<ul>
+  <li>
+    <p>processing_restricted_at - a timestamp representing the time when an individual requests the restriction of processing of their personal data (“Right to restrict processing”)</p>
+  </li>
+  <li>
+    <p>forget_me_at - a timestamp representing the time when an individual asks for erasure of their data (“Right to erasure”). When this timestamp is set, all the personal data on a given resource must also be anonymized.</p>
+  </li>
+</ul>
+
+<p>As a BookingSync Partner, it is your legal obligation to process these attributes correctly in accordance with <strong>GDPR</strong>.</p>
 
         </div>
       </div>
