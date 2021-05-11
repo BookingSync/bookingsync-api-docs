@@ -24,8 +24,10 @@ Group     | Name             | Type    | Read/Write | Description
           | preferred_locale | String  | Read       | Client's contact language preference.
           | vat_number       | String  | Read       | Client's company vat number.
 ----------|------------------|---------|------------|------------
-          | created_at       | [Time](/reference/enums#formats) | Read       | Client's create time.
-          | updated_at       | [Time](/reference/enums#formats) | Read       | Client's update time.
+          | created_at               | [Time](/reference/enums#formats) | Read       | Client's create time.
+          | updated_at               | [Time](/reference/enums#formats) | Read       | Client's update time.
+          | forget_me_at             | [Time](/reference/enums#formats) | Read       | Refer to [GDPR guide](/guides/gdpr).
+          | processing_restricted_at | [Time](/reference/enums#formats) | Read       | Refer to [GDPR guide](/guides/gdpr)
 ----------|------------------|---------|------------|------------
 addresses |                  | Array   | Read       | Array of client's addresses.
           | address1         | String  | Read       | Client's first address.
