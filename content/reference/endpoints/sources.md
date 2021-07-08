@@ -17,6 +17,7 @@ id               | Integer | Read       | Source's id.
 -----------------|---------|------------|------------
 name             | String  | Read       | Source's name.
 position         | Integer | Read       | Source's position on the list.
+internal         | Boolean | Read       | Source's internal status. When `true`, it is restricted for internal-only use (should not be used by the partner for anything else than read). Every attempt to associate any record with such a source will result in 422 error.
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Source's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Source's update time.
@@ -29,6 +30,7 @@ id               | Integer | Read       | Source's id.
 -----------------|---------|------------|------------
 name             | String  | Read/Write | **Required**. Source's name. (50 characters max)
 position         | Integer | Read/Write | Source's position on the list.
+internal         | Boolean | Read       | Source's internal status. When `true`, it is restricted for internal-only use (should not be used by the partner for anything else than read). Every attempt to associate any record with such a source will result in 422 error.
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Source's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Source's update time.
