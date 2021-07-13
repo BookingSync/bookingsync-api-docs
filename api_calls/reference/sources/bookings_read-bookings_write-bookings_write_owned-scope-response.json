@@ -16,7 +16,8 @@
       "name": "Airbnb",
       "created_at": "CREATED_AT",
       "updated_at": "UPDATED_AT",
-      "position": 1
+      "position": 1,
+      "internal": false
     }
   ]
 }
