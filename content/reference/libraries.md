@@ -4,7 +4,7 @@ We recommend using an existing OAuth 2.0 library instead of implementing
 the protocol by hand. There are many edge cases, and using a well-tested
 library is the best way to cover them all.
 
-You can find a list of client libraries at [oauth.net](http://oauth.net/2/#client-libraries).
+You can find a list of client libraries at [oauth.net](https://oauth.net/code).
 
 For Ruby users, we also developed nice gems ourselves to ease the integration of our api:
 
