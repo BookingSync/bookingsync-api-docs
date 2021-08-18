@@ -25,13 +25,13 @@ Once you are logged in, locate the application where you want to subscribe to we
 
 You should see a "Webhooks" tab
 
-<img src="/images/webhook-subscriptions/webhooks-tab.png" alt="webhooks-tab" style="width:70%">
+<img src="/images/webhook-subscriptions/webhooks-tab.png" alt="webhooks-tab" style="width:70%" />
 
 Now, go to the "Webhook" section and click "New Webhook" to access the webhook subscriptions form.
 
 ### Webhook subscription form
 
-<img src="/images/webhook-subscriptions/webhooks-form.png" alt="webhooks-form" style="width:70%">
+<img src="/images/webhook-subscriptions/webhooks-form.png" alt="webhooks-form" style="width:70%" />
 
 ### URL
 
@@ -97,6 +97,10 @@ In Ruby, the signature could be computed the following way:
 encoded_body = Base64.encode64(json_body) # assuming `json_body` comes from the request
 OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new("sha1"), YOUR_APPLICATION_SECRET, encoded_body)
 ~~~
+
+<div class="alert alert-warning" role="alert">
+  Note that Ruby’s <code>Base64.encode64</code> inserts <code>\n</code> character every 60 chars and at the end of string. Please account for it if other programming languages or Base64 encoding implementations are used.
+</div>
 
 The request has valid origin only if the value of `X-Content-Signature` header is the same as the one computed in your application.
 

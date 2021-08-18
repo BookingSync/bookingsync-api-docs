@@ -84,7 +84,7 @@ GEM
       cri (~> 2.3)
     nanoc-sprockets3 (1.0.5)
       sprockets (~> 3.2, >= 3.0.0)
-    nio4r (1.2.1)
+    nio4r (2.5.8)
     nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     octokit (4.8.0)
@@ -144,4 +144,4 @@ DEPENDENCIES
   uglifier
 
 BUNDLED WITH
-   1.17.2
+   1.17.3

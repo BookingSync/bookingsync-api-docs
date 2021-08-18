@@ -34,7 +34,7 @@ id                | Integer | Read       | Attachment's id.
 account_id        | Integer | Read       | Id of Account Attachment belongs to.
 ------------------|---------|------------|------------
 remote_file_url   | String  | Write      | Attachment's remote url address.
-file              | String  | Write      | Attachment's Base64 encoded file.
+file              | String  | Write      | Attachment's Base64 encoded file prepended with `data:image/png;base64,` (note comma separator between the type prefix and the Base64-encoded body)
 url               | String  | Read       | Attachment's url address.
 name              | String  | Read/Write | Attachment's name.
 image_width       | Integer | Read       | Attachment's image width in pixels.
