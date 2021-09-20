@@ -1,7 +1,16 @@
 # Change Log
 
-## [3.25.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.25.0) (2021-05-11)
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.24.1...3.25.0)
+## [3.25.1](https://github.com/BookingSync/bookingsync-api-docs/tree/3.25.1) (2021-09-20)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.25.0...3.25.1)
+
+**Merged pull requests:**
+
+- Use attachment\_ids instead of attachments\_ids attribute name [\#348](https://github.com/BookingSync/bookingsync-api-docs/pull/348) ([radekzawada](https://github.com/radekzawada))
+- \[CORE-4404\] Add base64 important notes [\#347](https://github.com/BookingSync/bookingsync-api-docs/pull/347) ([pyromaniac](https://github.com/pyromaniac))
+- Update docs and explain upcoming attribute on sources [\#345](https://github.com/BookingSync/bookingsync-api-docs/pull/345) ([StoneFrog](https://github.com/StoneFrog))
+
+## [v3.25.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.25.0) (2021-05-11)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.24.1...v3.25.0)
 
 **Closed issues:**
 
