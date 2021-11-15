@@ -1,0 +1,23 @@
+{
+  "links": {
+    "review_replies.booking": "https://www.bookingsync.com/api/v3/bookings/{review_replies.booking}",
+    "review_replies.host_review": "https://www.bookingsync.com/api/v3/rentals/{review_replies.host_review}",
+    "review_replies.review": "https://www.bookingsync.com/api/v3/rentals/{review_replies.review}",
+    "review_replies.account": "https://www.bookingsync.com/api/v3/rentals/{review_replies.account}"
+  },
+  "review_replies": [
+    {
+      "links": {
+        "host_review": "96f9e3f1-ed2a-4c8c-8e2f-1d3e1d0c8356",
+        "review": null,
+        "booking": 4,
+        "account": 1
+      },
+      "id": "c7bd77d3-0c74-4da8-8a64-5461f80ff81b",
+      "reply": "Merci!",
+      "replied_at": "CREATED_AT",
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT"
+    }
+  ]
+}
