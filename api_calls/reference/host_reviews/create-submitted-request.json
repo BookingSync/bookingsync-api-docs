@@ -1,0 +1,29 @@
+{
+  "host_reviews": [
+    {
+      "comment": "Awesome guest",
+      "submitted_at": "2020-06-06T12:00:00Z",
+      "expires_at": "2020-06-07T12:00:00Z",
+      "is_guest_recommended": true,
+      "shareable": false,
+      "comment": "It was awesome!",
+      "source_id": 1,
+      "criteria": {
+        "cleanliness": {
+          "rating": "4.5",
+          "comment": null
+        },
+        "communication": {
+          "rating": "5.0",
+          "comment": null
+        },
+        "respect_house_rules": {
+          "rating": "5.0",
+          "comment": "Everything great!"
+        }
+      }
+    }
+  ]
+}
+
+

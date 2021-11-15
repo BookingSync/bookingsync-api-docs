@@ -1,0 +1,44 @@
+{
+  "links": {
+    "host_reviews.source": "https://www.bookingsync.com/api/v3/sources/{host_reviews.source}",
+    "host_reviews.booking": "https://www.bookingsync.com/api/v3/bookings/{host_reviews.booking}",
+    "host_reviews.rental": "https://www.bookingsync.com/api/v3/rentals/{host_reviews.rental}",
+    "host_reviews.account": "https://www.bookingsync.com/api/v3/accounts/{host_reviews.account}",
+    "host_reviews.reply": "https://www.bookingsync.com/api/v3/review_replies/{host_reviews.reply}"
+  },
+  "host_reviews": [
+    {
+      "links": {
+        "account": 1,
+        "booking": 96,
+        "rental": 1,
+        "reply": null,
+        "source": 1
+      },
+      "id": "04356dc9-1349-4e05-b818-09ccdac8d5dd",
+      "comment": "It was awesome!",
+      "private_comment": null,
+      "shareable": false,
+      "criteria": {
+        "cleanliness": {
+          "rating": "4.5",
+          "comment": null
+        },
+        "communication": {
+          "rating": "5.0",
+          "comment": null
+        },
+        "respect_house_rules": {
+          "rating": "5.0",
+          "comment": "Everything great!"
+        }
+      },
+      "submitted_at": "2020-06-06T12:00:00Z",
+      "is_guest_recommended": true,
+      "expires_at": "2021-06-07T12:00:00Z",
+      "created_at": "CREATED_AT",
+      "updated_at": "UPDATED_AT"
+    }
+  ],
+  "meta": {}
+}
