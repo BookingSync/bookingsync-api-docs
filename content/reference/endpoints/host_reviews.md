@@ -21,15 +21,15 @@ Group    | Subgroup            | Name                  | Type    | Read/Write | 
          |                     | source_id             | Boolean | Read       | Source of the Host Review, always equal to the source of the booking.
 ---------|---------------------|-----------------------|---------|------------|------------
 criteria |                     |                       | Object  | Read       | Guest ratings in specific criteria.
-         | cleanliness         |                       | Object  | Read       | Deatils of given criterion.
-         |                     | rating                | Decimal | Read       | Rating of guests' clealiness
-         |                     | comment               | Text    | Read       | Comment on guests'
-         | communication       |                       | Object  | Read       | Deatils of given criterion.
+         | cleanliness         |                       | Object  | Read       | Details of given criterion.
          |                     | rating                | Decimal | Read       | Rating of guests' clealiness
          |                     | comment               | Text    | Read       | Comment on guests' clealiness
-         | respect_house_rules |                       | Object  | Read       | Deatils of given criterion.
-         |                     | rating                | Decimal | Read       | Rating of guests' clealiness
-         |                     | comment               | Text    | Read       | Comment on guests' clealiness
+         | communication       |                       | Object  | Read       | Details of given criterion.
+         |                     | rating                | Decimal | Read       | Rating of guests' communication
+         |                     | comment               | Text    | Read       | Comment on guests' communication
+         | respect_house_rules |                       | Object  | Read       | Details of given criterion.
+         |                     | rating                | Decimal | Read       | Rating of guests' respect of house rules
+         |                     | comment               | Text    | Read       | Comment on guests' respect of house rules
 ---------|---------------------|-----------------------|---------|------------|------------
          |                     | created_at            | [Time](/reference/enums#formats) | Read       | Review's create time.
          |                     | updated_at            | [Time](/reference/enums#formats) | Read       | Review's update time.
@@ -41,6 +41,7 @@ criteria |                     |                       | Object  | Read       | 
 Group    | Subgroup            | Name                  | Type    | Read/Write | Description
 ---------|---------------------|-----------------------|---------|------------|------------
          |                     | id                    | UUID    | Read       | Host Review's id.
+         |                     | source_id             | Integer | Write      | Id of the source of given host review. It must be equal to the source of the associated booking.
 ---------|---------------------|-----------------------|---------|------------|------------
          |                     | comment               | Text    | Read/Write | Host Review's comment. **Optional** for draft, **required** for submission.
          |                     | private_comment       | Text    | Read/Write | ** Optional**: Private feedback to the guest, can't be display publicly.
@@ -49,14 +50,14 @@ Group    | Subgroup            | Name                  | Type    | Read/Write | 
          |                     | source_id             | Boolean | Read/Write | Source of the Host Review. **Required**: Has to be set during creation, not possible to modify afterwards. Has to be the same as the source of the booking.
 ---------|---------------------|-----------------------|---------|------------|------------
 criteria |                     |                       | Object  | Read/Write | Guest ratings in specific criteria. **Optional** for draft, **required** for submission.
-         | cleanliness         |                       | Object  | Read/Write | Deatils of given criterion. **Optional** for draft, **required** for submission.
+         | cleanliness         |                       | Object  | Read/Write | Details of given criterion. **Optional** for draft, **required** for submission.
          |                     | rating                | Decimal | Read/Write | Rating of guests' clealiness. **Required** if parent element is defined.
          |                     | comment               | Text    | Read/Write | **Optional**: Comment on guests' cleanliness.
-         | communication       |                       | Object  | Read/Write | Deatils of given criterion. **Optional** for draft, **required** for submission.
-         |                     | rating                | Decimal | Read/Write | Rating of guests' clealiness. **Required** if parent element is defined.
+         | communication       |                       | Object  | Read/Write | Details of given criterion. **Optional** for draft, **required** for submission.
+         |                     | rating                | Decimal | Read/Write | Rating of guests' communication. **Required** if parent element is defined.
          |                     | comment               | Text    | Read/Write | **Optional**: Comment on guests' communication.
-         | respect_house_rules |                       | Object  | Read/Write | Deatils of given criterion. **Optional** for draft, **required** for submission.
-         |                     | rating                | Decimal | Read/Write | Rating of guests' clealiness. **Required** if parent element is defined.
+         | respect_house_rules |                       | Object  | Read/Write | Details of given criterion. **Optional** for draft, **required** for submission.
+         |                     | rating                | Decimal | Read/Write | Rating of guests' respect of house rules. **Required** if parent element is defined.
          |                     | comment               | Text    | Read/Write | **Optional**: Comment on guests' respect of house rules.
 ---------|---------------------|-----------------------|---------|------------|------------
          |                     | created_at            | [Time](/reference/enums#formats) | Read       | Review's create time.

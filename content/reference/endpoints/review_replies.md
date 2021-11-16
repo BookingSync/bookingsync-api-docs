@@ -58,6 +58,10 @@ GET /review_replies/:review_id
 
 ## Reply to guest or host review
 
+<div class="callout callout-info" markdown="1">
+  As of now, every guest or host review may have only one reply.
+</div>
+
 ### Reply to guest review
 
 Replies to a given guest review
@@ -74,7 +78,7 @@ POST /reviews/:review_id/review_replies
 Replies to a given host review
 
 ~~~
-POST /host_reviews/:host_review_d/review_replies
+POST /host_reviews/:host_review_id/review_replies
 ~~~
 
 <%= render 'json_response', endpoint: "review_replies", request: "create",

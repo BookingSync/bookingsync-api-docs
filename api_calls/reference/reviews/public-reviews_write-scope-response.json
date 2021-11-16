@@ -1,22 +1,51 @@
 {
   "links": {
+    "reviews.source": "https://www.bookingsync.com/api/v3/sources/{reviews.source}",
+    "reviews.reply": "https://www.bookingsync.com/api/v3/review_replies/{reviews.reply}",
     "reviews.booking": "https://www.bookingsync.com/api/v3/bookings/{reviews.booking}",
-    "reviews.rental": "https://www.bookingsync.com/api/v3/rentals/{reviews.rental}"
+    "reviews.rental": "https://www.bookingsync.com/api/v3/rentals/{reviews.rental}",
+    "reviews.account": "https://www.bookingsync.com/api/v3/accounts/{reviews.account}"
   },
   "reviews": [
     {
       "links": {
-        "rental": 87,
-        "booking": 4
+        "account": 11375,
+        "booking": 15447834,
+        "rental": 115170,
+        "reply": null,
+        "source": 1
       },
-      "id": 1,
+      "id": 4211675,
       "rating": 5,
-      "comment": "It was awesome!",
-      "name": "John S.",
-      "title": "Awesome",
-      "country_code": "FR",
+      "comment": "Amazing stay",
+      "name": null,
+      "title": "Amazing stay",
+      "country_code": null,
       "created_at": "CREATED_AT",
-      "updated_at": "UPDATED_AT"
+      "updated_at": "UPDATED_AT",
+      "rating_accurate": "4.6",
+      "shareable": false,
+      "private_comment": "I left my glasses",
+      "criteria": {
+        "cleanliness": {
+          "rating": "4.5",
+          "comment": null
+        },
+        "checkin": null,
+        "communication": {
+          "rating": "5.0",
+          "comment": null
+        },
+        "location": null,
+        "facilities": null,
+        "comfort": null,
+        "staff": null,
+        "value_for_money": {
+          "rating": "4.0",
+          "comment": "A bit too expansive"
+        },
+        "accuracy": null
+      }
     }
   ]
 }

@@ -1,9 +1,26 @@
 {
   "reviews": [
     {
-      "comment": "It was awesome!",
-      "rating": 5,
-      "title": "Awesome"
+      "comment": "Amazing stay",
+      "private_comment": "I left my glasses",
+      "submitted_at": "2020-06-06T12:00:00Z",
+      "rating": 4.6,
+      "shareable": false,
+      "source_id": 1,
+      "criteria": {
+        "cleanliness": {
+          "rating": "4.5",
+          "comment": null
+        },
+        "communication": {
+          "rating": "5.0",
+          "comment": null
+        },
+        "value_for_money": {
+          "rating": "4.0",
+          "comment": "A bit too expansive"
+        }
+      }
     }
   ]
 }
