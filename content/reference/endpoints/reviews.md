@@ -40,16 +40,16 @@ criteria |                     |                       | Object  | Read       | 
          |                     | rating                | Decimal | Read       | Whare facilities working and matching description? XXX
          |                     | comment               | Text    | Read       | Additional feedback for a given criterion.
          | comfort             |                       | Object  | Read       | Details of given criterion.
-         |                     | rating                | Decimal | Read       | How comfortabel was the stay? XXX
+         |                     | rating                | Decimal | Read       | Was the property warm enough, with enough lights. Were the beds and/or sofa comfy?
          |                     | comment               | Text    | Read       | Additional feedback for a given criterion.
          | staff               |                       | Object  | Read       | Details of given criterion.
-         |                     | rating                | Decimal | Read       | How helpful was the staff? XXX
+         |                     | rating                | Decimal | Read       | Was the staff friendly, attentive and respectful?
          |                     | comment               | Text    | Read       | Additional feedback for a given criterion.
          | value_for_money     |                       | Object  | Read       | Details of given criterion.
          |                     | rating                | Decimal | Read       | Was it worth the price?
          |                     | comment               | Text    | Read       | Additional feedback for a given criterion.
          | accuracy            |                       | Object  | Read       | Details of given criterion.
-         |                     | rating                | Decimal | Read       | How accurate was the property represented on a website?
+         |                     | rating                | Decimal | Read       | Was the property accurately represented on a website?
          |                     | comment               | Text    | Read       | Additional feedback for a given criterion.
 ---------|---------------------|-----------------------|---------|------------|------------
          |                     | created_at            | [Time](/reference/enums#formats) | Read       | Review's create time.
@@ -89,16 +89,16 @@ criteria |                     |                       | Object  | Read/Write | 
          |                     | rating                | Decimal | Read/Write | Were facilities working and matching description? XXX **Required** only when sending parent node.
          |                     | comment               | Text    | Read/Write | Additional feedback for a given criterion.
          | comfort             |                       | Object  | Read/Write | Details of given criterion.
-         |                     | rating                | Decimal | Read/Write | How comfortabel was the stay?. XXX **Required** only when sending parent node.
+         |                     | rating                | Decimal | Read/Write | Was the property warm enough, with enough lights. Were the beds and/or sofa comfy? **Required** only when sending parent node.
          |                     | comment               | Text    | Read/Write | Additional feedback for a given criterion.
          | staff               |                       | Object  | Read/Write | Details of given criterion.
-         |                     | rating                | Decimal | Read/Write | How helpful was the staff? XXX **Required** only when sending parent node.
+         |                     | rating                | Decimal | Read/Write | Was the staff friendly, attentive and respectful? **Required** only when sending parent node.
          |                     | comment               | Text    | Read/Write | Additional feedback for a given criterion.
          | value_for_money     |                       | Object  | Read/Write | Details of given criterion.
          |                     | rating                | Decimal | Read/Write | Was it worth the price? **Required** only when sending parent node.
          |                     | comment               | Text    | Read/Write | Additional feedback for a given criterion.
          | accuracy            |                       | Object  | Read/Write | Details of given criterion.
-         |                     | rating                | Decimal | Read/Write | How accurate was the property represented on a website? **Required** only when sending parent node.
+         |                     | rating                | Decimal | Read/Write | Was the property accurately represented on a website? **Required** only when sending parent node.
          |                     | comment               | Text    | Read/Write | Additional feedback for a given criterion.
 ---------|---------------------|-----------------------|---------|------------|------------
          |                     | created_at            | [Time](/reference/enums#formats) | Read       | Review's create time.
