@@ -412,7 +412,7 @@ accueil_velo        | accueil_velo
 Name              | Description
 ------------------|------------
 no-rounding       | No rounding
-round-up          | Rounds to the integer that is just above.
-closest-exact     | Rounds to the closest tens
-closest-marketing | Rounds to the closest marketing number (i.e ending with 9)
+round-up          | Rounds to the integer that is just above
+closest-exact     | Rounds to the closest tens (e.g. from 362 to 370)
+closest-marketing | Rounds to the closest marketing number (i.e. ending with 9, e.g. from 362 to 369)
 {: class="table table-bordered"}
