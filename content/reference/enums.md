@@ -173,7 +173,7 @@ visa_support                 | Visa support
 water_park                   | Water park
 water_usage                  | Water usage
 wood                         | Wood
-wristband                    | Wristband 
+wristband                    | Wristband
 {: class="table table-bordered"}
 
 
@@ -201,7 +201,7 @@ individual_percentage_per_adult | Percentage of the rental price per adult per n
 <div class="callout callout-warning" markdown="1">
   <h4>Warning</h4>
   Internal payment kinds are not allowed to be used outside of our PCI DSS compliant payment platform flow, for more details please refer to [secure payments by BookingSync](/guides/secure-payments-by-bookingsync/).
-  
+
 </div>
 
 Name             | Description
@@ -405,4 +405,14 @@ meubles_de_tourisme | 1_etoile 2_etoiles 3_etoiles 4_etoiles 5_etoiles
 gites_de_france     | 1_epi 2_epis 3_epis 4_epis
 clevacances         | 1_cle 2_cles 3_cles 4_cles
 accueil_velo        | accueil_velo
+{: class="table table-bordered"}
+
+## Rental Rounding kinds
+
+Name              | Description
+------------------|------------
+no-rounding       | No rounding
+round-up          | Rounds to the integer that is just above
+closest-exact     | Rounds to the closest tens (e.g. from 362 to 370)
+closest-marketing | Rounds to the closest marketing number (i.e. ending with 9, e.g. from 362 to 369)
 {: class="table table-bordered"}

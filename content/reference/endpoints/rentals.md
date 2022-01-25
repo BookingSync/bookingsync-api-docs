@@ -19,15 +19,18 @@ id                              | Integer  | Read       | Rental's id.
 absolute_min_price              | [Decimal](/reference/enums#formats) | Read       | Rental's minimum price based on `base_rate_kind`.
 base_rate                       | [Decimal](/reference/enums#formats) | Read       | Rental's base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate.
 base_rate_kind                  | String   | Read       | Rental's rate type attached to the base rate. List of types described in [enums section](/reference/enums#rates-types).
+balance_due                     | Integer  | Read       | Number of day since the booking confirmation to collect the full booking price.
 bathrooms_count                 | Integer  | Read       | Rental's bathrooms count.
 bedrooms_count                  | Integer  | Read       | Rental's bedrooms count.
 bookable_online                 | Boolean  | Read       | Rental's online booking status.
 checkin_time                    | Integer  | Read       | Rental's checkin time.
+checkin_end_time                | Integer  | Read       | Rental's checkin end time.
 checkout_time                   | Integer  | Read       | Rental's checkout time.
 city                            | String   | Read       | Rental's city.
 contact_name                    | String   | Read       | Rental's contact name.
 country_code                    | String   | Read       | Rental's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
 currency                        | String   | Read       | Rental's currency code, list of codes described in [enums section](/reference/enums#currencies).
+damage_deposit                  | [Decimal](/reference/enums#formats)    | Read       | Rental's required damage deposit.
 description                     | [Object](/reference/enums#formats)     | Read       | Rental's description, list of locales described in [enums section](/reference/enums#locales).
 downpayment                     | Integer  | Read       | Rental's default downpayment percentage. If none defined, the default downpayment percentage of the account will be used.
 final_price                     | Integer  | Read       | Rental's final price (after discount). Available only for a search query with valid dates, for other cases please refer to `base_rate` and `base_rate_kind`.
@@ -41,12 +44,14 @@ mid_term_pricing_active         | Boolean  | Read       | Enable mid term pricin
 min_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's minimum weekly or nightly price, depending on the base_rate_kind.
 name                            | String   | Read       | Rental's name.
 nightly_rates_managed_externally | Boolean  | Read       | Defines whether `nightly_rate_map` can be updated via API. Defaults to `false`.
+permit_issue_date               | [Time](/reference/enums#formats)     | Read | Rental's Registration/License/Permit number's issue date.
 permit_number                   | String   | Read       | Rental's Registration/License/Permit number.
 position                        | Integer  | Read       | Rental's position on the list.
 price_public_notes              | [Object](/reference/enums#formats)   | Read       | Rental's price notes for public, list of locales described in [enums section](/reference/enums#locales).
 rental_type                     | String   | Read       | Rental's type (example: villa, apartment), all types described in [enums section](/reference/enums#rental-types).
 reviews_average_rating          | [Decimal](/reference/enums#formats)  | Read       | Rental's overall rating from reviews.
 reviews_count                   | Integer  | Read       | Rental's count of all reviews.
+rounding_kind                   | String   | Read       | Rounding kind for initial_price. All the possible values described at [enums section](/reference/enums#rental-rounding-kinds)
 sleeps                          | Integer  | Read       | Rental's number of comfortable sleeps.
 sleeps_max                      | Integer  | Read       | Rental's maximum number of sleeps.
 state                           | String   | Read       | Rental's state.
@@ -74,17 +79,20 @@ address1                        | String   | Read       | Rental's primary addre
 address2                        | String   | Read       | Rental's optional address.
 base_rate                       | [Decimal](/reference/enums#formats) | Read       | Rental's base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate.
 base_rate_kind                  | String   | Read       | Rental's rate type attached to the base rate. List of types described in [enums section](/reference/enums#rates-types).
+balance_due                     | Integer  | Read       | Number of day since the booking confirmation to collect the full booking price.
 bathrooms_count                 | Integer  | Read       | Rental's bathrooms count.
 bedrooms_count                  | Integer  | Read       | Rental's bedrooms count.
 bookable_online                 | Boolean  | Read       | Rental's online booking status.
 checkin_details                 | [Object](/reference/enums#formats)     | Read       | Rental's check-in details, list of locales described in [enums section](/reference/enums#locales).
-checkout_details                | [Object](/reference/enums#formats)     | Read       | Rental's check-out details, list of locales described in [enums section](/reference/enums#locales).
 checkin_time                    | Integer  | Read       | Rental's checkin time.
+checkin_end_time                | Integer  | Read       | Rental's checkin end time.
+checkout_details                | [Object](/reference/enums#formats)     | Read       | Rental's check-out details, list of locales described in [enums section](/reference/enums#locales).
 checkout_time                   | Integer  | Read       | Rental's checkout time.
 city                            | String   | Read       | Rental's city.
 contact_name                    | String   | Read       | Rental's contact name.
 country_code                    | String   | Read       | Rental's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
 currency                        | String   | Read       | Rental's currency code, list of codes described in [enums section](/reference/enums#currencies).
+damage_deposit                  | [Decimal](/reference/enums#formats)    | Read       | Rental's required damage deposit.
 description                     | [Object](/reference/enums#formats)     | Read       | Rental's description, list of locales described in [enums section](/reference/enums#locales).
 downpayment                     | Integer  | Read       | Rental's default downpayment percentage. If none defined, the default downpayment percentage of the account will be used.
 final_price                     | Integer  | Read       | Rental's final price (after discount). Available only for a search query with valid dates, for other cases please refer to `base_rate` and `base_rate_kind`.
@@ -99,12 +107,14 @@ min_price                       | [Decimal](/reference/enums#formats)  | Read   
 name                            | String   | Read       | Rental's name.
 nightly_rates_managed_externally | Boolean  | Read       | Defines whether `nightly_rate_map` can be updated via API. Defaults to `false`.
 notes                           | Text     | Read       | Rental's private notes.
+permit_issue_date               | [Time](/reference/enums#formats)     | Read | Rental's Registration/License/Permit number's issue date.
 permit_number                   | String   | Read       | Rental's Registration/License/Permit number.
 position                        | Integer  | Read       | Rental's position on the list.
 price_public_notes              | [Object](/reference/enums#formats)   | Read       | Rental's price notes for public, list of locales described in [enums section](/reference/enums#locales).
 rental_type                     | String   | Read       | Rental's type (example: villa, apartment), all types described in [enums section](/reference/enums#rental-types).
 reviews_average_rating          | [Decimal](/reference/enums#formats)  | Read       | Rental's overall rating from reviews.
 reviews_count                   | Integer  | Read       | Rental's count of all reviews.
+rounding_kind                   | String   | Read       | Rounding kind for initial_price. All the possible values described at [enums section](/reference/enums#rental-rounding-kinds)
 sleeps                          | Integer  | Read       | Rental's number of comfortable sleeps.
 sleeps_max                      | Integer  | Read       | Rental's maximum number of sleeps.
 state                           | String   | Read       | Rental's state.
@@ -132,28 +142,32 @@ destination_id                  | Integer  | Write      | Destination id related
 payment_gateway_id              | Integer  | Write      | PaymentGateway id related to the rental.
 rates_table_id                  | Integer  | Write      | Rates Table id related to the rental.
 rentals_contact_id              | Integer  | Write      | Contact id related to the rental.
+rentals_tag_ids                 | Array    | Write      | Tag ids related to the rental.
 --------------------------------|----------|------------|--------------
 absolute_min_price              | [Decimal](/reference/enums#formats) | Read/Write | Rental's minimum price based on `base_rate_kind`.
 address1                        | String   | Read/Write | Rental's primary address.
 address2                        | String   | Read/Write | Rental's optional address.
 base_rate                       | [Decimal](/reference/enums#formats) | Read/Write | Rental's base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate. (greater than 0)
 base_rate_kind                  | String   | Read/Write | Rental's rate type attached to the base rate. List of types described in [enums section](/reference/enums#rates-types).
+balance_due                     | Integer  | Read/Write | Number of day since the booking confirmation to collect the full booking price.
 bathrooms_count                 | Integer  | Read/Write | Rental's bathrooms count. (between 0 and 100)
 bedrooms_count                  | Integer  | Read/Write | Rental's bedrooms count. (between 0 and 100)
 bookable_online                 | Boolean  | Read/Write | Rental's online booking status.
-checkin_details                 | [Object](/reference/enums#formats)     | Read/Write       | Rental's check-in details, list of locales described in [enums section](/reference/enums#locales).
-checkout_details                | [Object](/reference/enums#formats)     | Read/Write       | Rental's check-out details, list of locales described in [enums section](/reference/enums#locales).
-checkin_time                    | Integer  | Read       | Rental's checkin time.
-checkout_time                   | Integer  | Read       | Rental's checkout time.
+checkin_details                 | [Object](/reference/enums#formats)  | Read/Write       | Rental's check-in details, list of locales described in [enums section](/reference/enums#locales).
+checkin_time                    | Integer  | Read/Write | Rental's checkin time.
+checkin_end_time                | Integer  | Read/Write | Rental's checkin end time.
+checkout_details                | [Object](/reference/enums#formats)  | Read/Write       | Rental's check-out details, list of locales described in [enums section](/reference/enums#locales).
+checkout_time                   | Integer  | Read/Write | Rental's checkout time.
 city                            | String   | Read/Write | Rental's city.
 contact_name                    | String   | Read       | Rental's contact name.
 country_code                    | String   | Read/Write | Rental's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
 currency                        | String   | Read/Write | Rental's currency code, list of codes described in [enums section](/reference/enums#currencies).
-description                     | [Object](/reference/enums#formats)     | Read/Write | Rental's description, list of locales described in [enums section](/reference/enums#locales). (5000 characters max)
-downpayment                         | Integer  | Read/Write | Rental's default downpayment percentage. If none defined, the default downpayment percentage of the account will be used. (between 0 and 100)
+damage_deposit                  | [Decimal](/reference/enums#formats)  | Read/Write | Rental's required damage deposit.
+description                     | [Object](/reference/enums#formats)   | Read/Write | Rental's description, list of locales described in [enums section](/reference/enums#locales). (5000 characters max)
+downpayment                     | Integer  | Read/Write | Rental's default downpayment percentage. If none defined, the default downpayment percentage of the account will be used. (between 0 and 100)
 final_price                     | Integer  | Read       | Rental's final price (after discount). Available only for a search query with valid dates, for other cases please refer to `base_rate` and `base_rate_kind`.
 floor                           | String   | Read/Write | Rental's floor
-headline                        | [Object](/reference/enums#formats)     | Read       | Rental's headline, list of locales described in [enums section](/reference/enums#locales).
+headline                        | [Object](/reference/enums#formats)   | Read       | Rental's headline, list of locales described in [enums section](/reference/enums#locales).
 initial_price                   | Integer  | Read       | Rental's initial price. Available only for a search query with valid dates, for other cases please refer to `base_rate` and `base_rate_kind`.
 lat                             | Float    | Read/Write | Rental's latitude. (between -90 and 90)
 lng                             | Float    | Read/Write | Rental's longitude. (between -180 and 180)
@@ -163,24 +177,26 @@ min_price                       | [Decimal](/reference/enums#formats)  | Read   
 name                            | String   | Read/Write | **Required**. Rental's name. (3 min, 40 max characters)
 nightly_rates_managed_externally | Boolean  | Read/Write | Defines whether `nightly_rate_map` can be updated via API. Defaults to `false`.
 notes                           | Text     | Read/Write | Rental's private notes. (1000 characters max)
-permit_number                   | String   | Read       | Rental's Registration/License/Permit number.
+permit_issue_date               | [Time](/reference/enums#formats)     | Read/Write | Rental's Registration/License/Permit number's issue date.
+permit_number                   | String   | Read/Write | Rental's Registration/License/Permit number.
 position                        | Integer  | Read/Write | Rental's position on the list.
 price_public_notes              | [Object](/reference/enums#formats)   | Read | Rental's price notes for public, list of locales described in [enums section](/reference/enums#locales). Write is possible through RatesTables.
 rental_type                     | String   | Read/Write | Rental's type (example: villa, apartment), all types described in [enums section](/reference/enums#rental-types).
 reviews_average_rating          | [Decimal](/reference/enums#formats)  | Read       | Rental's overall rating from reviews.
 reviews_count                   | Integer  | Read       | Rental's count of all reviews.
+rounding_kind                   | String   | Read/Write | Rounding kind for initial_price. All the possible values described at [enums section](/reference/enums#rental-rounding-kinds)
 sleeps                          | Integer  | Read/Write | Rental's number of comfortable sleeps. (between 0 and 100)
 sleeps_max                      | Integer  | Read/Write | Rental's maximum number of sleeps. (between 0 and 100)
 state                           | String   | Read/Write | Rental's state.
 stories_count                   | Integer  | Read/Write | Rental's number of stories.
-summary                         | [Object](/reference/enums#formats)     | Read/Write | Rental's summary, list of locales described in [enums section](/reference/enums#locales). (150 characters max)
+summary                         | [Object](/reference/enums#formats)   | Read/Write | Rental's summary, list of locales described in [enums section](/reference/enums#locales). (150 characters max)
 surface                         | Integer  | Read/Write | Rental's surface area. (greater than 0)
 surface_unit                    | String   | Read/Write | Rental's surface area unit, either <i>metric</i> or <i>imperial</i>.
 website_url                     | [Object](/reference/enums#formats)   | Read/Write | Rental's primary website url, list of locales described in [enums section](/reference/enums#locales).
 zip                             | String   | Read/Write | Rental's zip code.
-residency_category              | String   | Read       | Rental's residency category. All types are described in [enums section](/reference/enums#rental-residency-categories)
+residency_category              | String   | Read/Write | Rental's residency category. All types are described in [enums section](/reference/enums#rental-residency-categories)
 certifications                  | [Object](/reference/enums#formats) | Read/Write | Rental's certifications, all allowed values described in [enums section](/reference/enums#rental-certifications).
-management_type                 | String   | Read/Write       | Rental's management type. All types are described in [enums section](/reference/enums#rental-management-type)
+management_type                 | String   | Read/Write | Rental's management type. All types are described in [enums section](/reference/enums#rental-management-type)
 --------------------------------|----------|------------|--------------
 created_at                      | [Time](/reference/enums#formats) | Read         | Rental's create time.
 updated_at                      | [Time](/reference/enums#formats) | Read         | Rental's update time.
