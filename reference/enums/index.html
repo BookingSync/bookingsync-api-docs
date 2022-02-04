@@ -162,6 +162,7 @@
   <li><a href="#rental-contact-kinds">Rental Contact kinds</a></li>
   <li><a href="#rental-contact-roles">Rental Contact roles</a></li>
   <li><a href="#rental-certifications">Rental Certifications</a></li>
+  <li><a href="#rental-rounding-kinds">Rental Rounding kinds</a></li>
 </ol>
 
 <h3 id="account-statuses">Account statuses</h3>
@@ -990,8 +991,24 @@
   </thead>
   <tbody>
     <tr>
+      <td>additional_person_fixed_per_night</td>
+      <td>Rule applied for stay price</td>
+    </tr>
+    <tr>
       <td>arrival_only</td>
       <td>Rule applied on arrival.</td>
+    </tr>
+    <tr>
+      <td>charge_at_least</td>
+      <td>Rule applied for stay price.</td>
+    </tr>
+    <tr>
+      <td>charge_at_least_if_available</td>
+      <td>Rule applied for stay price.</td>
+    </tr>
+    <tr>
+      <td>charge_at_least_full_period</td>
+      <td>Rule applied for stay price</td>
     </tr>
     <tr>
       <td>departure_only</td>
@@ -1010,12 +1027,28 @@
       <td>Rule applied for late booking.</td>
     </tr>
     <tr>
+      <td>occupation_less_than</td>
+      <td>Rule applied for stay period.</td>
+    </tr>
+    <tr>
+      <td>prevent_gap</td>
+      <td>Rule applied on arrival.</td>
+    </tr>
+    <tr>
       <td>prevent_if_booked_ahead_of</td>
       <td>Rule applied if booked ahead.</td>
     </tr>
     <tr>
+      <td>prevent_if_booked_less_than</td>
+      <td>Rule applied if booking is too short.</td>
+    </tr>
+    <tr>
       <td>stay_at_least</td>
       <td>Rule applied for minimum stay.</td>
+    </tr>
+    <tr>
+      <td>stay_shorter_than</td>
+      <td>Rule applied for short bookings.</td>
     </tr>
     <tr>
       <td>strict_minimum_price_per_night</td>
@@ -1027,6 +1060,8 @@
     </tr>
   </tbody>
 </table>
+
+<p><a href="https://manual.bookingsync.com/hc/en-us/articles/360005324073-All-our-Rates-Rules">Rules explanation</a></p>
 
 <h3 id="rental-types">Rental types</h3>
 
@@ -1447,6 +1482,35 @@
     <tr>
       <td>accueil_velo</td>
       <td>accueil_velo</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="rental-rounding-kinds">Rental Rounding kinds</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>no-rounding</td>
+      <td>No rounding</td>
+    </tr>
+    <tr>
+      <td>round-up</td>
+      <td>Rounds to the integer that is just above</td>
+    </tr>
+    <tr>
+      <td>closest-exact</td>
+      <td>Rounds to the closest tens (e.g. from 362 to 370)</td>
+    </tr>
+    <tr>
+      <td>closest-marketing</td>
+      <td>Rounds to the closest marketing number (i.e. ending with 9, e.g. from 362 to 369)</td>
     </tr>
   </tbody>
 </table>
