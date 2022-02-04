@@ -1,7 +1,15 @@
 # Change Log
 
-## [3.25.1](https://github.com/BookingSync/bookingsync-api-docs/tree/3.25.1) (2021-09-20)
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.25.0...3.25.1)
+## [3.26.1](https://github.com/BookingSync/bookingsync-api-docs/tree/3.26.1) (2022-02-04)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.25.1...3.26.1)
+
+**Merged pull requests:**
+
+- Add missing rates rules [\#352](https://github.com/BookingSync/bookingsync-api-docs/pull/352) ([radekzawada](https://github.com/radekzawada))
+- \[CORE-5258\] Add missing fields to Rentals endpoint [\#351](https://github.com/BookingSync/bookingsync-api-docs/pull/351) ([pyromaniac](https://github.com/pyromaniac))
+
+## [v3.25.1](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.25.1) (2021-09-20)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.25.0...v3.25.1)
 
 **Merged pull requests:**
 
