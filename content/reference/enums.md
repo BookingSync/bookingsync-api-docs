@@ -260,17 +260,27 @@ weekly           | The reference rate is weekly based.
 ## Rates Rules types
 
 Name                           | Description
--------------------------------|------------
-arrival_only                   | Rule applied on arrival.
-departure_only                 | Rule applied on departure.
-early_booking                  | Rule applied on early booking.
-full_period_only               | Rule applied for full period.
-late_booking                   | Rule applied for late booking.
-prevent_if_booked_ahead_of     | Rule applied if booked ahead.
-stay_at_least                  | Rule applied for minimum stay.
-strict_minimum_price_per_night | Rule applied for minimum price per night.
-weekend_night                  | Rule applied for weekend night.
+----------------------------------|------------
+additional_person_fixed_per_night | Rule applied for stay price
+arrival_only                      | Rule applied on arrival.
+charge_at_least                   | Rule applied for stay price.
+charge_at_least_if_available      | Rule applied for stay price.
+charge_at_least_full_period       | Rule applied for stay price
+departure_only                    | Rule applied on departure.
+early_booking                     | Rule applied on early booking.
+full_period_only                  | Rule applied for full period.
+late_booking                      | Rule applied for late booking.
+occupation_less_than              | Rule applied for stay period.
+prevent_gap                       | Rule applied on arrival.
+prevent_if_booked_ahead_of        | Rule applied if booked ahead.
+prevent_if_booked_less_than       | Rule applied if booking is too short.
+stay_at_least                     | Rule applied for minimum stay.
+stay_shorter_than                 | Rule applied for short bookings.
+strict_minimum_price_per_night    | Rule applied for minimum price per night.
+weekend_night                     | Rule applied for weekend night.
 {: class="table table-bordered"}
+
+[Rules explanation](https://manual.bookingsync.com/hc/en-us/articles/360005324073-All-our-Rates-Rules)
 
 ## Rental types
 
