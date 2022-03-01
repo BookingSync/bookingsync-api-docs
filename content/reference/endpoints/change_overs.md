@@ -3,6 +3,14 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents the ChangeOvers for a given Rental. The `map` represents consecutive 1096 days starting from `start_date` and tells what action is possible during that day (no action possible/check-in only/check-out only/check-in and check-out possible.)
+
+Particularly useful when implementing a UI containing calendar that allows to select dates for a Booking - using this map you can block unavailable dates.
+
+Unlike [Availabilites](/reference/endpoints/availabilities/), this resource covers not only days blocked by already created [Bookings](/reference/endpoints/bookings/), but also [Rates Rules](/reference/endpoints/rates_rules/) that might have an impact for a given day.
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -12,10 +20,11 @@
   <div class="tab-pane active" id="public" markdown="1">
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
+account          | Integer | Read       | Account's ID related to the ChangeOver
+rental           | Integer | Read       | Rental's ID related to the ChangeOver
+-----------------|---------|------------|------------
 id               | Integer | Read       | ChangeOver's id.
------------------|---------|------------|------------
 map              | String  | Read       | ChangeOver's map of possible actions for a given day. There is a total of 1096 characters, each representing one day. List of statuses described in [enums section](/reference/enums#change_over-map-statuses).
------------------|---------|------------|------------
 start_date       | [Date](/reference/enums#formats) | Read       | ChangeOver's start date.
 updated_at       | [Time](/reference/enums#formats) | Read       | ChangeOver's update time.
 {: class="table table-bordered"}

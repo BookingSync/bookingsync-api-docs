@@ -3,6 +3,10 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents Fees Taxes - the [taxes](/reference/endpoints/taxes/) for a [fee](/reference/endpoints/fees/), which can be either configured to be included if fee's rate or not.  
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -13,24 +17,31 @@
   <div class="tab-pane active" id="public" markdown="1">
 Name                   | Type    | Read/Write | Description
 -----------------------|---------|------------|------------
-id                     | Integer | Read       | Fees Tax's id.
+account                | Integer | Read       | Account's ID related to the Fees Tax
+fee                    | Integer | Read       | Fees's ID related to the Fees Tax
+tax                    | Integer | Read       | Tax's ID related to the Fees Tax
 -----------------------|---------|------------|------------
-tax_included_in_rate   | Boolean | Read       | Tax amount already included in fee if set to true.
+id                     | Integer | Read       | Fees Tax's id.
+tax_included_in_rate   | Boolean | Read       | Whether Tax amount is already included in fee's rate or not. If fee's rate is 100 and there is a tax with a percentage of 10% assigned to it, that tax would already be included in 100 if it the value was set to `true`. However, if set to `false`, the "total" amount (in the context of [Bookings'](/reference/endpoints/bookings/) creation) would be 100 + 10% from 100 which is 110.
 -----------------------|---------|------------|------------
 created_at             | [Time](/reference/enums#formats) | Read       | Fees Tax's create time.
 updated_at             | [Time](/reference/enums#formats) | Read       | Fees Tax's update time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rates_write" markdown="1">
-Name                   | Type    | Read/Write | Description
+Name                   | Type    | Read/Write | Description | Constraints
+-----------------------|---------|------------|-------------|
+account                | Integer | Read       | Account's ID related to the Fees Tax |
+fee                    | Integer | Read       | Fees's ID related to the Fees Tax |
+tax                    | Integer | Read       | Tax's ID related to the Fees Tax |
 -----------------------|---------|------------|------------
-id                     | Integer | Read       | Fees Tax's id.
-tax_id                 | Integer | Write      | Tax's id.
------------------------|---------|------------|------------
-tax_included_in_rate   | Boolean | Read/Write | Tax amount already included in fee if set to true.
------------------------|---------|------------|------------
-created_at             | [Time](/reference/enums#formats) | Read       | Fees Tax's create time.
-updated_at             | [Time](/reference/enums#formats) | Read       | Fees Tax's update time.
+-----------------------|---------|------------|------------|
+id                     | Integer | Read       | Fees Tax's id. | **Required**
+tax_id                 | Integer | Write      | Tax's id. | **Required**
+tax_included_in_rate   | Boolean | Read/Write | Whether Tax amount is already included in fee's rate or not. If fee's rate is 100 and there is a tax with a percentage of 10% assigned to it, that tax would already be included in 100 if it the value was set to `true`. However, if set to `false`, the "total" amount (in the context of [Bookings'](/reference/endpoints/bookings/) creation) would be 100 + 10% from 100 which is 110. | **Required**
+-----------------------|---------|------------|------------|
+created_at             | [Time](/reference/enums#formats) | Read       | Fees Tax's create time. |
+updated_at             | [Time](/reference/enums#formats) | Read       | Fees Tax's update time. |
 {: class="table table-bordered"}
   </div>
 </div>

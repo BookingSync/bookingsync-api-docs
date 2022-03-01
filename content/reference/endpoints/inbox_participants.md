@@ -3,6 +3,10 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents Inbox Participants that can send [Inbox Messages](reference/endpoints/inbox_messages/) for a given  [Inbox Conversation](reference/endpoints/inbox_conversations/).
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -13,8 +17,12 @@
   <div class="tab-pane active" id="inbox_read" markdown="1">
 Name                 | Type    | Read/Write | Description
 ---------------------|---------|------------|------------
-id                   | Integer | Read       | Participant's id.
+conversation         | Integer | Read       | Conversation's ID to which Participant belongs to
+account              | Integer | Read       | Account's ID to which Participant is related to
+member_id            | Integer | Read       | ID of the resource that created the Participant (Host or Client - this is a polymorphic association)
+member_type          | String  | Read       | Type of the resource that created the Participant (Host or Client - this is a polymorphic association)
 ---------------------|---------|------------|------------
+id                   | Integer | Read       | Participant's ID.
 created_at           | [Time](/reference/enums#formats) | Read       | Participant's create time.
 updated_at           | [Time](/reference/enums#formats) | Read       | Participant's update time.
 last_message_sent_at | [Time](/reference/enums#formats) | Read       | Participant's last sent message time.
@@ -22,22 +30,27 @@ read_at              | [Time](/reference/enums#formats) | Read       | Time when
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="inbox_write" markdown="1">
-Name                 | Type    | Read/Write | Description
----------------------|---------|------------|------------
-id                   | Integer | Read       | Participant's id.
-member_id            | Integer | Read/Write | Participant's Member id.
-conversation_id      | Integer | Read/Write | Participant's Conversation id.
----------------------|---------|------------|------------
-read                 | Boolean | Write      | Is related to Participant's read_at attribute.
-member_type          | Integer | Read/Write | Participant's member type (`Client` or `Host`).
----------------------|---------|------------|------------
-created_at           | [Time](/reference/enums#formats) | Read       | Participant's create time.
-updated_at           | [Time](/reference/enums#formats) | Read       | Participant's update time.
-last_message_sent_at | [Time](/reference/enums#formats) | Read       | Participant's last sent message time.
-read_at              | [Time](/reference/enums#formats) | Read/Write | Time when Participant read last message.
+Name                 | Type    | Read/Write | Description | Constraints
+---------------------|---------|------------|------------|
+conversation         | Integer | Read       | Conversation's ID to which Participant belongs to |
+account              | Integer | Read       | Account's ID to which Participant is related to |
+member_id            | Integer | Read       | ID of the resource that created the Participant (Host or Client - this is a polymorphic association) | 
+member_type          | String  | Read       | Type of the resource that created the Participant (Host or Client - this is a polymorphic association) |
+---------------------|---------|------------|------------|
+id                   | Integer | Read       | Participant's id. |
+member_id            | Integer | Write (create-only)     | Participant's Member id. | **Required**
+member_type          | Integer | Write (create-only)     | Participant's member type (`Client` or `Host`). | **Required**, must be `Client` or `Host`
+conversation_id      | Integer | Write (create-only)     | Participant's Conversation id. | **Required**
+read                 | Boolean | Write      | An attribute for marking last message as read by Participant  (and will assign `read_at` timestamp) | Must be in the past
+---------------------|---------|------------|------------|
+created_at           | [Time](/reference/enums#formats) | Read   | Participant's create time. |
+updated_at           | [Time](/reference/enums#formats) | Read | Participant's update time. |
+last_message_sent_at | [Time](/reference/enums#formats) | Read | Participant's last sent message time. |
+read_at              | [Time](/reference/enums#formats) | Read | Time when Participant read last message. |
 {: class="table table-bordered"}
   </div>
 </div>
+
 
 ## List Participants
 

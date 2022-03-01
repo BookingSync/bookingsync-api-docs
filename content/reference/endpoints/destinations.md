@@ -3,6 +3,11 @@
 1. TOC
 {:toc}
 
+
+## Overview
+
+This resource represents the Destinations (the actual place) that can be assigned to [Rentals](/reference/endpoints/rentals/). 
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -20,6 +25,9 @@ counter                         | Integer  | Read       | Destination's use coun
 fullname                        | [Object](/reference/enums#formats)     | Read       | Destination's fullname, list of locales described in [enums section](/reference/enums#locales).
 name                            | [Object](/reference/enums#formats)     | Read       | Destination's name, list of locales described in [enums section](/reference/enums#locales).
 permalink                       | [Object](/reference/enums#formats)     | Read       | Destination's permalink, list of locales described in [enums section](/reference/enums#locales).
+-----------------|---------|------------|------------
+created_at       | [Time](/reference/enums#formats) | Read       | Destination's create time.
+updated_at       | [Time](/reference/enums#formats) | Read       | Destination's update time.
 {: class="table table-bordered"}
   </div>
 </div>

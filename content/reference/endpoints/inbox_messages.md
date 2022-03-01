@@ -3,6 +3,10 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents Inbox Messages happening under the [Inbox Conversations](reference/endpoints/inbox_conversations/).
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -13,8 +17,14 @@
   <div class="tab-pane active" id="inbox_read" markdown="1">
 Name                 | Type    | Read/Write | Description
 ---------------------|---------|------------|------------
-id                   | Integer | Read       | Message's id.
+attachments          | Array   | Read       | Attachments IDs related to Message 
+conversation         | Integer | Read       | Conversation's ID to which Message belongs to
+sender               | Integer | Read       | Sender's ID (Inbox Participant) to which Message is related to
+account              | Integer | Read       | Account's ID to which Message is related to
+created_by_id        | Integer | Read       | ID of the resource that created the Message (User or Application - this is a polymorphic association) 
+created_by_type      | String  | Read       | Type of the resource that created the Message (User or Application - this is a polymorphic association)
 ---------------------|---------|------------|------------
+id                   | Integer | Read       | Message's ID.
 channel              | String  | Read       | Message's channel, list of Channels described in [enums section](/reference/enums#inbox-message-channels)
 content              | Text    | Read       | Message's content.
 origin               | String  | Read       | Message's origin, list of Origins described in [enums section](/reference/enums#inbox-message-origins)
@@ -26,21 +36,27 @@ sent_at              | [Time](/reference/enums#formats) | Read       | Time when
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="inbox_write" markdown="1">
-Name                 | Type    | Read/Write | Description
+Name                 | Type    | Read/Write | Description | Constraints
 ---------------------|---------|------------|------------
-id                   | Integer | Read       | Message's id.
-conversation_id      | String  | Write      | Message's conversation id.
-sender_id            | String  | Write      | Message's sender id.
-attachment_ids       | Array   | Write      | Message's attachments ids.
----------------------|---------|------------|------------
-channel              | String  | Read/Write | Message's channel, list of Channels described in [enums section](/reference/enums#inbox-message-channels)
-content              | String  | Read/Write | Message's content.
-origin               | String  | Read/Write | Message's origin, list of Origins described in [enums section](/reference/enums#inbox-message-origins)
-visibility           | String  | Read/Write | Message's visibility, list of Visibilities described in [enums section](/reference/enums#inbox-message-visibilities)
----------------------|---------|------------|------------
-created_at           | [Time](/reference/enums#formats) | Read       | Message's create time.
-updated_at           | [Time](/reference/enums#formats) | Read       | Message's update time.
-sent_at              | [Time](/reference/enums#formats) | Read/Write | Time when Message was sent at.
+attachments          | Array   | Read       | Attachments IDs related to Message  |
+conversation         | Integer | Read       | Conversation's ID to which Message belongs to |
+sender               | Integer | Read       | Sender's ID (Inbox Participant) to which Message is related to |
+account              | Integer | Read       | Account's ID (Inbox Participant) to which Message is related to |
+created_by_id        | Integer | Read       | ID of the resource that created the Message (User or Application - this is a polymorphic association) | 
+created_by_type      | String  | Read       | Type of the resource that created the Message (User or Application - this is a polymorphic association) |
+---------------------|---------|------------|-------------|
+id                   | Integer | Read       | Message's id. |
+conversation_id      | String  | Write      | Message's Conversation ID. | **Required**
+sender_id            | String  | Write      | Message's Sender ID (Inbox Participant). | **Required**
+attachment_ids       | Array   | Write      | Message's Attachments IDs. |
+channel              | String  | Read/Write | Message's channel, list of Channels described in [enums section](/reference/enums#inbox-message-channels) | Must be one of Channels if present
+content              | String  | Read/Write | Message's content. | **Required**
+origin               | String  | Read/Write | Message's origin, list of Origins described in [enums section](/reference/enums#inbox-message-origins) | **Required**, Must be one of Origins
+visibility           | String  | Read/Write | Message's visibility, list of Visibilities described in [enums section](/reference/enums#inbox-message-visibilities) | **Required**, Must be one of Visibilities, `internal` cannot be used for Client Participants or when `channel` is present 
+---------------------|---------|------------|------------|
+created_at           | [Time](/reference/enums#formats) | Read       | Message's create time. |
+updated_at           | [Time](/reference/enums#formats) | Read       | Message's update time. |
+sent_at              | [Time](/reference/enums#formats) | Read/Write | Time when Message was sent at. | **Required**
 {: class="table table-bordered"}
   </div>
 </div>

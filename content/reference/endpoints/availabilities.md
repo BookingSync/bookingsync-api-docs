@@ -3,6 +3,14 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents the Availabilities for a given Rental. The `map` represents consecutive 1096 days starting from `start_date` and tells whether a given day is available (there is no any [Booking](/reference/endpoints/bookings) during that day) or unavailable (there is already a [Booking](/reference/endpoints/bookings) for thay day).
+
+Particularly useful when implementing a UI containing calendar that allows to select dates for a Booking - using this map you can block unavailable dates. 
+
+However, this resource doesn't cover all cases why a given day might be unavailable (e.g. it doesn't cover [Rates Rules](/reference/endpoints/rates_rules/)). You might want to check [ChangeOvers](http://developers.bookingsync.com/reference/endpoints/change_overs/) to have a map covering these cases. 
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -12,11 +20,14 @@
   <div class="tab-pane active" id="public" markdown="1">
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
-id               | Integer | Read       | Availability's id.
+account          | Integer | Read       | Account's ID related to the Availability
+rental           | Integer | Read       | Rental's ID related to the Availability
 -----------------|---------|------------|------------
+id               | Integer | Read       | Availability's id.
 map              | String  | Read       | Availability's map of booking status. There is a total of 1096 characters, each representing one day. List of statuses described in [enums section](/reference/enums#availability-map-statuses).
 -----------------|---------|------------|------------
 start_date       | [Date](/reference/enums#formats) | Read       | Availability's start date.
+created_at       | [Time](/reference/enums#formats) | Read       | Availability's creation time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Availability's update time.
 {: class="table table-bordered"}
   </div>
