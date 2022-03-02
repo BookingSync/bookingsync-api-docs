@@ -228,6 +228,21 @@ stripe           | Stripe gateway.
 bogus            | Bogus gateway.
 {: class="table table-bordered"}
 
+
+## Payment gateway cardtypes
+
+Name             | Description
+-----------------|------------
+visa             | Visa
+master           | MasterCard
+discover         | Discover
+american_express | American Express
+diners_club      | Diner's Club
+jcb              | JCB
+maestro          | Maestro
+bogus            | Bogus
+{: class="table table-bordered"}
+
 ## Photo kinds
 
 Name             | Description

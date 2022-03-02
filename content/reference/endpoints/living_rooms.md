@@ -3,6 +3,10 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents the rental's living rooms. This resource is mostly static information used for presentational purposes.
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -13,8 +17,10 @@
   <div class="tab-pane active" id="public" markdown="1">
 Name                | Type    | Read/Write | Description
 --------------------|---------|------------|------------
-id                  | Integer | Read       | LivingRoom's id.
+rental              | Integer | Read       | Rental's ID related to LivingRoom
+account             | Integer | Read       | Account's ID related to LivingRoom
 --------------------|---------|------------|------------
+id                  | Integer | Read       | LivingRoom's id.
 bunk_beds_count     | Integer | Read       | LivingRoom's number of bunk beds.
 double_beds_count   | Integer | Read       | LivingRoom's number of double beds.
 kingsize_beds_count | Integer | Read       | LivingRoom's number of kingsize beds.
@@ -27,19 +33,21 @@ updated_at          | [Time](/reference/enums#formats) | Read       | LivingRoom
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rentals_write" markdown="1">
-Name                | Type    | Read/Write | Description
---------------------|---------|------------|------------
-id                  | Integer | Read       | LivingRoom's id.
---------------------|---------|------------|------------
-bunk_beds_count     | Integer | Read/Write | LivingRoom's number of bunk beds.
-double_beds_count   | Integer | Read/Write | LivingRoom's number of double beds.
-kingsize_beds_count | Integer | Read/Write | LivingRoom's number of kingsize beds.
-queensize_beds_count| Integer | Read/Write | LivingRoom's number of queensize beds.
-single_beds_count   | Integer | Read/Write | LivingRoom's number of single beds.
-sofa_beds_count     | Integer | Read/Write | LivingRoom's number of sofa beds.
---------------------|---------|------------|------------
-created_at          | [Time](/reference/enums#formats) | Read       | LivingRoom's create time.
-updated_at          | [Time](/reference/enums#formats) | Read       | LivingRoom's update time.
+Name                | Type    | Read/Write | Description | Constraints
+--------------------|---------|------------|-------------|
+rental              | Integer | Read       | Rental's ID related to LivingRoom |
+account             | Integer | Read       | Account's ID related to LivingRoom |
+--------------------|---------|------------|-------------|
+id                  | Integer | Read       | LivingRoom's id. |
+bunk_beds_count     | Integer | Read/Write | LivingRoom's number of bunk beds. | integer only, greater than or equal to: 0
+double_beds_count   | Integer | Read/Write | LivingRoom's number of double beds. | integer only, greater than or equal to: 0
+kingsize_beds_count | Integer | Read/Write | LivingRoom's number of kingsize beds. | integer only, greater than or equal to: 0
+queensize_beds_count| Integer | Read/Write | LivingRoom's number of queensize beds. | integer only, greater than or equal to: 0
+single_beds_count   | Integer | Read/Write | LivingRoom's number of single beds. | integer only, greater than or equal to: 0
+sofa_beds_count     | Integer | Read/Write | LivingRoom's number of sofa beds. | integer only, greater than or equal to: 0
+--------------------|---------|------------|-------------|
+created_at          | [Time](/reference/enums#formats) | Read       | LivingRoom's create time. |
+updated_at          | [Time](/reference/enums#formats) | Read       | LivingRoom's update time. |
 {: class="table table-bordered"}
   </div>
 </div>
