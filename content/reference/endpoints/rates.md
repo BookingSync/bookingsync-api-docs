@@ -3,6 +3,16 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents Rates which are are pre-computed cache of the "static" pricing for a given period (defined via `start_date` and `end_date`). The are computed by applying [Rates Rules](/reference/endpoints/rates_rules/) on top of nightly rates that are derived either from Nightly Rate Map or a combination of Rental's `base_rate`, Seasons and Periods.  
+
+The "static" means that they don't have reference to the current day so not all Rates Rules can be applied.
+
+For "dynamic" rates, check [LOS Records](/reference/endpoints/los_records/) endpoint.
+
+To learn more about pricing concepts in general, check this [guide](guides/pricing-concepts/).
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>

@@ -274,25 +274,42 @@ weekly           | The reference rate is weekly based.
 
 ## Rates Rules types
 
-Name                           | Description
+Name                              | Description                                   | Variables                                   | Requires fixed period (start_date/end_date)? | Percentage required? | Fixed amount required? 
+----------------------------------|-----------------------------------------------|---------------------------------------------|----------------------------------------------|----------------------|--------------------------
+additional_person_fixed_per_night | Rule applied for stay price                   | occupation_greater_than                     |                                              | false                | true
+arrival_only                      | Rule applied on arrival.                      | days                                        |                                              | false                | false
+charge_at_least                   | Rule applied for stay price.                  | length, unit                                |                                              | false                | false
+charge_at_least_if_available      | Rule applied for stay price.                  | length, unit                                |                                              | false                | false
+charge_at_least_full_period       | Rule applied for stay price.                  |                                             |  true                                        | false                | false
+departure_only                    | Rule applied on departure.                    | days                                        |                                              | false                | false
+early_booking                     | Rule applied on early booking.                | length, unit                                |                                              | true                 | false
+full_period_only                  | Rule applied for full period.                 |                                             |  true                                        | false                | false
+late_booking                      | Rule applied for late booking.                | length, unit                                |                                              | true                 | false
+occupation_less_than              | Rule applied for stay period.                 | occupation_less_than                        |                                              | true                 | false
+prevent_gap                       | Rule applied on arrival.                      | length, unit, until_length, until_unit      |                                              | false                | false
+prevent_if_booked_ahead_of        | Rule applied if booked ahead.                 | length, unit                                |                                              | false                | false
+prevent_if_booked_less_than       | Rule applied if booking is too short.         | length, unit                                |                                              | false                | false
+stay_at_least                     | Rule applied for minimum stay.                | length, unit                                |                                              | true                 | false
+stay_shorter_than                 | Rule applied for short bookings.              | length, unit                                |                                              | true                 | false
+strict_minimum_price_per_night    | Rule applied for minimum price per night.     |                                             |                                              | true                 | false
+weekend_night                     | Rule applied for weekend night.               | days                                        |                                              | true                 | false
+{: class="table table-bordered"}
+
+
+## Rates Rules variables
+
+
+Name                              | Description
 ----------------------------------|------------
-additional_person_fixed_per_night | Rule applied for stay price
-arrival_only                      | Rule applied on arrival.
-charge_at_least                   | Rule applied for stay price.
-charge_at_least_if_available      | Rule applied for stay price.
-charge_at_least_full_period       | Rule applied for stay price
-departure_only                    | Rule applied on departure.
-early_booking                     | Rule applied on early booking.
-full_period_only                  | Rule applied for full period.
-late_booking                      | Rule applied for late booking.
-occupation_less_than              | Rule applied for stay period.
-prevent_gap                       | Rule applied on arrival.
-prevent_if_booked_ahead_of        | Rule applied if booked ahead.
-prevent_if_booked_less_than       | Rule applied if booking is too short.
-stay_at_least                     | Rule applied for minimum stay.
-stay_shorter_than                 | Rule applied for short bookings.
-strict_minimum_price_per_night    | Rule applied for minimum price per night.
-weekend_night                     | Rule applied for weekend night.
+length                            | Number
+unit                              | Array of enums: days, months, years
+until_length                      | Number
+until_unit                        | String, possible values: "days", "months", "years"
+occupation_less_than              | Number
+occupation_greater_than           | Number
+days                              | Array of integers between 0 and 6 (Sunday is 0, Saturday 6)
+
+
 {: class="table table-bordered"}
 
 [Rules explanation](https://manual.bookingsync.com/hc/en-us/articles/360005324073-All-our-Rates-Rules)

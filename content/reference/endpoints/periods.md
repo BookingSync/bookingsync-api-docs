@@ -3,6 +3,10 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents Periods which define the timeline for applicability of the [Seasons](/reference/endpoints/seasons/). 
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -13,23 +17,33 @@
   <div class="tab-pane active" id="rates_read" markdown="1">
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
+account          | Integer | Read       | Account's ID related to the Period
+season           | Integer | Read       | Season's ID related to the Period
+rates_table      | Integer | Read       | Rates Table's ID related to the Period
+-----------------|---------|------------|------------
 id               | Integer | Read       | Period's id.
 -----------------|---------|------------|------------
-created_at       | [Time](/reference/enums#formats) | Read       | Payment's create time.
-updated_at       | [Time](/reference/enums#formats) | Read       | Payment's update time.
+created_at       | [Time](/reference/enums#formats) | Read       | Period's create time.
+updated_at       | [Time](/reference/enums#formats) | Read       | Period's update time.
 start_date       | [Date](/reference/enums#formats) | Read       | Period's start date.
 end_date         | [Date](/reference/enums#formats) | Read       | Period's end date.
+archived_at      | [Time](/reference/enums#formats) | Read       | Period's archived time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rates_write" markdown="1">
-Name             | Type    | Read/Write | Description
------------------|---------|------------|------------
-id               | Integer | Read       | Period's id.
------------------|---------|------------|------------
-created_at       | [Time](/reference/enums#formats) | Read       | Payment's create time.
-updated_at       | [Time](/reference/enums#formats) | Read       | Payment's update time.
-start_date       | [Date](/reference/enums#formats) | Read/Write | **Required**. Period's start date.
-end_date         | [Date](/reference/enums#formats) | Read/Write | **Required**. Period's end date.
+Name             | Type    | Read/Write | Description | Constraints
+-----------------|---------|------------|-------------|
+account          | Integer | Read       | Account's ID related to the Period |
+season           | Integer | Read       | Season's ID related to the Period | 
+rates_table      | Integer | Read       | Rates Table's ID related to the Period |
+-----------------|---------|------------|-------------|
+id               | Integer | Read       | Period's id.|
+-----------------|---------|------------|-------------|
+created_at       | [Time](/reference/enums#formats) | Read       | Period's create time. |
+updated_at       | [Time](/reference/enums#formats) | Read       | Period's update time. |
+start_date       | [Date](/reference/enums#formats) | Read/Write | Period's start date. | **Required**, must be before `end_date` 
+end_date         | [Date](/reference/enums#formats) | Read/Write | Period's end date. | **Required**, must be after `start_date`, the maximum allowed value is 3 years from the current date
+archived_at      | [Time](/reference/enums#formats) | Read       | Period's archived time. |
 {: class="table table-bordered"}
   </div>
 </div>
