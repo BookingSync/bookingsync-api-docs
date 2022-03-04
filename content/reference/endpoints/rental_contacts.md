@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents Rental Contacts which is a relationship between [Contact person](/reference/endpoints/contacts/)) and [Rentals](/reference/endpoints/rentals/)).
+This resource represents Rental Contacts which is a relationship between [Contact person](/reference/endpoints/contacts/) and [Rentals](/reference/endpoints/rentals/).
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
