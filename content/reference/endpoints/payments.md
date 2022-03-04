@@ -5,9 +5,11 @@
 
 ## Overview
 
-This resource represents the Payments for [Bookings](/reference/endpoints/bookings/), which can be either recorded manually (via API or manually) or be automated (with `instant-booking` and `bookingsync` kind). 
+This resource represents the Payments for [Bookings](/reference/endpoints/bookings/), which can be either recorded manually (via API or manually) or be automated (with `instant-booking` and `bookingsync` kind).
 
-Payments can also drive the lifecycle of the [Bookings](/reference/endpoints/bookings/) - creating a `paid` Payment (the ons that have `paid_at` timestamp assigned) with `instant-booking` kind ensures that the Booking is `booked` (especially useful for confirming tentative Bookings). 
+Payments can also drive the lifecycle of the [Bookings](/reference/endpoints/bookings/) - creating a `paid` Payment (the ons that have `paid_at` timestamp assigned) with `instant-booking` kind ensures that the Booking is `booked` (especially useful for confirming tentative Bookings).
+
+If you are interested in implementing your own payment flow, check out this [guide](/guides/secure-payments-by-bookingsync/#instant-booking-flow).
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
@@ -38,7 +40,7 @@ card                | String   | Read/Write | Payment's card number, only the la
 city                | String   | Read/Write | Payer's city. | Maximum length: 100
 country_code        | String   | Read/Write | Payer's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements). | Must be one of the country codes if present
 currency            | String   | Read/Write | Payment's currency code, list of codes described in [enums section](/reference/enums/#currencies). | **Required**, must be one of the currencies
-description         | String   | Read       | Combined descriptions of all booking payments (if managed by BookingSync). |
+description         | String   | Read       | Auto-generated description based on Rental's `name` and related Booking's `start_at`/`end_at` timestamps |
 kind                | String   | Read/Write | Payment's kind, list of kinds described in [enums section](/reference/enums/#payment-kinds). | **Required**, must be one of the payment kin 
 email               | String   | Read/Write | Payer's email. | Must be of email format if present
 fullname            | String   | Read/Write | Payer's fullname. | Cannot contain non-printing characters
@@ -83,7 +85,7 @@ card                | String   | Read       | Payment's card number, only the la
 city                | String   | Read       | Payer's city.
 country_code        | String   | Read       | Payer's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
 currency            | String   | Read       | Payment's currency code, list of codes described in [enums section](/reference/enums/#currencies).
-description         | String   | Read       | Combined descriptions of all booking payments (if managed by BookingSync).
+description         | String   | Read       | Auto-generated description based on Rental's `name` and related Booking's `start_at`/`end_at` timestamps.
 kind                | String   | Read       | Payment's kind, list of kinds described in [enums section](/reference/enums/#payment-kinds).
 email               | String   | Read       | Payer's email.
 fullname            | String   | Read       | Payer's fullname.
@@ -131,7 +133,7 @@ card                | String   | Read/Write | Payment's card number, only the la
 city                | String   | Read/Write | Payer's city. | Maximum length: 100
 country_code        | String   | Read/Write | Payer's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements). | Must be one of the country codes if present
 currency            | String   | Read/Write | Payment's currency code, list of codes described in [enums section](/reference/enums/#currencies). | **Required**, must be one of the currencies
-description         | String   | Read       | Combined descriptions of all booking payments (if managed by BookingSync). |
+description         | String   | Read       | Auto-generated description based on Rental's `name` and related Booking's `start_at`/`end_at` timestamps. |
 kind                | String   | Read/Write | Payment's kind, list of kinds described in [enums section](/reference/enums/#payment-kinds). | **Required**, must be one of the payment kin 
 email               | String   | Read/Write | Payer's email. | Must be of email format if present
 fullname            | String   | Read/Write | Payer's fullname. | Cannot contain non-printing characters

@@ -274,6 +274,8 @@ weekly           | The reference rate is weekly based.
 
 ## Rates Rules types
 
+[Rates Rules explanation](https://manual.bookingsync.com/hc/en-us/articles/360005324073-All-our-Rates-Rules)
+
 Name                              | Description                                   | Variables                                   | Requires fixed period (start_date/end_date)? | Percentage required? | Fixed amount required? 
 ----------------------------------|-----------------------------------------------|---------------------------------------------|----------------------------------------------|----------------------|--------------------------
 additional_person_fixed_per_night | Rule applied for stay price                   | occupation_greater_than                     |                                              | false                | true
@@ -312,7 +314,7 @@ days                              | Array of integers between 0 and 6 (Sunday is
 
 {: class="table table-bordered"}
 
-[Rules explanation](https://manual.bookingsync.com/hc/en-us/articles/360005324073-All-our-Rates-Rules)
+[Rates Rules explanation](https://manual.bookingsync.com/hc/en-us/articles/360005324073-All-our-Rates-Rules)
 
 ## Rental types
 

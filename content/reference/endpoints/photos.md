@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents Photos belonging to [Rentals](/reference/endpoints/rentals/) used for presentational purposes..
+This resource represents Photos belonging to [Rentals](/reference/endpoints/rentals/) used for presentational purposes.
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">

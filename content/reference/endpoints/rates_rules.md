@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents Rates Rules which drive the behavior behind the calculation of Booking's `initial_price` (i.e. the contribution from the Rental.). The are applied on top of the rates defined by either Nightly Rate Map or a combination of Rental's `base_rate`, Seasons and Periods.
+This resource represents Rates Rules which drive the behavior behind the calculation of Booking's `initial_price` (i.e. the contribution from the Rental.). They are applied on top of the rates defined by either Nightly Rate Map or a combination of Rental's `base_rate`, Seasons and Periods.
 
 A detailed description of Rates Rules is available [here](https://manual.bookingsync.com/hc/en-us/articles/360005324073-All-our-Rates-Rules)
 
