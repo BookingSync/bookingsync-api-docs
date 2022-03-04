@@ -97,13 +97,3 @@ PUT /payment_gateways/:payment_gateway_id
 
 <%= render 'json_response', endpoint: "payment_gateways", request: "update",
 scopes: [{ preferences_payments_write: "preferences-payments-read" }] %>
-
-## Destroy a payment gateway
-
-Required OAuth scope: `:preferences_payments_write`
-
-Returns an empty response with '204 No Content' status code on success.
-
-~~~~~~
-DELETE /payment_gateways/:payment_gateway_id
-~~~~~~
