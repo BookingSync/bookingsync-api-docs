@@ -1,7 +1,8 @@
 # Rates Tables
 
-1. TOC
-{:toc}
+## Overview
+
+This resource represents Rates Tables - a resource for grouping price-related resources (such as Rates Rules, Seasons, Periods) for [Rentals](/reference/endpoints/rentals/). Rates Tables can be shared between Rentals to make them reusable.
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
@@ -13,25 +14,37 @@
   <div class="tab-pane active" id="rates_read" markdown="1">
 Name             | Type    | Read/Write | Description
 -----------------|---------|-------------------------
-id               | Integer | Read       | Rates Table's id.
+account          | Integer | Read       | Account's ID related to the Rates Table
+seasons          | Array   | Read       | Seasons' IDs related to the Rates Table
+rates_rules      | Array   | Read       | Rates Rules' IDs related to the Rates Table
+periods          | Array   | Read       | Periods' IDs related to the Rates Table
+rentals          | Array   | Read       | Rentals' IDs related to the Rates Table
 -----------------|---------|-------------------------
+id               | Integer | Read       | Rates Table's ID.
 name             | String  | Read       | Rates Table's name.
-shared           | Boolean | Read       | Rates Table's shared status.
+shared           | Boolean | Read       | Rates Table's shared (between Rentals) status.
+public_notes     | String  | Read       | Rates Table's public notes.
 -----------------|---------|-------------------------
 created_at       | [Time](/reference/enums#formats) | Read       | Rate's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Rate's update time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rates_write" markdown="1">
-Name             | Type    | Read/Write | Description
------------------|---------|-------------------------
-id               | Integer | Read       | Rates Table's id.
------------------|---------|-------------------------
-name             | String  | Read/Write | **Required**. Rates Table's name. (50 characters max)
-shared           | Boolean | Read       | Rates Table's shared status. (Rates Table is made shared when creating or updating through api)
------------------|---------|-------------------------
-created_at       | [Time](/reference/enums#formats) | Read       | Rate's create time.
-updated_at       | [Time](/reference/enums#formats) | Read       | Rate's update time.
+Name             | Type    | Read/Write | Description |
+-----------------|---------|--------------------------|
+account          | Integer | Read       | Account's ID related to the Rates Table |
+seasons          | Array   | Read       | Seasons' IDs related to the Rates Table |
+rates_rules      | Array   | Read       | Rates Rules' IDs related to the Rates Table |
+periods          | Array   | Read       | Periods' IDs related to the Rates Table |
+rentals          | Array   | Read       | Rentals' IDs related to the Rates Table |
+-----------------|---------|--------------------------|
+id               | Integer | Read       | Rates Table's ID. |
+name             | String  | Read/Write | Rates Table's name. | **Required**, Maximum length: 50, cannot contain non-printing characters
+shared           | Boolean | Read       | Rates Table's shared (between Rentals) status. (Rates Table is always marked as shared when creating or updating through API) |
+public_notes     | String  | Read       | Rates Table's public notes. |
+-----------------|---------|--------------------------|
+created_at       | [Time](/reference/enums#formats) | Read       | Rate's create time. |
+updated_at       | [Time](/reference/enums#formats) | Read       | Rate's update time. |
 {: class="table table-bordered"}
   </div>
 </div>
