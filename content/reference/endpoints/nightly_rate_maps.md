@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents Nightly Rate Map - a resource defining nightly rates and minimum stays in reference to `start_date` fort the consecutive 1096. It's used as a basic block for defining nightly rates - you can either use [Seasons](/reference/endpoints/seasons/), [Periods](/reference/endpoints/periods/) with [Rentalss](reference/endpoints/rentals/) `base_rate` or Nightly Rate Map.  
+This resource represents Nightly Rate Map - a resource defining nightly rates and minimum stays in reference to `start_date` for the consecutive 1096. It's used as a basic block for defining nightly rates - you can either use [Seasons](/reference/endpoints/seasons/), [Periods](/reference/endpoints/periods/) with [Rentals](reference/endpoints/rentals/) `base_rate` or Nightly Rate Map.
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
