@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents the available Amenities, that can be assigned later to the Rentals by creating [RentalsAmenities](/reference/endpoints/rentals_amenities).
+This resource represents the available Amenities, that can be assigned to the Rentals by creating [Rentals Amenities](/reference/endpoints/rentals_amenities).
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">

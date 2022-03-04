@@ -2,7 +2,7 @@
 
 1. TOC
 {:toc}
-2. 
+
 ## Overview
 
 This resource represents the Booking's Comments. Each Booking can have multiple comments and can be used for putting some extra notes about the Booking itself or as a way of communication between Users having access to the Account about this particular Booking to which the Comment is related to.

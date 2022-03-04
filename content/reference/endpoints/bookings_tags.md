@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents the Booking Tags that can be later associated with the [Bookings](/reference/endpoints/bookings/).
+This resource represents the Booking Tags that can be associated with the [Bookings](/reference/endpoints/bookings/).
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">

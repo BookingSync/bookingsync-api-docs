@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents Inbox Messages happening under the [Inbox Conversations](reference/endpoints/inbox_conversations/).
+This resource represents Inbox Messages sent in the [Inbox Conversations](/reference/endpoints/inbox_conversations/).
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">

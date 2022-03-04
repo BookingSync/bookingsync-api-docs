@@ -357,7 +357,7 @@ Name             | Description
 airbnb           | Airbnb
 homeaway         | HomeAway
 email            | Email
-booking-com      | Bookiing.com
+booking-com      | Booking.com
 {: class="table table-bordered"}
 
 ## Inbox Message Origins
