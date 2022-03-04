@@ -19,9 +19,9 @@ A detailed description of Rates Rules is available [here](https://manual.booking
   <div class="tab-pane active" id="rates_read" markdown="1">
 Name                 | Type    | Read/Write | Description
 ---------------------|---------|------------|------------
-account              | Integer | Read       | Account's ID related to the Rates Table
-rates_table          | Integer | Read       | Rates Table's ID related to Rates Table
-seasons              | Array   | Read       | Season's IDs related to the Rates Table 
+account              | Integer | Read       | Account's ID related to the Rates Rule
+rates_table          | Integer | Read       | Rates Table's ID related to Rates Rule
+seasons              | Array   | Read       | Season's IDs related to the Rates Rule 
 ---------------------|---------|------------|------------
 id                   | Integer | Read       | Rates Rule's id.
 always_applied       | Boolean | Read       | Rates Rule's application status.
@@ -40,9 +40,9 @@ end_date             | [Date](/reference/enums#formats) | Read       | Rates Rul
   <div class="tab-pane" id="rates_write" markdown="1">
 Name                 | Type    | Read/Write | Description | Constrains
 ---------------------|---------|------------|-------------|
-account              | Integer | Read       | Account's ID related to the Rates Table | 
-rates_table          | Integer | Read       | Rates Table's ID related to Rates Table |
-seasons              | Array   | Read       | Season's IDs related to the Rates Table |
+account              | Integer | Read       | Account's ID related to the Rates Rule | 
+rates_table          | Integer | Read       | Rates Table's ID related to Rates Rule |
+seasons              | Array   | Read       | Season's IDs related to the Rates Rule |
 ---------------------|---------|------------|-------------|
 id                   | Integer | Read       | Rates Rule's id. |
 season_ids           | Array   | Write      | Season ids related to the rates rule. | Use only one of these: `season_ids`, `always_applied` (if the value is `true`) or `start_date`/`end_date`
