@@ -3,6 +3,10 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents the Booking's Payments, establishing the relationship between [Payments](/reference/endpoints/payments/) and [Bookings](/reference/endpoints/bookings/).
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -14,9 +18,13 @@
   <div class="tab-pane active" id="payments_read-payments_write" markdown="1">
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
-id               | Integer | Read       | Bookings Payment's id.
+account          | Integer | Read       | Account's ID related to the Bookings Payment
+booking          | Integer | Read       | Booking's ID related to the Bookings Payment
+rental           | Integer | Read       | Rental's ID related to the Bookings Payment
+payment          | Integer | Read       | Rental's ID related to the Bookings Payment
 -----------------|---------|------------|------------
-amount_in_cents  | Integer | Read       | Bookings Payment's value.
+id               | Integer | Read       | Bookings Payment's id.
+amount_in_cents  | Integer | Read       | Bookings Payment's amount in cents.
 currency         | String  | Read       | Bookings Payment's currency code, list of codes described in [enums section](/reference/enums#currencies).
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Bookings Payment's create time.

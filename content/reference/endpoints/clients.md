@@ -3,6 +3,10 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents the Clients which effectively are the actual travelers (guests) that are related to [Bookings](/reference/endpoints/bookings/). 
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -13,8 +17,9 @@
   <div class="tab-pane active" id="clients_read" markdown="1">
 Group     | Name             | Type    | Read/Write | Description
 ----------|------------------|---------|------------|------------
-          | id               | Integer | Read       | Client's id.
+          | account          | Integer | Read       | Account's ID related to the Client
 ----------|------------------|---------|------------|------------
+          | id               | Integer | Read       | Client's id.
           | company          | String  | Read       | Client's company name.
           | fullname         | String  | Read       | Client's fullname.
           | firstname        | String  | Read       | Client's first name.
@@ -48,41 +53,42 @@ phones    |                  | Array   | Read       | Array of client's phone nu
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="clients_write" markdown="1">
-Group     | Name             | Type    | Read/Write | Description
+Group     | Name             | Type    | Read/Write | Description | Constraints
+----------|------------------|---------|------------|------------|
+          | account          | Integer | Read       | Account's ID related to the Client |
+----------|------------------|---------|------------|------------|
+          | company          | String  | Read/Write | Client's company name. | 
+          | fullname         | String  | Read/Write | **Required**. Client's fullname. | Maximum length: 150. Use either `fullname` or `firstname` and `lastname`
+          | firstname        | String  | Read/Write | Client's first name.| Maximum length: 150. Use either `fullname` or `firstname` and `lastname`
+          | lastname         | String  | Read/Write | Client's last name. | Maximum length: 150. Use either `fullname` or `firstname` and `lastname`
+          | notes            | Text    | Read/Write | Client's notes. (5000 characters max) | Maximum length: 5000
+          | passport         | String  | Read/Write | Client's passport id. (50 characters max) | Maximum length: 50
+          | preferred_locale | String  | Read/Write | Client's contact language preference. | Must be one of account's `selected_locales`
+          | vat_number       | String  | Read/Write | Client's company vat number. |
+----------|------------------|---------|------------|------------|
+          | created_at       | [Time](/reference/enums#formats) | Read       | Client's create time. |
+          | updated_at       | [Time](/reference/enums#formats) | Read       | Client's update time. |
 ----------|------------------|---------|------------|------------
-          | id               | Integer | Read       | Client's id.
+addresses |                  | Array   | Read/Write | Array of client's addresses. |
+          | address1         | String  | Read/Write | Client's first address. | Maximum length: 100, cannot contain non-printable characters
+          | address2         | String  | Read/Write | Client's second address. | Maximum length: 100, cannot contain non-printable characters
+          | city             | String  | Read/Write | Client's city. | Maximum length: 100, required if `city` is present, cannot contain non-printable characters
+          | country_code     | String  | Read/Write | Client's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements). | Must be a country code enum
+          | label            | String  | Read/Write | Address label. |  **Required** (if the element is present in `addresses` array)
+          | state            | String  | Read/Write | Client's state. | Maximum length: 100, cannot contain non-printable characters
+          | zip              | String  | Read/Write | Client's zip. | Maximum length: 15, cannot contain non-printable characters
 ----------|------------------|---------|------------|------------
-          | company          | String  | Read/Write | Client's company name.
-          | fullname         | String  | Read/Write | **Required**. Client's fullname. (150 characters max)
-          | firstname        | String  | Read/Write | Client's first name. (150 characters max)
-          | lastname         | String  | Read/Write | Client's last name. (150 characters max)
-          | notes            | Text    | Read/Write | Client's notes. (5000 characters max)
-          | passport         | String  | Read/Write | Client's passport id. (50 characters max)
-          | preferred_locale | String  | Read/Write | Client's contact language preference.
-          | vat_number       | String  | Read/Write | Client's company vat number.
-----------|------------------|---------|------------|------------
-          | created_at       | [Time](/reference/enums#formats) | Read       | Client's create time.
-          | updated_at       | [Time](/reference/enums#formats) | Read       | Client's update time.
-----------|------------------|---------|------------|------------
-addresses |                  | Array   | Read/Write | Array of client's addresses.
-          | address1         | String  | Read/Write | Client's first address.
-          | address2         | String  | Read/Write | Client's second address.
-          | city             | String  | Read/Write | Client's city.
-          | country_code     | String  | Read/Write | Client's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
-          | label            | String  | Read/Write | Address label.
-          | state            | String  | Read/Write | Client's state.
-          | zip              | String  | Read/Write | Client's zip.
-----------|------------------|---------|------------|------------
-emails    |                  | Array   | Read/Write | Array of client's emails.
-          | email            | String  | Read/Write | Client's email.
-          | label            | String  | Read/Write | Email label.
-----------|------------------|---------|------------|------------
-phones    |                  | Array   | Read/Write | Array of client's phone numbers.
-          | label            | String  | Read/Write | Phone label.
-          | number           | String  | Read/Write | Client's number.
+emails    |                  | Array   | Read/Write | Array of client's emails. | 
+          | email            | String  | Read/Write | Client's email. | **Required**, must be in email format (if the element is present in `emails` array)
+          | label            | String  | Read/Write | Email label. | **Required** (if the element is present in `emails` array)
+----------|------------------|---------|------------|------------|
+phones    |                  | Array   | Read/Write | Array of client's phone numbers. |
+          | label            | String  | Read/Write | Phone label. | **Required**, must be in email format (if the element is present in `phones` array)
+          | number           | String  | Read/Write | Client's number. | **Required**, must be in phone number format (if the element is present in `phones` array)
 {: class="table table-bordered"}
   </div>
 </div>
+
 
 <div class="callout callout-info" markdown="1">
   <h4>Grouped attributes</h4>

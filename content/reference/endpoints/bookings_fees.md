@@ -3,6 +3,12 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents the Booking's Fees, which contribute to Booking's final price.
+
+Bookings Fees are usually related to [RentalsFees](/reference/endpoints/rentals_fees/), but they might be also not related at all to any Fee. These fees are called "standalone fees". [Bookings](/reference/endpoints/bookings/) originating from external Channels are likely to have standalone Bookings Fees.
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -12,9 +18,14 @@
   <div class="tab-pane active" id="bookings_read-bookings_write-bookings_write_owned" markdown="1">
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
-id               | Integer | Read       | Bookings Fee's id.
+rentals_fee      | Integer | Read       | RentalsFee's ID related to the Bookings Fee
+booking          | Integer | Read       | Booking's ID related to the Bookings Fee
+fee              | Integer | Read       | Fee's ID related to the Bookings Fee
+account          | Integer | Read       | Account's ID related to the Bookings Fee
+bookings_taxes   | Array   | Read       | Array of Bookings Taxes IDs where the given Bookings Fee is a taxable item
 -----------------|---------|------------|------------
-included_in_price| Boolean | Read       | Fee price already included in booking's final price if set to true.
+id               | Integer | Read       | Bookings Fee's id.
+included_in_price| Boolean | Read       | Whether Bookings Fee contributes to the final price or not.
 name             | [Object](/reference/enums#formats)| Read       | Bookings Fee's name, list of locales described in [enums section](/reference/enums#locales).
 price            | [Decimal](/reference/enums#formats)  | Read       | Bookings Fee's price.
 required         | Boolean | Read       | Always included for new bookings if set to true.
@@ -25,6 +36,7 @@ updated_at       | [Time](/reference/enums#formats) | Read         | Bookings Fe
 {: class="table table-bordered"}
   </div>
 </div>
+
 
 ## List bookings fees
 

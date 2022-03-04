@@ -3,6 +3,10 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents the rental's bedrooms. This resource is mostly static information used for presentational purposes.
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -13,8 +17,10 @@
   <div class="tab-pane active" id="public" markdown="1">
 Name                | Type    | Read/Write | Description
 --------------------|---------|------------|------------
-id                  | Integer | Read       | Bedroom's id.
+account             | Integer | Read       | Account's ID related to the Bedroom
+rental              | Integer | Read       | Rental's ID related to the Bedroom
 --------------------|---------|------------|------------
+id                  | Integer | Read       | Bedroom's id.
 name                | [Object](/reference/enums#formats)| Read       | Bedroom's name, list of locales described in [enums section](/reference/enums#locales).
 bunk_beds_count     | Integer | Read       | Bedroom's number of bunk beds.
 double_beds_count   | Integer | Read       | Bedroom's number of double beds.
@@ -22,26 +28,33 @@ kingsize_beds_count | Integer | Read       | Bedroom's number of kingsize beds.
 queensize_beds_count| Integer | Read       | Bedroom's number of queensize beds.
 single_beds_count   | Integer | Read       | Bedroom's number of single beds.
 sofa_beds_count     | Integer | Read       | Bedroom's number of sofa beds.
+futon_beds_count              | Integer | Read | Bedroom's number of futon beds.
+floor_mattress_beds_count     | Integer | Read | Bedroom's number of floor mattress beds. 
+toddler_beds_count            | Integer | Read | Bedroom's number of toddler beds. 
+crib_beds_count               | Integer | Read | Bedroom's number of crib beds.
+air_mattress_beds_count       | Integer | Read | Bedroom's number of air mattress beds. 
 --------------------|---------|------------|------------
 created_at          | [Time](/reference/enums#formats) | Read       | Bedroom's create time.
 updated_at          | [Time](/reference/enums#formats) | Read       | Bedroom's update time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rentals_write" markdown="1">
-Name                | Type    | Read/Write | Description
+Name                | Type    | Read/Write | Description   | Constraints
+--------------------|---------|------------|---------------|
+account             | Integer | Read       | Account's ID related to the Bedroom |
+rental              | Integer | Read       | Rental's ID related to the Bedroom |
+--------------------|---------|------------|---------------|
+id                  | Integer | Read       | Bedroom's id. |
+name                          | [Object](/reference/enums#formats)| Read/Write | Bedroom's name, list of locales described in [enums section](/reference/enums#locales). | **Required**, maximum length: 25
+bunk_beds_count               | Integer | Read/Write | Bedroom's number of bunk beds. | integer only, greater than or equal to: 0
+double_beds_count             | Integer | Read/Write | Bedroom's number of double beds. | integer only, greater than or equal to: 0
+kingsize_beds_count           | Integer | Read/Write | Bedroom's number of kingsize beds. | integer only, greater than or equal to: 0
+queensize_beds_count          | Integer | Read/Write | Bedroom's number of queensize beds. | integer only, greater than or equal to: 0
+single_beds_count             | Integer | Read/Write | Bedroom's number of single beds. | integer only, greater than or equal to: 0
+sofa_beds_count               | Integer | Read/Write | Bedroom's number of sofa beds. | integer only, greater than or equal to: 0
 --------------------|---------|------------|------------
-id                  | Integer | Read       | Bedroom's id.
---------------------|---------|------------|------------
-name                | [Object](/reference/enums#formats)| Read/Write | **Required**. Bedroom's name, list of locales described in [enums section](/reference/enums#locales).
-bunk_beds_count     | Integer | Read/Write | Bedroom's number of bunk beds.
-double_beds_count   | Integer | Read/Write | Bedroom's number of double beds.
-kingsize_beds_count | Integer | Read/Write | Bedroom's number of kingsize beds.
-queensize_beds_count| Integer | Read/Write | Bedroom's number of queensize beds.
-single_beds_count   | Integer | Read/Write | Bedroom's number of single beds.
-sofa_beds_count     | Integer | Read/Write | Bedroom's number of sofa beds.
---------------------|---------|------------|------------
-created_at          | [Time](/reference/enums#formats) | Read       | Bedroom's create time.
-updated_at          | [Time](/reference/enums#formats) | Read       | Bedroom's update time.
+created_at          | [Time](/reference/enums#formats) | Read       | Bedroom's create time. |
+updated_at          | [Time](/reference/enums#formats) | Read       | Bedroom's update time. |
 {: class="table table-bordered"}
   </div>
 </div>

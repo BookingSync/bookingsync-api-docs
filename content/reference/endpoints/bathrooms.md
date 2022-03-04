@@ -3,6 +3,10 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents the rental's bathrooms. This resource is mostly static information used for presentational purposes.   
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -13,8 +17,10 @@
   <div class="tab-pane active" id="public" markdown="1">
 Name                | Type    | Read/Write | Description
 --------------------|---------|------------|------------
-id                  | Integer | Read       | Bathroom's id.
+account             | Integer | Read       | Account's ID related to the Bathroom
+rental              | Integer | Read       | Rental's ID related to the Bathroom
 --------------------|---------|------------|------------
+id                  | Integer | Read       | Bathroom's id.
 name                | [Object](/reference/enums#formats)| Read       | Bathroom's name, list of locales described in [enums section](/reference/enums#locales).
 bath_count          | Integer | Read       | Bathroom's number of baths.
 shower_count        | Integer | Read       | Bathroom's number of showers.
@@ -25,14 +31,16 @@ updated_at          | [Time](/reference/enums#formats) | Read        | Bathroom'
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rentals_write" markdown="1">
-Name                | Type    | Read/Write | Description
---------------------|---------|------------|------------
-id                  | Integer | Read       | Bathroom's id.
---------------------|---------|------------|------------
-name                | [Object](/reference/enums#formats)| Read/Write | **Required**. Bathroom's name, list of locales described in [enums section](/reference/enums#locales).
-bath_count          | Integer | Read/Write | Bathroom's number of baths.
-shower_count        | Integer | Read/Write | Bathroom's number of showers.
-wc_count            | Integer | Read/Write | Bathroom's number of wc's.
+Name                | Type    | Read/Write | Description | Constraints
+--------------------|---------|------------|------------ |
+account             | Integer | Read       | Account's ID related to the Bathroom |
+rental              | Integer | Read       | Rental's ID related to the Bathroom |
+--------------------|---------|------------|------------|
+id                  | Integer | Read       | Bathroom's id. |
+name                | [Object](/reference/enums#formats)| Read/Write | Bathroom's name, list of locales described in [enums section](/reference/enums#locales). |  **Required**, maximum length: 25
+bath_count          | Integer | Read/Write | Bathroom's number of baths.   | integer only, greater than or equal to: 0
+shower_count        | Integer | Read/Write | Bathroom's number of showers. | integer only, greater than or equal to: 0
+wc_count            | Integer | Read/Write | Bathroom's number of wc's.    | integer only, greater than or equal to: 0
 --------------------|---------|------------|------------
 created_at          | [Time](/reference/enums#formats) | Read       | Bathroom's create time.
 updated_at          | [Time](/reference/enums#formats) | Read       | Bathroom's update time.

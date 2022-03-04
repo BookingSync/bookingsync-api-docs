@@ -3,6 +3,10 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents the available Amenities, that can be assigned to the Rentals by creating [Rentals Amenities](/reference/endpoints/rentals_amenities).
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -16,9 +20,13 @@ id               | Integer | Read       | Amenity's id.
 -----------------|---------|------------|------------
 key              | String  | Read       | Amenity's key.
 title            | [Object](/reference/enums#formats)| Read       | Amenity's title, list of locales described in [enums section](/reference/enums#locales).
+-----------------|---------|------------|------------
+created_at       | [Time](/reference/enums#formats) | Read       | Amenity's create time.
+updated_at       | [Time](/reference/enums#formats) | Read       | Amenity's update time.
 {: class="table table-bordered"}
   </div>
 </div>
+
 
 ## List amenities
 
