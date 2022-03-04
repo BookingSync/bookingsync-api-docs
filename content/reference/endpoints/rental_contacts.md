@@ -3,6 +3,10 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents Rental Contacts which is a relationship between [Contact person](/reference/endpoints/contacts/)) and [Rentals](/reference/endpoints/rentals/)).
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -14,46 +18,51 @@
   <div class="tab-pane active" id="public" markdown="1">
 Name                            | Type     | Read/Write | Description
 --------------------------------|----------|------------|------------
-id                              | Integer  | Read       | Rental contact's id.
-contact_id                      | Integer  | Read       | Contact's id.
---------------------------------|----------|------------|--------------
+account                         | Integer  | Read       | Account's ID related to the Rental contact
+contact                         | Integer  | Read       | Contacts's ID related to the Rental contact
+rental                          | Integer  | Read       | Rental's ID related to the Rental contact
+--------------------------------|----------|------------|------------
+id                              | Integer  | Read       | Rental contact's ID.
 kind                            | [String](/reference/enums#rental-contact-kinds) | Read | Rental contact's kind
 roles                           | [Array of Strings](/reference/enums#rental-contact-roles) | Read | Rental contact's roles
 --------------------------------|----------|------------|--------------
 created_at                      | [Time](/reference/enums#formats) | Read         | Rental contact's create time.
 updated_at                      | [Time](/reference/enums#formats) | Read         | Rental contact's update time.
-canceled_at                     | [Time](/reference/enums#formats) | Read         | Rental contact's canceled time if canceled.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rentals_read" markdown="1">
 Name                            | Type     | Read/Write | Description
 --------------------------------|----------|------------|------------
-id                              | Integer  | Read       | Rental contact's id.
-contact_id                      | Integer  | Read       | Contact's id.
---------------------------------|----------|------------|--------------
+account                         | Integer  | Read       | Account's ID related to the Rental contact
+contact                         | Integer  | Read       | Contacts's ID related to the Rental contact
+rental                          | Integer  | Read       | Rental's ID related to the Rental contact
+--------------------------------|----------|------------|------------
+id                              | Integer  | Read       | Rental contact's ID.
 kind                            | [String](/reference/enums#rental-contact-kinds) | Read | Rental contact's kind
 roles                           | [Array of Strings](/reference/enums#rental-contact-roles) | Read | Rental contact's roles
 --------------------------------|----------|------------|--------------
 created_at                      | [Time](/reference/enums#formats) | Read         | Rental contact's create time.
 updated_at                      | [Time](/reference/enums#formats) | Read         | Rental contact's update time.
-canceled_at                     | [Time](/reference/enums#formats) | Read         | Rental contact's canceled time if canceled.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rentals_write" markdown="1">
-Name                            | Type     | Read/Write | Description
---------------------------------|----------|------------|------------
-id                              | Integer  | Read       | Rental contact's id.
-contact_id                      | Integer  | Write      | Contact's id.
---------------------------------|----------|------------|--------------
-kind                            | [String](/reference/enums#rental-contact-kinds) | Read/Write | Rental contact's kind
-roles                           | [Array of Strings](/reference/enums#rental-contact-roles) | Read/Write | Rental contact's roles
---------------------------------|----------|------------|--------------
-created_at                      | [Time](/reference/enums#formats) | Read         | Rental contact's create time.
-updated_at                      | [Time](/reference/enums#formats) | Read         | Rental contact's update time.
-canceled_at                     | [Time](/reference/enums#formats) | Read         | Rental contact's canceled time if canceled.
+Name                            | Type     | Read/Write | Description | Constraints
+--------------------------------|----------|------------|-------------|
+account                         | Integer  | Read       | Account's ID related to the Rental contact |
+contact                         | Integer  | Read       | Contacts's ID related to the Rental contact |
+rental                          | Integer  | Read       | Rental's ID related to the Rental contact |
+--------------------------------|----------|------------|-------------|
+id                              | Integer  | Read       | Rental contact's ID. |
+contact_id                      | Integer  | Write      | Contact's ID. | **Required**
+kind                            | [String](/reference/enums#rental-contact-kinds) | Read/Write | Rental contact's kind | **Required**, must be one of the Rental contact kinds, only one `owner` kind is allowed per Rental,  
+roles                           | [Array of Strings](/reference/enums#rental-contact-roles) | Read/Write | Rental contact's roles | Must be one of the Rental contact kinds if present, only one `general` role is allowed per Rental, only one `invoices` role is allowed per Rental
+--------------------------------|----------|------------|---------------|
+created_at                      | [Time](/reference/enums#formats) | Read         | Rental contact's create time. |
+updated_at                      | [Time](/reference/enums#formats) | Read         | Rental contact's update time. |
 {: class="table table-bordered"}
   </div>
 </div>
+
 
 ## List rental contacts
 
