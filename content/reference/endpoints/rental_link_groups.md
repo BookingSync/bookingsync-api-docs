@@ -48,11 +48,6 @@ updated_at       | [Time](/reference/enums#formats) | Read         | Rental link
   </div>
 </div>
 
-has_one :account, visible: false, embed: :object, serializer: Api::V3::AccountSerializer
-
-has_many :rentals, visible: false, embed: :object, serializer: Api::V3::RentalSerializer
-has_many :rental_links, visible: false, embed: :object, serializer: Api::V3::RentalLinkSerializer
-
 ## List rental link groups
 
 List all rental link groups for a given account(s).

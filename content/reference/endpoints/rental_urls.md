@@ -37,8 +37,8 @@ account            | Integer | Read       | Account's ID related to the Rental l
 rental             | Integer | Read       | Rental's ID related to the Rental link |
 -------------------|---------|------------|-------------|
 id                 | Integer | Read       | Rental URL's ID. |
-label              | String  | Read       | Rental URL's label - usually represents the channel's or application's name. |
-url                | String  | Read       | The URL where the Rental is available on the channel's website. |
+label              | String  | Read/Write | Rental URL's label - usually represents the channel's or application's name. |
+url                | String  | Read/Write | The URL where the Rental is available on the channel's website. |
 lock               | Object  | Read       | Lock shows what's editable/not-editable (representing ownership status). |
 locked             | Boolean | Write      | Setting locked to `true` means that other apps won't be able to modify this Rental URL (your application will be granted exclusivity for managing this resource). |
 -------------------|---------|------------|-------------|
