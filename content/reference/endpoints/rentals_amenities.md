@@ -3,6 +3,10 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents the Rentals Amenities, that establish relationship between [Rentals](/reference/endpoints/rentals) and [Amenities](/reference/endpoints/amenities).
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -13,8 +17,11 @@
   <div class="tab-pane active" id="public" markdown="1">
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
-id               | Integer | Read       | Rentals Amenity's id.
+account          | Integer | Read       | Account's ID related to the Rentals Amenity
+rental           | Integer | Read       | Rental's ID related to the Rentals Amenity
+amenity          | Integer | Read       | Amenity's ID related to the Rentals Amenity
 -----------------|---------|------------|------------
+id               | Integer | Read       | Rentals Amenity's id.
 details          | [Object](/reference/enums#formats) | Read       | Rentals Amenity's details, list of locales described in [enums section](/reference/enums#locales).
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Rentals Amenity's create time.
@@ -22,15 +29,19 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Rentals Ameni
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rentals_write" markdown="1">
-Name             | Type    | Read/Write | Description
------------------|---------|------------|------------
-id               | Integer | Read       | Rentals Amenity's id.
-amenity_id       | Integer | Write      | **Required**. Amenity id related to the Rentals Amenity.
------------------|---------|------------|------------
-details          | [Object](/reference/enums#formats) | Read/Write | Rentals Amenity's details, list of locales described in [enums section](/reference/enums#locales).
------------------|---------|------------|------------
-created_at       | [Time](/reference/enums#formats) | Read       | Rentals Amenity's create time.
-updated_at       | [Time](/reference/enums#formats) | Read       | Rentals Amenity's update time.
+Name             | Type    | Read/Write | Description | Constraints
+-----------------|---------|------------|-------------|
+account          | Integer | Read       | Account's ID related to the Rentals Amenity |
+rental           | Integer | Read       | Rental's ID related to the Rentals Amenity |
+amenity          | Integer | Read       | Amenity's ID related to the Rentals Amenity |
+-----------------|---------|------------|-------------|
+id               | Integer | Read       | Rentals Amenity's ID. |
+amenity_id       | Integer | Write      | Amenity's ID related to the Rentals Amenity | **Required**. 
+-----------------|---------|------------|-------------|
+details          | [Object](/reference/enums#formats) | Read/Write | Rentals Amenity's details, list of locales described in [enums section](/reference/enums#locales). | Maximum length: 100
+-----------------|---------|------------|-------------|
+created_at       | [Time](/reference/enums#formats) | Read       | Rentals Amenity's create time. |
+updated_at       | [Time](/reference/enums#formats) | Read       | Rentals Amenity's update time. |
 {: class="table table-bordered"}
   </div>
 </div>
