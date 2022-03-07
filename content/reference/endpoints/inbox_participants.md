@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents Inbox Participants that can send [Inbox Messages](reference/endpoints/inbox_messages/) for a given  [Inbox Conversation](reference/endpoints/inbox_conversations/).
+This resource represents Inbox Participants that can send [Inbox Messages](/reference/endpoints/inbox_messages/) for a given [Inbox Conversation](/reference/endpoints/inbox_conversations/).
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
@@ -19,8 +19,8 @@ Name                 | Type    | Read/Write | Description
 ---------------------|---------|------------|------------
 conversation         | Integer | Read       | Conversation's ID to which Participant belongs to
 account              | Integer | Read       | Account's ID to which Participant is related to
-member_id            | Integer | Read       | ID of the resource that created the Participant (Host or Client - this is a polymorphic association)
-member_type          | String  | Read       | Type of the resource that created the Participant (Host or Client - this is a polymorphic association)
+member_id            | Integer | Read       | ID of the resource that created the Participant ([Client](/reference/endpoints/clients/) or [Host](/reference/endpoints/hosts/) - this is a polymorphic association)
+member_type          | String  | Read       | Type of the resource that created the Participant ([Client](/reference/endpoints/clients/) or [Host](/reference/endpoints/hosts/) - this is a polymorphic association)
 ---------------------|---------|------------|------------
 id                   | Integer | Read       | Participant's ID.
 created_at           | [Time](/reference/enums#formats) | Read       | Participant's create time.
@@ -34,12 +34,12 @@ Name                 | Type    | Read/Write | Description | Constraints
 ---------------------|---------|------------|------------|
 conversation         | Integer | Read       | Conversation's ID to which Participant belongs to |
 account              | Integer | Read       | Account's ID to which Participant is related to |
-member_id            | Integer | Read       | ID of the resource that created the Participant (Host or Client - this is a polymorphic association) | 
-member_type          | String  | Read       | Type of the resource that created the Participant (Host or Client - this is a polymorphic association) |
+member_id            | Integer | Read       | ID of the resource that created the Participant ([Client](/reference/endpoints/clients/) or [Host](/reference/endpoints/hosts/) - this is a polymorphic association) | 
+member_type          | String  | Read       | Type of the resource that created the Participant ([Client](/reference/endpoints/clients/) or [Host](/reference/endpoints/hosts/) - this is a polymorphic association) |
 ---------------------|---------|------------|------------|
 id                   | Integer | Read       | Participant's id. |
 member_id            | Integer | Write (create-only)     | Participant's Member id. | **Required**
-member_type          | Integer | Write (create-only)     | Participant's member type (`Client` or `Host`). | **Required**, must be `Client` or `Host`
+member_type          | Integer | Write (create-only)     | Participant's member type (`Client` or `Host`). | **Required**, must be [Client](/reference/endpoints/clients/) or [Host](/reference/endpoints/hosts/).
 conversation_id      | Integer | Write (create-only)     | Participant's Conversation id. | **Required**
 read                 | Boolean | Write      | An attribute for marking last message as read by Participant  (and will assign `read_at` timestamp) | Must be in the past
 ---------------------|---------|------------|------------|

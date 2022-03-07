@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents Inbox Attachments - the files (or images) that can be assigned to [Inbox Messages](reference/endpoints/inbox_messages/).
+This resource represents Inbox Attachments - the files (or images) that can be assigned to [Inbox Messages](/reference/endpoints/inbox_messages/).
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">

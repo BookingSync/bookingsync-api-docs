@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents Inbox Conversations - a thread within each [Inbox Messages](reference/endpoints/inbox_messages/) can be created.
+This resource represents Inbox Conversations - a thread within each [Inbox Messages](/reference/endpoints/inbox_messages/) can be created.
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">

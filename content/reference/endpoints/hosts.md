@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents Hosts which are the representations of Users of the particular [Account](/reference/endpoints/accounts/) that can be used in the Inbox context to create [Inbox Participants](reference/endpoints/inbox_participants/).
+This resource represents Hosts which are the representations of Users of the particular [Account](/reference/endpoints/accounts/) that can be used in the Inbox context to create [Inbox Participants](/reference/endpoints/inbox_participants/).
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">

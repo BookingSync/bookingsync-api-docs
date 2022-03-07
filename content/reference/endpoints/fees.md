@@ -50,7 +50,7 @@ kind                   | String  | Read/Write | Fee's kind, list of fee's kinds 
 original_currency      | String  | Read       | Fee's original currency, list of currencies codes described in [enums section](/reference/enums#currencies) |
 rate                   | [Decimal](/reference/enums#formats)  | Read/Write | Fee's rate. | **Required**, greater than or equal to: 0 
 rate_kind              | String  | Read/Write |  Fee's rate kind, list of fee's rate kinds described in [enums section](/reference/enums#fee-rate-kinds). | **Required**, must be one of the fee rate kinds 
-maximum_possible_rate  | [Decimal](/reference/enums#formats) | Read/Write | Fee's maximum possible rate, calculated value won't exceed amount present on this attribute. | Must be greater than or equal to: 0, applicable only for It is applied only for percentage kinds (list of kinds is described in [enums section](/reference/enums#fee-kinds)).
+maximum_possible_rate  | [Decimal](/reference/enums#formats) | Read/Write | Fee's maximum possible rate, calculated value won't exceed amount present on this attribute. | Must be greater than or equal to: 0, applicable only for percentage kinds (list of kinds is described in [enums section](/reference/enums#fee-kinds)).
 notes                  | String  | Read/Write       | Fee's notes | Maximum length: 100
 -----------------------|---------|------------|------------|
 archived_at            | [Time](/reference/enums#formats) | Read         | Fee's archive time. |
