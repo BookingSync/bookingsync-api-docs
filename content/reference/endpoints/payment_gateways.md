@@ -26,7 +26,7 @@ gateway_name                   | String  | Read       | Payment Gateway's name, 
 credentials                    | [Object](/reference/enums#formats) | Read       | Credentials used for payment gateway authentication.
 supported_cardtypes            | Array   | Read       | Array of String values containing supported cardtypes for selected gateway.
 supported_currencies           | Array   | Read       | Array of string values containing supported currencies for selected gateway.
-tokenize_credit_card_details   | Boolean | Read       | Credit Card details will be tokenized if set to true before card's authorization. For some gateways the value will be automatically set to true when handling 3DS flow.
+tokenize_credit_card_details   | Boolean | Read       | Credit Card details will be tokenized if set to true before card's authorization. The value will be automatically set to true when handling 3DS flow.
 host_booking_pay_wallet_id     | String  | Read       | Wallet ID for BookingPay host.
 ---------------------|---------|------------|------------
 created_at           | [Time](/reference/enums#formats) | Read       | Payment Gateway's creation time.
@@ -45,7 +45,7 @@ gateway_name                   | String  | Read/Write       | Payment Gateway's 
 credentials                    | [Object](/reference/enums#formats) | Read/Write | Credentials used for payment gateway authentication. | **Required**, the schema depends on `gateway_name`
 supported_cardtypes            | Array   | Read/Write       | Array of String values containing supported cardtypes for selected gateway, available values are described in: [enums section](/reference/enums#payment-gateway-cardtypes) | **Required**, must contain valid cardtypes supported by a given payment gateway
 supported_currencies           | Array   | Read/Write       | Array of string values containing supported currencies for selected gateway. | **Required**, must contain valid currencies
-tokenize_credit_card_details   | Boolean | Read/Write       | Credit Card details will be tokenized if set to true before card's authorization. For some gateways the value will be automatically set to true when handling 3DS flow. |
+tokenize_credit_card_details   | Boolean | Read/Write       | Credit Card details will be tokenized if set to true before card's authorization. The value will be automatically set to true when handling 3DS flow. |
 host_booking_pay_wallet_id     | String  | Read             | Wallet ID for BookingPay host. |
 ---------------------|---------|------------|-------------|
 created_at           | [Time](/reference/enums#formats) | Read       | Payment Gateway's creation time. |

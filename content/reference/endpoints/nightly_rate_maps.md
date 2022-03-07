@@ -9,6 +9,8 @@ This resource represents Nightly Rate Map - a resource defining nightly rates an
 
 Managing Nightly Rate Maps requires external rates management on the [Rental](/reference/endpoints/rentals/) level (by setting `nightly_rates_managed_externally` to `true`).
 
+For [Rentals](reference/endpoints/rentals/) with internal rates management (`nightly_rates_managed_externally` is `false`) Nightly Rate Maps are regenerated everyday at 00:00 UTC and `start_date` always points to the previous day from current day in UTC timezone. For rentals with external rates management (`nightly_rates_managed_externally` is `true`) our system will neither refresh the map nor update `start_date` as this responsibility is passed onto the application managing the rates.
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
