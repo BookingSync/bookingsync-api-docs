@@ -9,7 +9,7 @@ This resource represents the available Accounts.
 
 When using <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a>, you can get the list of all Accounts installed for your application. When using Authorization Flow, you will only get a single account that represents a Resource Owner for a given token.
 
-Combining <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a> and  <a href="/guides/updated-since-flow/">updated_since flow</a> allows you also to get the list of accounts that have been cancelled, suspended or uninstalled your application.  
+Combining <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a> and  <a href="/guides/updated-since-flow/">updated_since flow</a> allows you also to get the list of accounts that have been canceled, suspended or uninstalled your application.  
 
 
 ### Parameters
@@ -32,7 +32,7 @@ Group      | Subgroup | Name             | Type    | Read/Write | Description
            |          | email            | String  | Read                                 | Account's email.
            |          | selected_locales | Array   | Read                                 | Array of all locales selected for this Account. List of all available locales is described in [enums section](/reference/enums/#locales).
            |          | state            | String  | Read                                 | State in which company is located.
-           |          | status           | String  | Read                                 | Account's status, list of statuses described in [enums section](/reference/enums/#account-statuses). If the value is `trial`, you probably don't want to treat as a real production Account just yet.
+           |          | status           | String  | Read                                 | Account's status, list of statuses described in [enums section](/reference/enums/#account-statuses).
            |          | website          | String  | Read                                 | Company's website
            |          | zip              | String  | Read                                 | Zip code.
            |          | demo             | Boolean | Read                                 | Account's demo status. If the value is `true`, you probably don't want to treat as a real production Account.

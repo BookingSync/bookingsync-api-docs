@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents Inquiries that can be later turned into [Bookings](/reference/endpoints/bookings/). The usually originate from the widgets where you can select dates and either create a Booking right away or send the Inquiry with some question.
+This resource represents Inquiries that can be later turned into [Bookings](/reference/endpoints/bookings/). They usually originate from the widgets where you can select dates and either create a Booking right away or send the Inquiry with some question.
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
@@ -59,7 +59,7 @@ email            | String  | Read/Write | Inquiry's client email. | **Required**
 firstname        | String  | Read/Write | Inquiry's client firstname. | **Required**, Maximum length: 50
 lastname         | String  | Read/Write | Inquiry's client lastname. | **Required**, Maximum length: 99
 message          | String  | Read/Write | Inquiry's message. | Maximum length: 500
-phone            | String  | Read/Write | Inquiry's client phone number. | Must be of a phone number format
+phone            | String  | Read/Write | Inquiry's client phone number. | Must be of a phone number format (regexp: `\A\+?[ -.0-9+EXText()]*\Z`)
 locked           | String  | Read/Write (create-only) | Inquiry's locked status. |
 accept_privacy_policy | Boolean | Write (create-only) | Confirm that the Privacy Policy has been accepted (check [Accounts](/reference/endpoints/accounts/ for more details)) |  
 -----------------|---------|------------|------------|

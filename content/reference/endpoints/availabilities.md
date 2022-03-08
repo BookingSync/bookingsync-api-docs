@@ -5,7 +5,9 @@
 
 ## Overview
 
-This resource represents the Availabilities for a given Rental. The `map` represents consecutive 1096 days starting from `start_date` and tells whether a given day is available (there is no any [Booking](/reference/endpoints/bookings) during that day) or unavailable (there is already a [Booking](/reference/endpoints/bookings) for thay day).
+This resource represents the Availabilities for a given Rental. The `map` represents consecutive 1096 days starting from `start_date` and tells whether a given day is available (there is no [Booking](/reference/endpoints/bookings) for that day) or unavailable (there is already a [Booking](/reference/endpoints/bookings) for that day).
+
+Availabilities are regenerated after creation of Bookings and at the beginning of each month and `start_date` always points to the beginning of current month.
 
 Particularly useful when implementing a UI containing calendar that allows to select dates for a Booking - using this map you can block unavailable dates. 
 
