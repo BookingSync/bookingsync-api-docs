@@ -40,8 +40,8 @@ application      | Integer  | Read       | Application's ID related to the Renta
 rental           | Integer  | Read       | Rental's ID related to the Rentals Contents Override |
 -----------------|---------|------------|-------------|
 id               | Integer | Read       | Rentals Contents Override's ID. |
-application_id   | Integer | Write      | Application id related to the Rentals Contents Override. | **Required** on create
-rental_id        | Integer | Write      | Rental id related to the Rentals Contents Override. | **Required** on create
+application_id   | Integer | Write      | Application's Id related to the Rentals Contents Override. | **Required** on create
+rental_id        | Integer | Write      | Rental's ID related to the Rentals Contents Override. | **Required** on create
 description      | [Object](/reference/enums#formats) | Read/Write | Description override for related application, list of locales described in [enums section](/reference/enums#locales). | Maximum length: 10 000 (unless customized)
 headline         | [Object](/reference/enums#formats) | Read/Write | Headline override for related application, list of locales described in [enums section](/reference/enums#locales). | Maximum length: 75 (unless customized)
 summary          | [Object](/reference/enums#formats) | Read/Write | Summary override for related application, list of locales described in [enums section](/reference/enums#locales). | Maximum length: 150 (unless customized)
