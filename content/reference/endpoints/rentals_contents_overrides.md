@@ -1,9 +1,13 @@
 # Rentals Contents Overrides
-Rental content overrides endpoint was made so that different channels could have different length validations for our fields like `headline, summary, description`.
-By using those objects clients applications can use full available length at each channel.
 
 1. TOC
 {:toc}
+
+## Overview
+
+This resource represents the Rental Content Overrides which allow different channels (other [Applications](/reference/endpoints/applications/).) to have customized content for fields like `headline`, `summary`, `description`, which also allows to bypass the length validation that is normally applied for these fields in [Rentals](/reference/endpoints/rentals/) endpoint.
+
+Note: An Application needs to be configured in a way that content overrides are permitted. Most likely you will need to reach out to us and ask for this feature to be enabled for your Application or if you want to customize the maximum length for the overridable fields. 
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
@@ -15,8 +19,11 @@ By using those objects clients applications can use full available length at eac
   <div class="tab-pane active" id="rentals_read" markdown="1">
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
-id               | Integer | Read       | Rentals Contents Override's id.
+account          | Integer  | Read       | Account's ID related to the Rentals Contents Override
+application      | Integer  | Read       | Application's ID related to the Rentals Contents Override
+rental           | Integer  | Read       | Rental's ID related to the Rentals Contents Override
 -----------------|---------|------------|------------
+id               | Integer | Read       | Rentals Contents Override's ID.
 description      | [Object](/reference/enums#formats) | Read       | Description override for related application, list of locales described in [enums section](/reference/enums#locales).
 headline         | [Object](/reference/enums#formats) | Read       | Headline override for related application, list of locales described in [enums section](/reference/enums#locales).
 summary          | [Object](/reference/enums#formats) | Read       | Summary override for related application, list of locales described in [enums section](/reference/enums#locales).
@@ -26,18 +33,21 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Rentals Conte
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rentals_write" markdown="1">
-Name             | Type    | Read/Write | Description
------------------|---------|------------|------------
-id               | Integer | Read       | Rentals Contents Override's id.
-application_id   | Integer | Write      | Application id related to the Rentals Contents Override.
-rental_id        | Integer | Write      | Rental id related to the Rentals Contents Override.
------------------|---------|------------|------------
-description      | [Object](/reference/enums#formats) | Read/Write | Description override for related application, list of locales described in [enums section](/reference/enums#locales).
-headline         | [Object](/reference/enums#formats) | Read/Write | Headline override for related application, list of locales described in [enums section](/reference/enums#locales).
-summary          | [Object](/reference/enums#formats) | Read/Write | Summary override for related application, list of locales described in [enums section](/reference/enums#locales).
------------------|---------|------------|------------
-created_at       | [Time](/reference/enums#formats) | Read       | Rentals Contents Override's create time.
-updated_at       | [Time](/reference/enums#formats) | Read       | Rentals Contents Override's update time.
+Name             | Type    | Read/Write | Description | Constraints
+-----------------|---------|------------|-------------|
+account          | Integer  | Read       | Account's ID related to the Rentals Contents Override |
+application      | Integer  | Read       | Application's ID related to the Rentals Contents Override |
+rental           | Integer  | Read       | Rental's ID related to the Rentals Contents Override |
+-----------------|---------|------------|-------------|
+id               | Integer | Read       | Rentals Contents Override's ID. |
+application_id   | Integer | Write      | Application id related to the Rentals Contents Override. | **Required** on create
+rental_id        | Integer | Write      | Rental id related to the Rentals Contents Override. | **Required** on create
+description      | [Object](/reference/enums#formats) | Read/Write | Description override for related application, list of locales described in [enums section](/reference/enums#locales). | Maximum length: 10 000 (unless customized)
+headline         | [Object](/reference/enums#formats) | Read/Write | Headline override for related application, list of locales described in [enums section](/reference/enums#locales). | Maximum length: 75 (unless customized)
+summary          | [Object](/reference/enums#formats) | Read/Write | Summary override for related application, list of locales described in [enums section](/reference/enums#locales). | Maximum length: 150 (unless customized)
+-----------------|---------|------------|-------------|
+created_at       | [Time](/reference/enums#formats) | Read       | Rentals Contents Override's create time. |
+updated_at       | [Time](/reference/enums#formats) | Read       | Rentals Contents Override's update time. |
 {: class="table table-bordered"}
   </div>
 </div>
