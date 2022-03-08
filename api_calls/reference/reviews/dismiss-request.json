@@ -1,0 +1,9 @@
+{
+  "reviews": [
+    {
+      "disimissed_at": "2022-03-10T12:00Z:00",
+      "dismissed_by": "Airbnb",
+      "dismissal_reason": "Guest revealed personal details of a host"
+    }
+  ]
+}
