@@ -1,0 +1,10 @@
+{
+  "host_reviews": [
+    {
+      "comment": "It was awesome!",
+      "expires_at": "2021-06-07T12:00:00Z",
+      "source_id": 1,
+      "shareable": false
+    }
+  ]
+}

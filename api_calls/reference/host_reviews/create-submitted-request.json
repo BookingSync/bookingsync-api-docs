@@ -1,11 +1,12 @@
 {
-  "reviews": [
+  "host_reviews": [
     {
-      "comment": "Amazing stay",
-      "private_comment": "I left my glasses",
+      "comment": "Awesome guest",
       "submitted_at": "2020-06-06T12:00:00Z",
-      "rating": 4.6,
+      "expires_at": "2020-06-07T12:00:00Z",
+      "is_guest_recommended": true,
       "shareable": false,
+      "comment": "It was awesome!",
       "source_id": 1,
       "criteria": {
         "cleanliness": {
@@ -16,11 +17,13 @@
           "rating": "5.0",
           "comment": null
         },
-        "value_for_money": {
-          "rating": "4.0",
-          "comment": "A bit too expansive"
+        "respect_house_rules": {
+          "rating": "5.0",
+          "comment": "Everything great!"
         }
       }
     }
   ]
 }
+
+
