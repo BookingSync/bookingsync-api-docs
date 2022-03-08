@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents Fees Taxes - the [taxes](/reference/endpoints/taxes/) for a [fee](/reference/endpoints/fees/), which can be either configured to be included if fee's rate or not.  
+This resource represents Fees Taxes - the [taxes](/reference/endpoints/taxes/) for a [fee](/reference/endpoints/fees/), which can be either configured to be included in fee's rate or not.  
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">

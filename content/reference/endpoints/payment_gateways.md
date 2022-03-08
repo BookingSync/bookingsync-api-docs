@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents Payment Gateways (allowing integration with providers such BookingPay, Stripe, Ingenico etc.) that you can later assign to [Rentals](/reference/endpoints/rentals/) and start accepting payments via credit card.
+This resource represents Payment Gateways (allowing integration with providers such Stripe, Ingenico etc.) that you can later assign to [Rentals](/reference/endpoints/rentals/) and start accepting payments via credit card.
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
@@ -26,7 +26,7 @@ gateway_name                   | String  | Read       | Payment Gateway's name, 
 credentials                    | [Object](/reference/enums#formats) | Read       | Credentials used for payment gateway authentication.
 supported_cardtypes            | Array   | Read       | Array of String values containing supported cardtypes for selected gateway.
 supported_currencies           | Array   | Read       | Array of string values containing supported currencies for selected gateway.
-tokenize_credit_card_details   | Boolean | Read       | Credit Card details will be tokenized if set to true before card's authorization.
+tokenize_credit_card_details   | Boolean | Read       | Credit Card details will be tokenized if set to true before card's authorization. The value will be automatically set to true when handling 3DS flow.
 host_booking_pay_wallet_id     | String  | Read       | Wallet ID for BookingPay host.
 ---------------------|---------|------------|------------
 created_at           | [Time](/reference/enums#formats) | Read       | Payment Gateway's creation time.
@@ -45,7 +45,7 @@ gateway_name                   | String  | Read/Write       | Payment Gateway's 
 credentials                    | [Object](/reference/enums#formats) | Read/Write | Credentials used for payment gateway authentication. | **Required**, the schema depends on `gateway_name`
 supported_cardtypes            | Array   | Read/Write       | Array of String values containing supported cardtypes for selected gateway, available values are described in: [enums section](/reference/enums#payment-gateway-cardtypes) | **Required**, must contain valid cardtypes supported by a given payment gateway
 supported_currencies           | Array   | Read/Write       | Array of string values containing supported currencies for selected gateway. | **Required**, must contain valid currencies
-tokenize_credit_card_details   | Boolean | Read/Write       | Credit Card details will be tokenized if set to true before card's authorization. |
+tokenize_credit_card_details   | Boolean | Read/Write       | Credit Card details will be tokenized if set to true before card's authorization. The value will be automatically set to true when handling 3DS flow. |
 host_booking_pay_wallet_id     | String  | Read             | Wallet ID for BookingPay host. |
 ---------------------|---------|------------|-------------|
 created_at           | [Time](/reference/enums#formats) | Read       | Payment Gateway's creation time. |
@@ -87,9 +87,9 @@ POST /payment_gateways
 <%= render 'json_response', endpoint: "payment_gateways", request: "create",
 scopes: [{ preferences_payments_write: "preferences-payments-read" }] %>
 
-## Update a payments
+## Update a  Payment Gateway
 
-Returns an updated living_room identified by ID.
+Returns an updated payment gateway identified by ID.
 
 ~~~
 PUT /payment_gateways/:payment_gateway_id
@@ -97,13 +97,3 @@ PUT /payment_gateways/:payment_gateway_id
 
 <%= render 'json_response', endpoint: "payment_gateways", request: "update",
 scopes: [{ preferences_payments_write: "preferences-payments-read" }] %>
-
-## Destroy a living_room
-
-Required OAuth scope: `:preferences_payments_write`
-
-Returns an empty response with '204 No Content' status code on success.
-
-~~~~~~
-DELETE /payment_gateways/:payment_gateway_id
-~~~~~~

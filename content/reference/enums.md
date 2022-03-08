@@ -228,21 +228,6 @@ stripe           | Stripe gateway.
 bogus            | Bogus gateway.
 {: class="table table-bordered"}
 
-
-## Payment gateway cardtypes
-
-Name             | Description
------------------|------------
-visa             | Visa
-master           | MasterCard
-discover         | Discover
-american_express | American Express
-diners_club      | Diner's Club
-jcb              | JCB
-maestro          | Maestro
-bogus            | Bogus
-{: class="table table-bordered"}
-
 ## Photo kinds
 
 Name             | Description
@@ -402,7 +387,7 @@ Name             | Description
 airbnb           | Airbnb
 homeaway         | HomeAway
 email            | Email
-booking-com      | Bookiing.com
+booking-com      | Booking.com
 {: class="table table-bordered"}
 
 ## Inbox Message Origins

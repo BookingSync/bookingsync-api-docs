@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents the Clients which effectively are the actual travelers that are related to [Bookings](/reference/endpoints/bookings/). 
+This resource represents the Clients which effectively are the actual travelers (guests) that are related to [Bookings](/reference/endpoints/bookings/). 
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">

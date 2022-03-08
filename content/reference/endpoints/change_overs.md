@@ -7,6 +7,8 @@
 
 This resource represents the ChangeOvers for a given Rental. The `map` represents consecutive 1096 days starting from `start_date` and tells what action is possible during that day (no action possible/check-in only/check-out only/check-in and check-out possible.)
 
+ChangeOvers are regenerated after creation of [Bookings](/reference/endpoints/bookings/), change in [Rates Rules](/reference/endpoints/rates_rules/) and at the beginning of each month and `start_date` always points to the beginning of current month.
+
 Particularly useful when implementing a UI containing calendar that allows to select dates for a Booking - using this map you can block unavailable dates.
 
 Unlike [Availabilites](/reference/endpoints/availabilities/), this resource covers not only days blocked by already created [Bookings](/reference/endpoints/bookings/), but also [Rates Rules](/reference/endpoints/rates_rules/) that might have an impact for a given day.

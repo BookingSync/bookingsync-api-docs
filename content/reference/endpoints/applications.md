@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents the installed Applications. 
+This resource represents the installed Applications for the Account(s) via [OAuth](/reference/authorization/) - these are the actual applications that you, as a Partner, can register in [Partners Section](https://www.bookingsync.com/en/partners/). 
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
@@ -29,7 +29,7 @@ updated_at          | [Time](/reference/enums#formats) | Read       | Applicatio
   <div class="tab-pane" id="rentals_write" markdown="1">
 Name                | Type    | Read/Write | Description | Constraints
 --------------------|---------|------------|------------
-id                  | Integer | Read       | Bathroom's id. |
+id                  | Integer | Read       | Application's id. |
 --------------------|---------|------------|------------
 name                    | String                               | Read             | Application's name. |
 default_price_increase  | [Decimal](/reference/enums#formats)  | Read/Write       | Application's default price increase for [Bookings](/reference/endpoints/bookings) originating from a given Application. Also, this increase is reflected in [Rates](/reference/endpoints/rates) and [LOS Records](/reference/endpoints/los_records) | greater than: 0, less than: 100

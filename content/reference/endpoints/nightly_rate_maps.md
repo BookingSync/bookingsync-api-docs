@@ -5,7 +5,13 @@
 
 ## Overview
 
-This resource represents Nightly Rate Map - a resource defining nightly rates and minimum stays in reference to `start_date` fort the consecutive 1096. It's used as a basic block for defining nightly rates - you can either use [Seasons](/reference/endpoints/seasons/), [Periods](/reference/endpoints/periods/) with [Rentalss](reference/endpoints/rentals/) `base_rate` or Nightly Rate Map.  
+This resource represents Nightly Rate Map - a resource defining nightly rates and minimum stays in reference to `start_date` for the consecutive 1096. It's used as a basic block for defining nightly rates - you can either use [Seasons](/reference/endpoints/seasons/), [Periods](/reference/endpoints/periods/) with [Rentals](reference/endpoints/rentals/) `base_rate` or Nightly Rate Map
+
+Managing Nightly Rate Maps requires external rates management on the [Rental](/reference/endpoints/rentals/) level (by setting `nightly_rates_managed_externally` to `true`).
+
+For [Rentals](reference/endpoints/rentals/) with internal rates management (`nightly_rates_managed_externally` is `false`) Nightly Rate Maps are regenerated everyday at 00:00 UTC and `start_date` always points to the previous day from current day in UTC timezone. For rentals with external rates management (`nightly_rates_managed_externally` is `true`) our system will neither refresh the map nor update `start_date` as this responsibility is passed onto the application managing the rates.
+
+Managing Nightly Rate Maps requires external rates management on the [Rental](/reference/endpoints/rentals/) level (by setting `nightly_rates_managed_externally` to `true`).
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
