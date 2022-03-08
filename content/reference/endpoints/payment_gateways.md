@@ -22,7 +22,7 @@ account                        | Integer | Read       | Account's ID related to 
 id                             | BigInteger | Read    | Uniq identifier.
 name                           | String  | Read       | Payment Gateway's name serving as an additional identifier.
 test                           | Boolean | Read       | Submitted requests will not be charged if set to true.
-gateway_name                   | String  | Read       | Payment Gateway's name, available values are described in: [enums section](/reference/enums#payment-gateway-names) 
+gateway_name                   | String  | Read       | Payment Gateway's name, available values are described in [enums section](/reference/enums#payment-gateway-names) 
 credentials                    | [Object](/reference/enums#formats) | Read       | Credentials used for payment gateway authentication.
 supported_cardtypes            | Array   | Read       | Array of String values containing supported cardtypes for selected gateway.
 supported_currencies           | Array   | Read       | Array of string values containing supported currencies for selected gateway.

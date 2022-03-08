@@ -3,6 +3,10 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents Photos belonging to [Rentals](/reference/endpoints/rentals/) used for presentational purposes.
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -13,8 +17,10 @@
   <div class="tab-pane active" id="public" markdown="1">
 Name               | Type    | Read/Write | Description
 -------------------|---------|------------|------------
-id                 | Integer | Read       | Photo's id.
+account            | Integer | Read       | Account's ID related to the Photo 
+rental             | Integer | Read       | Rental's ID related to the Photo 
 -------------------|---------|------------|------------
+id                 | Integer | Read       | Photo's ID.
 compact_url        | String  | Read       | Photo's compact size (384x256) url.
 description        | [Object](/reference/enums#formats)    | Read       | Photo's description, list of locales described in [enums section](/reference/enums#locales).
 giant_url          | String  | Read       | Photo's giant size (2400x1600) url.
@@ -29,35 +35,39 @@ ratio              | [Decimal](/reference/enums#formats)   | Read       | Photo'
 small_url          | String  | Read       | Photo's small size (192x128) url.
 thumb_url          | String  | Read       | Photo's thumb size (96x64) url.
 width              | Integer | Read       | Photo's width in pixels.
+size_in_bytes      | Integer | Read       | Photo's size in bytes
 -------------------|---------|------------|------------
 created_at         | [Time](/reference/enums#formats) | Read       | Photo's create time.
 updated_at         | [Time](/reference/enums#formats) | Read       | Photo's update time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rentals_write" markdown="1">
-Name               | Type    | Read/Write | Description
--------------------|---------|------------|------------
-id                 | Integer | Read       | Photo's id.
--------------------|---------|------------|------------
-compact_url        | String  | Read       | Photo's compact size url.
-description        | [Object](/reference/enums#formats)    | Read/Write | Photo's description, list of locales described in [enums section](/reference/enums#locales). (80 characters max)
-giant_url          | String  | Read       | Photo's giant size url.
-grande_url         | String  | Read       | Photo's grande size url.
-height             | Integer | Read       | Photo's height in pixels.
-kind               | String  | Read/Write | Photo's kind, list of kinds described in [enum section](/reference/enums/#photo-kinds).
-large_url          | String  | Read       | Photo's large size url.
-medium_url         | String  | Read       | Photo's medium size url.
-micro_url          | String  | Read       | Photo's micro size url.
-photo              | File    | Write      | **Required**. Photo's image. (`remote_photo_url` can be used instead)
-position           | Integer | Read/Write | Photo's position on the rental list.
+Name               | Type    | Read/Write | Description | Constraints
+-------------------|---------|------------|-------------|
+account            | Integer | Read       | Account's ID related to the Photo |
+rental             | Integer | Read       | Rental's ID related to the Photo | 
+-------------------|---------|------------|-------------|
+id                 | Integer | Read       | Photo's ID. | 
+compact_url        | String  | Read       |  Photo's compact size (384x256) url. | 
+description        | [Object](/reference/enums#formats)    | Read/Write | Photo's description, list of locales described in [enums section](/reference/enums#locales) | Maximum length: 80
+giant_url          | String  | Read       | Photo's giant size (2400x1600) url. | 
+grande_url         | String  | Read       | Photo's grande size (1536x1024) url. | 
+height             | Integer | Read       | Photo's height in pixels. | 
+kind               | String  | Read/Write | Photo's kind, list of kinds described in [enum section](/reference/enums/#photo-kinds). | 
+large_url          | String  | Read       | Photo's large size (1200x800) url | 
+medium_url         | String  | Read       | Photo's medium size (768x512) url. | 
+micro_url          | String  | Read       | Photo's micro size (48x32) url. | 
+photo              | File    | Write      | Photo's image. | `photo` or  `remote_photo_url` - one of these is **required** | 
+position           | Integer | Read/Write | Photo's position on the rental list. | 
 ratio              | [Decimal](/reference/enums#formats)   | Read       | Photo's width to height ratio.
-remote_photo_url   | String  | Write      | **Required**. Photo's remote url. (`photo` can be used instead)
-small_url          | String  | Read       | Photo's small size url.
-thumb_url          | String  | Read       | Photo's thumb size url.
+remote_photo_url   | String  | Write      | **Required**. Photo's remote url | `photo` or  `remote_photo_url` - one of these is **required**, must be a valid URL
+small_url          | String  | Read       | Photo's small size (192x128) url.
+thumb_url          | String  | Read       | Photo's thumb size (96x64) url.
 width              | Integer | Read       | Photo's width in pixels.
--------------------|---------|------------|------------
-created_at         | [Time](/reference/enums#formats) | Read       | Photo's create time.
-updated_at         | [Time](/reference/enums#formats) | Read       | Photo's update time.
+size_in_bytes      | Integer | Read       | Photo's size in bytes
+-------------------|---------|------------|-------------|
+created_at         | [Time](/reference/enums#formats) | Read       | Photo's create time. |
+updated_at         | [Time](/reference/enums#formats) | Read       | Photo's update time. |
 {: class="table table-bordered"}
   </div>
 </div>
