@@ -29,13 +29,13 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Rentals Tag's
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rentals_write" markdown="1">
-Name             | Type    | Read/Write | Description
------------------|---------|------------|-------------| Constraints
+Name             | Type    | Read/Write | Description | Constraints
+-----------------|---------|------------|-------------| 
 account          | Integer  | Read      | Account's ID related to the Rentals Tag |
 -----------------|---------|------------|-------------|
 id               | Integer | Read       | Rentals Tag's ID. |
 name             | [Object](/reference/enums#formats)| Read/Write | Rentals Tag's title, list of locales described in [enums section](/reference/enums#locales). | **Required** 
-logo             | String  | Read/Write | Rentals Tag's logo (Font Awesome class). | **Required**
+logo             | String  | Read/Write | Rentals Tag's logo (Font Awesome class). |
 color            | String  | Read/Write | Rentals Tag's color (hex). | **Required**
 -----------------|---------|------------|-------------|
 created_at       | [Time](/reference/enums#formats) | Read       | Rentals Tag's create time. |

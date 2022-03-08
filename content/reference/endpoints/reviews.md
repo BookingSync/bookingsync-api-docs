@@ -173,4 +173,4 @@ PUT /reviews/:review_id/dismiss
 ~~~
 
 <%= render 'json_response', endpoint: "reviews", request: "dismiss",
-scopes: [{ rates_write: "public-rates_write" }] %>
+  scopes: [{ reviews_write: "public-reviews_write" }] %>
