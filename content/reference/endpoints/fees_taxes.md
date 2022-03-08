@@ -18,7 +18,7 @@ This resource represents Fees Taxes - the [taxes](/reference/endpoints/taxes/) f
 Name                   | Type    | Read/Write | Description
 -----------------------|---------|------------|------------
 account                | Integer | Read       | Account's ID related to the Fees Tax
-fee                    | Integer | Read       | Fees's ID related to the Fees Tax
+fee                    | Integer | Read       | Fee's ID related to the Fees Tax
 tax                    | Integer | Read       | Tax's ID related to the Fees Tax
 -----------------------|---------|------------|------------
 id                     | Integer | Read       | Fees Tax's id.
@@ -32,12 +32,11 @@ updated_at             | [Time](/reference/enums#formats) | Read       | Fees Ta
 Name                   | Type    | Read/Write | Description | Constraints
 -----------------------|---------|------------|-------------|
 account                | Integer | Read       | Account's ID related to the Fees Tax |
-fee                    | Integer | Read       | Fees's ID related to the Fees Tax |
+fee                    | Integer | Read       | Fee's ID related to the Fees Tax |
 tax                    | Integer | Read       | Tax's ID related to the Fees Tax |
------------------------|---------|------------|------------
 -----------------------|---------|------------|------------|
-id                     | Integer | Read       | Fees Tax's id. | **Required**
-tax_id                 | Integer | Write      | Tax's id. | **Required**
+id                     | Integer | Read       | Fees Tax's ID.
+tax_id                 | Integer | Write      | Tax's ID. | **Required**
 tax_included_in_rate   | Boolean | Read/Write | Whether Tax amount is already included in fee's rate or not. If fee's rate is 100 and there is a tax with a percentage of 10% assigned to it, that tax would already be included in 100 if it the value was set to `true`. However, if set to `false`, the "total" amount (in the context of [Bookings'](/reference/endpoints/bookings/) creation) would be 100 + 10% from 100 which is 110. | **Required**
 -----------------------|---------|------------|------------|
 created_at             | [Time](/reference/enums#formats) | Read       | Fees Tax's create time. |
