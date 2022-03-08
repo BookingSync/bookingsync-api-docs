@@ -1,0 +1,21 @@
+{
+  "payment_gateways": [
+    {
+      "name": "TestingGatewayName",
+      "test": true,
+      "gateway_name": "bogus",
+      "credentials": {
+        "login": "login"
+      },
+      "supported_cardtypes": [
+        "visa",
+        "master"
+      ],
+      "supported_currencies": [
+        "EUR",
+        "THB"
+      ],
+      "tokenize_credit_card_details": true
+    }
+  ]
+}

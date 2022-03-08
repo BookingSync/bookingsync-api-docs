@@ -3,7 +3,7 @@
 1. TOC
 {:toc}
 
-### Understanding Midterm Pricing
+## Overview
 
 Check out our guide: [Understanding Midterm Pricing](/guides/understanding-midterm-pricing/)
 
@@ -17,25 +17,27 @@ Check out our guide: [Understanding Midterm Pricing](/guides/understanding-midte
   <div class="tab-pane active" id="rates_read" markdown="1">
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
-id               | Uuid  | Read       | Mid Term Rate Map's id.
+rental           | Integer | Read       | Rental's ID related to the LOS record
+account          | Integer | Read       | Account's ID related to the LOS record
 -----------------|---------|------------|------------
+id               | String[UUID]    | Read       | Mid Term Rate Map's id.
 map              | String  | Read       | Mid Term Rate Map's map of rates. There is a total of 1096 characters, each representing one day. `0` rate represents a day without rate assigned.
------------------|---------|------------|------------
 start_date       | [Date](/reference/enums#formats) | Read       | Mid Term Rate Map's start date.
 updated_at       | [Time](/reference/enums#formats) | Read       | Mid Term Rate Map's update time.
 created_at       | [Time](/reference/enums#formats) | Read       | Mid Term Rate Map's create time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rates_write" markdown="1">
-Name             | Type    | Read/Write | Description
------------------|---------|------------|------------
-id               | Uuid  | Read       | Mid Term Rate Map's id.
------------------|---------|------------|------------
-map              | String  | Read/Write | Mid Term Rate Map's map of rates. There is a total of 1096 characters, each representing one day. `0` rate represents a day without rate assigned.
------------------|---------|------------|------------
-start_date       | [Date](/reference/enums#formats) | Read/Write | **Required**. Mid Term Rate Map's start date. Earliest supported `start_date` is yesterday, latest one - 1094 days from today. Both restrictions are based on current UTC date.
-updated_at       | [Time](/reference/enums#formats) | Read       | Mid Term Rate Map's update time.
-created_at       | [Time](/reference/enums#formats) | Read       | Mid Term Rate Map's create time.
+Name             | Type    | Read/Write | Description | Constraints
+-----------------|---------|------------|-------------|
+rental           | Integer | Read       | Rental's ID related to the Mid Term Rate Map |
+account          | Integer | Read       | Account's ID related to the Mid Term Rate Map | 
+-----------------|---------|------------|-------------|
+id               | String[UUID]     | Read       | Mid Term Rate Map's id. |
+map              | String  | Read/Write | Mid Term Rate Map's map of rates. There is a total of 1096 characters, each representing one day. `0` rate represents a day without rate assigned. | **Required**, required length: 1096
+start_date       | [Date](/reference/enums#formats) | Read/Write | Mid Term Rate Map's start date. | **Required**, Earliest supported `start_date` is yesterday, latest one - 1094 days from today. Both restrictions are based on current UTC date
+updated_at       | [Time](/reference/enums#formats) | Read       | Mid Term Rate Map's update time. |
+created_at       | [Time](/reference/enums#formats) | Read       | Mid Term Rate Map's create time. |
 {: class="table table-bordered"}
   </div>
 </div>

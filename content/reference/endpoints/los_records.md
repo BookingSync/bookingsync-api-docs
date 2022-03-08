@@ -3,7 +3,7 @@
 1. TOC
 {:toc}
 
-### Understanding LOS Records
+## Overview
 
 Check out our guide: [Understanding LOS Records](/guides/understanding-los-records/)
 
@@ -16,8 +16,10 @@ Check out our guide: [Understanding LOS Records](/guides/understanding-los-recor
   <div class="tab-pane active" id="public" markdown="1">
 Name                 | Type    | Read/Write | Description
 ---------------------|---------|------------|------------
-id                   | BigInteger | Read       | Uniq identifier.
+rental               | Integer | Read       | Rental's ID related to the LOS record
+account              | Integer | Read       | Account's ID related to the LOS record
 ---------------------|---------|------------|------------
+id                   | BigInteger | Read       | Uniq identifier.
 kind                 | String  | Read       | LOS record's kind. For possible values visit the [enums section](/reference/enums#los-kinds).
 day                  | [Date](/reference/enums#formats) | Read       | Day for which this LOS record is valid.
 min_occupancy        | Integer | Read       | Minimum occupancy for which this LOS record is valid.

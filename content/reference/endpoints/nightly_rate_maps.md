@@ -3,6 +3,14 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents Nightly Rate Map - a resource defining nightly rates and minimum stays in reference to `start_date` for the consecutive 1096. It's used as a basic block for defining nightly rates - you can either use [Seasons](/reference/endpoints/seasons/), [Periods](/reference/endpoints/periods/) with [Rentals](reference/endpoints/rentals/) `base_rate` or Nightly Rate Map
+
+Managing Nightly Rate Maps requires external rates management on the [Rental](/reference/endpoints/rentals/) level (by setting `nightly_rates_managed_externally` to `true`).
+
+For [Rentals](reference/endpoints/rentals/) with internal rates management (`nightly_rates_managed_externally` is `false`) Nightly Rate Maps are regenerated everyday at 00:00 UTC and `start_date` always points to the previous day from current day in UTC timezone. For rentals with external rates management (`nightly_rates_managed_externally` is `true`) our system will neither refresh the map nor update `start_date` as this responsibility is passed onto the application managing the rates.
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -13,25 +21,31 @@
   <div class="tab-pane active" id="rates_read" markdown="1">
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
-id               | Integer | Read       | Nightly Rate Map's id.
+rental           | Integer | Read       | Rental's ID related to the Nightly Rate Map
+account          | Integer | Read       | Account's ID related to the Nightly Rate Map
 -----------------|---------|------------|------------
-minimum_stays_map| String  | Read       | Nightly Rate Map's map of minimum stays. There is a total of 1096 characters, each representing one day.
-rates_map        | String  | Read       | Nightly Rate Map's map of rates. There is a total of 1096 characters, each representing one day. `0` rate represents a day without rate assigned.
+id               | Integer | Read       | Nightly Rate Map's id.
+minimum_stays_map| String  | Read       | Nightly Rate Map's map of minimum stays as comma-separated values. There is a total of 1096 characters, each representing one day.
+rates_map        | String  | Read       | Nightly Rate Map's map of rates as comma-separated values. There is a total of 1096 characters, each representing one day. `0` rate represents a day without rate assigned.
 -----------------|---------|------------|------------
 start_date       | [Date](/reference/enums#formats) | Read       | Nightly Rate Map's start date.
+created_at       | [Time](/reference/enums#formats) | Read       | Nightly Rate Map's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Nightly Rate Map's update time.
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rates_write" markdown="1">
-Name             | Type    | Read/Write | Description
------------------|---------|------------|------------
-id               | Integer | Read       | Nightly Rate Map's id.
------------------|---------|------------|------------
-minimum_stays_map| String  | Read/Write | Nightly Rate Map's map of minimum stays. There is a total of 1096 characters, each representing one day.
-rates_map        | String  | Read/Write | Nightly Rate Map's map of rates. There is a total of 1096 characters, each representing one day. `0` rate represents a day without rate assigned.
------------------|---------|------------|------------
-start_date       | [Date](/reference/enums#formats) | Read/Write | **Required**. Nightly Rate Map's start date. Earliest supported `start_date` is yesterday, latest one - 1094 days from today. Both restrictions are based on current UTC date.
-updated_at       | [Time](/reference/enums#formats) | Read       | Nightly Rate Map's update time.
+Name             | Type    | Read/Write | Description | Constraints
+-----------------|---------|------------|------------|
+rental           | Integer | Read       | Rental's ID related to the Nightly Rate Map |
+account          | Integer | Read       | Account's ID related to the Nightly Rate Map |
+-----------------|---------|------------|-------------|
+id               | Integer | Read       | Nightly Rate Map's id. |
+minimum_stays_map| String  | Read/Write | Nightly Rate Map's map of minimum stays as comma-separated values. There is a total of 1096 characters, each representing one day. | **Required**, Required length: 1096
+rates_map        | String  | Read/Write | Nightly Rate Map's map of rates as comma-separated values. There is a total of 1096 characters, each representing one day. `0` rate represents a day without rate assigned. | **Required**, Required length: 1096
+-----------------|---------|------------|------------|
+start_date       | [Date](/reference/enums#formats) | Read/Write | Nightly Rate Map's start date. | **Required**. Earliest supported `start_date` is yesterday, latest one - 1094 days from today. Both restrictions are based on current UTC date. 
+created_at       | [Time](/reference/enums#formats) | Read       | Nightly Rate Map's create time. |
+updated_at       | [Time](/reference/enums#formats) | Read       | Nightly Rate Map's update time. |
 {: class="table table-bordered"}
   </div>
 </div>

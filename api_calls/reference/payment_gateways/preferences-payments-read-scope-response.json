@@ -10,7 +10,7 @@
       "id": 1,
       "name": "TestingGatewayName",
       "test": true,
-      "gateway_name": "gateway_name",
+      "gateway_name": "bogus",
       "credentials": {
         "login": "login"
       },
