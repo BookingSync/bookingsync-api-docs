@@ -18,7 +18,7 @@ This resource represents Special Offers which are the Rental's price (as `initia
 Name                 | Type    | Read/Write | Description
 ---------------------|---------|------------|------------
 account              | Integer | Read       | Account's ID related to the Special Offer
-Rental               | Integer | Read       | Rental's ID related to the Special Offer
+rental               | Integer | Read       | Rental's ID related to the Special Offer
 ---------------------|---------|------------|------------
 id                   | Integer | Read       | Special Offer's ID.
 discount             | Float   | Read       | Special Offer's discount in percents.
@@ -34,7 +34,7 @@ end_date             | [Date](/reference/enums#formats) | Read       | Special O
 Name                 | Type    | Read/Write | Description | Constraints
 ---------------------|---------|------------|-------------|
 account              | Integer | Read       | Account's ID related to the Special Offer |
-Rental               | Integer | Read       | Rental's ID related to the Special Offer |
+rental               | Integer | Read       | Rental's ID related to the Special Offer |
 ---------------------|---------|------------|-------------|
 id                   | Integer | Read       | Special Offer's ID. |
 discount             | Float   | Read/Write | **Required**. Special Offer's discount in percents. (between 1 and 100) | **Required**, must be between 1 (exclusive) and 100 (inclusive)
