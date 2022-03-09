@@ -457,3 +457,21 @@ round-up          | Rounds to the integer that is just above
 closest-exact     | Rounds to the closest tens (e.g. from 362 to 370)
 closest-marketing | Rounds to the closest marketing number (i.e. ending with 9, e.g. from 362 to 369)
 {: class="table table-bordered"}
+
+## Tax kinds
+
+Name                         | Description
+-----------------------------|------------
+value_added                  | Value added tax (VAT)
+city                         | City tax
+goods_and_services           | Goods and services tax
+government                   | Government tax
+spa                          | Spa tax
+hot_spring                   | Hot spring tax
+residential                  | Residential tax
+sauna_fitness_facilities     | Sauna/fitness facilities tax
+local_council                | Local council tax
+provincial_sales             | Provincial sales tax
+harmonized_sales             | Harmonized sales tax
+other                        | Other tax
+{: class="table table-bordered"}
