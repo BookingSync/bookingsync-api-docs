@@ -3,6 +3,10 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents Special Offers which are the Rental's price (as `initial_price` in [Booking](/reference/endpoints/Bookings/)) modifiers, making it possible to provide special discounts during certain period.. 
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -13,8 +17,10 @@
   <div class="tab-pane active" id="public" markdown="1">
 Name                 | Type    | Read/Write | Description
 ---------------------|---------|------------|------------
-id                   | Integer | Read       | Special Offer's id.
+account              | Integer | Read       | Account's ID related to the Special Offer
+Rental               | Integer | Read       | Rental's ID related to the Special Offer
 ---------------------|---------|------------|------------
+id                   | Integer | Read       | Special Offer's ID.
 discount             | Float   | Read       | Special Offer's discount in percents.
 name                 | [Object](/reference/enums#formats)    | Read       | Special Offer's name, list of locales described in [enums section](/reference/enums#locales).
 ---------------------|---------|------------|------------
@@ -25,17 +31,19 @@ end_date             | [Date](/reference/enums#formats) | Read       | Special O
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rates_write" markdown="1">
-Name                 | Type    | Read/Write | Description
----------------------|---------|------------|------------
-id                   | Integer | Read       | Special Offer's id.
----------------------|---------|------------|------------
-discount             | Float   | Read/Write | **Required**. Special Offer's discount in percents. (between 1 and 100)
-name                 | [Object](/reference/enums#formats)    | Read/Write | **Required**. Special Offer's name, list of locales described in [enums section](/reference/enums#locales). (50 characters max)
----------------------|---------|------------|------------
-created_at           | [Time](/reference/enums#formats) | Read       | Special Offer's create time.
-updated_at           | [Time](/reference/enums#formats) | Read       | Special Offer's update time.
-start_date           | [Date](/reference/enums#formats) | Read/Write | **Required**. Special Offer's start date.
-end_date             | [Date](/reference/enums#formats) | Read/Write | **Required**. Special Offer's end date.
+Name                 | Type    | Read/Write | Description | Constraints
+---------------------|---------|------------|-------------|
+account              | Integer | Read       | Account's ID related to the Special Offer |
+Rental               | Integer | Read       | Rental's ID related to the Special Offer |
+---------------------|---------|------------|-------------|
+id                   | Integer | Read       | Special Offer's ID. |
+discount             | Float   | Read/Write | **Required**. Special Offer's discount in percents. (between 1 and 100) | **Required**, must be between 1 (exclusive) and 100 (inclusive)
+name                 | [Object](/reference/enums#formats) | Read/Write |  Special Offer's name, list of locales described in [enums section](/reference/enums#locales). | **Required** for Account's default locale, minimum length: 3, maximum length: 50
+---------------------|---------|------------|-------------|
+created_at           | [Time](/reference/enums#formats) | Read       | Special Offer's create time. |
+updated_at           | [Time](/reference/enums#formats) | Read       | Special Offer's update time. |
+start_date           | [Date](/reference/enums#formats) | Read/Write | Special Offer's start date. | **Required**, must be before `end_date`, cannot be in the past
+end_date             | [Date](/reference/enums#formats) | Read/Write | Special Offer's end date. | **Required**, must be after `start_date`
 {: class="table table-bordered"}
   </div>
 </div>
