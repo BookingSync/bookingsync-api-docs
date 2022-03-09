@@ -361,6 +361,17 @@ secondary_residence | Secondary residence.
 non_residential     | Non residential.
 {: class="table table-bordered"}
 
+## Rental cancelation policies presets
+
+Name             | Description
+-----------------|------------
+flexible         | Full refund till 24 hours prior to check-in. If the guest cancels less than 24 hours before check-in, the first night is not refundable. The rest of the stay is refunded. Fees are 100% refundable
+moderate         | Full refund till 5 days prior to check-in. If the guest cancels less than 5 days before check-in, the first night is not refundable. The rest of the stay is 50% refundable. Fees are 100% refundable
+strict           | Full refund for cancellations made within 48 hours of booking, if the check-in date is at least 14 days away. 50% refund for cancellations made at least 7 days before check-in. No refunds for cancellations made within 7 days of check-in. Fees are 100% refundable
+moderate20200317 | Full refund till 5 days prior to check-in. If the guest cancels less than 5 days before check-in, the guest is refunded 50% of the stay. Cleaning and linen fees are 100% refundable. No refunds at all after check-in
+strict20200317   | If the guest cancels up to 7 days before check-in, the guest is refunded 50% of the stay. Cleaning and linen fees are 100% refundable. If the guest cancels less than 7 days before check-in, the stay is not refundable. Cleaning and linen fees are 100% refundable. No refunds at all after check-in
+{: class="table table-bordered"}
+
 ## Rental management type
 
 Name             | Description

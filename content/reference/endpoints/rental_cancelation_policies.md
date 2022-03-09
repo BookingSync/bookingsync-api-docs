@@ -3,6 +3,12 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents Rental Cancelation Policies which define the rules and potential penalties for the cancelation of [Bookings](/reference/endpoints/bookings/) (defined either via Rental Cancelation Policy Items or `preset`)
+
+The Rental Cancelation Policy can be defined on the Account level (a global one that will be applied to all [Rentals](/reference/endpoints/rentals/)), a custom one for Rental (if not defined, it default to Account's one) and on the Booking level (which is the copy of the Rental's one at time of Booking creation).
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -12,10 +18,16 @@
   <div class="tab-pane active" id="public" markdown="1">
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
-id               | Integer | Read       | Rental cancelation policy's id.
+account          | Integer | Read       | Account's ID related to the Rental Cancelation Policy
+rental           | Integer | Read       | Rental's ID related to the Rental Cancelation Policy
+rental_cancelation_policy_items | Array | Read | Rental Cancelation Policy Items' defined for the Rental Cancelation Policy
+policeable_id    | Integer | Read       | ID of the resource to which Rental Cancelation Policy belongs to (Rental, Account or Booking)
+policeable_type  | String  | Read       | Type of the resource to which Rental Cancelation Policy belongs to (Rental, Account or Booking)
 -----------------|---------|------------|------------
+id               | Integer | Read       | Rental cancelation policy's ID.
 body             | String  | Read       | Rental cancelation policy's body in Account’s default locale.
-body_translations | [Object](/reference/enums#formats)     | Read       | Rental cancelation policy's body, list of locales described in [enums section](/reference/enums#locales).
+body_translations | [Object](/reference/enums#formats)     | Read       | Rental cancelation policy's body translations, list of locales described in [enums section](/reference/enums#locales).
+preset           | String  | Read       | Rental cancelation policy's preset, list of presets described in [enums section](/reference/enums#rental-cancelation-policies-presets).
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read         | Rental cancelation policy's create time.
 updated_at       | [Time](/reference/enums#formats) | Read         | Rental cancelation policy's update time.
