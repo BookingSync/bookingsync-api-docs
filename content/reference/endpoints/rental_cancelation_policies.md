@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents Rental Cancelation Policies which define the rules and potential penalties for the cancelation of [Bookings](/reference/endpoints/bookings/) (defined either via Rental Cancelation Policy Items or `preset`)
+This resource represents Rental Cancelation Policies which describe the rules and potential penalties for the cancelation of [Bookings](/reference/endpoints/bookings/) (defined either via Rental Cancelation Policy Items or `preset`)
 
 The Rental Cancelation Policy can be defined on the Account level (a global one that will be applied to all [Rentals](/reference/endpoints/rentals/)), a custom one for Rental (if not defined, it default to Account's one) and on the Booking level (which is the copy of the Rental's one at time of Booking creation).
 
