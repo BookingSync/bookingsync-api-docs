@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents Special Offers which are the Rental's price (as `initial_price` in [Booking](/reference/endpoints/Bookings/)) modifiers, making it possible to provide special discounts during certain period.. 
+This resource represents Special Offers which are the Rental's price (as `initial_price` in [Booking](/reference/endpoints/Bookings/)) modifiers, making it possible to provide special discounts during certain periods. 
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
