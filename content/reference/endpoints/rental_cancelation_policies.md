@@ -35,14 +35,6 @@ updated_at       | [Time](/reference/enums#formats) | Read         | Rental canc
   </div>
 </div>
 
-
-attributes :id, :body, :created_at, :updated_at, :body_translations, :
-
-has_one  :rental, visible: false, embed: :object, serializer: Api::V3::RentalSerializer
-has_many :rental_cancelation_policy_items, visible: false, embed: :object,
-serializer: Api::V3::RentalCancelationPolicyItemSerializer
-
-
 ## List rental cancelation policies
 
 List all rental cancelation policies for given account(s).
