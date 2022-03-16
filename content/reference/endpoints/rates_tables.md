@@ -4,6 +4,11 @@
 
 This resource represents Rates Tables - a resource for grouping price-related resources (such as Rates Rules, Seasons, Periods) for [Rentals](/reference/endpoints/rentals/). Rates Tables can be shared between Rentals to make pricing setup between rentals reusable.
 
+Rates Tables cannot be updated or swapped to a different one if they have:
+
+- private status (`shared` as `false`)
+- corresponding rental has external rates management configured (`nightly_rates_managed_externally` as `true`)
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>

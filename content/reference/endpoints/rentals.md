@@ -23,7 +23,7 @@ availability                    | Integer  | Read       | Availability's ID rela
 change_over                     | Integer  | Read       | ChangeOver's ID related to the Rental
 destination                     | Integer  | Read       | Destination's ID related to the Rental
 payment_gateway                 | Integer  | Read       | Payment Gateway's ID related to the Rental (requires `preferences_payments_read` scope)
-rates_table                     | Integer  | Read       | Rates Table's ID related to the Rental 
+rates_table                     | Integer  | Read       | Rates Table's ID related to the Rental
 rental_agreement                | Integer  | Read       | Rental Agreement's ID related to the Rental
 rental_cancelation_policy       | Integer  | Read       | Rental Cancelation Policy's ID related to the Rental
 nightly_rate_map                | Integer  | Read       | Nightly Rate Map's ID related to the Rental
@@ -113,7 +113,7 @@ availability                    | Integer  | Read       | Availability's ID rela
 change_over                     | Integer  | Read       | ChangeOver's ID related to the Rental
 destination                     | Integer  | Read       | Destination's ID related to the Rental
 payment_gateway                 | Integer  | Read       | Payment Gateway's ID related to the Rental (requires `preferences_payments_read` scope)
-rates_table                     | Integer  | Read       | Rates Table's ID related to the Rental 
+rates_table                     | Integer  | Read       | Rates Table's ID related to the Rental
 rental_agreement                | Integer  | Read       | Rental Agreement's ID related to the Rental
 rental_cancelation_policy       | Integer  | Read       | Rental Cancelation Policy's ID related to the Rental
 nightly_rate_map                | Integer  | Read       | Nightly Rate Map's ID related to the Rental
@@ -136,7 +136,7 @@ id                              | Integer  | Read       | Rental's ID.
 absolute_min_price              | [Decimal](/reference/enums#formats) | Read       | Rental's minimum price based on `base_rate_kind`.
 address1                        | String   | Read       | Rental's primary address.
 address2                        | String   | Read       | Rental's optional address.
-base_rate                       | [Decimal](/reference/enums#formats) | Read       | Rental's base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate.
+base_rate                       | [Decimal](/reference/enums#formats) | Read       | Rental's base rate, used by the rates table to calculate the seasonability and discounted prices.
 base_rate_kind                  | String   | Read       | Rental's rate type attached to the base rate. List of types described in [enums section](/reference/enums#rates-types).
 balance_due                     | Integer  | Read       | Number of day since the booking confirmation to collect the full booking price.
 bathrooms_count                 | Integer  | Read       | Rental's bathrooms count.
@@ -238,7 +238,7 @@ payment_gateway_id              | Integer  | Write      | PaymentGateway id rela
 rates_table_id                  | Integer  | Write      | Rates Table id related to the rental. |
 rentals_contact_id              | Integer  | Write      | Contact id related to the rental. |
 rentals_tag_ids                 | Array    | Write      | Tag ids related to the rental. |
-absolute_min_price              | [Decimal](/reference/enums#formats) | Read/Write | Rental's minimum price based on `base_rate_kind`. | Must be greater than or equal to 0 and less than or equal to `base_rate` 
+absolute_min_price              | [Decimal](/reference/enums#formats) | Read/Write | Rental's minimum price based on `base_rate_kind`. | Must be greater than or equal to 0 and less than or equal to `base_rate`
 address1                        | String   | Read/Write | Rental's primary address. |
 address2                        | String   | Read/Write | Rental's optional address. |
 base_rate                       | [Decimal](/reference/enums#formats) | Read/Write | Rental's base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate | Must be greater than 0 if present
@@ -297,7 +297,7 @@ owner_fullname                  | String   | Read/Write | Rental owner's fullnam
 owner_email                     | String   | Read/Write | Rental owner's email | Must be a valid email format if present
 owner_notes                     | String   | Read/Write | Rental owner's notes | Maximum length: 2000
 charge_damage_deposit_on_arrival | Boolean | Read       | Rental's charge damege deposit in arrival status |
-full_bathrooms_count            | Integer  | Read       | Rental's full bathrooms count | 
+full_bathrooms_count            | Integer  | Read       | Rental's full bathrooms count |
 standalone_toilets_count        | Integer  | Read       | Rental's standalone toilets count |
 vr_bathrooms_count              | Float/Integer | Read  | Rental's VR bathrooms count (Float is possible only if there are standalone Bathrooms as the value equal to: bathrooms_count - standalone_toilets_count + 0.5 will be returned, otherwise `bathrooms_count` will be returned as an Integer) |
 absolute_min_stay               | Integer  | Read       | Rental's absolute minimum stay |
@@ -343,7 +343,7 @@ bb_sw                   | Float   |         | Rentals located between `bb_sw` & 
 bedrooms_count          | Integer |         | Rentals with amount of bedrooms equal to or above given number.
 bookable_online         | Boolean | blank   | `true` to get rentals that are allowed to be bookable online (requiring no human interaction), `false` to get those that are not.
 instantly_bookable      | Boolean |         | `true` to get rentals that are instantly bookable (with payment confirming the booking)
-children                | Integer |         | Number of children to take into account when calculating `final_price`. 
+children                | Integer |         | Number of children to take into account when calculating `final_price`.
 city                    | String  |         | Rentals matching given city.
 country_code            | String  |         | Rentals matching given country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
 destination             | String  |         | List of comma separated destinations.
@@ -359,13 +359,12 @@ page                    | Integer |         | Used to browse multi-paged listing
 per_page                | Integer |         | Limit amount of returned rentals to given number. Full list can then be browsed with `page` parameter.
 published_only          | Boolean | false   | Show only published rentals.
 reject_amenities        | String  |         | List of comma separated amenities to exclude.
-rental_id               | String  |         | List of comma separated rental ids.
+rental_id               | String  |         | List of comma separated rental ids. (if you want to limit the search to some specific ones that you know in advance)
 rental_type             | String  |         | List of comma separated types, all types described in [enums section](/reference/enums#rental-types).
 rentals_tags            | String  |         | List of comma separated rentals tags.
 sort                    | String  |         | Sort rentals by given attribute. Possible values: `price`, `sleeps`, `sleeps_max`, `bedrooms_count`
 special_offers          | Boolean | false   | Show only rentals with special offers.
 full_bathrooms_count    | Integer |         | Rentals with amount of full bathrooms equal to or above given number.
-rental_ids              | Array   |         | IDs of the Rentals (if you want to limit the search to some specific ones that you know in advance)  
 included_amenities      | Array   |         | Rentals containing Amenities identified by the provided IDs
 excluded_amenities      | Array   |         | Rentals not containing Amenities identified by the provided IDs
 ------------------------|---------|---------|---------------------------------------
