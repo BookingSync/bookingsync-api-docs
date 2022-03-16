@@ -3,6 +3,12 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents Rental Link Groups which is a way of establishing links between [Rentals](/reference/endpoints/rentals/) - creating or deleting a Rental Link Group results creating or deleting [Rental Links](/reference/endpoints/rental_links/). 
+
+The purpose of the Rental Links is to mirror the availabilities between two Rentals - if there is a link between Rental A and Rental B, creating (or canceling) a [Booking](/reference/endpoints/bookings/) for either of them will result in creating/canceling a "mirrored" Booking on the other Rental.  
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -14,8 +20,11 @@
 
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
-id               | Integer | Read       | Rental link group's id.
+account          | Integer | Read       | Account's ID related to the Rental Link Group
+rentals          | Array   | Read       | Rentals' IDs related to the Rental Link Group
+rental_links     | Array   | Read       | Rental Links' ID related to the Rental Link Group
 -----------------|---------|------------|------------
+id               | Integer | Read       | Rental link group's ID.
 rental_names     | String  | Read       | Rentals' names associated with given rental link group's
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read         | Rental link group's create time.
@@ -23,15 +32,18 @@ updated_at       | [Time](/reference/enums#formats) | Read         | Rental link
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rentals_write" markdown="1">
-Name             | Type    | Read/Write | Description
------------------|---------|------------|------------
-id               | Integer | Read       | Rental link group's id.
-rental_ids       | Array   | Write      | Ids of the rentals to be linked
------------------|---------|------------|------------
-rental_names     | String  | Read       | Rentals' names associated with given rental link group's
------------------|---------|------------|------------
-created_at       | [Time](/reference/enums#formats) | Read         | Rental link group's create time.
-updated_at       | [Time](/reference/enums#formats) | Read         | Rental link group's update time.
+Name             | Type    | Read/Write | Description | Constraints
+-----------------|---------|------------|-------------|
+account          | Integer | Read       | Account's ID related to the Rental Link Group |
+rentals          | Array   | Read       | Rentals' IDs related to the Rental Link Group |
+rental_links     | Array   | Read       | Rental Links' ID related to the Rental Link Group |
+-----------------|---------|------------|-------------|
+id               | Integer | Read       | Rental link group's id. | 
+rental_ids       | Array   | Write      | IDs of the rentals to be linked | **Required**, Minimum number of IDs: 2
+rental_names     | String  | Read       | Rentals' names associated with given rental link group's |
+-----------------|---------|------------|-------------|
+created_at       | [Time](/reference/enums#formats) | Read         | Rental link group's create time. |
+updated_at       | [Time](/reference/enums#formats) | Read         | Rental link group's update time. |
 {: class="table table-bordered"}
   </div>
 </div>
