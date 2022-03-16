@@ -294,7 +294,7 @@ management_type                 | String   | Read/Write | Rental's management ty
 bookable_on_request             | Boolean  | Read       | Rental's Bookable on request status (requires Rental to be published and Account needs a configuration for contract management) |
 instantly_bookable              | Boolean  | Read       | Rental's instantly bookable status  (requires Rental to be bookable on request, `bookable_online` to be set to `true` and Rental needs to have a Payment Gateway configured) |
 owner_fullname                  | String   | Read/Write | Rental owner's fullname | Maximum length: 100
-owner_email                     | String   | Read/Write | Rental owner's email | Must be avalid email format if present
+owner_email                     | String   | Read/Write | Rental owner's email | Must be a valid email format if present
 owner_notes                     | String   | Read/Write | Rental owner's notes | Maximum length: 2000
 charge_damage_deposit_on_arrival | Boolean | Read       | Rental's charge damege deposit in arrival status |
 full_bathrooms_count            | Integer  | Read       | Rental's full bathrooms count | 
