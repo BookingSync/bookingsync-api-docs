@@ -2,7 +2,7 @@
 
 ## Overview
 
-This resource represents Rates Tables - a resource for grouping price-related resources (such as Rates Rules, Seasons, Periods) for [Rentals](/reference/endpoints/rentals/). Rates Tables can be shared between Rentals to make them reusable.
+This resource represents Rates Tables - a resource for grouping price-related resources (such as Rates Rules, Seasons, Periods) for [Rentals](/reference/endpoints/rentals/). Rates Tables can be shared between Rentals to make pricing setup between rentals reusable.
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
