@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents Rental Cancelation Policy Items which define the rules and penalties for the cancelation of [Bookings](/reference/endpoints/bookings/) for the specific [Rental Cancelation Policy](/reference/endpoints/rental_cancelation_policy/)
+This resource represents Rental Cancelation Policy Items which describe the rules and penalties for the cancelation of [Bookings](/reference/endpoints/bookings/) for the specific [Rental Cancelation Policy](/reference/endpoints/rental_cancelation_policy/)
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
