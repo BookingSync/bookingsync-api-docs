@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents Taxes which can be later added to later to [Rentals](/reference/endpoints/rentals/) as [Rentals Taxes](/reference/endpoints/rentals_taxes/) or [Fees](/reference/endpoints/Fees/) as [Rentals Fees](/reference/endpoints/rentals_fees/).
+This resource represents Taxes which can be later added to [Rentals](/reference/endpoints/rentals/) as [Rentals Taxes](/reference/endpoints/rentals_taxes/) or [Fees](/reference/endpoints/Fees/) as [Rentals Fees](/reference/endpoints/rentals_fees/).
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
