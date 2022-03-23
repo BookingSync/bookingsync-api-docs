@@ -3,6 +3,12 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents Tax Rules which are applicable to [Rentals Taxes](/reference/endpoints/rentals_taxes/) or [Taxes](/reference/endpoints/taxes/).
+
+This resource impacts the applicability of the parent resource. For example, if `comparator` is set to `>`, `value` is set to `10` and `compared_attribute` is `length_of_stay`, it means that the Tax will be applied only if the length of stay of the [Booking](/reference/endpoints/booking/) is great than 10 nights. 
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -12,12 +18,13 @@
   <div class="tab-pane active" id="public" markdown="1">
 Name                   | Type    | Read/Write | Description
 -----------------------|---------|------------|------------
-id                     | Integer | Read       | Tax Rule's id.
+account                | Integer | Read       | Account's ID related to the Tax Rule
 -----------------------|---------|------------|------------
+id                     | Integer | Read       | Tax Rule's ID.
 comparator             | String  | Read       | Sign used to compare, possible values: `<` `<=` `==` `>=` `>`.
-compared_attribute     | String  | Read       | Name of the attribute to compare.
-ruleable_id            | Integer | Read       | Id of the owner of the Tax Rule.
-ruleable_type          | String  | Read       | Type of the owner of the Tax Rule, either `RentalsTax` or `Tax`.
+compared_attribute     | String  | Read       | Name of the attribute to compare. Possible values: `length_of_stay`
+ruleable_id            | Integer | Read       | ID of the subject of the Tax Rule.
+ruleable_type          | String  | Read       | Type of the subject of the Tax Rule, either `RentalsTax` or `Tax`.
 value                  | String  | Read       | Value of the `compared_attribute`.
 -----------------------|---------|------------|------------
 created_at             | [Time](/reference/enums#formats) | Read       | Tax Rule's create time.
