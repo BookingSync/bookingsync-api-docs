@@ -3,6 +3,10 @@
 1. TOC
 {:toc}
 
+## Overview
+
+This resource represents the Rentals Tags that can be associated with the [Rentals](/reference/endpoints/rentals/).
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
@@ -13,8 +17,9 @@
   <div class="tab-pane active" id="rentals_read" markdown="1">
 Name             | Type    | Read/Write | Description
 -----------------|---------|------------|------------
-id               | Integer | Read       | Rentals Tag's id.
+account          | Integer  | Read      | Account's ID related to the Rentals Tag
 -----------------|---------|------------|------------
+id               | Integer | Read       | Rentals Tag's ID.
 name             | [Object](/reference/enums#formats)| Read       | Rentals Tag's title, list of locales described in [enums section](/reference/enums#locales).
 logo             | String  | Read       | Rentals Tag's logo (Font Awesome class).
 color            | String  | Read       | Rentals Tag's color (hex).
@@ -24,16 +29,17 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Rentals Tag's
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="rentals_write" markdown="1">
-Name             | Type    | Read/Write | Description
------------------|---------|------------|------------
-id               | Integer | Read       | Rentals Tag's id.
------------------|---------|------------|------------
-name             | [Object](/reference/enums#formats)| Read/Write | Rentals Tag's title, list of locales described in [enums section](/reference/enums#locales).
-logo             | String  | Read/Write | Rentals Tag's logo (Font Awesome class).
-color            | String  | Read/Write | Rentals Tag's color (hex).
------------------|---------|------------|------------
-created_at       | [Time](/reference/enums#formats) | Read       | Rentals Tag's create time.
-updated_at       | [Time](/reference/enums#formats) | Read       | Rentals Tag's update time.
+Name             | Type    | Read/Write | Description | Constraints
+-----------------|---------|------------|-------------| 
+account          | Integer  | Read      | Account's ID related to the Rentals Tag |
+-----------------|---------|------------|-------------|
+id               | Integer | Read       | Rentals Tag's ID. |
+name             | [Object](/reference/enums#formats)| Read/Write | Rentals Tag's title, list of locales described in [enums section](/reference/enums#locales). | **Required** 
+logo             | String  | Read/Write | Rentals Tag's logo (Font Awesome class). |
+color            | String  | Read/Write | Rentals Tag's color (hex). | **Required**
+-----------------|---------|------------|-------------|
+created_at       | [Time](/reference/enums#formats) | Read       | Rentals Tag's create time. |
+updated_at       | [Time](/reference/enums#formats) | Read       | Rentals Tag's update time. |
 {: class="table table-bordered"}
   </div>
 </div>

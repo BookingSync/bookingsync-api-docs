@@ -1,0 +1,8 @@
+{
+  "rentals_taxes": [
+    {
+      "tax_id": 2,
+      "tax_included_in_rate": true
+    }
+  ]
+}
