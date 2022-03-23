@@ -136,11 +136,16 @@
           <h2 id="inbox-attachments">Inbox Attachments</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-attachments">List Attachments</a></li>
   <li><a href="#get-a-single-attachment">Get a single Attachment</a></li>
   <li><a href="#create-a-new-attachment">Create a new attachment</a></li>
   <li><a href="#update-an-attachment">Update an attachment</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents Inbox Attachments - the files (or images) that can be assigned to <a href="/reference/endpoints/inbox_messages/">Inbox Messages</a>.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -161,19 +166,25 @@
       </thead>
       <tbody>
         <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>ID of Account the Attachment belongs to.</td>
+        </tr>
+        <tr>
+          <td>messages</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>IDs of Messages the Attachment belongs to.</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Attachment’s id.</td>
         </tr>
-        <tr>
-          <td>account_id</td>
-          <td>Integer</td>
-          <td>Read</td>
-          <td>Id of Account Attachment belongs to.</td>
-        </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>url</td>
           <td>String</td>
@@ -235,70 +246,90 @@
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
+          <th>Constraints</th>
         </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>ID of Account the Attachment belongs to.</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>messages</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>IDs of Messages the Attachment belongs to.</td>
+          <td> </td>
+        </tr>
+      </tbody>
       <tbody>
         <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Attachment’s id.</td>
+          <td> </td>
         </tr>
-        <tr>
-          <td>account_id</td>
-          <td>Integer</td>
-          <td>Read</td>
-          <td>Id of Account Attachment belongs to.</td>
-        </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>remote_file_url</td>
           <td>String</td>
           <td>Write</td>
           <td>Attachment’s remote url address.</td>
+          <td>Must be a valid URL - use either this attribute or <code>file</code>
+</td>
         </tr>
         <tr>
           <td>file</td>
           <td>String</td>
           <td>Write</td>
           <td>Attachment’s Base64 encoded file prepended with <code>data:image/png;base64,</code> (note comma separator between the type prefix and the Base64-encoded body)</td>
+          <td>Must be less than: 10 megabytes, use either this attribute or <code>remote_file_url</code>
+</td>
         </tr>
         <tr>
           <td>url</td>
           <td>String</td>
           <td>Read</td>
           <td>Attachment’s url address.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>name</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Attachment’s name.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>image_width</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Attachment’s image width in pixels.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>image_height</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Attachment’s image height in pixels.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>file_size</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Attachment’s file size in bytes.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>file_content_type</td>
           <td>String</td>
           <td>Read</td>
           <td>Attachment’s file content type.</td>
+          <td> </td>
         </tr>
       </tbody>
       <tbody>
@@ -307,12 +338,14 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Attachment’s create time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Attachment’s update time.</td>
+          <td> </td>
         </tr>
       </tbody>
     </table>
@@ -328,7 +361,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#51d985008578inbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#7093201811dfinbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -340,7 +373,7 @@
   
   
     
-      <div class="tab-pane active" id="51d985008578inbox_read-inbox_write">
+      <div class="tab-pane active" id="7093201811dfinbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"attachments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{attachments.account}"</span><span class="p">,</span>
@@ -384,7 +417,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#15a93b3e3295inbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#a20f3402c17cinbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -396,7 +429,7 @@
   
   
     
-      <div class="tab-pane active" id="15a93b3e3295inbox_read-inbox_write">
+      <div class="tab-pane active" id="a20f3402c17cinbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"attachments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{attachments.account}"</span><span class="p">,</span>
@@ -440,7 +473,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#bea825fba123inbox_write" role="tab" data-toggle="pill">
+        <a href="#7ceaa3e7606binbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -462,7 +495,7 @@
   
   
     
-      <div class="tab-pane active" id="bea825fba123inbox_write">
+      <div class="tab-pane active" id="7ceaa3e7606binbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"attachments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{attachments.account}"</span><span class="p">,</span>
@@ -506,7 +539,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#edc840c3d899inbox_write" role="tab" data-toggle="pill">
+        <a href="#07627e7abdefinbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -528,7 +561,7 @@
   
   
     
-      <div class="tab-pane active" id="edc840c3d899inbox_write">
+      <div class="tab-pane active" id="07627e7abdefinbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"attachments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{attachments.account}"</span><span class="p">,</span>

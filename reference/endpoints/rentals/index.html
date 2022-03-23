@@ -136,6 +136,7 @@
           <h2 id="rentals">Rentals</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-rentals">List rentals</a></li>
   <li><a href="#search-rentals">Search rentals</a></li>
   <li><a href="#get-a-single-rental">Get a single rental</a></li>
@@ -143,6 +144,10 @@
   <li><a href="#update-a-rental">Update a rental</a></li>
   <li><a href="#destroy-a-rental">Destroy a rental</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents Rentals which are the actual properties that are the subject of most actions in the BookingSync ecosystem.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -164,13 +169,151 @@
       </thead>
       <tbody>
         <tr>
-          <td>id</td>
+          <td>account</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Rental’s id.</td>
+          <td>Account’s ID related to the Rental</td>
+        </tr>
+        <tr>
+          <td>availability</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Availability’s ID related to the Rental</td>
+        </tr>
+        <tr>
+          <td>change_over</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>ChangeOver’s ID related to the Rental</td>
+        </tr>
+        <tr>
+          <td>destination</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Destination’s ID related to the Rental</td>
+        </tr>
+        <tr>
+          <td>payment_gateway</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Payment Gateway’s ID related to the Rental (requires <code>preferences_payments_read</code> scope)</td>
+        </tr>
+        <tr>
+          <td>rates_table</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rates Table’s ID related to the Rental</td>
+        </tr>
+        <tr>
+          <td>rental_agreement</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental Agreement’s ID related to the Rental</td>
+        </tr>
+        <tr>
+          <td>rental_cancelation_policy</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental Cancelation Policy’s ID related to the Rental</td>
+        </tr>
+        <tr>
+          <td>nightly_rate_map</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Nightly Rate Map’s ID related to the Rental</td>
+        </tr>
+        <tr>
+          <td>mid_term_rate_map</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Mid Term Rate Map’s ID related to the Rental</td>
+        </tr>
+        <tr>
+          <td>photos</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Photos’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>reviews</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Reviews’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>host_reviews</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Host Reviews’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>special_offers</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Special Offers’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>rates</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Rates’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>rentals_amenities</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Rentals Amenities’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>rentals_fees</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Rentals Fees’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>bathrooms</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Bathrooms’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>bedrooms</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Bedrooms’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>living_rooms</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Living Rooms’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>rentals_tags</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Rentals Tags’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>rental_contacts</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Rental Contacts’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>videos</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Videos’ IDs related to the Rental</td>
         </tr>
       </tbody>
       <tbody>
+        <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s ID.</td>
+        </tr>
         <tr>
           <td>absolute_min_price</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
@@ -456,6 +599,60 @@
           <td>Rental’s management type. All types are described in <a href="/reference/enums#rental-management-type">enums section</a>
 </td>
         </tr>
+        <tr>
+          <td>bookable_on_request</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Rental’s Bookable on request status (requires Rental to be published and Account needs a configuration for contract management)</td>
+        </tr>
+        <tr>
+          <td>instantly_bookable</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Rental’s instantly bookable status  (requires Rental to be bookable on request, <code>bookable_online</code> to be set to <code>true</code> and Rental needs to have a Payment Gateway configured)</td>
+        </tr>
+        <tr>
+          <td>charge_damage_deposit_on_arrival</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Rental’s charge damage deposit in arrival status</td>
+        </tr>
+        <tr>
+          <td>full_bathrooms_count</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s full bathrooms count</td>
+        </tr>
+        <tr>
+          <td>standalone_toilets_count</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s standalone toilets count</td>
+        </tr>
+        <tr>
+          <td>vr_bathrooms_count</td>
+          <td>Float/Integer</td>
+          <td>Read</td>
+          <td>Rental’s VR bathrooms count (Float is possible only if there are standalone Bathrooms as the value equal to: bathrooms_count - standalone_toilets_count + 0.5 will be returned, otherwise <code>bathrooms_count</code> will be returned as an Integer)</td>
+        </tr>
+        <tr>
+          <td>absolute_min_stay</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s absolute minimum stay</td>
+        </tr>
+        <tr>
+          <td>public_notes</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s public notes</td>
+        </tr>
+        <tr>
+          <td>refund_damage_deposit_after</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s refund damage deposit after value (in days)</td>
+        </tr>
       </tbody>
       <tbody>
         <tr>
@@ -491,13 +688,151 @@
       </thead>
       <tbody>
         <tr>
-          <td>id</td>
+          <td>account</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Rental’s id.</td>
+          <td>Account’s ID related to the Rental</td>
+        </tr>
+        <tr>
+          <td>availability</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Availability’s ID related to the Rental</td>
+        </tr>
+        <tr>
+          <td>change_over</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>ChangeOver’s ID related to the Rental</td>
+        </tr>
+        <tr>
+          <td>destination</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Destination’s ID related to the Rental</td>
+        </tr>
+        <tr>
+          <td>payment_gateway</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Payment Gateway’s ID related to the Rental (requires <code>preferences_payments_read</code> scope)</td>
+        </tr>
+        <tr>
+          <td>rates_table</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rates Table’s ID related to the Rental</td>
+        </tr>
+        <tr>
+          <td>rental_agreement</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental Agreement’s ID related to the Rental</td>
+        </tr>
+        <tr>
+          <td>rental_cancelation_policy</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental Cancelation Policy’s ID related to the Rental</td>
+        </tr>
+        <tr>
+          <td>nightly_rate_map</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Nightly Rate Map’s ID related to the Rental</td>
+        </tr>
+        <tr>
+          <td>mid_term_rate_map</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Mid Term Rate Map’s ID related to the Rental</td>
+        </tr>
+        <tr>
+          <td>photos</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Photos’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>reviews</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Reviews’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>host_reviews</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Host Reviews’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>special_offers</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Special Offers’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>rates</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Rates’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>rentals_amenities</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Rentals Amenities’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>rentals_fees</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Rentals Fees’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>bathrooms</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Bathrooms’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>bedrooms</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Bedrooms’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>living_rooms</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Living Rooms’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>rentals_tags</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Rentals Tags’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>rental_contacts</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Rental Contacts’ IDs related to the Rental</td>
+        </tr>
+        <tr>
+          <td>videos</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Videos’ IDs related to the Rental</td>
         </tr>
       </tbody>
       <tbody>
+        <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s ID.</td>
+        </tr>
         <tr>
           <td>absolute_min_price</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
@@ -520,7 +855,7 @@
           <td>base_rate</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
-          <td>Rental’s base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate.</td>
+          <td>Rental’s base rate, used by the rates table to calculate the seasonability and discounted prices.</td>
         </tr>
         <tr>
           <td>base_rate_kind</td>
@@ -819,6 +1154,78 @@
           <td>Rental’s management type. All types are described in <a href="/reference/enums#rental-management-type">enums section</a>
 </td>
         </tr>
+        <tr>
+          <td>bookable_on_request</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Rental’s Bookable on request status (requires Rental to be published and Account needs a configuration for contract management)</td>
+        </tr>
+        <tr>
+          <td>instantly_bookable</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Rental’s instantly bookable status  (requires Rental to be bookable on request, <code>bookable_online</code> to be set to <code>true</code> and Rental needs to have a Payment Gateway configured)</td>
+        </tr>
+        <tr>
+          <td>owner_fullname</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental owner’s fullname</td>
+        </tr>
+        <tr>
+          <td>owner_email</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental owner’s email</td>
+        </tr>
+        <tr>
+          <td>owner_notes</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental owner’s notes</td>
+        </tr>
+        <tr>
+          <td>charge_damage_deposit_on_arrival</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Rental’s charge damege deposit in arrival status</td>
+        </tr>
+        <tr>
+          <td>full_bathrooms_count</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s full bathrooms count</td>
+        </tr>
+        <tr>
+          <td>standalone_toilets_count</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s standalone toilets count</td>
+        </tr>
+        <tr>
+          <td>vr_bathrooms_count</td>
+          <td>Float/Integer</td>
+          <td>Read</td>
+          <td>Rental’s VR bathrooms count (Float is possible only if there are standalone Bathrooms as the value equal to: bathrooms_count - standalone_toilets_count + 0.5 will be returned, otherwise <code>bathrooms_count</code> will be returned as an Integer)</td>
+        </tr>
+        <tr>
+          <td>absolute_min_stay</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s absolute minimum stay</td>
+        </tr>
+        <tr>
+          <td>public_notes</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s public notes</td>
+        </tr>
+        <tr>
+          <td>refund_damage_deposit_after</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s refund damage deposit after value (in days)</td>
+        </tr>
       </tbody>
       <tbody>
         <tr>
@@ -850,293 +1257,504 @@
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
+          <th> </th>
         </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Rental</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>availability</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Availability’s ID related to the Rental</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>change_over</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>ChangeOver’s ID related to the Rental</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>destination</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Destination’s ID related to the Rental</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>payment_gateway</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Payment Gateway’s ID related to the Rental (requires <code>preferences_payments_read</code> scope)</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>rates_table</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rates Table’s ID related to the Rental</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>rental_agreement</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental Agreement’s ID related to the Rental</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>rental_cancelation_policy</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental Cancelation Policy’s ID related to the Rental</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>nightly_rate_map</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Nightly Rate Map’s ID related to the Rental</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>mid_term_rate_map</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Mid Term Rate Map’s ID related to the Rental</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>photos</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Photos’ IDs related to the Rental</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>reviews</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Reviews’ IDs related to the Rental</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>host_reviews</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Host Reviews’ IDs related to the Rental</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>special_offers</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Special Offers’ IDs related to the Rental</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>rates</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Rates’ IDs related to the Rental</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>rentals_amenities</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Rentals Amenities’ IDs related to the Rental</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>rentals_fees</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Rentals Fees’ IDs related to the Rental</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>bathrooms</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Bathrooms’ IDs related to the Rental</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>bedrooms</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Bedrooms’ IDs related to the Rental</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>living_rooms</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Living Rooms’ IDs related to the Rental</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>rentals_tags</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Rentals Tags’ IDs related to the Rental</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>rental_contacts</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Rental Contacts’ IDs related to the Rental</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>videos</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Videos’ IDs related to the Rental</td>
+          <td> </td>
+        </tr>
+      </tbody>
       <tbody>
         <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Rental’s id.</td>
+          <td>Rental’s ID.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>amenity_ids</td>
           <td>Array</td>
           <td>Write</td>
           <td>Amenity ids related to the rental.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>destination_id</td>
           <td>Integer</td>
           <td>Write</td>
           <td>Destination id related to the rental.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>payment_gateway_id</td>
           <td>Integer</td>
           <td>Write</td>
           <td>PaymentGateway id related to the rental.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>rates_table_id</td>
           <td>Integer</td>
           <td>Write</td>
           <td>Rates Table id related to the rental.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>rentals_contact_id</td>
           <td>Integer</td>
           <td>Write</td>
           <td>Contact id related to the rental.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>rentals_tag_ids</td>
           <td>Array</td>
           <td>Write</td>
           <td>Tag ids related to the rental.</td>
+          <td> </td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>absolute_min_price</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read/Write</td>
           <td>Rental’s minimum price based on <code>base_rate_kind</code>.</td>
+          <td>Must be greater than or equal to 0 and less than or equal to <code>base_rate</code>
+</td>
         </tr>
         <tr>
           <td>address1</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Rental’s primary address.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>address2</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Rental’s optional address.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>base_rate</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read/Write</td>
-          <td>Rental’s base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate. (greater than 0)</td>
+          <td>Rental’s base rate, used by the rates table to calculate the seasonability and discounted prices. We recommend using the highest price as base rate</td>
+          <td>Must be greater than 0 if present</td>
         </tr>
         <tr>
           <td>base_rate_kind</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Rental’s rate type attached to the base rate. List of types described in <a href="/reference/enums#rates-types">enums section</a>.</td>
+          <td>Must be a valid base rate kind if present</td>
         </tr>
         <tr>
           <td>balance_due</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>Number of day since the booking confirmation to collect the full booking price.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>bathrooms_count</td>
           <td>Integer</td>
           <td>Read/Write</td>
-          <td>Rental’s bathrooms count. (between 0 and 100)</td>
+          <td>Rental’s bathrooms count.</td>
+          <td>must be between 0 and 100 if present</td>
         </tr>
         <tr>
           <td>bedrooms_count</td>
           <td>Integer</td>
           <td>Read/Write</td>
-          <td>Rental’s bedrooms count. (between 0 and 100)</td>
+          <td>Rental’s bedrooms count.</td>
+          <td>must be between 0 and 100 if present</td>
         </tr>
         <tr>
           <td>bookable_online</td>
           <td>Boolean</td>
           <td>Read/Write</td>
           <td>Rental’s online booking status.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>checkin_details</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read/Write</td>
           <td>Rental’s check-in details, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>checkin_time</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>Rental’s checkin time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>checkin_end_time</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>Rental’s checkin end time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>checkout_details</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read/Write</td>
           <td>Rental’s check-out details, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>checkout_time</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>Rental’s checkout time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>city</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Rental’s city.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>contact_name</td>
           <td>String</td>
           <td>Read</td>
           <td>Rental’s contact name.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>country_code</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Rental’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+          <td>
+<strong>Required</strong> if <code>address1</code> is present</td>
         </tr>
         <tr>
           <td>currency</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Rental’s currency code, list of codes described in <a href="/reference/enums#currencies">enums section</a>.</td>
+          <td>Must be a valid currency if present</td>
         </tr>
         <tr>
           <td>damage_deposit</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read/Write</td>
           <td>Rental’s required damage deposit.</td>
+          <td>Must be greater than or equal to 0 if present</td>
         </tr>
         <tr>
           <td>description</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read/Write</td>
-          <td>Rental’s description, list of locales described in <a href="/reference/enums#locales">enums section</a>. (5000 characters max)</td>
+          <td>Rental’s description, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+          <td>Maximum length: 5000</td>
         </tr>
         <tr>
           <td>downpayment</td>
           <td>Integer</td>
           <td>Read/Write</td>
-          <td>Rental’s default downpayment percentage. If none defined, the default downpayment percentage of the account will be used. (between 0 and 100)</td>
+          <td>Rental’s default downpayment percentage. If none defined, the default downpayment percentage of the account will be used.</td>
+          <td>Integer only, must be between 0 and 100</td>
         </tr>
         <tr>
           <td>final_price</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Rental’s final price (after discount). Available only for a search query with valid dates, for other cases please refer to <code>base_rate</code> and <code>base_rate_kind</code>.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>floor</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Rental’s floor</td>
+          <td> </td>
         </tr>
         <tr>
           <td>headline</td>
           <td><a href="/reference/enums#formats">Object</a></td>
-          <td>Read</td>
+          <td>Read/Write</td>
           <td>Rental’s headline, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+          <td>Maximum length: 75</td>
         </tr>
         <tr>
           <td>initial_price</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Rental’s initial price. Available only for a search query with valid dates, for other cases please refer to <code>base_rate</code> and <code>base_rate_kind</code>.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>lat</td>
           <td>Float</td>
           <td>Read/Write</td>
-          <td>Rental’s latitude. (between -90 and 90)</td>
+          <td>Rental’s latitude</td>
+          <td>must be between  -90 and 90 if present</td>
         </tr>
         <tr>
           <td>lng</td>
           <td>Float</td>
           <td>Read/Write</td>
-          <td>Rental’s longitude. (between -180 and 180)</td>
+          <td>Rental’s longitude.</td>
+          <td>must be between -180 and 180</td>
         </tr>
         <tr>
           <td>max_price</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Rental’s maximum price.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>mid_term_pricing_active</td>
           <td>Boolean</td>
           <td>Read/Write</td>
           <td>Enable mid term pricing feature for the rental.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>min_price</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Rental’s minimum price.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>name</td>
           <td>String</td>
           <td>Read/Write</td>
+          <td>Rental’s name.</td>
           <td>
-<strong>Required</strong>. Rental’s name. (3 min, 40 max characters)</td>
+<strong>Required</strong>, Minimum length: 3, Maximum length: 30</td>
         </tr>
         <tr>
           <td>nightly_rates_managed_externally</td>
           <td>Boolean</td>
           <td>Read/Write</td>
           <td>Defines whether <code>nightly_rate_map</code> can be updated via API. Defaults to <code>false</code>.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>notes</td>
           <td>Text</td>
           <td>Read/Write</td>
-          <td>Rental’s private notes. (1000 characters max)</td>
+          <td>Rental’s private notes</td>
+          <td>Maximum length: 1000</td>
         </tr>
         <tr>
           <td>permit_issue_date</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read/Write</td>
           <td>Rental’s Registration/License/Permit number’s issue date.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>permit_number</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Rental’s Registration/License/Permit number.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>position</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>Rental’s position on the list.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>price_public_notes</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read</td>
           <td>Rental’s price notes for public, list of locales described in <a href="/reference/enums#locales">enums section</a>. Write is possible through RatesTables.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>rental_type</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Rental’s type (example: villa, apartment), all types described in <a href="/reference/enums#rental-types">enums section</a>.</td>
+          <td>Must be a valid rental type if present</td>
         </tr>
         <tr>
           <td>reviews_average_rating</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Rental’s overall rating from reviews.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>reviews_count</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Rental’s count of all reviews.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>rounding_kind</td>
@@ -1144,60 +1762,70 @@
           <td>Read/Write</td>
           <td>Rounding kind for initial_price. All the possible values described at <a href="/reference/enums#rental-rounding-kinds">enums section</a>
 </td>
+          <td>Must be a valid rounding kind if present</td>
         </tr>
         <tr>
           <td>sleeps</td>
           <td>Integer</td>
           <td>Read/Write</td>
-          <td>Rental’s number of comfortable sleeps. (between 0 and 100)</td>
+          <td>Rental’s number of comfortable sleeps.</td>
+          <td>must be between 0 and 100 if present</td>
         </tr>
         <tr>
           <td>sleeps_max</td>
           <td>Integer</td>
           <td>Read/Write</td>
-          <td>Rental’s maximum number of sleeps. (between 0 and 100)</td>
+          <td>Rental’s maximum number of sleeps.</td>
+          <td>must be between 0 and 100 if present</td>
         </tr>
         <tr>
           <td>state</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Rental’s state.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>stories_count</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>Rental’s number of stories.</td>
+          <td>Must be between 0 and 100 if present</td>
         </tr>
         <tr>
           <td>summary</td>
           <td><a href="/reference/enums#formats">Object</a></td>
-          <td>Read/Write</td>
-          <td>Rental’s summary, list of locales described in <a href="/reference/enums#locales">enums section</a>. (150 characters max)</td>
+          <td>Read</td>
+          <td>Rental’s summary, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+          <td>Maximum length: 400</td>
         </tr>
         <tr>
           <td>surface</td>
           <td>Integer</td>
           <td>Read/Write</td>
-          <td>Rental’s surface area. (greater than 0)</td>
+          <td>Rental’s surface area.</td>
+          <td>Integer only, must greater than 0 if present</td>
         </tr>
         <tr>
           <td>surface_unit</td>
           <td>String</td>
           <td>Read/Write</td>
-          <td>Rental’s surface area unit, either <i>metric</i> or <i>imperial</i>.</td>
+          <td>Rental’s surface area unit.</td>
+          <td>Must be either <i>metric</i> or <i>imperial</i>, <strong>required</strong> if <code>surface</code> is present</td>
         </tr>
         <tr>
           <td>website_url</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read/Write</td>
           <td>Rental’s primary website url, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+          <td>Must be a valid URL if present</td>
         </tr>
         <tr>
           <td>zip</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Rental’s zip code.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>residency_category</td>
@@ -1205,12 +1833,14 @@
           <td>Read/Write</td>
           <td>Rental’s residency category. All types are described in <a href="/reference/enums#rental-residency-categories">enums section</a>
 </td>
+          <td>Must be a valid residency category if present, only “non_residential” residency category is allowed for “private-room” rental type</td>
         </tr>
         <tr>
           <td>certifications</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read/Write</td>
           <td>Rental’s certifications, all allowed values described in <a href="/reference/enums#rental-certifications">enums section</a>.</td>
+          <td>Must contain valid certifications if present</td>
         </tr>
         <tr>
           <td>management_type</td>
@@ -1218,6 +1848,91 @@
           <td>Read/Write</td>
           <td>Rental’s management type. All types are described in <a href="/reference/enums#rental-management-type">enums section</a>
 </td>
+          <td>Must be a valid management type if present</td>
+        </tr>
+        <tr>
+          <td>bookable_on_request</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Rental’s Bookable on request status (requires Rental to be published and Account needs a configuration for contract management)</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>instantly_bookable</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Rental’s instantly bookable status  (requires Rental to be bookable on request, <code>bookable_online</code> to be set to <code>true</code> and Rental needs to have a Payment Gateway configured)</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>owner_fullname</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Rental owner’s fullname</td>
+          <td>Maximum length: 100</td>
+        </tr>
+        <tr>
+          <td>owner_email</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Rental owner’s email</td>
+          <td>Must be a valid email format if present</td>
+        </tr>
+        <tr>
+          <td>owner_notes</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Rental owner’s notes</td>
+          <td>Maximum length: 2000</td>
+        </tr>
+        <tr>
+          <td>charge_damage_deposit_on_arrival</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Rental’s charge damege deposit in arrival status</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>full_bathrooms_count</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s full bathrooms count</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>standalone_toilets_count</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s standalone toilets count</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>vr_bathrooms_count</td>
+          <td>Float/Integer</td>
+          <td>Read</td>
+          <td>Rental’s VR bathrooms count (Float is possible only if there are standalone Bathrooms as the value equal to: bathrooms_count - standalone_toilets_count + 0.5 will be returned, otherwise <code>bathrooms_count</code> will be returned as an Integer)</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>absolute_min_stay</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s absolute minimum stay</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>public_notes</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s public notes</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>refund_damage_deposit_after</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s refund damage deposit after value (in days)</td>
+          <td> </td>
         </tr>
       </tbody>
       <tbody>
@@ -1226,18 +1941,21 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rental’s create time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rental’s update time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>published_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rental’s publish time.</td>
+          <td> </td>
         </tr>
       </tbody>
     </table>
@@ -1255,13 +1973,13 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#cf0a1c9de406public" role="tab" data-toggle="pill">
+        <a href="#a1cb9a54e688public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
       <li>
-        <a href="#f15f612c1d69rentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#f65910566979rentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
@@ -1273,7 +1991,7 @@
   
   
     
-      <div class="tab-pane active" id="cf0a1c9de406public">
+      <div class="tab-pane active" id="a1cb9a54e688public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -1356,9 +2074,9 @@
       <span class="s2">"website_url"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -1414,7 +2132,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="f15f612c1d69rentals_read-rentals_write">
+      <div class="tab-pane " id="f65910566979rentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -1506,9 +2224,9 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -1618,7 +2336,14 @@
       <td>Boolean</td>
       <td>blank</td>
       <td>
-<code>true</code> to get rentals that are instantly bookable (requiring no human interaction), <code>false</code> to get those that are not.</td>
+<code>true</code> to get rentals that are allowed to be bookable online (requiring no human interaction), <code>false</code> to get those that are not.</td>
+    </tr>
+    <tr>
+      <td>instantly_bookable</td>
+      <td>Boolean</td>
+      <td> </td>
+      <td>
+<code>true</code> to get rentals that are instantly bookable (with payment confirming the booking)</td>
     </tr>
     <tr>
       <td>children</td>
@@ -1720,7 +2445,7 @@
       <td>rental_id</td>
       <td>String</td>
       <td> </td>
-      <td>List of comma separated rental ids.</td>
+      <td>List of comma separated rental ids. (if you want to limit the search to some specific ones that you know in advance)</td>
     </tr>
     <tr>
       <td>rental_type</td>
@@ -1738,13 +2463,32 @@
       <td>sort</td>
       <td>String</td>
       <td> </td>
-      <td>Sort rentals by given attribute. Possible values: <code>price</code>, <code>sleeps</code>.</td>
+      <td>Sort rentals by given attribute. Possible values: <code>price</code>, <code>sleeps</code>, <code>sleeps_max</code>, <code>bedrooms_count</code>
+</td>
     </tr>
     <tr>
       <td>special_offers</td>
       <td>Boolean</td>
       <td>false</td>
       <td>Show only rentals with special offers.</td>
+    </tr>
+    <tr>
+      <td>full_bathrooms_count</td>
+      <td>Integer</td>
+      <td> </td>
+      <td>Rentals with amount of full bathrooms equal to or above given number.</td>
+    </tr>
+    <tr>
+      <td>included_amenities</td>
+      <td>Array</td>
+      <td> </td>
+      <td>Rentals containing Amenities identified by the provided IDs</td>
+    </tr>
+    <tr>
+      <td>excluded_amenities</td>
+      <td>Array</td>
+      <td> </td>
+      <td>Rentals not containing Amenities identified by the provided IDs</td>
     </tr>
   </tbody>
   <tbody>
@@ -1767,7 +2511,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#c72b9f0dd2dcpublic" role="tab" data-toggle="pill">
+        <a href="#9d08313b99ebpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -1779,7 +2523,7 @@
   
   
     
-      <div class="tab-pane active" id="c72b9f0dd2dcpublic">
+      <div class="tab-pane active" id="9d08313b99ebpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -1877,6 +2621,13 @@
       <td>price_to_pay_now</td>
       <td>Float</td>
       <td>Part of the price to pay at this moment if the rental was to be booked now.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>price_to_pay_now_with_damage_deposit</td>
+      <td>Float</td>
+      <td>Part of the price to pay at this moment if the rental was to be booked now including damage deposit (if chargeable during the booking).</td>
     </tr>
   </tbody>
   <tbody>
@@ -2040,13 +2791,13 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#1d0a01767c33public" role="tab" data-toggle="pill">
+        <a href="#36054c9461aepublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
       <li>
-        <a href="#84509404fe98rentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#97154c2181fbrentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
@@ -2058,7 +2809,7 @@
   
   
     
-      <div class="tab-pane active" id="1d0a01767c33public">
+      <div class="tab-pane active" id="36054c9461aepublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -2141,9 +2892,9 @@
       <span class="s2">"website_url"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -2199,7 +2950,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="84509404fe98rentals_read-rentals_write">
+      <div class="tab-pane " id="97154c2181fbrentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -2291,9 +3042,9 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -2370,7 +3121,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#7d7b61fcaedcrentals_write" role="tab" data-toggle="pill">
+        <a href="#a8b332c83e83rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -2412,7 +3163,7 @@
   
   
     
-      <div class="tab-pane active" id="7d7b61fcaedcrentals_write">
+      <div class="tab-pane active" id="a8b332c83e83rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -2504,9 +3255,9 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -2578,7 +3329,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#8a2fb59a78b4rentals_write" role="tab" data-toggle="pill">
+        <a href="#d3ad37a416dcrentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -2620,7 +3371,7 @@
   
   
     
-      <div class="tab-pane active" id="8a2fb59a78b4rentals_write">
+      <div class="tab-pane active" id="d3ad37a416dcrentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -2712,9 +3463,9 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>

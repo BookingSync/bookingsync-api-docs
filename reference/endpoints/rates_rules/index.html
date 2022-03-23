@@ -136,12 +136,19 @@
           <h2 id="rates-rules">Rates Rules</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-rates-rules">List rates rules</a></li>
   <li><a href="#get-a-single-rates-rule">Get a single rates rule</a></li>
   <li><a href="#create-a-new-rates-rule">Create a new rates rule</a></li>
   <li><a href="#update-a-rates-rule">Update a rates rule</a></li>
   <li><a href="#destroy-a-rates-rule">Destroy a rates rule</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents Rates Rules which drive the behavior behind the calculation of Booking’s <code>initial_price</code> (i.e. the contribution from the Rental.). They are applied on top of the rates defined by either Nightly Rate Map or a combination of Rental’s <code>base_rate</code>, Seasons and Periods.</p>
+
+<p>A detailed description of Rates Rules is available <a href="https://manual.bookingsync.com/hc/en-us/articles/360005324073-All-our-Rates-Rules">here</a></p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -162,13 +169,31 @@
       </thead>
       <tbody>
         <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Rates Rule</td>
+        </tr>
+        <tr>
+          <td>rates_table</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rates Table’s ID related to Rates Rule</td>
+        </tr>
+        <tr>
+          <td>seasons</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Season’s IDs related to the Rates Rule</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Rates Rule’s id.</td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>always_applied</td>
           <td>Boolean</td>
@@ -203,7 +228,8 @@
           <td>variables</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read</td>
-          <td>Rates Rule’s variables used depending on kind type.</td>
+          <td>Rates Rule’s variables used depending on kind type. List of variables described in <a href="/reference/enums#rates-rules-variables">enums section</a>
+</td>
         </tr>
       </tbody>
       <tbody>
@@ -242,58 +268,95 @@
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
+          <th>Constrains</th>
         </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Rates Rule</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>rates_table</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rates Table’s ID related to Rates Rule</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>seasons</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Season’s IDs related to the Rates Rule</td>
+          <td> </td>
+        </tr>
+      </tbody>
       <tbody>
         <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Rates Rule’s id.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>season_ids</td>
           <td>Array</td>
           <td>Write</td>
           <td>Season ids related to the rates rule.</td>
+          <td>Use only one of these: <code>season_ids</code>, <code>always_applied</code> (if the value is <code>true</code>) or <code>start_date</code>/<code>end_date</code>
+</td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>always_applied</td>
           <td>Boolean</td>
           <td>Read/Write</td>
           <td>Rates Rule’s application status.</td>
+          <td>Use only one of these: <code>season_ids</code>, <code>always_applied</code> (if the value is <code>true</code>) or <code>start_date</code>/<code>end_date</code>
+</td>
         </tr>
         <tr>
           <td>kind</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Rates Rule’s kind. List of types described in <a href="/reference/enums#rates-rules-types">enums section</a>.</td>
+          <td>
+<strong>Required</strong>, myst be a valid rates rule kind</td>
         </tr>
         <tr>
           <td>percentage</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read/Write</td>
-          <td>Rates Rule’s percentage discount. (greater than (-100))</td>
+          <td>Rates Rule’s percentage discount.</td>
+          <td>must be greater than or equal to -100, conditionally <strong>required</strong> depending on <code>kind</code>
+</td>
         </tr>
         <tr>
           <td>fixed_amount</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read/Write</td>
           <td>Rates Rule’s fixed price modifier.</td>
+          <td>conditionally <strong>required</strong> depending on <code>kind</code>
+</td>
         </tr>
         <tr>
           <td>period_name</td>
           <td>String</td>
           <td>Read/Write</td>
-          <td>Rates Rule’s period name. (50 max characters)</td>
+          <td>Rates Rule’s period name.</td>
+          <td>Maximum length: 50</td>
         </tr>
         <tr>
           <td>variables</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read/Write</td>
-          <td>Rates Rule’s variables used depending on kind type.</td>
+          <td>Rates Rule’s variables used depending on kind type. List of variables described in <a href="/reference/enums#rates-rules-variables">enums section</a>
+</td>
+          <td>Conditionally <strong>required</strong>, depending on <code>kind</code>
+</td>
         </tr>
       </tbody>
       <tbody>
@@ -302,24 +365,28 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rates Rule’s create time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rates Rule’s update time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>start_date</td>
           <td><a href="/reference/enums#formats">Date</a></td>
           <td>Read/Write</td>
           <td>Rates Rule’s start date.</td>
+          <td>Use only one of these: <code>season_ids</code>, <code>always_applied</code> (if the value is <code>true</code>) or <code>start_date</code>/<code>end_date</code>, required for some kinds</td>
         </tr>
         <tr>
           <td>end_date</td>
           <td><a href="/reference/enums#formats">Date</a></td>
           <td>Read/Write</td>
           <td>Rates Rule’s end date.</td>
+          <td>Use only one of these: <code>season_ids</code>, <code>always_applied</code> (if the value is <code>true</code>) or <code>start_date</code>/<code>end_date</code>, required for some kinds</td>
         </tr>
       </tbody>
     </table>
@@ -337,7 +404,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#ddb4bbbb8f9crates_read-rates_write" role="tab" data-toggle="pill">
+        <a href="#3790cd451353rates_read-rates_write" role="tab" data-toggle="pill">
           rates_read / rates_write
         </a>
       </li>
@@ -349,7 +416,7 @@
   
   
     
-      <div class="tab-pane active" id="ddb4bbbb8f9crates_read-rates_write">
+      <div class="tab-pane active" id="3790cd451353rates_read-rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates_rules.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{rates_rules.rates_table}"</span><span class="p">,</span>
@@ -370,10 +437,10 @@
         <span class="s2">"length"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s2">"unit"</span><span class="o">:</span> <span class="s2">"days"</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-02-11"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2022-10-18"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-03-30"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2022-12-04"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
         <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>
@@ -400,7 +467,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#ac9c9502fa5frates_read-rates_write" role="tab" data-toggle="pill">
+        <a href="#3ae86c37a7c6rates_read-rates_write" role="tab" data-toggle="pill">
           rates_read / rates_write
         </a>
       </li>
@@ -412,7 +479,7 @@
   
   
     
-      <div class="tab-pane active" id="ac9c9502fa5frates_read-rates_write">
+      <div class="tab-pane active" id="3ae86c37a7c6rates_read-rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates_rules.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{rates_rules.rates_table}"</span><span class="p">,</span>
@@ -433,10 +500,10 @@
         <span class="s2">"length"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s2">"unit"</span><span class="o">:</span> <span class="s2">"days"</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-02-11"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2022-10-18"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-03-30"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2022-12-04"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
         <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>
@@ -463,7 +530,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#11ddcc7ee914rates_write" role="tab" data-toggle="pill">
+        <a href="#3a7a3d68f9f0rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
@@ -490,8 +557,8 @@
         <span class="s2">"length"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s2">"unit"</span><span class="o">:</span> <span class="s2">"days"</span>
       <span class="p">},</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-02-11"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2022-10-18"</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-03-30"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2022-12-04"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -501,7 +568,7 @@
   
   
     
-      <div class="tab-pane active" id="11ddcc7ee914rates_write">
+      <div class="tab-pane active" id="3a7a3d68f9f0rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates_rules.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{rates_rules.rates_table}"</span><span class="p">,</span>
@@ -522,10 +589,10 @@
         <span class="s2">"length"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s2">"unit"</span><span class="o">:</span> <span class="s2">"days"</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-02-11"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2022-10-18"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-03-30"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2022-12-04"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
         <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>
@@ -552,7 +619,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#74608be2b17drates_write" role="tab" data-toggle="pill">
+        <a href="#3cda1495be88rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
@@ -578,8 +645,8 @@
         <span class="s2">"length"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s2">"unit"</span><span class="o">:</span> <span class="s2">"days"</span>
       <span class="p">},</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-02-11"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2022-10-18"</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-03-30"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2022-12-04"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -589,7 +656,7 @@
   
   
     
-      <div class="tab-pane active" id="74608be2b17drates_write">
+      <div class="tab-pane active" id="3cda1495be88rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates_rules.rates_table"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rates_tables/{rates_rules.rates_table}"</span><span class="p">,</span>
@@ -610,10 +677,10 @@
         <span class="s2">"length"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
         <span class="s2">"unit"</span><span class="o">:</span> <span class="s2">"days"</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-02-11"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2022-10-18"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-03-30"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2022-12-04"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
         <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>

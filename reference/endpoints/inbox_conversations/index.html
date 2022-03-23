@@ -136,6 +136,7 @@
           <h2 id="inbox-conversations">Inbox Conversations</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-conversations">List Conversations</a></li>
   <li><a href="#get-a-single-conversation">Get a single Conversation</a></li>
   <li><a href="#create-a-new-conversation">Create a new Conversation</a></li>
@@ -143,6 +144,10 @@
   <li><a href="#add-bookings-to-a-conversation">Add Bookings to a Conversation</a></li>
   <li><a href="#remove-bookings-from-a-conversation">Remove Bookings from a Conversation</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents Inbox Conversations - a thread within each <a href="/reference/endpoints/inbox_messages/">Inbox Messages</a> can be created.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -163,24 +168,79 @@
       </thead>
       <tbody>
         <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to Conversation</td>
+        </tr>
+        <tr>
+          <td>assignee (host)</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Assignee’s ID related to Conversation (Host’s ID who is responsible for handling this conversation)</td>
+        </tr>
+        <tr>
+          <td>source</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Source’s ID related to Conversation</td>
+        </tr>
+        <tr>
+          <td>bookings</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Bookings IDs related to Conversation</td>
+        </tr>
+        <tr>
+          <td>inquiries</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Inquiries IDs related to Conversation</td>
+        </tr>
+        <tr>
+          <td>messages</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Messages IDs related to Conversation</td>
+        </tr>
+        <tr>
+          <td>participants</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Participants ID related to Conversation</td>
+        </tr>
+        <tr>
+          <td>created_by_id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>ID of the resource that created the Conversation (User or Application - this is a polymorphic association)</td>
+        </tr>
+        <tr>
+          <td>created_by_type</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Type of the resource that created the Conversation (User or Application - this is a polymorphic association)</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Conversation’s id.</td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>default_channel</td>
           <td>String</td>
           <td>Read</td>
-          <td>Conversation’s default channel.</td>
+          <td>Conversation’s default channel, list of Channels described in <a href="/reference/enums#inbox-message-channels">enums section</a>
+</td>
         </tr>
         <tr>
           <td>subject</td>
           <td>String</td>
           <td>Read</td>
-          <td>Conversation’s subject.</td>
+          <td>Conversation’s subject (for email-based Conversations).</td>
         </tr>
       </tbody>
       <tbody>
@@ -200,7 +260,7 @@
           <td>closed_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Time when Converstation was closed at.</td>
+          <td>Time when Conversation was closed at.</td>
         </tr>
         <tr>
           <td>deadline_response_at</td>
@@ -237,46 +297,131 @@
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
+          <th>Constraints</th>
         </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to Conversation</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>assignee (host)</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Assignee’s ID related to Conversation (Host’s ID who is responsible for handling this conversation)</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>source</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Source’s ID related to Conversation</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>bookings</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Bookings IDs related to Conversation</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>inquiries</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Inquiries IDs related to Conversation</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>messages</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Messages IDs related to Conversation</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>participants</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Participants ID related to Conversation</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>created_by_id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>ID of the resource that created the Conversation (User or Application - this is a polymorphic association)</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>created_by_type</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Type of the resource that created the Conversation (User or Application - this is a polymorphic association)</td>
+          <td> </td>
+        </tr>
+      </tbody>
       <tbody>
         <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Conversation’s id.</td>
+          <td> </td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>default_channel</td>
           <td>String</td>
           <td>Read/Write</td>
-          <td>Conversation’s default channel.</td>
+          <td>Conversation’s default channel,list of Channels described in <a href="/reference/enums#inbox-message-channels">enums section</a>
+</td>
+          <td>Must be one of the Channels</td>
         </tr>
         <tr>
           <td>subject</td>
           <td>String</td>
-          <td>Read/Write</td>
-          <td>Conversation’s subject.</td>
+          <td>Read/Write  (create-only)</td>
+          <td>Conversation’s subject (for email-based Conversations).</td>
+          <td> </td>
         </tr>
         <tr>
           <td>closed</td>
           <td>Boolean</td>
           <td>Write</td>
           <td>Conversation is closed if set to true.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>source_id</td>
           <td>Integer</td>
-          <td>Write</td>
-          <td>Source id related to the Source.</td>
+          <td>Write (create-only)</td>
+          <td>Source id related to the Conversation.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>assignee_id</td>
           <td>Integer</td>
           <td>Write</td>
-          <td>Assignee id related to the Host.</td>
+          <td>Assignee’s ID related to Conversation (Host’s ID who is responsible for handling this conversation)</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>closed</td>
+          <td>Boolean</td>
+          <td>Write</td>
+          <td>An attribute for marking Conversation as closed (and will assign <code>closed_at</code> timestamp)</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>marked_as_spam</td>
+          <td>Boolean</td>
+          <td>Write</td>
+          <td>An attribute for marking Conversation as spam (and will assign <code>marked_as_spam_at</code> timestamp)</td>
+          <td> </td>
         </tr>
       </tbody>
       <tbody>
@@ -285,42 +430,49 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Conversation’s create time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Conversation’s update time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>closed_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Time when Converstation was closed at.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>deadline_response_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
-          <td>Read/Write</td>
+          <td>Read/Write (create-only)</td>
           <td>Conversation’s deadline response time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>last_message_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Conversation’s last message time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>marked_as_spam_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
-          <td>Read/Write</td>
+          <td>Read</td>
           <td>Time when Conversation was marked as spam.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>read_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Time when conversations was viewed</td>
+          <td> </td>
         </tr>
       </tbody>
     </table>
@@ -336,7 +488,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#b5d13daefcffinbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#182b46888581inbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -348,7 +500,7 @@
   
   
     
-      <div class="tab-pane active" id="b5d13daefcffinbox_read-inbox_write">
+      <div class="tab-pane active" id="182b46888581inbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
@@ -409,7 +561,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#18aa7604192dinbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#c721fec67b57inbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -421,7 +573,7 @@
   
   
     
-      <div class="tab-pane active" id="18aa7604192dinbox_read-inbox_write">
+      <div class="tab-pane active" id="c721fec67b57inbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
@@ -482,7 +634,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#43bd329b852ainbox_write" role="tab" data-toggle="pill">
+        <a href="#c3406387bf0dinbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -505,7 +657,7 @@
   
   
     
-      <div class="tab-pane active" id="43bd329b852ainbox_write">
+      <div class="tab-pane active" id="c3406387bf0dinbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
@@ -571,7 +723,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#e18e3b051821inbox_write" role="tab" data-toggle="pill">
+        <a href="#6af83358655einbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -592,7 +744,7 @@
   
   
     
-      <div class="tab-pane active" id="e18e3b051821inbox_write">
+      <div class="tab-pane active" id="6af83358655einbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
@@ -653,7 +805,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#03505f4d4135inbox_write" role="tab" data-toggle="pill">
+        <a href="#cf76429329aainbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -674,7 +826,7 @@
   
   
     
-      <div class="tab-pane active" id="03505f4d4135inbox_write">
+      <div class="tab-pane active" id="cf76429329aainbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
@@ -735,7 +887,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#d5c2f2010e38inbox_write" role="tab" data-toggle="pill">
+        <a href="#68b01268c317inbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -756,7 +908,7 @@
   
   
     
-      <div class="tab-pane active" id="d5c2f2010e38inbox_write">
+      <div class="tab-pane active" id="68b01268c317inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>

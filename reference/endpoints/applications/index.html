@@ -136,14 +136,20 @@
           <h2 id="applications">Applications</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-applications">List applications</a></li>
   <li><a href="#get-a-single-application">Get a single application</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents the installed Applications for the Account(s) via <a href="/reference/authorization/">OAuth</a> - these are the actual applications that you, as a Partner, can register in <a href="https://www.bookingsync.com/en/partners/">Partners Section</a>. </p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#applications_read" role="tab" data-toggle="pill">applications_read</a></li>
+  <li><a href="#applications_write" role="tab" data-toggle="pill">applications_write</a></li>
 </ul>
 <div class="tab-content">
   <div class="tab-pane active" id="applications_read">
@@ -171,6 +177,82 @@
           <td>Read</td>
           <td>Application’s name.</td>
         </tr>
+        <tr>
+          <td>default_price_increase</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read</td>
+          <td>Application’s default price increase for <a href="/reference/endpoints/bookings">Bookings</a> originating from a given Application. Also, this increase is reflected in <a href="/reference/endpoints/rates">Rates</a> and <a href="/reference/endpoints/los_records">LOS Records</a>
+</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Applications’s create time.</td>
+        </tr>
+        <tr>
+          <td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Applications’s update time.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tab-pane" id="rentals_write">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+          <th>Constraints</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Application’s id.</td>
+          <td> </td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>name</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Application’s name.</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>default_price_increase</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>Read/Write</td>
+          <td>Application’s default price increase for <a href="/reference/endpoints/bookings">Bookings</a> originating from a given Application. Also, this increase is reflected in <a href="/reference/endpoints/rates">Rates</a> and <a href="/reference/endpoints/los_records">LOS Records</a>
+</td>
+          <td>greater than: 0, less than: 100</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Application’s create time.</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Application’s update time.</td>
+          <td> </td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -192,7 +274,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#d8c897c0cac7applications_read" role="tab" data-toggle="pill">
+        <a href="#dd96201fbe2capplications_read" role="tab" data-toggle="pill">
           applications_read
         </a>
       </li>
@@ -204,7 +286,7 @@
   
   
     
-      <div class="tab-pane active" id="d8c897c0cac7applications_read">
+      <div class="tab-pane active" id="dd96201fbe2capplications_read">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"applications"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -231,7 +313,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#3546de1fa9b4applications_read" role="tab" data-toggle="pill">
+        <a href="#2d487a5b1a6dapplications_read" role="tab" data-toggle="pill">
           applications_read
         </a>
       </li>
@@ -243,7 +325,7 @@
   
   
     
-      <div class="tab-pane active" id="3546de1fa9b4applications_read">
+      <div class="tab-pane active" id="2d487a5b1a6dapplications_read">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"applications"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>

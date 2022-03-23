@@ -136,10 +136,21 @@
           <h2 id="rates">Rates</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-rates">List rates</a></li>
   <li><a href="#search-rates">Search rates</a></li>
   <li><a href="#get-a-single-rate">Get a single rate</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents Rates which are are pre-computed cache of the “static” pricing for a given period (defined via <code>start_date</code> and <code>end_date</code>). The are computed by applying <a href="/reference/endpoints/rates_rules/">Rates Rules</a> on top of nightly rates that are derived either from Nightly Rate Map or a combination of Rental’s <code>base_rate</code>, Seasons and Periods.  </p>
+
+<p>The “static” means that they don’t have reference to the current day so not all Rates Rules can be applied.</p>
+
+<p>For “dynamic” rates, check <a href="/reference/endpoints/los_records/">LOS Records</a> endpoint.</p>
+
+<p>To learn more about pricing concepts in general, check this <a href="guides/pricing-concepts/">guide</a>.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -262,7 +273,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#2cfde4c1dfb5public" role="tab" data-toggle="pill">
+        <a href="#dd8c31386238public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -274,7 +285,7 @@
   
   
     
-      <div class="tab-pane active" id="2cfde4c1dfb5public">
+      <div class="tab-pane active" id="dd8c31386238public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rates.rental}"</span>
@@ -290,10 +301,10 @@
       <span class="s2">"initial_nightly_rate"</span><span class="o">:</span> <span class="s2">"100.0"</span><span class="p">,</span>
       <span class="s2">"initial_weekly_rate"</span><span class="o">:</span> <span class="s2">"700.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-02-11"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2022-10-18"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-03-30"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2022-12-04"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">14</span>
       <span class="p">}</span>
@@ -346,7 +357,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#83fad46e2449public" role="tab" data-toggle="pill">
+        <a href="#0a2911efa8eapublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -358,7 +369,7 @@
   
   
     
-      <div class="tab-pane active" id="83fad46e2449public">
+      <div class="tab-pane active" id="0a2911efa8eapublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rates.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rates.rental}"</span>
@@ -374,10 +385,10 @@
       <span class="s2">"initial_nightly_rate"</span><span class="o">:</span> <span class="s2">"100.0"</span><span class="p">,</span>
       <span class="s2">"initial_weekly_rate"</span><span class="o">:</span> <span class="s2">"700.0"</span><span class="p">,</span>
       <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-02-11"</span><span class="p">,</span>
-      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2022-10-18"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-03-30"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2022-12-04"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">14</span>
       <span class="p">}</span>

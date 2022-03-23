@@ -136,9 +136,18 @@
           <h2 id="accounts">Accounts</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-accounts">List accounts</a></li>
   <li><a href="#get-a-single-account">Get a single account</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents the available Accounts. </p>
+
+<p>When using <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a>, you can get the list of all Accounts installed for your application. When using Authorization Flow, you will only get a single account that represents a Resource Owner for a given token.</p>
+
+<p>Combining <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a> and  <a href="/guides/updated-since-flow/">updated_since flow</a> allows you also to get the list of accounts that have been canceled, suspended or uninstalled your application.  </p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -207,7 +216,7 @@
           <td>country_code</td>
           <td>String</td>
           <td>Read</td>
-          <td>Code of a country in which caompany is based in.</td>
+          <td>Code of a country in which company is based in.</td>
         </tr>
         <tr>
           <td> </td>
@@ -254,7 +263,7 @@
           <td> </td>
           <td>website</td>
           <td>String</td>
-          <td> </td>
+          <td>Read</td>
           <td>Company’s website</td>
         </tr>
         <tr>
@@ -264,6 +273,30 @@
           <td>String</td>
           <td>Read</td>
           <td>Zip code.</td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td>demo</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Account’s demo status. If the value is <code>true</code>, you probably don’t want to treat as a real production Account.</td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td>test</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Account’s test status. If the value is <code>true</code>, you probably don’t want to treat as a real production Account.</td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td>inbox_email</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Account’s email address within Inbox context (requires <a href="/reference/authorization/#scopes"><code>inbox_read</code> scope</a>).</td>
         </tr>
       </tbody>
       <tbody>
@@ -320,7 +353,7 @@
       </tbody>
       <tbody>
         <tr>
-          <td>prefrences</td>
+          <td>preferences</td>
           <td> </td>
           <td> </td>
           <td>Object</td>
@@ -346,6 +379,14 @@
         <tr>
           <td> </td>
           <td> </td>
+          <td>default_arrival_end_time</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Default arrival end time.</td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
           <td>default_departure_time</td>
           <td>Integer</td>
           <td>Read</td>
@@ -358,6 +399,14 @@
           <td>String</td>
           <td>Read</td>
           <td>Default language locale for communication with customer. List of all available locales is described in <a href="/reference/enums/#locales">enums section</a>.</td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>privacy_policy</td>
+          <td> </td>
+          <td><a href="/reference/enums#formats">Object</a></td>
+          <td>Read</td>
+          <td>Account’s privacy policy, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
         </tr>
       </tbody>
     </table>
@@ -381,7 +430,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#6635312fc742public" role="tab" data-toggle="pill">
+        <a href="#d7cec118bfe9public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -393,7 +442,7 @@
   
   
     
-      <div class="tab-pane active" id="6635312fc742public">
+      <div class="tab-pane active" id="d7cec118bfe9public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"accounts"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -425,8 +474,8 @@
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"trial"</span><span class="p">,</span>
       <span class="s2">"website"</span><span class="o">:</span> <span class="s2">"http://www.superawesomevillas.com"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span>
     <span class="p">}</span>
   <span class="p">],</span>
   <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
@@ -448,7 +497,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#1f0e09af5f24public" role="tab" data-toggle="pill">
+        <a href="#6f32e91ac152public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -460,7 +509,7 @@
   
   
     
-      <div class="tab-pane active" id="1f0e09af5f24public">
+      <div class="tab-pane active" id="6f32e91ac152public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"accounts"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -492,8 +541,8 @@
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"trial"</span><span class="p">,</span>
       <span class="s2">"website"</span><span class="o">:</span> <span class="s2">"http://www.superawesomevillas.com"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span>
     <span class="p">}</span>
   <span class="p">],</span>
   <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>

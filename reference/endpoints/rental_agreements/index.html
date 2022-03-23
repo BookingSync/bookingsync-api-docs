@@ -136,12 +136,19 @@
           <h2 id="rental-agreements">Rental Agreements</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-rental-agreements">List rental agreements</a></li>
   <li><a href="#get-a-single-rental-agreement">Get a single rental agreement</a></li>
   <li><a href="#create-a-new-default-rental-agreement">Create a new default rental agreement</a></li>
   <li><a href="#create-a-new-rental-agreement-for-a-booking">Create a new rental agreement for a booking</a></li>
   <li><a href="#create-a-new-rental-agreement-for-a-rental">Create a new rental agreement for a rental</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents Rental Agreements - an agreement that needs to be accepted by <a href="/reference/endpoints/clients/">Clients (travelers)</a> for <a href="/reference/endpoints/bookings/">Bookings</a>.</p>
+
+<p>The Rental Agreement can be defined on the Account level (a global one that will be applied to all <a href="/reference/endpoints/rentals/">Rentals</a>), a custom one for Rental (if not defined, it defaults to Account’s one) and on the Booking level (which is the copy of the Rental’s one at time of Booking creation).</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -162,18 +169,42 @@
       </thead>
       <tbody>
         <tr>
-          <td>id</td>
+          <td>account</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Rental Agreement’s id.</td>
+          <td>Account’s ID related to the Rental Agreement</td>
+        </tr>
+        <tr>
+          <td>rental_agreementable_id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>ID of the resource to which Rental Agreement belongs to (Rental, Account or Booking)</td>
+        </tr>
+        <tr>
+          <td>rental_agreementable_type</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Type of the resource to which Rental Agreement belongs to (Rental, Account or Booking)</td>
         </tr>
       </tbody>
       <tbody>
         <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental Agreement’s ID.</td>
+        </tr>
+        <tr>
           <td>body</td>
           <td>Text</td>
           <td>Read</td>
-          <td>Rental Agreement’s body.</td>
+          <td>Rental Agreement’s body for the Account’s default locale.</td>
+        </tr>
+        <tr>
+          <td>body_translations</td>
+          <td><a href="/reference/enums#formats">Object</a></td>
+          <td>Read</td>
+          <td>Rental Agreement’s body translations</td>
         </tr>
       </tbody>
       <tbody>
@@ -200,23 +231,54 @@
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
+          <th>Constraints</th>
         </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Rental Agreement</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>rental_agreementable_id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>ID of the resource to which Rental Agreement belongs to (Rental, Account or Booking)</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>rental_agreementable_type</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Type of the resource to which Rental Agreement belongs to (Rental, Account or Booking)</td>
+          <td> </td>
+        </tr>
+      </tbody>
       <tbody>
         <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Rental Agreement’s id.</td>
+          <td>Rental Agreement’s ID.</td>
+          <td> </td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>body</td>
           <td>Text</td>
           <td>Read/Write</td>
+          <td>Rental Agreement’s body for the Account’s default locale.</td>
           <td>
-<strong>Required</strong>. Rental Agreement’s body. (100 000 characters max)</td>
+<strong>Required</strong>, Maximum length: 100 000</td>
+        </tr>
+        <tr>
+          <td>body_translations</td>
+          <td><a href="/reference/enums#formats">Object</a></td>
+          <td>Read</td>
+          <td>Rental Agreement’s body translations</td>
+          <td> </td>
         </tr>
       </tbody>
       <tbody>
@@ -225,12 +287,14 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rental Agreement’s create time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rental Agreement’s update time.</td>
+          <td> </td>
         </tr>
       </tbody>
     </table>
@@ -248,7 +312,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#7a8a7070b837public" role="tab" data-toggle="pill">
+        <a href="#ae455d3eff7cpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -260,14 +324,14 @@
   
   
     
-      <div class="tab-pane active" id="7a8a7070b837public">
+      <div class="tab-pane active" id="ae455d3eff7cpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -287,7 +351,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#593a5a67d40bpublic" role="tab" data-toggle="pill">
+        <a href="#2046de55606bpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -299,14 +363,14 @@
   
   
     
-      <div class="tab-pane active" id="593a5a67d40bpublic">
+      <div class="tab-pane active" id="2046de55606bpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -330,7 +394,7 @@ or booking level.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#68daf48ca46brentals_write" role="tab" data-toggle="pill">
+        <a href="#57865e195962rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -351,14 +415,14 @@ or booking level.</p>
   
   
     
-      <div class="tab-pane active" id="68daf48ca46brentals_write">
+      <div class="tab-pane active" id="57865e195962rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -369,7 +433,7 @@ or booking level.</p>
 
 <h3 id="create-a-new-rental-agreement-for-a-booking">Create a new rental agreement for a booking</h3>
 
-<p>Create a new rental agreement to be used exclusivly for this booking.</p>
+<p>Create a new rental agreement to be used exclusively for this booking.</p>
 
 <p>Returns a newly created rental agreement.</p>
 
@@ -380,7 +444,7 @@ or booking level.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#8d6634018dedrentals_write" role="tab" data-toggle="pill">
+        <a href="#9b4469b23885rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -401,14 +465,14 @@ or booking level.</p>
   
   
     
-      <div class="tab-pane active" id="8d6634018dedrentals_write">
+      <div class="tab-pane active" id="9b4469b23885rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -430,7 +494,7 @@ or booking level.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#b732cb945d0crentals_write" role="tab" data-toggle="pill">
+        <a href="#b6c98f9644bfrentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -451,14 +515,14 @@ or booking level.</p>
   
   
     
-      <div class="tab-pane active" id="b732cb945d0crentals_write">
+      <div class="tab-pane active" id="b6c98f9644bfrentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>

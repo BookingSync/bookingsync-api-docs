@@ -136,9 +136,14 @@
           <h2 id="bookings-payments">Bookings Payments</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-bookings-payments">List bookings payments</a></li>
   <li><a href="#get-a-single-bookings-payment">Get a single bookings payment</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents the Booking’s Payments, establishing the relationship between <a href="/reference/endpoints/payments/">Payments</a> and <a href="/reference/endpoints/bookings/">Bookings</a>.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -160,18 +165,42 @@
       </thead>
       <tbody>
         <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Bookings Payment</td>
+        </tr>
+        <tr>
+          <td>booking</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Booking’s ID related to the Bookings Payment</td>
+        </tr>
+        <tr>
+          <td>rental</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s ID related to the Bookings Payment</td>
+        </tr>
+        <tr>
+          <td>payment</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s ID related to the Bookings Payment</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Bookings Payment’s id.</td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>amount_in_cents</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Bookings Payment’s value.</td>
+          <td>Bookings Payment’s amount in cents.</td>
         </tr>
         <tr>
           <td>currency</td>
@@ -209,7 +238,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#020fe3db3e55payments_read-payments_write" role="tab" data-toggle="pill">
+        <a href="#2be2173f3a0dpayments_read-payments_write" role="tab" data-toggle="pill">
           payments_read / payments_write
         </a>
       </li>
@@ -221,7 +250,7 @@
   
   
     
-      <div class="tab-pane active" id="020fe3db3e55payments_read-payments_write">
+      <div class="tab-pane active" id="2be2173f3a0dpayments_read-payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_payments.account}"</span><span class="p">,</span>
@@ -234,8 +263,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:20Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:20Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">44</span><span class="p">,</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">22</span><span class="p">,</span>
@@ -263,7 +292,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#6d9fbb8f42dapayments_read-payments_write" role="tab" data-toggle="pill">
+        <a href="#38ea2b665b8epayments_read-payments_write" role="tab" data-toggle="pill">
           payments_read / payments_write
         </a>
       </li>
@@ -275,7 +304,7 @@
   
   
     
-      <div class="tab-pane active" id="6d9fbb8f42dapayments_read-payments_write">
+      <div class="tab-pane active" id="38ea2b665b8epayments_read-payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_payments.account}"</span><span class="p">,</span>
@@ -288,8 +317,8 @@
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"USD"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:20Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:20Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">44</span><span class="p">,</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">22</span><span class="p">,</span>

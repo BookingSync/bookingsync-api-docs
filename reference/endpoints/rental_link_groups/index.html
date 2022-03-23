@@ -136,11 +136,18 @@
           <h2 id="rental-link-groups">Rental Link Groups</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-rental-link-groups">List rental link groups</a></li>
   <li><a href="#get-a-single-rental-link-group">Get a single rental link group</a></li>
   <li><a href="#create-a-new-rental-link-group">Create a new rental link group</a></li>
   <li><a href="#cancel-a-rental-link-group">Cancel a rental link group</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents Rental Link Groups which is a way of establishing links between <a href="/reference/endpoints/rentals/">Rentals</a> - creating or deleting a Rental Link Group results creating or deleting <a href="/reference/endpoints/rental_links/">Rental Links</a>. </p>
+
+<p>The purpose of the Rental Links is to mirror the availabilities between two Rentals - if there is a link between Rental A and Rental B, creating (or canceling) a <a href="/reference/endpoints/bookings/">Booking</a> for either of them will result in creating/canceling a “mirrored” Booking on the other Rental.  </p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -162,13 +169,31 @@
       </thead>
       <tbody>
         <tr>
-          <td>id</td>
+          <td>account</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Rental link group’s id.</td>
+          <td>Account’s ID related to the Rental Link Group</td>
+        </tr>
+        <tr>
+          <td>rentals</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Rentals’ IDs related to the Rental Link Group</td>
+        </tr>
+        <tr>
+          <td>rental_links</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Rental Links’ ID related to the Rental Link Group</td>
         </tr>
       </tbody>
       <tbody>
+        <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental link group’s ID.</td>
+        </tr>
         <tr>
           <td>rental_names</td>
           <td>String</td>
@@ -200,28 +225,54 @@
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
+          <th>Constraints</th>
         </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Rental Link Group</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>rentals</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Rentals’ IDs related to the Rental Link Group</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>rental_links</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Rental Links’ ID related to the Rental Link Group</td>
+          <td> </td>
+        </tr>
+      </tbody>
       <tbody>
         <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Rental link group’s id.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>rental_ids</td>
           <td>Array</td>
           <td>Write</td>
-          <td>Ids of the rentals to be linked</td>
+          <td>IDs of the rentals to be linked</td>
+          <td>
+<strong>Required</strong>, Minimum number of IDs: 2</td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>rental_names</td>
           <td>String</td>
           <td>Read</td>
           <td>Rentals’ names associated with given rental link group’s</td>
+          <td> </td>
         </tr>
       </tbody>
       <tbody>
@@ -230,12 +281,14 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rental link group’s create time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rental link group’s update time.</td>
+          <td> </td>
         </tr>
       </tbody>
     </table>
@@ -253,7 +306,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#a10f3c9c825fpublic" role="tab" data-toggle="pill">
+        <a href="#c49aafdc7a0fpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -265,7 +318,7 @@
   
   
     
-      <div class="tab-pane active" id="a10f3c9c825fpublic">
+      <div class="tab-pane active" id="c49aafdc7a0fpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_link_groups.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rental_link_groups.account}"</span><span class="p">,</span>
@@ -276,8 +329,8 @@
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"rental_names"</span><span class="o">:</span> <span class="s2">"Rental 1, Rental 2"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental_links"</span><span class="o">:</span> <span class="p">[</span>
@@ -310,7 +363,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#455a5aafc5d4public" role="tab" data-toggle="pill">
+        <a href="#98c92a5aa17apublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -322,7 +375,7 @@
   
   
     
-      <div class="tab-pane active" id="455a5aafc5d4public">
+      <div class="tab-pane active" id="98c92a5aa17apublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_link_groups.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rental_link_groups.account}"</span><span class="p">,</span>
@@ -333,8 +386,8 @@
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"rental_names"</span><span class="o">:</span> <span class="s2">"Rental 1, Rental 2"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental_links"</span><span class="o">:</span> <span class="p">[</span>
@@ -367,7 +420,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#251e4aa4df68rentals_write" role="tab" data-toggle="pill">
+        <a href="#9ec01d198a4arentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -391,7 +444,7 @@
   
   
     
-      <div class="tab-pane active" id="251e4aa4df68rentals_write">
+      <div class="tab-pane active" id="9ec01d198a4arentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_link_groups.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rental_link_groups.account}"</span><span class="p">,</span>
@@ -402,8 +455,8 @@
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"rental_names"</span><span class="o">:</span> <span class="s2">"Rental 1, Rental 2"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental_links"</span><span class="o">:</span> <span class="p">[</span>

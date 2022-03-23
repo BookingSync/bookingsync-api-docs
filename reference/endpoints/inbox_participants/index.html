@@ -136,11 +136,16 @@
           <h2 id="inbox-participants">Inbox Participants</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-participants">List Participants</a></li>
   <li><a href="#get-a-single-participant">Get a single Participant</a></li>
   <li><a href="#create-a-new-participant">Create a new Participant</a></li>
   <li><a href="#update-a-participant">Update a Participant</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents Inbox Participants that can send <a href="/reference/endpoints/inbox_messages/">Inbox Messages</a> for a given <a href="/reference/endpoints/inbox_conversations/">Inbox Conversation</a>.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -161,13 +166,37 @@
       </thead>
       <tbody>
         <tr>
-          <td>id</td>
+          <td>conversation</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Participant’s id.</td>
+          <td>Conversation’s ID to which Participant belongs to</td>
+        </tr>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID to which Participant is related to</td>
+        </tr>
+        <tr>
+          <td>member_id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>ID of the resource that created the Participant (<a href="/reference/endpoints/clients/">Client</a> or <a href="/reference/endpoints/hosts/">Host</a> - this is a polymorphic association)</td>
+        </tr>
+        <tr>
+          <td>member_type</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Type of the resource that created the Participant (<a href="/reference/endpoints/clients/">Client</a> or <a href="/reference/endpoints/hosts/">Host</a> - this is a polymorphic association)</td>
         </tr>
       </tbody>
       <tbody>
+        <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Participant’s ID.</td>
+        </tr>
         <tr>
           <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
@@ -203,40 +232,75 @@
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
+          <th>Constraints</th>
         </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td>conversation</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Conversation’s ID to which Participant belongs to</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID to which Participant is related to</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>member_id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>ID of the resource that created the Participant (<a href="/reference/endpoints/clients/">Client</a> or <a href="/reference/endpoints/hosts/">Host</a> - this is a polymorphic association)</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>member_type</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Type of the resource that created the Participant (<a href="/reference/endpoints/clients/">Client</a> or <a href="/reference/endpoints/hosts/">Host</a> - this is a polymorphic association)</td>
+          <td> </td>
+        </tr>
+      </tbody>
       <tbody>
         <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Participant’s id.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>member_id</td>
           <td>Integer</td>
-          <td>Read/Write</td>
+          <td>Write (create-only)</td>
           <td>Participant’s Member id.</td>
-        </tr>
-        <tr>
-          <td>conversation_id</td>
-          <td>Integer</td>
-          <td>Read/Write</td>
-          <td>Participant’s Conversation id.</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td>read</td>
-          <td>Boolean</td>
-          <td>Write</td>
-          <td>Is related to Participant’s read_at attribute.</td>
+          <td><strong>Required</strong></td>
         </tr>
         <tr>
           <td>member_type</td>
           <td>Integer</td>
-          <td>Read/Write</td>
+          <td>Write (create-only)</td>
           <td>Participant’s member type (<code>Client</code> or <code>Host</code>).</td>
+          <td>
+<strong>Required</strong>, must be <a href="/reference/endpoints/clients/">Client</a> or <a href="/reference/endpoints/hosts/">Host</a>.</td>
+        </tr>
+        <tr>
+          <td>conversation_id</td>
+          <td>Integer</td>
+          <td>Write (create-only)</td>
+          <td>Participant’s Conversation id.</td>
+          <td><strong>Required</strong></td>
+        </tr>
+        <tr>
+          <td>read</td>
+          <td>Boolean</td>
+          <td>Write</td>
+          <td>An attribute for marking last message as read by Participant  (and will assign <code>read_at</code> timestamp)</td>
+          <td>Must be in the past</td>
         </tr>
       </tbody>
       <tbody>
@@ -245,24 +309,28 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Participant’s create time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Participant’s update time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>last_message_sent_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Participant’s last sent message time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>read_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
-          <td>Read/Write</td>
+          <td>Read</td>
           <td>Time when Participant read last message.</td>
+          <td> </td>
         </tr>
       </tbody>
     </table>
@@ -278,7 +346,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#33591bafc23ainbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#884e5a1c818ainbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -290,7 +358,7 @@
   
   
     
-      <div class="tab-pane active" id="33591bafc23ainbox_read-inbox_write">
+      <div class="tab-pane active" id="884e5a1c818ainbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"participants.client"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/clients/{participants.member.id}"</span><span class="p">,</span>
@@ -332,7 +400,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#624cab19322binbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#7e6d3ce37cccinbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -344,7 +412,7 @@
   
   
     
-      <div class="tab-pane active" id="624cab19322binbox_read-inbox_write">
+      <div class="tab-pane active" id="7e6d3ce37cccinbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"participants.client"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/clients/{participants.member.id}"</span><span class="p">,</span>
@@ -386,7 +454,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#1cefd9a7f365inbox_write" role="tab" data-toggle="pill">
+        <a href="#a8d72a971d66inbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -411,7 +479,7 @@
   
   
     
-      <div class="tab-pane active" id="1cefd9a7f365inbox_write">
+      <div class="tab-pane active" id="a8d72a971d66inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"participants.client"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/clients/{participants.member.id}"</span><span class="p">,</span>
@@ -458,7 +526,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#446beac68e1ainbox_write" role="tab" data-toggle="pill">
+        <a href="#1908cd59d2ccinbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -479,7 +547,7 @@
   
   
     
-      <div class="tab-pane active" id="446beac68e1ainbox_write">
+      <div class="tab-pane active" id="1908cd59d2ccinbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"participants.client"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/clients/{participants.member.id}"</span><span class="p">,</span>

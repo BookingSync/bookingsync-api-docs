@@ -153,8 +153,10 @@
   <li><a href="#rental-link-kinds">Rental Link kinds</a></li>
   <li><a href="#rates-types">Rates types</a></li>
   <li><a href="#rates-rules-types">Rates Rules types</a></li>
+  <li><a href="#rates-rules-variables">Rates Rules variables</a></li>
   <li><a href="#rental-types">Rental types</a></li>
   <li><a href="#rental-residency-categories">Rental residency categories</a></li>
+  <li><a href="#rental-cancelation-policies-presets">Rental cancelation policies presets</a></li>
   <li><a href="#rental-management-type">Rental management type</a></li>
   <li><a href="#inbox-message-channels">Inbox Message Channels</a></li>
   <li><a href="#inbox-message-origins">Inbox Message Origins</a></li>
@@ -163,6 +165,7 @@
   <li><a href="#rental-contact-roles">Rental Contact roles</a></li>
   <li><a href="#rental-certifications">Rental Certifications</a></li>
   <li><a href="#rental-rounding-kinds">Rental Rounding kinds</a></li>
+  <li><a href="#tax-kinds">Tax kinds</a></li>
 </ol>
 
 <h3 id="account-statuses">Account statuses</h3>
@@ -982,7 +985,162 @@
 
 <h3 id="rates-rules-types">Rates Rules types</h3>
 
+<p><a href="https://manual.bookingsync.com/hc/en-us/articles/360005324073-All-our-Rates-Rules">Rates Rules explanation</a></p>
+
 <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Variables</th>
+      <th>Requires fixed period (start_date/end_date)?</th>
+      <th>Percentage required?</th>
+      <th>Fixed amount required?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>additional_person_fixed_per_night</td>
+      <td>Rule applied for stay price</td>
+      <td>occupation_greater_than</td>
+      <td> </td>
+      <td>false</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>arrival_only</td>
+      <td>Rule applied on arrival.</td>
+      <td>days</td>
+      <td> </td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>charge_at_least</td>
+      <td>Rule applied for stay price.</td>
+      <td>length, unit</td>
+      <td> </td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>charge_at_least_if_available</td>
+      <td>Rule applied for stay price.</td>
+      <td>length, unit</td>
+      <td> </td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>charge_at_least_full_period</td>
+      <td>Rule applied for stay price.</td>
+      <td> </td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>departure_only</td>
+      <td>Rule applied on departure.</td>
+      <td>days</td>
+      <td> </td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>early_booking</td>
+      <td>Rule applied on early booking.</td>
+      <td>length, unit</td>
+      <td> </td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>full_period_only</td>
+      <td>Rule applied for full period.</td>
+      <td> </td>
+      <td>true</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>late_booking</td>
+      <td>Rule applied for late booking.</td>
+      <td>length, unit</td>
+      <td> </td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>occupation_less_than</td>
+      <td>Rule applied for stay period.</td>
+      <td>occupation_less_than</td>
+      <td> </td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>prevent_gap</td>
+      <td>Rule applied on arrival.</td>
+      <td>length, unit, until_length, until_unit</td>
+      <td> </td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>prevent_if_booked_ahead_of</td>
+      <td>Rule applied if booked ahead.</td>
+      <td>length, unit</td>
+      <td> </td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>prevent_if_booked_less_than</td>
+      <td>Rule applied if booking is too short.</td>
+      <td>length, unit</td>
+      <td> </td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>stay_at_least</td>
+      <td>Rule applied for minimum stay.</td>
+      <td>length, unit</td>
+      <td> </td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>stay_shorter_than</td>
+      <td>Rule applied for short bookings.</td>
+      <td>length, unit</td>
+      <td> </td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>strict_minimum_price_per_night</td>
+      <td>Rule applied for minimum price per night.</td>
+      <td> </td>
+      <td> </td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>weekend_night</td>
+      <td>Rule applied for weekend night.</td>
+      <td>days</td>
+      <td> </td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="rates-rules-variables">Rates Rules variables</h3>
+
+<table>
   <thead>
     <tr>
       <th>Name</th>
@@ -991,77 +1149,37 @@
   </thead>
   <tbody>
     <tr>
-      <td>additional_person_fixed_per_night</td>
-      <td>Rule applied for stay price</td>
+      <td>length</td>
+      <td>Number</td>
     </tr>
     <tr>
-      <td>arrival_only</td>
-      <td>Rule applied on arrival.</td>
+      <td>unit</td>
+      <td>Array of enums: days, months, years</td>
     </tr>
     <tr>
-      <td>charge_at_least</td>
-      <td>Rule applied for stay price.</td>
+      <td>until_length</td>
+      <td>Number</td>
     </tr>
     <tr>
-      <td>charge_at_least_if_available</td>
-      <td>Rule applied for stay price.</td>
-    </tr>
-    <tr>
-      <td>charge_at_least_full_period</td>
-      <td>Rule applied for stay price</td>
-    </tr>
-    <tr>
-      <td>departure_only</td>
-      <td>Rule applied on departure.</td>
-    </tr>
-    <tr>
-      <td>early_booking</td>
-      <td>Rule applied on early booking.</td>
-    </tr>
-    <tr>
-      <td>full_period_only</td>
-      <td>Rule applied for full period.</td>
-    </tr>
-    <tr>
-      <td>late_booking</td>
-      <td>Rule applied for late booking.</td>
+      <td>until_unit</td>
+      <td>String, possible values: “days”, “months”, “years”</td>
     </tr>
     <tr>
       <td>occupation_less_than</td>
-      <td>Rule applied for stay period.</td>
+      <td>Number</td>
     </tr>
     <tr>
-      <td>prevent_gap</td>
-      <td>Rule applied on arrival.</td>
+      <td>occupation_greater_than</td>
+      <td>Number</td>
     </tr>
     <tr>
-      <td>prevent_if_booked_ahead_of</td>
-      <td>Rule applied if booked ahead.</td>
-    </tr>
-    <tr>
-      <td>prevent_if_booked_less_than</td>
-      <td>Rule applied if booking is too short.</td>
-    </tr>
-    <tr>
-      <td>stay_at_least</td>
-      <td>Rule applied for minimum stay.</td>
-    </tr>
-    <tr>
-      <td>stay_shorter_than</td>
-      <td>Rule applied for short bookings.</td>
-    </tr>
-    <tr>
-      <td>strict_minimum_price_per_night</td>
-      <td>Rule applied for minimum price per night.</td>
-    </tr>
-    <tr>
-      <td>weekend_night</td>
-      <td>Rule applied for weekend night.</td>
+      <td>days</td>
+      <td>Array of integers between 0 and 6 (Sunday is 0, Saturday 6)</td>
     </tr>
   </tbody>
 </table>
 
-<p><a href="https://manual.bookingsync.com/hc/en-us/articles/360005324073-All-our-Rates-Rules">Rules explanation</a></p>
+<p><a href="https://manual.bookingsync.com/hc/en-us/articles/360005324073-All-our-Rates-Rules">Rates Rules explanation</a></p>
 
 <h3 id="rental-types">Rental types</h3>
 
@@ -1263,6 +1381,39 @@
   </tbody>
 </table>
 
+<h3 id="rental-cancelation-policies-presets">Rental cancelation policies presets</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>flexible</td>
+      <td>Full refund till 24 hours prior to check-in. If the guest cancels less than 24 hours before check-in, the first night is not refundable. The rest of the stay is refunded. Fees are 100% refundable</td>
+    </tr>
+    <tr>
+      <td>moderate</td>
+      <td>Full refund till 5 days prior to check-in. If the guest cancels less than 5 days before check-in, the first night is not refundable. The rest of the stay is 50% refundable. Fees are 100% refundable</td>
+    </tr>
+    <tr>
+      <td>strict</td>
+      <td>Full refund for cancellations made within 48 hours of booking, if the check-in date is at least 14 days away. 50% refund for cancellations made at least 7 days before check-in. No refunds for cancellations made within 7 days of check-in. Fees are 100% refundable</td>
+    </tr>
+    <tr>
+      <td>moderate20200317</td>
+      <td>Full refund till 5 days prior to check-in. If the guest cancels less than 5 days before check-in, the guest is refunded 50% of the stay. Cleaning and linen fees are 100% refundable. No refunds at all after check-in</td>
+    </tr>
+    <tr>
+      <td>strict20200317</td>
+      <td>If the guest cancels up to 7 days before check-in, the guest is refunded 50% of the stay. Cleaning and linen fees are 100% refundable. If the guest cancels less than 7 days before check-in, the stay is not refundable. Cleaning and linen fees are 100% refundable. No refunds at all after check-in</td>
+    </tr>
+  </tbody>
+</table>
+
 <h3 id="rental-management-type">Rental management type</h3>
 
 <table class="table table-bordered">
@@ -1305,6 +1456,10 @@
     <tr>
       <td>email</td>
       <td>Email</td>
+    </tr>
+    <tr>
+      <td>booking-com</td>
+      <td>Booking.com</td>
     </tr>
   </tbody>
 </table>
@@ -1511,6 +1666,67 @@
     <tr>
       <td>closest-marketing</td>
       <td>Rounds to the closest marketing number (i.e. ending with 9, e.g. from 362 to 369)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="tax-kinds">Tax kinds</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>value_added</td>
+      <td>Value added tax (VAT)</td>
+    </tr>
+    <tr>
+      <td>city</td>
+      <td>City tax</td>
+    </tr>
+    <tr>
+      <td>goods_and_services</td>
+      <td>Goods and services tax</td>
+    </tr>
+    <tr>
+      <td>government</td>
+      <td>Government tax</td>
+    </tr>
+    <tr>
+      <td>spa</td>
+      <td>Spa tax</td>
+    </tr>
+    <tr>
+      <td>hot_spring</td>
+      <td>Hot spring tax</td>
+    </tr>
+    <tr>
+      <td>residential</td>
+      <td>Residential tax</td>
+    </tr>
+    <tr>
+      <td>sauna_fitness_facilities</td>
+      <td>Sauna/fitness facilities tax</td>
+    </tr>
+    <tr>
+      <td>local_council</td>
+      <td>Local council tax</td>
+    </tr>
+    <tr>
+      <td>provincial_sales</td>
+      <td>Provincial sales tax</td>
+    </tr>
+    <tr>
+      <td>harmonized_sales</td>
+      <td>Harmonized sales tax</td>
+    </tr>
+    <tr>
+      <td>other</td>
+      <td>Other tax</td>
     </tr>
   </tbody>
 </table>

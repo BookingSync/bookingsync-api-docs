@@ -136,12 +136,17 @@
           <h2 id="livingrooms">LivingRooms</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-livingrooms">List living_rooms</a></li>
   <li><a href="#get-a-single-livingroom">Get a single living_room</a></li>
   <li><a href="#create-a-new-livingroom">Create a new living_room</a></li>
   <li><a href="#update-a-livingroom">Update a living_room</a></li>
   <li><a href="#destroy-a-livingroom">Destroy a living_room</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents the rental’s living rooms. This resource is mostly static information used for presentational purposes.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -162,13 +167,25 @@
       </thead>
       <tbody>
         <tr>
+          <td>rental</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s ID related to LivingRoom</td>
+        </tr>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to LivingRoom</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>LivingRoom’s id.</td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>bunk_beds_count</td>
           <td>Integer</td>
@@ -230,52 +247,74 @@
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
+          <th>Constraints</th>
         </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td>rental</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s ID related to LivingRoom</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to LivingRoom</td>
+          <td> </td>
+        </tr>
+      </tbody>
       <tbody>
         <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>LivingRoom’s id.</td>
+          <td> </td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>bunk_beds_count</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>LivingRoom’s number of bunk beds.</td>
+          <td>integer only, greater than or equal to: 0</td>
         </tr>
         <tr>
           <td>double_beds_count</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>LivingRoom’s number of double beds.</td>
+          <td>integer only, greater than or equal to: 0</td>
         </tr>
         <tr>
           <td>kingsize_beds_count</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>LivingRoom’s number of kingsize beds.</td>
+          <td>integer only, greater than or equal to: 0</td>
         </tr>
         <tr>
           <td>queensize_beds_count</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>LivingRoom’s number of queensize beds.</td>
+          <td>integer only, greater than or equal to: 0</td>
         </tr>
         <tr>
           <td>single_beds_count</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>LivingRoom’s number of single beds.</td>
+          <td>integer only, greater than or equal to: 0</td>
         </tr>
         <tr>
           <td>sofa_beds_count</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>LivingRoom’s number of sofa beds.</td>
+          <td>integer only, greater than or equal to: 0</td>
         </tr>
       </tbody>
       <tbody>
@@ -284,12 +323,14 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>LivingRoom’s create time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>LivingRoom’s update time.</td>
+          <td> </td>
         </tr>
       </tbody>
     </table>
@@ -307,7 +348,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#977593bb8f3bpublic" role="tab" data-toggle="pill">
+        <a href="#b3bdeeb4f64fpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -319,7 +360,7 @@
   
   
     
-      <div class="tab-pane active" id="977593bb8f3bpublic">
+      <div class="tab-pane active" id="b3bdeeb4f64fpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"living_rooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{living_rooms.rental}"</span>
@@ -333,8 +374,8 @@
       <span class="s2">"queensize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"single_beds_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"sofa_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -359,7 +400,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#e3352ac5166bpublic" role="tab" data-toggle="pill">
+        <a href="#2fec5b81be5dpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -371,7 +412,7 @@
   
   
     
-      <div class="tab-pane active" id="e3352ac5166bpublic">
+      <div class="tab-pane active" id="2fec5b81be5dpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"living_rooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{living_rooms.rental}"</span>
@@ -385,8 +426,8 @@
       <span class="s2">"queensize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"single_beds_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"sofa_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -411,7 +452,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#284053b78425rentals_write" role="tab" data-toggle="pill">
+        <a href="#ddfd77558e6brentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -437,7 +478,7 @@
   
   
     
-      <div class="tab-pane active" id="284053b78425rentals_write">
+      <div class="tab-pane active" id="ddfd77558e6brentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"living_rooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{living_rooms.rental}"</span>
@@ -451,8 +492,8 @@
       <span class="s2">"queensize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"single_beds_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"sofa_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -477,7 +518,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#ace775f37dd3rentals_write" role="tab" data-toggle="pill">
+        <a href="#4f3f0aa6caa1rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -503,7 +544,7 @@
   
   
     
-      <div class="tab-pane active" id="ace775f37dd3rentals_write">
+      <div class="tab-pane active" id="4f3f0aa6caa1rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"living_rooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{living_rooms.rental}"</span>
@@ -517,8 +558,8 @@
       <span class="s2">"queensize_beds_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"single_beds_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"sofa_beds_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>

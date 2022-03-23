@@ -136,12 +136,17 @@
           <h2 id="rentals-fees">Rentals Fees</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-rentals-fees">List rentals fees</a></li>
   <li><a href="#get-a-single-rentals-fee">Get a single rentals fee</a></li>
   <li><a href="#create-a-new-rentals-fee">Create a new rentals fee</a></li>
   <li><a href="#update-a-rentals-fee">Update a rentals fee</a></li>
   <li><a href="#archive-a-rentals-fee">Archive a rentals fee</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents Rentals Fees which are a way to define the relationship between <a href="/reference/endpoints/rentals/">Rentals</a> and <a href="/reference/endpoints/fees/">Fees</a> and provide a configuration for the behavior of the Fee within the scope of a given ental.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -162,18 +167,42 @@
       </thead>
       <tbody>
         <tr>
-          <td>id</td>
+          <td>account</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Rentals Fee’s id.</td>
+          <td>Account’s ID related to the Rentals Fee</td>
+        </tr>
+        <tr>
+          <td>fee</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Fee’s ID related to the Rentals Fee</td>
+        </tr>
+        <tr>
+          <td>rental</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s ID related to the Rentals Fee</td>
+        </tr>
+        <tr>
+          <td>seasons</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Seasons’ IDs related to the Rentals Fee</td>
         </tr>
       </tbody>
       <tbody>
         <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rentals Fee’s ID.</td>
+        </tr>
+        <tr>
           <td>always_applied</td>
           <td>Boolean</td>
           <td>Read</td>
-          <td>Available to all seasons and periods if set to true.</td>
+          <td>Rentals Fee will always be applicable if set to true (if set to false, the applicability periods are defined via <code>seasons</code> or <code>start_date</code>/<code>end_date</code>)</td>
         </tr>
         <tr>
           <td>maximum_bookable</td>
@@ -235,13 +264,13 @@
           <td>start_date</td>
           <td><a href="/reference/enums#formats">Date</a></td>
           <td>Read</td>
-          <td>Rentals Fee’s start date.</td>
+          <td>Rentals Fee’s start date (applicable only if <code>always_applied</code> is false and <code>seasons</code> are empty).</td>
         </tr>
         <tr>
           <td>end_date</td>
           <td><a href="/reference/enums#formats">Date</a></td>
           <td>Read</td>
-          <td>Rentals Fee’s end date.</td>
+          <td>Rentals Fee’s end date (applicable only if <code>always_applied</code> is false and <code>seasons</code> are empty).</td>
         </tr>
       </tbody>
     </table>
@@ -254,76 +283,119 @@
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
+          <th>Constraints</th>
         </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Rentals Fee</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>fee</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Fee’s ID related to the Rentals Fee</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>rental</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s ID related to the Rentals Fee</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>seasons</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Seasons’ IDs related to the Rentals Fee</td>
+          <td> </td>
+        </tr>
+      </tbody>
       <tbody>
         <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Rentals Fee’s id.</td>
+          <td>Rentals Fee’s ID.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>fee_id</td>
           <td>Integer</td>
           <td>Write</td>
-          <td>Fee id related to the Rentals Fee.</td>
+          <td>Fee’s ID related to the Rentals Fee.</td>
+          <td><strong>Required</strong></td>
         </tr>
         <tr>
           <td>season_ids</td>
           <td>Array</td>
           <td>Write</td>
-          <td>Season ids related to the Rentals Fee.</td>
+          <td>Seasons’ IDs related to the Rentals Fee.</td>
+          <td>Use only one of these: <code>season_ids</code>, <code>always_applied</code>, <code>start_date</code>/<code>end_date</code>
+</td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>always_applied</td>
           <td>Boolean</td>
           <td>Read/Write</td>
-          <td>Available to all seasons and periods if set to true.</td>
+          <td>Rentals Fee will always be applicable if set to true</td>
+          <td>Use only one of these: <code>season_ids</code>, <code>always_applied</code>, <code>start_date</code>/<code>end_date</code>
+</td>
         </tr>
         <tr>
           <td>maximum_bookable</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>Rentals Fee’s maximum booked count.</td>
+          <td>Must be greater than 0 if present</td>
         </tr>
         <tr>
           <td>name</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read</td>
           <td>Rentals Fee’s name, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>public</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Publicly bookable by client if set to true.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>rate</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Rentals Fee’s rate.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>rate_kind</td>
           <td>String</td>
           <td>Read</td>
           <td>Rentals Fee’s rate kind, list of fee’s rate kinds described in <a href="/reference/enums#fee-rate-kinds">enums section</a>.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>required</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Always included for new bookings, also public if set to true.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>status</td>
           <td>Boolean</td>
           <td>Write</td>
           <td>Possible values are <code>public</code>, <code>required</code> or <code>private</code>.</td>
+          <td>Must be <code>public</code>, <code>required</code> or <code>private</code>
+</td>
         </tr>
       </tbody>
       <tbody>
@@ -332,30 +404,37 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rentals Fee’s archive time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rentals Fee’s create time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rentals Fee’s update time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>start_date</td>
           <td><a href="/reference/enums#formats">Date</a></td>
           <td>Read/Write</td>
           <td>Rentals Fee’s start date.</td>
+          <td>Use only one of these: <code>season_ids</code>, <code>always_applied</code>, <code>start_date</code>/<code>end_date</code>, <strong>required</strong> is <code>end_date</code> is present, must be before <code>end_date</code>
+</td>
         </tr>
         <tr>
           <td>end_date</td>
           <td><a href="/reference/enums#formats">Date</a></td>
           <td>Read/Write</td>
           <td>Rentals Fee’s end date.</td>
+          <td>Use only one of these: <code>season_ids</code>, <code>always_applied</code>, <code>start_date</code>/<code>end_date</code>, <strong>required</strong> is <code>start_date</code> is present, must be after <code>start_date</code>
+</td>
         </tr>
       </tbody>
     </table>
@@ -373,7 +452,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#ef97a41f75f1public" role="tab" data-toggle="pill">
+        <a href="#4e5ee3792429public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -385,7 +464,7 @@
   
   
     
-      <div class="tab-pane active" id="ef97a41f75f1public">
+      <div class="tab-pane active" id="4e5ee3792429public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_fees.fee"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/fees/{rentals_fees.fee}"</span><span class="p">,</span>
@@ -435,7 +514,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#efdbd0551ef9public" role="tab" data-toggle="pill">
+        <a href="#aa493baefecdpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -447,7 +526,7 @@
   
   
     
-      <div class="tab-pane active" id="efdbd0551ef9public">
+      <div class="tab-pane active" id="aa493baefecdpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_fees.fee"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/fees/{rentals_fees.fee}"</span><span class="p">,</span>
@@ -497,7 +576,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#e26479a76169rentals_write" role="tab" data-toggle="pill">
+        <a href="#dd63edff2884rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -521,7 +600,7 @@
   
   
     
-      <div class="tab-pane active" id="e26479a76169rentals_write">
+      <div class="tab-pane active" id="dd63edff2884rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_fees.fee"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/fees/{rentals_fees.fee}"</span><span class="p">,</span>
@@ -571,7 +650,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#a2543873d952rentals_write" role="tab" data-toggle="pill">
+        <a href="#dc2b3169f76arentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -594,7 +673,7 @@
   
   
     
-      <div class="tab-pane active" id="a2543873d952rentals_write">
+      <div class="tab-pane active" id="dc2b3169f76arentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_fees.fee"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/fees/{rentals_fees.fee}"</span><span class="p">,</span>

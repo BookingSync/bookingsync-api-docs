@@ -136,6 +136,7 @@
           <h2 id="payments">Payments</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-payments">List payments</a></li>
   <li><a href="#search-payments">Search payments</a></li>
   <li><a href="#get-a-single-payment">Get a single payment</a></li>
@@ -143,6 +144,14 @@
   <li><a href="#update-a-payment">Update a payment</a></li>
   <li><a href="#cancel-a-payment">Cancel a payment</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents the Payments for <a href="/reference/endpoints/bookings/">Bookings</a>, which can be either recorded manually (via API or manually) or be automated (with <code>instant-booking</code> and <code>bookingsync</code> kind).</p>
+
+<p>Payments can also drive the lifecycle of the <a href="/reference/endpoints/bookings/">Bookings</a> - creating a <code>paid</code> Payment (the ons that have <code>paid_at</code> timestamp assigned) with <code>instant-booking</code> kind ensures that the Booking is <code>booked</code> (especially useful for confirming tentative Bookings).</p>
+
+<p>If you are interested in implementing your own payment flow, check out this <a href="/guides/secure-payments-by-bookingsync/#instant-booking-flow">guide</a>.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -160,132 +169,235 @@
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
+          <th>Constraints</th>
         </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Payment</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>payment_gateway</td>
+          <td>Integer</td>
+          <td>Read (requires <code>preferences_payments_read</code> scope)</td>
+          <td>Payment Gateway’s ID related to the Payment</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>bookings</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Bookings’ IDs related to the Payment</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>bookings_payments</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Booking Payments’ IDs related to the Payment</td>
+          <td> </td>
+        </tr>
+      </tbody>
       <tbody>
         <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Payment’s id.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>order_id</td>
           <td>String</td>
           <td>Read</td>
-          <td>Id of order (only for instant bookings managed by Bookingsync)</td>
+          <td>ID of order (only for internal Payments managed by BookingSync)</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>gateway_id</td>
+          <td>Integer</td>
+          <td>Write</td>
+          <td>ID of the Payment Gateway of Paypal Express Gateway</td>
+          <td>
+<strong>Required</strong> for <code>instant-booking</code> or <code>bookingsync</code> kind</td>
+        </tr>
+        <tr>
+          <td>gateway_type</td>
+          <td>String</td>
+          <td>Write</td>
+          <td>Type of the entity representing the gateway (this is a polymorphic relationship)</td>
+          <td>
+<code>PaymentGateway</code> or <code>PaypalExpressGateway</code>, <strong>Required</strong> for <code>instant-booking</code> or <code>bookingsync</code> kind</td>
+        </tr>
+        <tr>
+          <td>gateway_name</td>
+          <td>String</td>
+          <td>Write</td>
+          <td>Payment Gateway’s name, available values are described in <a href="/reference/enums#payment-gateway-names">enums section</a>
+</td>
+          <td>
+<strong>Required</strong> for <code>instant-booking</code> or <code>bookingsync</code> kind</td>
         </tr>
         <tr>
           <td>transaction_id</td>
           <td>String</td>
           <td>Read/Write</td>
-          <td>Id of paypal transaction.</td>
+          <td>ID of transaction coming from the Payment Gateway.</td>
+          <td> </td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>address1</td>
           <td>String</td>
           <td>Read/Write</td>
-          <td>Payer’s first address. (100 characters max)</td>
+          <td>Payer’s first address.</td>
+          <td>Maximum length: 100</td>
         </tr>
         <tr>
           <td>address2</td>
           <td>String</td>
           <td>Read/Write</td>
-          <td>Payer’s second address. (100 characters max)</td>
+          <td>Payer’s second address.</td>
+          <td>Maximum length: 100</td>
         </tr>
         <tr>
           <td>amount_in_cents</td>
           <td>Integer</td>
           <td>Read/Write</td>
-          <td>
-<strong>Required</strong>. Payment’s value.</td>
+          <td>Payment’s amount in cents.</td>
+          <td><strong>Required</strong></td>
         </tr>
         <tr>
           <td>card</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payment’s card number, only the last 4 digits are visible. (example: <code>"XXXX-XXXX-XXXX-1234"</code>).</td>
+          <td> </td>
         </tr>
         <tr>
           <td>city</td>
           <td>String</td>
           <td>Read/Write</td>
-          <td>Payer’s city. (100 characters max)</td>
+          <td>Payer’s city.</td>
+          <td>Maximum length: 100</td>
         </tr>
         <tr>
           <td>country_code</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+          <td>Must be one of the country codes if present</td>
         </tr>
         <tr>
           <td>currency</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payment’s currency code, list of codes described in <a href="/reference/enums/#currencies">enums section</a>.</td>
+          <td>
+<strong>Required</strong>, must be one of the currencies</td>
         </tr>
         <tr>
           <td>description</td>
           <td>String</td>
-          <td>Read.</td>
-          <td>Combined descriptions of all booking payments (if managed by Bookingsync).</td>
+          <td>Read</td>
+          <td>Auto-generated description based on Rental’s <code>name</code> and related Booking’s <code>start_at</code>/<code>end_at</code> timestamps</td>
+          <td> </td>
         </tr>
         <tr>
           <td>kind</td>
           <td>String</td>
           <td>Read/Write</td>
+          <td>Payment’s kind, list of kinds described in <a href="/reference/enums/#payment-kinds">enums section</a>.</td>
           <td>
-<strong>Required</strong>. Payment’s kind, list of kinds described in <a href="/reference/enums/#payment-kinds">enums section</a>.</td>
+<strong>Required</strong>, must be one of the payment kin</td>
         </tr>
         <tr>
           <td>email</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s email.</td>
+          <td>Must be of email format if present</td>
         </tr>
         <tr>
           <td>fullname</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s fullname.</td>
+          <td>Cannot contain non-printing characters</td>
         </tr>
         <tr>
           <td>ip</td>
           <td>String</td>
           <td>Read</td>
           <td>Payer’s ip.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>locale</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s preferred locale, list of locales described in <a href="/reference/enums/#locales">enums section</a>.</td>
+          <td>Must be of on the Account’s available locales if present</td>
         </tr>
         <tr>
           <td>notes</td>
           <td>Text</td>
           <td>Read/Write</td>
           <td>Payment’s additional information.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>state</td>
           <td>String</td>
           <td>Read/Write</td>
-          <td>Payer’s state. (100 characters max, required if country_code set to <code>US</code>)</td>
+          <td>Payer’s state.</td>
+          <td>Maximum length: 100, required if country_code set to <code>US</code>
+</td>
         </tr>
         <tr>
           <td>test</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Payment’s test status.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>zip</td>
           <td>String</td>
           <td>Read/Write</td>
-          <td>Payer’s zip code. (10 characters max)</td>
+          <td>Payer’s zip code.</td>
+          <td>Maximum length: 10</td>
+        </tr>
+        <tr>
+          <td>credit_card_token</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Token derived from the Credit Card</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>offsite_payment</td>
+          <td>Boolean</td>
+          <td>Read/Write</td>
+          <td>Whether Payment is an offsite one or not</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>locked</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Payment’s locked status.</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>chargeable</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Whether Payment is chargeable or not (e.g. if the related Booking is canceled or fully paid, it’s going to return <code>false</code>)</td>
+          <td> </td>
         </tr>
       </tbody>
       <tbody>
@@ -294,42 +406,71 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s create time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s update time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>rejected_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s reject time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>canceled_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s cancel time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>paid_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read/Write</td>
-          <td>Payment’s issue time.</td>
+          <td>Payment’s paid time.</td>
+          <td>
+<strong>Required</strong> unless <code>kind</code> is <code>bookingsync</code> or <code>instant-booking</code>, must be in the past</td>
         </tr>
         <tr>
           <td>forget_me_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Refer to <a href="/guides/gdpr">GDPR guide</a>.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>processing_restricted_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Refer to <a href="/guides/gdpr">GDPR guide</a>.</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>capturable_from</td>
+          <td><a href="/reference/enums#formats">Date</a></td>
+          <td>Read/Write</td>
+          <td>A date from which Payment is capturable</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>authorized_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read/Write</td>
+          <td>Payment’s authorization time</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>escrow_date</td>
+          <td><a href="/reference/enums#formats">Date</a></td>
+          <td>Read</td>
+          <td>Payment’s escrow date (applicable for BookingPay Payment Gateway)</td>
+          <td> </td>
         </tr>
       </tbody>
     </table>
@@ -346,6 +487,32 @@
       </thead>
       <tbody>
         <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Payment</td>
+        </tr>
+        <tr>
+          <td>payment_gateway</td>
+          <td>Integer</td>
+          <td>Read (requires <code>preferences_payments_read</code> scope)</td>
+          <td>Payment Gateway’s ID related to the Payment</td>
+        </tr>
+        <tr>
+          <td>bookings</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Bookings’ IDs related to the Payment</td>
+        </tr>
+        <tr>
+          <td>bookings_payments</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Booking Payments’ IDs related to the Payment</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
@@ -355,7 +522,7 @@
           <td>order_id</td>
           <td>String</td>
           <td>Read</td>
-          <td>Id of order (only for instant bookings managed by Bookingsync)</td>
+          <td>Id of order (only for instant bookings managed by BookingSync)</td>
         </tr>
         <tr>
           <td>transaction_id</td>
@@ -363,8 +530,6 @@
           <td>Read</td>
           <td>Id of paypal transaction.</td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>address1</td>
           <td>String</td>
@@ -410,8 +575,8 @@
         <tr>
           <td>description</td>
           <td>String</td>
-          <td>Read.</td>
-          <td>Combined descriptions of all booking payments (if managed by Bookingsync).</td>
+          <td>Read</td>
+          <td>Auto-generated description based on Rental’s <code>name</code> and related Booking’s <code>start_at</code>/<code>end_at</code> timestamps.</td>
         </tr>
         <tr>
           <td>kind</td>
@@ -467,6 +632,30 @@
           <td>Read</td>
           <td>Payer’s zip code.</td>
         </tr>
+        <tr>
+          <td>credit_card_token</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Token derived from the Credit Card</td>
+        </tr>
+        <tr>
+          <td>offsite_payment</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Whether Payment is an offsite one or not</td>
+        </tr>
+        <tr>
+          <td>locked</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Payment’s locked status.</td>
+        </tr>
+        <tr>
+          <td>chargeable</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Whether Payment is chargeable or not (e.g. if the related Booking is canceled or fully paid, it’s going to return <code>false</code>)</td>
+        </tr>
       </tbody>
       <tbody>
         <tr>
@@ -497,7 +686,7 @@
           <td>paid_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Payment’s issue time.</td>
+          <td>Payment’s paid time.</td>
         </tr>
         <tr>
           <td>forget_me_at</td>
@@ -510,6 +699,24 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Refer to <a href="/guides/gdpr">GDPR guide</a>.</td>
+        </tr>
+        <tr>
+          <td>capturable_from</td>
+          <td><a href="/reference/enums#formats">Date</a></td>
+          <td>Read</td>
+          <td>A date from which Payment is capturable</td>
+        </tr>
+        <tr>
+          <td>authorized_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Payment’s authorization time</td>
+        </tr>
+        <tr>
+          <td>escrow_date</td>
+          <td><a href="/reference/enums#formats">Date</a></td>
+          <td>Read</td>
+          <td>Payment’s escrow date (applicable for BookingPay Payment Gateway)</td>
         </tr>
       </tbody>
     </table>
@@ -522,132 +729,235 @@
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
+          <th>Constraints</th>
         </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Payment</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>payment_gateway</td>
+          <td>Integer</td>
+          <td>Read (requires <code>preferences_payments_read</code> scope)</td>
+          <td>Payment Gateway’s ID related to the Payment</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>bookings</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Bookings’ IDs related to the Payment</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>bookings_payments</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Booking Payments’ IDs related to the Payment</td>
+          <td> </td>
+        </tr>
+      </tbody>
       <tbody>
         <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Payment’s id.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>order_id</td>
           <td>String</td>
           <td>Read</td>
-          <td>Id of order (only for instant bookings managed by Bookingsync)</td>
+          <td>ID of order (only for internal Payments managed by BookingSync)</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>gateway_id</td>
+          <td>Integer</td>
+          <td>Write</td>
+          <td>ID of the Payment Gateway of Paypal Express Gateway</td>
+          <td>
+<strong>Required</strong> for <code>instant-booking</code> or <code>bookingsync</code> kind</td>
+        </tr>
+        <tr>
+          <td>gateway_type</td>
+          <td>String</td>
+          <td>Write</td>
+          <td>Type of the entity representing the gateway (this is a polymorphic relationship)</td>
+          <td>
+<code>PaymentGateway</code> or <code>PaypalExpressGateway</code>, <strong>Required</strong> for <code>instant-booking</code> or <code>bookingsync</code> kind</td>
+        </tr>
+        <tr>
+          <td>gateway_name</td>
+          <td>String</td>
+          <td>Write</td>
+          <td>Payment Gateway’s name, available values are described in <a href="/reference/enums#payment-gateway-names">enums section</a>
+</td>
+          <td>
+<strong>Required</strong> for <code>instant-booking</code> or <code>bookingsync</code> kind</td>
         </tr>
         <tr>
           <td>transaction_id</td>
           <td>String</td>
           <td>Read/Write</td>
-          <td>Id of paypal transaction.</td>
+          <td>ID of transaction coming from the Payment Gateway.</td>
+          <td> </td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>address1</td>
           <td>String</td>
           <td>Read/Write</td>
-          <td>Payer’s first address. (100 characters max)</td>
+          <td>Payer’s first address.</td>
+          <td>Maximum length: 100</td>
         </tr>
         <tr>
           <td>address2</td>
           <td>String</td>
           <td>Read/Write</td>
-          <td>Payer’s second address. (100 characters max)</td>
+          <td>Payer’s second address.</td>
+          <td>Maximum length: 100</td>
         </tr>
         <tr>
           <td>amount_in_cents</td>
           <td>Integer</td>
           <td>Read/Write</td>
-          <td>
-<strong>Required</strong>. Payment’s value.</td>
+          <td>Payment’s amount in cents.</td>
+          <td><strong>Required</strong></td>
         </tr>
         <tr>
           <td>card</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payment’s card number, only the last 4 digits are visible. (example: <code>"XXXX-XXXX-XXXX-1234"</code>).</td>
+          <td> </td>
         </tr>
         <tr>
           <td>city</td>
           <td>String</td>
           <td>Read/Write</td>
-          <td>Payer’s city. (100 characters max)</td>
+          <td>Payer’s city.</td>
+          <td>Maximum length: 100</td>
         </tr>
         <tr>
           <td>country_code</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+          <td>Must be one of the country codes if present</td>
         </tr>
         <tr>
           <td>currency</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payment’s currency code, list of codes described in <a href="/reference/enums/#currencies">enums section</a>.</td>
+          <td>
+<strong>Required</strong>, must be one of the currencies</td>
         </tr>
         <tr>
           <td>description</td>
           <td>String</td>
-          <td>Read.</td>
-          <td>Combined descriptions of all booking payments (if managed by Bookingsync).</td>
+          <td>Read</td>
+          <td>Auto-generated description based on Rental’s <code>name</code> and related Booking’s <code>start_at</code>/<code>end_at</code> timestamps.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>kind</td>
           <td>String</td>
           <td>Read/Write</td>
+          <td>Payment’s kind, list of kinds described in <a href="/reference/enums/#payment-kinds">enums section</a>.</td>
           <td>
-<strong>Required</strong>. Payment’s kind, list of kinds described in <a href="/reference/enums/#payment-kinds">enums section</a>.</td>
+<strong>Required</strong>, must be one of the payment kin</td>
         </tr>
         <tr>
           <td>email</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s email.</td>
+          <td>Must be of email format if present</td>
         </tr>
         <tr>
           <td>fullname</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s fullname.</td>
+          <td>Cannot contain non-printing characters</td>
         </tr>
         <tr>
           <td>ip</td>
           <td>String</td>
           <td>Read</td>
           <td>Payer’s ip.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>locale</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Payer’s preferred locale, list of locales described in <a href="/reference/enums/#locales">enums section</a>.</td>
+          <td>Must be of on the Account’s available locales if present</td>
         </tr>
         <tr>
           <td>notes</td>
           <td>Text</td>
           <td>Read/Write</td>
           <td>Payment’s additional information.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>state</td>
           <td>String</td>
           <td>Read/Write</td>
-          <td>Payer’s state. (100 characters max, required if country_code set to <code>US</code>)</td>
+          <td>Payer’s state.</td>
+          <td>Maximum length: 100, required if country_code set to <code>US</code>
+</td>
         </tr>
         <tr>
           <td>test</td>
           <td>Boolean</td>
           <td>Read</td>
           <td>Payment’s test status.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>zip</td>
           <td>String</td>
           <td>Read/Write</td>
-          <td>Payer’s zip code. (10 characters max)</td>
+          <td>Payer’s zip code.</td>
+          <td>Maximum length: 10</td>
+        </tr>
+        <tr>
+          <td>credit_card_token</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Token derived from the Credit Card</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>offsite_payment</td>
+          <td>Boolean</td>
+          <td>Read/Write</td>
+          <td>Whether Payment is an offsite one or not</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>locked</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Payment’s locked status.</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>chargeable</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Whether Payment is chargeable or not (e.g. if the related Booking is canceled or fully paid, it’s going to return <code>false</code>)</td>
+          <td> </td>
         </tr>
       </tbody>
       <tbody>
@@ -656,42 +966,71 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s create time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s update time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>rejected_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s reject time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>canceled_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Payment’s cancel time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>paid_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read/Write</td>
-          <td>Payment’s issue time.</td>
+          <td>Payment’s paid time.</td>
+          <td>
+<strong>Required</strong> unless <code>kind</code> is <code>bookingsync</code> or <code>instant-booking</code>, must be in the past</td>
         </tr>
         <tr>
           <td>forget_me_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Refer to <a href="/guides/gdpr">GDPR guide</a>.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>processing_restricted_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Refer to <a href="/guides/gdpr">GDPR guide</a>.</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>capturable_from</td>
+          <td><a href="/reference/enums#formats">Date</a></td>
+          <td>Read/Write</td>
+          <td>A date from which Payment is capturable</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>authorized_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read/Write</td>
+          <td>Payment’s authorization time</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>escrow_date</td>
+          <td><a href="/reference/enums#formats">Date</a></td>
+          <td>Read</td>
+          <td>Payment’s escrow date (applicable for BookingPay Payment Gateway)</td>
+          <td> </td>
         </tr>
       </tbody>
     </table>
@@ -709,7 +1048,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#0f7fa98ffd8epayments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
+        <a href="#9774721b141dpayments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
           payments_write_owned / payments_read / payments_write
         </a>
       </li>
@@ -721,7 +1060,7 @@
   
   
     
-      <div class="tab-pane active" id="0f7fa98ffd8epayments_write_owned-payments_read-payments_write">
+      <div class="tab-pane active" id="9774721b141dpayments_write_owned-payments_read-payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -750,12 +1089,12 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"forget_me_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
       <span class="s2">"processing_restricted_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
@@ -813,7 +1152,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#5e3e0751e51apayments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
+        <a href="#05e98ab9d9bcpayments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
           payments_write_owned / payments_read / payments_write
         </a>
       </li>
@@ -825,7 +1164,7 @@
   
   
     
-      <div class="tab-pane active" id="5e3e0751e51apayments_write_owned-payments_read-payments_write">
+      <div class="tab-pane active" id="05e98ab9d9bcpayments_write_owned-payments_read-payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -854,12 +1193,12 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"forget_me_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
       <span class="s2">"processing_restricted_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
@@ -889,7 +1228,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#c52f612bb174payments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
+        <a href="#719be05401a4payments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
           payments_write_owned / payments_write
         </a>
       </li>
@@ -912,7 +1251,7 @@
       <span class="s2">"locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Monatana"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -922,7 +1261,7 @@
   
   
     
-      <div class="tab-pane active" id="c52f612bb174payments_write_owned / payments_write">
+      <div class="tab-pane active" id="719be05401a4payments_write_owned / payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -951,12 +1290,12 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"forget_me_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
       <span class="s2">"processing_restricted_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
@@ -986,7 +1325,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#260d5ee46ab1payments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
+        <a href="#aa2a57a3940bpayments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
           payments_write_owned / payments_write
         </a>
       </li>
@@ -1009,7 +1348,7 @@
       <span class="s2">"locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Monatana"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -1019,7 +1358,7 @@
   
   
     
-      <div class="tab-pane active" id="260d5ee46ab1payments_write_owned / payments_write">
+      <div class="tab-pane active" id="aa2a57a3940bpayments_write_owned / payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -1048,12 +1387,12 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"forget_me_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
       <span class="s2">"processing_restricted_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>

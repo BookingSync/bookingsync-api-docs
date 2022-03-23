@@ -136,11 +136,16 @@
           <h2 id="clients">Clients</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-clients">List clients</a></li>
   <li><a href="#get-a-single-client">Get a single client</a></li>
   <li><a href="#create-a-new-client">Create a new client</a></li>
   <li><a href="#update-a-client">Update a client</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents the Clients which effectively are the actual travelers (guests) that are related to <a href="/reference/endpoints/bookings/">Bookings</a>. </p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -163,13 +168,20 @@
       <tbody>
         <tr>
           <td> </td>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Client</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td> </td>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Client’s id.</td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td> </td>
           <td>company</td>
@@ -373,15 +385,17 @@
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
+          <th>Constraints</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td> </td>
-          <td>id</td>
+          <td>account</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Client’s id.</td>
+          <td>Account’s ID related to the Client</td>
+          <td> </td>
         </tr>
       </tbody>
       <tbody>
@@ -391,6 +405,7 @@
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s company name.</td>
+          <td> </td>
         </tr>
         <tr>
           <td> </td>
@@ -398,21 +413,27 @@
           <td>String</td>
           <td>Read/Write</td>
           <td>
-<strong>Required</strong>. Client’s fullname. (150 characters max)</td>
+<strong>Required</strong>. Client’s fullname.</td>
+          <td>Maximum length: 150. Use either <code>fullname</code> or <code>firstname</code> and <code>lastname</code>
+</td>
         </tr>
         <tr>
           <td> </td>
           <td>firstname</td>
           <td>String</td>
           <td>Read/Write</td>
-          <td>Client’s first name. (150 characters max)</td>
+          <td>Client’s first name.</td>
+          <td>Maximum length: 150. Use either <code>fullname</code> or <code>firstname</code> and <code>lastname</code>
+</td>
         </tr>
         <tr>
           <td> </td>
           <td>lastname</td>
           <td>String</td>
           <td>Read/Write</td>
-          <td>Client’s last name. (150 characters max)</td>
+          <td>Client’s last name.</td>
+          <td>Maximum length: 150. Use either <code>fullname</code> or <code>firstname</code> and <code>lastname</code>
+</td>
         </tr>
         <tr>
           <td> </td>
@@ -420,6 +441,7 @@
           <td>Text</td>
           <td>Read/Write</td>
           <td>Client’s notes. (5000 characters max)</td>
+          <td>Maximum length: 5000</td>
         </tr>
         <tr>
           <td> </td>
@@ -427,6 +449,7 @@
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s passport id. (50 characters max)</td>
+          <td>Maximum length: 50</td>
         </tr>
         <tr>
           <td> </td>
@@ -434,6 +457,8 @@
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s contact language preference.</td>
+          <td>Must be one of account’s <code>selected_locales</code>
+</td>
         </tr>
         <tr>
           <td> </td>
@@ -441,6 +466,7 @@
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s company vat number.</td>
+          <td> </td>
         </tr>
       </tbody>
       <tbody>
@@ -450,6 +476,7 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Client’s create time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td> </td>
@@ -457,6 +484,7 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Client’s update time.</td>
+          <td> </td>
         </tr>
       </tbody>
       <tbody>
@@ -466,6 +494,7 @@
           <td>Array</td>
           <td>Read/Write</td>
           <td>Array of client’s addresses.</td>
+          <td> </td>
         </tr>
         <tr>
           <td> </td>
@@ -473,6 +502,7 @@
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s first address.</td>
+          <td>Maximum length: 100, cannot contain non-printable characters</td>
         </tr>
         <tr>
           <td> </td>
@@ -480,6 +510,7 @@
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s second address.</td>
+          <td>Maximum length: 100, cannot contain non-printable characters</td>
         </tr>
         <tr>
           <td> </td>
@@ -487,6 +518,7 @@
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s city.</td>
+          <td>Maximum length: 100, required if <code>city</code> is present, cannot contain non-printable characters</td>
         </tr>
         <tr>
           <td> </td>
@@ -494,6 +526,7 @@
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+          <td>Must be a country code enum</td>
         </tr>
         <tr>
           <td> </td>
@@ -501,6 +534,8 @@
           <td>String</td>
           <td>Read/Write</td>
           <td>Address label.</td>
+          <td>
+<strong>Required</strong> (if the element is present in <code>addresses</code> array)</td>
         </tr>
         <tr>
           <td> </td>
@@ -508,6 +543,7 @@
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s state.</td>
+          <td>Maximum length: 100, cannot contain non-printable characters</td>
         </tr>
         <tr>
           <td> </td>
@@ -515,6 +551,7 @@
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s zip.</td>
+          <td>Maximum length: 15, cannot contain non-printable characters</td>
         </tr>
       </tbody>
       <tbody>
@@ -524,6 +561,7 @@
           <td>Array</td>
           <td>Read/Write</td>
           <td>Array of client’s emails.</td>
+          <td> </td>
         </tr>
         <tr>
           <td> </td>
@@ -531,6 +569,8 @@
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s email.</td>
+          <td>
+<strong>Required</strong>, must be in email format (if the element is present in <code>emails</code> array)</td>
         </tr>
         <tr>
           <td> </td>
@@ -538,6 +578,8 @@
           <td>String</td>
           <td>Read/Write</td>
           <td>Email label.</td>
+          <td>
+<strong>Required</strong> (if the element is present in <code>emails</code> array)</td>
         </tr>
       </tbody>
       <tbody>
@@ -547,6 +589,7 @@
           <td>Array</td>
           <td>Read/Write</td>
           <td>Array of client’s phone numbers.</td>
+          <td> </td>
         </tr>
         <tr>
           <td> </td>
@@ -554,6 +597,8 @@
           <td>String</td>
           <td>Read/Write</td>
           <td>Phone label.</td>
+          <td>
+<strong>Required</strong>, must be in email format (if the element is present in <code>phones</code> array)</td>
         </tr>
         <tr>
           <td> </td>
@@ -561,6 +606,8 @@
           <td>String</td>
           <td>Read/Write</td>
           <td>Client’s number.</td>
+          <td>
+<strong>Required</strong>, must be in phone number format (if the element is present in <code>phones</code> array)</td>
         </tr>
       </tbody>
     </table>
@@ -583,7 +630,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#6990c3924c2dclients_read-clients_write" role="tab" data-toggle="pill">
+        <a href="#139a22323131clients_read-clients_write" role="tab" data-toggle="pill">
           clients_read / clients_write
         </a>
       </li>
@@ -595,7 +642,7 @@
   
   
     
-      <div class="tab-pane active" id="6990c3924c2dclients_read-clients_write">
+      <div class="tab-pane active" id="139a22323131clients_read-clients_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -705,7 +752,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#1aa6e4f4a00dclients_read-clients_write" role="tab" data-toggle="pill">
+        <a href="#21b90e57ad36clients_read-clients_write" role="tab" data-toggle="pill">
           clients_read / clients_write
         </a>
       </li>
@@ -717,7 +764,7 @@
   
   
     
-      <div class="tab-pane active" id="1aa6e4f4a00dclients_read-clients_write">
+      <div class="tab-pane active" id="21b90e57ad36clients_read-clients_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -827,7 +874,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#d2f3470c0a76clients_write" role="tab" data-toggle="pill">
+        <a href="#eea4ad9a73e4clients_write" role="tab" data-toggle="pill">
           clients_write
         </a>
       </li>
@@ -929,7 +976,7 @@
   
   
     
-      <div class="tab-pane active" id="d2f3470c0a76clients_write">
+      <div class="tab-pane active" id="eea4ad9a73e4clients_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -1045,7 +1092,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#ce8d3a180a73clients_write" role="tab" data-toggle="pill">
+        <a href="#78c5c6523f60clients_write" role="tab" data-toggle="pill">
           clients_write
         </a>
       </li>
@@ -1147,7 +1194,7 @@
   
   
     
-      <div class="tab-pane active" id="ce8d3a180a73clients_write">
+      <div class="tab-pane active" id="78c5c6523f60clients_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>

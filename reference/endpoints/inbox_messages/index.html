@@ -136,12 +136,17 @@
           <h2 id="inbox-messages">Inbox Messages</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-messages">List Messages</a></li>
   <li><a href="#get-a-single-message">Get a single Message</a></li>
   <li><a href="#create-a-new-message">Create a new Message</a></li>
   <li><a href="#update-a-message">Update a Message</a></li>
   <li><a href="#add-attachment-to-a-message">Add Attachment to a Message</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents Inbox Messages sent in the <a href="/reference/endpoints/inbox_conversations/">Inbox Conversations</a>.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -162,13 +167,49 @@
       </thead>
       <tbody>
         <tr>
-          <td>id</td>
+          <td>attachments</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Attachments IDs related to Message</td>
+        </tr>
+        <tr>
+          <td>conversation</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Message’s id.</td>
+          <td>Conversation’s ID to which Message belongs to</td>
+        </tr>
+        <tr>
+          <td>sender</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Sender’s ID (Inbox Participant) to which Message is related to</td>
+        </tr>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID to which Message is related to</td>
+        </tr>
+        <tr>
+          <td>created_by_id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>ID of the resource that created the Message (User or Application - this is a polymorphic association)</td>
+        </tr>
+        <tr>
+          <td>created_by_type</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Type of the resource that created the Message (User or Application - this is a polymorphic association)</td>
         </tr>
       </tbody>
       <tbody>
+        <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Message’s ID.</td>
+        </tr>
         <tr>
           <td>channel</td>
           <td>String</td>
@@ -227,47 +268,96 @@
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
+          <th>Constraints</th>
         </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td>attachments</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Attachments IDs related to Message</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>conversation</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Conversation’s ID to which Message belongs to</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>sender</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Sender’s ID (Inbox Participant) to which Message is related to</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID (Inbox Participant) to which Message is related to</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>created_by_id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>ID of the resource that created the Message (User or Application - this is a polymorphic association)</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>created_by_type</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Type of the resource that created the Message (User or Application - this is a polymorphic association)</td>
+          <td> </td>
+        </tr>
+      </tbody>
       <tbody>
         <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Message’s id.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>conversation_id</td>
           <td>String</td>
           <td>Write</td>
-          <td>Message’s conversation id.</td>
+          <td>Message’s Conversation ID.</td>
+          <td><strong>Required</strong></td>
         </tr>
         <tr>
           <td>sender_id</td>
           <td>String</td>
           <td>Write</td>
-          <td>Message’s sender id.</td>
+          <td>Message’s Sender ID (Inbox Participant).</td>
+          <td><strong>Required</strong></td>
         </tr>
         <tr>
           <td>attachment_ids</td>
           <td>Array</td>
           <td>Write</td>
-          <td>Message’s attachments ids.</td>
+          <td>Message’s Attachments IDs.</td>
+          <td> </td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>channel</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Message’s channel, list of Channels described in <a href="/reference/enums#inbox-message-channels">enums section</a>
 </td>
+          <td>Must be one of Channels if present</td>
         </tr>
         <tr>
           <td>content</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Message’s content.</td>
+          <td><strong>Required</strong></td>
         </tr>
         <tr>
           <td>origin</td>
@@ -275,6 +365,8 @@
           <td>Read/Write</td>
           <td>Message’s origin, list of Origins described in <a href="/reference/enums#inbox-message-origins">enums section</a>
 </td>
+          <td>
+<strong>Required</strong>, Must be one of Origins</td>
         </tr>
         <tr>
           <td>visibility</td>
@@ -282,6 +374,8 @@
           <td>Read/Write</td>
           <td>Message’s visibility, list of Visibilities described in <a href="/reference/enums#inbox-message-visibilities">enums section</a>
 </td>
+          <td>
+<strong>Required</strong>, Must be one of Visibilities, <code>internal</code> cannot be used for Client Participants or when <code>channel</code> is present</td>
         </tr>
       </tbody>
       <tbody>
@@ -290,18 +384,21 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Message’s create time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Message’s update time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>sent_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read/Write</td>
           <td>Time when Message was sent at.</td>
+          <td><strong>Required</strong></td>
         </tr>
       </tbody>
     </table>
@@ -317,7 +414,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#9507dd1214b5inbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#92cf13cb28feinbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -329,7 +426,7 @@
   
   
     
-      <div class="tab-pane active" id="9507dd1214b5inbox_read-inbox_write">
+      <div class="tab-pane active" id="92cf13cb28feinbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"messages.attachments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}"</span><span class="p">,</span>
@@ -374,7 +471,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#bc11e795e13einbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#183b473ca77cinbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -386,7 +483,7 @@
   
   
     
-      <div class="tab-pane active" id="bc11e795e13einbox_read-inbox_write">
+      <div class="tab-pane active" id="183b473ca77cinbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"messages.attachments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}"</span><span class="p">,</span>
@@ -431,7 +528,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#afab05313412inbox_write" role="tab" data-toggle="pill">
+        <a href="#b20784bd8574inbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -463,7 +560,7 @@
   
   
     
-      <div class="tab-pane active" id="afab05313412inbox_write">
+      <div class="tab-pane active" id="b20784bd8574inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"messages.attachments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}"</span><span class="p">,</span>
@@ -508,7 +605,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#518fc3435068inbox_write" role="tab" data-toggle="pill">
+        <a href="#dfc8a683dc80inbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -536,7 +633,7 @@
   
   
     
-      <div class="tab-pane active" id="518fc3435068inbox_write">
+      <div class="tab-pane active" id="dfc8a683dc80inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"messages.attachments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}"</span><span class="p">,</span>
@@ -581,7 +678,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#34b18995dd92inbox_write" role="tab" data-toggle="pill">
+        <a href="#1eea67eef2cbinbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -602,7 +699,7 @@
   
   
     
-      <div class="tab-pane active" id="34b18995dd92inbox_write">
+      <div class="tab-pane active" id="1eea67eef2cbinbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"messages.attachments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}"</span><span class="p">,</span>

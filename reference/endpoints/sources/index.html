@@ -136,11 +136,16 @@
           <h2 id="sources">Sources</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-sources">List sources</a></li>
   <li><a href="#get-a-single-source">Get a single source</a></li>
   <li><a href="#create-a-new-source">Create a new source</a></li>
   <li><a href="#update-a-source">Update a source</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents Sources which usually represent Channels from which <a href="/reference/endpoints/Bookings/">Bookings</a> originate from.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -161,13 +166,19 @@
       </thead>
       <tbody>
         <tr>
-          <td>id</td>
+          <td>account</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Source’s id.</td>
+          <td>Account’s ID related to the Source</td>
         </tr>
       </tbody>
       <tbody>
+        <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Source’s ID.</td>
+        </tr>
         <tr>
           <td>name</td>
           <td>String</td>
@@ -184,7 +195,7 @@
           <td>internal</td>
           <td>Boolean</td>
           <td>Read</td>
-          <td>Source’s internal status. When <code>true</code>, it is restricted for internal-only use (should not be used by the partner for anything else than read). Every attempt to associate any record with such a source will result in 422 error.</td>
+          <td>Source’s internal status. When <code>true</code>, it is restricted for internal-only use (should not be used by the Partners for anything else than read). Every attempt to associate any record with such a source will result in 422 error.</td>
         </tr>
       </tbody>
       <tbody>
@@ -211,35 +222,47 @@
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
+          <th>Constraints</th>
         </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Source</td>
+          <td> </td>
+        </tr>
+      </tbody>
       <tbody>
         <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Source’s id.</td>
+          <td>Source’s ID.</td>
+          <td> </td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>name</td>
           <td>String</td>
           <td>Read/Write</td>
+          <td>Source’s name.</td>
           <td>
-<strong>Required</strong>. Source’s name. (50 characters max)</td>
+<strong>Required</strong>, maximum length: 50, must not contain non-printing characters</td>
         </tr>
         <tr>
           <td>position</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>Source’s position on the list.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>internal</td>
           <td>Boolean</td>
           <td>Read</td>
-          <td>Source’s internal status. When <code>true</code>, it is restricted for internal-only use (should not be used by the partner for anything else than read). Every attempt to associate any record with such a source will result in 422 error.</td>
+          <td>Source’s internal status. When <code>true</code>, it is restricted for internal-only use (should not be used by the Partners for anything else than read). Every attempt to associate any record with such a source will result in 422 error.</td>
+          <td> </td>
         </tr>
       </tbody>
       <tbody>
@@ -248,12 +271,14 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Source’s create time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Source’s update time.</td>
+          <td> </td>
         </tr>
       </tbody>
     </table>
@@ -271,7 +296,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#f18b0d7ab560bookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#7709fecc0107bookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_read / bookings_write / bookings_write_owned
         </a>
       </li>
@@ -283,7 +308,7 @@
   
   
     
-      <div class="tab-pane active" id="f18b0d7ab560bookings_read-bookings_write-bookings_write_owned">
+      <div class="tab-pane active" id="7709fecc0107bookings_read-bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"sources.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{sources.account}"</span><span class="p">,</span>
@@ -295,8 +320,8 @@
       <span class="s2">"internal"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Airbnb"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -323,7 +348,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#5e61a786ec7abookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#3f2f7615cab3bookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_read / bookings_write / bookings_write_owned
         </a>
       </li>
@@ -335,7 +360,7 @@
   
   
     
-      <div class="tab-pane active" id="5e61a786ec7abookings_read-bookings_write-bookings_write_owned">
+      <div class="tab-pane active" id="3f2f7615cab3bookings_read-bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"sources.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{sources.account}"</span><span class="p">,</span>
@@ -347,8 +372,8 @@
       <span class="s2">"internal"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Airbnb"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -375,13 +400,13 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#594ee6578715bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#7e7ef027ee85bookings_write_owned" role="tab" data-toggle="pill">
           bookings_write_owned
         </a>
       </li>
     
       <li>
-        <a href="#0f91e5ed83a5bookings_write" role="tab" data-toggle="pill">
+        <a href="#9fa062dabbdebookings_write" role="tab" data-toggle="pill">
           bookings_write
         </a>
       </li>
@@ -403,7 +428,7 @@
   
   
     
-      <div class="tab-pane active" id="594ee6578715bookings_write_owned">
+      <div class="tab-pane active" id="7e7ef027ee85bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"sources.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{sources.account}"</span><span class="p">,</span>
@@ -415,8 +440,8 @@
       <span class="s2">"internal"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Airbnb"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -429,7 +454,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="0f91e5ed83a5bookings_write">
+      <div class="tab-pane " id="9fa062dabbdebookings_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"sources.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{sources.account}"</span><span class="p">,</span>
@@ -441,8 +466,8 @@
       <span class="s2">"internal"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Airbnb"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -469,13 +494,13 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#2fdf1acea9febookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#9f80cef34ee7bookings_write_owned" role="tab" data-toggle="pill">
           bookings_write_owned
         </a>
       </li>
     
       <li>
-        <a href="#337ef6a104a8bookings_write" role="tab" data-toggle="pill">
+        <a href="#c4374577dae2bookings_write" role="tab" data-toggle="pill">
           bookings_write
         </a>
       </li>
@@ -497,7 +522,7 @@
   
   
     
-      <div class="tab-pane active" id="2fdf1acea9febookings_write_owned">
+      <div class="tab-pane active" id="9f80cef34ee7bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"sources.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{sources.account}"</span><span class="p">,</span>
@@ -509,8 +534,8 @@
       <span class="s2">"internal"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Airbnb"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -523,7 +548,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="337ef6a104a8bookings_write">
+      <div class="tab-pane " id="c4374577dae2bookings_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"sources.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{sources.account}"</span><span class="p">,</span>
@@ -535,8 +560,8 @@
       <span class="s2">"internal"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Airbnb"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>

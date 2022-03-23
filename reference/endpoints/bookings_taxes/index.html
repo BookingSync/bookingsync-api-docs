@@ -139,6 +139,9 @@
   <li><a href="#list-bookings-taxes">List bookings taxes</a></li>
   <li><a href="#get-a-single-bookings-tax">Get a single bookings tax</a></li>
 </ol>
+<p>## Overview</p>
+
+<p>This resource represents the Booking’s Taxes which contribute to Booking’s final price. Each Booking can have multiple taxes, that can be either included in the price of the taxable item or not. For example, if Rental’s initial price is 1000 and there is an included BookingsTax for that Rental with amount of 100, the overall contribution to the Booking’s final_price is still 1000, because the tax is already included in that amount. However, if the tax was not included in the price, the overall contribution would be 1000 + 100 = 1100.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -158,13 +161,43 @@
       </thead>
       <tbody>
         <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Bookings Tax</td>
+        </tr>
+        <tr>
+          <td>booking</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Booking’s ID related to the Bookings Tax.</td>
+        </tr>
+        <tr>
+          <td>tax</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Tax’s ID related to the Bookings Tax.</td>
+        </tr>
+        <tr>
+          <td>taxable_id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Taxable’s ID related to the Bookings Tax.  (Rental’s, Fee’s, or Bookings Fee’s - this is a polymorphic association)</td>
+        </tr>
+        <tr>
+          <td>taxable_type</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Taxable’s type related to the Bookings Tax. (Rental Fee, or Bookings Fee - this is a polymorphic association)</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Bookings Tax’s id.</td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>amount</td>
           <td><a href="/reference/enums#formats">Decimal</a></td>
@@ -187,7 +220,21 @@
           <td>tax_included_in_price</td>
           <td>Boolean</td>
           <td>Read</td>
-          <td>Tax amount already included in taxable(Rental or Bookings Fee) final price if set to true.</td>
+          <td>Tax amount already included in taxable’s price if set to true.</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Bookings Tax’s create time.</td>
+        </tr>
+        <tr>
+          <td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Bookings Tax’s update time.</td>
         </tr>
       </tbody>
     </table>
@@ -231,7 +278,7 @@ certain range.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#971a79de51bbbookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#eaa90a412119bookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_read / bookings_write / bookings_write_owned
         </a>
       </li>
@@ -243,7 +290,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="971a79de51bbbookings_read-bookings_write-bookings_write_owned">
+      <div class="tab-pane active" id="eaa90a412119bookings_read-bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_taxes.booking"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/bookings/{bookings_taxes.booking}"</span><span class="p">,</span>
@@ -290,7 +337,7 @@ certain range.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#aa8d076f949cbookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#71a7c2a73079bookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_read / bookings_write / bookings_write_owned
         </a>
       </li>
@@ -302,7 +349,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="aa8d076f949cbookings_read-bookings_write-bookings_write_owned">
+      <div class="tab-pane active" id="71a7c2a73079bookings_read-bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_taxes.booking"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/bookings/{bookings_taxes.booking}"</span><span class="p">,</span>

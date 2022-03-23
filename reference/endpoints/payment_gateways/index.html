@@ -136,14 +136,22 @@
           <h2 id="payment-gateways">Payment Gateways</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-payment-gateways">List Payment Gateways</a></li>
   <li><a href="#get-a-single-payment-gateway">Get a single Payment Gateway</a></li>
+  <li><a href="#create-a-new-payment-gateway">Create a new Payment Gateway</a></li>
+  <li><a href="#update-a--payment-gateway">Update a  Payment Gateway</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents Payment Gateways (allowing integration with providers such Stripe, Ingenico etc.) that you can later assign to <a href="/reference/endpoints/rentals/">Rentals</a> and start accepting payments via credit card.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#preferences_payments_read" role="tab" data-toggle="pill">preferences_payments_read</a></li>
+  <li><a href="#preferences_payments_write" role="tab" data-toggle="pill">preferences_payments_write</a></li>
 </ul>
 <div class="tab-content">
   <div class="tab-pane active" id="preferences_payments_read">
@@ -158,13 +166,19 @@
       </thead>
       <tbody>
         <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Payment Gateway</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
           <td>id</td>
           <td>BigInteger</td>
           <td>Read</td>
           <td>Uniq identifier.</td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>name</td>
           <td>String</td>
@@ -181,7 +195,7 @@
           <td>gateway_name</td>
           <td>String</td>
           <td>Read</td>
-          <td>Payment Gateway’s name, available values are described in: <a href="/reference/enums#payment-gateway-names">enums section</a>
+          <td>Payment Gateway’s name, available values are described in <a href="/reference/enums#payment-gateway-names">enums section</a>
 </td>
         </tr>
         <tr>
@@ -206,7 +220,7 @@
           <td>tokenize_credit_card_details</td>
           <td>Boolean</td>
           <td>Read</td>
-          <td>Credit Card details will be tokenized if set to true.</td>
+          <td>Credit Card details will be tokenized if set to true before card’s authorization. The value will be automatically set to true when handling 3DS flow.</td>
         </tr>
         <tr>
           <td>host_booking_pay_wallet_id</td>
@@ -231,6 +245,117 @@
       </tbody>
     </table>
   </div>
+  <div class="tab-pane" id="preferences_payments_write">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+          <th>Constraints</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Payment Gateway</td>
+          <td> </td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>id</td>
+          <td>BigInteger</td>
+          <td>Read</td>
+          <td>Uniq identifier.</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>name</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Payment Gateway’s name serving as an additional identifier.</td>
+          <td>
+<strong>Required</strong>, must not contain non-printing characters</td>
+        </tr>
+        <tr>
+          <td>test</td>
+          <td>Boolean</td>
+          <td>Read/Write</td>
+          <td>Submitted requests will not be charged if set to true (test mode/sandbox will be used).</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>gateway_name</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Payment Gateway’s name, available values are described in: <a href="/reference/enums#payment-gateway-names">enums section</a>
+</td>
+          <td>
+<strong>Required</strong>, must be one of the available gateway names</td>
+        </tr>
+        <tr>
+          <td>credentials</td>
+          <td><a href="/reference/enums#formats">Object</a></td>
+          <td>Read/Write</td>
+          <td>Credentials used for payment gateway authentication.</td>
+          <td>
+<strong>Required</strong>, the schema depends on <code>gateway_name</code>
+</td>
+        </tr>
+        <tr>
+          <td>supported_cardtypes</td>
+          <td>Array</td>
+          <td>Read/Write</td>
+          <td>Array of String values containing supported cardtypes for selected gateway, available values are described in: <a href="/reference/enums#payment-gateway-cardtypes">enums section</a>
+</td>
+          <td>
+<strong>Required</strong>, must contain valid cardtypes supported by a given payment gateway</td>
+        </tr>
+        <tr>
+          <td>supported_currencies</td>
+          <td>Array</td>
+          <td>Read/Write</td>
+          <td>Array of string values containing supported currencies for selected gateway.</td>
+          <td>
+<strong>Required</strong>, must contain valid currencies</td>
+        </tr>
+        <tr>
+          <td>tokenize_credit_card_details</td>
+          <td>Boolean</td>
+          <td>Read/Write</td>
+          <td>Credit Card details will be tokenized if set to true before card’s authorization. The value will be automatically set to true when handling 3DS flow.</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>host_booking_pay_wallet_id</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Wallet ID for BookingPay host.</td>
+          <td> </td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Payment Gateway’s creation time.</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Payment Gateway’s creation time.</td>
+          <td> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <h3 id="list-payment-gateways">List Payment Gateways</h3>
@@ -244,7 +369,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#a8caf0df4e9fpreferences-payments-read" role="tab" data-toggle="pill">
+        <a href="#222bbabd1f45preferences-payments-read" role="tab" data-toggle="pill">
           preferences / payments / read
         </a>
       </li>
@@ -256,7 +381,7 @@
   
   
     
-      <div class="tab-pane active" id="a8caf0df4e9fpreferences-payments-read">
+      <div class="tab-pane active" id="222bbabd1f45preferences-payments-read">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payment_gateways.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payment_gateways.account}"</span>
@@ -267,7 +392,7 @@
       <span class="s2">"credentials"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"login"</span><span class="o">:</span> <span class="s2">"login"</span>
       <span class="p">},</span>
-      <span class="s2">"gateway_name"</span><span class="o">:</span> <span class="s2">"gateway_name"</span><span class="p">,</span>
+      <span class="s2">"gateway_name"</span><span class="o">:</span> <span class="s2">"bogus"</span><span class="p">,</span>
       <span class="s2">"host_booking_pay_wallet_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"TestingGatewayName"</span><span class="p">,</span>
       <span class="s2">"supported_cardtypes"</span><span class="o">:</span> <span class="p">[</span>
@@ -313,7 +438,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#728fc315ea77preferences-payments-read" role="tab" data-toggle="pill">
+        <a href="#bf59c8b701fapreferences-payments-read" role="tab" data-toggle="pill">
           preferences / payments / read
         </a>
       </li>
@@ -325,7 +450,7 @@
   
   
     
-      <div class="tab-pane active" id="728fc315ea77preferences-payments-read">
+      <div class="tab-pane active" id="bf59c8b701fapreferences-payments-read">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payment_gateways.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payment_gateways.account}"</span>
@@ -336,7 +461,191 @@
       <span class="s2">"credentials"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"login"</span><span class="o">:</span> <span class="s2">"login"</span>
       <span class="p">},</span>
-      <span class="s2">"gateway_name"</span><span class="o">:</span> <span class="s2">"gateway_name"</span><span class="p">,</span>
+      <span class="s2">"gateway_name"</span><span class="o">:</span> <span class="s2">"bogus"</span><span class="p">,</span>
+      <span class="s2">"host_booking_pay_wallet_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"TestingGatewayName"</span><span class="p">,</span>
+      <span class="s2">"supported_cardtypes"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"visa"</span><span class="p">,</span>
+        <span class="s2">"master"</span>
+      <span class="p">],</span>
+      <span class="s2">"supported_currencies"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"EUR"</span><span class="p">,</span>
+        <span class="s2">"THB"</span>
+      <span class="p">],</span>
+      <span class="s2">"test"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"tokenize_credit_card_details"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2019-08-15T14:27:48Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2019-08-21T16:07:47Z"</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"Link"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"first"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payment_gateways/1.json?bookings%5B%5D%5Bcanceled_at%5D=&amp;page=1"</span><span class="p">,</span>
+      <span class="s2">"last"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payment_gateways/1.json?bookings%5B%5D%5Bcanceled_at%5D=&amp;page=1"</span>
+    <span class="p">},</span>
+    <span class="s2">"X-Per-Page"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Count"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Pages"</span><span class="o">:</span> <span class="s2">"1"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="create-a-new-payment-gateway">Create a new Payment Gateway</h3>
+
+<p>Creates a Payment Gateway</p>
+
+<pre><code>POST /payment_gateways
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#c1d7914df4ecpreferences_payments_write" role="tab" data-toggle="pill">
+          preferences_payments_write
+        </a>
+      </li>
+    
+  </ul>
+
+<h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"payment_gateways"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"credentials"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"login"</span><span class="o">:</span> <span class="s2">"login"</span>
+      <span class="p">},</span>
+      <span class="s2">"gateway_name"</span><span class="o">:</span> <span class="s2">"bogus"</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"TestingGatewayName"</span><span class="p">,</span>
+      <span class="s2">"supported_cardtypes"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"visa"</span><span class="p">,</span>
+        <span class="s2">"master"</span>
+      <span class="p">],</span>
+      <span class="s2">"supported_currencies"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"EUR"</span><span class="p">,</span>
+        <span class="s2">"THB"</span>
+      <span class="p">],</span>
+      <span class="s2">"test"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"tokenize_credit_card_details"</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-2">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="c1d7914df4ecpreferences_payments_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"payment_gateways.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payment_gateways.account}"</span>
+  <span class="p">},</span>
+  <span class="s2">"payment_gateways"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"credentials"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"login"</span><span class="o">:</span> <span class="s2">"login"</span>
+      <span class="p">},</span>
+      <span class="s2">"gateway_name"</span><span class="o">:</span> <span class="s2">"bogus"</span><span class="p">,</span>
+      <span class="s2">"host_booking_pay_wallet_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"TestingGatewayName"</span><span class="p">,</span>
+      <span class="s2">"supported_cardtypes"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"visa"</span><span class="p">,</span>
+        <span class="s2">"master"</span>
+      <span class="p">],</span>
+      <span class="s2">"supported_currencies"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"EUR"</span><span class="p">,</span>
+        <span class="s2">"THB"</span>
+      <span class="p">],</span>
+      <span class="s2">"test"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"tokenize_credit_card_details"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2019-08-15T14:27:48Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2019-08-21T16:07:47Z"</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"Link"</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">"first"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payment_gateways/1.json?bookings%5B%5D%5Bcanceled_at%5D=&amp;page=1"</span><span class="p">,</span>
+      <span class="s2">"last"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/payment_gateways/1.json?bookings%5B%5D%5Bcanceled_at%5D=&amp;page=1"</span>
+    <span class="p">},</span>
+    <span class="s2">"X-Per-Page"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Count"</span><span class="o">:</span> <span class="s2">"1"</span><span class="p">,</span>
+    <span class="s2">"X-Total-Pages"</span><span class="o">:</span> <span class="s2">"1"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="update-a--payment-gateway">Update a  Payment Gateway</h3>
+
+<p>Returns an updated payment gateway identified by ID.</p>
+
+<pre><code>PUT /payment_gateways/:payment_gateway_id
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#0faecd243d2apreferences_payments_write" role="tab" data-toggle="pill">
+          preferences_payments_write
+        </a>
+      </li>
+    
+  </ul>
+
+<h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"payment_gateways"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"credentials"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"login"</span><span class="o">:</span> <span class="s2">"login"</span>
+      <span class="p">},</span>
+      <span class="s2">"gateway_name"</span><span class="o">:</span> <span class="s2">"bogus"</span><span class="p">,</span>
+      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"TestingGatewayName"</span><span class="p">,</span>
+      <span class="s2">"supported_cardtypes"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"visa"</span><span class="p">,</span>
+        <span class="s2">"master"</span>
+      <span class="p">],</span>
+      <span class="s2">"supported_currencies"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s2">"EUR"</span><span class="p">,</span>
+        <span class="s2">"THB"</span>
+      <span class="p">],</span>
+      <span class="s2">"test"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"tokenize_credit_card_details"</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-3">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="0faecd243d2apreferences_payments_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"payment_gateways.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payment_gateways.account}"</span>
+  <span class="p">},</span>
+  <span class="s2">"payment_gateways"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"credentials"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"login"</span><span class="o">:</span> <span class="s2">"login"</span>
+      <span class="p">},</span>
+      <span class="s2">"gateway_name"</span><span class="o">:</span> <span class="s2">"bogus"</span><span class="p">,</span>
       <span class="s2">"host_booking_pay_wallet_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"TestingGatewayName"</span><span class="p">,</span>
       <span class="s2">"supported_cardtypes"</span><span class="o">:</span> <span class="p">[</span>

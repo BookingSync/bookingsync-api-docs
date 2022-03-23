@@ -136,11 +136,16 @@
           <h2 id="inquiries">Inquiries</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-inquiries">List inquiries</a></li>
   <li><a href="#get-a-single-inquiry">Get a single inquiry</a></li>
   <li><a href="#create-a-new-inquiry">Create a new inquiry</a></li>
   <li><a href="#update-a-inquiry">Update a inquiry</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents Inquiries that can be later turned into <a href="/reference/endpoints/bookings/">Bookings</a>. They usually originate from the widgets where you can select dates and either create a Booking right away or send the Inquiry with some question.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -161,13 +166,43 @@
       </thead>
       <tbody>
         <tr>
-          <td>id</td>
+          <td>rental</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Inquiry’s id.</td>
+          <td>Rental’s ID related to the Inquiry</td>
+        </tr>
+        <tr>
+          <td>source</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Source’s ID related to the Inquiry</td>
+        </tr>
+        <tr>
+          <td>booking</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Booking’s ID related to the Inquiry</td>
+        </tr>
+        <tr>
+          <td>conversation</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Inbox Conversation’s ID related to the Inquiry</td>
+        </tr>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Inquiry</td>
         </tr>
       </tbody>
       <tbody>
+        <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Inquiry’s ID.</td>
+        </tr>
         <tr>
           <td>adults</td>
           <td>Integer</td>
@@ -259,80 +294,141 @@
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
+          <th>Constraints</th>
         </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td>rental</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s ID related to the Inquiry</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>source</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Source’s ID related to the Inquiry</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>booking</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Booking’s ID related to the Inquiry</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>conversation</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Inbox Conversation’s ID related to the Inquiry</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Inquiry</td>
+          <td> </td>
+        </tr>
+      </tbody>
       <tbody>
         <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Inquiry’s id.</td>
+          <td>Inquiry’s ID.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>source_id</td>
           <td>Integer</td>
           <td>Write</td>
-          <td>Source id related to the Inquiry.</td>
+          <td>Source ID related to the Inquiry.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>rental_id</td>
           <td>Integer</td>
-          <td>Write</td>
-          <td>
-<strong>Only update</strong> Id of rental related to the Inquiry</td>
+          <td>Write (update-only)</td>
+          <td>Rental ID related to the Inquiry</td>
+          <td> </td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>adults</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>Inquiry’s booking number of adults.</td>
+          <td>Conditionally required (depending on the config on the Account-level, it’s highly recommended to treat it as <strong>required</strong>), must be greater than or equal to: 1</td>
         </tr>
         <tr>
           <td>children</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>Inquiry’s booking number of children.</td>
+          <td>Conditionally required (depending on the config on the Account-level, it’s highly recommended to treat it as <strong>required</strong>), must be greater than or equal to: 0</td>
         </tr>
         <tr>
           <td>country_code</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Inquiry’s client country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+          <td>
+<strong>Required</strong> if <code>phone</code> present, must be one on country codes enum</td>
         </tr>
         <tr>
           <td>email</td>
           <td>String</td>
           <td>Read/Write</td>
+          <td>Inquiry’s client email.</td>
           <td>
-<strong>Required</strong>. Inquiry’s client email.</td>
+<strong>Required</strong>, must be of email format</td>
         </tr>
         <tr>
           <td>firstname</td>
           <td>String</td>
           <td>Read/Write</td>
+          <td>Inquiry’s client firstname.</td>
           <td>
-<strong>Required</strong>. Inquiry’s client firstname. (50 characters max)</td>
+<strong>Required</strong>, Maximum length: 50</td>
         </tr>
         <tr>
           <td>lastname</td>
           <td>String</td>
           <td>Read/Write</td>
+          <td>Inquiry’s client lastname.</td>
           <td>
-<strong>Required</strong>. Inquiry’s client lastname. (99 characters max)</td>
+<strong>Required</strong>, Maximum length: 99</td>
         </tr>
         <tr>
           <td>message</td>
-          <td>Text</td>
+          <td>String</td>
           <td>Read/Write</td>
-          <td>Inquiry’s message. (500 characters max)</td>
+          <td>Inquiry’s message.</td>
+          <td>Maximum length: 500</td>
         </tr>
         <tr>
           <td>phone</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Inquiry’s client phone number.</td>
+          <td>Must be of a phone number format (regexp: <code>\A\+?[ -.0-9+EXText()]*\Z</code>)</td>
+        </tr>
+        <tr>
+          <td>locked</td>
+          <td>String</td>
+          <td>Read/Write (create-only)</td>
+          <td>Inquiry’s locked status.</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>accept_privacy_policy</td>
+          <td>Boolean</td>
+          <td>Write (create-only)</td>
+          <td>Confirm that the Privacy Policy has been accepted (check <a href="/reference/endpoints/accounts/%20for%20more%20details">Accounts</a>)</td>
+          <td> </td>
         </tr>
       </tbody>
       <tbody>
@@ -341,24 +437,30 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Inquiry’s create time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Inquiry’s update time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>start_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read/Write</td>
           <td>Inquiry’s booking start time.</td>
+          <td>Conditionally required (depending on the config on the Account-level, it’s highly recommended to treat it as <strong>required</strong>), must be in the future, must be before <code>end_at</code>
+</td>
         </tr>
         <tr>
           <td>end_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read/Write</td>
           <td>Inquiry’s booking end time.</td>
+          <td>Conditionally required (depending on the config on the Account-level, it’s highly recommended to treat it as <strong>required</strong>), must be in the future, must be after <code>start_at</code>
+</td>
         </tr>
       </tbody>
     </table>
@@ -371,86 +473,141 @@
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
+          <th>Constraints</th>
         </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td>rental</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s ID related to the Inquiry</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>source</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Source’s ID related to the Inquiry</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>booking</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Booking’s ID related to the Inquiry</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>conversation</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Inbox Conversation’s ID related to the Inquiry</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Inquiry</td>
+          <td> </td>
+        </tr>
+      </tbody>
       <tbody>
         <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Inquiry’s id.</td>
+          <td>Inquiry’s ID.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>source_id</td>
           <td>Integer</td>
           <td>Write</td>
-          <td>Source id related to the Inquiry.</td>
+          <td>Source ID related to the Inquiry.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>rental_id</td>
           <td>Integer</td>
-          <td>Write</td>
-          <td>
-<strong>Only update</strong> Id of rental related to the Inquiry</td>
+          <td>Write (update-only)</td>
+          <td>Rental ID related to the Inquiry</td>
+          <td> </td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>adults</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>Inquiry’s booking number of adults.</td>
+          <td>Conditionally required (depending on the config on the Account-level, it’s highly recommended to treat it as <strong>required</strong>), must be greater than or equal to: 1</td>
         </tr>
         <tr>
           <td>children</td>
           <td>Integer</td>
           <td>Read/Write</td>
           <td>Inquiry’s booking number of children.</td>
+          <td>Conditionally required (depending on the config on the Account-level, it’s highly recommended to treat it as <strong>required</strong>), must be greater than or equal to: 0</td>
         </tr>
         <tr>
           <td>country_code</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Inquiry’s client country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+          <td>
+<strong>Required</strong> if <code>phone</code> present, must be one on country codes enum</td>
         </tr>
         <tr>
           <td>email</td>
           <td>String</td>
           <td>Read/Write</td>
+          <td>Inquiry’s client email.</td>
           <td>
-<strong>Required</strong>. Inquiry’s client email.</td>
+<strong>Required</strong>, must be of email format</td>
         </tr>
         <tr>
           <td>firstname</td>
           <td>String</td>
           <td>Read/Write</td>
+          <td>Inquiry’s client firstname.</td>
           <td>
-<strong>Required</strong>. Inquiry’s client firstname. (50 characters max)</td>
+<strong>Required</strong>, Maximum length: 50</td>
         </tr>
         <tr>
           <td>lastname</td>
           <td>String</td>
           <td>Read/Write</td>
+          <td>Inquiry’s client lastname.</td>
           <td>
-<strong>Required</strong>. Inquiry’s client lastname. (99 characters max)</td>
+<strong>Required</strong>, Maximum length: 99</td>
         </tr>
         <tr>
           <td>message</td>
-          <td>Text</td>
+          <td>String</td>
           <td>Read/Write</td>
-          <td>Inquiry’s message. (500 characters max)</td>
+          <td>Inquiry’s message.</td>
+          <td>Maximum length: 500</td>
         </tr>
         <tr>
           <td>phone</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Inquiry’s client phone number.</td>
+          <td>Must be of a phone number format</td>
         </tr>
         <tr>
           <td>locked</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Inquiry’s locked status.</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>accept_privacy_policy</td>
+          <td>Boolean</td>
+          <td>Write (create-only)</td>
+          <td>Confirm that the Privacy Policy has been accepted (check <a href="/reference/endpoints/accounts/%20for%20more%20details">Accounts</a>)</td>
+          <td> </td>
         </tr>
       </tbody>
       <tbody>
@@ -459,24 +616,30 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Inquiry’s create time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Inquiry’s update time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>start_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read/Write</td>
           <td>Inquiry’s booking start time.</td>
+          <td>Conditionally required (depending on the config on the Account-level, it’s highly recommended to treat it as <strong>required</strong>), must be in the future, must be before <code>end_at</code>
+</td>
         </tr>
         <tr>
           <td>end_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read/Write</td>
           <td>Inquiry’s booking end time.</td>
+          <td>Conditionally required (depending on the config on the Account-level, it’s highly recommended to treat it as <strong>required</strong>), must be in the future, must be after <code>start_at</code>
+</td>
         </tr>
       </tbody>
     </table>
@@ -520,7 +683,7 @@ certain range.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#243fd7111dcbinquiries_read-inquiries_write-inquiries_write_owned" role="tab" data-toggle="pill">
+        <a href="#e8566e47e5efinquiries_read-inquiries_write-inquiries_write_owned" role="tab" data-toggle="pill">
           inquiries_read / inquiries_write / inquiries_write_owned
         </a>
       </li>
@@ -532,7 +695,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="243fd7111dcbinquiries_read-inquiries_write-inquiries_write_owned">
+      <div class="tab-pane active" id="e8566e47e5efinquiries_read-inquiries_write-inquiries_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"inquiries.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{inquiries.booking}"</span><span class="p">,</span>
@@ -551,10 +714,10 @@ certain range.</p>
       <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"message"</span><span class="o">:</span> <span class="s2">"Important message"</span><span class="p">,</span>
       <span class="s2">"phone"</span><span class="o">:</span> <span class="mi">7273647616</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2022-02-11T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2022-02-18T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2022-03-30T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2022-04-06T16:56:21Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -579,7 +742,7 @@ certain range.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#c69c5b310030inquiries_read-inquiries_write-inquiries_write_owned" role="tab" data-toggle="pill">
+        <a href="#44bbbc79500dinquiries_read-inquiries_write-inquiries_write_owned" role="tab" data-toggle="pill">
           inquiries_read / inquiries_write / inquiries_write_owned
         </a>
       </li>
@@ -591,7 +754,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="c69c5b310030inquiries_read-inquiries_write-inquiries_write_owned">
+      <div class="tab-pane active" id="44bbbc79500dinquiries_read-inquiries_write-inquiries_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"inquiries.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{inquiries.booking}"</span><span class="p">,</span>
@@ -610,10 +773,10 @@ certain range.</p>
       <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"message"</span><span class="o">:</span> <span class="s2">"Important message"</span><span class="p">,</span>
       <span class="s2">"phone"</span><span class="o">:</span> <span class="mi">7273647616</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2022-02-11T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2022-02-18T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2022-03-30T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2022-04-06T16:56:21Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -638,7 +801,7 @@ certain range.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#148ebeb0afc0inquiries_write-inquiries_write_owned" role="tab" data-toggle="pill">
+        <a href="#92d72a303da5inquiries_write-inquiries_write_owned" role="tab" data-toggle="pill">
           inquiries_write / inquiries_write_owned
         </a>
       </li>
@@ -657,8 +820,8 @@ certain range.</p>
       <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"Smith"</span><span class="p">,</span>
       <span class="s2">"message"</span><span class="o">:</span> <span class="s2">"Important message"</span><span class="p">,</span>
       <span class="s2">"phone"</span><span class="o">:</span> <span class="mi">7273647616</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2022-02-11T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2022-02-18T15:58:17Z"</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2022-03-30T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2022-04-06T16:56:21Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -668,7 +831,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="148ebeb0afc0inquiries_write-inquiries_write_owned">
+      <div class="tab-pane active" id="92d72a303da5inquiries_write-inquiries_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"inquiries.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{inquiries.booking}"</span><span class="p">,</span>
@@ -687,10 +850,10 @@ certain range.</p>
       <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"message"</span><span class="o">:</span> <span class="s2">"Important message"</span><span class="p">,</span>
       <span class="s2">"phone"</span><span class="o">:</span> <span class="mi">7273647616</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2022-02-11T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2022-02-18T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2022-03-30T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2022-04-06T16:56:21Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
@@ -715,7 +878,7 @@ certain range.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#86e59a0f4fb2inquiries_write-inquiries_write_owned" role="tab" data-toggle="pill">
+        <a href="#f111cdfebf0einquiries_write-inquiries_write_owned" role="tab" data-toggle="pill">
           inquiries_write / inquiries_write_owned
         </a>
       </li>
@@ -735,8 +898,8 @@ certain range.</p>
       <span class="s2">"message"</span><span class="o">:</span> <span class="s2">"Important message"</span><span class="p">,</span>
       <span class="s2">"phone"</span><span class="o">:</span> <span class="mi">7273647616</span><span class="p">,</span>
       <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2022-02-11T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2022-02-18T15:58:17Z"</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2022-03-30T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2022-04-06T16:56:21Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -746,7 +909,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="86e59a0f4fb2inquiries_write-inquiries_write_owned">
+      <div class="tab-pane active" id="f111cdfebf0einquiries_write-inquiries_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"inquiries.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{inquiries.booking}"</span><span class="p">,</span>
@@ -765,10 +928,10 @@ certain range.</p>
       <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"message"</span><span class="o">:</span> <span class="s2">"Important message"</span><span class="p">,</span>
       <span class="s2">"phone"</span><span class="o">:</span> <span class="mi">7273647616</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2022-02-11T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2022-02-18T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2022-03-30T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2022-04-06T16:56:21Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>

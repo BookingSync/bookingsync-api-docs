@@ -136,9 +136,20 @@
           <h2 id="changeovers">ChangeOvers</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-changeovers">List change_overs</a></li>
   <li><a href="#get-a-single-changeover">Get a single change_over</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents the ChangeOvers for a given Rental. The <code>map</code> represents consecutive 1096 days starting from <code>start_date</code> and tells what action is possible during that day (no action possible/check-in only/check-out only/check-in and check-out possible.)</p>
+
+<p>ChangeOvers are regenerated after creation of <a href="/reference/endpoints/bookings/">Bookings</a>, change in <a href="/reference/endpoints/rates_rules/">Rates Rules</a> and at the beginning of each month and <code>start_date</code> always points to the beginning of current month.</p>
+
+<p>Particularly useful when implementing a UI containing calendar that allows to select dates for a Booking - using this map you can block unavailable dates.</p>
+
+<p>Unlike <a href="/reference/endpoints/availabilities/">Availabilites</a>, this resource covers not only days blocked by already created <a href="/reference/endpoints/bookings/">Bookings</a>, but also <a href="/reference/endpoints/rates_rules/">Rates Rules</a> that might have an impact for a given day.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -158,21 +169,31 @@
       </thead>
       <tbody>
         <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the ChangeOver</td>
+        </tr>
+        <tr>
+          <td>rental</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s ID related to the ChangeOver</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>ChangeOver’s id.</td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>map</td>
           <td>String</td>
           <td>Read</td>
           <td>ChangeOver’s map of possible actions for a given day. There is a total of 1096 characters, each representing one day. List of statuses described in <a href="/reference/enums#change_over-map-statuses">enums section</a>.</td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>start_date</td>
           <td><a href="/reference/enums#formats">Date</a></td>
@@ -201,7 +222,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#da53950fe1a3public" role="tab" data-toggle="pill">
+        <a href="#7ad1a11fe9d5public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -213,7 +234,7 @@
   
   
     
-      <div class="tab-pane active" id="da53950fe1a3public">
+      <div class="tab-pane active" id="7ad1a11fe9d5public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"change_overs.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{change_overs.rental}"</span>
@@ -222,8 +243,8 @@
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"map"</span><span class="o">:</span> <span class="s2">"CCOOOOCCCIIIIIIIIICCCCCCCCCCCXXXXCCCCCCCCCCCCCCCCCCCCCCCCCCCXXXXXXXXCCCCCCCCCCCCCCCCCCCCOOOOOOIIIIXXXCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-02-11"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-03-30"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
       <span class="p">}</span>
@@ -246,7 +267,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#957d43a939ecpublic" role="tab" data-toggle="pill">
+        <a href="#6dc1bfc089e4public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -258,7 +279,7 @@
   
   
     
-      <div class="tab-pane active" id="957d43a939ecpublic">
+      <div class="tab-pane active" id="6dc1bfc089e4public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"change_overs.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{change_overs.rental}"</span>
@@ -267,8 +288,8 @@
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"map"</span><span class="o">:</span> <span class="s2">"CCOOOOCCCIIIIIIIIICCCCCCCCCCCXXXXCCCCCCCCCCCCCCCCCCCCCCCCCCCXXXXXXXXCCCCCCCCCCCCCCCCCCCCOOOOOOIIIIXXXCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-02-11"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-03-30"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
       <span class="p">}</span>

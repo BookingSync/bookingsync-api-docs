@@ -136,12 +136,17 @@
           <h2 id="fees-taxes">Fees Taxes</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-fees-taxes">List fees taxes</a></li>
   <li><a href="#get-a-single-fees-tax">Get a single fees tax</a></li>
   <li><a href="#create-a-new-fees-tax">Create a new fees tax</a></li>
   <li><a href="#update-a-fees-tax">Update a fees tax</a></li>
   <li><a href="#delete-fees-tax">Delete fees tax</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents Fees Taxes - the <a href="/reference/endpoints/taxes/">taxes</a> for a <a href="/reference/endpoints/fees/">fee</a>, which can be either configured to be included in fee’s rate or not.  </p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -162,18 +167,36 @@
       </thead>
       <tbody>
         <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Fees Tax</td>
+        </tr>
+        <tr>
+          <td>fee</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Fee’s ID related to the Fees Tax</td>
+        </tr>
+        <tr>
+          <td>tax</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Tax’s ID related to the Fees Tax</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Fees Tax’s id.</td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>tax_included_in_rate</td>
           <td>Boolean</td>
           <td>Read</td>
-          <td>Tax amount already included in fee if set to true.</td>
+          <td>Whether Tax amount is already included in fee’s rate or not. If fee’s rate is 100 and there is a tax with a percentage of 10% assigned to it, that tax would already be included in 100 if it the value was set to <code>true</code>. However, if set to <code>false</code>, the “total” amount (in the context of <a href="/reference/endpoints/bookings/">Bookings’</a> creation) would be 100 + 10% from 100 which is 110.</td>
         </tr>
       </tbody>
       <tbody>
@@ -200,28 +223,53 @@
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
+          <th>Constraints</th>
         </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Fees Tax</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>fee</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Fee’s ID related to the Fees Tax</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>tax</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Tax’s ID related to the Fees Tax</td>
+          <td> </td>
+        </tr>
+      </tbody>
       <tbody>
         <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Fees Tax’s id.</td>
+          <td>Fees Tax’s ID.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>tax_id</td>
           <td>Integer</td>
           <td>Write</td>
-          <td>Tax’s id.</td>
+          <td>Tax’s ID.</td>
+          <td><strong>Required</strong></td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>tax_included_in_rate</td>
           <td>Boolean</td>
           <td>Read/Write</td>
-          <td>Tax amount already included in fee if set to true.</td>
+          <td>Whether Tax amount is already included in fee’s rate or not. If fee’s rate is 100 and there is a tax with a percentage of 10% assigned to it, that tax would already be included in 100 if it the value was set to <code>true</code>. However, if set to <code>false</code>, the “total” amount (in the context of <a href="/reference/endpoints/bookings/">Bookings’</a> creation) would be 100 + 10% from 100 which is 110.</td>
+          <td><strong>Required</strong></td>
         </tr>
       </tbody>
       <tbody>
@@ -230,12 +278,14 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Fees Tax’s create time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Fees Tax’s update time.</td>
+          <td> </td>
         </tr>
       </tbody>
     </table>
@@ -253,7 +303,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#6b44687cbfedrates_write" role="tab" data-toggle="pill">
+        <a href="#8da68a30d090rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
@@ -265,7 +315,7 @@
   
   
     
-      <div class="tab-pane active" id="6b44687cbfedrates_write">
+      <div class="tab-pane active" id="8da68a30d090rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"fees_taxes.fee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/fees/{fees_taxes.fee}"</span><span class="p">,</span>
@@ -302,7 +352,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#d66d066271ecrates_write" role="tab" data-toggle="pill">
+        <a href="#38f180831a32rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
@@ -314,7 +364,7 @@
   
   
     
-      <div class="tab-pane active" id="d66d066271ecrates_write">
+      <div class="tab-pane active" id="38f180831a32rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"fees_taxes.fee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/fees/{fees_taxes.fee}"</span><span class="p">,</span>
@@ -351,7 +401,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#5e06e4466314rates_write" role="tab" data-toggle="pill">
+        <a href="#700cfac25069rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
@@ -373,7 +423,7 @@
   
   
     
-      <div class="tab-pane active" id="5e06e4466314rates_write">
+      <div class="tab-pane active" id="700cfac25069rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"fees_taxes.fee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/fees/{fees_taxes.fee}"</span><span class="p">,</span>
@@ -410,7 +460,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#272a8267ced1rates_write" role="tab" data-toggle="pill">
+        <a href="#24a092a39294rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
@@ -432,7 +482,7 @@
   
   
     
-      <div class="tab-pane active" id="272a8267ced1rates_write">
+      <div class="tab-pane active" id="24a092a39294rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"fees_taxes.fee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/fees/{fees_taxes.fee}"</span><span class="p">,</span>

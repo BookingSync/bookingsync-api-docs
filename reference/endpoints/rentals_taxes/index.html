@@ -136,14 +136,23 @@
           <h2 id="rentals-taxes">Rentals Taxes</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-rentals-taxes">List rentals taxes</a></li>
   <li><a href="#get-a-single-rentals-tax">Get a single rentals tax</a></li>
+  <li><a href="#create-a-new-rentals-tax">Create a new rentals tax</a></li>
+  <li><a href="#update-a-rentals-tax">Update a rentals tax</a></li>
+  <li><a href="#delete-a-rentals-tax">Delete a rentals tax</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents Rentals Taxes - the <a href="/reference/endpoints/taxes/">Taxes</a> for a <a href="/reference/endpoints/Rentals/">Rental</a>, which can be either configured to be included in Rental’s price (as <code>initial_price</code> in <a href="/reference/endpoints/Bookings/">Booking</a>) or not.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
+  <li><a href="#rentals-write" role="tab" data-toggle="pill">rentals_write</a></li>
 </ul>
 <div class="tab-content">
   <div class="tab-pane active" id="public">
@@ -158,18 +167,36 @@
       </thead>
       <tbody>
         <tr>
-          <td>id</td>
+          <td>account</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Rentals Tax’s id.</td>
+          <td>Account’s ID related to the Rentals Tax</td>
+        </tr>
+        <tr>
+          <td>rental</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s ID related to the Rentals Tax</td>
+        </tr>
+        <tr>
+          <td>tax</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Tax’s ID related to the Rentals Tax</td>
         </tr>
       </tbody>
       <tbody>
         <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rentals Tax’s ID.</td>
+        </tr>
+        <tr>
           <td>tax_included_in_rate</td>
           <td>Boolean</td>
           <td>Read</td>
-          <td>Tax amount already included in rental price if set to true.</td>
+          <td>Tax amount already included in rental price if set to true (as <code>initial_price</code> in <a href="/reference/endpoints/Bookings/">Booking</a>.</td>
         </tr>
       </tbody>
       <tbody>
@@ -188,6 +215,81 @@
       </tbody>
     </table>
   </div>
+  <div class="tab-pane" id="rentals-write">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+          <th>Constraints</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Rentals Tax</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>rental</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s ID related to the Rentals Tax</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>tax</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Tax’s ID related to the Rentals Tax</td>
+          <td> </td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rentals Tax’s ID.</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>tax_id</td>
+          <td>Integer</td>
+          <td>Write</td>
+          <td>Tax’s ID.</td>
+          <td><strong>Required</strong></td>
+        </tr>
+        <tr>
+          <td>tax_included_in_rate</td>
+          <td>Boolean</td>
+          <td>Read/Write</td>
+          <td>Tax amount already included in rental price if set to true (as <code>initial_price</code> in <a href="/reference/endpoints/Bookings/">Booking</a>. If rental’s price is 100 and there is a tax with a percentage of 10% assigned to it, that tax would already be included in 100 if it the value was set to <code>true</code>. However, if set to <code>false</code>, the “total” amount (in the context of <a href="/reference/endpoints/bookings/">Bookings’</a> creation) would be 100 + 10% from 100 which is 110.</td>
+          <td><strong>Required</strong></td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Rentals Tax’s create time.</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Rentals Tax’s update time.</td>
+          <td> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <h3 id="list-rentals-taxes">List rentals taxes</h3>
@@ -201,7 +303,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#d2067830ef64public" role="tab" data-toggle="pill">
+        <a href="#5669bac90e58public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -213,7 +315,7 @@
   
   
     
-      <div class="tab-pane active" id="d2067830ef64public">
+      <div class="tab-pane active" id="5669bac90e58public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_taxes.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rentals_taxes.rental}"</span><span class="p">,</span>
@@ -248,7 +350,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#e97c43259fbapublic" role="tab" data-toggle="pill">
+        <a href="#3c5ee663566dpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -260,7 +362,7 @@
   
   
     
-      <div class="tab-pane active" id="e97c43259fbapublic">
+      <div class="tab-pane active" id="3c5ee663566dpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_taxes.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rentals_taxes.rental}"</span><span class="p">,</span>
@@ -284,6 +386,127 @@
   
 </div>
 
+<h3 id="create-a-new-rentals-tax">Create a new rentals tax</h3>
+
+<p>Returns a newly created rentals tax.</p>
+
+<pre><code>POST  /rentals/:rental_id/rentals_taxes
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#801e56f48dc9rates_write" role="tab" data-toggle="pill">
+          rates_write
+        </a>
+      </li>
+    
+  </ul>
+
+<h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"rentals_taxes"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"tax_id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"tax_included_in_rate"</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-2">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="801e56f48dc9rates_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"rentals_taxes.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rentals_taxes.rental}"</span><span class="p">,</span>
+    <span class="s2">"rentals_taxes.tax"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/taxes/{rentals_taxes.tax}"</span>
+  <span class="p">},</span>
+  <span class="s2">"rentals_taxes"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"tax_included_in_rate"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-08-05T15:15:47Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-08-05T15:15:47Z"</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"tax"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="update-a-rentals-tax">Update a rentals tax</h3>
+
+<p>Returns an updated rentals tax identified by ID.</p>
+
+<pre><code>PUT /rentals_taxes/:rentals_tax_id
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#00f3f7c2a175rates_write" role="tab" data-toggle="pill">
+          rates_write
+        </a>
+      </li>
+    
+  </ul>
+
+<h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"rentals_taxes"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"tax_included_in_rate"</span><span class="o">:</span> <span class="kc">true</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-3">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="00f3f7c2a175rates_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"rentals_taxes.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rentals_taxes.rental}"</span><span class="p">,</span>
+    <span class="s2">"rentals_taxes.tax"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/taxes/{rentals_taxes.tax}"</span>
+  <span class="p">},</span>
+  <span class="s2">"rentals_taxes"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"tax_included_in_rate"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-08-05T15:15:47Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-08-05T15:15:47Z"</span><span class="p">,</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"tax"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="delete-a-rentals-tax">Delete a rentals tax</h3>
+
+<p>Required OAuth scope: <code>:rates_write</code></p>
+
+<p>Returns empty response with ‘204 No Content’ status code on success.</p>
+
+<pre><code>DELETE /rentals_taxes/:rentals_tax_id
+</code></pre>
 
         </div>
       </div>

@@ -134,16 +134,21 @@
       <div class="panel panel-default">
         <div class="panel-body reference-body">
           <h2 id="rentals-contents-overrides">Rentals Contents Overrides</h2>
-<p>Rental content overrides endpoint was made so that different channels could have different length validations for our fields like <code>headline, summary, description</code>.
-By using those objects clients applications can use full available length at each channel.</p>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-rentals-contents-overrides">List rentals contents overrides</a></li>
   <li><a href="#get-a-single-rentals-content-override">Get a single rentals content override</a></li>
   <li><a href="#create-a-new-rentals-content-override">Create a new rentals content override</a></li>
   <li><a href="#update-a-rentals-content-override">Update a rentals content override</a></li>
   <li><a href="#destroy-a-rentals-content-override">Destroy a rentals content override</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents the Rental Content Overrides which allow different channels (other <a href="/reference/endpoints/applications/">Applications</a>.) to have customized content for fields like <code>headline</code>, <code>summary</code>, <code>description</code>, which also allows to bypass the length validation that is normally applied for these fields in <a href="/reference/endpoints/rentals/">Rentals</a> endpoint.</p>
+
+<p>Note: An Application needs to be configured in a way that content overrides are permitted. Most likely you will need to reach out to us and ask for this feature to be enabled for your Application or if you want to customize the maximum length for the overridable fields. </p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -164,13 +169,31 @@ By using those objects clients applications can use full available length at eac
       </thead>
       <tbody>
         <tr>
-          <td>id</td>
+          <td>account</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Rentals Contents Override’s id.</td>
+          <td>Account’s ID related to the Rentals Contents Override</td>
+        </tr>
+        <tr>
+          <td>application</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Application’s ID related to the Rentals Contents Override</td>
+        </tr>
+        <tr>
+          <td>rental</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s ID related to the Rentals Contents Override</td>
         </tr>
       </tbody>
       <tbody>
+        <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rentals Contents Override’s ID.</td>
+        </tr>
         <tr>
           <td>description</td>
           <td><a href="/reference/enums#formats">Object</a></td>
@@ -214,46 +237,76 @@ By using those objects clients applications can use full available length at eac
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
+          <th>Constraints</th>
         </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Rentals Contents Override</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>application</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Application’s ID related to the Rentals Contents Override</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>rental</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s ID related to the Rentals Contents Override</td>
+          <td> </td>
+        </tr>
+      </tbody>
       <tbody>
         <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Rentals Contents Override’s id.</td>
+          <td>Rentals Contents Override’s ID.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>application_id</td>
           <td>Integer</td>
           <td>Write</td>
-          <td>Application id related to the Rentals Contents Override.</td>
+          <td>Application’s Id related to the Rentals Contents Override.</td>
+          <td>
+<strong>Required</strong> on create</td>
         </tr>
         <tr>
           <td>rental_id</td>
           <td>Integer</td>
           <td>Write</td>
-          <td>Rental id related to the Rentals Contents Override.</td>
+          <td>Rental’s ID related to the Rentals Contents Override.</td>
+          <td>
+<strong>Required</strong> on create</td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>description</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read/Write</td>
           <td>Description override for related application, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+          <td>Maximum length: 10 000 (unless customized)</td>
         </tr>
         <tr>
           <td>headline</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read/Write</td>
           <td>Headline override for related application, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+          <td>Maximum length: 75 (unless customized)</td>
         </tr>
         <tr>
           <td>summary</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read/Write</td>
           <td>Summary override for related application, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+          <td>Maximum length: 150 (unless customized)</td>
         </tr>
       </tbody>
       <tbody>
@@ -262,12 +315,14 @@ By using those objects clients applications can use full available length at eac
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rentals Contents Override’s create time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rentals Contents Override’s update time.</td>
+          <td> </td>
         </tr>
       </tbody>
     </table>
@@ -285,7 +340,7 @@ By using those objects clients applications can use full available length at eac
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#5c343b883aa4rentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#ce4655098ecdrentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
@@ -297,7 +352,7 @@ By using those objects clients applications can use full available length at eac
   
   
     
-      <div class="tab-pane active" id="5c343b883aa4rentals_read-rentals_write">
+      <div class="tab-pane active" id="ce4655098ecdrentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_contents_overrides.application"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/applications/{rentals_contents_overrides.application}"</span><span class="p">,</span>
@@ -318,8 +373,8 @@ By using those objects clients applications can use full available length at eac
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span><span class="p">,</span>
         <span class="s2">"fr"</span><span class="o">:</span> <span class="s2">"Grande valeur. Profitez d'un cadre agréable en plein nature."</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"application"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
@@ -345,7 +400,7 @@ By using those objects clients applications can use full available length at eac
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#1d619a6da350rentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#4a9a84223bbcrentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
@@ -357,7 +412,7 @@ By using those objects clients applications can use full available length at eac
   
   
     
-      <div class="tab-pane active" id="1d619a6da350rentals_read-rentals_write">
+      <div class="tab-pane active" id="4a9a84223bbcrentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_contents_overrides.application"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/applications/{rentals_contents_overrides.application}"</span><span class="p">,</span>
@@ -378,8 +433,8 @@ By using those objects clients applications can use full available length at eac
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span><span class="p">,</span>
         <span class="s2">"fr"</span><span class="o">:</span> <span class="s2">"Grande valeur. Profitez d'un cadre agréable en plein nature."</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"application"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
@@ -405,7 +460,7 @@ By using those objects clients applications can use full available length at eac
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#9b77b487774brentals_write" role="tab" data-toggle="pill">
+        <a href="#af39effed807rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -433,7 +488,7 @@ By using those objects clients applications can use full available length at eac
   
   
     
-      <div class="tab-pane active" id="9b77b487774brentals_write">
+      <div class="tab-pane active" id="af39effed807rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_contents_overrides.application"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/applications/{rentals_contents_overrides.application}"</span><span class="p">,</span>
@@ -454,8 +509,8 @@ By using those objects clients applications can use full available length at eac
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span><span class="p">,</span>
         <span class="s2">"fr"</span><span class="o">:</span> <span class="s2">"Grande valeur. Profitez d'un cadre agréable en plein nature."</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"application"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
@@ -481,7 +536,7 @@ By using those objects clients applications can use full available length at eac
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#6f077dca67cerentals_write" role="tab" data-toggle="pill">
+        <a href="#8024e60e0297rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -507,7 +562,7 @@ By using those objects clients applications can use full available length at eac
   
   
     
-      <div class="tab-pane active" id="6f077dca67cerentals_write">
+      <div class="tab-pane active" id="8024e60e0297rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_contents_overrides.application"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/applications/{rentals_contents_overrides.application}"</span><span class="p">,</span>
@@ -528,8 +583,8 @@ By using those objects clients applications can use full available length at eac
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span><span class="p">,</span>
         <span class="s2">"fr"</span><span class="o">:</span> <span class="s2">"Grande valeur. Profitez d'un cadre agréable en plein nature."</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:18Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"application"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>

@@ -136,12 +136,17 @@
           <h2 id="contacts">Contacts</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-contacts">List contacts</a></li>
   <li><a href="#get-a-single-contact">Get a single contact</a></li>
   <li><a href="#create-a-new-contact">Create a new contact</a></li>
   <li><a href="#update-a-contact">Update a contact</a></li>
   <li><a href="#destroy-a-contact">Destroy a contact</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents the Contacts (people responsible for managing <a href="/reference/endpoints/rentals/">Rentals</a>) that can be assigned to <a href="/reference/endpoints/rentals/">Rentals</a> via <a href="/reference/endpoints/rental_contacts/">Rental Contacts</a>.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -154,6 +159,7 @@
     <table class="table table-bordered">
       <thead>
         <tr>
+          <th>Group</th>
           <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
@@ -162,125 +168,167 @@
       </thead>
       <tbody>
         <tr>
+          <td> </td>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Client</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td> </td>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Contact’s id.</td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
+          <td> </td>
           <td>email</td>
           <td>String</td>
           <td>Read</td>
           <td>Contact’s email address.</td>
         </tr>
         <tr>
+          <td> </td>
           <td>website</td>
           <td>String</td>
           <td>Read</td>
           <td>Contact’s website url.</td>
         </tr>
         <tr>
+          <td> </td>
           <td>private_notes</td>
           <td>String</td>
           <td>Read</td>
           <td>Contact’s annotations.</td>
         </tr>
         <tr>
+          <td> </td>
           <td>gender</td>
           <td>String</td>
           <td>Read</td>
           <td>Contact’s gender. List of possible values described in <a href="/reference/enums#genders">enums section</a>.</td>
         </tr>
         <tr>
+          <td> </td>
           <td>firstname</td>
           <td>String</td>
           <td>Read</td>
           <td>Contact’s firstname</td>
         </tr>
         <tr>
+          <td> </td>
           <td>lastname</td>
           <td>String</td>
           <td>Read</td>
           <td>Contact’s lastname</td>
         </tr>
         <tr>
+          <td> </td>
           <td>fullname</td>
           <td>String</td>
           <td>Read</td>
           <td>Contact’s fullname</td>
         </tr>
         <tr>
+          <td> </td>
           <td>address1</td>
           <td>String</td>
           <td>Read</td>
           <td>Contact’s address</td>
         </tr>
         <tr>
+          <td> </td>
           <td>address2</td>
           <td>String</td>
           <td>Read</td>
           <td>extension of Contact’s address</td>
         </tr>
         <tr>
+          <td> </td>
           <td>city</td>
           <td>String</td>
           <td>Read</td>
           <td>Contact’s city</td>
         </tr>
         <tr>
+          <td> </td>
           <td>country_code</td>
           <td>String</td>
           <td>Read</td>
           <td>Contact’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
         </tr>
         <tr>
+          <td> </td>
           <td>state</td>
           <td>String</td>
           <td>Read</td>
           <td>Contact’s state</td>
         </tr>
         <tr>
+          <td> </td>
           <td>zip</td>
           <td>String</td>
           <td>Read</td>
           <td>Contact’s zip code</td>
         </tr>
         <tr>
+          <td> </td>
           <td>spoken_languages</td>
           <td>Array</td>
           <td>Read</td>
           <td>List of all available languages is described in <a href="/reference/enums/#locales">enums section</a>.</td>
         </tr>
+      </tbody>
+      <tbody>
         <tr>
           <td>phones</td>
-          <td>Array of <a href="/reference/enums#formats">Object</a>
-</td>
+          <td> </td>
+          <td>Array</td>
           <td>Read</td>
-          <td>Contact’s phones</td>
+          <td>Array of contacts’s phone numbers.</td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>label</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Phone label.</td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>number</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Client’s number.</td>
         </tr>
       </tbody>
       <tbody>
         <tr>
+          <td> </td>
           <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Contact’s create time.</td>
         </tr>
         <tr>
+          <td> </td>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Contact’s update time.</td>
         </tr>
         <tr>
+          <td> </td>
           <td>canceled_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Contact’s cancel time.</td>
         </tr>
         <tr>
+          <td> </td>
           <td>forget_me_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
@@ -288,6 +336,7 @@
 </td>
         </tr>
         <tr>
+          <td> </td>
           <td>processing_restricted_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
@@ -301,143 +350,220 @@
     <table class="table table-bordered">
       <thead>
         <tr>
+          <th>Group</th>
           <th>Name</th>
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
+          <th>Constraints</th>
         </tr>
       </thead>
       <tbody>
         <tr>
+          <td> </td>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Client</td>
+          <td> </td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td> </td>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
           <td>Contact’s id.</td>
+          <td> </td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
+          <td> </td>
           <td>email</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Contact’s email address.</td>
+          <td>
+<strong>Required</strong>, must be in email format</td>
         </tr>
         <tr>
+          <td> </td>
           <td>website</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Contact’s website url.</td>
+          <td>Must be a URL</td>
         </tr>
         <tr>
+          <td> </td>
           <td>private_notes</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Contact’s annotations.</td>
+          <td> </td>
         </tr>
         <tr>
+          <td> </td>
           <td>gender</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Contact’s gender. List of possible values described in <a href="/reference/enums#genders">enums section</a>.</td>
+          <td>Must be one of <code>genders</code> enum</td>
         </tr>
         <tr>
+          <td> </td>
           <td>firstname</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Contact’s firstname</td>
+          <td><strong>Required</strong></td>
         </tr>
         <tr>
+          <td> </td>
           <td>lastname</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Contact’s lastname</td>
+          <td><strong>Required</strong></td>
         </tr>
         <tr>
+          <td> </td>
           <td>fullname</td>
           <td>String</td>
           <td>Read</td>
           <td>Contact’s fullname</td>
+          <td> </td>
         </tr>
         <tr>
+          <td> </td>
           <td>address1</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Contact’s address</td>
+          <td>
+<strong>Required</strong>, Maximum length: 100, cannot contain non-printable characters</td>
         </tr>
         <tr>
+          <td> </td>
           <td>address2</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>extension of Contact’s address</td>
+          <td>Maximum length: 100, cannot contain non-printable characters</td>
         </tr>
         <tr>
+          <td> </td>
           <td>city</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Contact’s city</td>
+          <td>
+<strong>Required</strong>, Maximum length: 100</td>
         </tr>
         <tr>
+          <td> </td>
           <td>country_code</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Contact’s country code, list of codes is available at <a href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements">wikipedia</a>.</td>
+          <td>
+<strong>Required</strong>, Must be a country code enum</td>
         </tr>
         <tr>
+          <td> </td>
           <td>state</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Contact’s state</td>
+          <td>Maximum length: 100, cannot contain non-printable characters</td>
         </tr>
         <tr>
+          <td> </td>
           <td>zip</td>
           <td>String</td>
           <td>Read/Write</td>
           <td>Contact’s zip code</td>
+          <td>
+<strong>Required</strong>,  Maximum length: 15, cannot contain non-printable characters</td>
         </tr>
         <tr>
+          <td> </td>
           <td>spoken_languages</td>
           <td>Array</td>
           <td>Read/Write</td>
           <td>List of all available languages is described in <a href="/reference/enums/#locales">enums section</a>.</td>
-        </tr>
-        <tr>
-          <td>phones</td>
-          <td>Array of <a href="/reference/enums#formats">Object</a>
+          <td>Each item must be one of available locales, at least one element is <strong>required</strong>
 </td>
-          <td>Read/Write</td>
-          <td>Contact’s phones</td>
         </tr>
       </tbody>
       <tbody>
         <tr>
+          <td>phones</td>
+          <td> </td>
+          <td>Array</td>
+          <td>Read/Write</td>
+          <td>Array of contacts’s phone numbers.</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>label</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Phone label.</td>
+          <td>
+<strong>Required</strong>, must be in email format (if the element is present in <code>phones</code> array)</td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>number</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Contacts’s number.</td>
+          <td>
+<strong>Required</strong>, must be in phone number format (if the element is present in <code>phones</code> array)</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td> </td>
           <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Contact’s create time.</td>
+          <td> </td>
         </tr>
         <tr>
+          <td> </td>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Contact’s update time.</td>
+          <td> </td>
         </tr>
         <tr>
+          <td> </td>
           <td>canceled_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Contact’s cancel time.</td>
+          <td> </td>
         </tr>
         <tr>
+          <td> </td>
           <td>forget_me_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Contact’s forget time.</td>
+          <td> </td>
         </tr>
         <tr>
+          <td> </td>
           <td>processing_restricted_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Contact’s processing restriction time.</td>
+          <td> </td>
         </tr>
       </tbody>
     </table>
@@ -455,7 +581,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#ddbdbfcf5d67public" role="tab" data-toggle="pill">
+        <a href="#9dd4a1aea343public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -467,7 +593,7 @@
   
   
     
-      <div class="tab-pane active" id="ddbdbfcf5d67public">
+      <div class="tab-pane active" id="9dd4a1aea343public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"contacts.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{contacts.account}"</span>
@@ -542,7 +668,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#c876e2e83331public" role="tab" data-toggle="pill">
+        <a href="#2353fc7a7dc3public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -554,7 +680,7 @@
   
   
     
-      <div class="tab-pane active" id="c876e2e83331public">
+      <div class="tab-pane active" id="2353fc7a7dc3public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"contacts.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{contacts.account}"</span>
@@ -629,7 +755,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#51555e577eb2rentals_write" role="tab" data-toggle="pill">
+        <a href="#52f128738b6frentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -679,7 +805,7 @@
   
   
     
-      <div class="tab-pane active" id="51555e577eb2rentals_write">
+      <div class="tab-pane active" id="52f128738b6frentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"contacts.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{contacts.account}"</span>
@@ -747,7 +873,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#6e98fbdb84d8rentals_write" role="tab" data-toggle="pill">
+        <a href="#30fc2cdf9bd6rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -771,7 +897,7 @@
   
   
     
-      <div class="tab-pane active" id="6e98fbdb84d8rentals_write">
+      <div class="tab-pane active" id="30fc2cdf9bd6rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"contacts.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{contacts.account}"</span>

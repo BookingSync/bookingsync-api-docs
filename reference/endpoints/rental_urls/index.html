@@ -136,12 +136,17 @@
           <h2 id="rental-urls">Rental URLs</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#list-rentalurls">List RentalURLs</a></li>
-  <li><a href="#get-a-single-rentalurl">Get a single RentalURL</a></li>
-  <li><a href="#create-a-new-rentalurl">Create a new RentalURL</a></li>
-  <li><a href="#update-a-rentalurl">Update a RentalURL</a></li>
-  <li><a href="#destroy-a-rentalurl">Destroy a RentalURL</a></li>
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#list-rental-urls">List Rental URLs</a></li>
+  <li><a href="#get-a-single-rental-url">Get a single Rental URL</a></li>
+  <li><a href="#create-a-new-rental-url">Create a new Rental URL</a></li>
+  <li><a href="#update-a-rental-url">Update a Rental URL</a></li>
+  <li><a href="#destroy-a-rental-url">Destroy a Rental URL</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents Rental URLs which are the URLs under where <a href="/reference/endpoints/rentals/">Rentals</a> are available on the channels’ websites.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -162,30 +167,42 @@
       </thead>
       <tbody>
         <tr>
-          <td>id</td>
+          <td>account</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>RentalURL’s id.</td>
+          <td>Account’s ID related to the Rental link</td>
+        </tr>
+        <tr>
+          <td>rental</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s ID related to the Rental link</td>
         </tr>
       </tbody>
       <tbody>
         <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental URL’s ID.</td>
+        </tr>
+        <tr>
           <td>label</td>
           <td>String</td>
           <td>Read</td>
-          <td>Usually equals the application’s name.</td>
+          <td>Rental URL’s label - usually represents the channel’s or application’s name.</td>
         </tr>
         <tr>
           <td>url</td>
           <td>String</td>
           <td>Read</td>
-          <td>The URL where the rental is visible on the channel’s website.</td>
+          <td>The URL where the Rental is available on the channel’s website.</td>
         </tr>
         <tr>
           <td>lock</td>
           <td>Object</td>
           <td>Read</td>
-          <td>Lock shows what’s not editable.</td>
+          <td>Lock shows what’s editable/not-editable (representing ownership status).</td>
         </tr>
       </tbody>
       <tbody>
@@ -218,69 +235,85 @@
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
+          <th>Constraints</th>
         </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Rental link</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>rental</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s ID related to the Rental link</td>
+          <td> </td>
+        </tr>
+      </tbody>
       <tbody>
         <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>RentalURL’s id.</td>
+          <td>Rental URL’s ID.</td>
+          <td> </td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>label</td>
           <td>String</td>
-          <td>Read</td>
-          <td>Usually equals the application’s name.</td>
+          <td>Read/Write</td>
+          <td>Rental URL’s label - usually represents the channel’s or application’s name.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>url</td>
           <td>String</td>
-          <td>Read</td>
-          <td>The URL where the rental is visible on the channel’s website.</td>
+          <td>Read/Write</td>
+          <td>The URL where the Rental is available on the channel’s website.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>lock</td>
           <td>Object</td>
           <td>Read</td>
-          <td>Lock shows what’s not editable.</td>
+          <td>Lock shows what’s editable/not-editable (representing ownership status).</td>
+          <td> </td>
         </tr>
         <tr>
           <td>locked</td>
           <td>Boolean</td>
           <td>Write</td>
-          <td>Setting locked to true means that other apps won’t be able to modify this resource.</td>
+          <td>Setting locked to <code>true</code> means that other apps won’t be able to modify this Rental URL (your application will be granted exclusivity for managing this resource).</td>
+          <td> </td>
         </tr>
       </tbody>
       <tbody>
-        <tr>
-          <td>canceled_at</td>
-          <td><a href="/reference/enums#formats">Time</a></td>
-          <td>Read</td>
-          <td>Time of soft delete.</td>
-        </tr>
         <tr>
           <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Photo’s create time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Photo’s update time.</td>
+          <td> </td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<h3 id="list-rentalurls">List RentalURLs</h3>
+<h3 id="list-rental-urls">List Rental URLs</h3>
 
-<p>List all RentalURLs for a given account(s).</p>
+<p>List all Rental URLs for a given account(s).</p>
 
 <pre><code>GET /rental_urls
 </code></pre>
@@ -289,7 +322,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#18caf322f90epublic" role="tab" data-toggle="pill">
+        <a href="#34e524ea2ed7public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -301,7 +334,7 @@
   
   
     
-      <div class="tab-pane active" id="18caf322f90epublic">
+      <div class="tab-pane active" id="34e524ea2ed7public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_urls.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rental_urls.account}"</span><span class="p">,</span>
@@ -341,9 +374,9 @@
   
 </div>
 
-<h3 id="get-a-single-rentalurl">Get a single RentalURL</h3>
+<h3 id="get-a-single-rental-url">Get a single Rental URL</h3>
 
-<p>Returns a single RentalURL identified by ID.</p>
+<p>Returns a single Rental URL identified by ID.</p>
 
 <pre><code>GET /rental_urls/:rental_url_id
 </code></pre>
@@ -352,7 +385,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#fbe8e453399epublic" role="tab" data-toggle="pill">
+        <a href="#c3c802298d6dpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -364,7 +397,7 @@
   
   
     
-      <div class="tab-pane active" id="fbe8e453399epublic">
+      <div class="tab-pane active" id="c3c802298d6dpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_urls.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rental_urls.account}"</span><span class="p">,</span>
@@ -404,9 +437,9 @@
   
 </div>
 
-<h3 id="create-a-new-rentalurl">Create a new RentalURL</h3>
+<h3 id="create-a-new-rental-url">Create a new Rental URL</h3>
 
-<p>Returns a newly created RentalURL for given rental.</p>
+<p>Returns a newly created Rental URL for given rental.</p>
 
 <pre><code>POST /rentals/:rental_id/rental_urls
 </code></pre>
@@ -415,7 +448,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#80f21b2fdfadrentals_write" role="tab" data-toggle="pill">
+        <a href="#095912e9f388rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -438,7 +471,7 @@
   
   
     
-      <div class="tab-pane active" id="80f21b2fdfadrentals_write">
+      <div class="tab-pane active" id="095912e9f388rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_urls.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rental_urls.account}"</span><span class="p">,</span>
@@ -478,9 +511,9 @@
   
 </div>
 
-<h3 id="update-a-rentalurl">Update a RentalURL</h3>
+<h3 id="update-a-rental-url">Update a Rental URL</h3>
 
-<p>Returns an updated RentalURL identified by ID.</p>
+<p>Returns an updated Rental URL identified by ID.</p>
 
 <pre><code>PUT /rental_urls/:rental_url_id
 </code></pre>
@@ -489,7 +522,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#7f2c8befcd87rentals_write" role="tab" data-toggle="pill">
+        <a href="#b2b2ba3b7ecfrentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -510,7 +543,7 @@
   
   
     
-      <div class="tab-pane active" id="7f2c8befcd87rentals_write">
+      <div class="tab-pane active" id="b2b2ba3b7ecfrentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_urls.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rental_urls.account}"</span><span class="p">,</span>
@@ -550,7 +583,7 @@
   
 </div>
 
-<h3 id="destroy-a-rentalurl">Destroy a RentalURL</h3>
+<h3 id="destroy-a-rental-url">Destroy a Rental URL</h3>
 
 <p>Required OAuth scope: <code>:rentals_write</code></p>
 

@@ -136,9 +136,16 @@
           <h2 id="rental-cancelation-policies">Rental Cancelation Policies</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-rental-cancelation-policies">List rental cancelation policies</a></li>
   <li><a href="#get-a-single-rental-cancelation-policy">Get a single rental cancelation policy</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents Rental Cancelation Policies which define the rules and potential penalties for the cancelation of <a href="/reference/endpoints/bookings/">Bookings</a> (defined either via Rental Cancelation Policy Items or <code>preset</code>)</p>
+
+<p>The Rental Cancelation Policy can be defined on the Account level (a global one that will be applied to all <a href="/reference/endpoints/rentals/">Rentals</a>), a custom one for Rental (if not defined, it defaults to Account’s one) and on the Booking level (which is the copy of the Rental’s one at time of Booking creation).</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -158,13 +165,43 @@
       </thead>
       <tbody>
         <tr>
-          <td>id</td>
+          <td>account</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Rental cancelation policy’s id.</td>
+          <td>Account’s ID related to the Rental Cancelation Policy</td>
+        </tr>
+        <tr>
+          <td>rental</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s ID related to the Rental Cancelation Policy</td>
+        </tr>
+        <tr>
+          <td>rental_cancelation_policy_items</td>
+          <td>Array</td>
+          <td>Read</td>
+          <td>Rental Cancelation Policy Items’ defined for the Rental Cancelation Policy</td>
+        </tr>
+        <tr>
+          <td>policeable_id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>ID of the resource to which Rental Cancelation Policy belongs to (Rental, Account or Booking)</td>
+        </tr>
+        <tr>
+          <td>policeable_type</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Type of the resource to which Rental Cancelation Policy belongs to (Rental, Account or Booking)</td>
         </tr>
       </tbody>
       <tbody>
+        <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental cancelation policy’s ID.</td>
+        </tr>
         <tr>
           <td>body</td>
           <td>String</td>
@@ -175,7 +212,13 @@
           <td>body_translations</td>
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read</td>
-          <td>Rental cancelation policy’s body, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+          <td>Rental cancelation policy’s body translations, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+        <tr>
+          <td>preset</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental cancelation policy’s preset, list of presets described in <a href="/reference/enums#rental-cancelation-policies-presets">enums section</a>.</td>
         </tr>
       </tbody>
       <tbody>
@@ -207,7 +250,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#cd8de00fd0ddpublic" role="tab" data-toggle="pill">
+        <a href="#cbab2c287f68public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -219,7 +262,7 @@
   
   
     
-      <div class="tab-pane active" id="cd8de00fd0ddpublic">
+      <div class="tab-pane active" id="cbab2c287f68public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_cancelation_policies.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rental_cancelation_policies.rental}"</span><span class="p">,</span>
@@ -233,8 +276,8 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Cancellation Policy: \nIn case of cancelation the downpayment paid upon booking is non-refundable."</span><span class="p">,</span>
         <span class="s2">"fr"</span><span class="o">:</span> <span class="s2">"Annulation : \nEn cas d'annulation l'acompte payé lors de la réservation ne sera pas remboursé."</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental_cancelation_policy_items"</span><span class="o">:</span> <span class="p">[</span>
@@ -261,7 +304,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#f6a4d279d74cpublic" role="tab" data-toggle="pill">
+        <a href="#8c5cdf5794c2public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -273,7 +316,7 @@
   
   
     
-      <div class="tab-pane active" id="f6a4d279d74cpublic">
+      <div class="tab-pane active" id="8c5cdf5794c2public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_cancelation_policies.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{rental_cancelation_policies.rental}"</span><span class="p">,</span>
@@ -287,8 +330,8 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Cancellation Policy: \nIn case of cancelation the downpayment paid upon booking is non-refundable."</span><span class="p">,</span>
         <span class="s2">"fr"</span><span class="o">:</span> <span class="s2">"Annulation : \nEn cas d'annulation l'acompte payé lors de la réservation ne sera pas remboursé."</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-02-04T15:58:17Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental_cancelation_policy_items"</span><span class="o">:</span> <span class="p">[</span>

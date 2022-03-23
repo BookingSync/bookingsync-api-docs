@@ -136,9 +136,16 @@
           <h2 id="tax-rules">Tax Rules</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-tax-rules">List tax rules</a></li>
   <li><a href="#get-a-single-tax-rule">Get a single tax rule</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents Tax Rules which are applicable to <a href="/reference/endpoints/rentals_taxes/">Rentals Taxes</a> or <a href="/reference/endpoints/taxes/">Taxes</a>.</p>
+
+<p>This resource impacts the applicability of the parent resource. For example, if <code>comparator</code> is set to <code>&gt;</code>, <code>value</code> is set to <code>10</code> and <code>compared_attribute</code> is <code>length_of_stay</code>, it means that the Tax will be applied only if the length of stay of the <a href="/reference/endpoints/booking/">Booking</a> is great than 10 nights. </p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -158,13 +165,19 @@
       </thead>
       <tbody>
         <tr>
-          <td>id</td>
+          <td>account</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Tax Rule’s id.</td>
+          <td>Account’s ID related to the Tax Rule</td>
         </tr>
       </tbody>
       <tbody>
+        <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Tax Rule’s ID.</td>
+        </tr>
         <tr>
           <td>comparator</td>
           <td>String</td>
@@ -175,19 +188,20 @@
           <td>compared_attribute</td>
           <td>String</td>
           <td>Read</td>
-          <td>Name of the attribute to compare.</td>
+          <td>Name of the attribute to compare. Possible values: <code>length_of_stay</code>
+</td>
         </tr>
         <tr>
           <td>ruleable_id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Id of the owner of the Tax Rule.</td>
+          <td>ID of the subject of the Tax Rule.</td>
         </tr>
         <tr>
           <td>ruleable_type</td>
           <td>String</td>
           <td>Read</td>
-          <td>Type of the owner of the Tax Rule, either <code>RentalsTax</code> or <code>Tax</code>.</td>
+          <td>Type of the subject of the Tax Rule, either <code>RentalsTax</code> or <code>Tax</code>.</td>
         </tr>
         <tr>
           <td>value</td>
@@ -225,7 +239,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#985614c26f84public" role="tab" data-toggle="pill">
+        <a href="#e7375185d428public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -237,7 +251,7 @@
   
   
     
-      <div class="tab-pane active" id="985614c26f84public">
+      <div class="tab-pane active" id="e7375185d428public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"tax_rules"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -268,7 +282,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#2c6c03f22b08public" role="tab" data-toggle="pill">
+        <a href="#79b14e32c1fepublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -280,7 +294,7 @@
   
   
     
-      <div class="tab-pane active" id="2c6c03f22b08public">
+      <div class="tab-pane active" id="79b14e32c1fepublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"tax_rules"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>

@@ -136,12 +136,17 @@
           <h2 id="rental-contacts">Rental contacts</h2>
 
 <ol id="markdown-toc">
+  <li><a href="#overview">Overview</a></li>
   <li><a href="#list-rental-contacts">List rental contacts</a></li>
   <li><a href="#get-a-single-rental-contact">Get a single rental contact</a></li>
   <li><a href="#create-a-new-rental-contact">Create a new rental contact</a></li>
   <li><a href="#update-a-rental-contact">Update a rental contact</a></li>
   <li><a href="#destroy-a-rental-contact">Destroy a rental contact</a></li>
 </ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents Rental Contacts which is a relationship between <a href="/reference/endpoints/contacts/">Contact person</a> and <a href="/reference/endpoints/rentals/">Rentals</a>.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -163,19 +168,31 @@
       </thead>
       <tbody>
         <tr>
-          <td>id</td>
+          <td>account</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Rental contact’s id.</td>
+          <td>Account’s ID related to the Rental contact</td>
         </tr>
         <tr>
-          <td>contact_id</td>
+          <td>contact</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Contact’s id.</td>
+          <td>Contacts’s ID related to the Rental contact</td>
+        </tr>
+        <tr>
+          <td>rental</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s ID related to the Rental contact</td>
         </tr>
       </tbody>
       <tbody>
+        <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental contact’s ID.</td>
+        </tr>
         <tr>
           <td>kind</td>
           <td><a href="/reference/enums#rental-contact-kinds">String</a></td>
@@ -201,12 +218,6 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rental contact’s update time.</td>
-        </tr>
-        <tr>
-          <td>canceled_at</td>
-          <td><a href="/reference/enums#formats">Time</a></td>
-          <td>Read</td>
-          <td>Rental contact’s canceled time if canceled.</td>
         </tr>
       </tbody>
     </table>
@@ -223,19 +234,31 @@
       </thead>
       <tbody>
         <tr>
-          <td>id</td>
+          <td>account</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Rental contact’s id.</td>
+          <td>Account’s ID related to the Rental contact</td>
         </tr>
         <tr>
-          <td>contact_id</td>
+          <td>contact</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Contact’s id.</td>
+          <td>Contacts’s ID related to the Rental contact</td>
+        </tr>
+        <tr>
+          <td>rental</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s ID related to the Rental contact</td>
         </tr>
       </tbody>
       <tbody>
+        <tr>
+          <td>id</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental contact’s ID.</td>
+        </tr>
         <tr>
           <td>kind</td>
           <td><a href="/reference/enums#rental-contact-kinds">String</a></td>
@@ -261,12 +284,6 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rental contact’s update time.</td>
-        </tr>
-        <tr>
-          <td>canceled_at</td>
-          <td><a href="/reference/enums#formats">Time</a></td>
-          <td>Read</td>
-          <td>Rental contact’s canceled time if canceled.</td>
         </tr>
       </tbody>
     </table>
@@ -279,34 +296,61 @@
           <th>Type</th>
           <th>Read/Write</th>
           <th>Description</th>
+          <th>Constraints</th>
         </tr>
       </thead>
+      <tbody>
+        <tr>
+          <td>account</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Account’s ID related to the Rental contact</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>contact</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Contacts’s ID related to the Rental contact</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>rental</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Rental’s ID related to the Rental contact</td>
+          <td> </td>
+        </tr>
+      </tbody>
       <tbody>
         <tr>
           <td>id</td>
           <td>Integer</td>
           <td>Read</td>
-          <td>Rental contact’s id.</td>
+          <td>Rental contact’s ID.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>contact_id</td>
           <td>Integer</td>
           <td>Write</td>
-          <td>Contact’s id.</td>
+          <td>Contact’s ID.</td>
+          <td><strong>Required</strong></td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
           <td>kind</td>
           <td><a href="/reference/enums#rental-contact-kinds">String</a></td>
           <td>Read/Write</td>
           <td>Rental contact’s kind</td>
+          <td>
+<strong>Required</strong>, must be one of the Rental contact kinds, only one <code>owner</code> kind is allowed per Rental,</td>
         </tr>
         <tr>
           <td>roles</td>
           <td><a href="/reference/enums#rental-contact-roles">Array of Strings</a></td>
           <td>Read/Write</td>
           <td>Rental contact’s roles</td>
+          <td>Must be one of the Rental contact kinds if present, only one <code>general</code> role is allowed per Rental, only one <code>invoices</code> role is allowed per Rental</td>
         </tr>
       </tbody>
       <tbody>
@@ -315,18 +359,14 @@
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rental contact’s create time.</td>
+          <td> </td>
         </tr>
         <tr>
           <td>updated_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
           <td>Rental contact’s update time.</td>
-        </tr>
-        <tr>
-          <td>canceled_at</td>
-          <td><a href="/reference/enums#formats">Time</a></td>
-          <td>Read</td>
-          <td>Rental contact’s canceled time if canceled.</td>
+          <td> </td>
         </tr>
       </tbody>
     </table>
@@ -344,13 +384,13 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#c5249bbe3391public" role="tab" data-toggle="pill">
+        <a href="#ba34cd24440bpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
       <li>
-        <a href="#e7d456010f0brentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#3c6bdfd685d9rentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
@@ -362,7 +402,7 @@
   
   
     
-      <div class="tab-pane active" id="c5249bbe3391public">
+      <div class="tab-pane active" id="ba34cd24440bpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
@@ -396,7 +436,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="e7d456010f0brentals_read-rentals_write">
+      <div class="tab-pane " id="3c6bdfd685d9rentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
@@ -444,13 +484,13 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#13ca94261501public" role="tab" data-toggle="pill">
+        <a href="#2336cb745585public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
       <li>
-        <a href="#d12933da34edrentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#5f2ae337b016rentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
@@ -462,7 +502,7 @@
   
   
     
-      <div class="tab-pane active" id="13ca94261501public">
+      <div class="tab-pane active" id="2336cb745585public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
@@ -496,7 +536,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="d12933da34edrentals_read-rentals_write">
+      <div class="tab-pane " id="5f2ae337b016rentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
@@ -544,7 +584,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#be5236aa91b2rentals_write" role="tab" data-toggle="pill">
+        <a href="#1afed4291a71rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -570,7 +610,7 @@
   
   
     
-      <div class="tab-pane active" id="be5236aa91b2rentals_write">
+      <div class="tab-pane active" id="1afed4291a71rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
@@ -618,7 +658,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#e9fcc2ee99e8rentals_write" role="tab" data-toggle="pill">
+        <a href="#9d87c215e1dcrentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -643,7 +683,7 @@
   
   
     
-      <div class="tab-pane active" id="e9fcc2ee99e8rentals_write">
+      <div class="tab-pane active" id="9d87c215e1dcrentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
