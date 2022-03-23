@@ -1,7 +1,20 @@
 # Change Log
 
-## [3.26.1](https://github.com/BookingSync/bookingsync-api-docs/tree/3.26.1) (2022-02-04)
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.25.1...3.26.1)
+## [3.26.2](https://github.com/BookingSync/bookingsync-api-docs/tree/3.26.2) (2022-03-23)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.26.1...3.26.2)
+
+**Merged pull requests:**
+
+- Document constraints batch 7 [\#360](https://github.com/BookingSync/bookingsync-api-docs/pull/360) ([Azdaroth](https://github.com/Azdaroth))
+- Document constraints batch 6 [\#359](https://github.com/BookingSync/bookingsync-api-docs/pull/359) ([Azdaroth](https://github.com/Azdaroth))
+- Document constraints batch 5 [\#358](https://github.com/BookingSync/bookingsync-api-docs/pull/358) ([Azdaroth](https://github.com/Azdaroth))
+- Document constraints batch 4 [\#357](https://github.com/BookingSync/bookingsync-api-docs/pull/357) ([Azdaroth](https://github.com/Azdaroth))
+-  Document constraints batch 3 [\#356](https://github.com/BookingSync/bookingsync-api-docs/pull/356) ([Azdaroth](https://github.com/Azdaroth))
+- \[BASE BRANCH CHANGED\] Document constraints batch 2 [\#355](https://github.com/BookingSync/bookingsync-api-docs/pull/355) ([Azdaroth](https://github.com/Azdaroth))
+- document constraints / update docs / overview - batch 1 [\#354](https://github.com/BookingSync/bookingsync-api-docs/pull/354) ([Azdaroth](https://github.com/Azdaroth))
+
+## [v3.26.1](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.26.1) (2022-02-04)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.25.1...v3.26.1)
 
 **Merged pull requests:**
 
