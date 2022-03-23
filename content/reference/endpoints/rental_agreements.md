@@ -7,7 +7,7 @@
 
 This resource represents Rental Agreements - an agreement that needs to be accepted by [Clients (travelers)](/reference/endpoints/clients/) for [Bookings](/reference/endpoints/bookings/).
 
-The Rental Agreement can be defined on the Account level (a global one that will be applied to all [Rentals](/reference/endpoints/rentals/)), a custom one for Rental (if not defined, it default to Account's one) and on the Booking level (which is the copy of the Rental's one at time of Booking creation).
+The Rental Agreement can be defined on the Account level (a global one that will be applied to all [Rentals](/reference/endpoints/rentals/)), a custom one for Rental (if not defined, it defaults to Account's one) and on the Booking level (which is the copy of the Rental's one at time of Booking creation).
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
