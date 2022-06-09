@@ -160,6 +160,7 @@ linen_package                | All linens
 municipality                 | Municipality
 oil                          | Oil
 parking                      | Parking
+pet_fee                      | Pet fee
 public_transit_day_ticket    | Public transport day ticket
 resort                       | Resort
 sea_plane                    | Sea plane
