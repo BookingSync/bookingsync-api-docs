@@ -1,7 +1,7 @@
 {
   "bathrooms": [
     {
-      "name": "bathroom",
+      "name_en": "bathroom",
       "bath_count": 1,
       "shower_count": 0,
       "wc_count": 2
