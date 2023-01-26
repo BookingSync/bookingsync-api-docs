@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents the Clients which effectively are the actual travelers (guests) that are related to [Bookings](/reference/endpoints/bookings/). 
+This resource represents the Clients which effectively are the actual travelers (guests) that are related to [Bookings](/reference/endpoints/bookings/).
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
@@ -57,7 +57,7 @@ Group     | Name             | Type    | Read/Write | Description | Constraints
 ----------|------------------|---------|------------|------------|
           | account          | Integer | Read       | Account's ID related to the Client |
 ----------|------------------|---------|------------|------------|
-          | company          | String  | Read/Write | Client's company name. | 
+          | company          | String  | Read/Write | Client's company name. |
           | fullname         | String  | Read/Write | **Required**. Client's fullname. | Maximum length: 150. Use either `fullname` or `firstname` and `lastname`
           | firstname        | String  | Read/Write | Client's first name.| Maximum length: 150. Use either `fullname` or `firstname` and `lastname`
           | lastname         | String  | Read/Write | Client's last name. | Maximum length: 150. Use either `fullname` or `firstname` and `lastname`
@@ -78,7 +78,7 @@ addresses |                  | Array   | Read/Write | Array of client's addresse
           | state            | String  | Read/Write | Client's state. | Maximum length: 100, cannot contain non-printable characters
           | zip              | String  | Read/Write | Client's zip. | Maximum length: 15, cannot contain non-printable characters
 ----------|------------------|---------|------------|------------
-emails    |                  | Array   | Read/Write | Array of client's emails. | 
+emails    |                  | Array   | Read/Write | Array of client's emails. |
           | email            | String  | Read/Write | Client's email. | **Required**, must be in email format (if the element is present in `emails` array)
           | label            | String  | Read/Write | Email label. | **Required** (if the element is present in `emails` array)
 ----------|------------------|---------|------------|------------|
@@ -103,7 +103,7 @@ List all clients for a given account.
 GET /clients
 ~~~
 
-<%= render 'json_response', endpoint: "clients", scopes: %w(clients_read-clients_write) %>
+<%= render '/json_response.html', endpoint: "clients", scopes: %w(clients_read-clients_write) %>
 
 ## Get a single client
 
@@ -113,7 +113,7 @@ Returns a single client identified by ID.
 GET /clients/:client_id
 ~~~
 
-<%= render 'json_response', endpoint: "clients", scopes: %w(clients_read-clients_write) %>
+<%= render '/json_response.html', endpoint: "clients", scopes: %w(clients_read-clients_write) %>
 
 ## Create a new client
 
@@ -123,7 +123,7 @@ Returns a newly created client.
 POST /clients
 ~~~~
 
-<%= render 'json_response', endpoint: "clients", request: "create",
+<%= render '/json_response.html', endpoint: "clients", request: "create",
   scopes: [{ clients_write: "clients_read-clients_write" }] %>
 
 ## Update a client
@@ -140,5 +140,5 @@ Returns an updated client identified by ID.
 PUT /clients/:client_id
 ~~~
 
-<%= render 'json_response', endpoint: "clients", request: "update",
+<%= render '/json_response.html', endpoint: "clients", request: "update",
   scopes: [{ clients_write: "clients_read-clients_write" }] %>

@@ -60,7 +60,7 @@ List all living_rooms for a given account.
 GET /living_rooms
 ~~~
 
-<%= render 'json_response', endpoint: "living_rooms",
+<%= render '/json_response.html', endpoint: "living_rooms",
   scopes: [{ public: "public-rentals_write" }] %>
 
 ## Get a single living_room
@@ -71,7 +71,7 @@ Returns a single living_room identified by ID.
 GET /living_rooms/:living_room_id
 ~~~
 
-<%= render 'json_response', endpoint: "living_rooms",
+<%= render '/json_response.html', endpoint: "living_rooms",
   scopes: [{ public: "public-rentals_write" }] %>
 
 ## Create a new living_room
@@ -82,7 +82,7 @@ Creates a living_room for given rental.
 POST /rentals/:rental_id/living_rooms
 ~~~
 
-<%= render 'json_response', endpoint: "living_rooms", request: "create",
+<%= render '/json_response.html', endpoint: "living_rooms", request: "create",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Update a living_room
@@ -93,7 +93,7 @@ Returns an updated living_room identified by ID.
 PUT /living_rooms/:living_room_id
 ~~~
 
-<%= render 'json_response', endpoint: "living_rooms", request: "update",
+<%= render '/json_response.html', endpoint: "living_rooms", request: "update",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Destroy a living_room

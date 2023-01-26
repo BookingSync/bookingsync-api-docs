@@ -54,7 +54,7 @@ processing_restricted_at | [Time](/reference/enums#formats) | Read       | Host'
 GET /hosts
 ~~~
 
-<%= render 'json_response', endpoint: "hosts", scopes: %w(inbox_read-inbox_write) %>
+<%= render '/json_response.html', endpoint: "hosts", scopes: %w(inbox_read-inbox_write) %>
 
 ## Get a single Host
 
@@ -64,7 +64,7 @@ Returns a single host identified by ID.
 GET /hosts/:host_id
 ~~~
 
-<%= render 'json_response', endpoint: "hosts", scopes: %w(inbox_read-inbox_write) %>
+<%= render '/json_response.html', endpoint: "hosts", scopes: %w(inbox_read-inbox_write) %>
 
 ## Create a new Host
 
@@ -74,7 +74,7 @@ Creates an host.
 POST /hosts
 ~~~~
 
-<%= render 'json_response', endpoint: "hosts", request: "create", scopes: %w(inbox_write) %>
+<%= render '/json_response.html', endpoint: "hosts", request: "create", scopes: %w(inbox_write) %>
 
 ## Update a Host
 
@@ -84,4 +84,4 @@ Returns an updated host identified by ID.
 PUT /hosts/:host_id
 ~~~
 
-<%= render 'json_response', endpoint: "hosts", request: "update", scopes: %w(inbox_write) %>
+<%= render '/json_response.html', endpoint: "hosts", request: "update", scopes: %w(inbox_write) %>

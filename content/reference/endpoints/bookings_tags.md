@@ -52,7 +52,7 @@ List all bookings tags for a given account(s).
 GET /bookings_tags
 ~~~
 
-<%= render 'json_response', endpoint: "bookings_tags", scopes: %w(bookings_read) %>
+<%= render '/json_response.html', endpoint: "bookings_tags", scopes: %w(bookings_read) %>
 
 ## Get a single bookings tag
 
@@ -62,7 +62,7 @@ Returns a single bookings tag identified by ID.
 GET /bookings_tags/:bookings_tag_id
 ~~~
 
-<%= render 'json_response', endpoint: "bookings_tags", scopes: %w(bookings_read) %>
+<%= render '/json_response.html', endpoint: "bookings_tags", scopes: %w(bookings_read) %>
 
 ## Create a new bookings tag
 
@@ -72,7 +72,7 @@ Creates a bookings tag for account.
 POST /bookings_tags
 ~~~
 
-<%= render 'json_response', endpoint: "bookings_tags", request: "create",
+<%= render '/json_response.html', endpoint: "bookings_tags", request: "create",
   scopes: %W(bookings_write) %>
 
 ## Update a bookings tag
@@ -83,7 +83,7 @@ Returns an updated bookings tag identified by ID.
 PUT /bookings_tags/:bookings_tag_id
 ~~~
 
-<%= render 'json_response', endpoint: "bookings_tags", request: "update",
+<%= render '/json_response.html', endpoint: "bookings_tags", request: "update",
   scopes: %W(bookings_write) %>
 
 ## Add a single bookings tag

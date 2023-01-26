@@ -34,7 +34,7 @@ Name             | Type    | Read/Write | Description | Constraints
 account          | Integer | Read       | Account's ID related to the Source |
 -----------------|---------|------------|-------------|
 id               | Integer | Read       | Source's ID. |
-name             | String  | Read/Write | Source's name.| **Required**, maximum length: 50, must not contain non-printing characters 
+name             | String  | Read/Write | Source's name.| **Required**, maximum length: 50, must not contain non-printing characters
 position         | Integer | Read/Write | Source's position on the list. |
 internal         | Boolean | Read       | Source's internal status. When `true`, it is restricted for internal-only use (should not be used by the Partners for anything else than read). Every attempt to associate any record with such a source will result in 422 error. |
 -----------------|---------|------------|-------------|
@@ -52,7 +52,7 @@ List all sources for a given account.
 GET /sources
 ~~~
 
-<%= render 'json_response', endpoint: "sources", scopes: %w(bookings_read-bookings_write-bookings_write_owned) %>
+<%= render '/json_response.html', endpoint: "sources", scopes: %w(bookings_read-bookings_write-bookings_write_owned) %>
 
 ## Get a single source
 
@@ -62,7 +62,7 @@ Returns a single source identified by ID.
 GET /sources/:source_id
 ~~~
 
-<%= render 'json_response', endpoint: "sources", scopes: %w(bookings_read-bookings_write-bookings_write_owned) %>
+<%= render '/json_response.html', endpoint: "sources", scopes: %w(bookings_read-bookings_write-bookings_write_owned) %>
 
 ## Create a new source
 
@@ -72,7 +72,7 @@ Returns a newly created source.
 POST /sources
 ~~~~
 
-<%= render 'json_response', endpoint: "sources", request: "create",
+<%= render '/json_response.html', endpoint: "sources", request: "create",
   scopes: [
     { bookings_write_owned: "bookings_read-bookings_write-bookings_write_owned" },
     { bookings_write: "bookings_read-bookings_write-bookings_write_owned" }
@@ -86,7 +86,7 @@ Returns an updated source identified by ID.
 PUT /sources/:source_id
 ~~~
 
-<%= render 'json_response', endpoint: "sources", request: "update",
+<%= render '/json_response.html', endpoint: "sources", request: "update",
   scopes: [
     { bookings_write_owned: "bookings_read-bookings_write-bookings_write_owned" },
     { bookings_write: "bookings_read-bookings_write-bookings_write_owned" }

@@ -31,7 +31,7 @@ created_at       | [Time](/reference/enums#formats) | Read       | Mid Term Rate
 Name             | Type    | Read/Write | Description | Constraints
 -----------------|---------|------------|-------------|
 rental           | Integer | Read       | Rental's ID related to the Mid Term Rate Map |
-account          | Integer | Read       | Account's ID related to the Mid Term Rate Map | 
+account          | Integer | Read       | Account's ID related to the Mid Term Rate Map |
 -----------------|---------|------------|-------------|
 id               | String[UUID]     | Read       | Mid Term Rate Map's id. |
 map              | String  | Read/Write | Mid Term Rate Map's map of rates. There is a total of 1096 characters, each representing one day. `0` rate represents a day without rate assigned. | **Required**, required length: 1096
@@ -50,7 +50,7 @@ List all mid term rate maps for a given account.
 GET /mid_term_rate_maps
 ~~~
 
-<%= render 'json_response', endpoint: "mid_term_rate_maps", scopes: %w(rates_read-rates_write) %>
+<%= render '/json_response.html', endpoint: "mid_term_rate_maps", scopes: %w(rates_read-rates_write) %>
 
 ## Get a single mid term rate map
 
@@ -60,7 +60,7 @@ Returns a single mid term rate map identified by ID.
 GET /mid_term_rate_maps/:mid_term_rate_map_id
 ~~~
 
-<%= render 'json_response', endpoint: "mid_term_rate_maps", scopes: %w(rates_read-rates_write) %>
+<%= render '/json_response.html', endpoint: "mid_term_rate_maps", scopes: %w(rates_read-rates_write) %>
 
 ## Update a mid term rate map
 
@@ -80,5 +80,5 @@ Returns an updated mid term rate map identified by ID.
 PUT /mid_term_rate_maps/:mid_term_rate_map_id
 ~~~
 
-<%= render 'json_response', endpoint: "mid_term_rate_maps", request: "update",
+<%= render '/json_response.html', endpoint: "mid_term_rate_maps", request: "update",
   scopes: [{ rates_write: "rates_read-rates_write" }] %>

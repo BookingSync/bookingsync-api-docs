@@ -45,7 +45,7 @@ id               | Integer | Read       | Nightly Rate Map's id. |
 minimum_stays_map| String  | Read/Write | Nightly Rate Map's map of minimum stays as comma-separated values. There is a total of 1096 characters, each representing one day. | **Required**, Required length: 1096
 rates_map        | String  | Read/Write | Nightly Rate Map's map of rates as comma-separated values. There is a total of 1096 characters, each representing one day. `0` rate represents a day without rate assigned. | **Required**, Required length: 1096
 -----------------|---------|------------|------------|
-start_date       | [Date](/reference/enums#formats) | Read/Write | Nightly Rate Map's start date. | **Required**. Earliest supported `start_date` is yesterday, latest one - 1094 days from today. Both restrictions are based on current UTC date. 
+start_date       | [Date](/reference/enums#formats) | Read/Write | Nightly Rate Map's start date. | **Required**. Earliest supported `start_date` is yesterday, latest one - 1094 days from today. Both restrictions are based on current UTC date.
 created_at       | [Time](/reference/enums#formats) | Read       | Nightly Rate Map's create time. |
 updated_at       | [Time](/reference/enums#formats) | Read       | Nightly Rate Map's update time. |
 {: class="table table-bordered"}
@@ -60,7 +60,7 @@ List all nightly rate maps for a given account.
 GET /nightly_rate_maps
 ~~~
 
-<%= render 'json_response', endpoint: "nightly_rate_maps", scopes: %w(rates_read-rates_write) %>
+<%= render '/json_response.html', endpoint: "nightly_rate_maps", scopes: %w(rates_read-rates_write) %>
 
 ## Get a single nightly rate map
 
@@ -70,7 +70,7 @@ Returns a single nightly rate map identified by ID.
 GET /nightly_rate_maps/:nightly_rate_map_id
 ~~~
 
-<%= render 'json_response', endpoint: "nightly_rate_maps", scopes: %w(rates_read-rates_write) %>
+<%= render '/json_response.html', endpoint: "nightly_rate_maps", scopes: %w(rates_read-rates_write) %>
 
 ## Update a nightly rate map
 
@@ -90,5 +90,5 @@ Returns an updated nightly rate map identified by ID.
 PUT /nightly_rate_maps/:nightly_rate_map_id
 ~~~
 
-<%= render 'json_response', endpoint: "nightly_rate_maps", request: "update",
+<%= render '/json_response.html', endpoint: "nightly_rate_maps", request: "update",
   scopes: [{ rates_write: "rates_read-rates_write" }] %>

@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents Rental Links which are managed via [Rental Link Groups](/reference/endpoints/rental_link_groups/). 
+This resource represents Rental Links which are managed via [Rental Link Groups](/reference/endpoints/rental_link_groups/).
 
 The purpose of the Rental Links is to mirror the availabilities between two Rentals - if there is a link between Rental A and Rental B, creating (or canceling) a [Booking](/reference/endpoints/bookings/) for either of them will result in creating/canceling a "mirrored" Booking on the other Rental.
 
@@ -41,7 +41,7 @@ List all rental link for a given account(s).
 GET /rental_links
 ~~~
 
-<%= render 'json_response', endpoint: "rental_links", scopes: %w(public) %>
+<%= render '/json_response.html', endpoint: "rental_links", scopes: %w(public) %>
 
 ## Get a single rental link
 
@@ -51,4 +51,4 @@ Returns a single rental link identified by ID.
 GET /rental_links/:rental_link_id
 ~~~
 
-<%= render 'json_response', endpoint: "rental_links", scopes: %w(public) %>
+<%= render '/json_response.html', endpoint: "rental_links", scopes: %w(public) %>

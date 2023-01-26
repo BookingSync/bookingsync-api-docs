@@ -23,7 +23,7 @@ account          | Integer | Read       | Account's ID related to the Tax
 id               | Integer | Read       | Tax's ID.
 name             | [Object](/reference/enums#formats)   | Read       | Tax's name, list of locales described in [enums section](/reference/enums#locales).
 percentage       | [Decimal](/reference/enums#formats)  | Read       | Tax's percentage.
-kind             | String  | Read       | Tax's kind, list of kinds described in [enums section](/reference/enums#tax-kinds) 
+kind             | String  | Read       | Tax's kind, list of kinds described in [enums section](/reference/enums#tax-kinds)
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Tax's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Tax's update time.
@@ -40,7 +40,7 @@ id               | Integer | Read       | Tax's ID.
 name             | [Object](/reference/enums#formats)   | Read       | Tax's name, list of locales described in [enums section](/reference/enums#locales).
 notes            | String  | Read       | Tax's private notes (requires `rates_read` or `rates_write scope)`.
 percentage       | [Decimal](/reference/enums#formats)  | Read       | Tax's percentage.
-kind             | String  | Read       | Tax's kind, list of kinds described in [enums section](/reference/enums#tax-kinds) 
+kind             | String  | Read       | Tax's kind, list of kinds described in [enums section](/reference/enums#tax-kinds)
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Tax's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Tax's update time.
@@ -54,7 +54,7 @@ Name             | Type    | Read/Write | Description | Constraints
 account          | Integer | Read       | Account's ID related to the Tax |
 -----------------|---------|------------|-------------|
 id               | Integer | Read       | Tax's ID. |
-name             | [Object](/reference/enums#formats)   | Read/Write | Tax's name, list of locales described in [enums section](/reference/enums#locales). | **Required** for Account's default locale, must not contain non-printing characters, maximum length: 50, 
+name             | [Object](/reference/enums#formats)   | Read/Write | Tax's name, list of locales described in [enums section](/reference/enums#locales). | **Required** for Account's default locale, must not contain non-printing characters, maximum length: 50,
 notes            | String  | Read/Write | Tax's private notes (requires `rates_read` or `rates_write scope)`.  |
 percentage       | [Decimal](/reference/enums#formats)  | Read/Write | Tax's percentage. | **Required**, must be greated than or equal to 0, writable only during creation.
 kind             | String  | Read/Write | Tax's kind, list of kinds described in [enums section](/reference/enums#tax-kinds) | **Required**, Must be a valid tax kind
@@ -76,7 +76,7 @@ List all taxes for a given account(s).
 GET /taxes
 ~~~
 
-<%= render 'json_response', endpoint: "taxes", scopes: %w(public rates_read-rates_write) %>
+<%= render '/json_response.html', endpoint: "taxes", scopes: %w(public rates_read-rates_write) %>
 
 ## Get a single tax
 
@@ -86,7 +86,7 @@ Returns a single tax identified by ID.
 GET /taxes/:tax_id
 ~~~
 
-<%= render 'json_response', endpoint: "taxes", scopes: %w(public rates_read-rates_write) %>
+<%= render '/json_response.html', endpoint: "taxes", scopes: %w(public rates_read-rates_write) %>
 
 ## Create a new tax
 
@@ -96,7 +96,7 @@ Returns a newly created tax.
 POST /taxes
 ~~~
 
-<%= render 'json_response', endpoint: "taxes", request: "create",
+<%= render '/json_response.html', endpoint: "taxes", request: "create",
   scopes: [{ rates_write: "rates_read-rates_write" }] %>
 
 ## Update a tax
@@ -107,5 +107,5 @@ Returns an updated tax identified by ID.
 PUT /taxes/:tax_id
 ~~~
 
-<%= render 'json_response', endpoint: "taxes", request: "update",
+<%= render '/json_response.html', endpoint: "taxes", request: "update",
   scopes: [{ rates_write: "rates_read-rates_write" }] %>

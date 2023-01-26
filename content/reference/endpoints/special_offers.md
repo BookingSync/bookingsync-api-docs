@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents Special Offers which are the Rental's price (as `initial_price` in [Booking](/reference/endpoints/Bookings/)) modifiers, making it possible to provide special discounts during certain periods. 
+This resource represents Special Offers which are the Rental's price (as `initial_price` in [Booking](/reference/endpoints/Bookings/)) modifiers, making it possible to provide special discounts during certain periods.
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
@@ -56,7 +56,7 @@ List all special offers for a given account(s).
 GET /special_offers
 ~~~
 
-<%= render 'json_response', endpoint: "special_offers", scopes: [{ public: "public-rates_write" }] %>
+<%= render '/json_response.html', endpoint: "special_offers", scopes: [{ public: "public-rates_write" }] %>
 
 ## Get a single special offer
 
@@ -66,7 +66,7 @@ Returns a single special offer identified by ID.
 GET /special_offers/:special_offer_id
 ~~~
 
-<%= render 'json_response', endpoint: "special_offers", scopes: [{ public: "public-rates_write" }] %>
+<%= render '/json_response.html', endpoint: "special_offers", scopes: [{ public: "public-rates_write" }] %>
 
 ## Create a new special offer
 
@@ -76,7 +76,7 @@ Creates a special offer for given rental.
 POST /rentals/:rental_id/special_offers
 ~~~
 
-<%= render 'json_response', endpoint: "special_offers", request: "create",
+<%= render '/json_response.html', endpoint: "special_offers", request: "create",
   scopes: [{ rates_write: "public-rates_write" }] %>
 
 ## Update a special offer
@@ -87,7 +87,7 @@ Returns an updated special offer identified by ID.
 PUT /special_offers/:special_offer
 ~~~
 
-<%= render 'json_response', endpoint: "special_offers", request: "update",
+<%= render '/json_response.html', endpoint: "special_offers", request: "update",
   scopes: [{ rates_write: "public-rates_write" }] %>
 
 ## Destroy a special offer

@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents the installed Applications for the Account(s) via [OAuth](/reference/authorization/) - these are the actual applications that you, as a Partner, can register in [Partners Section](https://www.bookingsync.com/en/partners/). 
+This resource represents the installed Applications for the Account(s) via [OAuth](/reference/authorization/) - these are the actual applications that you, as a Partner, can register in [Partners Section](https://www.bookingsync.com/en/partners/).
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
@@ -53,7 +53,7 @@ List all installed applications for a given account.
 GET /applications
 ~~~
 
-<%= render 'json_response', endpoint: "applications", scopes: %w(applications_read) %>
+<%= render '/json_response.html', endpoint: "applications", scopes: %w(applications_read) %>
 
 ## Get a single application
 
@@ -63,4 +63,4 @@ Returns a single application identified by ID.
 GET /applications/:application_id
 ~~~
 
-<%= render 'json_response', endpoint: "applications", scopes: %w(applications_read) %>
+<%= render '/json_response.html', endpoint: "applications", scopes: %w(applications_read) %>

@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents the rental's bathrooms. This resource is mostly static information used for presentational purposes.   
+This resource represents the rental's bathrooms. This resource is mostly static information used for presentational purposes.
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
@@ -56,7 +56,7 @@ List all bathrooms for a given account.
 GET /bathrooms
 ~~~
 
-<%= render 'json_response', endpoint: "bathrooms",
+<%= render '/json_response.html', endpoint: "bathrooms",
   scopes: [{ public: "public-rentals_write" }] %>
 
 ## Get a single bathroom
@@ -67,7 +67,7 @@ Returns a single bathroom identified by ID.
 GET /bathrooms/:bathroom_id
 ~~~
 
-<%= render 'json_response', endpoint: "bathrooms",
+<%= render '/json_response.html', endpoint: "bathrooms",
   scopes: [{ public: "public-rentals_write" }] %>
 
 ## Create a new bathroom
@@ -78,7 +78,7 @@ Creates a bathroom for given rental.
 POST /rentals/:rental_id/bathrooms
 ~~~
 
-<%= render 'json_response', endpoint: "bathrooms", request: "create",
+<%= render '/json_response.html', endpoint: "bathrooms", request: "create",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Update a bathroom
@@ -89,7 +89,7 @@ Returns an updated bathroom identified by ID.
 PUT /bathrooms/:bathroom_id
 ~~~
 
-<%= render 'json_response', endpoint: "bathrooms", request: "update",
+<%= render '/json_response.html', endpoint: "bathrooms", request: "update",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Destroy a bathroom

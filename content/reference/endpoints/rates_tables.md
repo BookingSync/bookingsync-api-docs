@@ -62,7 +62,7 @@ List all rates tables for a given account.
 GET /rates_tables
 ~~~
 
-<%= render 'json_response', endpoint: "rates_tables", scopes: %w(rates_read-rates_write) %>
+<%= render '/json_response.html', endpoint: "rates_tables", scopes: %w(rates_read-rates_write) %>
 
 ## Get a single rates table
 
@@ -72,7 +72,7 @@ Returns a single rates table identified by ID.
 GET /rates_tables/:rates_table_id
 ~~~
 
-<%= render 'json_response', endpoint: "rates_tables", scopes: %w(rates_read-rates_write) %>
+<%= render '/json_response.html', endpoint: "rates_tables", scopes: %w(rates_read-rates_write) %>
 
 ## Create a new rates table
 
@@ -87,7 +87,7 @@ Returns a newly created rates table.
 POST /rates_tables
 ~~~
 
-<%= render 'json_response', endpoint: "rates_tables", request: "create",
+<%= render '/json_response.html', endpoint: "rates_tables", request: "create",
   scopes: [{ rates_write: "rates_read-rates_write" }] %>
 
 ## Update a rates table
@@ -98,7 +98,7 @@ Returns an updated rates table identified by ID.
 PUT /rates_tables/:rates_table_id
 ~~~
 
-<%= render 'json_response', endpoint: "rates_tables", request: "update",
+<%= render '/json_response.html', endpoint: "rates_tables", request: "update",
   scopes: [{ rates_write: "rates_read-rates_write" }] %>
 
 ## Destroy a rates table

@@ -20,7 +20,7 @@ If you are interested in implementing your own payment flow, check out this [gui
 </ul>
 <div class="tab-content" markdown="1">
   <div class="tab-pane" id="payments_write_owned" markdown="1">
-Name                | Type     | Read/Write | Description | Constraints 
+Name                | Type     | Read/Write | Description | Constraints
 --------------------|----------|------------|-------------|
 account             | Integer  | Read       | Account's ID related to the Payment |
 payment_gateway     | Integer  | Read (requires `preferences_payments_read` scope)      | Payment Gateway's ID related to the Payment |
@@ -28,29 +28,29 @@ bookings            | Array    | Read       | Bookings' IDs related to the Payme
 bookings_payments   | Array    | Read       | Booking Payments' IDs related to the Payment |
 --------------------|----------|------------|-------------|
 id                  | Integer  | Read       | Payment's id. |
-order_id            | String   | Read       | ID of order (only for internal Payments managed by BookingSync) 
+order_id            | String   | Read       | ID of order (only for internal Payments managed by BookingSync)
 gateway_id          | Integer  | Write      | ID of the Payment Gateway of Paypal Express Gateway | **Required** for `instant-booking` or `bookingsync` kind
 gateway_type        | String   | Write      | Type of the entity representing the gateway (this is a polymorphic relationship) | `PaymentGateway` or `PaypalExpressGateway`, **Required** for `instant-booking` or `bookingsync` kind
 gateway_name        | String   | Write      | Payment Gateway's name, available values are described in [enums section](/reference/enums#payment-gateway-names) | **Required** for `instant-booking` or `bookingsync` kind
 transaction_id      | String   | Read/Write | ID of transaction coming from the Payment Gateway. |
 address1            | String   | Read/Write | Payer's first address. | Maximum length: 100
 address2            | String   | Read/Write | Payer's second address. | Maximum length: 100
-amount_in_cents     | Integer  | Read/Write | Payment's amount in cents. | **Required** 
+amount_in_cents     | Integer  | Read/Write | Payment's amount in cents. | **Required**
 card                | String   | Read/Write | Payment's card number, only the last 4 digits are visible. (example: `"XXXX-XXXX-XXXX-1234"`). |
 city                | String   | Read/Write | Payer's city. | Maximum length: 100
 country_code        | String   | Read/Write | Payer's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements). | Must be one of the country codes if present
 currency            | String   | Read/Write | Payment's currency code, list of codes described in [enums section](/reference/enums/#currencies). | **Required**, must be one of the currencies
 description         | String   | Read       | Auto-generated description based on Rental's `name` and related Booking's `start_at`/`end_at` timestamps |
-kind                | String   | Read/Write | Payment's kind, list of kinds described in [enums section](/reference/enums/#payment-kinds). | **Required**, must be one of the payment kin 
+kind                | String   | Read/Write | Payment's kind, list of kinds described in [enums section](/reference/enums/#payment-kinds). | **Required**, must be one of the payment kin
 email               | String   | Read/Write | Payer's email. | Must be of email format if present
 fullname            | String   | Read/Write | Payer's fullname. | Cannot contain non-printing characters
 ip                  | String   | Read       | Payer's ip. |
 locale              | String   | Read/Write | Payer's preferred locale, list of locales described in [enums section](/reference/enums/#locales). | Must be of on the Account's available locales if present
-notes               | Text     | Read/Write | Payment's additional information. | 
+notes               | Text     | Read/Write | Payment's additional information. |
 state               | String   | Read/Write | Payer's state. | Maximum length: 100, required if country_code set to `US`
 test                | Boolean  | Read       | Payment's test status. |
 zip                 | String   | Read/Write | Payer's zip code. | Maximum length: 10
-credit_card_token   | String   | Read/Write | Token derived from the Credit Card | 
+credit_card_token   | String   | Read/Write | Token derived from the Credit Card |
 offsite_payment     | Boolean  | Read/Write | Whether Payment is an offsite one or not |
 locked              | String   | Read       | Payment's locked status. |
 chargeable          | Boolean  | Read       | Whether Payment is chargeable or not (e.g. if the related Booking is canceled or fully paid, it's going to return `false`) |
@@ -71,7 +71,7 @@ escrow_date              | [Date](/reference/enums#formats) | Read       |  Paym
 Name                | Type     | Read/Write | Description
 --------------------|----------|------------|------------
 account             | Integer  | Read       | Account's ID related to the Payment
-payment_gateway     | Integer  | Read (requires `preferences_payments_read` scope) | Payment Gateway's ID related to the Payment 
+payment_gateway     | Integer  | Read (requires `preferences_payments_read` scope) | Payment Gateway's ID related to the Payment
 bookings            | Array    | Read       | Bookings' IDs related to the Payment
 bookings_payments   | Array    | Read       | Booking Payments' IDs related to the Payment
 --------------------|----------|------------|------------
@@ -95,10 +95,10 @@ notes               | Text     | Read       | Payment's additional information.
 state               | String   | Read       | Payer's state.
 test                | Boolean  | Read       | Payment's test status.
 zip                 | String   | Read       | Payer's zip code.
-credit_card_token   | String   | Read       | Token derived from the Credit Card  
-offsite_payment     | Boolean  | Read       | Whether Payment is an offsite one or not 
-locked              | String   | Read       | Payment's locked status. 
-chargeable          | Boolean  | Read       | Whether Payment is chargeable or not (e.g. if the related Booking is canceled or fully paid, it's going to return `false`) 
+credit_card_token   | String   | Read       | Token derived from the Credit Card
+offsite_payment     | Boolean  | Read       | Whether Payment is an offsite one or not
+locked              | String   | Read       | Payment's locked status.
+chargeable          | Boolean  | Read       | Whether Payment is chargeable or not (e.g. if the related Booking is canceled or fully paid, it's going to return `false`)
 --------------------|----------|------------|------------
 created_at          | [Time](/reference/enums#formats) | Read       | Payment's create time.
 updated_at          | [Time](/reference/enums#formats) | Read       | Payment's update time.
@@ -107,9 +107,9 @@ canceled_at         | [Time](/reference/enums#formats) | Read       | Payment's 
 paid_at             | [Time](/reference/enums#formats) | Read       | Payment's paid time.
 forget_me_at     | [Time](/reference/enums#formats) | Read       | Refer to [GDPR guide](/guides/gdpr).
 processing_restricted_at | [Time](/reference/enums#formats) | Read       | Refer to [GDPR guide](/guides/gdpr).
-capturable_from          | [Date](/reference/enums#formats) | Read       |  A date from which Payment is capturable 
-authorized_at            | [Time](/reference/enums#formats) | Read       | Payment's authorization time 
-escrow_date              | [Date](/reference/enums#formats) | Read       |  Payment's escrow date (applicable for BookingPay Payment Gateway) 
+capturable_from          | [Date](/reference/enums#formats) | Read       |  A date from which Payment is capturable
+authorized_at            | [Time](/reference/enums#formats) | Read       | Payment's authorization time
+escrow_date              | [Date](/reference/enums#formats) | Read       |  Payment's escrow date (applicable for BookingPay Payment Gateway)
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="payments_write" markdown="1">
@@ -121,29 +121,29 @@ bookings            | Array    | Read       | Bookings' IDs related to the Payme
 bookings_payments   | Array    | Read       | Booking Payments' IDs related to the Payment |
 --------------------|----------|------------|-------------|
 id                  | Integer  | Read       | Payment's id. |
-order_id            | String   | Read       | ID of order (only for internal Payments managed by BookingSync) 
+order_id            | String   | Read       | ID of order (only for internal Payments managed by BookingSync)
 gateway_id          | Integer  | Write      | ID of the Payment Gateway of Paypal Express Gateway | **Required** for `instant-booking` or `bookingsync` kind
 gateway_type        | String   | Write      | Type of the entity representing the gateway (this is a polymorphic relationship) | `PaymentGateway` or `PaypalExpressGateway`, **Required** for `instant-booking` or `bookingsync` kind
 gateway_name        | String   | Write      | Payment Gateway's name, available values are described in [enums section](/reference/enums#payment-gateway-names) | **Required** for `instant-booking` or `bookingsync` kind
 transaction_id      | String   | Read/Write | ID of transaction coming from the Payment Gateway. |
 address1            | String   | Read/Write | Payer's first address. | Maximum length: 100
 address2            | String   | Read/Write | Payer's second address. | Maximum length: 100
-amount_in_cents     | Integer  | Read/Write | Payment's amount in cents. | **Required** 
+amount_in_cents     | Integer  | Read/Write | Payment's amount in cents. | **Required**
 card                | String   | Read/Write | Payment's card number, only the last 4 digits are visible. (example: `"XXXX-XXXX-XXXX-1234"`). |
 city                | String   | Read/Write | Payer's city. | Maximum length: 100
 country_code        | String   | Read/Write | Payer's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements). | Must be one of the country codes if present
 currency            | String   | Read/Write | Payment's currency code, list of codes described in [enums section](/reference/enums/#currencies). | **Required**, must be one of the currencies
 description         | String   | Read       | Auto-generated description based on Rental's `name` and related Booking's `start_at`/`end_at` timestamps. |
-kind                | String   | Read/Write | Payment's kind, list of kinds described in [enums section](/reference/enums/#payment-kinds). | **Required**, must be one of the payment kin 
+kind                | String   | Read/Write | Payment's kind, list of kinds described in [enums section](/reference/enums/#payment-kinds). | **Required**, must be one of the payment kin
 email               | String   | Read/Write | Payer's email. | Must be of email format if present
 fullname            | String   | Read/Write | Payer's fullname. | Cannot contain non-printing characters
 ip                  | String   | Read       | Payer's ip. |
 locale              | String   | Read/Write | Payer's preferred locale, list of locales described in [enums section](/reference/enums/#locales). | Must be of on the Account's available locales if present
-notes               | Text     | Read/Write | Payment's additional information. | 
+notes               | Text     | Read/Write | Payment's additional information. |
 state               | String   | Read/Write | Payer's state. | Maximum length: 100, required if country_code set to `US`
 test                | Boolean  | Read       | Payment's test status. |
 zip                 | String   | Read/Write | Payer's zip code. | Maximum length: 10
-credit_card_token   | String   | Read/Write | Token derived from the Credit Card | 
+credit_card_token   | String   | Read/Write | Token derived from the Credit Card |
 offsite_payment     | Boolean  | Read/Write | Whether Payment is an offsite one or not |
 locked              | String   | Read       | Payment's locked status. |
 chargeable          | Boolean  | Read       | Whether Payment is chargeable or not (e.g. if the related Booking is canceled or fully paid, it's going to return `false`) |
@@ -170,7 +170,7 @@ List all payments for a given account.
 GET /payments
 ~~~
 
-<%= render 'json_response', endpoint: "payments",
+<%= render '/json_response.html', endpoint: "payments",
   scopes: %w(payments_write_owned-payments_read-payments_write) %>
 
 ## Search payments
@@ -198,7 +198,7 @@ Returns a single payment identified by ID.
 GET /payments/:payment_id
 ~~~
 
-<%= render 'json_response', endpoint: "payments",
+<%= render '/json_response.html', endpoint: "payments",
   scopes: %w(payments_write_owned-payments_read-payments_write) %>
 
 ## Create a new payment
@@ -209,7 +209,7 @@ Returns a newly created payment.
 POST /bookings/:booking_id/payments
 ~~~~
 
-<%= render 'json_response', endpoint: "payments", request: "create",
+<%= render '/json_response.html', endpoint: "payments", request: "create",
   scopes: [{
     "payments_write_owned / payments_write" => "payments_write_owned-payments_read-payments_write"
   }] %>
@@ -222,7 +222,7 @@ Returns an updated payment identified by ID.
 PUT /payments/:payment_id
 ~~~
 
-<%= render 'json_response', endpoint: "payments", request: "update",
+<%= render '/json_response.html', endpoint: "payments", request: "update",
   scopes: [{
     "payments_write_owned / payments_write" => "payments_write_owned-payments_read-payments_write"
   }] %>

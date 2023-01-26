@@ -29,10 +29,10 @@ queensize_beds_count| Integer | Read       | Bedroom's number of queensize beds.
 single_beds_count   | Integer | Read       | Bedroom's number of single beds.
 sofa_beds_count     | Integer | Read       | Bedroom's number of sofa beds.
 futon_beds_count              | Integer | Read | Bedroom's number of futon beds.
-floor_mattress_beds_count     | Integer | Read | Bedroom's number of floor mattress beds. 
-toddler_beds_count            | Integer | Read | Bedroom's number of toddler beds. 
+floor_mattress_beds_count     | Integer | Read | Bedroom's number of floor mattress beds.
+toddler_beds_count            | Integer | Read | Bedroom's number of toddler beds.
 crib_beds_count               | Integer | Read | Bedroom's number of crib beds.
-air_mattress_beds_count       | Integer | Read | Bedroom's number of air mattress beds. 
+air_mattress_beds_count       | Integer | Read | Bedroom's number of air mattress beds.
 --------------------|---------|------------|------------
 created_at          | [Time](/reference/enums#formats) | Read       | Bedroom's create time.
 updated_at          | [Time](/reference/enums#formats) | Read       | Bedroom's update time.
@@ -67,7 +67,7 @@ List all bedrooms for a given account.
 GET /bedrooms
 ~~~
 
-<%= render 'json_response', endpoint: "bedrooms",
+<%= render '/json_response.html', endpoint: "bedrooms",
   scopes: [{ public: "public-rentals_write" }] %>
 
 ## Get a single bedroom
@@ -78,7 +78,7 @@ Returns a single bedroom identified by ID.
 GET /bedrooms/:bedroom_id
 ~~~
 
-<%= render 'json_response', endpoint: "bedrooms",
+<%= render '/json_response.html', endpoint: "bedrooms",
   scopes: [{ public: "public-rentals_write" }] %>
 
 ## Create a new bedroom
@@ -89,7 +89,7 @@ Creates a bedroom for given rental.
 POST /rentals/:rental_id/bedrooms
 ~~~
 
-<%= render 'json_response', endpoint: "bedrooms", request: "create",
+<%= render '/json_response.html', endpoint: "bedrooms", request: "create",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Update a bedroom
@@ -100,7 +100,7 @@ Returns an updated bedroom identified by ID.
 PUT /bedrooms/:bedroom_id
 ~~~
 
-<%= render 'json_response', endpoint: "bedrooms", request: "update",
+<%= render '/json_response.html', endpoint: "bedrooms", request: "update",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Destroy a bedroom

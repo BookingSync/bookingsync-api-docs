@@ -7,7 +7,7 @@
 
 This resource represents Tax Rules which are applicable to [Rentals Taxes](/reference/endpoints/rentals_taxes/) or [Taxes](/reference/endpoints/taxes/).
 
-This resource impacts the applicability of the parent resource. For example, if `comparator` is set to `>`, `value` is set to `10` and `compared_attribute` is `length_of_stay`, it means that the Tax will be applied only if the length of stay of the [Booking](/reference/endpoints/booking/) is great than 10 nights. 
+This resource impacts the applicability of the parent resource. For example, if `comparator` is set to `>`, `value` is set to `10` and `compared_attribute` is `length_of_stay`, it means that the Tax will be applied only if the length of stay of the [Booking](/reference/endpoints/booking/) is great than 10 nights.
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
@@ -41,7 +41,7 @@ List all tax rules for a given account(s).
 GET /tax_rules
 ~~~
 
-<%= render 'json_response', endpoint: "tax_rules", scopes: %w(public) %>
+<%= render '/json_response.html', endpoint: "tax_rules", scopes: %w(public) %>
 
 ## Get a single tax rule
 
@@ -51,4 +51,4 @@ Returns a single tax rule identified by ID.
 GET /tax_rules/:tax_rule_id
 ~~~
 
-<%= render 'json_response', endpoint: "tax_rules", scopes: %w(public) %>
+<%= render '/json_response.html', endpoint: "tax_rules", scopes: %w(public) %>

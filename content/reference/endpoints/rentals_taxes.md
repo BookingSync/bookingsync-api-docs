@@ -36,7 +36,7 @@ rental                 | Integer | Read       | Rental's ID related to the Renta
 tax                    | Integer | Read       | Tax's ID related to the Rentals Tax |
 -----------------------|---------|------------|-------------|
 id                     | Integer | Read       | Rentals Tax's ID. |
-tax_id                 | Integer | Write      | Tax's ID. | **Required** 
+tax_id                 | Integer | Write      | Tax's ID. | **Required**
 tax_included_in_rate   | Boolean | Read/Write | Tax amount already included in rental price if set to true (as `initial_price` in [Booking](/reference/endpoints/Bookings/). If rental's price is 100 and there is a tax with a percentage of 10% assigned to it, that tax would already be included in 100 if it the value was set to `true`. However, if set to `false`, the "total" amount (in the context of [Bookings'](/reference/endpoints/bookings/) creation) would be 100 + 10% from 100 which is 110. | **Required**
 -----------------------|---------|------------|-------------|
 created_at             | [Time](/reference/enums#formats) | Read       | Rentals Tax's create time. |
@@ -53,7 +53,7 @@ List all rentals taxes for a given account(s).
 GET /rentals_taxes
 ~~~
 
-<%= render 'json_response', endpoint: "rentals_taxes", scopes: %w(public) %>
+<%= render '/json_response.html', endpoint: "rentals_taxes", scopes: %w(public) %>
 
 ## Get a single rentals tax
 
@@ -63,7 +63,7 @@ Returns a single rentals tax identified by ID.
 GET /rentals_taxes/:rentals_tax_id
 ~~~
 
-<%= render 'json_response', endpoint: "rentals_taxes", scopes: %w(public) %>
+<%= render '/json_response.html', endpoint: "rentals_taxes", scopes: %w(public) %>
 
 ## Create a new rentals tax
 
@@ -73,7 +73,7 @@ Returns a newly created rentals tax.
 POST  /rentals/:rental_id/rentals_taxes
 ~~~
 
-<%= render 'json_response', endpoint: "rentals_taxes", request: "create",
+<%= render '/json_response.html', endpoint: "rentals_taxes", request: "create",
 scopes: [{ rates_write: "public-rates_write" }] %>
 
 ## Update a rentals tax
@@ -84,7 +84,7 @@ Returns an updated rentals tax identified by ID.
 PUT /rentals_taxes/:rentals_tax_id
 ~~~
 
-<%= render 'json_response', endpoint: "rentals_taxes", request: "update",
+<%= render '/json_response.html', endpoint: "rentals_taxes", request: "update",
 scopes: [{ rates_write: "public-rates_write" }] %>
 
 ## Delete a rentals tax

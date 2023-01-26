@@ -54,7 +54,7 @@ rental                          | Integer  | Read       | Rental's ID related to
 --------------------------------|----------|------------|-------------|
 id                              | Integer  | Read       | Rental contact's ID. |
 contact_id                      | Integer  | Write      | Contact's ID. | **Required**
-kind                            | [String](/reference/enums#rental-contact-kinds) | Read/Write | Rental contact's kind | **Required**, must be one of the Rental contact kinds, only one `owner` kind is allowed per Rental,  
+kind                            | [String](/reference/enums#rental-contact-kinds) | Read/Write | Rental contact's kind | **Required**, must be one of the Rental contact kinds, only one `owner` kind is allowed per Rental,
 roles                           | [Array of Strings](/reference/enums#rental-contact-roles) | Read/Write | Rental contact's roles | Must be one of the Rental contact kinds if present, only one `general` role is allowed per Rental, only one `invoices` role is allowed per Rental
 --------------------------------|----------|------------|---------------|
 created_at                      | [Time](/reference/enums#formats) | Read         | Rental contact's create time. |
@@ -72,7 +72,7 @@ List all rental contacts for a given account(s).
 GET /rental_contacts
 ~~~
 
-<%= render 'json_response', endpoint: "rental_contacts", scopes: %w(public rentals_read-rentals_write) %>
+<%= render '/json_response.html', endpoint: "rental_contacts", scopes: %w(public rentals_read-rentals_write) %>
 
 ## Get a single rental contact
 
@@ -82,7 +82,7 @@ Returns a single rental contact identified by ID.
 GET /rental_contacts/:rental_contact_id
 ~~~
 
-<%= render 'json_response', endpoint: "rental_contacts", scopes: %w(public rentals_read-rentals_write) %>
+<%= render '/json_response.html', endpoint: "rental_contacts", scopes: %w(public rentals_read-rentals_write) %>
 
 ## Create a new rental contact
 
@@ -92,7 +92,7 @@ Returns a newly created rental contact.
 POST /rentals/:rental_id/rental_contacts
 ~~~~
 
-<%= render 'json_response', endpoint: "rental_contacts", request: "create",
+<%= render '/json_response.html', endpoint: "rental_contacts", request: "create",
   scopes: [{ rentals_write: "rentals_read-rentals_write" }] %>
 
 ## Update a rental contact
@@ -103,7 +103,7 @@ Returns an updated rental contact identified by ID.
 PUT /rental_contacts/:rental_contact_id
 ~~~
 
-<%= render 'json_response', endpoint: "rental_contacts", request: "update",
+<%= render '/json_response.html', endpoint: "rental_contacts", request: "update",
   scopes: [{ rentals_write: "rentals_read-rentals_write" }] %>
 
 ## Destroy a rental contact

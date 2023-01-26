@@ -36,14 +36,14 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Season's upda
   <div class="tab-pane" id="rates_write" markdown="1">
 Name             | Type    | Read/Write | Description | Constraints
 -----------------|---------|------------|-------------|
-rates_table      | Integer | Read       | Rates Table's ID related to the Season | 
-account          | Integer | Read       | Account's ID related to the Season | 
+rates_table      | Integer | Read       | Rates Table's ID related to the Season |
+account          | Integer | Read       | Account's ID related to the Season |
 rates_rules      | Array   | Read       | Rates Rules' IDs related to the Season |
 periods          | Array   | Read       | Periods' IDs related to the Season |
 -----------------|---------|------------|-------------|
 id               | Integer | Read       | Season's ID. |
-color_ratio      | [Decimal](/reference/enums#formats) | Read | Season's color_ratio. | 
-color            | String  | Read | Season's color (hexadecimal) | 
+color_ratio      | [Decimal](/reference/enums#formats) | Read | Season's color_ratio. |
+color            | String  | Read | Season's color (hexadecimal) |
 minimum_stay     | Integer | Read/Write | Season's minimum stay in days. | **Required**, must be greater than: 0
 name             | [Object](/reference/enums#formats)  | Read/Write | Season's name. | **Required** for Account's default locale, maximum length: 50, must not contain non-printing characters
 ratio_percentage | [Decimal](/reference/enums#formats) | Read/Write | Season's ratio expressed in percentage. | **Required**, must be greater than: 0
@@ -64,7 +64,7 @@ List all seasons for a given account.
 GET /seasons
 ~~~
 
-<%= render 'json_response', endpoint: "seasons", scopes: %w(rates_read-rates_write) %>
+<%= render '/json_response.html', endpoint: "seasons", scopes: %w(rates_read-rates_write) %>
 
 ## Get a single season
 
@@ -74,7 +74,7 @@ Returns a single season identified by ID.
 GET /seasons/:season_id
 ~~~
 
-<%= render 'json_response', endpoint: "seasons", scopes: %w(rates_read-rates_write) %>
+<%= render '/json_response.html', endpoint: "seasons", scopes: %w(rates_read-rates_write) %>
 
 ## Create a new season
 
@@ -84,7 +84,7 @@ Creates a season for given rates table.
 POST /rates_tables/:rates_table_id/seasons
 ~~~
 
-<%= render 'json_response', endpoint: "seasons", request: "create",
+<%= render '/json_response.html', endpoint: "seasons", request: "create",
   scopes: [{ rates_write: "rates_read-rates_write" }] %>
 
 ## Update a season
@@ -95,7 +95,7 @@ Returns an updated season identified by ID.
 PUT /seasons/:season_id
 ~~~
 
-<%= render 'json_response', endpoint: "seasons", request: "update",
+<%= render '/json_response.html', endpoint: "seasons", request: "update",
   scopes: [{ rates_write: "rates_read-rates_write" }] %>
 
 ## Destroy a season

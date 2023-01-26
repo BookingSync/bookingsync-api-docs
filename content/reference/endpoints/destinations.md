@@ -6,7 +6,7 @@
 
 ## Overview
 
-This resource represents the Destinations (the actual place) that can be assigned to [Rentals](/reference/endpoints/rentals/). 
+This resource represents the Destinations (the actual place) that can be assigned to [Rentals](/reference/endpoints/rentals/).
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
@@ -40,7 +40,7 @@ List all destinations for a given account(s).
 GET /destinations
 ~~~
 
-<%= render 'json_response', endpoint: "destinations", scopes: %w(public) %>
+<%= render '/json_response.html', endpoint: "destinations", scopes: %w(public) %>
 
 ## Get a single destination
 
@@ -50,4 +50,4 @@ Returns a single destination identified by ID.
 GET /destinations/:destination_id
 ~~~
 
-<%= render 'json_response', endpoint: "destinations", scopes: %w(public) %>
+<%= render '/json_response.html', endpoint: "destinations", scopes: %w(public) %>

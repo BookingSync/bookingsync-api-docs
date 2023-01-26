@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents Fees Taxes - the [taxes](/reference/endpoints/taxes/) for a [fee](/reference/endpoints/fees/), which can be either configured to be included in fee's rate or not.  
+This resource represents Fees Taxes - the [taxes](/reference/endpoints/taxes/) for a [fee](/reference/endpoints/fees/), which can be either configured to be included in fee's rate or not.
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
@@ -53,7 +53,7 @@ List all fees taxes for a given account(s).
 GET /fees_taxes
 ~~~
 
-<%= render 'json_response', endpoint: "fees_taxes",
+<%= render '/json_response.html', endpoint: "fees_taxes",
   scopes: [{ rates_write: "public-rates_write" }] %>
 
 ## Get a single fees tax
@@ -64,7 +64,7 @@ Returns a single fees tax identified by ID.
 GET /fees_taxes/:fees_tax_id
 ~~~
 
-<%= render 'json_response', endpoint: "fees_taxes",
+<%= render '/json_response.html', endpoint: "fees_taxes",
   scopes: [{ rates_write: "public-rates_write" }] %>
 
 ## Create a new fees tax
@@ -75,7 +75,7 @@ Returns a newly created fees tax.
 POST /fees/:fee_id/fees_taxes
 ~~~
 
-<%= render 'json_response', endpoint: "fees_taxes", request: "create",
+<%= render '/json_response.html', endpoint: "fees_taxes", request: "create",
   scopes: [{ rates_write: "public-rates_write" }] %>
 
 ## Update a fees tax
@@ -86,7 +86,7 @@ Returns an updated fees tax identified by ID.
 PUT /fees_taxes/:fees_tax_id
 ~~~
 
-<%= render 'json_response', endpoint: "fees_taxes", request: "update",
+<%= render '/json_response.html', endpoint: "fees_taxes", request: "update",
   scopes: [{ rates_write: "public-rates_write" }] %>
 
 ## Delete fees tax

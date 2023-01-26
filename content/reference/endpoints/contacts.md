@@ -17,10 +17,10 @@ This resource represents the Contacts (people responsible for managing [Rentals]
   <div class="tab-pane active" id="public" markdown="1">
 Group     | Name                 | Type    | Read/Write | Description
 ----------|----------------------|---------|------------|------------
-          | account              | Integer | Read       | Account's ID related to the Client 
+          | account              | Integer | Read       | Account's ID related to the Client
 ----------|----------------------|---------|------------|------------
           | id                   | Integer | Read       | Contact's id.
-          | email                | String  | Read       | Contact's email address. 
+          | email                | String  | Read       | Contact's email address.
           | website              | String  | Read       | Contact's website url.
           | private_notes        | String  | Read       | Contact's annotations.
           | gender               | String  | Read       | Contact's gender. List of possible values described in [enums section](/reference/enums#genders).
@@ -52,7 +52,7 @@ Group     | Name                 | Type    | Read/Write | Description | Constrai
           | account             | Integer | Read       | Account's ID related to the Client |
 ----------|---------------------|---------|------------|------------|
           | id                   | Integer | Read       | Contact's id. |
-          | email                | String  | Read/Write | Contact's email address. | **Required**, must be in email format 
+          | email                | String  | Read/Write | Contact's email address. | **Required**, must be in email format
           | website              | String  | Read/Write | Contact's website url. | Must be a URL
           | private_notes        | String  | Read/Write | Contact's annotations. |
           | gender               | String  | Read/Write | Contact's gender. List of possible values described in [enums section](/reference/enums#genders). | Must be one of `genders` enum
@@ -88,7 +88,7 @@ List all contacts for a given account(s).
 GET /contacts
 ~~~
 
-<%= render 'json_response', endpoint: "contacts", scopes: [{ public: "public-rentals_read" }] %>
+<%= render '/json_response.html', endpoint: "contacts", scopes: [{ public: "public-rentals_read" }] %>
 
 ## Get a single contact
 
@@ -98,7 +98,7 @@ Returns a single contact identified by ID.
 GET /contacts/:contact_id
 ~~~
 
-<%= render 'json_response', endpoint: "contacts", scopes: [{ public: "public-rentals_read" }] %>
+<%= render '/json_response.html', endpoint: "contacts", scopes: [{ public: "public-rentals_read" }] %>
 
 ## Create a new contact
 
@@ -108,7 +108,7 @@ Creates a contact
 POST /contacts
 ~~~
 
-<%= render 'json_response', endpoint: "contacts", request: "create",
+<%= render '/json_response.html', endpoint: "contacts", request: "create",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Update a contact
@@ -119,7 +119,7 @@ Returns an updated contact identified by ID.
 PUT /contact/:contact_id
 ~~~
 
-<%= render 'json_response', endpoint: "contacts", request: "update",
+<%= render '/json_response.html', endpoint: "contacts", request: "update",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Destroy a contact

@@ -17,8 +17,8 @@ This resource represents Photos belonging to [Rentals](/reference/endpoints/rent
   <div class="tab-pane active" id="public" markdown="1">
 Name               | Type    | Read/Write | Description
 -------------------|---------|------------|------------
-account            | Integer | Read       | Account's ID related to the Photo 
-rental             | Integer | Read       | Rental's ID related to the Photo 
+account            | Integer | Read       | Account's ID related to the Photo
+rental             | Integer | Read       | Rental's ID related to the Photo
 -------------------|---------|------------|------------
 id                 | Integer | Read       | Photo's ID.
 compact_url        | String  | Read       | Photo's compact size (384x256) url.
@@ -45,20 +45,20 @@ updated_at         | [Time](/reference/enums#formats) | Read       | Photo's upd
 Name               | Type    | Read/Write | Description | Constraints
 -------------------|---------|------------|-------------|
 account            | Integer | Read       | Account's ID related to the Photo |
-rental             | Integer | Read       | Rental's ID related to the Photo | 
+rental             | Integer | Read       | Rental's ID related to the Photo |
 -------------------|---------|------------|-------------|
-id                 | Integer | Read       | Photo's ID. | 
-compact_url        | String  | Read       |  Photo's compact size (384x256) url. | 
+id                 | Integer | Read       | Photo's ID. |
+compact_url        | String  | Read       |  Photo's compact size (384x256) url. |
 description        | [Object](/reference/enums#formats)    | Read/Write | Photo's description, list of locales described in [enums section](/reference/enums#locales) | Maximum length: 80
-giant_url          | String  | Read       | Photo's giant size (2400x1600) url. | 
-grande_url         | String  | Read       | Photo's grande size (1536x1024) url. | 
-height             | Integer | Read       | Photo's height in pixels. | 
-kind               | String  | Read/Write | Photo's kind, list of kinds described in [enum section](/reference/enums/#photo-kinds). | 
-large_url          | String  | Read       | Photo's large size (1200x800) url | 
-medium_url         | String  | Read       | Photo's medium size (768x512) url. | 
-micro_url          | String  | Read       | Photo's micro size (48x32) url. | 
-photo              | File    | Write      | Photo's image. | `photo` or  `remote_photo_url` - one of these is **required** | 
-position           | Integer | Read/Write | Photo's position on the rental list. | 
+giant_url          | String  | Read       | Photo's giant size (2400x1600) url. |
+grande_url         | String  | Read       | Photo's grande size (1536x1024) url. |
+height             | Integer | Read       | Photo's height in pixels. |
+kind               | String  | Read/Write | Photo's kind, list of kinds described in [enum section](/reference/enums/#photo-kinds). |
+large_url          | String  | Read       | Photo's large size (1200x800) url |
+medium_url         | String  | Read       | Photo's medium size (768x512) url. |
+micro_url          | String  | Read       | Photo's micro size (48x32) url. |
+photo              | File    | Write      | Photo's image. | `photo` or  `remote_photo_url` - one of these is **required** |
+position           | Integer | Read/Write | Photo's position on the rental list. |
 ratio              | [Decimal](/reference/enums#formats)   | Read       | Photo's width to height ratio.
 remote_photo_url   | String  | Write      | **Required**. Photo's remote url | `photo` or  `remote_photo_url` - one of these is **required**, must be a valid URL
 small_url          | String  | Read       | Photo's small size (192x128) url.
@@ -80,7 +80,7 @@ List all photos for a given account(s).
 GET /photos
 ~~~
 
-<%= render 'json_response', endpoint: "photos", scopes: [{ public: "public-rentals_write" }] %>
+<%= render '/json_response.html', endpoint: "photos", scopes: [{ public: "public-rentals_write" }] %>
 
 ## Get a single photo
 
@@ -90,7 +90,7 @@ Returns a single photo identified by ID.
 GET /photos/:photo_id
 ~~~
 
-<%= render 'json_response', endpoint: "photos", scopes: [{ public: "public-rentals_write" }] %>
+<%= render '/json_response.html', endpoint: "photos", scopes: [{ public: "public-rentals_write" }] %>
 
 ## Create a new photo
 
@@ -107,7 +107,7 @@ Returns a newly created photo for given rental.
 POST /rentals/:rental_id/photos
 ~~~~
 
-<%= render 'json_response', endpoint: "photos", request: "create",
+<%= render '/json_response.html', endpoint: "photos", request: "create",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Update a photo
@@ -125,7 +125,7 @@ Returns an updated photo identified by ID.
 PUT /photos/:photo_id
 ~~~
 
-<%= render 'json_response', endpoint: "photos", request: "update",
+<%= render '/json_response.html', endpoint: "photos", request: "update",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Destroy a photo

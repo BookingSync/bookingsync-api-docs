@@ -5,11 +5,11 @@
 
 ## Overview
 
-This resource represents the available Accounts. 
+This resource represents the available Accounts.
 
 When using <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a>, you can get the list of all Accounts installed for your application. When using Authorization Flow, you will only get a single account that represents a Resource Owner for a given token.
 
-Combining <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a> and  <a href="/guides/updated-since-flow/">updated_since flow</a> allows you also to get the list of accounts that have been canceled, suspended or uninstalled your application.  
+Combining <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a> and  <a href="/guides/updated-since-flow/">updated_since flow</a> allows you also to get the list of accounts that have been canceled, suspended or uninstalled your application.
 
 
 ### Parameters
@@ -73,7 +73,7 @@ List all authorized accounts.
 GET /accounts
 ~~~
 
-<%= render 'json_response', endpoint: "accounts", scopes: %w(public) %>
+<%= render '/json_response.html', endpoint: "accounts", scopes: %w(public) %>
 
 ## Get a single account
 
@@ -83,4 +83,4 @@ Returns a single authorized account identified by ID.
 GET /accounts/:account_id
 ~~~
 
-<%= render 'json_response', endpoint: "accounts", scopes: %w(public) %>
+<%= render '/json_response.html', endpoint: "accounts", scopes: %w(public) %>

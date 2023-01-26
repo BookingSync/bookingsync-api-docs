@@ -56,7 +56,7 @@ List all rental agreements for rentals in given account(s).
 GET /rental_agreements
 ~~~
 
-<%= render 'json_response', endpoint: "rental_agreements",
+<%= render '/json_response.html', endpoint: "rental_agreements",
   scopes: [{ public: "public-rentals_write" }] %>
 
 ## Get a single rental agreement
@@ -67,7 +67,7 @@ Returns a single rental agreement identified by ID.
 GET /rental_agreements/:rental_agreement_id
 ~~~
 
-<%= render 'json_response', endpoint: "rental_agreements",
+<%= render '/json_response.html', endpoint: "rental_agreements",
   scopes: [{ public: "public-rentals_write" }] %>
 
 ## Create a new default rental agreement
@@ -82,7 +82,7 @@ Returns a newly created rental agreement.
 POST /rental_agreements
 ~~~~
 
-<%= render 'json_response', endpoint: "rental_agreements", request: "create",
+<%= render '/json_response.html', endpoint: "rental_agreements", request: "create",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Create a new rental agreement for a booking
@@ -95,7 +95,7 @@ Returns a newly created rental agreement.
 POST /bookings/:booking_id/rental_agreements
 ~~~~
 
-<%= render 'json_response', endpoint: "rental_agreements", request: "create",
+<%= render '/json_response.html', endpoint: "rental_agreements", request: "create",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Create a new rental agreement for a rental
@@ -108,5 +108,5 @@ Returns a newly created rental agreement.
 POST /rentals/:rental_id/rental_agreements
 ~~~~
 
-<%= render 'json_response', endpoint: "rental_agreements", request: "create",
+<%= render '/json_response.html', endpoint: "rental_agreements", request: "create",
   scopes: [{ rentals_write: "public-rentals_write" }] %>

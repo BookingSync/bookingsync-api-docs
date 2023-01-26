@@ -42,7 +42,7 @@ url                | String  | Read/Write | The URL where the Rental is availabl
 lock               | Object  | Read       | Lock shows what's editable/not-editable (representing ownership status). |
 locked             | Boolean | Write      | Setting locked to `true` means that other apps won't be able to modify this Rental URL (your application will be granted exclusivity for managing this resource). |
 -------------------|---------|------------|-------------|
-created_at         | [Time](/reference/enums#formats) | Read       | Photo's create time. | 
+created_at         | [Time](/reference/enums#formats) | Read       | Photo's create time. |
 updated_at         | [Time](/reference/enums#formats) | Read       | Photo's update time. |
 {: class="table table-bordered"}
 </div>
@@ -56,7 +56,7 @@ List all Rental URLs for a given account(s).
 GET /rental_urls
 ~~~
 
-<%= render 'json_response', endpoint: "rental_urls", scopes: [{ public: "public-rentals_write" }] %>
+<%= render '/json_response.html', endpoint: "rental_urls", scopes: [{ public: "public-rentals_write" }] %>
 
 ## Get a single Rental URL
 
@@ -66,7 +66,7 @@ Returns a single Rental URL identified by ID.
 GET /rental_urls/:rental_url_id
 ~~~
 
-<%= render 'json_response', endpoint: "rental_urls", scopes: [{ public: "public-rentals_write" }] %>
+<%= render '/json_response.html', endpoint: "rental_urls", scopes: [{ public: "public-rentals_write" }] %>
 
 ## Create a new Rental URL
 
@@ -76,7 +76,7 @@ Returns a newly created Rental URL for given rental.
 POST /rentals/:rental_id/rental_urls
 ~~~~
 
-<%= render 'json_response', endpoint: "rental_urls", request: "create",
+<%= render '/json_response.html', endpoint: "rental_urls", request: "create",
   scopes: [{ rentals_write: "rentals_write" }] %>
 
 ## Update a Rental URL
@@ -87,7 +87,7 @@ Returns an updated Rental URL identified by ID.
 PUT /rental_urls/:rental_url_id
 ~~~
 
-<%= render 'json_response', endpoint: "rental_urls", request: "update",
+<%= render '/json_response.html', endpoint: "rental_urls", request: "update",
   scopes: [{ rentals_write: "rentals_write" }] %>
 
 ## Destroy a Rental URL

@@ -43,7 +43,7 @@ List all rental cancelation policies for given account(s).
 GET /rental_cancelation_policies
 ~~~
 
-<%= render 'json_response', endpoint: "rental_cancelation_policies", scopes: %w(public) %>
+<%= render '/json_response.html', endpoint: "rental_cancelation_policies", scopes: %w(public) %>
 
 ## Get a single rental cancelation policy
 
@@ -53,4 +53,4 @@ Returns a single rental cancelation policy identified by ID.
 GET /rental_cancelation_policies/:rental_cancelation_policy_id
 ~~~
 
-<%= render 'json_response', endpoint: "rental_cancelation_policies", scopes: %w(public) %>
+<%= render '/json_response.html', endpoint: "rental_cancelation_policies", scopes: %w(public) %>

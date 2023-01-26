@@ -5,7 +5,7 @@
 
 ## Overview
 
-This resource represents Periods which define the timeline for applicability of the [Seasons](/reference/endpoints/seasons/). 
+This resource represents Periods which define the timeline for applicability of the [Seasons](/reference/endpoints/seasons/).
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
@@ -34,14 +34,14 @@ archived_at      | [Time](/reference/enums#formats) | Read       | Period's arch
 Name             | Type    | Read/Write | Description | Constraints
 -----------------|---------|------------|-------------|
 account          | Integer | Read       | Account's ID related to the Period |
-season           | Integer | Read       | Season's ID related to the Period | 
+season           | Integer | Read       | Season's ID related to the Period |
 rates_table      | Integer | Read       | Rates Table's ID related to the Period |
 -----------------|---------|------------|-------------|
 id               | Integer | Read       | Period's id.|
 -----------------|---------|------------|-------------|
 created_at       | [Time](/reference/enums#formats) | Read       | Period's create time. |
 updated_at       | [Time](/reference/enums#formats) | Read       | Period's update time. |
-start_date       | [Date](/reference/enums#formats) | Read/Write | Period's start date. | **Required**, must be before `end_date` 
+start_date       | [Date](/reference/enums#formats) | Read/Write | Period's start date. | **Required**, must be before `end_date`
 end_date         | [Date](/reference/enums#formats) | Read/Write | Period's end date. | **Required**, must be after `start_date`, the maximum allowed value is 3 years from the current date
 archived_at      | [Time](/reference/enums#formats) | Read       | Period's archived time. |
 {: class="table table-bordered"}
@@ -56,7 +56,7 @@ List all periods for a given account.
 GET /periods
 ~~~
 
-<%= render 'json_response', endpoint: "periods", scopes: %w(rates_read-rates_write) %>
+<%= render '/json_response.html', endpoint: "periods", scopes: %w(rates_read-rates_write) %>
 
 ## Get a single period
 
@@ -66,7 +66,7 @@ Returns a single period identified by ID.
 GET /periods/:period_id
 ~~~
 
-<%= render 'json_response', endpoint: "periods", scopes: %w(rates_read-rates_write) %>
+<%= render '/json_response.html', endpoint: "periods", scopes: %w(rates_read-rates_write) %>
 
 ## Create a new period
 
@@ -76,7 +76,7 @@ Creates a period for given season.
 POST /seasons/:season_id/periods
 ~~~
 
-<%= render 'json_response', endpoint: "periods", request: "create",
+<%= render '/json_response.html', endpoint: "periods", request: "create",
   scopes: [{ rates_write: "rates_read-rates_write" }] %>
 
 ## Update a period
@@ -87,7 +87,7 @@ Returns an updated period identified by ID.
 PUT /periods/:period_id
 ~~~
 
-<%= render 'json_response', endpoint: "periods", request: "update",
+<%= render '/json_response.html', endpoint: "periods", request: "update",
   scopes: [{ rates_write: "rates_read-rates_write" }] %>
 
 ## Destroy a period

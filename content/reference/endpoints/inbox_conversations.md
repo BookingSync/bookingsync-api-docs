@@ -17,9 +17,9 @@ This resource represents Inbox Conversations - a thread within each [Inbox Messa
   <div class="tab-pane active" id="inbox_read" markdown="1">
 Name                 | Type    | Read/Write | Description
 ---------------------|---------|------------|------------
-account              | Integer | Read       | Account's ID related to Conversation 
+account              | Integer | Read       | Account's ID related to Conversation
 assignee (host)      | Integer | Read       | Assignee's ID related to Conversation (Host's ID who is responsible for handling this conversation)
-source               | Integer | Read       | Source's ID related to Conversation 
+source               | Integer | Read       | Source's ID related to Conversation
 bookings             | Array   | Read       | Bookings IDs related to Conversation
 inquiries            | Array   | Read       | Inquiries IDs related to Conversation
 messages             | Array   | Read       | Messages IDs related to Conversation
@@ -43,7 +43,7 @@ read_at              | [Time](/reference/enums#formats) | Read       | Time when
   <div class="tab-pane" id="inbox_write" markdown="1">
 Name                 | Type    | Read/Write | Description | Constraints
 ---------------------|---------|------------|-------------|
-account              | Integer | Read       | Account's ID related to Conversation | 
+account              | Integer | Read       | Account's ID related to Conversation |
 assignee (host)      | Integer | Read       | Assignee's ID related to Conversation (Host's ID who is responsible for handling this conversation) |
 source               | Integer | Read       | Source's ID related to Conversation  |
 bookings             | Array   | Read       | Bookings IDs related to Conversation |
@@ -79,7 +79,7 @@ read_at              | [Time](/reference/enums#formats) | Read       | Time when
 GET /inbox/conversations
 ~~~
 
-<%= render 'json_response', endpoint: "conversations", scopes: %w(inbox_read-inbox_write) %>
+<%= render '/json_response.html', endpoint: "conversations", scopes: %w(inbox_read-inbox_write) %>
 
 ## Get a single Conversation
 
@@ -89,7 +89,7 @@ Returns a single conversation identified by ID.
 GET /inbox/conversations/:conversation_id
 ~~~
 
-<%= render 'json_response', endpoint: "conversations", scopes: %w(inbox_read-inbox_write) %>
+<%= render '/json_response.html', endpoint: "conversations", scopes: %w(inbox_read-inbox_write) %>
 
 ## Create a new Conversation
 
@@ -99,7 +99,7 @@ Creates a Conversation.
 POST /inbox/conversations
 ~~~~
 
-<%= render 'json_response', endpoint: "conversations", request: "create",
+<%= render '/json_response.html', endpoint: "conversations", request: "create",
   scopes: %w(inbox_write) %>
 
 ## Update a Conversation
@@ -115,7 +115,7 @@ PUT /inbox/conversations/:conversation_id
   Only `:assignee_id, :closed, :default_channel, :marked_as_spam` attributes are allowed.
 </div>
 
-<%= render 'json_response', endpoint: "conversations", request: "update",
+<%= render '/json_response.html', endpoint: "conversations", request: "update",
   scopes: %w(inbox_write) %>
 
 ## Add Bookings to a Conversation
@@ -126,11 +126,11 @@ Returns an updated conversation identified by ID.
 PUT /inbox/conversations/:conversation_id/connect_booking
 ~~~
 
-<%= render 'json_response', endpoint: "conversations", request: "connect_booking",
+<%= render '/json_response.html', endpoint: "conversations", request: "connect_booking",
   scopes: [
       { inbox_write: "connect-booking-inbox_write" },
     ] %>
-    
+
 ## Remove Bookings from a Conversation
 
 Returns an updated conversation identified by ID.
@@ -139,5 +139,5 @@ Returns an updated conversation identified by ID.
 PUT /inbox/conversations/:conversation_id/disconnect_booking
 ~~~
 
-<%= render 'json_response', endpoint: "conversations", request: "disconnect_booking",
+<%= render '/json_response.html', endpoint: "conversations", request: "disconnect_booking",
   scopes: %w(inbox_write) %>

@@ -21,7 +21,7 @@ Name                 | Type    | Read/Write | Description
 ---------------------|---------|------------|------------
 account              | Integer | Read       | Account's ID related to the Rates Rule
 rates_table          | Integer | Read       | Rates Table's ID related to Rates Rule
-seasons              | Array   | Read       | Season's IDs related to the Rates Rule 
+seasons              | Array   | Read       | Season's IDs related to the Rates Rule
 ---------------------|---------|------------|------------
 id                   | Integer | Read       | Rates Rule's id.
 always_applied       | Boolean | Read       | Rates Rule's application status.
@@ -40,7 +40,7 @@ end_date             | [Date](/reference/enums#formats) | Read       | Rates Rul
   <div class="tab-pane" id="rates_write" markdown="1">
 Name                 | Type    | Read/Write | Description | Constrains
 ---------------------|---------|------------|-------------|
-account              | Integer | Read       | Account's ID related to the Rates Rule | 
+account              | Integer | Read       | Account's ID related to the Rates Rule |
 rates_table          | Integer | Read       | Rates Table's ID related to Rates Rule |
 seasons              | Array   | Read       | Season's IDs related to the Rates Rule |
 ---------------------|---------|------------|-------------|
@@ -50,10 +50,10 @@ always_applied       | Boolean | Read/Write | Rates Rule's application status. |
 kind                 | String  | Read/Write | Rates Rule's kind. List of types described in [enums section](/reference/enums#rates-rules-types). | **Required**, myst be a valid rates rule kind
 percentage           | [Decimal](/reference/enums#formats) | Read/Write | Rates Rule's percentage discount. | must be greater than or equal to -100, conditionally **required** depending on `kind`
 fixed_amount         | [Decimal](/reference/enums#formats) | Read/Write | Rates Rule's fixed price modifier. | conditionally **required** depending on `kind`
-period_name          | String  | Read/Write | Rates Rule's period name. | Maximum length: 50 
-variables            | [Object](/reference/enums#formats) | Read/Write | Rates Rule's variables used depending on kind type. List of variables described in [enums section](/reference/enums#rates-rules-variables) | Conditionally **required**, depending on `kind` 
+period_name          | String  | Read/Write | Rates Rule's period name. | Maximum length: 50
+variables            | [Object](/reference/enums#formats) | Read/Write | Rates Rule's variables used depending on kind type. List of variables described in [enums section](/reference/enums#rates-rules-variables) | Conditionally **required**, depending on `kind`
 ---------------------|---------|------------|-------------|
-created_at           | [Time](/reference/enums#formats) | Read       | Rates Rule's create time. | 
+created_at           | [Time](/reference/enums#formats) | Read       | Rates Rule's create time. |
 updated_at           | [Time](/reference/enums#formats) | Read       | Rates Rule's update time. |
 start_date           | [Date](/reference/enums#formats) | Read/Write | Rates Rule's start date. | Use only one of these: `season_ids`, `always_applied` (if the value is `true`) or `start_date`/`end_date`, required for some kinds
 end_date             | [Date](/reference/enums#formats) | Read/Write | Rates Rule's end date. | Use only one of these: `season_ids`, `always_applied` (if the value is `true`) or `start_date`/`end_date`, required for some kinds
@@ -69,7 +69,7 @@ List all rates rules for a given account.
 GET /rates_rules
 ~~~
 
-<%= render 'json_response', endpoint: "rates_rules", scopes: %w(rates_read-rates_write) %>
+<%= render '/json_response.html', endpoint: "rates_rules", scopes: %w(rates_read-rates_write) %>
 
 ## Get a single rates rule
 
@@ -79,7 +79,7 @@ Returns a single rates rule identified by ID.
 GET /rates_rules/:rates_rule_id
 ~~~
 
-<%= render 'json_response', endpoint: "rates_rules", scopes: %w(rates_read-rates_write) %>
+<%= render '/json_response.html', endpoint: "rates_rules", scopes: %w(rates_read-rates_write) %>
 
 ## Create a new rates rule
 
@@ -89,7 +89,7 @@ Creates a rates rule for given rates table.
 POST /rates_tables/:rates_table_id/rates_rules
 ~~~
 
-<%= render 'json_response', endpoint: "rates_rules", request: "create",
+<%= render '/json_response.html', endpoint: "rates_rules", request: "create",
   scopes: [{ rates_write: "rates_read-rates_write" }] %>
 
 ## Update a rates rule
@@ -100,7 +100,7 @@ Returns an updated rates rule identified by ID.
 PUT /rates_rules/:rates_rule_id
 ~~~
 
-<%= render 'json_response', endpoint: "rates_rules", request: "update",
+<%= render '/json_response.html', endpoint: "rates_rules", request: "update",
   scopes: [{ rates_write: "rates_read-rates_write" }] %>
 
 ## Destroy a rates rule

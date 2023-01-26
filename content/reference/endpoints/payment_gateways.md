@@ -22,7 +22,7 @@ account                        | Integer | Read       | Account's ID related to 
 id                             | BigInteger | Read    | Uniq identifier.
 name                           | String  | Read       | Payment Gateway's name serving as an additional identifier.
 test                           | Boolean | Read       | Submitted requests will not be charged if set to true.
-gateway_name                   | String  | Read       | Payment Gateway's name, available values are described in [enums section](/reference/enums#payment-gateway-names) 
+gateway_name                   | String  | Read       | Payment Gateway's name, available values are described in [enums section](/reference/enums#payment-gateway-names)
 credentials                    | [Object](/reference/enums#formats) | Read       | Credentials used for payment gateway authentication.
 supported_cardtypes            | Array   | Read       | Array of String values containing supported cardtypes for selected gateway.
 supported_currencies           | Array   | Read       | Array of string values containing supported currencies for selected gateway.
@@ -34,14 +34,14 @@ updated_at           | [Time](/reference/enums#formats) | Read       | Payment G
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="preferences_payments_write" markdown="1">
-Name                           | Type    | Read/Write | Description | Constraints 
+Name                           | Type    | Read/Write | Description | Constraints
 -------------------------------|---------|------------|-------------|
 account                        | Integer | Read       | Account's ID related to the Payment Gateway |
 -------------------------------|---------|------------|-------------|
 id                             | BigInteger | Read    | Uniq identifier. |
 name                           | String  | Read/Write       | Payment Gateway's name serving as an additional identifier. | **Required**, must not contain non-printing characters
 test                           | Boolean | Read/Write       | Submitted requests will not be charged if set to true (test mode/sandbox will be used). |
-gateway_name                   | String  | Read/Write       | Payment Gateway's name, available values are described in: [enums section](/reference/enums#payment-gateway-names) | **Required**, must be one of the available gateway names 
+gateway_name                   | String  | Read/Write       | Payment Gateway's name, available values are described in: [enums section](/reference/enums#payment-gateway-names) | **Required**, must be one of the available gateway names
 credentials                    | [Object](/reference/enums#formats) | Read/Write | Credentials used for payment gateway authentication. | **Required**, the schema depends on `gateway_name`
 supported_cardtypes            | Array   | Read/Write       | Array of String values containing supported cardtypes for selected gateway, available values are described in: [enums section](/reference/enums#payment-gateway-cardtypes) | **Required**, must contain valid cardtypes supported by a given payment gateway
 supported_currencies           | Array   | Read/Write       | Array of string values containing supported currencies for selected gateway. | **Required**, must contain valid currencies
@@ -63,7 +63,7 @@ List all Payment Gateways for a given account.
 GET /payment_gateways
 ~~~
 
-<%= render 'json_response', endpoint: "payment_gateways", scopes: %w(preferences-payments-read) %>
+<%= render '/json_response.html', endpoint: "payment_gateways", scopes: %w(preferences-payments-read) %>
 
 ## Get a single Payment Gateway
 
@@ -73,7 +73,7 @@ Returns a single payment gateway identified by ID.
 GET /payment_gateways/:payment_gateway_id
 ~~~
 
-<%= render 'json_response', endpoint: "payment_gateways", scopes: %w(preferences-payments-read) %>
+<%= render '/json_response.html', endpoint: "payment_gateways", scopes: %w(preferences-payments-read) %>
 
 
 ## Create a new Payment Gateway
@@ -84,7 +84,7 @@ Creates a Payment Gateway
 POST /payment_gateways
 ~~~
 
-<%= render 'json_response', endpoint: "payment_gateways", request: "create",
+<%= render '/json_response.html', endpoint: "payment_gateways", request: "create",
 scopes: [{ preferences_payments_write: "preferences-payments-read" }] %>
 
 ## Update a  Payment Gateway
@@ -95,5 +95,5 @@ Returns an updated payment gateway identified by ID.
 PUT /payment_gateways/:payment_gateway_id
 ~~~
 
-<%= render 'json_response', endpoint: "payment_gateways", request: "update",
+<%= render '/json_response.html', endpoint: "payment_gateways", request: "update",
 scopes: [{ preferences_payments_write: "preferences-payments-read" }] %>

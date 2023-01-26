@@ -5,9 +5,9 @@
 
 ## Overview
 
-This resource represents Rental Link Groups which is a way of establishing links between [Rentals](/reference/endpoints/rentals/) - creating or deleting a Rental Link Group results creating or deleting [Rental Links](/reference/endpoints/rental_links/). 
+This resource represents Rental Link Groups which is a way of establishing links between [Rentals](/reference/endpoints/rentals/) - creating or deleting a Rental Link Group results creating or deleting [Rental Links](/reference/endpoints/rental_links/).
 
-The purpose of the Rental Links is to mirror the availabilities between two Rentals - if there is a link between Rental A and Rental B, creating (or canceling) a [Booking](/reference/endpoints/bookings/) for either of them will result in creating/canceling a "mirrored" Booking on the other Rental.  
+The purpose of the Rental Links is to mirror the availabilities between two Rentals - if there is a link between Rental A and Rental B, creating (or canceling) a [Booking](/reference/endpoints/bookings/) for either of them will result in creating/canceling a "mirrored" Booking on the other Rental.
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
@@ -38,7 +38,7 @@ account          | Integer | Read       | Account's ID related to the Rental Lin
 rentals          | Array   | Read       | Rentals' IDs related to the Rental Link Group |
 rental_links     | Array   | Read       | Rental Links' ID related to the Rental Link Group |
 -----------------|---------|------------|-------------|
-id               | Integer | Read       | Rental link group's id. | 
+id               | Integer | Read       | Rental link group's id. |
 rental_ids       | Array   | Write      | IDs of the rentals to be linked | **Required**, Minimum number of IDs: 2
 rental_names     | String  | Read       | Rentals' names associated with given rental link group's |
 -----------------|---------|------------|-------------|
@@ -56,7 +56,7 @@ List all rental link groups for a given account(s).
 GET /rental_link_groups
 ~~~
 
-<%= render 'json_response', endpoint: "rental_link_groups", scopes: [{ public: "public-rentals_write" }] %>
+<%= render '/json_response.html', endpoint: "rental_link_groups", scopes: [{ public: "public-rentals_write" }] %>
 
 ## Get a single rental link group
 
@@ -66,7 +66,7 @@ Returns a single rental link group identified by ID.
 GET /rental_link_groups/:rental_link_group_id
 ~~~
 
-<%= render 'json_response', endpoint: "rental_link_groups", scopes: [{ public: "public-rentals_write" }] %>
+<%= render '/json_response.html', endpoint: "rental_link_groups", scopes: [{ public: "public-rentals_write" }] %>
 
 ## Create a new rental link group
 
@@ -76,7 +76,7 @@ Creates a rental link group for given rental.
 POST /rental_link_groups
 ~~~~
 
-<%= render 'json_response', endpoint: "rental_link_groups", request: "create",
+<%= render '/json_response.html', endpoint: "rental_link_groups", request: "create",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Cancel a rental link group

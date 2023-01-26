@@ -320,7 +320,7 @@ List all rentals for a given account(s).
 GET /rentals
 ~~~
 
-<%= render 'json_response', endpoint: "rentals", scopes: %w(public rentals_read-rentals_write) %>
+<%= render '/json_response.html', endpoint: "rentals", scopes: %w(public rentals_read-rentals_write) %>
 
 ## Search rentals
 
@@ -372,7 +372,7 @@ start_at                | [Time](/reference/enums#formats) |         | Rentals a
 end_at                  | [Time](/reference/enums#formats) |         | Rentals available between `start_at` & `end_at`.
 {: class="table table-bordered"}
 
-<%= render 'json_response', endpoint: "rentals", scopes: [{ public: "search" }] %>
+<%= render '/json_response.html', endpoint: "rentals", scopes: [{ public: "search" }] %>
 
 ### Search response Parameters
 
@@ -417,7 +417,7 @@ Returns a single rental identified by ID.
 GET /rentals/:rental_id
 ~~~
 
-<%= render 'json_response', endpoint: "rentals", scopes: %w(public rentals_read-rentals_write) %>
+<%= render '/json_response.html', endpoint: "rentals", scopes: %w(public rentals_read-rentals_write) %>
 
 ## Create a new rental
 
@@ -439,7 +439,7 @@ Returns a newly created rental.
 POST /rentals
 ~~~~
 
-<%= render 'json_response', endpoint: "rentals", request: "create",
+<%= render '/json_response.html', endpoint: "rentals", request: "create",
   scopes: [{ rentals_write: "rentals_read-rentals_write" }] %>
 
 ## Update a rental
@@ -457,7 +457,7 @@ Returns an updated rental identified by ID.
 PUT /rentals/:rental_id
 ~~~
 
-<%= render 'json_response', endpoint: "rentals", request: "update",
+<%= render '/json_response.html', endpoint: "rentals", request: "update",
   scopes: [{ rentals_write: "rentals_read-rentals_write" }] %>
 
 ## Destroy a rental

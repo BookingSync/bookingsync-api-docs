@@ -34,7 +34,7 @@ Name                 | Type    | Read/Write | Description | Constraints
 ---------------------|---------|------------|------------|
 conversation         | Integer | Read       | Conversation's ID to which Participant belongs to |
 account              | Integer | Read       | Account's ID to which Participant is related to |
-member_id            | Integer | Read       | ID of the resource that created the Participant ([Client](/reference/endpoints/clients/) or [Host](/reference/endpoints/hosts/) - this is a polymorphic association) | 
+member_id            | Integer | Read       | ID of the resource that created the Participant ([Client](/reference/endpoints/clients/) or [Host](/reference/endpoints/hosts/) - this is a polymorphic association) |
 member_type          | String  | Read       | Type of the resource that created the Participant ([Client](/reference/endpoints/clients/) or [Host](/reference/endpoints/hosts/) - this is a polymorphic association) |
 ---------------------|---------|------------|------------|
 id                   | Integer | Read       | Participant's id. |
@@ -58,7 +58,7 @@ read_at              | [Time](/reference/enums#formats) | Read | Time when Parti
 GET /inbox/participants
 ~~~
 
-<%= render 'json_response', endpoint: "participants", scopes: %w(inbox_read-inbox_write) %>
+<%= render '/json_response.html', endpoint: "participants", scopes: %w(inbox_read-inbox_write) %>
 
 ## Get a single Participant
 
@@ -68,7 +68,7 @@ Returns a single participant identified by ID.
 GET /inbox/participants/:participant_id
 ~~~
 
-<%= render 'json_response', endpoint: "participants", scopes: %w(inbox_read-inbox_write) %>
+<%= render '/json_response.html', endpoint: "participants", scopes: %w(inbox_read-inbox_write) %>
 
 ## Create a new Participant
 
@@ -78,7 +78,7 @@ Creates a Participant.
 POST /inbox/participants
 ~~~~
 
-<%= render 'json_response', endpoint: "participants", request: "create",
+<%= render '/json_response.html', endpoint: "participants", request: "create",
   scopes: %w(inbox_write) %>
 
 ## Update a Participant
@@ -94,5 +94,5 @@ PUT /inbox/participants/:participant_id
   Only `:read` attribute is allowed.
 </div>
 
-<%= render 'json_response', endpoint: "participants", request: "update",
+<%= render '/json_response.html', endpoint: "participants", request: "update",
   scopes: %w(inbox_write) %>

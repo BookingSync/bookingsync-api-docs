@@ -30,11 +30,11 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Rentals Tag's
   </div>
   <div class="tab-pane" id="rentals_write" markdown="1">
 Name             | Type    | Read/Write | Description | Constraints
------------------|---------|------------|-------------| 
+-----------------|---------|------------|-------------|
 account          | Integer  | Read      | Account's ID related to the Rentals Tag |
 -----------------|---------|------------|-------------|
 id               | Integer | Read       | Rentals Tag's ID. |
-name             | [Object](/reference/enums#formats)| Read/Write | Rentals Tag's title, list of locales described in [enums section](/reference/enums#locales). | **Required** 
+name             | [Object](/reference/enums#formats)| Read/Write | Rentals Tag's title, list of locales described in [enums section](/reference/enums#locales). | **Required**
 logo             | String  | Read/Write | Rentals Tag's logo (Font Awesome class). |
 color            | String  | Read/Write | Rentals Tag's color (hex). | **Required**
 -----------------|---------|------------|-------------|
@@ -52,7 +52,7 @@ List all rentals tags for a given account.
 GET /rentals_tags
 ~~~
 
-<%= render 'json_response', endpoint: "rentals_tags",
+<%= render '/json_response.html', endpoint: "rentals_tags",
   scopes: [{ public: "rentals_read" }] %>
 
 ## Get a single rentals tag
@@ -63,7 +63,7 @@ Returns a single rentals tag identified by ID.
 GET /rentals_tags/:rentals_tag_id
 ~~~
 
-<%= render 'json_response', endpoint: "rentals_tags",
+<%= render '/json_response.html', endpoint: "rentals_tags",
   scopes: [{ public: "rentals_read" }] %>
 
 ## Create new rentals tags
@@ -81,7 +81,7 @@ Returns the newly created rentals tags.
 POST /rentals_tags
 ~~~
 
-<%= render 'json_response', endpoint: "rentals_tags", request: "create",
+<%= render '/json_response.html', endpoint: "rentals_tags", request: "create",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Update a rentals tag
@@ -99,5 +99,5 @@ Returns an updated rentals tag identified by ID.
 PUT /rentals_tags/:rentals_tag_id
 ~~~
 
-<%= render 'json_response', endpoint: "rentals_tags", request: "update",
+<%= render '/json_response.html', endpoint: "rentals_tags", request: "update",
   scopes: [{ rentals_write: "public-rentals_write" }] %>

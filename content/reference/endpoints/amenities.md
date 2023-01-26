@@ -37,7 +37,7 @@ rental has it's own set of amenities.
 GET /amenities
 ~~~
 
-<%= render 'json_response', endpoint: "amenities", scopes: %w(public) %>
+<%= render '/json_response.html', endpoint: "amenities", scopes: %w(public) %>
 
 ## Get a single amenity
 
@@ -47,4 +47,4 @@ Returns a single amenity identified by ID.
 GET /amenities/:amenity_id
 ~~~
 
-<%= render 'json_response', endpoint: "amenities", scopes: %w(public) %>
+<%= render '/json_response.html', endpoint: "amenities", scopes: %w(public) %>

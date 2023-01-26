@@ -24,7 +24,7 @@ Sources are managed per BookingSync account, so you need to use the [List Source
 GET /sources
 ~~~
 
-<%= render 'json_response', guide: "create-a-booking-with-a-source",
+<%= render '/json_response.html', guide: "create-a-booking-with-a-source",
   resource_name: "sources", response: "list_sources" %>
 
 
@@ -36,7 +36,7 @@ If the source you are looking for could not be found, you should [create a new s
 POST /sources
 ~~~~
 
-<%= render 'json_response', guide: "create-a-booking-with-a-source",
+<%= render '/json_response.html', guide: "create-a-booking-with-a-source",
   resource_name: "sources", request: "create_source", response: "create_source" %>
 
 
@@ -48,5 +48,5 @@ Now that you have the source ID that you want to use, you can [create your booki
 POST /rentals/:rental_id/bookings
 ~~~~
 
-<%= render 'json_response', guide: "create-a-booking-with-a-source",
+<%= render '/json_response.html', guide: "create-a-booking-with-a-source",
   resource_name: "bookings", request: "create_booking_with_source", response: "create_booking_with_source" %>

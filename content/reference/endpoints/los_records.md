@@ -44,7 +44,7 @@ Example:
 GET /los_records?rental_id=1&kinds=rental_price_before_special_offers,rental_price&exchange_currency_to=EUR
 ~~~
 
-<%= render 'json_response', endpoint: "los_records", scopes: %w(public) %>
+<%= render '/json_response.html', endpoint: "los_records", scopes: %w(public) %>
 
 ### Search Parameters
 

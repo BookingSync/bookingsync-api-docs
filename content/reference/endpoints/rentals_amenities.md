@@ -36,7 +36,7 @@ rental           | Integer | Read       | Rental's ID related to the Rentals Ame
 amenity          | Integer | Read       | Amenity's ID related to the Rentals Amenity |
 -----------------|---------|------------|-------------|
 id               | Integer | Read       | Rentals Amenity's ID. |
-amenity_id       | Integer | Write      | Amenity's ID related to the Rentals Amenity | **Required**. 
+amenity_id       | Integer | Write      | Amenity's ID related to the Rentals Amenity | **Required**.
 -----------------|---------|------------|-------------|
 details          | [Object](/reference/enums#formats) | Read/Write | Rentals Amenity's details, list of locales described in [enums section](/reference/enums#locales). | Maximum length: 100
 -----------------|---------|------------|-------------|
@@ -54,7 +54,7 @@ List all rentals amenities for a given account.
 GET /rentals_amenities
 ~~~
 
-<%= render 'json_response', endpoint: "rentals_amenities",
+<%= render '/json_response.html', endpoint: "rentals_amenities",
   scopes: [{ public: "public-rentals_write" }] %>
 
 ## Get a single rentals amenity
@@ -65,7 +65,7 @@ Returns a single rentals amenity identified by ID.
 GET /rentals_amenities/:rentals_amenity_id
 ~~~
 
-<%= render 'json_response', endpoint: "rentals_amenities",
+<%= render '/json_response.html', endpoint: "rentals_amenities",
   scopes: [{ public: "public-rentals_write" }] %>
 
 ## Create a new rentals amenity
@@ -76,7 +76,7 @@ Creates a rentals amenity for given rental.
 POST /rentals/:rental_id/rentals_amenities
 ~~~~
 
-<%= render 'json_response', endpoint: "rentals_amenities", request: "create",
+<%= render '/json_response.html', endpoint: "rentals_amenities", request: "create",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Update a rentals amenity
@@ -87,7 +87,7 @@ Returns an updated rentals amenity identified by ID.
 PUT /rentals_amenities/:rentals_amenity_id
 ~~~
 
-<%= render 'json_response', endpoint: "rentals_amenities", request: "update",
+<%= render '/json_response.html', endpoint: "rentals_amenities", request: "update",
   scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Destroy a rentals amenity

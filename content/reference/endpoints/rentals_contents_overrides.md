@@ -7,7 +7,7 @@
 
 This resource represents the Rental Content Overrides which allow different channels (other [Applications](/reference/endpoints/applications/).) to have customized content for fields like `headline`, `summary`, `description`, which also allows to bypass the length validation that is normally applied for these fields in [Rentals](/reference/endpoints/rentals/) endpoint.
 
-Note: An Application needs to be configured in a way that content overrides are permitted. Most likely you will need to reach out to us and ask for this feature to be enabled for your Application or if you want to customize the maximum length for the overridable fields. 
+Note: An Application needs to be configured in a way that content overrides are permitted. Most likely you will need to reach out to us and ask for this feature to be enabled for your Application or if you want to customize the maximum length for the overridable fields.
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
@@ -60,7 +60,7 @@ List all rentals contents overrides for a given account(s).
 GET /rentals_contents_overrides
 ~~~
 
-<%= render 'json_response', endpoint: "rentals_contents_overrides",
+<%= render '/json_response.html', endpoint: "rentals_contents_overrides",
   scopes: %w(rentals_read-rentals_write) %>
 
 ## Get a single rentals content override
@@ -71,7 +71,7 @@ Returns a single rentals content override identified by ID.
 GET /rentals_contents_overrides/:rentals_content_override_id
 ~~~
 
-<%= render 'json_response', endpoint: "rentals_contents_overrides",
+<%= render '/json_response.html', endpoint: "rentals_contents_overrides",
   scopes: %w(rentals_read-rentals_write) %>
 
 ## Create a new rentals content override
@@ -82,7 +82,7 @@ Creates a rentals content override for given rental.
 POST /rentals_contents_overrides
 ~~~
 
-<%= render 'json_response', endpoint: "rentals_contents_overrides", request: "create",
+<%= render '/json_response.html', endpoint: "rentals_contents_overrides", request: "create",
   scopes: [{ rentals_write: "rentals_read-rentals_write" }] %>
 
 ## Update a rentals content override
@@ -93,7 +93,7 @@ Returns an updated rentals content override identified by ID.
 PUT /rentals_contents_overrides/:rentals_content_override_id
 ~~~
 
-<%= render 'json_response', endpoint: "rentals_contents_overrides", request: "update",
+<%= render '/json_response.html', endpoint: "rentals_contents_overrides", request: "update",
   scopes: [{ rentals_write: "rentals_read-rentals_write" }] %>
 
 ## Destroy a rentals content override

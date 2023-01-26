@@ -41,7 +41,7 @@ end_at                  | [Time](/reference/enums#formats) | Read       | Bookin
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="bookings_write_owned" markdown="1">
-Name                    | Type    | Read/Write | Description | Constraints 
+Name                    | Type    | Read/Write | Description | Constraints
 ------------------------|---------|------------|------------|
 account           | Integer | Read       | Account's ID related to the Booking |
 rental            | Integer | Read       | Rental's ID related to the Booking |
@@ -69,14 +69,14 @@ channel_price           | Integer | Read/Write      | Price accepted by the trav
 charge_damage_deposit_on_arrival  | Boolean    | Read/Write | Defines if charge damage deposit will be charged on arrival. |
 children                | Integer | Read/Write      | Booking's number of children. |
 commission               | [Decimal](/reference/enums#formats) | Write | Booking's commission fee. | Requires `final_price` to be present
-currency                | String  | Read/Write      | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies). | Must be blank or included in [currencies list](/reference/enums#currencies) 
+currency                | String  | Read/Write      | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies). | Must be blank or included in [currencies list](/reference/enums#currencies)
 damage_deposit          | [Decimal](/reference/enums#formats) | Read/Write | Booking's damage deposit. | greater than or equal to: 0
-discount                | String  | Read/Write      | Booking's discount. (in percents e.g. 10%) | must blank or an absolute value (e.g. 100) or percentage value (e.g. 10%) 
+discount                | String  | Read/Write      | Booking's discount. (in percents e.g. 10%) | must blank or an absolute value (e.g. 100) or percentage value (e.g. 10%)
 door_key_code           | String  | Read/Write      | Booking's rental door key code. |
 downpayment             | [Decimal](/reference/enums#formats) | Read/Write | Booking's downpayment. | Requires `final_price` to be present
 expected_checkin_time   | String  | Read/Write      | Expected guest's checkin time. | must be blank or represent a time value (e.g. 12, 12:30)
 expected_checkout_time  | String  | Read/Write      | Expected guest's checkout time. | must be blank or represent a time value (e.g. 12, 12:30)
-final_payback_to_owner  | [Decimal](/reference/enums#formats) | Read/Write | Final payback to rental owner. | Must be lower than `final_price` 
+final_payback_to_owner  | [Decimal](/reference/enums#formats) | Read/Write | Final payback to rental owner. | Must be lower than `final_price`
 final_price             | [Decimal](/reference/enums#formats) | Read/Write | Booking's final price. (after discount) |
 initial_price           | [Decimal](/reference/enums#formats) | Read/Write | Booking's initial price. |
 payment_left_to_collect | [Decimal](/reference/enums#formats) | Read  | Booking's payment left to collect. |
@@ -88,11 +88,11 @@ status                  | String  | Read       | Booking's status. |
 unavailable             | Boolean | Read/Write      | Booking's unavailable status, false by default. When set to true, marks the given period as unavailable. Commonly used for closed or maintenance periods. |
 external_reference      | String  | Read/Write | Booking's reference from the source channel. |
 cancelation_reason      | String  | Read/Write | Booking's cancelation reason (for writable part - it can be used in both update and cancelation endpoints) |
-cancelation_message_to_guest      | String  | Read/Write | Booking's cancelation message to guest (for writable part - only in cancelation endpoint) | 
+cancelation_message_to_guest      | String  | Read/Write | Booking's cancelation message to guest (for writable part - only in cancelation endpoint) |
 cancelation_message_to_channel    | String  | Read/Write | Booking's cancelation message to guest (for writable part - only in cancelation endpoint) |
-imported                | Boolean  | Read/Write | Whether this booking was imported from the external Channel or not | 
-reconciliation          | [Decimal](/reference/enums#formats  | Read/Write | Booking's reconciliation | 
-authorized_amount       | [Decimal](/reference/enums#formats  | Read | Booking's authorized amount | 
+imported                | Boolean  | Read/Write | Whether this booking was imported from the external Channel or not |
+reconciliation          | [Decimal](/reference/enums#formats  | Read/Write | Booking's reconciliation |
+authorized_amount       | [Decimal](/reference/enums#formats  | Read | Booking's authorized amount |
 paid_or_authorized_amount | [Decimal](/reference/enums#formats  | Read | Booking's paid or authorized amount |
 ------------------------|---------|------------|------------|
 updated_at              | [Time](/reference/enums#formats) | Read       | Booking's update time. |
@@ -106,23 +106,23 @@ booked_at               | [Time](/reference/enums#formats) | Write      | Exact 
   <div class="tab-pane" id="bookings_read" markdown="1">
 Name                    | Type    | Read/Write | Description
 ------------------------|---------|------------|------------|
-account           | Integer | Read       | Account's ID related to the Booking 
-rental            | Integer | Read       | Rental's ID related to the Booking 
-client            | Integer | Read       | Client's ID related to the Booking 
-rental_agreement  | Integer | Read       | RentalAgreement's ID related to the Bookings Fee 
-source            | Integer   | Read     | Source's ID related to the Booking 
-inquiry           | Integer   | Read     | Inquiry's ID related to the Booking 
-created_by_id     | Integer   | Read     | Created By's ID related to the Booking 
-created_by_type   | String   | Read      | Created By's Type related to the Booking 
-booking_comments  | Array    | Read      | Array of related Bookings Comments IDs 
-booking_fees      | Array    | Read      | Array of related Bookings Fees IDs 
-booking_taxes     | Array    | Read      | Array of related Bookings Taxes IDs 
-booking_payments  | Array    | Read      | Array of related Bookings Payments IDs 
-payments          | Array    | Read      | Array of related Payments IDs 
-rentals_tags      | Array    | Read      | Array of related Rentals Tags IDs 
-bookings_tags     | Array    | Read      | Array of related Bookings Tags IDs 
-------------------------|---------|------------|------------ 
-id                      | Integer | Read       | Booking's id. 
+account           | Integer | Read       | Account's ID related to the Booking
+rental            | Integer | Read       | Rental's ID related to the Booking
+client            | Integer | Read       | Client's ID related to the Booking
+rental_agreement  | Integer | Read       | RentalAgreement's ID related to the Bookings Fee
+source            | Integer   | Read     | Source's ID related to the Booking
+inquiry           | Integer   | Read     | Inquiry's ID related to the Booking
+created_by_id     | Integer   | Read     | Created By's ID related to the Booking
+created_by_type   | String   | Read      | Created By's Type related to the Booking
+booking_comments  | Array    | Read      | Array of related Bookings Comments IDs
+booking_fees      | Array    | Read      | Array of related Bookings Fees IDs
+booking_taxes     | Array    | Read      | Array of related Bookings Taxes IDs
+booking_payments  | Array    | Read      | Array of related Bookings Payments IDs
+payments          | Array    | Read      | Array of related Payments IDs
+rentals_tags      | Array    | Read      | Array of related Rentals Tags IDs
+bookings_tags     | Array    | Read      | Array of related Bookings Tags IDs
+------------------------|---------|------------|------------
+id                      | Integer | Read       | Booking's id.
 adults                  | Integer | Read       | Booking's number of adults.
 booked                  | Boolean | Read       | Booking's booked status, false by default. When set to true, marks a regular booking.
 bookings_payments_count | Integer | Read       | Booking's number of payments.
@@ -154,13 +154,13 @@ review_requests_count   | Integer | Read       | Booking's number of review requ
 status                  | String  | Read       | Booking's status.
 unavailable             | Boolean | Read       | Booking's unavailable status, false by default. When set to true, marks the given period as unavailable. Commonly used for closed or maintenance periods.
 external_reference      | String  | Read       | Booking's reference from the source channel.
-cancelation_reason      | String  | Read | Booking's cancelation reason 
-cancelation_message_to_guest      | String  | Read | Booking's cancelation message to guest 
-cancelation_message_to_channel    | String  | Read | Booking's cancelation message to guest 
-imported                | Boolean  | Read/Write | Whether this booking was imported from the external Channel or not 
-reconciliation          | [Decimal](/reference/enums#formats  | Read | Booking's reconciliation 
-authorized_amount       | [Decimal](/reference/enums#formats  | Read | Booking's authorized amount 
-paid_or_authorized_amount | [Decimal](/reference/enums#formats  | Read | Booking's paid or authorized amount 
+cancelation_reason      | String  | Read | Booking's cancelation reason
+cancelation_message_to_guest      | String  | Read | Booking's cancelation message to guest
+cancelation_message_to_channel    | String  | Read | Booking's cancelation message to guest
+imported                | Boolean  | Read/Write | Whether this booking was imported from the external Channel or not
+reconciliation          | [Decimal](/reference/enums#formats  | Read | Booking's reconciliation
+authorized_amount       | [Decimal](/reference/enums#formats  | Read | Booking's authorized amount
+paid_or_authorized_amount | [Decimal](/reference/enums#formats  | Read | Booking's paid or authorized amount
 ------------------------|---------|------------|------------
 balance_due_at          | [Time](/reference/enums#formats) | Read       | Booking's payment deadline.
 created_at              | [Time](/reference/enums#formats) | Read       | Booking's create time.
@@ -202,7 +202,7 @@ channel_price           | Integer | Read/Write | Price accepted by the traveler 
 charge_damage_deposit_on_arrival | Boolean | Read/Write | Defines if charge damage deposit will be charged on arrival. |
 children                | Integer | Read/Write | Booking's number of children. |
 commission               | [Decimal](/reference/enums#formats) | Read/Write | Booking's commission fee. | Requires `final_price` to be present
-currency                | String  | Read/Write      | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies). | Must be blank or included in [currencies list](/reference/enums#currencies) 
+currency                | String  | Read/Write      | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies). | Must be blank or included in [currencies list](/reference/enums#currencies)
 damage_deposit          | [Decimal](/reference/enums#formats) | Read/Write | Booking's damage deposit. | greater than or equal to: 0
 discount                | String  | Read/Write      | Booking's discount. (in percents e.g. 10%) | must blank or an absolute value (e.g. 100) or percentage value (e.g. 10%)
 door_key_code           | String  | Read/Write | Booking's rental door key code. |
@@ -216,7 +216,7 @@ initial_price           | [Decimal](/reference/enums#formats) | Read/Write | Boo
 initial_rental_price    | [Decimal](/reference/enums#formats) | Read       | An alias for initial_price. |
 payment_left_to_collect | [Decimal](/reference/enums#formats) | Read       | Booking's payment left to collect. |
 locked                  | String  | Read/Write | Booking's locked status. |
-notes                   | Text    | Read/Write      | Booking's notes. (1000 characters max) | maximum length: 6000 
+notes                   | Text    | Read/Write      | Booking's notes. (1000 characters max) | maximum length: 6000
 owned_by_app            | Boolean | Read       | Defines whether booking was created by current app. |
 paid_amount             | [Decimal](/reference/enums#formats) | Read       | Booking's amount that have already been paid. |
 payment_url             | String  | Read       | Url for booking's payment. |
@@ -227,11 +227,11 @@ status                  | String  | Read       | Booking's status. |
 unavailable             | Boolean | Read/Write | Booking's unavailable status, false by default. When set to true, marks the given period as unavailable. Commonly used for closed or maintenance periods. |
 external_reference      | String  | Read/Write | Booking's reference from the source channel. |
 cancelation_reason      | String  | Read/Write | Booking's cancelation reason (for writable part - it can be used in both update and cancelation endpoints) |
-cancelation_message_to_guest      | String  | Read/Write | Booking's cancelation message to guest (for writable part - only in cancelation endpoint) | 
+cancelation_message_to_guest      | String  | Read/Write | Booking's cancelation message to guest (for writable part - only in cancelation endpoint) |
 cancelation_message_to_channel    | String  | Read/Write | Booking's cancelation message to guest (for writable part - only in cancelation endpoint) |
-imported                | Boolean  | Read/Write | Whether this booking was imported from the external Channel or not | 
-reconciliation          | [Decimal](/reference/enums#formats  | Read/Write | Booking's reconciliation | 
-authorized_amount       | [Decimal](/reference/enums#formats  | Read | Booking's authorized amount | 
+imported                | Boolean  | Read/Write | Whether this booking was imported from the external Channel or not |
+reconciliation          | [Decimal](/reference/enums#formats  | Read/Write | Booking's reconciliation |
+authorized_amount       | [Decimal](/reference/enums#formats  | Read | Booking's authorized amount |
 paid_or_authorized_amount | [Decimal](/reference/enums#formats  | Read | Booking's paid or authorized amount |
 ------------------------|---------|------------|------------|
 balance_due_at          | [Time](/reference/enums#formats) | Read       | Booking's payment deadline. |
@@ -248,10 +248,10 @@ booked_at               | [Time](/reference/enums#formats) | Write      | Exact 
 </div>
 
 
- 
 
- 
- 
+
+
+
 
 
 
@@ -281,7 +281,7 @@ Returns a list of all bookings for current account(s).
 GET /bookings
 ~~~
 
-<%= render 'json_response', endpoint: "bookings",
+<%= render '/json_response.html', endpoint: "bookings",
   scopes: %w(public-bookings_write_owned bookings_read-bookings_write) %>
 
 ## Search bookings
@@ -316,7 +316,7 @@ Returns a single booking identified by ID
 GET /bookings/:booking_id
 ~~~
 
-<%= render 'json_response', endpoint: "bookings",
+<%= render '/json_response.html', endpoint: "bookings",
   scopes: %w(public-bookings_write_owned bookings_read-bookings_write) %>
 
 ## Create a new booking
@@ -332,7 +332,7 @@ Creates a booking for given rental.
 POST /rentals/:rental_id/bookings
 ~~~~
 
-<%= render 'json_response', endpoint: "bookings", request: "create",
+<%= render '/json_response.html', endpoint: "bookings", request: "create",
   scopes: [
     { bookings_write_owned: "bookings_read-bookings_write" },
     { bookings_write: "bookings_read-bookings_write" }
@@ -343,7 +343,7 @@ POST /rentals/:rental_id/bookings
   You can also pass comments, bookings fees and bookings taxes directly during a booking creation using the parameters:  `comments`, `bookings_fees` and `bookings_taxes`.
 </div>
 
-<%= render 'json_response', endpoint: "bookings", request: "create_with_comments_fees_and_taxes",
+<%= render '/json_response.html', endpoint: "bookings", request: "create_with_comments_fees_and_taxes",
   scopes: [
     { bookings_write: "bookings_read-bookings_write_with_comments_fees_and_taxes" },
     { bookings_write_owned: "bookings_read-bookings_write_with_comments_fees_and_taxes" }
@@ -357,7 +357,7 @@ Returns an updated booking identified by ID.
 PUT /bookings/:booking_id
 ~~~
 
-<%= render 'json_response', endpoint: "bookings", request: "update",
+<%= render '/json_response.html', endpoint: "bookings", request: "update",
   scopes: [
     { bookings_write_owned: "public-bookings_write_owned" },
     { bookings_write: "bookings_read-bookings_write" }

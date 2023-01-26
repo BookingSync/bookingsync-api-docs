@@ -25,7 +25,7 @@ id               | Integer | Read       | Bookings Tax's id.
 amount           | [Decimal](/reference/enums#formats)  | Read       | Bookings Tax's amount.
 name             | [Object](/reference/enums#formats)   | Read       | Bookings Tax's name, list of locales described in [enums section](/reference/enums#locales).
 percentage       | [Decimal](/reference/enums#formats)  | Read       | Bookings Tax's percentage.
-tax_included_in_price | Boolean | Read       | Tax amount already included in taxable's price if set to true. 
+tax_included_in_price | Boolean | Read       | Tax amount already included in taxable's price if set to true.
 -----------------|---------|------------|------------
 created_at       | [Time](/reference/enums#formats) | Read       | Bookings Tax's create time.
 updated_at       | [Time](/reference/enums#formats) | Read       | Bookings Tax's update time.
@@ -52,7 +52,7 @@ List all bookings taxes for current account(s).
 GET /bookings_taxes
 ~~~
 
-<%= render 'json_response', endpoint: "bookings_taxes", scopes: %w(bookings_read-bookings_write-bookings_write_owned) %>
+<%= render '/json_response.html', endpoint: "bookings_taxes", scopes: %w(bookings_read-bookings_write-bookings_write_owned) %>
 
 ## Get a single bookings tax
 
@@ -62,4 +62,4 @@ Returns a single bookings tax identified by ID.
 GET /bookings_taxes/:bookings_tax_id
 ~~~
 
-<%= render 'json_response', endpoint: "bookings_taxes", scopes: %w(bookings_read-bookings_write-bookings_write_owned) %>
+<%= render '/json_response.html', endpoint: "bookings_taxes", scopes: %w(bookings_read-bookings_write-bookings_write_owned) %>

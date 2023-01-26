@@ -42,14 +42,14 @@ Name                   | Type    | Read/Write | Description | Constraints
 account                | Integer | Read       | Account's ID related to the Fee |
 -----------------------|---------|------------|------------|
 id                     | Integer | Read       | Fee's id. |
-currency               | String  | Read/Write | Requested fee's currency, defaults to `original_currency`. List of currencies codes described in [enums section](/reference/enums#currencies) | Must be one of the currencies enum 
+currency               | String  | Read/Write | Requested fee's currency, defaults to `original_currency`. List of currencies codes described in [enums section](/reference/enums#currencies) | Must be one of the currencies enum
 downpayment_percentage | [Decimal](/reference/enums#formats) | Read/Write |  Fee's downpayment percentage. | **Required**, must be great than or equal to: 0, must be less than or equal to: 100
 exchange_rate          | [Decimal](/reference/enums#formats) | Read       | The rate used to convert from the `original_currency` to `currency`. |
-name                   | [Object](/reference/enums#formats)   | Read/Write | Fee's name, list of locales described in [enums section](/reference/enums#locales). | **Required**, cannot contain non-printing characters 
+name                   | [Object](/reference/enums#formats)   | Read/Write | Fee's name, list of locales described in [enums section](/reference/enums#locales). | **Required**, cannot contain non-printing characters
 kind                   | String  | Read/Write | Fee's kind, list of fee's kinds described in [enums section](/reference/enums#fee-kinds) | **Required** must be one of the fee kinds
 original_currency      | String  | Read       | Fee's original currency, list of currencies codes described in [enums section](/reference/enums#currencies) |
-rate                   | [Decimal](/reference/enums#formats)  | Read/Write | Fee's rate. | **Required**, greater than or equal to: 0 
-rate_kind              | String  | Read/Write |  Fee's rate kind, list of fee's rate kinds described in [enums section](/reference/enums#fee-rate-kinds). | **Required**, must be one of the fee rate kinds 
+rate                   | [Decimal](/reference/enums#formats)  | Read/Write | Fee's rate. | **Required**, greater than or equal to: 0
+rate_kind              | String  | Read/Write |  Fee's rate kind, list of fee's rate kinds described in [enums section](/reference/enums#fee-rate-kinds). | **Required**, must be one of the fee rate kinds
 maximum_possible_rate  | [Decimal](/reference/enums#formats) | Read/Write | Fee's maximum possible rate, calculated value won't exceed amount present on this attribute. | Must be greater than or equal to: 0, applicable only for percentage kinds (list of kinds is described in [enums section](/reference/enums#fee-kinds)).
 notes                  | String  | Read/Write       | Fee's notes | Maximum length: 100
 -----------------------|---------|------------|------------|
@@ -68,7 +68,7 @@ List all fees for a given account(s).
 GET /fees
 ~~~
 
-<%= render 'json_response', endpoint: "fees", scopes: [{ public: "public-rates_write" }] %>
+<%= render '/json_response.html', endpoint: "fees", scopes: [{ public: "public-rates_write" }] %>
 
 ## Change fees currency
 
@@ -94,7 +94,7 @@ Returns a single fee identified by ID.
 GET /fees/:fee_id
 ~~~
 
-<%= render 'json_response', endpoint: "fees", scopes: [{ public: "public-rates_write" }] %>
+<%= render '/json_response.html', endpoint: "fees", scopes: [{ public: "public-rates_write" }] %>
 
 ## Create a new fee
 
@@ -104,7 +104,7 @@ Returns a newly created fee.
 POST /fees
 ~~~
 
-<%= render 'json_response', endpoint: "fees", request: "create",
+<%= render '/json_response.html', endpoint: "fees", request: "create",
   scopes: [{ rates_write: "public-rates_write" }] %>
 
 ## Update a fee
@@ -115,7 +115,7 @@ Returns an updated fee identified by ID.
 PUT /fees/:fee_id
 ~~~
 
-<%= render 'json_response', endpoint: "fees", request: "update",
+<%= render '/json_response.html', endpoint: "fees", request: "update",
   scopes: [{ rates_write: "public-rates_write" }] %>
 
 ## Archive a fee

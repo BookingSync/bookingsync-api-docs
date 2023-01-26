@@ -140,7 +140,7 @@ List all reviews for a given account(s).
 GET /reviews
 ~~~
 
-<%= render 'json_response', endpoint: "reviews", scopes: [{ public: "public-reviews_write" }] %>
+<%= render '/json_response.html', endpoint: "reviews", scopes: [{ public: "public-reviews_write" }] %>
 
 ## Get a single review
 
@@ -150,7 +150,7 @@ Returns a single review identified by ID.
 GET /reviews/:review_id
 ~~~
 
-<%= render 'json_response', endpoint: "reviews", scopes: [{ public: "public-reviews_write" }] %>
+<%= render '/json_response.html', endpoint: "reviews", scopes: [{ public: "public-reviews_write" }] %>
 
 ## Create a new review
 
@@ -160,7 +160,7 @@ Creates a review for given booking.
 POST /bookings/:booking_id/reviews
 ~~~
 
-<%= render 'json_response', endpoint: "reviews", request: "create",
+<%= render '/json_response.html', endpoint: "reviews", request: "create",
   scopes: [{ reviews_write: "public-reviews_write" }] %>
 
 
@@ -172,5 +172,5 @@ Returns an dismissed review identified by ID.
 PUT /reviews/:review_id/dismiss
 ~~~
 
-<%= render 'json_response', endpoint: "reviews", request: "dismiss",
+<%= render '/json_response.html', endpoint: "reviews", request: "dismiss",
   scopes: [{ reviews_write: "public-reviews_write" }] %>

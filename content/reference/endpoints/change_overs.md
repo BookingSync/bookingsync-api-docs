@@ -41,7 +41,7 @@ List all change_overs for a given account.
 GET /change_overs
 ~~~
 
-<%= render 'json_response', endpoint: "change_overs", scopes: %w(public) %>
+<%= render '/json_response.html', endpoint: "change_overs", scopes: %w(public) %>
 
 ## Get a single change_over
 
@@ -51,4 +51,4 @@ Returns a single change_over identified by ID.
 GET /change_overs/:change_over_id
 ~~~
 
-<%= render 'json_response', endpoint: "change_overs", scopes: %w(public) %>
+<%= render '/json_response.html', endpoint: "change_overs", scopes: %w(public) %>

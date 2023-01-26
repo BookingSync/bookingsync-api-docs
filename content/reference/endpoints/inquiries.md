@@ -51,7 +51,7 @@ account          | Integer | Read       | Account's ID related to the Inquiry |
 -----------------|---------|------------|------------|
 id               | Integer | Read       | Inquiry's ID. |
 source_id        | Integer | Write      | Source ID related to the Inquiry. |
-rental_id        | Integer | Write (update-only) | Rental ID related to the Inquiry |   
+rental_id        | Integer | Write (update-only) | Rental ID related to the Inquiry |
 adults           | Integer | Read/Write | Inquiry's booking number of adults. | Conditionally required (depending on the config on the Account-level, it's highly recommended to treat it as **required**), must be greater than or equal to: 1
 children         | Integer | Read/Write | Inquiry's booking number of children. | Conditionally required (depending on the config on the Account-level, it's highly recommended to treat it as **required**), must be greater than or equal to: 0
 country_code     | String  | Read/Write | Inquiry's client country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements). | **Required** if `phone` present, must be one on country codes enum
@@ -61,7 +61,7 @@ lastname         | String  | Read/Write | Inquiry's client lastname. | **Require
 message          | String  | Read/Write | Inquiry's message. | Maximum length: 500
 phone            | String  | Read/Write | Inquiry's client phone number. | Must be of a phone number format (regexp: `\A\+?[ -.0-9+EXText()]*\Z`)
 locked           | String  | Read/Write (create-only) | Inquiry's locked status. |
-accept_privacy_policy | Boolean | Write (create-only) | Confirm that the Privacy Policy has been accepted (check [Accounts](/reference/endpoints/accounts/ for more details)) |  
+accept_privacy_policy | Boolean | Write (create-only) | Confirm that the Privacy Policy has been accepted (check [Accounts](/reference/endpoints/accounts/ for more details)) |
 -----------------|---------|------------|------------|
 created_at       | [Time](/reference/enums#formats) | Read       | Inquiry's create time. |
 updated_at       | [Time](/reference/enums#formats) | Read       | Inquiry's update time. |
@@ -80,7 +80,7 @@ account          | Integer | Read       | Account's ID related to the Inquiry |
 -----------------|---------|------------|------------|
 id               | Integer | Read       | Inquiry's ID. |
 source_id        | Integer | Write      | Source ID related to the Inquiry. |
-rental_id        | Integer | Write (update-only) | Rental ID related to the Inquiry |   
+rental_id        | Integer | Write (update-only) | Rental ID related to the Inquiry |
 adults           | Integer | Read/Write | Inquiry's booking number of adults. | Conditionally required (depending on the config on the Account-level, it's highly recommended to treat it as **required**), must be greater than or equal to: 1
 children         | Integer | Read/Write | Inquiry's booking number of children. | Conditionally required (depending on the config on the Account-level, it's highly recommended to treat it as **required**), must be greater than or equal to: 0
 country_code     | String  | Read/Write | Inquiry's client country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements). | **Required** if `phone` present, must be one on country codes enum
@@ -119,7 +119,7 @@ Returns a list of all inquiries for current account(s).
 GET /inquiries
 ~~~
 
-<%= render 'json_response', endpoint: "inquiries", scopes: %w(inquiries_read-inquiries_write-inquiries_write_owned) %>
+<%= render '/json_response.html', endpoint: "inquiries", scopes: %w(inquiries_read-inquiries_write-inquiries_write_owned) %>
 
 ## Get a single inquiry
 
@@ -129,7 +129,7 @@ Returns a single inquiry identified by ID.
 GET /inquiries/:inquiry_id
 ~~~
 
-<%= render 'json_response', endpoint: "inquiries", scopes: %w(inquiries_read-inquiries_write-inquiries_write_owned) %>
+<%= render '/json_response.html', endpoint: "inquiries", scopes: %w(inquiries_read-inquiries_write-inquiries_write_owned) %>
 
 ## Create a new inquiry
 
@@ -139,7 +139,7 @@ Creates an inquiry for given rental.
 POST /rentals/:rental_id/inquiries
 ~~~~
 
-<%= render 'json_response', endpoint: "inquiries", request: "create",
+<%= render '/json_response.html', endpoint: "inquiries", request: "create",
   scopes: %w(inquiries_write-inquiries_write_owned) %>
 
 ## Update a inquiry
@@ -150,5 +150,5 @@ Returns an updated inquiry identified by ID.
 PUT /inquiries/:id
 ~~~
 
-<%= render 'json_response', endpoint: "inquiries", request: "update",
+<%= render '/json_response.html', endpoint: "inquiries", request: "update",
   scopes: %w(inquiries_write-inquiries_write_owned) %>
