@@ -15,31 +15,43 @@
 
 ignore '/assets/stylesheets/_*'
 
-compile '/static/*' do
+compile '/CNAME' do
 end
 
-compile '/CNAME/' do
-end
-
-compile '/highlight/' do
+compile '/highlight.css' do
   filter :erb
+end
+
+compile '/index.html' do
+  filter :erb
+end
+
+layout '/*', :erb
+compile '/reference/endpoints/*' do
+  filter :erb
+  filter :kramdown, toc_levels: [2], header_offset: 1, enable_coderay: false
+  filter :colorize_syntax, default_colorizer: :pygmentsrb
+  layout item[:layout] || '/reference.html'
 end
 
 compile '/reference/*' do
   filter :erb
   filter :kramdown, toc_levels: [2], header_offset: 1, enable_coderay: false
   filter :colorize_syntax, default_colorizer: :pygmentsrb
-  layout item[:layout] || 'reference'
+  layout item[:layout] || '/reference.html'
 end
 
 compile '/guides/*' do
   filter :erb
   filter :kramdown, toc_levels: [2], header_offset: 1, enable_coderay: false
   filter :colorize_syntax, default_colorizer: :pygmentsrb
-  layout item[:layout] || 'guides'
+  layout '/guides.html'
+  layout '/head.html'
+  layout '/json_response.html'
+  layout item[:layout] || '/guides.html'
 end
 
-compile %r{/assets/(stylesheets|javascripts)/.+/} do
+compile %r{/assets/(stylesheets|javascripts)/.+} do
   filter :sprockets, {
     :css_compressor => :scss,
     :js_compressor  => :uglifier
@@ -50,7 +62,7 @@ compile '*' do
   filter :erb
   filter :kramdown, toc_levels: [2], header_offset: 1, enable_coderay: false
   filter :colorize_syntax, default_colorizer: :pygmentsrb
-  layout item[:layout] || 'default'
+  layout item[:layout] || '/default.html'
 end
 
 route '/assets/*/' do
@@ -66,6 +78,19 @@ route '/static/*' do
   item.identifier[7..-2]
 end
 
+compile '/static/*' do
+end
+
+# TODO: Think how to make it recursive
+compile '/static/images/*' do
+end
+
+compile '/static/images/understanding-los/*' do
+end
+
+compile '/static/images/webhook-subscriptions/*' do
+end
+
 route '/highlight' do
   '/highlight.css'
 end
@@ -74,4 +99,3 @@ route '*' do
   item.identifier + 'index.html'
 end
 
-layout '*', :erb
