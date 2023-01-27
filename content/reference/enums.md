@@ -69,6 +69,41 @@ zł               | PLN
 $                | USD
 {: class="table table-bordered"}
 
+## Discount Code rentals eligibility
+
+Value            | Description
+-----------------|------------
+all_rentals      | Discount Code is applicable to all rentals with the same currency.
+specific_rentals | Discount Code is applicable to all provided rentals with the same currency. Requires rental_ids parameter to be passed.
+{: class="table table-bordered"}
+
+## Discount Code minimum requirements
+
+Value                  | Description
+-----------------------|------------
+none                   | Discount Code is applicable without any requirements.
+minimum_nights_booked  | Discount Code is applicable when guest books at least specified number of nights. Requires minimum_nights_booked parameter to be passed.
+minimum_spend          | Discount Code is applicable when guest have spent at least specified amount on booking. Requires minimum_spend parameter to be passed.
+{: class="table table-bordered"}
+
+## Discount Code usage limit
+
+Value            | Description
+-----------------|------------
+none             | Discount Code can be used infinite amount of times
+number_of_times  | Disco
+{: class="table table-bordered"}
+
+## Discount Code discount value type
+
+Value            | Description
+-----------------|------------
+percentage       | Discount is a percentage of the booking total. Requires percentage parameter to be passed.
+fixed_amount     | Discount is a fixed amount subtracted from the booking total. Required fixed_amount parameter to be passed.
+{: class="table table-bordered"}
+
+_Note_: Fees and taxes are applied after the discount, so percentage fees will be lower, and fixed ones will apply even when the booking price is discounted to zero.
+
 ## Formats
 
 Name             | Description
@@ -262,7 +297,7 @@ weekly           | The reference rate is weekly based.
 
 [Rates Rules explanation](https://manual.bookingsync.com/hc/en-us/articles/360005324073-All-our-Rates-Rules)
 
-Name                              | Description                                   | Variables                                   | Requires fixed period (start_date/end_date)? | Percentage required? | Fixed amount required? 
+Name                              | Description                                   | Variables                                   | Requires fixed period (start_date/end_date)? | Percentage required? | Fixed amount required?
 ----------------------------------|-----------------------------------------------|---------------------------------------------|----------------------------------------------|----------------------|--------------------------
 additional_person_fixed_per_night | Rule applied for stay price                   | occupation_greater_than                     |                                              | false                | true
 arrival_only                      | Rule applied on arrival.                      | days                                        |                                              | false                | false
