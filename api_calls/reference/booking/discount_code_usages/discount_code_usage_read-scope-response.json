@@ -1,0 +1,20 @@
+{
+  "links": {
+    "discount_codes.bookings": "http://www.bookingsync.com/api/v3/bookings/{discount_codes_usages.bookings}",
+    "discount_codes.discount_codes": "http://www.bookingsync.com/api/v3/booking/discount_codes/{discount_code_usages.discount_code}"
+  },
+  "discount_codes": [
+    {
+      "links": {
+        "booking": 42,
+        "discount_code": 512
+      },
+      "id": "db6c0845-6122-4de6-a9ab-7a685e2a17f0",
+      "currency": "EUR",
+      "amount_in_cents": 10000,
+      "created_at": "2023-01-24T15:22:55Z",
+      "canceled_at": null
+    }
+  ],
+  "meta": {}
+}

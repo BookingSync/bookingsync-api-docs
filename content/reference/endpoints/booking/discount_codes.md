@@ -6,7 +6,7 @@
 ## Overview
 
 This resource represents Discount Codes which are used to provide a flexible discount that can be applied to rental.
-Upon applying the [Discount Code Usage](/reference/endpoints/discount_code_usages/) gets created.
+Upon applying the [Discount Code Usage](/reference/endpoints/booking/discount_code_usages/) gets created.
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
@@ -16,7 +16,6 @@ Upon applying the [Discount Code Usage](/reference/endpoints/discount_code_usage
 </ul>
 <div class="tab-content" markdown="1">
 <div class="tab-pane active" id="discount_code_read" markdown="1">
-
 Name                     | Type                             | Read/Write | Description
 -------------------------|----------------------------------|------------|---------------------------------------------
 id                       | String[UUID]                     | Read       | Discount Code's id.
@@ -68,13 +67,13 @@ canceled_at              | [Time](/reference/enums#formats)                     
 
 ## List Discount Codes
 
+Returns all Discount Codes for current account.
+
 ~~~
 GET /booking/discount_codes
 ~~~
 
 <%= render 'json_response', endpoint: "booking/discount_codes", scopes: %w(discount_code_read-discount_code_write) %>
-
-Returns all Discount Codes for current account.
 
 ## Get a single Discount Code
 
