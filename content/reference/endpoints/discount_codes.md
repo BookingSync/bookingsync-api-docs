@@ -69,37 +69,49 @@ canceled_at              | [Time](/reference/enums#formats)                     
 ## List Discount Codes
 
 ~~~
-GET /hosts
+GET /booking/discount_codes
 ~~~
 
-<%= render 'json_response', endpoint: "hosts", scopes: %w(inbox_read-inbox_write) %>
+<%= render 'json_response', endpoint: "booking_discount_codes", scopes: %w(discount_code_read-discount_code_write) %>
+
+Returns all Discount Codes for current account.
 
 ## Get a single Discount Code
 
-Returns a single host identified by ID.
+Returns a single Discount Code identified by ID.
 
 ~~~
-GET /hosts/:host_id
+GET /booking/discount_codes/:discount_code_id
 ~~~
 
-<%= render 'json_response', endpoint: "hosts", scopes: %w(inbox_read-inbox_write) %>
+<%= render 'json_response', endpoint: "booking_discount_codes", scopes: %w(discount_code_read-discount_code_write) %>
 
 ## Create a new Discount Code
 
-Creates an host.
+Creates a Discount Code and renders it.
 
 ~~~~
-POST /hosts
+POST /booking/discount_codes
 ~~~~
 
-<%= render 'json_response', endpoint: "hosts", request: "create", scopes: %w(inbox_write) %>
+<%= render 'json_response', endpoint: "booking_discount_codes", request: "create", scopes: %w(discount_code_write) %>
 
 ## Update a Discount Code
 
-Returns an updated host identified by ID.
+Updated the Discount Code identified by ID and renders it.
 
 ~~~
-PUT /hosts/:host_id
+PUT /booking/discount_codes/:discount_code_id
 ~~~
 
-<%= render 'json_response', endpoint: "hosts", request: "update", scopes: %w(inbox_write) %>
+<%= render 'json_response', endpoint: "booking_discount_codes", request: "update", scopes: %w(discount_code_write) %>
+
+## Delete a Discount Code
+
+Deletes Discount Code identified by ID.
+
+~~~
+DELETE /booking/discount_codes/:discount_code_id
+~~~
+
+Returns 204 on success or 404 on error.
