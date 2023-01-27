@@ -72,7 +72,7 @@ canceled_at              | [Time](/reference/enums#formats)                     
 GET /booking/discount_codes
 ~~~
 
-<%= render 'json_response', endpoint: "booking_discount_codes", scopes: %w(discount_code_read-discount_code_write) %>
+<%= render 'json_response', endpoint: "booking/discount_codes", scopes: %w(discount_code_read-discount_code_write) %>
 
 Returns all Discount Codes for current account.
 
@@ -84,7 +84,7 @@ Returns a single Discount Code identified by ID.
 GET /booking/discount_codes/:discount_code_id
 ~~~
 
-<%= render 'json_response', endpoint: "booking_discount_codes", scopes: %w(discount_code_read-discount_code_write) %>
+<%= render 'json_response', endpoint: "booking/discount_codes", scopes: %w(discount_code_read-discount_code_write) %>
 
 ## Create a new Discount Code
 
@@ -94,7 +94,7 @@ Creates a Discount Code and renders it.
 POST /booking/discount_codes
 ~~~~
 
-<%= render 'json_response', endpoint: "booking_discount_codes", request: "create", scopes: %w(discount_code_write) %>
+<%= render 'json_response', endpoint: "booking/discount_codes", request: "create", scopes: %w(discount_code_write) %>
 
 ## Update a Discount Code
 
@@ -104,7 +104,7 @@ Updated the Discount Code identified by ID and renders it.
 PUT /booking/discount_codes/:discount_code_id
 ~~~
 
-<%= render 'json_response', endpoint: "booking_discount_codes", request: "update", scopes: %w(discount_code_write) %>
+<%= render 'json_response', endpoint: "booking/discount_codes", request: "update", scopes: %w(discount_code_write) %>
 
 ## Delete a Discount Code
 
