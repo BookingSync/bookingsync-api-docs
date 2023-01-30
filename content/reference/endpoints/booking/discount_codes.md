@@ -23,7 +23,7 @@ discount_code            | String                           | Read       | Disco
 currency                 | String                           | Read       | Discount Code's currency.
 fixed_amount             | Float                            | Read       | Fixed amount of discount.
 percentage               | integer                          | Read       | Discount percentage.
-all_rentals              | Boolean                          | Read       | Flag, that indicates that this discount is applicable to all rentals with the same currency.
+all_rentals              | Boolean                          | Read       | Flag, that indicates that this discount is applicable to all rentals with provided currency.
 number_of_times          | Integer                          | Read       | Number of times the Discount Code can be applied.
 minimum_nights_booked    | integer                          | Read       | Minimum number of nights that must be booked in order to apply Discount Code.
 minimum_spend            | Float                            | Read       | Minimum amount that must be spent in order to apply Discount Code.
@@ -55,7 +55,7 @@ rentals_eligibility      | [String](/reference/enums#discount-code-rentals-eligi
 minimum_requirements     | [String](/reference/enums#discount-code-minimum-requirements) | Write      | Minimum requirements to make Discount Code applicable to booking.
 usage_limit              | [String](/reference/enums#discount-code-usage-limit)          | Write      | Usage limit of the Discount Code.
 discount_value_type      | [String](/reference/enums#discount-code-discount-value-type)  | Write      | The type of discount.
-rental_ids               | Array of Integers                                             | Write      | The ids of rentals Discount Code can be used with.
+rental_ids               | Array of Integers                                             | Write      | The ids of rentals Discount Code can be used with. Should be empty if `rentals_eligibility` is "all_rentals".
 -------------------------|---------------------------------------------------------------|------------|----------------
 created_at               | [Time](/reference/enums#formats)                              | Read       | Discount Code create time
 updated_at               | [Time](/reference/enums#formats)                              | Read       | Discount Code update time
