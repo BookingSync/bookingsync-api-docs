@@ -1,3 +1,4 @@
+# Taken from https://github.com/cboone/nanoc-static-data-source
 module Nanoc::DataSources
   class Static < Nanoc::DataSource
     identifier :static
@@ -21,6 +22,7 @@ module Nanoc::DataSources
         mtime      = File.mtime(filename)
         checksum   = checksum_for(filename)
 
+        # Newer syntax since nanoc 4.x.x
         new_item(
           File.expand_path("#{filename}"),
           attributes,

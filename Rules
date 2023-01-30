@@ -20,13 +20,40 @@ end
 
 compile '/highlight.css' do
   filter :erb
+  write item.identifier.to_s
+end
+
+compile '/**/*.html' do
+  layout '/default.*'
+
+  if item.identifier =~ '**/index.*'
+    write item.identifier.to_s
+  else
+    write item.identifier.without_ext + '/index.html'
+  end
 end
 
 compile '/index.html' do
   filter :erb
+  # if item.identifier =~ '**/index.*'
+  #   write item.identifier.to_s
+  # else
+  #   write item.identifier.without_ext + '/index.html'
+  # end
+end
+
+compile '/**/*.md' do
+  filter :kramdown
+  layout '/default.*'
+  if item.identifier =~ '**/index.*'
+    write item.identifier.without_ext + '.html'
+  else
+    write item.identifier.without_ext + '/index.html'
+  end
 end
 
 layout '/*', :erb
+
 compile '/reference/endpoints/*' do
   filter :erb
   filter :kramdown, toc_levels: [2], header_offset: 1, enable_coderay: false
@@ -39,6 +66,7 @@ compile '/reference/*' do
   filter :kramdown, toc_levels: [2], header_offset: 1, enable_coderay: false
   filter :colorize_syntax, default_colorizer: :pygmentsrb
   layout item[:layout] || '/reference.html'
+  write item.identifier.to_s
 end
 
 compile '/guides/*' do
@@ -51,11 +79,39 @@ compile '/guides/*' do
   layout item[:layout] || '/guides.html'
 end
 
-compile %r{/assets/(stylesheets|javascripts)/.+} do
+compile %r{/assets/javascripts/.+} do
   filter :sprockets, {
     :css_compressor => :scss,
     :js_compressor  => :uglifier
   }
+  write item.identifier.to_s
+end
+
+compile '/assets/stylesheets/*.scss' do
+  # Setup 1
+  # filter :sass, { syntax: :scss, style: :compact } # => This alone: Sass::SyntaxError: File to import not found or unreadable: bootstrap-bookingsync. Load path: Nanoc Sass Importer
+
+  #
+  # Setup 1.1
+  # filter :sass, syntax: :scss
+  # write @item.identifier.without_ext + '.css'
+  # => Sass::SyntaxError: File to import not found or unreadable: bootstrap-bookingsync. Load path: Nanoc Sass Importer
+
+
+  # Setup 2
+  path = @item.identifier.without_ext + '.css'
+  options = { syntax: :scss, style: :compact, css_path: path, sourcemap_path: :inline }
+  filter :sass, options
+  # => Sass::SyntaxError: File to import not found or unreadable: bootstrap-bookingsync. Load path: Nanoc Sass Importer
+
+
+  # ---
+  # NOTE: Can it help? https://groups.google.com/g/nanoc/c/_3VQxO6wOCU/m/MfhipttIUBsJ?pli=1
+  # ---
+  #  Anyway we are getting the application.sccs in the output.
+
+  # --
+  # write @item.identifier.without_ext + '.css'
 end
 
 compile '*' do
@@ -63,6 +119,10 @@ compile '*' do
   filter :kramdown, toc_levels: [2], header_offset: 1, enable_coderay: false
   filter :colorize_syntax, default_colorizer: :pygmentsrb
   layout item[:layout] || '/default.html'
+end
+
+compile '/**/*' do
+  write item.identifier.to_s
 end
 
 route '/assets/*/' do
@@ -83,12 +143,15 @@ end
 
 # TODO: Think how to make it recursive
 compile '/static/images/*' do
+  write item.identifier.to_s
 end
 
 compile '/static/images/understanding-los/*' do
+  write item.identifier.to_s
 end
 
 compile '/static/images/webhook-subscriptions/*' do
+  write item.identifier.to_s
 end
 
 route '/highlight' do
