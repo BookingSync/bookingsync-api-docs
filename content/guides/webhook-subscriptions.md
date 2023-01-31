@@ -72,6 +72,12 @@ Here's the list of supported events:
 * payment_created
 * payment_destroyed
 * payment_updated
+* booking_discount_code_created
+* booking_discount_code_destroyed
+* booking_discount_code_updated
+* booking_discount_code_usage_created
+* booking_discount_code_usage_destroyed
+* booking_discount_code_usage_updated
 
 ## Payload content
 

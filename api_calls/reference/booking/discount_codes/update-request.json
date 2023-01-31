@@ -1,0 +1,18 @@
+{
+  "discount_codes": [
+    {
+      "rentals_eligibility": "specific_rentals",
+      "minimum_requirements": "minimum_nights_booked",
+      "minimum_nights_booked": 5,
+      "usage_limit": "number_of_times",
+      "number_of_times": 10,
+      "currency": "EUR",
+      "discount_code": "PROMO123",
+      "discount_value_type": "fixed_amount",
+      "fixed_amount": 100,
+      "start_date": "Mon, 19 Sep 2023 13:14:09.392265926 UTC +00:00",
+      "end_date": "Wed, 21 Sep 2023 13:13:48.669825452 UTC +00:00",
+      "rental_ids": [42, 103]
+    }
+  ]
+}
