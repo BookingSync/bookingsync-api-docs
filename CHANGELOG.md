@@ -1,7 +1,22 @@
-# Change Log
+# Changelog
 
-## [3.26.2](https://github.com/BookingSync/bookingsync-api-docs/tree/3.26.2) (2022-03-23)
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.26.1...3.26.2)
+## [3.27.2](https://github.com/BookingSync/bookingsync-api-docs/tree/3.27.2) (2023-01-31)
+
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.26.2...3.27.2)
+
+**Merged pull requests:**
+
+- \[CORE-5979\] Discount Codes docs [\#375](https://github.com/BookingSync/bookingsync-api-docs/pull/375) ([ARtoriouSs](https://github.com/ARtoriouSs))
+- add link to Channel API [\#370](https://github.com/BookingSync/bookingsync-api-docs/pull/370) ([Azdaroth](https://github.com/Azdaroth))
+- \[core-5497\] Add pet fee [\#367](https://github.com/BookingSync/bookingsync-api-docs/pull/367) ([radekzawada](https://github.com/radekzawada))
+- Bump nokogiri from 1.10.8 to 1.13.4 [\#361](https://github.com/BookingSync/bookingsync-api-docs/pull/361) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump addressable from 2.5.2 to 2.8.0 [\#346](https://github.com/BookingSync/bookingsync-api-docs/pull/346) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump kramdown from 1.3.2 to 2.3.0 [\#329](https://github.com/BookingSync/bookingsync-api-docs/pull/329) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rack from 2.2.2 to 2.2.3 [\#325](https://github.com/BookingSync/bookingsync-api-docs/pull/325) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [v3.26.2](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.26.2) (2022-03-23)
+
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.26.1...v3.26.2)
 
 **Merged pull requests:**
 
@@ -14,6 +29,7 @@
 - document constraints / update docs / overview - batch 1 [\#354](https://github.com/BookingSync/bookingsync-api-docs/pull/354) ([Azdaroth](https://github.com/Azdaroth))
 
 ## [v3.26.1](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.26.1) (2022-02-04)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.25.1...v3.26.1)
 
 **Merged pull requests:**
@@ -22,6 +38,7 @@
 - \[CORE-5258\] Add missing fields to Rentals endpoint [\#351](https://github.com/BookingSync/bookingsync-api-docs/pull/351) ([pyromaniac](https://github.com/pyromaniac))
 
 ## [v3.25.1](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.25.1) (2021-09-20)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.25.0...v3.25.1)
 
 **Merged pull requests:**
@@ -31,6 +48,7 @@
 - Update docs and explain upcoming attribute on sources [\#345](https://github.com/BookingSync/bookingsync-api-docs/pull/345) ([StoneFrog](https://github.com/StoneFrog))
 
 ## [v3.25.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.25.0) (2021-05-11)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.24.1...v3.25.0)
 
 **Closed issues:**
@@ -45,6 +63,7 @@
 - add docs about GDPR-related fields [\#342](https://github.com/BookingSync/bookingsync-api-docs/pull/342) ([Azdaroth](https://github.com/Azdaroth))
 
 ## [v3.24.1](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.24.1) (2021-03-15)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.23.1...v3.24.1)
 
 **Merged pull requests:**
@@ -52,6 +71,7 @@
 - \[core-4406\] add rentals management\_type description  [\#336](https://github.com/BookingSync/bookingsync-api-docs/pull/336) ([radekzawada](https://github.com/radekzawada))
 
 ## [v3.23.1](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.23.1) (2021-01-25)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.22.1...v3.23.1)
 
 **Merged pull requests:**
@@ -59,6 +79,7 @@
 - \[core-4256\] add contacts endpoint [\#333](https://github.com/BookingSync/bookingsync-api-docs/pull/333) ([radekzawada](https://github.com/radekzawada))
 
 ## [v3.22.1](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.22.1) (2021-01-11)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.21.1...v3.22.1)
 
 **Merged pull requests:**
@@ -66,6 +87,7 @@
 - \[core-4206\] add read\_at to inboc documentation [\#331](https://github.com/BookingSync/bookingsync-api-docs/pull/331) ([radekzawada](https://github.com/radekzawada))
 
 ## [v3.21.1](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.21.1) (2020-10-13)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.20.1...v3.21.1)
 
 **Merged pull requests:**
@@ -73,6 +95,7 @@
 - \[core-3881\] add documentation for certifications [\#330](https://github.com/BookingSync/bookingsync-api-docs/pull/330) ([radekzawada](https://github.com/radekzawada))
 
 ## [v3.20.1](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.20.1) (2020-07-23)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.19.1...v3.20.1)
 
 **Merged pull requests:**
@@ -81,6 +104,7 @@
 - \[core-3582\] add mid term rate maps docs [\#327](https://github.com/BookingSync/bookingsync-api-docs/pull/327) ([radekzawada](https://github.com/radekzawada))
 
 ## [v3.19.1](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.19.1) (2020-06-03)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.19.0...v3.19.1)
 
 **Merged pull requests:**
@@ -88,6 +112,7 @@
 - bump ruby version, add sass [\#324](https://github.com/BookingSync/bookingsync-api-docs/pull/324) ([adamgrad](https://github.com/adamgrad))
 
 ## [v3.19.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.19.0) (2020-06-02)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.18.0...v3.19.0)
 
 **Merged pull requests:**
@@ -104,6 +129,7 @@
 - Load dependencies urls over https [\#312](https://github.com/BookingSync/bookingsync-api-docs/pull/312) ([JovicaSusa](https://github.com/JovicaSusa))
 
 ## [v3.18.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.18.0) (2019-09-23)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v.3.17.0...v3.18.0)
 
 **Merged pull requests:**
@@ -111,6 +137,7 @@
 - Add 202 status description to secure payments guide [\#311](https://github.com/BookingSync/bookingsync-api-docs/pull/311) ([adamgrad](https://github.com/adamgrad))
 
 ## [v.3.17.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v.3.17.0) (2019-09-19)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.16.0...v.3.17.0)
 
 **Merged pull requests:**
@@ -122,6 +149,7 @@
 - update ffi [\#291](https://github.com/BookingSync/bookingsync-api-docs/pull/291) ([Azdaroth](https://github.com/Azdaroth))
 
 ## [v3.16.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.16.0) (2019-05-23)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.15.0...v3.16.0)
 
 **Merged pull requests:**
@@ -131,6 +159,7 @@
 - Add bookings tags post and patch [\#305](https://github.com/BookingSync/bookingsync-api-docs/pull/305) ([adamgrad](https://github.com/adamgrad))
 
 ## [v3.15.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.15.0) (2019-04-14)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.14.0...v3.15.0)
 
 **Merged pull requests:**
@@ -142,6 +171,7 @@
 - update clients samples [\#292](https://github.com/BookingSync/bookingsync-api-docs/pull/292) ([thilonel](https://github.com/thilonel))
 
 ## [v3.14.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.14.0) (2019-02-06)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.13.0...v3.14.0)
 
 **Merged pull requests:**
@@ -149,6 +179,7 @@
 - Fix rentals contents overrides translatable attributes docs [\#298](https://github.com/BookingSync/bookingsync-api-docs/pull/298) ([adamgrad](https://github.com/adamgrad))
 
 ## [v3.13.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.13.0) (2019-01-23)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.12.0...v3.13.0)
 
 **Merged pull requests:**
@@ -156,6 +187,7 @@
 - Add conversation docs for connect and disconnect bookings [\#297](https://github.com/BookingSync/bookingsync-api-docs/pull/297) ([adamgrad](https://github.com/adamgrad))
 
 ## [v3.12.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.12.0) (2018-12-27)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.11.0...v3.12.0)
 
 **Merged pull requests:**
@@ -173,6 +205,7 @@
 - add deprecation note about seasons and periods [\#284](https://github.com/BookingSync/bookingsync-api-docs/pull/284) ([Azdaroth](https://github.com/Azdaroth))
 
 ## [v3.11.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.11.0) (2018-01-26)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v.3.10.0...v3.11.0)
 
 **Merged pull requests:**
@@ -180,6 +213,7 @@
 - Documented payment left to collect for booking [\#276](https://github.com/BookingSync/bookingsync-api-docs/pull/276) ([JovicaSusa](https://github.com/JovicaSusa))
 
 ## [v.3.10.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v.3.10.0) (2018-01-04)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.9.0...v.3.10.0)
 
 **Merged pull requests:**
@@ -188,6 +222,7 @@
 - add docs explaining pricing concepts [\#257](https://github.com/BookingSync/bookingsync-api-docs/pull/257) ([Azdaroth](https://github.com/Azdaroth))
 
 ## [v3.9.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.9.0) (2017-12-28)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.8.0...v3.9.0)
 
 **Merged pull requests:**
@@ -206,6 +241,7 @@
 - Add rental cancelation policies [\#156](https://github.com/BookingSync/bookingsync-api-docs/pull/156) ([ZenCocoon](https://github.com/ZenCocoon))
 
 ## [v3.8.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.8.0) (2017-12-19)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.7.0...v3.8.0)
 
 **Merged pull requests:**
@@ -213,6 +249,7 @@
 - Update supported rental types list [\#268](https://github.com/BookingSync/bookingsync-api-docs/pull/268) ([StoneFrog](https://github.com/StoneFrog))
 
 ## [v3.7.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.7.0) (2017-12-18)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.6.0...v3.7.0)
 
 **Merged pull requests:**
@@ -220,6 +257,7 @@
 - add docs for bookings\_tags [\#256](https://github.com/BookingSync/bookingsync-api-docs/pull/256) ([kaizencodes](https://github.com/kaizencodes))
 
 ## [v3.6.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.6.0) (2017-11-20)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.5.0...v3.6.0)
 
 **Merged pull requests:**
@@ -230,6 +268,7 @@
 - Update publishing steps [\#264](https://github.com/BookingSync/bookingsync-api-docs/pull/264) ([ZenCocoon](https://github.com/ZenCocoon))
 
 ## [v3.5.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.5.0) (2017-10-18)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.4.0...v3.5.0)
 
 **Implemented enhancements:**
@@ -248,6 +287,7 @@
 - Add webhook guide [\#254](https://github.com/BookingSync/bookingsync-api-docs/pull/254) ([BenjaminVanRyseghem](https://github.com/BenjaminVanRyseghem))
 
 ## [v3.4.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.4.0) (2017-09-19)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.3.0...v3.4.0)
 
 **Merged pull requests:**
@@ -255,6 +295,7 @@
 - Update rentals search endpoint [\#253](https://github.com/BookingSync/bookingsync-api-docs/pull/253) ([Chambeur](https://github.com/Chambeur))
 
 ## [v3.3.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.3.0) (2017-09-07)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.2.0...v3.3.0)
 
 **Merged pull requests:**
@@ -265,6 +306,7 @@
 - Update booking.channel\_price description [\#249](https://github.com/BookingSync/bookingsync-api-docs/pull/249) ([ZenCocoon](https://github.com/ZenCocoon))
 
 ## [v3.2.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.2.0) (2017-08-11)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.1.0...v3.2.0)
 
 **Merged pull requests:**
@@ -275,6 +317,7 @@
 - Update docs \#2 - letter "b" [\#226](https://github.com/BookingSync/bookingsync-api-docs/pull/226) ([StoneFrog](https://github.com/StoneFrog))
 
 ## [v3.1.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.1.0) (2017-07-13)
+
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.0.0...v3.1.0)
 
 **Merged pull requests:**
@@ -282,6 +325,9 @@
 - Add currency calculation to LOS records endpoint [\#234](https://github.com/BookingSync/bookingsync-api-docs/pull/234) ([Phazz](https://github.com/Phazz))
 
 ## [v3.0.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.0.0) (2017-07-11)
+
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/a32930f133acf3c6c6438073bbef882381dab851...v3.0.0)
+
 **Implemented enhancements:**
 
 - Improve the docs for Rentals\#search endpoint  [\#202](https://github.com/BookingSync/bookingsync-api-docs/issues/202)
@@ -296,7 +342,7 @@
 - Document payments\_write\_owned scope [\#143](https://github.com/BookingSync/bookingsync-api-docs/pull/143) ([ZenCocoon](https://github.com/ZenCocoon))
 - Update Search rentals scope response [\#132](https://github.com/BookingSync/bookingsync-api-docs/pull/132) ([hash4di](https://github.com/hash4di))
 - Add absolute\_min\_price to rental when ready. [\#107](https://github.com/BookingSync/bookingsync-api-docs/pull/107) ([Fredar](https://github.com/Fredar))
-- Explain that `refresh\_token` is regenerated after each refresh. [\#97](https://github.com/BookingSync/bookingsync-api-docs/pull/97) ([Fredar](https://github.com/Fredar))
+- Explain that `refresh_token` is regenerated after each refresh. [\#97](https://github.com/BookingSync/bookingsync-api-docs/pull/97) ([Fredar](https://github.com/Fredar))
 - Add search description in the rentals endpoint [\#93](https://github.com/BookingSync/bookingsync-api-docs/pull/93) ([ZenCocoon](https://github.com/ZenCocoon))
 - On Rentals endpoint, add details about final\_price and initial\_price [\#92](https://github.com/BookingSync/bookingsync-api-docs/pull/92) ([ZenCocoon](https://github.com/ZenCocoon))
 - Update the account endpoint to include the status [\#86](https://github.com/BookingSync/bookingsync-api-docs/pull/86) ([ZenCocoon](https://github.com/ZenCocoon))
@@ -454,7 +500,6 @@
 - Order enum entries alphabetically [\#42](https://github.com/BookingSync/bookingsync-api-docs/pull/42) ([Fredar](https://github.com/Fredar))
 - Add surface\_unit to rentals API [\#41](https://github.com/BookingSync/bookingsync-api-docs/pull/41) ([Fredar](https://github.com/Fredar))
 - Add docs for rentals amenities [\#40](https://github.com/BookingSync/bookingsync-api-docs/pull/40) ([Fredar](https://github.com/Fredar))
-- Add docs for rentals amenities [\#39](https://github.com/BookingSync/bookingsync-api-docs/pull/39) ([Fredar](https://github.com/Fredar))
 - Finish rental docs [\#38](https://github.com/BookingSync/bookingsync-api-docs/pull/38) ([Fredar](https://github.com/Fredar))
 - Update json responses to new layout [\#37](https://github.com/BookingSync/bookingsync-api-docs/pull/37) ([Fredar](https://github.com/Fredar))
 - Add scope pills to switch through JSON responses [\#36](https://github.com/BookingSync/bookingsync-api-docs/pull/36) ([Fredar](https://github.com/Fredar))
@@ -494,4 +539,4 @@
 
 
 
-\* *This Change Log was automatically generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)*
+\* *This Changelog was automatically generated by [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator)*
