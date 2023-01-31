@@ -11,7 +11,8 @@
     "bookings.bookings_taxes": "https://www.bookingsync.com/api/v3/bookings_taxes/{bookings.bookings_taxes}",
     "bookings.payments": "https://www.bookingsync.com/api/v3/payments/{bookings.payments}",
     "bookings.bookings_payments": "https://www.bookingsync.com/api/v3/bookings_payments/{bookings.bookings_payments}",
-    "bookings.bookings_tags": "https://www.bookingsync.com/api/v3/bookings_tags/{bookings.bookings_tags}"
+    "bookings.bookings_tags": "https://www.bookingsync.com/api/v3/bookings_tags/{bookings.bookings_tags}",
+    "bookings.discount_code_usage": "https://www.bookingsync.com/api/v3/discount_code_usages/{bookings.discount_code_usage}"
   },
   "bookings": [
     {
@@ -27,7 +28,8 @@
         "bookings_taxes": [22, 23, 24],
         "bookings_tags": [],
         "booking_comments": [1, 2],
-        "payments": [23]
+        "payments": [23],
+        "discount_code_usage": 12
       },
       "id": 80,
       "start_at": "START_AT",

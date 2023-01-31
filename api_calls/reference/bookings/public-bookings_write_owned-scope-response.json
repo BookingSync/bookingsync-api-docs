@@ -3,7 +3,8 @@
     "bookings.account": "https://www.bookingsync.com/api/v3/accounts/{bookings.account}",
     "bookings.rental": "https://www.bookingsync.com/api/v3/rentals/{bookings.rental}",
     "bookings.bookings_tags": "https://www.bookingsync.com/api/v3/bookings_tags/{bookings.bookings_tags}",
-    "bookings.rentals_tags": "https://www.bookingsync.com/api/v3/rentals_tags/{bookings.rentals_tags}"
+    "bookings.rentals_tags": "https://www.bookingsync.com/api/v3/rentals_tags/{bookings.rentals_tags}",
+    "bookings.discount_code_usage": "https://www.bookingsync.com/api/v3/discount_code_usages/{bookings.discount_code_usage}"
   },
   "bookings": [
     {
@@ -11,7 +12,8 @@
         "account": 1,
         "rental": 16,
         "bookings_tags": [1, 2],
-        "rentals_tags": []
+        "rentals_tags": [],
+        "discount_code_usage": 12
       },
       "id": 203,
       "start_at": "START_AT",
