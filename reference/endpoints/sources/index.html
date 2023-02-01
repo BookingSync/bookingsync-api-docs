@@ -73,6 +73,8 @@
           <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_codes">Booking Discount Codes</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_code_usages">Booking Discount Code Usages</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
@@ -136,11 +138,11 @@
           <h2 id="sources">Sources</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#list-sources">List sources</a></li>
-  <li><a href="#get-a-single-source">Get a single source</a></li>
-  <li><a href="#create-a-new-source">Create a new source</a></li>
-  <li><a href="#update-a-source">Update a source</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#list-sources" id="markdown-toc-list-sources">List sources</a></li>
+  <li><a href="#get-a-single-source" id="markdown-toc-get-a-single-source">Get a single source</a></li>
+  <li><a href="#create-a-new-source" id="markdown-toc-create-a-new-source">Create a new source</a></li>
+  <li><a href="#update-a-source" id="markdown-toc-update-a-source">Update a source</a></li>
 </ol>
 
 <h3 id="overview">Overview</h3>
@@ -296,7 +298,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#7709fecc0107bookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#2c39a47f8856bookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_read / bookings_write / bookings_write_owned
         </a>
       </li>
@@ -308,7 +310,7 @@
   
   
     
-      <div class="tab-pane active" id="7709fecc0107bookings_read-bookings_write-bookings_write_owned">
+      <div class="tab-pane active" id="2c39a47f8856bookings_read-bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"sources.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{sources.account}"</span><span class="p">,</span>
@@ -320,8 +322,8 @@
       <span class="s2">"internal"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Airbnb"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:08Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:08Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -348,7 +350,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#3f2f7615cab3bookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#7200e0d2852ebookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_read / bookings_write / bookings_write_owned
         </a>
       </li>
@@ -360,7 +362,7 @@
   
   
     
-      <div class="tab-pane active" id="3f2f7615cab3bookings_read-bookings_write-bookings_write_owned">
+      <div class="tab-pane active" id="7200e0d2852ebookings_read-bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"sources.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{sources.account}"</span><span class="p">,</span>
@@ -372,8 +374,8 @@
       <span class="s2">"internal"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Airbnb"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:08Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:08Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -400,13 +402,13 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#7e7ef027ee85bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#13c23a2783b5bookings_write_owned" role="tab" data-toggle="pill">
           bookings_write_owned
         </a>
       </li>
     
       <li>
-        <a href="#9fa062dabbdebookings_write" role="tab" data-toggle="pill">
+        <a href="#dea00b496d9fbookings_write" role="tab" data-toggle="pill">
           bookings_write
         </a>
       </li>
@@ -428,7 +430,7 @@
   
   
     
-      <div class="tab-pane active" id="7e7ef027ee85bookings_write_owned">
+      <div class="tab-pane active" id="13c23a2783b5bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"sources.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{sources.account}"</span><span class="p">,</span>
@@ -440,8 +442,8 @@
       <span class="s2">"internal"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Airbnb"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:08Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:08Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -454,7 +456,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="9fa062dabbdebookings_write">
+      <div class="tab-pane " id="dea00b496d9fbookings_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"sources.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{sources.account}"</span><span class="p">,</span>
@@ -466,8 +468,8 @@
       <span class="s2">"internal"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Airbnb"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:08Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:08Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -494,13 +496,13 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#9f80cef34ee7bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#cad43cd81cb2bookings_write_owned" role="tab" data-toggle="pill">
           bookings_write_owned
         </a>
       </li>
     
       <li>
-        <a href="#c4374577dae2bookings_write" role="tab" data-toggle="pill">
+        <a href="#37abd4d6776bbookings_write" role="tab" data-toggle="pill">
           bookings_write
         </a>
       </li>
@@ -522,7 +524,7 @@
   
   
     
-      <div class="tab-pane active" id="9f80cef34ee7bookings_write_owned">
+      <div class="tab-pane active" id="cad43cd81cb2bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"sources.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{sources.account}"</span><span class="p">,</span>
@@ -534,8 +536,8 @@
       <span class="s2">"internal"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Airbnb"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:08Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:08Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
@@ -548,7 +550,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="c4374577dae2bookings_write">
+      <div class="tab-pane " id="37abd4d6776bbookings_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"sources.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{sources.account}"</span><span class="p">,</span>
@@ -560,8 +562,8 @@
       <span class="s2">"internal"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Airbnb"</span><span class="p">,</span>
       <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:08Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:08Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>

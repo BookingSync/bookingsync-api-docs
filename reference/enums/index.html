@@ -73,6 +73,8 @@
           <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_codes">Booking Discount Codes</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_code_usages">Booking Discount Code Usages</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
@@ -136,36 +138,40 @@
           <h2 id="enumerables">Enumerables</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#account-statuses">Account statuses</a></li>
-  <li><a href="#availability-map-statuses">Availability map statuses</a></li>
-  <li><a href="#change-over-map-statuses">Change-over map statuses</a></li>
-  <li><a href="#booking-statuses">Booking statuses</a></li>
-  <li><a href="#currencies">Currencies</a></li>
-  <li><a href="#formats">Formats</a></li>
-  <li><a href="#genders">Genders</a></li>
-  <li><a href="#locales">Locales</a></li>
-  <li><a href="#los-kinds">LOS kinds</a></li>
-  <li><a href="#fee-kinds">Fee kinds</a></li>
-  <li><a href="#fee-rate-kinds">Fee rate kinds</a></li>
-  <li><a href="#payment-kinds">Payment kinds</a></li>
-  <li><a href="#payment-gateway-names">Payment gateway names</a></li>
-  <li><a href="#photo-kinds">Photo kinds</a></li>
-  <li><a href="#rental-link-kinds">Rental Link kinds</a></li>
-  <li><a href="#rates-types">Rates types</a></li>
-  <li><a href="#rates-rules-types">Rates Rules types</a></li>
-  <li><a href="#rates-rules-variables">Rates Rules variables</a></li>
-  <li><a href="#rental-types">Rental types</a></li>
-  <li><a href="#rental-residency-categories">Rental residency categories</a></li>
-  <li><a href="#rental-cancelation-policies-presets">Rental cancelation policies presets</a></li>
-  <li><a href="#rental-management-type">Rental management type</a></li>
-  <li><a href="#inbox-message-channels">Inbox Message Channels</a></li>
-  <li><a href="#inbox-message-origins">Inbox Message Origins</a></li>
-  <li><a href="#inbox-message-visibilities">Inbox Message visibilities</a></li>
-  <li><a href="#rental-contact-kinds">Rental Contact kinds</a></li>
-  <li><a href="#rental-contact-roles">Rental Contact roles</a></li>
-  <li><a href="#rental-certifications">Rental Certifications</a></li>
-  <li><a href="#rental-rounding-kinds">Rental Rounding kinds</a></li>
-  <li><a href="#tax-kinds">Tax kinds</a></li>
+  <li><a href="#account-statuses" id="markdown-toc-account-statuses">Account statuses</a></li>
+  <li><a href="#availability-map-statuses" id="markdown-toc-availability-map-statuses">Availability map statuses</a></li>
+  <li><a href="#change-over-map-statuses" id="markdown-toc-change-over-map-statuses">Change-over map statuses</a></li>
+  <li><a href="#booking-statuses" id="markdown-toc-booking-statuses">Booking statuses</a></li>
+  <li><a href="#currencies" id="markdown-toc-currencies">Currencies</a></li>
+  <li><a href="#discount-code-rentals-eligibility" id="markdown-toc-discount-code-rentals-eligibility">Discount Code rentals eligibility</a></li>
+  <li><a href="#discount-code-minimum-requirements" id="markdown-toc-discount-code-minimum-requirements">Discount Code minimum requirements</a></li>
+  <li><a href="#discount-code-usage-limit" id="markdown-toc-discount-code-usage-limit">Discount Code usage limit</a></li>
+  <li><a href="#discount-code-discount-value-type" id="markdown-toc-discount-code-discount-value-type">Discount Code discount value type</a></li>
+  <li><a href="#formats" id="markdown-toc-formats">Formats</a></li>
+  <li><a href="#genders" id="markdown-toc-genders">Genders</a></li>
+  <li><a href="#locales" id="markdown-toc-locales">Locales</a></li>
+  <li><a href="#los-kinds" id="markdown-toc-los-kinds">LOS kinds</a></li>
+  <li><a href="#fee-kinds" id="markdown-toc-fee-kinds">Fee kinds</a></li>
+  <li><a href="#fee-rate-kinds" id="markdown-toc-fee-rate-kinds">Fee rate kinds</a></li>
+  <li><a href="#payment-kinds" id="markdown-toc-payment-kinds">Payment kinds</a></li>
+  <li><a href="#payment-gateway-names" id="markdown-toc-payment-gateway-names">Payment gateway names</a></li>
+  <li><a href="#photo-kinds" id="markdown-toc-photo-kinds">Photo kinds</a></li>
+  <li><a href="#rental-link-kinds" id="markdown-toc-rental-link-kinds">Rental Link kinds</a></li>
+  <li><a href="#rates-types" id="markdown-toc-rates-types">Rates types</a></li>
+  <li><a href="#rates-rules-types" id="markdown-toc-rates-rules-types">Rates Rules types</a></li>
+  <li><a href="#rates-rules-variables" id="markdown-toc-rates-rules-variables">Rates Rules variables</a></li>
+  <li><a href="#rental-types" id="markdown-toc-rental-types">Rental types</a></li>
+  <li><a href="#rental-residency-categories" id="markdown-toc-rental-residency-categories">Rental residency categories</a></li>
+  <li><a href="#rental-cancelation-policies-presets" id="markdown-toc-rental-cancelation-policies-presets">Rental cancelation policies presets</a></li>
+  <li><a href="#rental-management-type" id="markdown-toc-rental-management-type">Rental management type</a></li>
+  <li><a href="#inbox-message-channels" id="markdown-toc-inbox-message-channels">Inbox Message Channels</a></li>
+  <li><a href="#inbox-message-origins" id="markdown-toc-inbox-message-origins">Inbox Message Origins</a></li>
+  <li><a href="#inbox-message-visibilities" id="markdown-toc-inbox-message-visibilities">Inbox Message visibilities</a></li>
+  <li><a href="#rental-contact-kinds" id="markdown-toc-rental-contact-kinds">Rental Contact kinds</a></li>
+  <li><a href="#rental-contact-roles" id="markdown-toc-rental-contact-roles">Rental Contact roles</a></li>
+  <li><a href="#rental-certifications" id="markdown-toc-rental-certifications">Rental Certifications</a></li>
+  <li><a href="#rental-rounding-kinds" id="markdown-toc-rental-rounding-kinds">Rental Rounding kinds</a></li>
+  <li><a href="#tax-kinds" id="markdown-toc-tax-kinds">Tax kinds</a></li>
 </ol>
 
 <h3 id="account-statuses">Account statuses</h3>
@@ -376,6 +382,96 @@
     </tr>
   </tbody>
 </table>
+
+<h3 id="discount-code-rentals-eligibility">Discount Code rentals eligibility</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>all_rentals</td>
+      <td>Discount Code is applicable to all rentals with the same currency.</td>
+    </tr>
+    <tr>
+      <td>specific_rentals</td>
+      <td>Discount Code is applicable to all provided rentals with the same currency. Requires rental_ids parameter to be passed.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="discount-code-minimum-requirements">Discount Code minimum requirements</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>none</td>
+      <td>Discount Code is applicable without any requirements.</td>
+    </tr>
+    <tr>
+      <td>minimum_nights_booked</td>
+      <td>Discount Code is applicable when guest books at least specified number of nights. Requires minimum_nights_booked parameter to be passed.</td>
+    </tr>
+    <tr>
+      <td>minimum_spend</td>
+      <td>Discount Code is applicable when guest have spent at least specified amount on booking. Requires minimum_spend parameter to be passed.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="discount-code-usage-limit">Discount Code usage limit</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>none</td>
+      <td>Discount Code can be used infinite amount of times</td>
+    </tr>
+    <tr>
+      <td>number_of_times</td>
+      <td>Disco</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="discount-code-discount-value-type">Discount Code discount value type</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>percentage</td>
+      <td>Discount is a percentage of the booking total. Requires percentage parameter to be passed.</td>
+    </tr>
+    <tr>
+      <td>fixed_amount</td>
+      <td>Discount is a fixed amount subtracted from the booking total. Required fixed_amount parameter to be passed.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Note</em>: Fees and taxes are applied after the discount, so percentage fees will be lower, and fixed ones will apply even when the booking price is discounted to zero.</p>
 
 <h3 id="formats">Formats</h3>
 
@@ -685,6 +781,10 @@
     <tr>
       <td>parking</td>
       <td>Parking</td>
+    </tr>
+    <tr>
+      <td>pet_fee</td>
+      <td>Pet fee</td>
     </tr>
     <tr>
       <td>public_transit_day_ticket</td>
@@ -1179,7 +1279,7 @@
   </tbody>
 </table>
 
-<p><a href="https://manual.bookingsync.com/hc/en-us/articles/360005324073-All-our-Rates-Rules">Rates Rules explanation</a></p>
+<p class="table table-bordered"><a href="https://manual.bookingsync.com/hc/en-us/articles/360005324073-All-our-Rates-Rules">Rates Rules explanation</a></p>
 
 <h3 id="rental-types">Rental types</h3>
 

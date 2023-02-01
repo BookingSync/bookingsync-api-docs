@@ -1,0 +1,723 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BookingSync API documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/stylesheets/application.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/highlight.css">
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="/assets/javascripts/application.js"></script>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.8.0">
+  </head>
+  <body class="flex-col">
+    <div class="page-wrapper flex-1 flex-col">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle sidebar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <img alt="BookingSync" src="/images/bookingsync.svg">
+              <span>Developers</span>
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="">
+                <a href="/guides/">Guides</a>
+              </li>
+              <li class="active">
+                <a href="/reference/">API Reference</a>
+              </li>
+              <li><a href="https://www.bookingsync.com" target="_blank">BookingSync.com</a></li>
+              <li><a href="https://github.com/BookingSync/bookingsync-api-docs" target="_blank"><i class="fa fa-github fa-fw fa-2x"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+<div class="container content">
+  <div class="row">
+    <div class="col-md-3 col-md-push-9">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Overview</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="/reference/">Introduction</a>
+          <a class="list-group-item" href="https://github.com/BookingSync/bookingsync-api-docs/releases">Changelog</a>
+          <a class="list-group-item" href="/reference/requirements/">Requirements</a>
+          <a class="list-group-item" href="/reference/libraries/">Libraries</a>
+          <a class="list-group-item" href="/reference/authorization/">Authorization</a>
+          <a class="list-group-item" href="/reference/testing_authorization/">Testing the Authorization</a>
+          <a class="list-group-item" href="/reference/enums/">Enumerables</a>
+        </div>
+        <div class="panel-heading">
+          <h3 class="panel-title">Endpoints</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
+          <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/applications/">Applications</a>
+          <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
+          <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_codes">Booking Discount Codes</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_code_usages">Booking Discount Code Usages</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
+          <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_payments/">Bookings Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_tags/">Bookings Tags</a>
+          <a class="list-group-item" href="/reference/endpoints/bookings_taxes/">Bookings Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/change_overs/">Change Overs</a>
+          <a class="list-group-item" href="/reference/endpoints/clients/">Clients</a>
+          <a class="list-group-item" href="/reference/endpoints/contacts/">Contacts</a>
+          <a class="list-group-item" href="/reference/endpoints/destinations/">Destinations</a>
+          <a class="list-group-item" href="/reference/endpoints/fees/">Fees</a>
+          <a class="list-group-item" href="/reference/endpoints/fees_taxes/">Fees Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/hosts/">Hosts</a>
+          <a class="list-group-item" href="/reference/endpoints/inbox_attachments/">Inbox Attachments</a>
+          <a class="list-group-item" href="/reference/endpoints/inbox_conversations/">Inbox Conversations</a>
+          <a class="list-group-item" href="/reference/endpoints/inbox_messages/">Inbox Messages</a>
+          <a class="list-group-item" href="/reference/endpoints/inbox_participants/">Inbox Participants</a>
+          <a class="list-group-item" href="/reference/endpoints/inquiries/">Inquiries</a>
+          <a class="list-group-item" href="/reference/endpoints/living_rooms/">Living Rooms</a>
+          <a class="list-group-item" href="/reference/endpoints/los_records/">LOS Records</a>
+          <a class="list-group-item" href="/reference/endpoints/mid_term_rate_maps/">Mid Term Rate Maps</a>
+          <a class="list-group-item" href="/reference/endpoints/nightly_rate_maps/">Nightly Rate Maps</a>
+          <a class="list-group-item" href="/reference/endpoints/payment_gateways/">Payment Gateways</a>
+          <a class="list-group-item" href="/reference/endpoints/payments/">Payments</a>
+          <a class="list-group-item" href="/reference/endpoints/periods/">Periods</a>
+          <a class="list-group-item" href="/reference/endpoints/photos/">Photos</a>
+          <a class="list-group-item" href="/reference/endpoints/rates/">Rates</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_rules/">Rates Rules</a>
+          <a class="list-group-item" href="/reference/endpoints/rates_tables/">Rates Tables</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals/">Rentals</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_contacts/">Rental Contacts</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_links/">Rental Links</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_tags/">Rentals Tags</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_taxes/">Rentals Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/rental_urls/">Rental URLs</a>
+          <a class="list-group-item" href="/reference/endpoints/reviews/">Reviews</a>
+          <a class="list-group-item" href="/reference/endpoints/seasons/">Seasons</a>
+          <a class="list-group-item" href="/reference/endpoints/sources/">Sources</a>
+          <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
+          <a class="list-group-item" href="/reference/endpoints/taxes/">Taxes</a>
+          <a class="list-group-item" href="/reference/endpoints/tax_rules/">Tax Rules</a>
+        </div>
+        <div class="panel-heading">
+          <h3 class="panel-title">Deprecated APIs</h3>
+        </div>
+        <div class="list-group">
+          <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 col-md-pull-3">
+      <div class="panel panel-default">
+        <div class="panel-body reference-body">
+          <h2 id="discount-codes">Discount Codes</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#list-discount-codes" id="markdown-toc-list-discount-codes">List Discount Codes</a></li>
+  <li><a href="#get-a-single-discount-code" id="markdown-toc-get-a-single-discount-code">Get a single Discount Code</a></li>
+  <li><a href="#create-a-new-discount-code" id="markdown-toc-create-a-new-discount-code">Create a new Discount Code</a></li>
+  <li><a href="#update-a-discount-code" id="markdown-toc-update-a-discount-code">Update a Discount Code</a></li>
+  <li><a href="#delete-a-discount-code" id="markdown-toc-delete-a-discount-code">Delete a Discount Code</a></li>
+</ol>
+
+<h3 id="overview">Overview</h3>
+
+<p>This resource represents Discount Codes which are used to provide a flexible discount that can be applied to rental.
+Upon applying the <a href="/reference/endpoints/booking/discount_code_usages/">Discount Code Usage</a> gets created.</p>
+
+<h4 id="parameters">Parameters</h4>
+<ul class="nav nav-pills" role="tablist">
+<li class="disabled"><a>OAuth Scopes:</a></li>
+<li class="active"><a href="#discount_code_read" role="tab" data-toggle="pill">discount_code_read</a></li>
+<li><a href="#discount_code_write" role="tab" data-toggle="pill">discount_code_write</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane active" id="discount_code_read">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
+          <td>String[UUID]</td>
+          <td>Read</td>
+          <td>Discount Code’s id.</td>
+        </tr>
+        <tr>
+          <td>discount_code</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Discount Code itself.</td>
+        </tr>
+        <tr>
+          <td>currency</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Discount Code’s currency.</td>
+        </tr>
+        <tr>
+          <td>fixed_amount</td>
+          <td>Float</td>
+          <td>Read</td>
+          <td>Fixed amount of discount.</td>
+        </tr>
+        <tr>
+          <td>percentage</td>
+          <td>integer</td>
+          <td>Read</td>
+          <td>Discount percentage.</td>
+        </tr>
+        <tr>
+          <td>all_rentals</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Flag, that indicates that this discount is applicable to all rentals with provided currency.</td>
+        </tr>
+        <tr>
+          <td>number_of_times</td>
+          <td>Integer</td>
+          <td>Read</td>
+          <td>Number of times the Discount Code can be applied.</td>
+        </tr>
+        <tr>
+          <td>minimum_nights_booked</td>
+          <td>integer</td>
+          <td>Read</td>
+          <td>Minimum number of nights that must be booked in order to apply Discount Code.</td>
+        </tr>
+        <tr>
+          <td>minimum_spend</td>
+          <td>Float</td>
+          <td>Read</td>
+          <td>Minimum amount that must be spent in order to apply Discount Code.</td>
+        </tr>
+        <tr>
+          <td>start_date</td>
+          <td><a href="/reference/enums#formats">Date</a></td>
+          <td>Read</td>
+          <td>The start date from which the Discount Code will be applicable.</td>
+        </tr>
+        <tr>
+          <td>end_date</td>
+          <td><a href="/reference/enums#formats">Date</a></td>
+          <td>Read</td>
+          <td>The expiration date of the Discount Code.</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Discount Code create time</td>
+        </tr>
+        <tr>
+          <td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Discount Code update time</td>
+        </tr>
+        <tr>
+          <td>canceled_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Discount Code soft delete time</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <div class="tab-pane" id="discount_code_write">
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Read/Write</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>id</td>
+          <td>String[UUID]</td>
+          <td>Read</td>
+          <td>Discount Code’s id.</td>
+        </tr>
+        <tr>
+          <td>discount_code</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Discount Code itself.</td>
+        </tr>
+        <tr>
+          <td>currency</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Discount Code’s currency.</td>
+        </tr>
+        <tr>
+          <td>fixed_amount</td>
+          <td>Float</td>
+          <td>Read/Write</td>
+          <td>Fixed amount of discount.</td>
+        </tr>
+        <tr>
+          <td>percentage</td>
+          <td>integer</td>
+          <td>Read/Write</td>
+          <td>Discount percentage.</td>
+        </tr>
+        <tr>
+          <td>all_rentals</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Flag, that indicates that this discount is applicable to all rentals with the same currency.</td>
+        </tr>
+        <tr>
+          <td>number_of_times</td>
+          <td>Integer</td>
+          <td>Read/Write</td>
+          <td>Number of times the Discount Code can be applied.</td>
+        </tr>
+        <tr>
+          <td>minimum_nights_booked</td>
+          <td>integer</td>
+          <td>Read/Write</td>
+          <td>Minimum number of nights that must be booked in order to apply Discount Code.</td>
+        </tr>
+        <tr>
+          <td>minimum_spend</td>
+          <td>Float</td>
+          <td>Read/Write</td>
+          <td>Minimum amount that must be spent in order to apply Discount Code.</td>
+        </tr>
+        <tr>
+          <td>start_date</td>
+          <td><a href="/reference/enums#formats">Date</a></td>
+          <td>Read/Write</td>
+          <td>The start date from which the Discount Code will be applicable.</td>
+        </tr>
+        <tr>
+          <td>end_date</td>
+          <td><a href="/reference/enums#formats">Date</a></td>
+          <td>Read/Write</td>
+          <td>The expiration date of the Discount Code.</td>
+        </tr>
+        <tr>
+          <td>rentals_eligibility</td>
+          <td><a href="/reference/enums#discount-code-rentals-eligibility">String</a></td>
+          <td>Write</td>
+          <td>What rentals this Discount Code can be applied to.</td>
+        </tr>
+        <tr>
+          <td>minimum_requirements</td>
+          <td><a href="/reference/enums#discount-code-minimum-requirements">String</a></td>
+          <td>Write</td>
+          <td>Minimum requirements to make Discount Code applicable to booking.</td>
+        </tr>
+        <tr>
+          <td>usage_limit</td>
+          <td><a href="/reference/enums#discount-code-usage-limit">String</a></td>
+          <td>Write</td>
+          <td>Usage limit of the Discount Code.</td>
+        </tr>
+        <tr>
+          <td>discount_value_type</td>
+          <td><a href="/reference/enums#discount-code-discount-value-type">String</a></td>
+          <td>Write</td>
+          <td>The type of discount.</td>
+        </tr>
+        <tr>
+          <td>rental_ids</td>
+          <td>Array of Integers</td>
+          <td>Write</td>
+          <td>The ids of rentals Discount Code can be used with. Should be empty if <code>rentals_eligibility</code> is “all_rentals”.</td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td>created_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Discount Code create time</td>
+        </tr>
+        <tr>
+          <td>updated_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Discount Code update time</td>
+        </tr>
+        <tr>
+          <td>canceled_at</td>
+          <td><a href="/reference/enums#formats">Time</a></td>
+          <td>Read</td>
+          <td>Discount Code soft delete time</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<h3 id="list-discount-codes">List Discount Codes</h3>
+
+<p>Returns all Discount Codes for current account.</p>
+
+<pre><code>GET /booking/discount_codes
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#4ef0d7c363ebdiscount_code_read-discount_code_write" role="tab" data-toggle="pill">
+          discount_code_read / discount_code_write
+        </a>
+      </li>
+    
+  </ul>
+
+<h4 id="response">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="4ef0d7c363ebdiscount_code_read-discount_code_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"discount_codes.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{discount_codes.account}"</span><span class="p">,</span>
+    <span class="s2">"discount_codes.rentals"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/rentals/{discount_codes.rentals}"</span><span class="p">,</span>
+    <span class="s2">"discount_codes.bookings"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/bookings/{discount_codes.bookings}"</span>
+  <span class="p">},</span>
+  <span class="s2">"discount_codes"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+        <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">42</span><span class="p">,</span>
+          <span class="mi">103</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"db6c0845-6122-4de6-a9ab-7a685e2a17f0"</span><span class="p">,</span>
+      <span class="s2">"discount_code"</span><span class="o">:</span> <span class="s2">"PROMO123"</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
+      <span class="s2">"percentage"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"all_rentals"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"minimum_nights_booked"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"number_of_times"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2023-09-19"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2023-09-21"</span><span class="p">,</span>
+      <span class="s2">"fixed_amount"</span><span class="o">:</span> <span class="s2">"100.00"</span><span class="p">,</span>
+      <span class="s2">"minimum_spend"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-01-24T15:22:55Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-01-24T15:22:55Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="get-a-single-discount-code">Get a single Discount Code</h3>
+
+<p>Returns a single Discount Code identified by ID.</p>
+
+<pre><code>GET /booking/discount_codes/:discount_code_id
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#7fbe1691f4d0discount_code_read-discount_code_write" role="tab" data-toggle="pill">
+          discount_code_read / discount_code_write
+        </a>
+      </li>
+    
+  </ul>
+
+<h4 id="response-1">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="7fbe1691f4d0discount_code_read-discount_code_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"discount_codes.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{discount_codes.account}"</span><span class="p">,</span>
+    <span class="s2">"discount_codes.rentals"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/rentals/{discount_codes.rentals}"</span><span class="p">,</span>
+    <span class="s2">"discount_codes.bookings"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/bookings/{discount_codes.bookings}"</span>
+  <span class="p">},</span>
+  <span class="s2">"discount_codes"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+        <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">42</span><span class="p">,</span>
+          <span class="mi">103</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"db6c0845-6122-4de6-a9ab-7a685e2a17f0"</span><span class="p">,</span>
+      <span class="s2">"discount_code"</span><span class="o">:</span> <span class="s2">"PROMO123"</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
+      <span class="s2">"percentage"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"all_rentals"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"minimum_nights_booked"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"number_of_times"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2023-09-19"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2023-09-21"</span><span class="p">,</span>
+      <span class="s2">"fixed_amount"</span><span class="o">:</span> <span class="s2">"100.00"</span><span class="p">,</span>
+      <span class="s2">"minimum_spend"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-01-24T15:22:55Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-01-24T15:22:55Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="create-a-new-discount-code">Create a new Discount Code</h3>
+
+<p>Creates a Discount Code and renders it.</p>
+
+<pre><code>POST /booking/discount_codes
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#cb4101367f9ddiscount_code_write" role="tab" data-toggle="pill">
+          discount_code_write
+        </a>
+      </li>
+    
+  </ul>
+
+<h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"discount_codes"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"rentals_eligibility"</span><span class="o">:</span> <span class="s2">"specific_rentals"</span><span class="p">,</span>
+      <span class="s2">"minimum_requirements"</span><span class="o">:</span> <span class="s2">"minimum_nights_booked"</span><span class="p">,</span>
+      <span class="s2">"minimum_nights_booked"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"usage_limit"</span><span class="o">:</span> <span class="s2">"number_of_times"</span><span class="p">,</span>
+      <span class="s2">"number_of_times"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
+      <span class="s2">"discount_code"</span><span class="o">:</span> <span class="s2">"PROMO123"</span><span class="p">,</span>
+      <span class="s2">"discount_value_type"</span><span class="o">:</span> <span class="s2">"fixed_amount"</span><span class="p">,</span>
+      <span class="s2">"fixed_amount"</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"Mon, 19 Sep 2023 13:14:09.392265926 UTC +00:00"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"Wed, 21 Sep 2023 13:13:48.669825452 UTC +00:00"</span><span class="p">,</span>
+      <span class="s2">"rental_ids"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="mi">42</span><span class="p">,</span>
+        <span class="mi">103</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-2">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="cb4101367f9ddiscount_code_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"discount_codes.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{discount_codes.account}"</span><span class="p">,</span>
+    <span class="s2">"discount_codes.rentals"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/rentals/{discount_codes.rentals}"</span><span class="p">,</span>
+    <span class="s2">"discount_codes.bookings"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/bookings/{discount_codes.bookings}"</span>
+  <span class="p">},</span>
+  <span class="s2">"discount_codes"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+        <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">42</span><span class="p">,</span>
+          <span class="mi">103</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"db6c0845-6122-4de6-a9ab-7a685e2a17f0"</span><span class="p">,</span>
+      <span class="s2">"discount_code"</span><span class="o">:</span> <span class="s2">"PROMO123"</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
+      <span class="s2">"percentage"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"all_rentals"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"minimum_nights_booked"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"number_of_times"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2023-09-19"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2023-09-21"</span><span class="p">,</span>
+      <span class="s2">"fixed_amount"</span><span class="o">:</span> <span class="s2">"100.00"</span><span class="p">,</span>
+      <span class="s2">"minimum_spend"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-01-24T15:22:55Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-01-24T15:22:55Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="update-a-discount-code">Update a Discount Code</h3>
+
+<p>Updated the Discount Code identified by ID and renders it.</p>
+
+<pre><code>PUT /booking/discount_codes/:discount_code_id
+</code></pre>
+
+<ul class="nav nav-pills" role="tablist">
+    <li class="disabled"><a>OAuth Scopes:</a></li>
+    
+      <li class="active">
+        <a href="#5d6a5954eb6adiscount_code_write" role="tab" data-toggle="pill">
+          discount_code_write
+        </a>
+      </li>
+    
+  </ul>
+
+<h4>Example JSON request</h4>
+<pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"discount_codes"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"rentals_eligibility"</span><span class="o">:</span> <span class="s2">"specific_rentals"</span><span class="p">,</span>
+      <span class="s2">"minimum_requirements"</span><span class="o">:</span> <span class="s2">"minimum_nights_booked"</span><span class="p">,</span>
+      <span class="s2">"minimum_nights_booked"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"usage_limit"</span><span class="o">:</span> <span class="s2">"number_of_times"</span><span class="p">,</span>
+      <span class="s2">"number_of_times"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
+      <span class="s2">"discount_code"</span><span class="o">:</span> <span class="s2">"PROMO123"</span><span class="p">,</span>
+      <span class="s2">"discount_value_type"</span><span class="o">:</span> <span class="s2">"fixed_amount"</span><span class="p">,</span>
+      <span class="s2">"fixed_amount"</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"Mon, 19 Sep 2023 13:14:09.392265926 UTC +00:00"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"Wed, 21 Sep 2023 13:13:48.669825452 UTC +00:00"</span><span class="p">,</span>
+      <span class="s2">"rental_ids"</span><span class="o">:</span> <span class="p">[</span>
+        <span class="mi">42</span><span class="p">,</span>
+        <span class="mi">103</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre>
+
+<h4 id="response-3">Response</h4>
+<div class="tab-content">
+  
+  
+    
+      <div class="tab-pane active" id="5d6a5954eb6adiscount_code_write">
+        <pre><code class="language-javascript"><span class="p">{</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"discount_codes.account"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/accounts/{discount_codes.account}"</span><span class="p">,</span>
+    <span class="s2">"discount_codes.rentals"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/rentals/{discount_codes.rentals}"</span><span class="p">,</span>
+    <span class="s2">"discount_codes.bookings"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/bookings/{discount_codes.bookings}"</span>
+  <span class="p">},</span>
+  <span class="s2">"discount_codes"</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+        <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
+
+        <span class="p">],</span>
+        <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
+          <span class="mi">42</span><span class="p">,</span>
+          <span class="mi">103</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"db6c0845-6122-4de6-a9ab-7a685e2a17f0"</span><span class="p">,</span>
+      <span class="s2">"discount_code"</span><span class="o">:</span> <span class="s2">"PROMO123"</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
+      <span class="s2">"percentage"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"all_rentals"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">"minimum_nights_booked"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"number_of_times"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2023-09-19"</span><span class="p">,</span>
+      <span class="s2">"end_date"</span><span class="o">:</span> <span class="s2">"2023-09-21"</span><span class="p">,</span>
+      <span class="s2">"fixed_amount"</span><span class="o">:</span> <span class="s2">"100.00"</span><span class="p">,</span>
+      <span class="s2">"minimum_spend"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-01-24T15:22:55Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-01-24T15:22:55Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre>
+      </div>
+    
+  
+</div>
+
+<h3 id="delete-a-discount-code">Delete a Discount Code</h3>
+
+<p>Deletes Discount Code identified by ID.</p>
+
+<pre><code>DELETE /booking/discount_codes/:discount_code_id
+</code></pre>
+
+<p>Returns 204 on success or 404 on error.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </body>
+</html>
+

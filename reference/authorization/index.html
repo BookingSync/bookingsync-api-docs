@@ -73,6 +73,8 @@
           <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_codes">Booking Discount Codes</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_code_usages">Booking Discount Code Usages</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
@@ -136,15 +138,15 @@
           <h2 id="authorization">Authorization</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#oauth">OAuth</a></li>
-  <li><a href="#testing-the-authorization">Testing the Authorization</a></li>
-  <li><a href="#embedded-application">Embedded Application</a></li>
-  <li><a href="#scopes">Scopes</a></li>
-  <li><a href="#authorization-code-flow">Authorization Code Flow</a></li>
-  <li><a href="#implicit-flow">Implicit Flow</a></li>
-  <li><a href="#client-credentials-flow">Client Credentials Flow</a></li>
-  <li><a href="#authorization-errors">Authorization Errors</a></li>
-  <li><a href="#pre-select-the-account-to-authorize">Pre-Select The Account To Authorize</a></li>
+  <li><a href="#oauth" id="markdown-toc-oauth">OAuth</a></li>
+  <li><a href="#testing-the-authorization" id="markdown-toc-testing-the-authorization">Testing the Authorization</a></li>
+  <li><a href="#embedded-application" id="markdown-toc-embedded-application">Embedded Application</a></li>
+  <li><a href="#scopes" id="markdown-toc-scopes">Scopes</a></li>
+  <li><a href="#authorization-code-flow" id="markdown-toc-authorization-code-flow">Authorization Code Flow</a></li>
+  <li><a href="#implicit-flow" id="markdown-toc-implicit-flow">Implicit Flow</a></li>
+  <li><a href="#client-credentials-flow" id="markdown-toc-client-credentials-flow">Client Credentials Flow</a></li>
+  <li><a href="#authorization-errors" id="markdown-toc-authorization-errors">Authorization Errors</a></li>
+  <li><a href="#pre-select-the-account-to-authorize" id="markdown-toc-pre-select-the-account-to-authorize">Pre-Select The Account To Authorize</a></li>
 </ol>
 
 <h3 id="oauth">OAuth</h3>
@@ -246,34 +248,23 @@ This is to be used for <strong>Server-Side applications</strong>, with special c
 
 <ol>
   <li>Send a user to <code>https://www.bookingsync.com/oauth/authorize</code>, with these query string parameters
-    <ul>
-      <li>client_id</li>
-      <li>redirect_uri - must be under an apps registered domain</li>
-      <li>response_type - must be <code>code</code>
+  * client_id
+  * redirect_uri - must be under an apps registered domain
+  * response_type - must be <code>code</code>
+  * scope - options (<a href="#scopes">details</a>)
+  * state - optional
+  * account_id - optional, used to force which account will be requested to authorize <a href="#pre-select-the-account-to-authorize">more details</a>
 </li>
-      <li>scope - options (<a href="#scopes">details</a>)</li>
-      <li>state - optional</li>
-      <li>account_id - optional, used to force which account will be requested to authorize <a href="#pre-select-the-account-to-authorize">more details</a>
-</li>
-    </ul>
-  </li>
   <li>The user approves your app</li>
   <li>The user is redirected to <strong>redirect_uri</strong>, with these query string parameters
-    <ul>
-      <li>code</li>
-      <li>state - optional, only returned if provided in the first step</li>
-    </ul>
-  </li>
+  * code
+  * state - optional, only returned if provided in the first step</li>
   <li>POST (application/x-www-form-urlencoded) the following parameters to <code>https://www.bookingsync.com/oauth/token</code>
-    <ul>
-      <li>client_id</li>
-      <li>client_secret</li>
-      <li>code - from the previous step</li>
-      <li>grant_type - must use <code>authorization_code</code>
-</li>
-      <li>redirect_uri - must be the same as the provided in the first step</li>
-    </ul>
-  </li>
+  * client_id
+  * client_secret
+  * code - from the previous step
+  * grant_type - must use <code>authorization_code</code>
+  * redirect_uri - must be the same as the provided in the first step</li>
 </ol>
 
 <p>This request is responded to with either an error (HTTP status code 401) or the following sample request:</p>
@@ -309,15 +300,11 @@ You can find your token lifetime (in seconds), by checking the <code>expires_in<
 
 <ol>
   <li>POST (application/x-www-form-urlencoded) the following parameters to <code>https://www.bookingsync.com/oauth/token</code>
-    <ul>
-      <li>client_id</li>
-      <li>client_secret</li>
-      <li>refresh_token - from above section, step 4 response</li>
-      <li>grant_type - must use <code>refresh_token</code>
-</li>
-      <li>redirect_uri - must be the same as the provided in the first step</li>
-    </ul>
-  </li>
+  * client_id
+  * client_secret
+  * refresh_token - from above section, step 4 response
+  * grant_type - must use <code>refresh_token</code>
+  * redirect_uri - must be the same as the provided in the first step</li>
 </ol>
 
 <p>This request responds with either an error (HTTP status code 401) or the following sample request:</p>
@@ -342,21 +329,17 @@ This is recommended for <strong>Client-Side applications</strong>.</p>
 
 <ol>
   <li>Open a new window at <code>https://www.bookingsync.com/oauth/authorize</code>, with these query string parameters
-    <ul>
-      <li>client_id</li>
-      <li>redirect_uri - must be under an apps registered domain</li>
-      <li>response_type - must be <code>token</code>
+  * client_id
+  * redirect_uri - must be under an apps registered domain
+  * response_type - must be <code>token</code>
+  * scope (<a href="#scopes">details</a>)
+  * state - optional
+  * account_id - optional, used to force which account will be requested to authorize <a href="#pre-select-the-account-to-authorize">more details</a>
 </li>
-      <li>scope (<a href="#scopes">details</a>)</li>
-      <li>state - optional</li>
-      <li>account_id - optional, used to force which account will be requested to authorize <a href="#pre-select-the-account-to-authorize">more details</a>
-</li>
-    </ul>
-  </li>
   <li>The user approves your app</li>
   <li>The user is redirected to <strong>redirect_uri</strong>, with these parameters in the hash
+  * access_token
     <ul>
-      <li>access_token</li>
       <li>token_type</li>
       <li>expires_in</li>
     </ul>
@@ -388,13 +371,10 @@ at once.</p>
 
 <ol>
   <li>POST (application/x-www-form-urlencoded) the following parameters to <code>https://www.bookingsync.com/oauth/token</code>
-    <ul>
-      <li>client_id</li>
-      <li>client_secret</li>
-      <li>grant_type - must use <code>client_credentials</code>
+  * client_id
+  * client_secret
+  * grant_type - must use <code>client_credentials</code>
 </li>
-    </ul>
-  </li>
 </ol>
 
 <p>This request responds with either an error (HTTP status code 401) or the following sample request:</p>

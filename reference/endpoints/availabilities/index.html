@@ -73,6 +73,8 @@
           <a class="list-group-item active" href="/reference/endpoints/availabilities/">Availabilities</a>
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_codes">Booking Discount Codes</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_code_usages">Booking Discount Code Usages</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
@@ -136,10 +138,10 @@
           <h2 id="availabilities">Availabilities</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#list-availabilities">List availabilities</a></li>
-  <li><a href="#get-a-single-availability">Get a single availability</a></li>
-  <li><a href="#customize-availability-maps">Customize availability maps</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#list-availabilities" id="markdown-toc-list-availabilities">List availabilities</a></li>
+  <li><a href="#get-a-single-availability" id="markdown-toc-get-a-single-availability">Get a single availability</a></li>
+  <li><a href="#customize-availability-maps" id="markdown-toc-customize-availability-maps">Customize availability maps</a></li>
 </ol>
 
 <h3 id="overview">Overview</h3>
@@ -148,9 +150,9 @@
 
 <p>Availabilities are regenerated after creation of Bookings and at the beginning of each month and <code>start_date</code> always points to the beginning of current month.</p>
 
-<p>Particularly useful when implementing a UI containing calendar that allows to select dates for a Booking - using this map you can block unavailable dates. </p>
+<p>Particularly useful when implementing a UI containing calendar that allows to select dates for a Booking - using this map you can block unavailable dates.</p>
 
-<p>However, this resource doesn’t cover all cases why a given day might be unavailable (e.g. it doesn’t cover <a href="/reference/endpoints/rates_rules/">Rates Rules</a>). You might want to check <a href="http://developers.bookingsync.com/reference/endpoints/change_overs/">ChangeOvers</a> to have a map covering these cases. </p>
+<p>However, this resource doesn’t cover all cases why a given day might be unavailable (e.g. it doesn’t cover <a href="/reference/endpoints/rates_rules/">Rates Rules</a>). You might want to check <a href="http://developers.bookingsync.com/reference/endpoints/change_overs/">ChangeOvers</a> to have a map covering these cases.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -231,7 +233,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#e48356c399aapublic" role="tab" data-toggle="pill">
+        <a href="#a499d8f8b662public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -243,7 +245,7 @@
   
   
     
-      <div class="tab-pane active" id="e48356c399aapublic">
+      <div class="tab-pane active" id="a499d8f8b662public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"availabilities.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{availabilities.rental}"</span>
@@ -252,8 +254,8 @@
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"map"</span><span class="o">:</span> <span class="s2">"11111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-03-01"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:10Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2023-02-01"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
       <span class="p">}</span>
@@ -276,7 +278,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#cc210c3dab4fpublic" role="tab" data-toggle="pill">
+        <a href="#7114a72e1a57public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -288,7 +290,7 @@
   
   
     
-      <div class="tab-pane active" id="cc210c3dab4fpublic">
+      <div class="tab-pane active" id="7114a72e1a57public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"availabilities.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{availabilities.rental}"</span>
@@ -297,8 +299,8 @@
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
       <span class="s2">"map"</span><span class="o">:</span> <span class="s2">"11111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
-      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2022-03-01"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:10Z"</span><span class="p">,</span>
+      <span class="s2">"start_date"</span><span class="o">:</span> <span class="s2">"2023-02-01"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
       <span class="p">}</span>

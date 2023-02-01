@@ -73,6 +73,8 @@
           <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_codes">Booking Discount Codes</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_code_usages">Booking Discount Code Usages</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
@@ -136,12 +138,12 @@
           <h2 id="photos">Photos</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#list-photos">List photos</a></li>
-  <li><a href="#get-a-single-photo">Get a single photo</a></li>
-  <li><a href="#create-a-new-photo">Create a new photo</a></li>
-  <li><a href="#update-a-photo">Update a photo</a></li>
-  <li><a href="#destroy-a-photo">Destroy a photo</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#list-photos" id="markdown-toc-list-photos">List photos</a></li>
+  <li><a href="#get-a-single-photo" id="markdown-toc-get-a-single-photo">Get a single photo</a></li>
+  <li><a href="#create-a-new-photo" id="markdown-toc-create-a-new-photo">Create a new photo</a></li>
+  <li><a href="#update-a-photo" id="markdown-toc-update-a-photo">Update a photo</a></li>
+  <li><a href="#destroy-a-photo" id="markdown-toc-destroy-a-photo">Destroy a photo</a></li>
 </ol>
 
 <h3 id="overview">Overview</h3>
@@ -484,7 +486,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#14e665ea80e9public" role="tab" data-toggle="pill">
+        <a href="#57bcaacbe61fpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -496,7 +498,7 @@
   
   
     
-      <div class="tab-pane active" id="14e665ea80e9public">
+      <div class="tab-pane active" id="57bcaacbe61fpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{photos.account}"</span><span class="p">,</span>
@@ -522,8 +524,8 @@
       <span class="s2">"small_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/small_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"width"</span><span class="o">:</span> <span class="mi">3000</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
@@ -547,7 +549,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#4f0ea7370922public" role="tab" data-toggle="pill">
+        <a href="#6f2929aa00b1public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -559,7 +561,7 @@
   
   
     
-      <div class="tab-pane active" id="4f0ea7370922public">
+      <div class="tab-pane active" id="6f2929aa00b1public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{photos.account}"</span><span class="p">,</span>
@@ -585,8 +587,8 @@
       <span class="s2">"small_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/small_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"width"</span><span class="o">:</span> <span class="mi">3000</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
@@ -617,7 +619,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#826ab80cb774rentals_write" role="tab" data-toggle="pill">
+        <a href="#5f26e196518erentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -642,7 +644,7 @@
   
   
     
-      <div class="tab-pane active" id="826ab80cb774rentals_write">
+      <div class="tab-pane active" id="5f26e196518erentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{photos.account}"</span><span class="p">,</span>
@@ -668,8 +670,8 @@
       <span class="s2">"small_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/small_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"width"</span><span class="o">:</span> <span class="mi">3000</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>
@@ -700,7 +702,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#91600527edb6rentals_write" role="tab" data-toggle="pill">
+        <a href="#12ec5ee3b232rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -725,7 +727,7 @@
   
   
     
-      <div class="tab-pane active" id="91600527edb6rentals_write">
+      <div class="tab-pane active" id="12ec5ee3b232rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"photos.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{photos.account}"</span><span class="p">,</span>
@@ -751,8 +753,8 @@
       <span class="s2">"small_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/small_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"thumb_url"</span><span class="o">:</span> <span class="s2">"http://bs-eu.s3.amazonaws.com/app/production/photo/photo/1/thumb_1c4a6fb74004bb654fbb7972e4c78625.jpg"</span><span class="p">,</span>
       <span class="s2">"width"</span><span class="o">:</span> <span class="mi">3000</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">3</span>

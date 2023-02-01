@@ -73,6 +73,8 @@
           <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
           <a class="list-group-item active" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_codes">Booking Discount Codes</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_code_usages">Booking Discount Code Usages</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
@@ -136,17 +138,17 @@
           <h2 id="bathrooms">Bathrooms</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#list-bathrooms">List bathrooms</a></li>
-  <li><a href="#get-a-single-bathroom">Get a single bathroom</a></li>
-  <li><a href="#create-a-new-bathroom">Create a new bathroom</a></li>
-  <li><a href="#update-a-bathroom">Update a bathroom</a></li>
-  <li><a href="#destroy-a-bathroom">Destroy a bathroom</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#list-bathrooms" id="markdown-toc-list-bathrooms">List bathrooms</a></li>
+  <li><a href="#get-a-single-bathroom" id="markdown-toc-get-a-single-bathroom">Get a single bathroom</a></li>
+  <li><a href="#create-a-new-bathroom" id="markdown-toc-create-a-new-bathroom">Create a new bathroom</a></li>
+  <li><a href="#update-a-bathroom" id="markdown-toc-update-a-bathroom">Update a bathroom</a></li>
+  <li><a href="#destroy-a-bathroom" id="markdown-toc-destroy-a-bathroom">Destroy a bathroom</a></li>
 </ol>
 
 <h3 id="overview">Overview</h3>
 
-<p>This resource represents the rental’s bathrooms. This resource is mostly static information used for presentational purposes.   </p>
+<p>This resource represents the rental’s bathrooms. This resource is mostly static information used for presentational purposes.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -323,7 +325,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#3181ef66032bpublic" role="tab" data-toggle="pill">
+        <a href="#a841554a7fa0public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -335,7 +337,7 @@
   
   
     
-      <div class="tab-pane active" id="3181ef66032bpublic">
+      <div class="tab-pane active" id="a841554a7fa0public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bathrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"</span>
@@ -349,8 +351,8 @@
       <span class="p">},</span>
       <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -375,7 +377,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#f75ae11e56a6public" role="tab" data-toggle="pill">
+        <a href="#16d022ec0dd7public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -387,7 +389,7 @@
   
   
     
-      <div class="tab-pane active" id="f75ae11e56a6public">
+      <div class="tab-pane active" id="16d022ec0dd7public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bathrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"</span>
@@ -401,8 +403,8 @@
       <span class="p">},</span>
       <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -427,7 +429,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#975c00f7833crentals_write" role="tab" data-toggle="pill">
+        <a href="#31e18867def3rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -439,7 +441,7 @@
   <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"bathroom"</span><span class="p">,</span>
+      <span class="s2">"name_en"</span><span class="o">:</span> <span class="s2">"bathroom"</span><span class="p">,</span>
       <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span>
     <span class="p">}</span>
@@ -451,7 +453,7 @@
   
   
     
-      <div class="tab-pane active" id="975c00f7833crentals_write">
+      <div class="tab-pane active" id="31e18867def3rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bathrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"</span>
@@ -465,8 +467,8 @@
       <span class="p">},</span>
       <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>
@@ -491,7 +493,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#f2fbb7714254rentals_write" role="tab" data-toggle="pill">
+        <a href="#2a2089596718rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -503,7 +505,7 @@
   <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"bathroom"</span><span class="p">,</span>
+      <span class="s2">"name_en"</span><span class="o">:</span> <span class="s2">"bathroom"</span><span class="p">,</span>
       <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span>
     <span class="p">}</span>
@@ -515,7 +517,7 @@
   
   
     
-      <div class="tab-pane active" id="f2fbb7714254rentals_write">
+      <div class="tab-pane active" id="2a2089596718rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bathrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"</span>
@@ -529,8 +531,8 @@
       <span class="p">},</span>
       <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
       <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
       <span class="p">}</span>

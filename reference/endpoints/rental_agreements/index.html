@@ -73,6 +73,8 @@
           <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_codes">Booking Discount Codes</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_code_usages">Booking Discount Code Usages</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
@@ -136,12 +138,12 @@
           <h2 id="rental-agreements">Rental Agreements</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#list-rental-agreements">List rental agreements</a></li>
-  <li><a href="#get-a-single-rental-agreement">Get a single rental agreement</a></li>
-  <li><a href="#create-a-new-default-rental-agreement">Create a new default rental agreement</a></li>
-  <li><a href="#create-a-new-rental-agreement-for-a-booking">Create a new rental agreement for a booking</a></li>
-  <li><a href="#create-a-new-rental-agreement-for-a-rental">Create a new rental agreement for a rental</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#list-rental-agreements" id="markdown-toc-list-rental-agreements">List rental agreements</a></li>
+  <li><a href="#get-a-single-rental-agreement" id="markdown-toc-get-a-single-rental-agreement">Get a single rental agreement</a></li>
+  <li><a href="#create-a-new-default-rental-agreement" id="markdown-toc-create-a-new-default-rental-agreement">Create a new default rental agreement</a></li>
+  <li><a href="#create-a-new-rental-agreement-for-a-booking" id="markdown-toc-create-a-new-rental-agreement-for-a-booking">Create a new rental agreement for a booking</a></li>
+  <li><a href="#create-a-new-rental-agreement-for-a-rental" id="markdown-toc-create-a-new-rental-agreement-for-a-rental">Create a new rental agreement for a rental</a></li>
 </ol>
 
 <h3 id="overview">Overview</h3>
@@ -312,7 +314,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#ae455d3eff7cpublic" role="tab" data-toggle="pill">
+        <a href="#9c52ddb2b122public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -324,14 +326,14 @@
   
   
     
-      <div class="tab-pane active" id="ae455d3eff7cpublic">
+      <div class="tab-pane active" id="9c52ddb2b122public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -351,7 +353,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#2046de55606bpublic" role="tab" data-toggle="pill">
+        <a href="#a2216bc1d139public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -363,14 +365,14 @@
   
   
     
-      <div class="tab-pane active" id="2046de55606bpublic">
+      <div class="tab-pane active" id="a2216bc1d139public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:21Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -394,7 +396,7 @@ or booking level.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#57865e195962rentals_write" role="tab" data-toggle="pill">
+        <a href="#0cb6d991da4frentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -415,14 +417,14 @@ or booking level.</p>
   
   
     
-      <div class="tab-pane active" id="57865e195962rentals_write">
+      <div class="tab-pane active" id="0cb6d991da4frentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -444,7 +446,7 @@ or booking level.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#9b4469b23885rentals_write" role="tab" data-toggle="pill">
+        <a href="#cd232efb2e85rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -465,14 +467,14 @@ or booking level.</p>
   
   
     
-      <div class="tab-pane active" id="9b4469b23885rentals_write">
+      <div class="tab-pane active" id="cd232efb2e85rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -494,7 +496,7 @@ or booking level.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#b6c98f9644bfrentals_write" role="tab" data-toggle="pill">
+        <a href="#0cc5a6a90189rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -515,14 +517,14 @@ or booking level.</p>
   
   
     
-      <div class="tab-pane active" id="b6c98f9644bfrentals_write">
+      <div class="tab-pane active" id="0cc5a6a90189rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rental_agreements"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
       <span class="s2">"body"</span><span class="o">:</span> <span class="s2">"My Agreement"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>

@@ -73,6 +73,8 @@
           <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_codes">Booking Discount Codes</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_code_usages">Booking Discount Code Usages</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
@@ -136,11 +138,11 @@
           <h2 id="payment-gateways">Payment Gateways</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#list-payment-gateways">List Payment Gateways</a></li>
-  <li><a href="#get-a-single-payment-gateway">Get a single Payment Gateway</a></li>
-  <li><a href="#create-a-new-payment-gateway">Create a new Payment Gateway</a></li>
-  <li><a href="#update-a--payment-gateway">Update a  Payment Gateway</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#list-payment-gateways" id="markdown-toc-list-payment-gateways">List Payment Gateways</a></li>
+  <li><a href="#get-a-single-payment-gateway" id="markdown-toc-get-a-single-payment-gateway">Get a single Payment Gateway</a></li>
+  <li><a href="#create-a-new-payment-gateway" id="markdown-toc-create-a-new-payment-gateway">Create a new Payment Gateway</a></li>
+  <li><a href="#update-a--payment-gateway" id="markdown-toc-update-a--payment-gateway">Update a  Payment Gateway</a></li>
 </ol>
 
 <h3 id="overview">Overview</h3>
@@ -369,7 +371,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#222bbabd1f45preferences-payments-read" role="tab" data-toggle="pill">
+        <a href="#dc5e95c62449preferences-payments-read" role="tab" data-toggle="pill">
           preferences / payments / read
         </a>
       </li>
@@ -381,7 +383,7 @@
   
   
     
-      <div class="tab-pane active" id="222bbabd1f45preferences-payments-read">
+      <div class="tab-pane active" id="dc5e95c62449preferences-payments-read">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payment_gateways.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payment_gateways.account}"</span>
@@ -438,7 +440,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#bf59c8b701fapreferences-payments-read" role="tab" data-toggle="pill">
+        <a href="#d09bcd4e45cbpreferences-payments-read" role="tab" data-toggle="pill">
           preferences / payments / read
         </a>
       </li>
@@ -450,7 +452,7 @@
   
   
     
-      <div class="tab-pane active" id="bf59c8b701fapreferences-payments-read">
+      <div class="tab-pane active" id="d09bcd4e45cbpreferences-payments-read">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payment_gateways.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payment_gateways.account}"</span>
@@ -507,7 +509,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#c1d7914df4ecpreferences_payments_write" role="tab" data-toggle="pill">
+        <a href="#5db01b739173preferences_payments_write" role="tab" data-toggle="pill">
           preferences_payments_write
         </a>
       </li>
@@ -542,7 +544,7 @@
   
   
     
-      <div class="tab-pane active" id="c1d7914df4ecpreferences_payments_write">
+      <div class="tab-pane active" id="5db01b739173preferences_payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payment_gateways.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payment_gateways.account}"</span>
@@ -599,7 +601,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#0faecd243d2apreferences_payments_write" role="tab" data-toggle="pill">
+        <a href="#5c8cf0693170preferences_payments_write" role="tab" data-toggle="pill">
           preferences_payments_write
         </a>
       </li>
@@ -634,7 +636,7 @@
   
   
     
-      <div class="tab-pane active" id="0faecd243d2apreferences_payments_write">
+      <div class="tab-pane active" id="5c8cf0693170preferences_payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payment_gateways.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payment_gateways.account}"</span>

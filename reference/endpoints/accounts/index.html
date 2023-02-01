@@ -73,6 +73,8 @@
           <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_codes">Booking Discount Codes</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_code_usages">Booking Discount Code Usages</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
@@ -136,18 +138,18 @@
           <h2 id="accounts">Accounts</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#list-accounts">List accounts</a></li>
-  <li><a href="#get-a-single-account">Get a single account</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#list-accounts" id="markdown-toc-list-accounts">List accounts</a></li>
+  <li><a href="#get-a-single-account" id="markdown-toc-get-a-single-account">Get a single account</a></li>
 </ol>
 
 <h3 id="overview">Overview</h3>
 
-<p>This resource represents the available Accounts. </p>
+<p>This resource represents the available Accounts.</p>
 
 <p>When using <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a>, you can get the list of all Accounts installed for your application. When using Authorization Flow, you will only get a single account that represents a Resource Owner for a given token.</p>
 
-<p>Combining <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a> and  <a href="/guides/updated-since-flow/">updated_since flow</a> allows you also to get the list of accounts that have been canceled, suspended or uninstalled your application.  </p>
+<p>Combining <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a> and  <a href="/guides/updated-since-flow/">updated_since flow</a> allows you also to get the list of accounts that have been canceled, suspended or uninstalled your application.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -430,7 +432,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#d7cec118bfe9public" role="tab" data-toggle="pill">
+        <a href="#f4c2712660acpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -442,7 +444,7 @@
   
   
     
-      <div class="tab-pane active" id="d7cec118bfe9public">
+      <div class="tab-pane active" id="f4c2712660acpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"accounts"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -474,8 +476,8 @@
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"trial"</span><span class="p">,</span>
       <span class="s2">"website"</span><span class="o">:</span> <span class="s2">"http://www.superawesomevillas.com"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span>
     <span class="p">}</span>
   <span class="p">],</span>
   <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
@@ -497,7 +499,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#6f32e91ac152public" role="tab" data-toggle="pill">
+        <a href="#2f1ac15b19c8public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -509,7 +511,7 @@
   
   
     
-      <div class="tab-pane active" id="6f32e91ac152public">
+      <div class="tab-pane active" id="2f1ac15b19c8public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"accounts"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -541,8 +543,8 @@
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"trial"</span><span class="p">,</span>
       <span class="s2">"website"</span><span class="o">:</span> <span class="s2">"http://www.superawesomevillas.com"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span>
     <span class="p">}</span>
   <span class="p">],</span>
   <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>

@@ -73,6 +73,8 @@
           <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_codes">Booking Discount Codes</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_code_usages">Booking Discount Code Usages</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
@@ -136,13 +138,13 @@
           <h2 id="inbox-conversations">Inbox Conversations</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#list-conversations">List Conversations</a></li>
-  <li><a href="#get-a-single-conversation">Get a single Conversation</a></li>
-  <li><a href="#create-a-new-conversation">Create a new Conversation</a></li>
-  <li><a href="#update-a-conversation">Update a Conversation</a></li>
-  <li><a href="#add-bookings-to-a-conversation">Add Bookings to a Conversation</a></li>
-  <li><a href="#remove-bookings-from-a-conversation">Remove Bookings from a Conversation</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#list-conversations" id="markdown-toc-list-conversations">List Conversations</a></li>
+  <li><a href="#get-a-single-conversation" id="markdown-toc-get-a-single-conversation">Get a single Conversation</a></li>
+  <li><a href="#create-a-new-conversation" id="markdown-toc-create-a-new-conversation">Create a new Conversation</a></li>
+  <li><a href="#update-a-conversation" id="markdown-toc-update-a-conversation">Update a Conversation</a></li>
+  <li><a href="#add-bookings-to-a-conversation" id="markdown-toc-add-bookings-to-a-conversation">Add Bookings to a Conversation</a></li>
+  <li><a href="#remove-bookings-from-a-conversation" id="markdown-toc-remove-bookings-from-a-conversation">Remove Bookings from a Conversation</a></li>
 </ol>
 
 <h3 id="overview">Overview</h3>
@@ -488,7 +490,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#182b46888581inbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#28a4b15b3afdinbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -500,7 +502,7 @@
   
   
     
-      <div class="tab-pane active" id="182b46888581inbox_read-inbox_write">
+      <div class="tab-pane active" id="28a4b15b3afdinbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
@@ -561,7 +563,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#c721fec67b57inbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#2109ef1816e9inbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -573,7 +575,7 @@
   
   
     
-      <div class="tab-pane active" id="c721fec67b57inbox_read-inbox_write">
+      <div class="tab-pane active" id="2109ef1816e9inbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
@@ -634,7 +636,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#c3406387bf0dinbox_write" role="tab" data-toggle="pill">
+        <a href="#da562c565b75inbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -657,7 +659,7 @@
   
   
     
-      <div class="tab-pane active" id="c3406387bf0dinbox_write">
+      <div class="tab-pane active" id="da562c565b75inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
@@ -723,7 +725,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#6af83358655einbox_write" role="tab" data-toggle="pill">
+        <a href="#ae41c8d8021cinbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -744,7 +746,7 @@
   
   
     
-      <div class="tab-pane active" id="6af83358655einbox_write">
+      <div class="tab-pane active" id="ae41c8d8021cinbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
@@ -805,7 +807,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#cf76429329aainbox_write" role="tab" data-toggle="pill">
+        <a href="#86b81b101106inbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -826,7 +828,7 @@
   
   
     
-      <div class="tab-pane active" id="cf76429329aainbox_write">
+      <div class="tab-pane active" id="86b81b101106inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>
@@ -887,7 +889,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#68b01268c317inbox_write" role="tab" data-toggle="pill">
+        <a href="#b04d6953c657inbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -908,7 +910,7 @@
   
   
     
-      <div class="tab-pane active" id="68b01268c317inbox_write">
+      <div class="tab-pane active" id="b04d6953c657inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"conversations.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{conversations.account}"</span><span class="p">,</span>

@@ -73,6 +73,8 @@
           <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_codes">Booking Discount Codes</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_code_usages">Booking Discount Code Usages</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
@@ -136,11 +138,11 @@
           <h2 id="hosts">Hosts</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#list-hosts">List Hosts</a></li>
-  <li><a href="#get-a-single-host">Get a single Host</a></li>
-  <li><a href="#create-a-new-host">Create a new Host</a></li>
-  <li><a href="#update-a-host">Update a Host</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#list-hosts" id="markdown-toc-list-hosts">List Hosts</a></li>
+  <li><a href="#get-a-single-host" id="markdown-toc-get-a-single-host">Get a single Host</a></li>
+  <li><a href="#create-a-new-host" id="markdown-toc-create-a-new-host">Create a new Host</a></li>
+  <li><a href="#update-a-host" id="markdown-toc-update-a-host">Update a Host</a></li>
 </ol>
 
 <h3 id="overview">Overview</h3>
@@ -321,7 +323,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#0479ac2dc08ainbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#872beb590446inbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -333,7 +335,7 @@
   
   
     
-      <div class="tab-pane active" id="0479ac2dc08ainbox_read-inbox_write">
+      <div class="tab-pane active" id="872beb590446inbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"hosts.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{hosts.account}"</span><span class="p">,</span>
@@ -380,7 +382,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#a48dddc566ecinbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#8b645cfecf8finbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -392,7 +394,7 @@
   
   
     
-      <div class="tab-pane active" id="a48dddc566ecinbox_read-inbox_write">
+      <div class="tab-pane active" id="8b645cfecf8finbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"hosts.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{hosts.account}"</span><span class="p">,</span>
@@ -439,7 +441,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#27591a0e3817inbox_write" role="tab" data-toggle="pill">
+        <a href="#51e2f7420ed5inbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -463,7 +465,7 @@
   
   
     
-      <div class="tab-pane active" id="27591a0e3817inbox_write">
+      <div class="tab-pane active" id="51e2f7420ed5inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"hosts.account"</span><span class="o">:</span> <span class="s2">"http://test.host/api/v3/accounts/{hosts.account}"</span><span class="p">,</span>
@@ -510,7 +512,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#21ed0b7f3d5binbox_write" role="tab" data-toggle="pill">
+        <a href="#9deb6ac5b26ainbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -534,7 +536,7 @@
   
   
     
-      <div class="tab-pane active" id="21ed0b7f3d5binbox_write">
+      <div class="tab-pane active" id="9deb6ac5b26ainbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"hosts.account"</span><span class="o">:</span> <span class="s2">"http://test.host/api/v3/accounts/{hosts.account}"</span><span class="p">,</span>

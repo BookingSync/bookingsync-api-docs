@@ -73,6 +73,8 @@
           <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_codes">Booking Discount Codes</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_code_usages">Booking Discount Code Usages</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
@@ -136,12 +138,12 @@
           <h2 id="rental-contacts">Rental contacts</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#list-rental-contacts">List rental contacts</a></li>
-  <li><a href="#get-a-single-rental-contact">Get a single rental contact</a></li>
-  <li><a href="#create-a-new-rental-contact">Create a new rental contact</a></li>
-  <li><a href="#update-a-rental-contact">Update a rental contact</a></li>
-  <li><a href="#destroy-a-rental-contact">Destroy a rental contact</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#list-rental-contacts" id="markdown-toc-list-rental-contacts">List rental contacts</a></li>
+  <li><a href="#get-a-single-rental-contact" id="markdown-toc-get-a-single-rental-contact">Get a single rental contact</a></li>
+  <li><a href="#create-a-new-rental-contact" id="markdown-toc-create-a-new-rental-contact">Create a new rental contact</a></li>
+  <li><a href="#update-a-rental-contact" id="markdown-toc-update-a-rental-contact">Update a rental contact</a></li>
+  <li><a href="#destroy-a-rental-contact" id="markdown-toc-destroy-a-rental-contact">Destroy a rental contact</a></li>
 </ol>
 
 <h3 id="overview">Overview</h3>
@@ -384,13 +386,13 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#ba34cd24440bpublic" role="tab" data-toggle="pill">
+        <a href="#182ab5155283public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
       <li>
-        <a href="#3c6bdfd685d9rentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#69fde9caa16frentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
@@ -402,7 +404,7 @@
   
   
     
-      <div class="tab-pane active" id="ba34cd24440bpublic">
+      <div class="tab-pane active" id="182ab5155283public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
@@ -436,7 +438,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="3c6bdfd685d9rentals_read-rentals_write">
+      <div class="tab-pane " id="69fde9caa16frentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
@@ -484,13 +486,13 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#2336cb745585public" role="tab" data-toggle="pill">
+        <a href="#b1150bef6c45public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
       <li>
-        <a href="#5f2ae337b016rentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#0626909146efrentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
@@ -502,7 +504,7 @@
   
   
     
-      <div class="tab-pane active" id="2336cb745585public">
+      <div class="tab-pane active" id="b1150bef6c45public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
@@ -536,7 +538,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="5f2ae337b016rentals_read-rentals_write">
+      <div class="tab-pane " id="0626909146efrentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
@@ -584,7 +586,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#1afed4291a71rentals_write" role="tab" data-toggle="pill">
+        <a href="#b025d861fefarentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -610,7 +612,7 @@
   
   
     
-      <div class="tab-pane active" id="1afed4291a71rentals_write">
+      <div class="tab-pane active" id="b025d861fefarentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
@@ -658,7 +660,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#9d87c215e1dcrentals_write" role="tab" data-toggle="pill">
+        <a href="#aed59dc2bd37rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -683,7 +685,7 @@
   
   
     
-      <div class="tab-pane active" id="9d87c215e1dcrentals_write">
+      <div class="tab-pane active" id="aed59dc2bd37rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>

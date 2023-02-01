@@ -73,6 +73,8 @@
           <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_codes">Booking Discount Codes</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_code_usages">Booking Discount Code Usages</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
@@ -136,19 +138,19 @@
           <h2 id="rentals-contents-overrides">Rentals Contents Overrides</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#list-rentals-contents-overrides">List rentals contents overrides</a></li>
-  <li><a href="#get-a-single-rentals-content-override">Get a single rentals content override</a></li>
-  <li><a href="#create-a-new-rentals-content-override">Create a new rentals content override</a></li>
-  <li><a href="#update-a-rentals-content-override">Update a rentals content override</a></li>
-  <li><a href="#destroy-a-rentals-content-override">Destroy a rentals content override</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#list-rentals-contents-overrides" id="markdown-toc-list-rentals-contents-overrides">List rentals contents overrides</a></li>
+  <li><a href="#get-a-single-rentals-content-override" id="markdown-toc-get-a-single-rentals-content-override">Get a single rentals content override</a></li>
+  <li><a href="#create-a-new-rentals-content-override" id="markdown-toc-create-a-new-rentals-content-override">Create a new rentals content override</a></li>
+  <li><a href="#update-a-rentals-content-override" id="markdown-toc-update-a-rentals-content-override">Update a rentals content override</a></li>
+  <li><a href="#destroy-a-rentals-content-override" id="markdown-toc-destroy-a-rentals-content-override">Destroy a rentals content override</a></li>
 </ol>
 
 <h3 id="overview">Overview</h3>
 
 <p>This resource represents the Rental Content Overrides which allow different channels (other <a href="/reference/endpoints/applications/">Applications</a>.) to have customized content for fields like <code>headline</code>, <code>summary</code>, <code>description</code>, which also allows to bypass the length validation that is normally applied for these fields in <a href="/reference/endpoints/rentals/">Rentals</a> endpoint.</p>
 
-<p>Note: An Application needs to be configured in a way that content overrides are permitted. Most likely you will need to reach out to us and ask for this feature to be enabled for your Application or if you want to customize the maximum length for the overridable fields. </p>
+<p>Note: An Application needs to be configured in a way that content overrides are permitted. Most likely you will need to reach out to us and ask for this feature to be enabled for your Application or if you want to customize the maximum length for the overridable fields.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -340,7 +342,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#ce4655098ecdrentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#0b7bba46dbearentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
@@ -352,7 +354,7 @@
   
   
     
-      <div class="tab-pane active" id="ce4655098ecdrentals_read-rentals_write">
+      <div class="tab-pane active" id="0b7bba46dbearentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_contents_overrides.application"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/applications/{rentals_contents_overrides.application}"</span><span class="p">,</span>
@@ -373,8 +375,8 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span><span class="p">,</span>
         <span class="s2">"fr"</span><span class="o">:</span> <span class="s2">"Grande valeur. Profitez d'un cadre agréable en plein nature."</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:10Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:10Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"application"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
@@ -400,7 +402,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#4a9a84223bbcrentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#1f3d2bcb549arentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
@@ -412,7 +414,7 @@
   
   
     
-      <div class="tab-pane active" id="4a9a84223bbcrentals_read-rentals_write">
+      <div class="tab-pane active" id="1f3d2bcb549arentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_contents_overrides.application"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/applications/{rentals_contents_overrides.application}"</span><span class="p">,</span>
@@ -433,8 +435,8 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span><span class="p">,</span>
         <span class="s2">"fr"</span><span class="o">:</span> <span class="s2">"Grande valeur. Profitez d'un cadre agréable en plein nature."</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:10Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:10Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"application"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
@@ -460,7 +462,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#af39effed807rentals_write" role="tab" data-toggle="pill">
+        <a href="#06a44b784a3frentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -488,7 +490,7 @@
   
   
     
-      <div class="tab-pane active" id="af39effed807rentals_write">
+      <div class="tab-pane active" id="06a44b784a3frentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_contents_overrides.application"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/applications/{rentals_contents_overrides.application}"</span><span class="p">,</span>
@@ -509,8 +511,8 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span><span class="p">,</span>
         <span class="s2">"fr"</span><span class="o">:</span> <span class="s2">"Grande valeur. Profitez d'un cadre agréable en plein nature."</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:10Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:10Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"application"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
@@ -536,7 +538,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#8024e60e0297rentals_write" role="tab" data-toggle="pill">
+        <a href="#0758009cefe2rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -562,7 +564,7 @@
   
   
     
-      <div class="tab-pane active" id="8024e60e0297rentals_write">
+      <div class="tab-pane active" id="0758009cefe2rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_contents_overrides.application"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/applications/{rentals_contents_overrides.application}"</span><span class="p">,</span>
@@ -583,8 +585,8 @@
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span><span class="p">,</span>
         <span class="s2">"fr"</span><span class="o">:</span> <span class="s2">"Grande valeur. Profitez d'un cadre agréable en plein nature."</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:23Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:10Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:10Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"application"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
         <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>

@@ -73,6 +73,8 @@
           <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_codes">Booking Discount Codes</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_code_usages">Booking Discount Code Usages</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
@@ -136,13 +138,13 @@
           <h2 id="bookings-tags">Bookings Tags</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#list-bookings-tags">List bookings tags</a></li>
-  <li><a href="#get-a-single-bookings-tag">Get a single bookings tag</a></li>
-  <li><a href="#create-a-new-bookings-tag">Create a new bookings tag</a></li>
-  <li><a href="#update-a-bookings-tag">Update a bookings tag</a></li>
-  <li><a href="#add-a-single-bookings-tag">Add a single bookings tag</a></li>
-  <li><a href="#remove-a-single-bookings-tag">Remove a single bookings tag</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#list-bookings-tags" id="markdown-toc-list-bookings-tags">List bookings tags</a></li>
+  <li><a href="#get-a-single-bookings-tag" id="markdown-toc-get-a-single-bookings-tag">Get a single bookings tag</a></li>
+  <li><a href="#create-a-new-bookings-tag" id="markdown-toc-create-a-new-bookings-tag">Create a new bookings tag</a></li>
+  <li><a href="#update-a-bookings-tag" id="markdown-toc-update-a-bookings-tag">Update a bookings tag</a></li>
+  <li><a href="#add-a-single-bookings-tag" id="markdown-toc-add-a-single-bookings-tag">Add a single bookings tag</a></li>
+  <li><a href="#remove-a-single-bookings-tag" id="markdown-toc-remove-a-single-bookings-tag">Remove a single bookings tag</a></li>
 </ol>
 
 <h3 id="overview">Overview</h3>
@@ -297,7 +299,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#89e2b7eeab77bookings_read" role="tab" data-toggle="pill">
+        <a href="#953864647847bookings_read" role="tab" data-toggle="pill">
           bookings_read
         </a>
       </li>
@@ -309,7 +311,7 @@
   
   
     
-      <div class="tab-pane active" id="89e2b7eeab77bookings_read">
+      <div class="tab-pane active" id="953864647847bookings_read">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_tags.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_tags.account}"</span>
@@ -348,7 +350,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#b7e1cd955b57bookings_read" role="tab" data-toggle="pill">
+        <a href="#009b59802a09bookings_read" role="tab" data-toggle="pill">
           bookings_read
         </a>
       </li>
@@ -360,7 +362,7 @@
   
   
     
-      <div class="tab-pane active" id="b7e1cd955b57bookings_read">
+      <div class="tab-pane active" id="009b59802a09bookings_read">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_tags.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_tags.account}"</span>
@@ -399,7 +401,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#661866faf5c3bookings_write" role="tab" data-toggle="pill">
+        <a href="#db5808d66708bookings_write" role="tab" data-toggle="pill">
           bookings_write
         </a>
       </li>
@@ -421,7 +423,7 @@
   
   
     
-      <div class="tab-pane active" id="661866faf5c3bookings_write">
+      <div class="tab-pane active" id="db5808d66708bookings_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_tags.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_tags.account}"</span>
@@ -460,7 +462,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#82330c6f22b2bookings_write" role="tab" data-toggle="pill">
+        <a href="#8c64f547a5cebookings_write" role="tab" data-toggle="pill">
           bookings_write
         </a>
       </li>
@@ -482,7 +484,7 @@
   
   
     
-      <div class="tab-pane active" id="82330c6f22b2bookings_write">
+      <div class="tab-pane active" id="8c64f547a5cebookings_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_tags.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings_tags.account}"</span>

@@ -73,6 +73,8 @@
           <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_codes">Booking Discount Codes</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_code_usages">Booking Discount Code Usages</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
@@ -136,16 +138,16 @@
           <h2 id="clients">Clients</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#list-clients">List clients</a></li>
-  <li><a href="#get-a-single-client">Get a single client</a></li>
-  <li><a href="#create-a-new-client">Create a new client</a></li>
-  <li><a href="#update-a-client">Update a client</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#list-clients" id="markdown-toc-list-clients">List clients</a></li>
+  <li><a href="#get-a-single-client" id="markdown-toc-get-a-single-client">Get a single client</a></li>
+  <li><a href="#create-a-new-client" id="markdown-toc-create-a-new-client">Create a new client</a></li>
+  <li><a href="#update-a-client" id="markdown-toc-update-a-client">Update a client</a></li>
 </ol>
 
 <h3 id="overview">Overview</h3>
 
-<p>This resource represents the Clients which effectively are the actual travelers (guests) that are related to <a href="/reference/endpoints/bookings/">Bookings</a>. </p>
+<p>This resource represents the Clients which effectively are the actual travelers (guests) that are related to <a href="/reference/endpoints/bookings/">Bookings</a>.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -630,7 +632,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#139a22323131clients_read-clients_write" role="tab" data-toggle="pill">
+        <a href="#08d26d28aecfclients_read-clients_write" role="tab" data-toggle="pill">
           clients_read / clients_write
         </a>
       </li>
@@ -642,7 +644,7 @@
   
   
     
-      <div class="tab-pane active" id="139a22323131clients_read-clients_write">
+      <div class="tab-pane active" id="08d26d28aecfclients_read-clients_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -752,7 +754,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#21b90e57ad36clients_read-clients_write" role="tab" data-toggle="pill">
+        <a href="#64e794f40ba3clients_read-clients_write" role="tab" data-toggle="pill">
           clients_read / clients_write
         </a>
       </li>
@@ -764,7 +766,7 @@
   
   
     
-      <div class="tab-pane active" id="21b90e57ad36clients_read-clients_write">
+      <div class="tab-pane active" id="64e794f40ba3clients_read-clients_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -874,7 +876,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#eea4ad9a73e4clients_write" role="tab" data-toggle="pill">
+        <a href="#2f0db3f64036clients_write" role="tab" data-toggle="pill">
           clients_write
         </a>
       </li>
@@ -976,7 +978,7 @@
   
   
     
-      <div class="tab-pane active" id="eea4ad9a73e4clients_write">
+      <div class="tab-pane active" id="2f0db3f64036clients_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
@@ -1092,7 +1094,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#78c5c6523f60clients_write" role="tab" data-toggle="pill">
+        <a href="#c8b7eebac962clients_write" role="tab" data-toggle="pill">
           clients_write
         </a>
       </li>
@@ -1194,7 +1196,7 @@
   
   
     
-      <div class="tab-pane active" id="78c5c6523f60clients_write">
+      <div class="tab-pane active" id="c8b7eebac962clients_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>

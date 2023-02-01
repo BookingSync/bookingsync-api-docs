@@ -73,6 +73,8 @@
           <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_codes">Booking Discount Codes</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_code_usages">Booking Discount Code Usages</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
@@ -136,13 +138,13 @@
           <h2 id="payments">Payments</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#list-payments">List payments</a></li>
-  <li><a href="#search-payments">Search payments</a></li>
-  <li><a href="#get-a-single-payment">Get a single payment</a></li>
-  <li><a href="#create-a-new-payment">Create a new payment</a></li>
-  <li><a href="#update-a-payment">Update a payment</a></li>
-  <li><a href="#cancel-a-payment">Cancel a payment</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#list-payments" id="markdown-toc-list-payments">List payments</a></li>
+  <li><a href="#search-payments" id="markdown-toc-search-payments">Search payments</a></li>
+  <li><a href="#get-a-single-payment" id="markdown-toc-get-a-single-payment">Get a single payment</a></li>
+  <li><a href="#create-a-new-payment" id="markdown-toc-create-a-new-payment">Create a new payment</a></li>
+  <li><a href="#update-a-payment" id="markdown-toc-update-a-payment">Update a payment</a></li>
+  <li><a href="#cancel-a-payment" id="markdown-toc-cancel-a-payment">Cancel a payment</a></li>
 </ol>
 
 <h3 id="overview">Overview</h3>
@@ -1048,7 +1050,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#9774721b141dpayments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
+        <a href="#ef89cb64593dpayments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
           payments_write_owned / payments_read / payments_write
         </a>
       </li>
@@ -1060,7 +1062,7 @@
   
   
     
-      <div class="tab-pane active" id="9774721b141dpayments_write_owned-payments_read-payments_write">
+      <div class="tab-pane active" id="ef89cb64593dpayments_write_owned-payments_read-payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -1089,12 +1091,12 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"forget_me_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
       <span class="s2">"processing_restricted_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
@@ -1152,7 +1154,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#05e98ab9d9bcpayments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
+        <a href="#b1c71e32b34apayments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
           payments_write_owned / payments_read / payments_write
         </a>
       </li>
@@ -1164,7 +1166,7 @@
   
   
     
-      <div class="tab-pane active" id="05e98ab9d9bcpayments_write_owned-payments_read-payments_write">
+      <div class="tab-pane active" id="b1c71e32b34apayments_write_owned-payments_read-payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -1193,12 +1195,12 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"forget_me_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
       <span class="s2">"processing_restricted_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
@@ -1228,7 +1230,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#719be05401a4payments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
+        <a href="#846326437737payments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
           payments_write_owned / payments_write
         </a>
       </li>
@@ -1251,7 +1253,7 @@
       <span class="s2">"locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Monatana"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -1261,7 +1263,7 @@
   
   
     
-      <div class="tab-pane active" id="719be05401a4payments_write_owned / payments_write">
+      <div class="tab-pane active" id="846326437737payments_write_owned / payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -1290,12 +1292,12 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"forget_me_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
       <span class="s2">"processing_restricted_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
@@ -1325,7 +1327,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#aa2a57a3940bpayments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
+        <a href="#a55064a949bdpayments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
           payments_write_owned / payments_write
         </a>
       </li>
@@ -1348,7 +1350,7 @@
       <span class="s2">"locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Monatana"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -1358,7 +1360,7 @@
   
   
     
-      <div class="tab-pane active" id="aa2a57a3940bpayments_write_owned / payments_write">
+      <div class="tab-pane active" id="a55064a949bdpayments_write_owned / payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -1387,12 +1389,12 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"forget_me_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2022-03-23T16:56:22Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:29:09Z"</span><span class="p">,</span>
       <span class="s2">"processing_restricted_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>

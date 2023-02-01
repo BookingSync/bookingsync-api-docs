@@ -73,6 +73,8 @@
           <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_codes">Booking Discount Codes</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_code_usages">Booking Discount Code Usages</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
@@ -136,11 +138,11 @@
           <h2 id="inbox-attachments">Inbox Attachments</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#list-attachments">List Attachments</a></li>
-  <li><a href="#get-a-single-attachment">Get a single Attachment</a></li>
-  <li><a href="#create-a-new-attachment">Create a new attachment</a></li>
-  <li><a href="#update-an-attachment">Update an attachment</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#list-attachments" id="markdown-toc-list-attachments">List Attachments</a></li>
+  <li><a href="#get-a-single-attachment" id="markdown-toc-get-a-single-attachment">Get a single Attachment</a></li>
+  <li><a href="#create-a-new-attachment" id="markdown-toc-create-a-new-attachment">Create a new attachment</a></li>
+  <li><a href="#update-an-attachment" id="markdown-toc-update-an-attachment">Update an attachment</a></li>
 </ol>
 
 <h3 id="overview">Overview</h3>
@@ -361,7 +363,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#7093201811dfinbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#fa0e45609319inbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -373,7 +375,7 @@
   
   
     
-      <div class="tab-pane active" id="7093201811dfinbox_read-inbox_write">
+      <div class="tab-pane active" id="fa0e45609319inbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"attachments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{attachments.account}"</span><span class="p">,</span>
@@ -417,7 +419,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#a20f3402c17cinbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#75d0f58e8473inbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -429,7 +431,7 @@
   
   
     
-      <div class="tab-pane active" id="a20f3402c17cinbox_read-inbox_write">
+      <div class="tab-pane active" id="75d0f58e8473inbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"attachments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{attachments.account}"</span><span class="p">,</span>
@@ -473,7 +475,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#7ceaa3e7606binbox_write" role="tab" data-toggle="pill">
+        <a href="#4a9fe3b37f9binbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -495,7 +497,7 @@
   
   
     
-      <div class="tab-pane active" id="7ceaa3e7606binbox_write">
+      <div class="tab-pane active" id="4a9fe3b37f9binbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"attachments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{attachments.account}"</span><span class="p">,</span>
@@ -539,7 +541,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#07627e7abdefinbox_write" role="tab" data-toggle="pill">
+        <a href="#ed8d47d69cacinbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -561,7 +563,7 @@
   
   
     
-      <div class="tab-pane active" id="07627e7abdefinbox_write">
+      <div class="tab-pane active" id="ed8d47d69cacinbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"attachments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{attachments.account}"</span><span class="p">,</span>

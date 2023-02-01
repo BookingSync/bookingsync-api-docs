@@ -69,7 +69,7 @@
         <div class="list-group">
           <a class="list-group-item" href="/reference/endpoints/accounts/">Accounts</a>
           <a class="list-group-item" href="/reference/endpoints/amenities/">Amenities</a>
-          <a class="list-group-item active" href="/reference/endpoints/applications/">Applications</a>
+          <a class="list-group-item" href="/reference/endpoints/applications/">Applications</a>
           <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
@@ -135,26 +135,26 @@
     <div class="col-md-9 col-md-pull-3">
       <div class="panel panel-default">
         <div class="panel-body reference-body">
-          <h2 id="applications">Applications</h2>
+          <h2 id="discount-code-usages">Discount Code Usages</h2>
 
 <ol id="markdown-toc">
   <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
-  <li><a href="#list-applications" id="markdown-toc-list-applications">List applications</a></li>
-  <li><a href="#get-a-single-application" id="markdown-toc-get-a-single-application">Get a single application</a></li>
+  <li><a href="#list-discount-code-usages" id="markdown-toc-list-discount-code-usages">List Discount Code Usages</a></li>
+  <li><a href="#get-a-single-discount-code-usage" id="markdown-toc-get-a-single-discount-code-usage">Get a single Discount Code Usage</a></li>
 </ol>
 
 <h3 id="overview">Overview</h3>
 
-<p>This resource represents the installed Applications for the Account(s) via <a href="/reference/authorization/">OAuth</a> - these are the actual applications that you, as a Partner, can register in <a href="https://www.bookingsync.com/en/partners/">Partners Section</a>.</p>
+<p>This resource represents the usage of a <a href="/reference/endpoints/booking/discount_codes/">Discount Code</a> which are created when the <a href="/reference/endpoints/booking/discount_codes/">Discount Code</a> is applied via instant booking page or booknow widget.</p>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
-  <li class="disabled"><a>OAuth Scopes:</a></li>
-  <li class="active"><a href="#applications_read" role="tab" data-toggle="pill">applications_read</a></li>
-  <li><a href="#applications_write" role="tab" data-toggle="pill">applications_write</a></li>
+<li class="disabled"><a>OAuth Scopes:</a></li>
+<li class="active"><a href="#discount_code_usage_read" role="tab" data-toggle="pill">discount_code_usage_read</a></li>
 </ul>
 <div class="tab-content">
-  <div class="tab-pane active" id="applications_read">
+  <div class="tab-pane active" id="discount_code_usage_read">
+
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -167,24 +167,21 @@
       <tbody>
         <tr>
           <td>id</td>
-          <td>Integer</td>
+          <td>String[UUID]</td>
           <td>Read</td>
-          <td>Application’s id.</td>
+          <td>Discount Code Usage’s id.</td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
-          <td>name</td>
+          <td>currency</td>
           <td>String</td>
           <td>Read</td>
-          <td>Application’s name.</td>
+          <td>Currency of applied discount.</td>
         </tr>
         <tr>
-          <td>default_price_increase</td>
-          <td><a href="/reference/enums#formats">Decimal</a></td>
+          <td>amount_in_cents</td>
+          <td>Integer</td>
           <td>Read</td>
-          <td>Application’s default price increase for <a href="/reference/endpoints/bookings">Bookings</a> originating from a given Application. Also, this increase is reflected in <a href="/reference/endpoints/rates">Rates</a> and <a href="/reference/endpoints/los_records">LOS Records</a>
-</td>
+          <td>Applied amount of discount in cents.</td>
         </tr>
       </tbody>
       <tbody>
@@ -192,92 +189,33 @@
           <td>created_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Applications’s create time.</td>
+          <td>Discount Code Usage create time (discount application time)</td>
         </tr>
         <tr>
-          <td>updated_at</td>
+          <td>canceled_at</td>
           <td><a href="/reference/enums#formats">Time</a></td>
           <td>Read</td>
-          <td>Applications’s update time.</td>
+          <td>Discount Code Usage soft delete time</td>
         </tr>
       </tbody>
     </table>
-  </div>
-  <div class="tab-pane" id="rentals_write">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Read/Write</th>
-          <th>Description</th>
-          <th>Constraints</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>id</td>
-          <td>Integer</td>
-          <td>Read</td>
-          <td>Application’s id.</td>
-          <td> </td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td>name</td>
-          <td>String</td>
-          <td>Read</td>
-          <td>Application’s name.</td>
-          <td> </td>
-        </tr>
-        <tr>
-          <td>default_price_increase</td>
-          <td><a href="/reference/enums#formats">Decimal</a></td>
-          <td>Read/Write</td>
-          <td>Application’s default price increase for <a href="/reference/endpoints/bookings">Bookings</a> originating from a given Application. Also, this increase is reflected in <a href="/reference/endpoints/rates">Rates</a> and <a href="/reference/endpoints/los_records">LOS Records</a>
-</td>
-          <td>greater than: 0, less than: 100</td>
-        </tr>
-      </tbody>
-      <tbody>
-        <tr>
-          <td>created_at</td>
-          <td><a href="/reference/enums#formats">Time</a></td>
-          <td>Read</td>
-          <td>Application’s create time.</td>
-          <td> </td>
-        </tr>
-        <tr>
-          <td>updated_at</td>
-          <td><a href="/reference/enums#formats">Time</a></td>
-          <td>Read</td>
-          <td>Application’s update time.</td>
-          <td> </td>
-        </tr>
-      </tbody>
-    </table>
+
   </div>
 </div>
 
-<div class="callout callout-info">
-  <h4>Flow restriction</h4>
-  <p>This endpoint cannot be accessed with <a href="/reference/authorization/#client-credentials-flow">Client Credentials Flow</a>.</p>
-</div>
+<h3 id="list-discount-code-usages">List Discount Code Usages</h3>
 
-<h3 id="list-applications">List applications</h3>
+<p>Returns all Discount Codes Usages for current account.</p>
 
-<p>List all installed applications for a given account.</p>
-
-<pre><code>GET /applications
+<pre><code>GET /booking/discount_code_usages
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#c08254992e82applications_read" role="tab" data-toggle="pill">
-          applications_read
+        <a href="#206842a7d782discount_code_usage_read" role="tab" data-toggle="pill">
+          discount_code_usage_read
         </a>
       </li>
     
@@ -288,12 +226,23 @@
   
   
     
-      <div class="tab-pane active" id="c08254992e82applications_read">
+      <div class="tab-pane active" id="206842a7d782discount_code_usage_read">
         <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"applications"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"discount_codes.bookings"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/bookings/{discount_codes_usages.bookings}"</span><span class="p">,</span>
+    <span class="s2">"discount_codes.discount_codes"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/booking/discount_codes/{discount_code_usages.discount_code}"</span>
+  <span class="p">},</span>
+  <span class="s2">"discount_codes"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">65</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Airbnb"</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span>
+        <span class="s2">"discount_code"</span><span class="o">:</span> <span class="mi">512</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"db6c0845-6122-4de6-a9ab-7a685e2a17f0"</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
+      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">10000</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-01-24T15:22:55Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span>
     <span class="p">}</span>
   <span class="p">],</span>
   <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>
@@ -304,19 +253,19 @@
   
 </div>
 
-<h3 id="get-a-single-application">Get a single application</h3>
+<h3 id="get-a-single-discount-code-usage">Get a single Discount Code Usage</h3>
 
-<p>Returns a single application identified by ID.</p>
+<p>Returns a single Discount Code Usage identified by ID.</p>
 
-<pre><code>GET /applications/:application_id
+<pre><code>GET /booking/discount_code_usages/:discount_code_usage_id
 </code></pre>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#52ad69c61d14applications_read" role="tab" data-toggle="pill">
-          applications_read
+        <a href="#bd5045eef93ediscount_code_usage_read" role="tab" data-toggle="pill">
+          discount_code_usage_read
         </a>
       </li>
     
@@ -327,12 +276,23 @@
   
   
     
-      <div class="tab-pane active" id="52ad69c61d14applications_read">
+      <div class="tab-pane active" id="bd5045eef93ediscount_code_usage_read">
         <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"applications"</span><span class="o">:</span> <span class="p">[</span>
+  <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">"discount_codes.bookings"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/bookings/{discount_codes_usages.bookings}"</span><span class="p">,</span>
+    <span class="s2">"discount_codes.discount_codes"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/booking/discount_codes/{discount_code_usages.discount_code}"</span>
+  <span class="p">},</span>
+  <span class="s2">"discount_codes"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">65</span><span class="p">,</span>
-      <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Airbnb"</span>
+      <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span>
+        <span class="s2">"discount_code"</span><span class="o">:</span> <span class="mi">512</span>
+      <span class="p">},</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="s2">"db6c0845-6122-4de6-a9ab-7a685e2a17f0"</span><span class="p">,</span>
+      <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
+      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">10000</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-01-24T15:22:55Z"</span><span class="p">,</span>
+      <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span>
     <span class="p">}</span>
   <span class="p">],</span>
   <span class="s2">"meta"</span><span class="o">:</span> <span class="p">{</span>

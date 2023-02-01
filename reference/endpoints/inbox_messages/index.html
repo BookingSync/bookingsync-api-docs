@@ -73,6 +73,8 @@
           <a class="list-group-item" href="/reference/endpoints/availabilities/">Availabilities</a>
           <a class="list-group-item" href="/reference/endpoints/bathrooms/">Bathrooms</a>
           <a class="list-group-item" href="/reference/endpoints/bedrooms/">Bedrooms</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_codes">Booking Discount Codes</a>
+          <a class="list-group-item" href="/reference/endpoints/booking/discount_code_usages">Booking Discount Code Usages</a>
           <a class="list-group-item" href="/reference/endpoints/bookings/">Bookings</a>
           <a class="list-group-item" href="/reference/endpoints/booking_comments/">Booking Comments</a>
           <a class="list-group-item" href="/reference/endpoints/bookings_fees/">Bookings Fees</a>
@@ -136,12 +138,12 @@
           <h2 id="inbox-messages">Inbox Messages</h2>
 
 <ol id="markdown-toc">
-  <li><a href="#overview">Overview</a></li>
-  <li><a href="#list-messages">List Messages</a></li>
-  <li><a href="#get-a-single-message">Get a single Message</a></li>
-  <li><a href="#create-a-new-message">Create a new Message</a></li>
-  <li><a href="#update-a-message">Update a Message</a></li>
-  <li><a href="#add-attachment-to-a-message">Add Attachment to a Message</a></li>
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#list-messages" id="markdown-toc-list-messages">List Messages</a></li>
+  <li><a href="#get-a-single-message" id="markdown-toc-get-a-single-message">Get a single Message</a></li>
+  <li><a href="#create-a-new-message" id="markdown-toc-create-a-new-message">Create a new Message</a></li>
+  <li><a href="#update-a-message" id="markdown-toc-update-a-message">Update a Message</a></li>
+  <li><a href="#add-attachment-to-a-message" id="markdown-toc-add-attachment-to-a-message">Add Attachment to a Message</a></li>
 </ol>
 
 <h3 id="overview">Overview</h3>
@@ -414,7 +416,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#92cf13cb28feinbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#a655573c2fddinbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -426,7 +428,7 @@
   
   
     
-      <div class="tab-pane active" id="92cf13cb28feinbox_read-inbox_write">
+      <div class="tab-pane active" id="a655573c2fddinbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"messages.attachments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}"</span><span class="p">,</span>
@@ -471,7 +473,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#183b473ca77cinbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#9cb388b28399inbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -483,7 +485,7 @@
   
   
     
-      <div class="tab-pane active" id="183b473ca77cinbox_read-inbox_write">
+      <div class="tab-pane active" id="9cb388b28399inbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"messages.attachments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}"</span><span class="p">,</span>
@@ -528,7 +530,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#b20784bd8574inbox_write" role="tab" data-toggle="pill">
+        <a href="#2a3c4aeff58ainbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -560,7 +562,7 @@
   
   
     
-      <div class="tab-pane active" id="b20784bd8574inbox_write">
+      <div class="tab-pane active" id="2a3c4aeff58ainbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"messages.attachments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}"</span><span class="p">,</span>
@@ -605,7 +607,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#dfc8a683dc80inbox_write" role="tab" data-toggle="pill">
+        <a href="#a5a966b461d5inbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -633,7 +635,7 @@
   
   
     
-      <div class="tab-pane active" id="dfc8a683dc80inbox_write">
+      <div class="tab-pane active" id="a5a966b461d5inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"messages.attachments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}"</span><span class="p">,</span>
@@ -678,7 +680,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#1eea67eef2cbinbox_write" role="tab" data-toggle="pill">
+        <a href="#fa6e1eca760finbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -699,7 +701,7 @@
   
   
     
-      <div class="tab-pane active" id="1eea67eef2cbinbox_write">
+      <div class="tab-pane active" id="fa6e1eca760finbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"messages.attachments"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/inbox/attachments/{messages.attachments}"</span><span class="p">,</span>
