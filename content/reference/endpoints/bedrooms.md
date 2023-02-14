@@ -1,13 +1,14 @@
 # Bedrooms
 
 1. TOC
-{:toc}
+   {:toc}
 
 ## Overview
 
 This resource represents the rental's bedrooms. This resource is mostly static information used for presentational purposes.
 
 ### Parameters
+
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
@@ -45,7 +46,8 @@ account             | Integer | Read       | Account's ID related to the Bedroom
 rental              | Integer | Read       | Rental's ID related to the Bedroom |
 --------------------|---------|------------|---------------|
 id                  | Integer | Read       | Bedroom's id. |
-name                          | [Object](/reference/enums#formats)| Read/Write | Bedroom's name, list of locales described in [enums section](/reference/enums#locales). | **Required**, maximum length: 25
+name                | [Object](/reference/enums#formats)| Read | Bedroom's name, list of locales described in [enums section](/reference/enums#locales).
+name_*locale*       | String  | Write      | Bedroom's name, used in write operations. Replace the `locale` with one of the  locales described in [enums section](/reference/enums#locales) (e.g. `name_en`). Multiple of these attributes could be passed in the same operation, as long as they each have a unique locale (e.g `name_en` and `name_fr`) | **Required** for Account's default locale, maximum length: 25
 bunk_beds_count               | Integer | Read/Write | Bedroom's number of bunk beds. | integer only, greater than or equal to: 0
 double_beds_count             | Integer | Read/Write | Bedroom's number of double beds. | integer only, greater than or equal to: 0
 kingsize_beds_count           | Integer | Read/Write | Bedroom's number of kingsize beds. | integer only, greater than or equal to: 0
@@ -63,45 +65,45 @@ updated_at          | [Time](/reference/enums#formats) | Read       | Bedroom's 
 
 List all bedrooms for a given account.
 
-~~~
+```
 GET /bedrooms
-~~~
+```
 
 <%= render 'json_response', endpoint: "bedrooms",
-  scopes: [{ public: "public-rentals_write" }] %>
+scopes: [{ public: "public-rentals_write" }] %>
 
 ## Get a single bedroom
 
 Returns a single bedroom identified by ID.
 
-~~~
+```
 GET /bedrooms/:bedroom_id
-~~~
+```
 
 <%= render 'json_response', endpoint: "bedrooms",
-  scopes: [{ public: "public-rentals_write" }] %>
+scopes: [{ public: "public-rentals_write" }] %>
 
 ## Create a new bedroom
 
 Creates a bedroom for given rental.
 
-~~~
+```
 POST /rentals/:rental_id/bedrooms
-~~~
+```
 
 <%= render 'json_response', endpoint: "bedrooms", request: "create",
-  scopes: [{ rentals_write: "public-rentals_write" }] %>
+scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Update a bedroom
 
 Returns an updated bedroom identified by ID.
 
-~~~
+```
 PUT /bedrooms/:bedroom_id
-~~~
+```
 
 <%= render 'json_response', endpoint: "bedrooms", request: "update",
-  scopes: [{ rentals_write: "public-rentals_write" }] %>
+scopes: [{ rentals_write: "public-rentals_write" }] %>
 
 ## Destroy a bedroom
 
@@ -109,6 +111,6 @@ Required OAuth scope: `:rentals_write`
 
 Returns an empty response with '204 No Content' status code on success.
 
-~~~~~~
+```
 DELETE /bedrooms/:bedroom_id
-~~~~~~
+```
