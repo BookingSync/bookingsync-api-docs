@@ -15,9 +15,8 @@ Depending on the use case, there are various types of Bookings (determined by `s
 
 - Canceled - the bookings that no longer occupy the calendar
 
-
-
 ### Parameters
+
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
@@ -55,6 +54,7 @@ booking_comments  | Array    | Read      | Array of related Bookings Comments ID
 booking_fees      | Array    | Read      | Array of related Bookings Fees IDs |
 booking_taxes     | Array    | Read      | Array of related Bookings Taxes IDs |
 booking_payments  | Array    | Read      | Array of related Bookings Payments IDs |
+conversations     | Array    | Read      | Array of related Inbox Conversation IDs |
 payments          | Array    | Read      | Array of related Payments IDs |
 rentals_tags      | Array    | Read      | Array of related Rentals Tags IDs |
 bookings_tags     | Array    | Read      | Array of related Bookings Tags IDs |
@@ -118,6 +118,7 @@ booking_comments  | Array    | Read      | Array of related Bookings Comments ID
 booking_fees      | Array    | Read      | Array of related Bookings Fees IDs 
 booking_taxes     | Array    | Read      | Array of related Bookings Taxes IDs 
 booking_payments  | Array    | Read      | Array of related Bookings Payments IDs 
+conversations     | Array    | Read      | Array of related Inbox Conversation IDs
 payments          | Array    | Read      | Array of related Payments IDs 
 rentals_tags      | Array    | Read      | Array of related Rentals Tags IDs 
 bookings_tags     | Array    | Read      | Array of related Bookings Tags IDs 
@@ -187,6 +188,7 @@ booking_comments  | Array    | Read      | Array of related Bookings Comments ID
 booking_fees      | Array    | Read      | Array of related Bookings Fees IDs |
 booking_taxes     | Array    | Read      | Array of related Bookings Taxes IDs |
 booking_payments  | Array    | Read      | Array of related Bookings Payments IDs |
+conversations     | Array    | Read      | Array of related Inbox Conversation IDs |
 payments          | Array    | Read      | Array of related Payments IDs |
 rentals_tags      | Array    | Read      | Array of related Rentals Tags IDs |
 bookings_tags     | Array    | Read      | Array of related Bookings Tags IDs |
@@ -246,16 +248,6 @@ booked_at               | [Time](/reference/enums#formats) | Write      | Exact 
 {: class="table table-bordered"}
   </div>
 </div>
-
-
- 
-
- 
- 
-
-
-
-
 
 ## List bookings
 
