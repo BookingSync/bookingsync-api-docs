@@ -65,7 +65,7 @@ Make a POST request to this URL to get your Authentication Token.
 
 Example with CURL:
 
-~~~
+~~~bash
 curl -X POST -d "client_id=CLIENT_ID&client_secret=CLIENT_SECRET&code=RETURNED_CODE&grant_type=authorization_code&redirect_uri=urn:ietf:wg:oauth:2.0:oob" "https://www.bookingsync.com/oauth/token"
 ~~~
 
@@ -118,7 +118,7 @@ Make a POST request to this URL to get your refreshed Authentication Token.
 
 Example with CURL:
 
-~~~
+~~~bash
 curl -X POST -d "client_id=CLIENT_ID&client_secret=CLIENT_SECRET&refresh_token=REFRESH_TOKEN&grant_type=refresh_token&redirect_uri=urn:ietf:wg:oauth:2.0:oob" "https://www.bookingsync.com/oauth/token"
 ~~~
 

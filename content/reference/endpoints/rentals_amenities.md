@@ -7,6 +7,16 @@
 
 This resource represents the Rentals Amenities, that establish relationship between [Rentals](/reference/endpoints/rentals) and [Amenities](/reference/endpoints/amenities).
 
+## Obsolete amenities
+
+<div class="callout callout-warning" markdown="1">
+  Right now, 3 amenities are marked as obsolete and are replaced with [Rental#checkin_type](/reference/endpoints/rentals#checkin-type) attribute:
+`contactless_check_in_and_check_out`, `self_checkin`, and `24h_checkin`. It is impossible to assign those amenities to
+rentals directly or unassign them from rentals.
+
+  Instead, these 3 amenities are assigned/unassigned automatically on [Rental#checkin_type](/reference/endpoints/rentals#checkin-type) update.
+</div>
+
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>

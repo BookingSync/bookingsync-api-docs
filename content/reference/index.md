@@ -30,27 +30,27 @@ the body is expected to be in the following format:
 
 GET:
 
-~~~
+~~~bash
 curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' https://www.bookingsync.com/api/v3/rentals
 ~~~
 
 POST:
 
-~~~
+~~~bash
 curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' --header 'Content-Type: application/vnd.api+json'
 --data '{"rentals":[{"name":"Name"}]}' https://www.bookingsync.com/api/v3/rentals
 ~~~
 
 PUT:
 
-~~~
+~~~bash
 curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' --header 'Content-Type: application/vnd.api+json'
 --request PUT --data '{"rentals":[{"name":"New Name"}]}' https://www.bookingsync.com/api/v3/rentals/RENTAL_ID
 ~~~
 
 DELETE:
 
-~~~
+~~~bash
 curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' --request DELETE
 https://www.bookingsync.com/api/v3/rentals/RENTAL_ID
 ~~~

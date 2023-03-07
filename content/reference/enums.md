@@ -416,6 +416,17 @@ professional     | Professional.
 non_professional | Non professional.
 {: class="table table-bordered"}
 
+## Rental checkin types
+
+Name             | Description
+-----------------|------------
+in_person        | In-Person greeting
+lockbox          | Lockbox
+smart_lock       | Smart Lock
+24_hours_staff   | 24 hour building staff
+other            | Other (you must send instructions using `Rental#checkin_details` field)
+{: class="table table-bordered"}
+
 ## Inbox Message Channels
 
 Name             | Description

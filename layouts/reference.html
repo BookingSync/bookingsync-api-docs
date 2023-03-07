@@ -112,8 +112,8 @@
           <%= link_to_with_current("Rental Cancelation Policy Items",
             "/reference/endpoints/rental_cancelation_policy_items/",
             class: "list-group-item") %>
-          <%= link_to_with_current("Rentals Amenities", "/reference/endpoints/rentals_amenities/",
-            class: "list-group-item") %>
+          <%= link_to_with_current('Rentals Amenities <span class="badge">!</span>',
+            "/reference/endpoints/rentals_amenities/", class: "list-group-item") %>
           <%= link_to_with_current("Rentals Contents Overrides", "/reference/endpoints/rentals_contents_overrides/",
             class: "list-group-item") %>
           <%= link_to_with_current("Rentals Fees", "/reference/endpoints/rentals_fees/",
@@ -140,13 +140,6 @@
             class: "list-group-item") %>
           <%= link_to_with_current("Tax Rules", "/reference/endpoints/tax_rules/",
             class: "list-group-item") %>
-        </div>
-        <div class="panel-heading">
-          <h3 class="panel-title">Deprecated APIs</h3>
-        </div>
-        <div class="list-group">
-          <%= link_to "BookingSync API v1", "https://www.bookingsync.com/en/documentation/api",
-            class: "list-group-item" %>
         </div>
       </div>
     </div>

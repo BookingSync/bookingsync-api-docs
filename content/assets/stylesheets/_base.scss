@@ -1,3 +1,14 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.page-wrapper {
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
 .content {
   padding-top: 30px;
   padding-bottom: 40px;
