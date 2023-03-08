@@ -14,7 +14,9 @@ This resource represents the Rentals Amenities, that establish relationship betw
 `contactless_check_in_and_check_out`, `self_checkin`, and `24h_checkin`. It is impossible to assign those amenities to
 rentals directly or unassign them from rentals.
 
-  Instead, these 3 amenities are assigned/unassigned automatically on [Rental#checkin_type](/reference/endpoints/rentals#checkin-type) update.
+  Instead, these 3 amenities are assigned/unassigned automatically on [Rental#checkin_type](/reference/endpoints/rentals#checkin-type) update for backwards compatibility.
+
+  All obsolete amenities will be removed in April 2023. Please use [Rental#checkin_type](/reference/endpoints/rentals#checkin-type) instead.
 </div>
 
 ### Parameters
