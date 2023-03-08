@@ -31,7 +31,7 @@ Make a POST request to this URL to get your Authentication Token.
 
 Example with CURL:
 
-~~~
+~~~bash
 curl -X POST -d "client_id=CLIENT_ID&client_secret=CLIENT_SECRET&grant_type=client_credentials" "https://www.bookingsync.com/oauth/token"
 ~~~
 
@@ -61,6 +61,6 @@ Now that you have your `access_token`, you can read all the published rentals wi
 
 Example with CURL:
 
-~~~
+~~~bash
 curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' https://www.bookingsync.com/api/v3/rentals
 ~~~

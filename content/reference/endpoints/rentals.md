@@ -50,6 +50,7 @@ balance_due                     | Integer  | Read       | Number of day since th
 bathrooms_count                 | Integer  | Read       | Rental's bathrooms count.
 bedrooms_count                  | Integer  | Read       | Rental's bedrooms count.
 bookable_online                 | Boolean  | Read       | Rental's online booking status.
+<span id="checkin-type">checkin_type</span>| String   | Read       | Rental's checkin type, list of values described in [enums section](/reference/enums#rental-checkin-types).
 checkin_time                    | Integer  | Read       | Rental's checkin time.
 checkin_end_time                | Integer  | Read       | Rental's checkin end time.
 checkout_time                   | Integer  | Read       | Rental's checkout time.
@@ -143,6 +144,7 @@ bathrooms_count                 | Integer  | Read       | Rental's bathrooms cou
 bedrooms_count                  | Integer  | Read       | Rental's bedrooms count.
 bookable_online                 | Boolean  | Read       | Rental's online booking status.
 checkin_details                 | [Object](/reference/enums#formats)     | Read       | Rental's check-in details, list of locales described in [enums section](/reference/enums#locales).
+checkin_type                    | String   | Read       | Rental's checkin type, list of values described in [enums section](/reference/enums#rental-checkin-types).
 checkin_time                    | Integer  | Read       | Rental's checkin time.
 checkin_end_time                | Integer  | Read       | Rental's checkin end time.
 checkout_details                | [Object](/reference/enums#formats)     | Read       | Rental's check-out details, list of locales described in [enums section](/reference/enums#locales).
@@ -248,6 +250,7 @@ bathrooms_count                 | Integer  | Read/Write | Rental's bathrooms cou
 bedrooms_count                  | Integer  | Read/Write | Rental's bedrooms count.  | must be between 0 and 100 if present
 bookable_online                 | Boolean  | Read/Write | Rental's online booking status. |
 checkin_details                 | [Object](/reference/enums#formats)  | Read/Write       | Rental's check-in details, list of locales described in [enums section](/reference/enums#locales). |
+checkin_type                    | String   | Read/Write | Rental's checkin type, list of values described in [enums section](/reference/enums#rental-checkin-types).
 checkin_time                    | Integer  | Read/Write | Rental's checkin time. |
 checkin_end_time                | Integer  | Read/Write | Rental's checkin end time. |
 checkout_details                | [Object](/reference/enums#formats)  | Read/Write       | Rental's check-out details, list of locales described in [enums section](/reference/enums#locales). |
