@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.28.4](https://github.com/BookingSync/bookingsync-api-docs/tree/3.28.4) (2023-03-09)
+
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.27.4...3.28.4)
+
+**Merged pull requests:**
+
+- \[CORE-5998\] Add note about obsolete amenities [\#380](https://github.com/BookingSync/bookingsync-api-docs/pull/380) ([pyromaniac](https://github.com/pyromaniac))
+- \[CORE-6076\] Add Inbox Integration guide [\#379](https://github.com/BookingSync/bookingsync-api-docs/pull/379) ([Kefa7y](https://github.com/Kefa7y))
+- \[CORE-5981\] Fix schema descriptions on write operations for Nested-hash translated attributes documentation errors [\#378](https://github.com/BookingSync/bookingsync-api-docs/pull/378) ([Kefa7y](https://github.com/Kefa7y))
+
+## [v3.27.4](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.27.4) (2023-02-01)
+
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.27.3...v3.27.4)
+
 ## [v3.27.3](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.27.3) (2023-02-01)
 
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.27.2...v3.27.3)
@@ -20,7 +34,6 @@
 - \[core-5497\] Add pet fee [\#367](https://github.com/BookingSync/bookingsync-api-docs/pull/367) ([radekzawada](https://github.com/radekzawada))
 - Bump nokogiri from 1.10.8 to 1.13.4 [\#361](https://github.com/BookingSync/bookingsync-api-docs/pull/361) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump addressable from 2.5.2 to 2.8.0 [\#346](https://github.com/BookingSync/bookingsync-api-docs/pull/346) ([dependabot[bot]](https://github.com/apps/dependabot))
-- add docs about GDPR-related fields [\#342](https://github.com/BookingSync/bookingsync-api-docs/pull/342) ([Azdaroth](https://github.com/Azdaroth))
 - Bump kramdown from 1.3.2 to 2.3.0 [\#329](https://github.com/BookingSync/bookingsync-api-docs/pull/329) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump rack from 2.2.2 to 2.2.3 [\#325](https://github.com/BookingSync/bookingsync-api-docs/pull/325) ([dependabot[bot]](https://github.com/apps/dependabot))
 
@@ -36,6 +49,7 @@
 - Document constraints batch 4 [\#357](https://github.com/BookingSync/bookingsync-api-docs/pull/357) ([Azdaroth](https://github.com/Azdaroth))
 -  Document constraints batch 3 [\#356](https://github.com/BookingSync/bookingsync-api-docs/pull/356) ([Azdaroth](https://github.com/Azdaroth))
 - \[BASE BRANCH CHANGED\] Document constraints batch 2 [\#355](https://github.com/BookingSync/bookingsync-api-docs/pull/355) ([Azdaroth](https://github.com/Azdaroth))
+- document constraints / update docs / overview - batch 1 [\#354](https://github.com/BookingSync/bookingsync-api-docs/pull/354) ([Azdaroth](https://github.com/Azdaroth))
 
 ## [v3.26.1](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.26.1) (2022-02-04)
 
@@ -43,7 +57,6 @@
 
 **Merged pull requests:**
 
-- document constraints / update docs / overview - batch 1 [\#354](https://github.com/BookingSync/bookingsync-api-docs/pull/354) ([Azdaroth](https://github.com/Azdaroth))
 - Add missing rates rules [\#352](https://github.com/BookingSync/bookingsync-api-docs/pull/352) ([radekzawada](https://github.com/radekzawada))
 - \[CORE-5258\] Add missing fields to Rentals endpoint [\#351](https://github.com/BookingSync/bookingsync-api-docs/pull/351) ([pyromaniac](https://github.com/pyromaniac))
 
@@ -70,6 +83,7 @@
 **Merged pull requests:**
 
 - fix syntax in response json [\#343](https://github.com/BookingSync/bookingsync-api-docs/pull/343) ([Azdaroth](https://github.com/Azdaroth))
+- add docs about GDPR-related fields [\#342](https://github.com/BookingSync/bookingsync-api-docs/pull/342) ([Azdaroth](https://github.com/Azdaroth))
 
 ## [v3.24.1](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.24.1) (2021-03-15)
 
@@ -110,6 +124,7 @@
 **Merged pull requests:**
 
 - \[core-3533\]update message endpoint documentation [\#328](https://github.com/BookingSync/bookingsync-api-docs/pull/328) ([radekzawada](https://github.com/radekzawada))
+- \[core-3582\] add mid term rate maps docs [\#327](https://github.com/BookingSync/bookingsync-api-docs/pull/327) ([radekzawada](https://github.com/radekzawada))
 
 ## [v3.19.1](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.19.1) (2020-06-03)
 
@@ -125,7 +140,6 @@
 
 **Merged pull requests:**
 
-- \[core-3582\] add mid term rate maps docs [\#327](https://github.com/BookingSync/bookingsync-api-docs/pull/327) ([radekzawada](https://github.com/radekzawada))
 - add 6 new rental types [\#323](https://github.com/BookingSync/bookingsync-api-docs/pull/323) ([adamgrad](https://github.com/adamgrad))
 - Bump rake from 11.1.2 to 12.3.3 [\#322](https://github.com/BookingSync/bookingsync-api-docs/pull/322) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump rack from 2.0.6 to 2.2.2 [\#321](https://github.com/BookingSync/bookingsync-api-docs/pull/321) ([dependabot[bot]](https://github.com/apps/dependabot))
@@ -329,10 +343,6 @@
 
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.0.0...v3.1.0)
 
-**Merged pull requests:**
-
-- Add currency calculation to LOS records endpoint [\#234](https://github.com/BookingSync/bookingsync-api-docs/pull/234) ([Phazz](https://github.com/Phazz))
-
 ## [v3.0.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.0.0) (2017-07-11)
 
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/a32930f133acf3c6c6438073bbef882381dab851...v3.0.0)
@@ -369,6 +379,7 @@
 - use :name\_en instead of :name param for bedrooms [\#237](https://github.com/BookingSync/bookingsync-api-docs/pull/237) ([Azdaroth](https://github.com/Azdaroth))
 - Ability to filter \# of results per page [\#236](https://github.com/BookingSync/bookingsync-api-docs/pull/236) ([FelixMalfait](https://github.com/FelixMalfait))
 - Add description of the Rentals content overrides endpoint [\#235](https://github.com/BookingSync/bookingsync-api-docs/pull/235) ([Phazz](https://github.com/Phazz))
+- Add currency calculation to LOS records endpoint [\#234](https://github.com/BookingSync/bookingsync-api-docs/pull/234) ([Phazz](https://github.com/Phazz))
 - Add docs for applications endpoint [\#233](https://github.com/BookingSync/bookingsync-api-docs/pull/233) ([Fredar](https://github.com/Fredar))
 - Secure Payments By BookingSync [\#231](https://github.com/BookingSync/bookingsync-api-docs/pull/231) ([Azdaroth](https://github.com/Azdaroth))
 - Add docs for rentals\_contents\_overrides endpoint [\#230](https://github.com/BookingSync/bookingsync-api-docs/pull/230) ([Fredar](https://github.com/Fredar))
