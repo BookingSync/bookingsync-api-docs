@@ -66,6 +66,7 @@
           <a class="list-group-item" href="/guides/updated-since-flow">updated_since flow</a>
           <a class="list-group-item" href="/guides/understanding-los-records">Understanding LOS Records</a>
           <a class="list-group-item" href="/guides/understanding-midterm-pricing">Understanding Midterm Pricing</a>
+            <a class="list-group-item" href="/guides/understanding-inbox-messaging">Understanding Inbox Messaging</a>
         </div>
       </div>
     </div>
@@ -116,15 +117,13 @@
 
 <p>Here is an example request how to define custom schema for rentals:</p>
 
-<pre><code>curl --header 'Authorization: Bearer YOUR_TOKEN' --header 'Content-Type: application/vnd.api+json' --request PUT --data '{ "data": { "id": 1, "type": "websites", "attributes": { "rentals-custom-data-schema": { "pool_size": "string" } } } }' https://website.apps.bookingsync.com/api/admin/v1/websites/1
-</code></pre>
+<pre><code class="language-bash">curl --header <span class="s1">'Authorization: Bearer YOUR_TOKEN'</span> --header <span class="s1">'Content-Type: application/vnd.api+json'</span> --request PUT --data <span class="s1">'{ "data": { "id": 1, "type": "websites", "attributes": { "rentals-custom-data-schema": { "pool_size": "string" } } } }'</span> https://website.apps.bookingsync.com/api/admin/v1/websites/1</code></pre>
 
 <p>Now that the schema is defined, you can persist those attribute on rentals, which can be done under <code>custom-attributes</code> JSON field, which is a key-value store as well with attribute names as keys and their values as the values of the hash.</p>
 
 <p>Here is an example request how to define store custom attributes on rentals:</p>
 
-<pre><code>curl --header 'Authorization: Bearer YOUR_TOKEN' --header 'Content-Type: application/vnd.api+json' --request PUT --data '{ "data": { "id": 1, "type": "rentals", "attributes": { "custom-attributes": { "pool_size": "15x5" } } } }' https://website.apps.bookingsync.com/api/admin/v1/rentals/1
-</code></pre>
+<pre><code class="language-bash">curl --header <span class="s1">'Authorization: Bearer YOUR_TOKEN'</span> --header <span class="s1">'Content-Type: application/vnd.api+json'</span> --request PUT --data <span class="s1">'{ "data": { "id": 1, "type": "rentals", "attributes": { "custom-attributes": { "pool_size": "15x5" } } } }'</span> https://website.apps.bookingsync.com/api/admin/v1/rentals/1</code></pre>
 
         </div>
       </div>

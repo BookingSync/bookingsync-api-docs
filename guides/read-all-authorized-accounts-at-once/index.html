@@ -66,6 +66,7 @@
           <a class="list-group-item" href="/guides/updated-since-flow">updated_since flow</a>
           <a class="list-group-item" href="/guides/understanding-los-records">Understanding LOS Records</a>
           <a class="list-group-item" href="/guides/understanding-midterm-pricing">Understanding Midterm Pricing</a>
+            <a class="list-group-item" href="/guides/understanding-inbox-messaging">Understanding Inbox Messaging</a>
         </div>
       </div>
     </div>
@@ -110,8 +111,7 @@
 
 <p>Example with CURL:</p>
 
-<pre><code>curl -X POST -d "client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;grant_type=client_credentials" "https://www.bookingsync.com/oauth/token"
-</code></pre>
+<pre><code class="language-bash">curl -X POST -d <span class="s2">"client_id=CLIENT_ID&amp;client_secret=CLIENT_SECRET&amp;grant_type=client_credentials"</span> <span class="s2">"https://www.bookingsync.com/oauth/token"</span></code></pre>
 
 <p>Sample response:</p>
 
@@ -137,8 +137,7 @@
 
 <p>Example with CURL:</p>
 
-<pre><code>curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' https://www.bookingsync.com/api/v3/rentals
-</code></pre>
+<pre><code class="language-bash">curl --header <span class="s1">'Authorization: Bearer YOUR_ACCESS_TOKEN'</span> https://www.bookingsync.com/api/v3/rentals</code></pre>
 
         </div>
       </div>

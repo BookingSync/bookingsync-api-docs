@@ -109,7 +109,7 @@
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
-          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities <span class="badge">!</span></a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
           <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
@@ -123,12 +123,6 @@
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
           <a class="list-group-item" href="/reference/endpoints/taxes/">Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/tax_rules/">Tax Rules</a>
-        </div>
-        <div class="panel-heading">
-          <h3 class="panel-title">Deprecated APIs</h3>
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
         </div>
       </div>
     </div>
@@ -371,7 +365,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#acb8b8c19b7dpreferences-payments-read" role="tab" data-toggle="pill">
+        <a href="#289ec2f92258preferences-payments-read" role="tab" data-toggle="pill">
           preferences / payments / read
         </a>
       </li>
@@ -383,14 +377,14 @@
   
   
     
-      <div class="tab-pane active" id="acb8b8c19b7dpreferences-payments-read">
+      <div class="tab-pane active" id="289ec2f92258preferences-payments-read">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payment_gateways.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payment_gateways.account}"</span>
   <span class="p">},</span>
   <span class="s2">"payment_gateways"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"credentials"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"login"</span><span class="o">:</span> <span class="s2">"login"</span>
       <span class="p">},</span>
@@ -410,7 +404,7 @@
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2019-08-15T14:27:48Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2019-08-21T16:07:47Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -440,7 +434,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#7c173b70716fpreferences-payments-read" role="tab" data-toggle="pill">
+        <a href="#84b2f878d2bfpreferences-payments-read" role="tab" data-toggle="pill">
           preferences / payments / read
         </a>
       </li>
@@ -452,14 +446,14 @@
   
   
     
-      <div class="tab-pane active" id="7c173b70716fpreferences-payments-read">
+      <div class="tab-pane active" id="84b2f878d2bfpreferences-payments-read">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payment_gateways.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payment_gateways.account}"</span>
   <span class="p">},</span>
   <span class="s2">"payment_gateways"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"credentials"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"login"</span><span class="o">:</span> <span class="s2">"login"</span>
       <span class="p">},</span>
@@ -479,7 +473,7 @@
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2019-08-15T14:27:48Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2019-08-21T16:07:47Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -509,7 +503,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#f380bb12d92epreferences_payments_write" role="tab" data-toggle="pill">
+        <a href="#3c3c51ce1d6epreferences_payments_write" role="tab" data-toggle="pill">
           preferences_payments_write
         </a>
       </li>
@@ -544,14 +538,14 @@
   
   
     
-      <div class="tab-pane active" id="f380bb12d92epreferences_payments_write">
+      <div class="tab-pane active" id="3c3c51ce1d6epreferences_payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payment_gateways.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payment_gateways.account}"</span>
   <span class="p">},</span>
   <span class="s2">"payment_gateways"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"credentials"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"login"</span><span class="o">:</span> <span class="s2">"login"</span>
       <span class="p">},</span>
@@ -571,7 +565,7 @@
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2019-08-15T14:27:48Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2019-08-21T16:07:47Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -601,7 +595,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#980b6271197cpreferences_payments_write" role="tab" data-toggle="pill">
+        <a href="#ea8a92ec7fd6preferences_payments_write" role="tab" data-toggle="pill">
           preferences_payments_write
         </a>
       </li>
@@ -636,14 +630,14 @@
   
   
     
-      <div class="tab-pane active" id="980b6271197cpreferences_payments_write">
+      <div class="tab-pane active" id="ea8a92ec7fd6preferences_payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payment_gateways.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payment_gateways.account}"</span>
   <span class="p">},</span>
   <span class="s2">"payment_gateways"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"credentials"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"login"</span><span class="o">:</span> <span class="s2">"login"</span>
       <span class="p">},</span>
@@ -663,7 +657,7 @@
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2019-08-15T14:27:48Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2019-08-21T16:07:47Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>

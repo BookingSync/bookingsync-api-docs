@@ -109,7 +109,7 @@
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
-          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities <span class="badge">!</span></a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
           <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
@@ -123,12 +123,6 @@
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
           <a class="list-group-item" href="/reference/endpoints/taxes/">Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/tax_rules/">Tax Rules</a>
-        </div>
-        <div class="panel-heading">
-          <h3 class="panel-title">Deprecated APIs</h3>
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
         </div>
       </div>
     </div>
@@ -386,13 +380,13 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#7df67f4a8076public" role="tab" data-toggle="pill">
+        <a href="#3b6d2b3e4e6epublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
       <li>
-        <a href="#ec71160072bfrentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#d37d9bd14538rentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
@@ -404,7 +398,7 @@
   
   
     
-      <div class="tab-pane active" id="7df67f4a8076public">
+      <div class="tab-pane active" id="3b6d2b3e4e6epublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
@@ -412,7 +406,7 @@
   <span class="p">},</span>
   <span class="s2">"rental_contacts"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"manager"</span><span class="p">,</span>
       <span class="s2">"roles"</span><span class="o">:</span> <span class="p">[</span>
         <span class="s2">"requests"</span>
@@ -421,8 +415,8 @@
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2019-03-21T14:37:39Z"</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"contact"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
+        <span class="s2">"contact"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mf">2</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -438,7 +432,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="ec71160072bfrentals_read-rentals_write">
+      <div class="tab-pane " id="d37d9bd14538rentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
@@ -446,7 +440,7 @@
   <span class="p">},</span>
   <span class="s2">"rental_contacts"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"manager"</span><span class="p">,</span>
       <span class="s2">"roles"</span><span class="o">:</span> <span class="p">[</span>
         <span class="s2">"requests"</span>
@@ -455,8 +449,8 @@
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2019-03-21T14:37:39Z"</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"contact"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
+        <span class="s2">"contact"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mf">2</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -486,13 +480,13 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#5021eb53d0c1public" role="tab" data-toggle="pill">
+        <a href="#db3a4b96697fpublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
       <li>
-        <a href="#3852ddaaf5dfrentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#d1af9f1ad9efrentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
@@ -504,7 +498,7 @@
   
   
     
-      <div class="tab-pane active" id="5021eb53d0c1public">
+      <div class="tab-pane active" id="db3a4b96697fpublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
@@ -512,7 +506,7 @@
   <span class="p">},</span>
   <span class="s2">"rental_contacts"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"manager"</span><span class="p">,</span>
       <span class="s2">"roles"</span><span class="o">:</span> <span class="p">[</span>
         <span class="s2">"requests"</span>
@@ -521,8 +515,8 @@
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2019-03-21T14:37:39Z"</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"contact"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
+        <span class="s2">"contact"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mf">2</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -538,7 +532,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="3852ddaaf5dfrentals_read-rentals_write">
+      <div class="tab-pane " id="d1af9f1ad9efrentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
@@ -546,7 +540,7 @@
   <span class="p">},</span>
   <span class="s2">"rental_contacts"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"manager"</span><span class="p">,</span>
       <span class="s2">"roles"</span><span class="o">:</span> <span class="p">[</span>
         <span class="s2">"requests"</span>
@@ -555,8 +549,8 @@
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2019-03-21T14:37:39Z"</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"contact"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
+        <span class="s2">"contact"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mf">2</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -586,7 +580,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#f6e574603674rentals_write" role="tab" data-toggle="pill">
+        <a href="#91be7f123845rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -595,10 +589,10 @@
 
 <h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
   <span class="s2">"rental_contacts"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"contact_id"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"contact_id"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"manager"</span><span class="p">,</span>
       <span class="s2">"roles"</span><span class="o">:</span> <span class="p">[</span>
         <span class="s2">"requests"</span>
@@ -612,7 +606,7 @@
   
   
     
-      <div class="tab-pane active" id="f6e574603674rentals_write">
+      <div class="tab-pane active" id="91be7f123845rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
@@ -620,7 +614,7 @@
   <span class="p">},</span>
   <span class="s2">"rental_contacts"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"manager"</span><span class="p">,</span>
       <span class="s2">"roles"</span><span class="o">:</span> <span class="p">[</span>
         <span class="s2">"requests"</span>
@@ -629,8 +623,8 @@
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2019-03-21T14:37:39Z"</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"contact"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
+        <span class="s2">"contact"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mf">2</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -660,7 +654,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#2deea46ef345rentals_write" role="tab" data-toggle="pill">
+        <a href="#ffc7b367a47drentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -669,7 +663,7 @@
 
 <h4>Example JSON request</h4>
 <pre><code class="language-javascript"><span class="p">{</span>
-  <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
   <span class="s2">"rental_contacts"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"owner"</span><span class="p">,</span>
@@ -685,7 +679,7 @@
   
   
     
-      <div class="tab-pane active" id="2deea46ef345rentals_write">
+      <div class="tab-pane active" id="ffc7b367a47drentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rental_contacts.contact"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/contacts/{rental_contacts.contact}"</span><span class="p">,</span>
@@ -693,7 +687,7 @@
   <span class="p">},</span>
   <span class="s2">"rental_contacts"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"kind"</span><span class="o">:</span> <span class="s2">"manager"</span><span class="p">,</span>
       <span class="s2">"roles"</span><span class="o">:</span> <span class="p">[</span>
         <span class="s2">"requests"</span>
@@ -702,8 +696,8 @@
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2019-03-21T14:37:39Z"</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"contact"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span>
+        <span class="s2">"contact"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mf">2</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>

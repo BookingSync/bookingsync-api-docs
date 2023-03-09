@@ -109,7 +109,7 @@
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
-          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities <span class="badge">!</span></a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
           <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
@@ -123,12 +123,6 @@
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
           <a class="list-group-item" href="/reference/endpoints/taxes/">Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/tax_rules/">Tax Rules</a>
-        </div>
-        <div class="panel-heading">
-          <h3 class="panel-title">Deprecated APIs</h3>
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
         </div>
       </div>
     </div>
@@ -366,7 +360,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#d1ef141426d3rates_read-rates_write" role="tab" data-toggle="pill">
+        <a href="#f28c83485714rates_read-rates_write" role="tab" data-toggle="pill">
           rates_read / rates_write
         </a>
       </li>
@@ -378,7 +372,7 @@
   
   
     
-      <div class="tab-pane active" id="d1ef141426d3rates_read-rates_write">
+      <div class="tab-pane active" id="f28c83485714rates_read-rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.periods"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/periods/{seasons.periods}"</span><span class="p">,</span>
@@ -387,25 +381,25 @@
   <span class="p">},</span>
   <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">12</span><span class="p">,</span>
       <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
-      <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+      <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mf">7</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Season 2"</span>
       <span class="p">},</span>
       <span class="s2">"ratio_percentage"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">4</span><span class="p">,</span>
-          <span class="mi">5</span><span class="p">,</span>
-          <span class="mi">6</span>
+          <span class="mf">4</span><span class="p">,</span>
+          <span class="mf">5</span><span class="p">,</span>
+          <span class="mf">6</span>
         <span class="p">],</span>
         <span class="s2">"rates_rules"</span><span class="o">:</span> <span class="p">[</span>
 
         <span class="p">],</span>
-        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -426,7 +420,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#f163a21c6f17rates_read-rates_write" role="tab" data-toggle="pill">
+        <a href="#a6de91fbe3e2rates_read-rates_write" role="tab" data-toggle="pill">
           rates_read / rates_write
         </a>
       </li>
@@ -438,7 +432,7 @@
   
   
     
-      <div class="tab-pane active" id="f163a21c6f17rates_read-rates_write">
+      <div class="tab-pane active" id="a6de91fbe3e2rates_read-rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.periods"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/periods/{seasons.periods}"</span><span class="p">,</span>
@@ -447,25 +441,25 @@
   <span class="p">},</span>
   <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">12</span><span class="p">,</span>
       <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
-      <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+      <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mf">7</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Season 2"</span>
       <span class="p">},</span>
       <span class="s2">"ratio_percentage"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">4</span><span class="p">,</span>
-          <span class="mi">5</span><span class="p">,</span>
-          <span class="mi">6</span>
+          <span class="mf">4</span><span class="p">,</span>
+          <span class="mf">5</span><span class="p">,</span>
+          <span class="mf">6</span>
         <span class="p">],</span>
         <span class="s2">"rates_rules"</span><span class="o">:</span> <span class="p">[</span>
 
         <span class="p">],</span>
-        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -486,7 +480,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#085d798f350drates_write" role="tab" data-toggle="pill">
+        <a href="#281d0106ba21rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
@@ -497,7 +491,7 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+      <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mf">7</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Season 2"</span><span class="p">,</span>
       <span class="s2">"ratio_percentage"</span><span class="o">:</span> <span class="s2">"100"</span>
     <span class="p">}</span>
@@ -509,7 +503,7 @@
   
   
     
-      <div class="tab-pane active" id="085d798f350drates_write">
+      <div class="tab-pane active" id="281d0106ba21rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.periods"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/periods/{seasons.periods}"</span><span class="p">,</span>
@@ -518,25 +512,25 @@
   <span class="p">},</span>
   <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">12</span><span class="p">,</span>
       <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
-      <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+      <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mf">7</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Season 2"</span>
       <span class="p">},</span>
       <span class="s2">"ratio_percentage"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">4</span><span class="p">,</span>
-          <span class="mi">5</span><span class="p">,</span>
-          <span class="mi">6</span>
+          <span class="mf">4</span><span class="p">,</span>
+          <span class="mf">5</span><span class="p">,</span>
+          <span class="mf">6</span>
         <span class="p">],</span>
         <span class="s2">"rates_rules"</span><span class="o">:</span> <span class="p">[</span>
 
         <span class="p">],</span>
-        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -557,7 +551,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#b82aee068054rates_write" role="tab" data-toggle="pill">
+        <a href="#3160aa23c833rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
@@ -568,7 +562,7 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+      <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mf">7</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Season 2"</span><span class="p">,</span>
       <span class="s2">"ratio_percentage"</span><span class="o">:</span> <span class="s2">"100"</span>
     <span class="p">}</span>
@@ -580,7 +574,7 @@
   
   
     
-      <div class="tab-pane active" id="b82aee068054rates_write">
+      <div class="tab-pane active" id="3160aa23c833rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"seasons.periods"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/periods/{seasons.periods}"</span><span class="p">,</span>
@@ -589,25 +583,25 @@
   <span class="p">},</span>
   <span class="s2">"seasons"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">12</span><span class="p">,</span>
       <span class="s2">"color_ratio"</span><span class="o">:</span> <span class="s2">"1.0"</span><span class="p">,</span>
-      <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+      <span class="s2">"minimum_stay"</span><span class="o">:</span> <span class="mf">7</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Season 2"</span>
       <span class="p">},</span>
       <span class="s2">"ratio_percentage"</span><span class="o">:</span> <span class="s2">"100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"periods"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">4</span><span class="p">,</span>
-          <span class="mi">5</span><span class="p">,</span>
-          <span class="mi">6</span>
+          <span class="mf">4</span><span class="p">,</span>
+          <span class="mf">5</span><span class="p">,</span>
+          <span class="mf">6</span>
         <span class="p">],</span>
         <span class="s2">"rates_rules"</span><span class="o">:</span> <span class="p">[</span>
 
         <span class="p">],</span>
-        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>

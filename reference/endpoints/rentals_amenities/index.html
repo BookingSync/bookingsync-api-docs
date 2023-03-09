@@ -109,7 +109,7 @@
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
-          <a class="list-group-item active" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item active" href="/reference/endpoints/rentals_amenities/">Rentals Amenities <span class="badge">!</span></a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
           <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
@@ -124,12 +124,6 @@
           <a class="list-group-item" href="/reference/endpoints/taxes/">Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/tax_rules/">Tax Rules</a>
         </div>
-        <div class="panel-heading">
-          <h3 class="panel-title">Deprecated APIs</h3>
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
-        </div>
       </div>
     </div>
     <div class="col-md-9 col-md-pull-3">
@@ -139,6 +133,7 @@
 
 <ol id="markdown-toc">
   <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#obsolete-amenities" id="markdown-toc-obsolete-amenities">Obsolete amenities</a></li>
   <li><a href="#list-rentals-amenities" id="markdown-toc-list-rentals-amenities">List rentals amenities</a></li>
   <li><a href="#get-a-single-rentals-amenity" id="markdown-toc-get-a-single-rentals-amenity">Get a single rentals amenity</a></li>
   <li><a href="#create-a-new-rentals-amenity" id="markdown-toc-create-a-new-rentals-amenity">Create a new rentals amenity</a></li>
@@ -149,6 +144,18 @@
 <h3 id="overview">Overview</h3>
 
 <p>This resource represents the Rentals Amenities, that establish relationship between <a href="/reference/endpoints/rentals">Rentals</a> and <a href="/reference/endpoints/amenities">Amenities</a>.</p>
+
+<h3 id="obsolete-amenities">Obsolete amenities</h3>
+
+<div class="callout callout-warning">
+  <p>Right now, 3 amenities are marked as obsolete and are replaced with <a href="/reference/endpoints/rentals#checkin-type">Rental#checkin_type</a> attribute:
+<code>contactless_check_in_and_check_out</code>, <code>self_checkin</code>, and <code>24h_checkin</code>. It is impossible to assign those amenities to
+rentals directly or unassign them from rentals.</p>
+
+  <p>Instead, these 3 amenities are assigned/unassigned automatically on <a href="/reference/endpoints/rentals#checkin-type">Rental#checkin_type</a> update for backwards compatibility.</p>
+
+  <p>All obsolete amenities will be removed in April 2023. Please use <a href="/reference/endpoints/rentals#checkin-type">Rental#checkin_type</a> instead.</p>
+</div>
 
 <h4 id="parameters">Parameters</h4>
 <ul class="nav nav-pills" role="tablist">
@@ -308,7 +315,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#9777b5631cc5public" role="tab" data-toggle="pill">
+        <a href="#5966014db1e6public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -320,7 +327,7 @@
   
   
     
-      <div class="tab-pane active" id="9777b5631cc5public">
+      <div class="tab-pane active" id="5966014db1e6public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_amenities.amenity"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/amenities/{rentals_amenities.amenity}"</span><span class="p">,</span>
@@ -328,15 +335,15 @@
   <span class="p">},</span>
   <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
       <span class="s2">"details"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Amenity details"</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:12Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:12Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"amenity"</span><span class="o">:</span> <span class="mi">82</span><span class="p">,</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"amenity"</span><span class="o">:</span> <span class="mf">82</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -357,7 +364,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#75c5e78b65d2public" role="tab" data-toggle="pill">
+        <a href="#fd9c683a5839public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -369,7 +376,7 @@
   
   
     
-      <div class="tab-pane active" id="75c5e78b65d2public">
+      <div class="tab-pane active" id="fd9c683a5839public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_amenities.amenity"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/amenities/{rentals_amenities.amenity}"</span><span class="p">,</span>
@@ -377,15 +384,15 @@
   <span class="p">},</span>
   <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
       <span class="s2">"details"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Amenity details"</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:12Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:12Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"amenity"</span><span class="o">:</span> <span class="mi">82</span><span class="p">,</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"amenity"</span><span class="o">:</span> <span class="mf">82</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -406,7 +413,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#c40a4905d8b6rentals_write" role="tab" data-toggle="pill">
+        <a href="#4f08d2917d29rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -428,7 +435,7 @@
   
   
     
-      <div class="tab-pane active" id="c40a4905d8b6rentals_write">
+      <div class="tab-pane active" id="4f08d2917d29rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_amenities.amenity"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/amenities/{rentals_amenities.amenity}"</span><span class="p">,</span>
@@ -436,15 +443,15 @@
   <span class="p">},</span>
   <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
       <span class="s2">"details"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Amenity details"</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:12Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:12Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"amenity"</span><span class="o">:</span> <span class="mi">82</span><span class="p">,</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"amenity"</span><span class="o">:</span> <span class="mf">82</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -465,7 +472,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#cd314fae7a9brentals_write" role="tab" data-toggle="pill">
+        <a href="#4045b0263e40rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -487,7 +494,7 @@
   
   
     
-      <div class="tab-pane active" id="cd314fae7a9brentals_write">
+      <div class="tab-pane active" id="4045b0263e40rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals_amenities.amenity"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/amenities/{rentals_amenities.amenity}"</span><span class="p">,</span>
@@ -495,15 +502,15 @@
   <span class="p">},</span>
   <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
       <span class="s2">"details"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Amenity details"</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:12Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:12Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"amenity"</span><span class="o">:</span> <span class="mi">82</span><span class="p">,</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"amenity"</span><span class="o">:</span> <span class="mf">82</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>

@@ -109,7 +109,7 @@
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
-          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities <span class="badge">!</span></a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
           <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
@@ -123,12 +123,6 @@
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
           <a class="list-group-item" href="/reference/endpoints/taxes/">Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/tax_rules/">Tax Rules</a>
-        </div>
-        <div class="panel-heading">
-          <h3 class="panel-title">Deprecated APIs</h3>
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
         </div>
       </div>
     </div>
@@ -632,7 +626,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#79990be8b77eclients_read-clients_write" role="tab" data-toggle="pill">
+        <a href="#ad0ad99d5e74clients_read-clients_write" role="tab" data-toggle="pill">
           clients_read / clients_write
         </a>
       </li>
@@ -644,18 +638,18 @@
   
   
     
-      <div class="tab-pane active" id="79990be8b77eclients_read-clients_write">
+      <div class="tab-pane active" id="ad0ad99d5e74clients_read-clients_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
   <span class="p">},</span>
   <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"addresses"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span><span class="p">,</span>
           <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Kutch Stravenue"</span><span class="p">,</span>
           <span class="s2">"address2"</span><span class="o">:</span> <span class="s2">"Building 1"</span><span class="p">,</span>
@@ -672,8 +666,8 @@
       <span class="s2">"company"</span><span class="o">:</span> <span class="s2">"Great Company"</span><span class="p">,</span>
       <span class="s2">"emails"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span><span class="p">,</span>
           <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"clementina_kling@example.com"</span><span class="p">,</span>
           <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-04T12:33:36Z"</span><span class="p">,</span>
@@ -690,8 +684,8 @@
       <span class="s2">"passport"</span><span class="o">:</span> <span class="s2">"AHJ4678956"</span><span class="p">,</span>
       <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
           <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6105"</span><span class="p">,</span>
           <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"VG"</span><span class="p">,</span>
@@ -702,8 +696,8 @@
           <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span>
         <span class="p">},</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"mobile"</span><span class="p">,</span>
           <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6106"</span><span class="p">,</span>
           <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"VG"</span><span class="p">,</span>
@@ -714,8 +708,8 @@
           <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span>
         <span class="p">},</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"fax"</span><span class="p">,</span>
           <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6107"</span><span class="p">,</span>
           <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"VG"</span><span class="p">,</span>
@@ -731,7 +725,7 @@
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-12-28T15:19:27Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-02T11:07:45Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -754,7 +748,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#d0a3cf480380clients_read-clients_write" role="tab" data-toggle="pill">
+        <a href="#1f4eb267edcbclients_read-clients_write" role="tab" data-toggle="pill">
           clients_read / clients_write
         </a>
       </li>
@@ -766,18 +760,18 @@
   
   
     
-      <div class="tab-pane active" id="d0a3cf480380clients_read-clients_write">
+      <div class="tab-pane active" id="1f4eb267edcbclients_read-clients_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
   <span class="p">},</span>
   <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"addresses"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span><span class="p">,</span>
           <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Kutch Stravenue"</span><span class="p">,</span>
           <span class="s2">"address2"</span><span class="o">:</span> <span class="s2">"Building 1"</span><span class="p">,</span>
@@ -794,8 +788,8 @@
       <span class="s2">"company"</span><span class="o">:</span> <span class="s2">"Great Company"</span><span class="p">,</span>
       <span class="s2">"emails"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span><span class="p">,</span>
           <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"clementina_kling@example.com"</span><span class="p">,</span>
           <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-04T12:33:36Z"</span><span class="p">,</span>
@@ -812,8 +806,8 @@
       <span class="s2">"passport"</span><span class="o">:</span> <span class="s2">"AHJ4678956"</span><span class="p">,</span>
       <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
           <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6105"</span><span class="p">,</span>
           <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"VG"</span><span class="p">,</span>
@@ -824,8 +818,8 @@
           <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span>
         <span class="p">},</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"mobile"</span><span class="p">,</span>
           <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6106"</span><span class="p">,</span>
           <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"VG"</span><span class="p">,</span>
@@ -836,8 +830,8 @@
           <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span>
         <span class="p">},</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"fax"</span><span class="p">,</span>
           <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6107"</span><span class="p">,</span>
           <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"VG"</span><span class="p">,</span>
@@ -853,7 +847,7 @@
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-12-28T15:19:27Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-02T11:07:45Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -876,7 +870,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#cd9fa057086cclients_write" role="tab" data-toggle="pill">
+        <a href="#470dcc6e149dclients_write" role="tab" data-toggle="pill">
           clients_write
         </a>
       </li>
@@ -887,11 +881,11 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"addresses"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span><span class="p">,</span>
           <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Kutch Stravenue"</span><span class="p">,</span>
           <span class="s2">"address2"</span><span class="o">:</span> <span class="s2">"Building 1"</span><span class="p">,</span>
@@ -908,8 +902,8 @@
       <span class="s2">"company"</span><span class="o">:</span> <span class="s2">"Great Company"</span><span class="p">,</span>
       <span class="s2">"emails"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span><span class="p">,</span>
           <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"clementina_kling@example.com"</span><span class="p">,</span>
           <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-04T12:33:36Z"</span><span class="p">,</span>
@@ -926,8 +920,8 @@
       <span class="s2">"passport"</span><span class="o">:</span> <span class="s2">"AHJ4678956"</span><span class="p">,</span>
       <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
           <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6105"</span><span class="p">,</span>
           <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"VG"</span><span class="p">,</span>
@@ -938,8 +932,8 @@
           <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span>
         <span class="p">},</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"mobile"</span><span class="p">,</span>
           <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6106"</span><span class="p">,</span>
           <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"VG"</span><span class="p">,</span>
@@ -950,8 +944,8 @@
           <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span>
         <span class="p">},</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"fax"</span><span class="p">,</span>
           <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6107"</span><span class="p">,</span>
           <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"VG"</span><span class="p">,</span>
@@ -967,7 +961,7 @@
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-12-28T15:19:27Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-02T11:07:45Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -978,18 +972,18 @@
   
   
     
-      <div class="tab-pane active" id="cd9fa057086cclients_write">
+      <div class="tab-pane active" id="470dcc6e149dclients_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
   <span class="p">},</span>
   <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"addresses"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span><span class="p">,</span>
           <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Kutch Stravenue"</span><span class="p">,</span>
           <span class="s2">"address2"</span><span class="o">:</span> <span class="s2">"Building 1"</span><span class="p">,</span>
@@ -1006,8 +1000,8 @@
       <span class="s2">"company"</span><span class="o">:</span> <span class="s2">"Great Company"</span><span class="p">,</span>
       <span class="s2">"emails"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span><span class="p">,</span>
           <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"clementina_kling@example.com"</span><span class="p">,</span>
           <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-04T12:33:36Z"</span><span class="p">,</span>
@@ -1024,8 +1018,8 @@
       <span class="s2">"passport"</span><span class="o">:</span> <span class="s2">"AHJ4678956"</span><span class="p">,</span>
       <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
           <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6105"</span><span class="p">,</span>
           <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"VG"</span><span class="p">,</span>
@@ -1036,8 +1030,8 @@
           <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span>
         <span class="p">},</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"mobile"</span><span class="p">,</span>
           <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6106"</span><span class="p">,</span>
           <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"VG"</span><span class="p">,</span>
@@ -1048,8 +1042,8 @@
           <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span>
         <span class="p">},</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"fax"</span><span class="p">,</span>
           <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6107"</span><span class="p">,</span>
           <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"VG"</span><span class="p">,</span>
@@ -1065,7 +1059,7 @@
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-12-28T15:19:27Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-02T11:07:45Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -1094,7 +1088,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#0816b03aff4aclients_write" role="tab" data-toggle="pill">
+        <a href="#d1043d0bc007clients_write" role="tab" data-toggle="pill">
           clients_write
         </a>
       </li>
@@ -1105,11 +1099,11 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"addresses"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span><span class="p">,</span>
           <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Kutch Stravenue"</span><span class="p">,</span>
           <span class="s2">"address2"</span><span class="o">:</span> <span class="s2">"Building 1"</span><span class="p">,</span>
@@ -1126,8 +1120,8 @@
       <span class="s2">"company"</span><span class="o">:</span> <span class="s2">"Great Company"</span><span class="p">,</span>
       <span class="s2">"emails"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span><span class="p">,</span>
           <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"clementina_kling@example.com"</span><span class="p">,</span>
           <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-04T12:33:36Z"</span><span class="p">,</span>
@@ -1144,8 +1138,8 @@
       <span class="s2">"passport"</span><span class="o">:</span> <span class="s2">"AHJ4678956"</span><span class="p">,</span>
       <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
           <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6105"</span><span class="p">,</span>
           <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"VG"</span><span class="p">,</span>
@@ -1156,8 +1150,8 @@
           <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span>
         <span class="p">},</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"mobile"</span><span class="p">,</span>
           <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6106"</span><span class="p">,</span>
           <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"VG"</span><span class="p">,</span>
@@ -1168,8 +1162,8 @@
           <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span>
         <span class="p">},</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"fax"</span><span class="p">,</span>
           <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6107"</span><span class="p">,</span>
           <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"VG"</span><span class="p">,</span>
@@ -1185,7 +1179,7 @@
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-12-28T15:19:27Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-02T11:07:45Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -1196,18 +1190,18 @@
   
   
     
-      <div class="tab-pane active" id="0816b03aff4aclients_write">
+      <div class="tab-pane active" id="d1043d0bc007clients_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"clients.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{clients.account}"</span>
   <span class="p">},</span>
   <span class="s2">"clients"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"addresses"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span><span class="p">,</span>
           <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Kutch Stravenue"</span><span class="p">,</span>
           <span class="s2">"address2"</span><span class="o">:</span> <span class="s2">"Building 1"</span><span class="p">,</span>
@@ -1224,8 +1218,8 @@
       <span class="s2">"company"</span><span class="o">:</span> <span class="s2">"Great Company"</span><span class="p">,</span>
       <span class="s2">"emails"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"default"</span><span class="p">,</span>
           <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"clementina_kling@example.com"</span><span class="p">,</span>
           <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-04T12:33:36Z"</span><span class="p">,</span>
@@ -1242,8 +1236,8 @@
       <span class="s2">"passport"</span><span class="o">:</span> <span class="s2">"AHJ4678956"</span><span class="p">,</span>
       <span class="s2">"phones"</span><span class="o">:</span> <span class="p">[</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"phone"</span><span class="p">,</span>
           <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6105"</span><span class="p">,</span>
           <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"VG"</span><span class="p">,</span>
@@ -1254,8 +1248,8 @@
           <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span>
         <span class="p">},</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"mobile"</span><span class="p">,</span>
           <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6106"</span><span class="p">,</span>
           <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"VG"</span><span class="p">,</span>
@@ -1266,8 +1260,8 @@
           <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span>
         <span class="p">},</span>
         <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
+          <span class="s2">"client_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"label"</span><span class="o">:</span> <span class="s2">"fax"</span><span class="p">,</span>
           <span class="s2">"number"</span><span class="o">:</span> <span class="s2">"(153)070-6107"</span><span class="p">,</span>
           <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"VG"</span><span class="p">,</span>
@@ -1283,7 +1277,7 @@
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2014-12-28T15:19:27Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-02-02T11:07:45Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>

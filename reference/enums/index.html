@@ -109,7 +109,7 @@
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
-          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities <span class="badge">!</span></a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
           <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
@@ -123,12 +123,6 @@
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
           <a class="list-group-item" href="/reference/endpoints/taxes/">Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/tax_rules/">Tax Rules</a>
-        </div>
-        <div class="panel-heading">
-          <h3 class="panel-title">Deprecated APIs</h3>
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
         </div>
       </div>
     </div>
@@ -164,6 +158,7 @@
   <li><a href="#rental-residency-categories" id="markdown-toc-rental-residency-categories">Rental residency categories</a></li>
   <li><a href="#rental-cancelation-policies-presets" id="markdown-toc-rental-cancelation-policies-presets">Rental cancelation policies presets</a></li>
   <li><a href="#rental-management-type" id="markdown-toc-rental-management-type">Rental management type</a></li>
+  <li><a href="#rental-checkin-types" id="markdown-toc-rental-checkin-types">Rental checkin types</a></li>
   <li><a href="#inbox-message-channels" id="markdown-toc-inbox-message-channels">Inbox Message Channels</a></li>
   <li><a href="#inbox-message-origins" id="markdown-toc-inbox-message-origins">Inbox Message Origins</a></li>
   <li><a href="#inbox-message-visibilities" id="markdown-toc-inbox-message-visibilities">Inbox Message visibilities</a></li>
@@ -1531,6 +1526,39 @@
     <tr>
       <td>non_professional</td>
       <td>Non professional.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="rental-checkin-types">Rental checkin types</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>in_person</td>
+      <td>In-Person greeting</td>
+    </tr>
+    <tr>
+      <td>lockbox</td>
+      <td>Lockbox</td>
+    </tr>
+    <tr>
+      <td>smart_lock</td>
+      <td>Smart Lock</td>
+    </tr>
+    <tr>
+      <td>24_hours_staff</td>
+      <td>24 hour building staff</td>
+    </tr>
+    <tr>
+      <td>other</td>
+      <td>Other (you must send instructions using <code>Rental#checkin_details</code> field)</td>
     </tr>
   </tbody>
 </table>

@@ -109,7 +109,7 @@
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
-          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities <span class="badge">!</span></a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
           <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
@@ -124,12 +124,6 @@
           <a class="list-group-item" href="/reference/endpoints/taxes/">Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/tax_rules/">Tax Rules</a>
         </div>
-        <div class="panel-heading">
-          <h3 class="panel-title">Deprecated APIs</h3>
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
-        </div>
       </div>
     </div>
     <div class="col-md-9 col-md-pull-3">
@@ -137,13 +131,8 @@
         <div class="panel-body reference-body">
           <h2 id="bathrooms">Bathrooms</h2>
 
-<ol id="markdown-toc">
-  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
-  <li><a href="#list-bathrooms" id="markdown-toc-list-bathrooms">List bathrooms</a></li>
-  <li><a href="#get-a-single-bathroom" id="markdown-toc-get-a-single-bathroom">Get a single bathroom</a></li>
-  <li><a href="#create-a-new-bathroom" id="markdown-toc-create-a-new-bathroom">Create a new bathroom</a></li>
-  <li><a href="#update-a-bathroom" id="markdown-toc-update-a-bathroom">Update a bathroom</a></li>
-  <li><a href="#destroy-a-bathroom" id="markdown-toc-destroy-a-bathroom">Destroy a bathroom</a></li>
+<ol>
+  <li>TOC</li>
 </ol>
 
 <h3 id="overview">Overview</h3>
@@ -151,6 +140,7 @@
 <p>This resource represents the rental’s bathrooms. This resource is mostly static information used for presentational purposes.</p>
 
 <h4 id="parameters">Parameters</h4>
+
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
   <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
@@ -267,10 +257,18 @@
         <tr>
           <td>name</td>
           <td><a href="/reference/enums#formats">Object</a></td>
-          <td>Read/Write</td>
+          <td>Read</td>
           <td>Bathroom’s name, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>name_<em>locale</em>
+</td>
+          <td>String</td>
+          <td>Write</td>
+          <td>Bathroom’s name, used in write operations. Replace the <code>locale</code> with one of the  locales described in <a href="/reference/enums#locales">enums section</a> (e.g. <code>name_en</code>). Multiple of these attributes could be passed in the same operation, as long as they each have a unique locale (e.g <code>name_en</code> and <code>name_fr</code>)</td>
           <td>
-<strong>Required</strong>, maximum length: 25</td>
+<strong>Required</strong> for Account’s default locale, maximum length: 25</td>
         </tr>
         <tr>
           <td>bath_count</td>
@@ -318,14 +316,15 @@
 
 <p>List all bathrooms for a given account.</p>
 
-<pre><code>GET /bathrooms
-</code></pre>
+<p><code>
+GET /bathrooms
+</code></p>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#52684ec2f3cfpublic" role="tab" data-toggle="pill">
+        <a href="#3bc7bce5c0aapublic" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -337,24 +336,24 @@
   
   
     
-      <div class="tab-pane active" id="52684ec2f3cfpublic">
+      <div class="tab-pane active" id="3bc7bce5c0aapublic">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bathrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"</span>
   <span class="p">},</span>
   <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"bathroom"</span>
       <span class="p">},</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
+      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
+      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -370,14 +369,15 @@
 
 <p>Returns a single bathroom identified by ID.</p>
 
-<pre><code>GET /bathrooms/:bathroom_id
-</code></pre>
+<p><code>
+GET /bathrooms/:bathroom_id
+</code></p>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#58b4329209aapublic" role="tab" data-toggle="pill">
+        <a href="#2d74b1aae849public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -389,24 +389,24 @@
   
   
     
-      <div class="tab-pane active" id="58b4329209aapublic">
+      <div class="tab-pane active" id="2d74b1aae849public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bathrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"</span>
   <span class="p">},</span>
   <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"bathroom"</span>
       <span class="p">},</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
+      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
+      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -422,14 +422,15 @@
 
 <p>Creates a bathroom for given rental.</p>
 
-<pre><code>POST /rentals/:rental_id/bathrooms
-</code></pre>
+<p><code>
+POST /rentals/:rental_id/bathrooms
+</code></p>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#04bfd72f26aarentals_write" role="tab" data-toggle="pill">
+        <a href="#2896baa06c1brentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -440,10 +441,10 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"name_en"</span><span class="o">:</span> <span class="s2">"bathroom"</span><span class="p">,</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
+      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mf">2</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -453,24 +454,24 @@
   
   
     
-      <div class="tab-pane active" id="04bfd72f26aarentals_write">
+      <div class="tab-pane active" id="2896baa06c1brentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bathrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"</span>
   <span class="p">},</span>
   <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"bathroom"</span>
       <span class="p">},</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
+      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
+      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -486,14 +487,15 @@
 
 <p>Returns an updated bathroom identified by ID.</p>
 
-<pre><code>PUT /bathrooms/:bathroom_id
-</code></pre>
+<p><code>
+PUT /bathrooms/:bathroom_id
+</code></p>
 
 <ul class="nav nav-pills" role="tablist">
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#183d0b8eeda3rentals_write" role="tab" data-toggle="pill">
+        <a href="#1c621eee1ce4rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -504,10 +506,10 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"name_en"</span><span class="o">:</span> <span class="s2">"bathroom"</span><span class="p">,</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span>
+      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
+      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mf">2</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -517,24 +519,24 @@
   
   
     
-      <div class="tab-pane active" id="183d0b8eeda3rentals_write">
+      <div class="tab-pane active" id="1c621eee1ce4rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bathrooms.rental"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/rentals/{bathrooms.rental}"</span>
   <span class="p">},</span>
   <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+      <span class="s2">"bath_count"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"bathroom"</span>
       <span class="p">},</span>
-      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
+      <span class="s2">"shower_count"</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
+      <span class="s2">"wc_count"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mf">1</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -552,8 +554,9 @@
 
 <p>Returns an empty response with ‘204 No Content’ status code on success.</p>
 
-<pre><code>DELETE /bathrooms/:bathroom_id
-</code></pre>
+<p><code>
+DELETE /bathrooms/:bathroom_id
+</code></p>
 
         </div>
       </div>

@@ -109,7 +109,7 @@
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
-          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities <span class="badge">!</span></a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
           <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
@@ -123,12 +123,6 @@
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
           <a class="list-group-item" href="/reference/endpoints/taxes/">Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/tax_rules/">Tax Rules</a>
-        </div>
-        <div class="panel-heading">
-          <h3 class="panel-title">Deprecated APIs</h3>
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
         </div>
       </div>
     </div>
@@ -172,26 +166,22 @@ the body is expected to be in the following format:</p>
 
 <p>GET:</p>
 
-<pre><code>curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' https://www.bookingsync.com/api/v3/rentals
-</code></pre>
+<pre><code class="language-bash">curl --header <span class="s1">'Authorization: Bearer YOUR_ACCESS_TOKEN'</span> https://www.bookingsync.com/api/v3/rentals</code></pre>
 
 <p>POST:</p>
 
-<pre><code>curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' --header 'Content-Type: application/vnd.api+json'
---data '{"rentals":[{"name":"Name"}]}' https://www.bookingsync.com/api/v3/rentals
-</code></pre>
+<pre><code class="language-bash">curl --header <span class="s1">'Authorization: Bearer YOUR_ACCESS_TOKEN'</span> --header <span class="s1">'Content-Type: application/vnd.api+json'</span>
+--data <span class="s1">'{"rentals":[{"name":"Name"}]}'</span> https://www.bookingsync.com/api/v3/rentals</code></pre>
 
 <p>PUT:</p>
 
-<pre><code>curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' --header 'Content-Type: application/vnd.api+json'
---request PUT --data '{"rentals":[{"name":"New Name"}]}' https://www.bookingsync.com/api/v3/rentals/RENTAL_ID
-</code></pre>
+<pre><code class="language-bash">curl --header <span class="s1">'Authorization: Bearer YOUR_ACCESS_TOKEN'</span> --header <span class="s1">'Content-Type: application/vnd.api+json'</span>
+--request PUT --data <span class="s1">'{"rentals":[{"name":"New Name"}]}'</span> https://www.bookingsync.com/api/v3/rentals/RENTAL_ID</code></pre>
 
 <p>DELETE:</p>
 
-<pre><code>curl --header 'Authorization: Bearer YOUR_ACCESS_TOKEN' --request DELETE
-https://www.bookingsync.com/api/v3/rentals/RENTAL_ID
-</code></pre>
+<pre><code class="language-bash">curl --header <span class="s1">'Authorization: Bearer YOUR_ACCESS_TOKEN'</span> --request DELETE
+https://www.bookingsync.com/api/v3/rentals/RENTAL_ID</code></pre>
 
 <h3 id="request-options">Request Options</h3>
 

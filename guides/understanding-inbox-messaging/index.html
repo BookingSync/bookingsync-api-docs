@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BookingSync API documentation</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/stylesheets/application.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/highlight.css">
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="/assets/javascripts/application.js"></script>
+
+    <!-- you don't need to keep this, but it's cool for stats! -->
+    <meta name="generator" content="nanoc 3.8.0">
+  </head>
+  <body class="flex-col">
+    <div class="page-wrapper flex-1 flex-col">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle sidebar-toggle collapsed" data-toggle="collapse" data-target="#navigation" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+              <img alt="BookingSync" src="/images/bookingsync.svg">
+              <span>Developers</span>
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active">
+                <a href="/guides/">Guides</a>
+              </li>
+              <li class="">
+                <a href="/reference/">API Reference</a>
+              </li>
+              <li><a href="https://www.bookingsync.com" target="_blank">BookingSync.com</a></li>
+              <li><a href="https://github.com/BookingSync/bookingsync-api-docs" target="_blank"><i class="fa fa-github fa-fw fa-2x"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+<div class="container content">
+  <div class="row">
+    <div class="col-md-3 col-md-push-9">
+      <div class="panel panel-default">
+        <div class="list-group">
+          <a class="list-group-item" href="/guides/">Introduction</a>
+            <a class="list-group-item" href="/guides/gdpr">GDPR</a>
+          <a class="list-group-item" href="/guides/create-a-booking-with-a-source">Create a Booking with a Source</a>
+          <a class="list-group-item" href="/guides/read-all-authorized-accounts-at-once">Read all authorized accounts at once</a>
+          <a class="list-group-item" href="/guides/getting-started-with-php">Getting Started with PHP</a>
+          <a class="list-group-item" href="/guides/pricing-concepts">Pricing concepts</a>
+          <a class="list-group-item" href="/guides/api-best-practices">API best practices</a>
+          <a class="list-group-item" href="/guides/secure-payments-by-bookingsync">Secure Payments By BookingSync</a>
+          <a class="list-group-item" href="/guides/webhook-subscriptions">Webhook subscriptions</a>
+          <a class="list-group-item" href="/guides/oauth-scopes">OAuth scopes</a>
+          <a class="list-group-item" href="/guides/bookigsync-universe-api-early-beta">BookingSync Universe API [EARLY BETA]</a>
+          <a class="list-group-item" href="/guides/updated-since-flow">updated_since flow</a>
+          <a class="list-group-item" href="/guides/understanding-los-records">Understanding LOS Records</a>
+          <a class="list-group-item" href="/guides/understanding-midterm-pricing">Understanding Midterm Pricing</a>
+            <a class="list-group-item" href="/guides/understanding-inbox-messaging">Understanding Inbox Messaging</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 col-md-pull-3">
+      <div class="panel panel-default">
+        <div class="panel-body guide-body">
+          <h2 id="understanding-inbox-messaging">Understanding Inbox Messaging</h2>
+
+<hr>
+
+<ol id="markdown-toc">
+  <li><a href="#preface" id="markdown-toc-preface">Preface</a></li>
+  <li><a href="#purpose" id="markdown-toc-purpose">Purpose</a></li>
+  <li><a href="#entities" id="markdown-toc-entities">Entities</a></li>
+  <li><a href="#flow" id="markdown-toc-flow">Flow</a></li>
+  <li><a href="#fetching-an-inbox-conversation" id="markdown-toc-fetching-an-inbox-conversation">Fetching an Inbox Conversation</a></li>
+  <li><a href="#managing-inbox-participants" id="markdown-toc-managing-inbox-participants">Managing Inbox Participants</a></li>
+  <li><a href="#managing-inbox-messages" id="markdown-toc-managing-inbox-messages">Managing Inbox Messages</a></li>
+</ol>
+
+<hr>
+
+<h3 id="preface">Preface</h3>
+
+<p>BookingSync provides the ability to integrate with the Inbox on multiple different channels/platforms we support. This guide will present
+how to implement this integration.</p>
+
+<h3 id="purpose">Purpose</h3>
+
+<p>The purpose of this feature is to provide a seamless integration between internal messaging systems in certain Channels and the BookingSync platform, for property managers to be able to communicate with guests in a centralized location.</p>
+
+<h3 id="entities">Entities</h3>
+
+<ul>
+  <li>
+<strong>Inbox Conversation</strong>: Represents a thread/conversation and is scoped under a creator, an Account, and a Booking. An Inbox Conversation is usually owned and managed by it’s creator.
+This guide is mostly concerned with Inbox Conversations that are created and managed by a Channel.
+<br>
+</li>
+  <li>
+<strong>Inbox Participant</strong>: Represents a participant in the thread and is scoped under an Inbox Conversation. There are two types of participants
+    <ul>
+      <li>Client: Represents a Traveller, managed by the creator entirely.</li>
+      <li>Host: Represents a User in the Inbox Conversation’s Account, managed by the Channel and the Account. All Users should be able to view the Inbox Conversations of their corresponding Accounts. However, Only Host Inbox Participants could send messages and be notified about new messages in the Inbox Conversation.
+<br>
+</li>
+    </ul>
+  </li>
+  <li>
+<strong>Inbox Message</strong>: Represents a message in the thread/conversation and is scoped under Inbox Participant.</li>
+</ul>
+
+<h3 id="flow">Flow</h3>
+
+<p>When a Booking is created on the following channels: (Booking.com, Airbnb), a corresponding Inbox Conversation is automatically created on our system, which is synchronized with the Channel’s internal messaging systems.</p>
+
+<p>When an Inbox Conversation is created via a Channel, at least one Client Inbox Participant will be added to the conversation automatically. A Host Inbox Participant may or may not be created via the Channel automatically. Refer to <a href="#managing-inbox-participants">Managing Inbox Participants</a>.</p>
+
+<h3 id="fetching-an-inbox-conversation">Fetching an Inbox Conversation</h3>
+
+<p>There are multiple ways to fetch an existing Inbox Conversation.</p>
+
+<ol>
+  <li>Using the <a href="/reference/endpoints/inbox_conversations">Inbox Conversations endpoints</a>, you could get all the Inbox Conversations related to your account.</li>
+  <li>Using the <a href="/reference/endpoints/application">Bookings endpoints</a> <code>conversations</code> field, you could then query the <a href="/reference/endpoints/inbox_conversations">Inbox Conversations endpoints</a> with the provided ids to get Inbox Conversations related to a certain Booking.</li>
+</ol>
+
+<p>To discern which Channel this Inbox Conversation is associated with, you can check <code>created_by_id</code> and <code>created_by_type</code> attributes of the Inbox Conversation. <code>created_by_type</code> should be <code>Doorkeeper::Application</code> and <code>created_by_id</code> should refer to the Application id. Applications can be identified in <a href="/reference/endpoints/applications">Applications endpoint</a>.</p>
+
+<p>It is important to take into account that Inbox Conversations may not be created right away with the Booking, as there could be a delay. It can be beneficial to subscribe to <code>inbox_conversation_created</code> webhooks (Refer to <a href="/guides/webhook-subscriptions">Webhook subscriptions guide</a>) and/or have periodic polling (Refer to <a href="/guides/updated-since-flow">updated_since flow</a>) on the Booking to be notified when the associated Inbox Conversation is created.</p>
+
+<hr>
+
+<p><span style="color:red">
+<strong><em>WARNING:</em></strong> Please refrain from creating a new Inbox Conversation as it will not be synchronized to the Channel’s messaging system.
+</span></p>
+
+<hr>
+
+<h3 id="managing-inbox-participants">Managing Inbox Participants</h3>
+
+<p>After fetching the Inbox Conversation, you could query <a href="/reference/endpoints/inbox_participants">Inbox Participants endpoints</a> to see the available Inbox Participants and which conversations are they assigned.</p>
+
+<p>You could also use the <a href="/reference/endpoints/inbox_conversations">Inbox Conversations endpoints</a> with <code>include=participants</code> query to directly inject the associated participants while fetching the Inbox Conversation.</p>
+
+<p>To add a new Host Inbox Participant, please use the <a href="/reference/endpoints/inbox_participants#create-a-new-participant"><em>Create a new Participant</em> endpoint</a>.</p>
+
+<hr>
+
+<p><strong><em>Note:</em></strong> Channels may or may not add a Host Inbox Participant to the created Inbox Conversation. You may have to manage which User has a corresponding Host Inbox Participant in a certain Inbox Conversation.</p>
+
+<hr>
+
+<p><strong><em>Note:</em></strong> Please refrain from creating Client Inbox Participants on Channel created conversations, as they are entities managed by the Channel and the Channel only.</p>
+
+<hr>
+
+<h3 id="managing-inbox-messages">Managing Inbox Messages</h3>
+
+<p>Please refer to the <a href="/reference/endpoints/inbox_messages">Inbox Message endpoints</a></p>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </body>
+</html>
+

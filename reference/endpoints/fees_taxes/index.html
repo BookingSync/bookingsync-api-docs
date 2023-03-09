@@ -109,7 +109,7 @@
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
-          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities <span class="badge">!</span></a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
           <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
@@ -123,12 +123,6 @@
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
           <a class="list-group-item" href="/reference/endpoints/taxes/">Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/tax_rules/">Tax Rules</a>
-        </div>
-        <div class="panel-heading">
-          <h3 class="panel-title">Deprecated APIs</h3>
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
         </div>
       </div>
     </div>
@@ -305,7 +299,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#b225bcc14ba1rates_write" role="tab" data-toggle="pill">
+        <a href="#c91bd70bd600rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
@@ -317,7 +311,7 @@
   
   
     
-      <div class="tab-pane active" id="b225bcc14ba1rates_write">
+      <div class="tab-pane active" id="c91bd70bd600rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"fees_taxes.fee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/fees/{fees_taxes.fee}"</span><span class="p">,</span>
@@ -325,13 +319,13 @@
   <span class="p">},</span>
   <span class="s2">"fees_taxes"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
       <span class="s2">"tax_included_in_rate"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-08-04T15:23:57Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-08-04T15:23:57Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"fee"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="s2">"tax"</span><span class="o">:</span> <span class="mi">2</span>
+        <span class="s2">"fee"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
+        <span class="s2">"tax"</span><span class="o">:</span> <span class="mf">2</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -354,7 +348,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#fc5d060ae3e9rates_write" role="tab" data-toggle="pill">
+        <a href="#e988476de524rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
@@ -366,7 +360,7 @@
   
   
     
-      <div class="tab-pane active" id="fc5d060ae3e9rates_write">
+      <div class="tab-pane active" id="e988476de524rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"fees_taxes.fee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/fees/{fees_taxes.fee}"</span><span class="p">,</span>
@@ -374,13 +368,13 @@
   <span class="p">},</span>
   <span class="s2">"fees_taxes"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
       <span class="s2">"tax_included_in_rate"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-08-04T15:23:57Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-08-04T15:23:57Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"fee"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="s2">"tax"</span><span class="o">:</span> <span class="mi">2</span>
+        <span class="s2">"fee"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
+        <span class="s2">"tax"</span><span class="o">:</span> <span class="mf">2</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -403,7 +397,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#6daf870c7fecrates_write" role="tab" data-toggle="pill">
+        <a href="#2af54d9918d0rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
@@ -414,7 +408,7 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"fees_taxes"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"tax_id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"tax_id"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"tax_included_in_rate"</span><span class="o">:</span> <span class="kc">true</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -425,7 +419,7 @@
   
   
     
-      <div class="tab-pane active" id="6daf870c7fecrates_write">
+      <div class="tab-pane active" id="2af54d9918d0rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"fees_taxes.fee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/fees/{fees_taxes.fee}"</span><span class="p">,</span>
@@ -433,13 +427,13 @@
   <span class="p">},</span>
   <span class="s2">"fees_taxes"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
       <span class="s2">"tax_included_in_rate"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-08-04T15:23:57Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-08-04T15:23:57Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"fee"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="s2">"tax"</span><span class="o">:</span> <span class="mi">2</span>
+        <span class="s2">"fee"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
+        <span class="s2">"tax"</span><span class="o">:</span> <span class="mf">2</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
@@ -462,7 +456,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#450e5c6b6fa1rates_write" role="tab" data-toggle="pill">
+        <a href="#8745a7ffb858rates_write" role="tab" data-toggle="pill">
           rates_write
         </a>
       </li>
@@ -473,7 +467,7 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"fees_taxes"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"tax_id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"tax_id"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"tax_included_in_rate"</span><span class="o">:</span> <span class="kc">true</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -484,7 +478,7 @@
   
   
     
-      <div class="tab-pane active" id="450e5c6b6fa1rates_write">
+      <div class="tab-pane active" id="8745a7ffb858rates_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"fees_taxes.fee"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/fees/{fees_taxes.fee}"</span><span class="p">,</span>
@@ -492,13 +486,13 @@
   <span class="p">},</span>
   <span class="s2">"fees_taxes"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
       <span class="s2">"tax_included_in_rate"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2015-08-04T15:23:57Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2015-08-04T15:23:57Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"fee"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-        <span class="s2">"tax"</span><span class="o">:</span> <span class="mi">2</span>
+        <span class="s2">"fee"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
+        <span class="s2">"tax"</span><span class="o">:</span> <span class="mf">2</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>

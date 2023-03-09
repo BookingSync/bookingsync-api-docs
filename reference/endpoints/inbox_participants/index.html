@@ -109,7 +109,7 @@
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
-          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities <span class="badge">!</span></a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
           <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
@@ -123,12 +123,6 @@
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
           <a class="list-group-item" href="/reference/endpoints/taxes/">Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/tax_rules/">Tax Rules</a>
-        </div>
-        <div class="panel-heading">
-          <h3 class="panel-title">Deprecated APIs</h3>
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
         </div>
       </div>
     </div>
@@ -348,7 +342,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#6be4d32c7ddbinbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#4c9c72a329e6inbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -360,7 +354,7 @@
   
   
     
-      <div class="tab-pane active" id="6be4d32c7ddbinbox_read-inbox_write">
+      <div class="tab-pane active" id="4c9c72a329e6inbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"participants.client"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/clients/{participants.member.id}"</span><span class="p">,</span>
@@ -369,15 +363,15 @@
   <span class="p">},</span>
   <span class="s2">"participants"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T10:42:17Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T10:42:17Z"</span><span class="p">,</span>
       <span class="s2">"last_message_sent_at"</span><span class="o">:</span> <span class="s2">"2018-12-15T10:42:17Z"</span><span class="p">,</span>
       <span class="s2">"read_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"conversation"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s2">"conversation"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
         <span class="s2">"member"</span><span class="o">:</span> <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">5</span><span class="p">,</span>
           <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"Host"</span>
         <span class="p">}</span>
       <span class="p">}</span>
@@ -402,7 +396,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#a8812b5d6b55inbox_read-inbox_write" role="tab" data-toggle="pill">
+        <a href="#5e0258727af9inbox_read-inbox_write" role="tab" data-toggle="pill">
           inbox_read / inbox_write
         </a>
       </li>
@@ -414,7 +408,7 @@
   
   
     
-      <div class="tab-pane active" id="a8812b5d6b55inbox_read-inbox_write">
+      <div class="tab-pane active" id="5e0258727af9inbox_read-inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"participants.client"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/clients/{participants.member.id}"</span><span class="p">,</span>
@@ -423,15 +417,15 @@
   <span class="p">},</span>
   <span class="s2">"participants"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T10:42:17Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T10:42:17Z"</span><span class="p">,</span>
       <span class="s2">"last_message_sent_at"</span><span class="o">:</span> <span class="s2">"2018-12-15T10:42:17Z"</span><span class="p">,</span>
       <span class="s2">"read_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"conversation"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s2">"conversation"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
         <span class="s2">"member"</span><span class="o">:</span> <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">5</span><span class="p">,</span>
           <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"Host"</span>
         <span class="p">}</span>
       <span class="p">}</span>
@@ -456,7 +450,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#24ea3c521668inbox_write" role="tab" data-toggle="pill">
+        <a href="#892b00021cf2inbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -467,8 +461,8 @@
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"participants"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"conversation_id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="s2">"member_id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"conversation_id"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
+      <span class="s2">"member_id"</span><span class="o">:</span> <span class="mf">5</span><span class="p">,</span>
       <span class="s2">"member_type"</span><span class="o">:</span> <span class="s2">"Host"</span><span class="p">,</span>
       <span class="s2">"read"</span><span class="o">:</span> <span class="s2">"true"</span><span class="p">,</span>
       <span class="s2">"last_message_sent_at"</span><span class="o">:</span> <span class="s2">"2018-12-15T10:42:17Z"</span>
@@ -481,7 +475,7 @@
   
   
     
-      <div class="tab-pane active" id="24ea3c521668inbox_write">
+      <div class="tab-pane active" id="892b00021cf2inbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"participants.client"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/clients/{participants.member.id}"</span><span class="p">,</span>
@@ -490,15 +484,15 @@
   <span class="p">},</span>
   <span class="s2">"participants"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T10:42:17Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T10:42:17Z"</span><span class="p">,</span>
       <span class="s2">"last_message_sent_at"</span><span class="o">:</span> <span class="s2">"2018-12-15T10:42:17Z"</span><span class="p">,</span>
       <span class="s2">"read_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T10:42:17Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"conversation"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s2">"conversation"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
         <span class="s2">"member"</span><span class="o">:</span> <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">5</span><span class="p">,</span>
           <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"Host"</span>
         <span class="p">}</span>
       <span class="p">}</span>
@@ -528,7 +522,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#bbb3c0fdebf8inbox_write" role="tab" data-toggle="pill">
+        <a href="#825dff9fe7cbinbox_write" role="tab" data-toggle="pill">
           inbox_write
         </a>
       </li>
@@ -549,7 +543,7 @@
   
   
     
-      <div class="tab-pane active" id="bbb3c0fdebf8inbox_write">
+      <div class="tab-pane active" id="825dff9fe7cbinbox_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"participants.client"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/clients/{participants.member.id}"</span><span class="p">,</span>
@@ -558,15 +552,15 @@
   <span class="p">},</span>
   <span class="s2">"participants"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
       <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T10:42:17Z"</span><span class="p">,</span>
       <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T10:42:17Z"</span><span class="p">,</span>
       <span class="s2">"last_message_sent_at"</span><span class="o">:</span> <span class="s2">"2018-12-15T10:42:17Z"</span><span class="p">,</span>
       <span class="s2">"read_at"</span><span class="o">:</span> <span class="s2">"2018-12-21T10:42:17Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"conversation"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s2">"conversation"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
         <span class="s2">"member"</span><span class="o">:</span> <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">5</span><span class="p">,</span>
           <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"Host"</span>
         <span class="p">}</span>
       <span class="p">}</span>

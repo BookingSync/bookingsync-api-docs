@@ -109,7 +109,7 @@
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
-          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities <span class="badge">!</span></a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
           <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
@@ -123,12 +123,6 @@
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
           <a class="list-group-item" href="/reference/endpoints/taxes/">Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/tax_rules/">Tax Rules</a>
-        </div>
-        <div class="panel-heading">
-          <h3 class="panel-title">Deprecated APIs</h3>
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
         </div>
       </div>
     </div>
@@ -357,6 +351,12 @@
           <td>Boolean</td>
           <td>Read</td>
           <td>Rental’s online booking status.</td>
+        </tr>
+        <tr>
+          <td><span id="checkin-type">checkin_type</span></td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s checkin type, list of values described in <a href="/reference/enums#rental-checkin-types">enums section</a>.</td>
         </tr>
         <tr>
           <td>checkin_time</td>
@@ -894,6 +894,12 @@
           <td><a href="/reference/enums#formats">Object</a></td>
           <td>Read</td>
           <td>Rental’s check-in details, list of locales described in <a href="/reference/enums#locales">enums section</a>.</td>
+        </tr>
+        <tr>
+          <td>checkin_type</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Rental’s checkin type, list of values described in <a href="/reference/enums#rental-checkin-types">enums section</a>.</td>
         </tr>
         <tr>
           <td>checkin_time</td>
@@ -1547,6 +1553,13 @@
           <td> </td>
         </tr>
         <tr>
+          <td>checkin_type</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Rental’s checkin type, list of values described in <a href="/reference/enums#rental-checkin-types">enums section</a>.</td>
+          <td> </td>
+        </tr>
+        <tr>
           <td>checkin_time</td>
           <td>Integer</td>
           <td>Read/Write</td>
@@ -1975,13 +1988,13 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#7d677ef7c7d9public" role="tab" data-toggle="pill">
+        <a href="#fca579982cc2public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
       <li>
-        <a href="#124d3675ec4brentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#bc24589f779frentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
@@ -1993,7 +2006,7 @@
   
   
     
-      <div class="tab-pane active" id="7d677ef7c7d9public">
+      <div class="tab-pane active" id="fca579982cc2public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -2016,12 +2029,12 @@
   <span class="p">},</span>
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"absolute_min_price"</span><span class="o">:</span> <span class="s2">"300.0"</span><span class="p">,</span>
       <span class="s2">"base_rate"</span><span class="o">:</span> <span class="s2">"600.0"</span><span class="p">,</span>
       <span class="s2">"base_rate_kind"</span><span class="o">:</span> <span class="s2">"weekly"</span><span class="p">,</span>
-      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
+      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mf">4</span><span class="p">,</span>
       <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"certifications"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"meubles_de_tourisme"</span><span class="o">:</span> <span class="p">[</span>
@@ -2031,8 +2044,8 @@
           <span class="s2">"4_etoiles"</span>
         <span class="p">]</span>
       <span class="p">},</span>
-      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
-      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mf">16</span><span class="p">,</span>
+      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Nevache"</span><span class="p">,</span>
       <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"FR"</span><span class="p">,</span>
@@ -2040,7 +2053,7 @@
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 8 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
-      <span class="s2">"downpayment"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
+      <span class="s2">"downpayment"</span><span class="o">:</span> <span class="mf">30</span><span class="p">,</span>
       <span class="s2">"final_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"floor"</span><span class="o">:</span> <span class="s2">"A"</span><span class="p">,</span>
       <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
@@ -2056,59 +2069,59 @@
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 1"</span><span class="p">,</span>
       <span class="s2">"nightly_rates_managed_externally"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"permit_number"</span><span class="o">:</span> <span class="s2">"AQD9382857"</span><span class="p">,</span>
-      <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"position"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"price_public_notes"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="kc">null</span>
       <span class="p">},</span>
       <span class="s2">"rental_type"</span><span class="o">:</span> <span class="s2">"villa"</span><span class="p">,</span>
       <span class="s2">"residency_category"</span><span class="o">:</span> <span class="s2">"primary_residence"</span><span class="p">,</span>
       <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="s2">"4.0"</span><span class="p">,</span>
-      <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
-      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
-      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
+      <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mf">5</span><span class="p">,</span>
+      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mf">8</span><span class="p">,</span>
+      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mf">9</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"stories_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"stories_count"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
       <span class="p">},</span>
-      <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+      <span class="s2">"surface"</span><span class="o">:</span> <span class="mf">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span><span class="p">,</span>
       <span class="s2">"website_url"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"availability"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
         <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">5</span><span class="p">,</span>
-          <span class="mi">6</span><span class="p">,</span>
-          <span class="mi">7</span>
+          <span class="mf">5</span><span class="p">,</span>
+          <span class="mf">6</span><span class="p">,</span>
+          <span class="mf">7</span>
         <span class="p">],</span>
         <span class="s2">"bedrooms"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">8</span><span class="p">,</span>
-          <span class="mi">9</span><span class="p">,</span>
-          <span class="mi">10</span><span class="p">,</span>
-          <span class="mi">11</span>
+          <span class="mf">8</span><span class="p">,</span>
+          <span class="mf">9</span><span class="p">,</span>
+          <span class="mf">10</span><span class="p">,</span>
+          <span class="mf">11</span>
         <span class="p">],</span>
-        <span class="s2">"change_over"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"destination"</span><span class="o">:</span> <span class="mi">134</span><span class="p">,</span>
-        <span class="s2">"nightly_rate_map"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"change_over"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"destination"</span><span class="o">:</span> <span class="mf">134</span><span class="p">,</span>
+        <span class="s2">"nightly_rate_map"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
         <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">1</span>
+          <span class="mf">1</span>
         <span class="p">],</span>
         <span class="s2">"rates"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">1</span>
+          <span class="mf">1</span>
         <span class="p">],</span>
-        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"rental_cancelation_policy"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"rental_cancelation_policy"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
         <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">1</span><span class="p">,</span>
-          <span class="mi">2</span><span class="p">,</span>
-          <span class="mi">3</span>
+          <span class="mf">1</span><span class="p">,</span>
+          <span class="mf">2</span><span class="p">,</span>
+          <span class="mf">3</span>
         <span class="p">],</span>
         <span class="s2">"rentals_fees"</span><span class="o">:</span> <span class="p">[</span>
 
@@ -2117,14 +2130,14 @@
 
         <span class="p">],</span>
         <span class="s2">"reviews"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">1</span><span class="p">,</span>
-          <span class="mi">2</span><span class="p">,</span>
-          <span class="mi">3</span><span class="p">,</span>
-          <span class="mi">4</span><span class="p">,</span>
-          <span class="mi">5</span>
+          <span class="mf">1</span><span class="p">,</span>
+          <span class="mf">2</span><span class="p">,</span>
+          <span class="mf">3</span><span class="p">,</span>
+          <span class="mf">4</span><span class="p">,</span>
+          <span class="mf">5</span>
         <span class="p">],</span>
         <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">1</span>
+          <span class="mf">1</span>
         <span class="p">]</span>
       <span class="p">}</span>
     <span class="p">}</span>
@@ -2134,7 +2147,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="124d3675ec4brentals_read-rentals_write">
+      <div class="tab-pane " id="bc24589f779frentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -2157,14 +2170,14 @@
   <span class="p">},</span>
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"absolute_min_price"</span><span class="o">:</span> <span class="s2">"300.0"</span><span class="p">,</span>
       <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"58 Ville Haute"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"base_rate"</span><span class="o">:</span> <span class="s2">"700.0"</span><span class="p">,</span>
       <span class="s2">"base_rate_kind"</span><span class="o">:</span> <span class="s2">"weekly"</span><span class="p">,</span>
-      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
+      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mf">5</span><span class="p">,</span>
       <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"certifications"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"meubles_de_tourisme"</span><span class="o">:</span> <span class="p">[</span>
@@ -2177,11 +2190,11 @@
       <span class="s2">"checkin_details"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Please call us 15 min before your arrival so we can welcome you at the villa."</span>
       <span class="p">},</span>
-      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
+      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mf">16</span><span class="p">,</span>
       <span class="s2">"checkout_details"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Please confirm us your departure time the day before so we can wish you a good travel back in person."</span>
       <span class="p">},</span>
-      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Nevache"</span><span class="p">,</span>
       <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"FR"</span><span class="p">,</span>
@@ -2189,7 +2202,7 @@
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 9 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
-      <span class="s2">"downpayment"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
+      <span class="s2">"downpayment"</span><span class="o">:</span> <span class="mf">30</span><span class="p">,</span>
       <span class="s2">"final_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"floor"</span><span class="o">:</span> <span class="s2">"A"</span><span class="p">,</span>
       <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
@@ -2205,59 +2218,59 @@
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 2"</span><span class="p">,</span>
       <span class="s2">"nightly_rates_managed_externally"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">"Private comments."</span><span class="p">,</span>
-      <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"position"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"price_public_notes"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="kc">null</span>
       <span class="p">},</span>
       <span class="s2">"rental_type"</span><span class="o">:</span> <span class="s2">"villa"</span><span class="p">,</span>
       <span class="s2">"residency_category"</span><span class="o">:</span> <span class="s2">"primary_residence"</span><span class="p">,</span>
       <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="s2">"4.5"</span><span class="p">,</span>
-      <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
-      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mf">9</span><span class="p">,</span>
+      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"stories_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"stories_count"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
       <span class="p">},</span>
-      <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+      <span class="s2">"surface"</span><span class="o">:</span> <span class="mf">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span><span class="p">,</span>
       <span class="s2">"website_url"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"availability"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
         <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">5</span><span class="p">,</span>
-          <span class="mi">6</span><span class="p">,</span>
-          <span class="mi">7</span>
+          <span class="mf">5</span><span class="p">,</span>
+          <span class="mf">6</span><span class="p">,</span>
+          <span class="mf">7</span>
         <span class="p">],</span>
         <span class="s2">"bedrooms"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">8</span><span class="p">,</span>
-          <span class="mi">9</span><span class="p">,</span>
-          <span class="mi">10</span><span class="p">,</span>
-          <span class="mi">11</span><span class="p">,</span>
-          <span class="mi">12</span>
+          <span class="mf">8</span><span class="p">,</span>
+          <span class="mf">9</span><span class="p">,</span>
+          <span class="mf">10</span><span class="p">,</span>
+          <span class="mf">11</span><span class="p">,</span>
+          <span class="mf">12</span>
         <span class="p">],</span>
-        <span class="s2">"change_over"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"destination"</span><span class="o">:</span> <span class="mi">135</span><span class="p">,</span>
-        <span class="s2">"nightly_rate_map"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"change_over"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"destination"</span><span class="o">:</span> <span class="mf">135</span><span class="p">,</span>
+        <span class="s2">"nightly_rate_map"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
         <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">2</span>
+          <span class="mf">2</span>
         <span class="p">],</span>
         <span class="s2">"rates"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">3</span>
+          <span class="mf">3</span>
         <span class="p">],</span>
-        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"rental_cancelation_policy"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"rental_cancelation_policy"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
         <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">4</span>
+          <span class="mf">4</span>
         <span class="p">],</span>
         <span class="s2">"rentals_fees"</span><span class="o">:</span> <span class="p">[</span>
 
@@ -2266,10 +2279,10 @@
 
         <span class="p">],</span>
         <span class="s2">"reviews"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">2</span>
+          <span class="mf">2</span>
         <span class="p">],</span>
         <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">3</span>
+          <span class="mf">3</span>
         <span class="p">]</span>
       <span class="p">}</span>
     <span class="p">}</span>
@@ -2513,7 +2526,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#4531c3bc03c5public" role="tab" data-toggle="pill">
+        <a href="#a5e5e79285b6public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
@@ -2525,11 +2538,11 @@
   
   
     
-      <div class="tab-pane active" id="4531c3bc03c5public">
+      <div class="tab-pane active" id="a5e5e79285b6public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"EUR"</span><span class="p">,</span>
       <span class="s2">"damage_deposit"</span><span class="o">:</span> <span class="mf">35.5</span><span class="p">,</span>
       <span class="s2">"final_price"</span><span class="o">:</span> <span class="mf">858.33</span><span class="p">,</span>
@@ -2543,8 +2556,8 @@
             <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"10.0"</span><span class="p">,</span>
             <span class="s2">"amount"</span><span class="o">:</span> <span class="s2">"58.33"</span><span class="p">,</span>
             <span class="s2">"taxable_type"</span><span class="o">:</span> <span class="s2">"Rental"</span><span class="p">,</span>
-            <span class="s2">"taxable_id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-            <span class="s2">"tax_id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">"taxable_id"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
+            <span class="s2">"tax_id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
             <span class="s2">"included"</span><span class="o">:</span> <span class="kc">false</span>
           <span class="p">}</span>
         <span class="p">],</span>
@@ -2555,9 +2568,9 @@
             <span class="p">},</span>
             <span class="s2">"required"</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
             <span class="s2">"price"</span><span class="o">:</span> <span class="s2">"100.0"</span><span class="p">,</span>
-            <span class="s2">"quantity"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-            <span class="s2">"id"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
-            <span class="s2">"rentals_fee_id"</span><span class="o">:</span> <span class="mi">12</span>
+            <span class="s2">"quantity"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+            <span class="s2">"id"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
+            <span class="s2">"rentals_fee_id"</span><span class="o">:</span> <span class="mf">12</span>
           <span class="p">}</span>
         <span class="p">]</span>
       <span class="p">},</span>
@@ -2793,13 +2806,13 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#0759b2058856public" role="tab" data-toggle="pill">
+        <a href="#193208cddf81public" role="tab" data-toggle="pill">
           public
         </a>
       </li>
     
       <li>
-        <a href="#a9db84e78428rentals_read-rentals_write" role="tab" data-toggle="pill">
+        <a href="#145fb3fca61erentals_read-rentals_write" role="tab" data-toggle="pill">
           rentals_read / rentals_write
         </a>
       </li>
@@ -2811,7 +2824,7 @@
   
   
     
-      <div class="tab-pane active" id="0759b2058856public">
+      <div class="tab-pane active" id="193208cddf81public">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -2834,12 +2847,12 @@
   <span class="p">},</span>
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"absolute_min_price"</span><span class="o">:</span> <span class="s2">"300.0"</span><span class="p">,</span>
       <span class="s2">"base_rate"</span><span class="o">:</span> <span class="s2">"600.0"</span><span class="p">,</span>
       <span class="s2">"base_rate_kind"</span><span class="o">:</span> <span class="s2">"weekly"</span><span class="p">,</span>
-      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
+      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
+      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mf">4</span><span class="p">,</span>
       <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"certifications"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"meubles_de_tourisme"</span><span class="o">:</span> <span class="p">[</span>
@@ -2849,8 +2862,8 @@
           <span class="s2">"4_etoiles"</span>
         <span class="p">]</span>
       <span class="p">},</span>
-      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
-      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mf">16</span><span class="p">,</span>
+      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Nevache"</span><span class="p">,</span>
       <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"FR"</span><span class="p">,</span>
@@ -2858,7 +2871,7 @@
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 8 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
-      <span class="s2">"downpayment"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
+      <span class="s2">"downpayment"</span><span class="o">:</span> <span class="mf">30</span><span class="p">,</span>
       <span class="s2">"final_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"floor"</span><span class="o">:</span> <span class="s2">"A"</span><span class="p">,</span>
       <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
@@ -2874,59 +2887,59 @@
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 1"</span><span class="p">,</span>
       <span class="s2">"nightly_rates_managed_externally"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"permit_number"</span><span class="o">:</span> <span class="s2">"AQD9382857"</span><span class="p">,</span>
-      <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"position"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"price_public_notes"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="kc">null</span>
       <span class="p">},</span>
       <span class="s2">"rental_type"</span><span class="o">:</span> <span class="s2">"villa"</span><span class="p">,</span>
       <span class="s2">"residency_category"</span><span class="o">:</span> <span class="s2">"primary_residence"</span><span class="p">,</span>
       <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="s2">"4.0"</span><span class="p">,</span>
-      <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
-      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">8</span><span class="p">,</span>
-      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
+      <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mf">5</span><span class="p">,</span>
+      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mf">8</span><span class="p">,</span>
+      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mf">9</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"stories_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"stories_count"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
       <span class="p">},</span>
-      <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+      <span class="s2">"surface"</span><span class="o">:</span> <span class="mf">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span><span class="p">,</span>
       <span class="s2">"website_url"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"availability"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
         <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">5</span><span class="p">,</span>
-          <span class="mi">6</span><span class="p">,</span>
-          <span class="mi">7</span>
+          <span class="mf">5</span><span class="p">,</span>
+          <span class="mf">6</span><span class="p">,</span>
+          <span class="mf">7</span>
         <span class="p">],</span>
         <span class="s2">"bedrooms"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">8</span><span class="p">,</span>
-          <span class="mi">9</span><span class="p">,</span>
-          <span class="mi">10</span><span class="p">,</span>
-          <span class="mi">11</span>
+          <span class="mf">8</span><span class="p">,</span>
+          <span class="mf">9</span><span class="p">,</span>
+          <span class="mf">10</span><span class="p">,</span>
+          <span class="mf">11</span>
         <span class="p">],</span>
-        <span class="s2">"change_over"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"destination"</span><span class="o">:</span> <span class="mi">134</span><span class="p">,</span>
-        <span class="s2">"nightly_rate_map"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"change_over"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"destination"</span><span class="o">:</span> <span class="mf">134</span><span class="p">,</span>
+        <span class="s2">"nightly_rate_map"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
         <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">1</span>
+          <span class="mf">1</span>
         <span class="p">],</span>
         <span class="s2">"rates"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">1</span>
+          <span class="mf">1</span>
         <span class="p">],</span>
-        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"rental_cancelation_policy"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"rental_cancelation_policy"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
         <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">1</span><span class="p">,</span>
-          <span class="mi">2</span><span class="p">,</span>
-          <span class="mi">3</span>
+          <span class="mf">1</span><span class="p">,</span>
+          <span class="mf">2</span><span class="p">,</span>
+          <span class="mf">3</span>
         <span class="p">],</span>
         <span class="s2">"rentals_fees"</span><span class="o">:</span> <span class="p">[</span>
 
@@ -2935,14 +2948,14 @@
 
         <span class="p">],</span>
         <span class="s2">"reviews"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">1</span><span class="p">,</span>
-          <span class="mi">2</span><span class="p">,</span>
-          <span class="mi">3</span><span class="p">,</span>
-          <span class="mi">4</span><span class="p">,</span>
-          <span class="mi">5</span>
+          <span class="mf">1</span><span class="p">,</span>
+          <span class="mf">2</span><span class="p">,</span>
+          <span class="mf">3</span><span class="p">,</span>
+          <span class="mf">4</span><span class="p">,</span>
+          <span class="mf">5</span>
         <span class="p">],</span>
         <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">1</span>
+          <span class="mf">1</span>
         <span class="p">]</span>
       <span class="p">}</span>
     <span class="p">}</span>
@@ -2952,7 +2965,7 @@
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="a9db84e78428rentals_read-rentals_write">
+      <div class="tab-pane " id="145fb3fca61erentals_read-rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -2975,14 +2988,14 @@
   <span class="p">},</span>
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"absolute_min_price"</span><span class="o">:</span> <span class="s2">"300.0"</span><span class="p">,</span>
       <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"58 Ville Haute"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"base_rate"</span><span class="o">:</span> <span class="s2">"700.0"</span><span class="p">,</span>
       <span class="s2">"base_rate_kind"</span><span class="o">:</span> <span class="s2">"weekly"</span><span class="p">,</span>
-      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
+      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mf">5</span><span class="p">,</span>
       <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"certifications"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"meubles_de_tourisme"</span><span class="o">:</span> <span class="p">[</span>
@@ -2995,11 +3008,11 @@
       <span class="s2">"checkin_details"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Please call us 15 min before your arrival so we can welcome you at the villa."</span>
       <span class="p">},</span>
-      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
+      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mf">16</span><span class="p">,</span>
       <span class="s2">"checkout_details"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Please confirm us your departure time the day before so we can wish you a good travel back in person."</span>
       <span class="p">},</span>
-      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Nevache"</span><span class="p">,</span>
       <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"FR"</span><span class="p">,</span>
@@ -3007,7 +3020,7 @@
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 9 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
-      <span class="s2">"downpayment"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
+      <span class="s2">"downpayment"</span><span class="o">:</span> <span class="mf">30</span><span class="p">,</span>
       <span class="s2">"final_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"floor"</span><span class="o">:</span> <span class="s2">"A"</span><span class="p">,</span>
       <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
@@ -3023,59 +3036,59 @@
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 2"</span><span class="p">,</span>
       <span class="s2">"nightly_rates_managed_externally"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">"Private comments."</span><span class="p">,</span>
-      <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"position"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"price_public_notes"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="kc">null</span>
       <span class="p">},</span>
       <span class="s2">"rental_type"</span><span class="o">:</span> <span class="s2">"villa"</span><span class="p">,</span>
       <span class="s2">"residency_category"</span><span class="o">:</span> <span class="s2">"primary_residence"</span><span class="p">,</span>
       <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="s2">"4.5"</span><span class="p">,</span>
-      <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
-      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mf">9</span><span class="p">,</span>
+      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"stories_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"stories_count"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
       <span class="p">},</span>
-      <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+      <span class="s2">"surface"</span><span class="o">:</span> <span class="mf">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span><span class="p">,</span>
       <span class="s2">"website_url"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"availability"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
         <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">5</span><span class="p">,</span>
-          <span class="mi">6</span><span class="p">,</span>
-          <span class="mi">7</span>
+          <span class="mf">5</span><span class="p">,</span>
+          <span class="mf">6</span><span class="p">,</span>
+          <span class="mf">7</span>
         <span class="p">],</span>
         <span class="s2">"bedrooms"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">8</span><span class="p">,</span>
-          <span class="mi">9</span><span class="p">,</span>
-          <span class="mi">10</span><span class="p">,</span>
-          <span class="mi">11</span><span class="p">,</span>
-          <span class="mi">12</span>
+          <span class="mf">8</span><span class="p">,</span>
+          <span class="mf">9</span><span class="p">,</span>
+          <span class="mf">10</span><span class="p">,</span>
+          <span class="mf">11</span><span class="p">,</span>
+          <span class="mf">12</span>
         <span class="p">],</span>
-        <span class="s2">"change_over"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"destination"</span><span class="o">:</span> <span class="mi">135</span><span class="p">,</span>
-        <span class="s2">"nightly_rate_map"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"change_over"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"destination"</span><span class="o">:</span> <span class="mf">135</span><span class="p">,</span>
+        <span class="s2">"nightly_rate_map"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
         <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">2</span>
+          <span class="mf">2</span>
         <span class="p">],</span>
         <span class="s2">"rates"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">3</span>
+          <span class="mf">3</span>
         <span class="p">],</span>
-        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"rental_cancelation_policy"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"rental_cancelation_policy"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
         <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">4</span>
+          <span class="mf">4</span>
         <span class="p">],</span>
         <span class="s2">"rentals_fees"</span><span class="o">:</span> <span class="p">[</span>
 
@@ -3084,10 +3097,10 @@
 
         <span class="p">],</span>
         <span class="s2">"reviews"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">2</span>
+          <span class="mf">2</span>
         <span class="p">],</span>
         <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">3</span>
+          <span class="mf">3</span>
         <span class="p">]</span>
       <span class="p">}</span>
     <span class="p">}</span>
@@ -3123,7 +3136,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#3e36cf353569rentals_write" role="tab" data-toggle="pill">
+        <a href="#bbe097b41744rentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -3136,10 +3149,10 @@
     <span class="p">{</span>
       <span class="s2">"absolute_min_price"</span><span class="o">:</span> <span class="s2">"300.0"</span><span class="p">,</span>
       <span class="s2">"amenity_ids"</span><span class="o">:</span> <span class="p">[</span>
-        <span class="mi">4</span>
+        <span class="mf">4</span>
       <span class="p">],</span>
-      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
+      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mf">5</span><span class="p">,</span>
       <span class="s2">"certifications"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"meubles_de_tourisme"</span><span class="o">:</span> <span class="p">[</span>
           <span class="s2">"1_etoile"</span><span class="p">,</span>
@@ -3152,9 +3165,9 @@
       <span class="s2">"lat"</span><span class="o">:</span> <span class="mf">45.02</span><span class="p">,</span>
       <span class="s2">"lng"</span><span class="o">:</span> <span class="mf">6.6</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 2"</span><span class="p">,</span>
-      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
-      <span class="s2">"stories_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mf">9</span><span class="p">,</span>
+      <span class="s2">"stories_count"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
+      <span class="s2">"surface"</span><span class="o">:</span> <span class="mf">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -3165,7 +3178,7 @@
   
   
     
-      <div class="tab-pane active" id="3e36cf353569rentals_write">
+      <div class="tab-pane active" id="bbe097b41744rentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -3188,14 +3201,14 @@
   <span class="p">},</span>
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"absolute_min_price"</span><span class="o">:</span> <span class="s2">"300.0"</span><span class="p">,</span>
       <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"58 Ville Haute"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"base_rate"</span><span class="o">:</span> <span class="s2">"700.0"</span><span class="p">,</span>
       <span class="s2">"base_rate_kind"</span><span class="o">:</span> <span class="s2">"weekly"</span><span class="p">,</span>
-      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
+      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mf">5</span><span class="p">,</span>
       <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"certifications"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"meubles_de_tourisme"</span><span class="o">:</span> <span class="p">[</span>
@@ -3208,11 +3221,11 @@
       <span class="s2">"checkin_details"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Please call us 15 min before your arrival so we can welcome you at the villa."</span>
       <span class="p">},</span>
-      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
+      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mf">16</span><span class="p">,</span>
       <span class="s2">"checkout_details"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Please confirm us your departure time the day before so we can wish you a good travel back in person."</span>
       <span class="p">},</span>
-      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Nevache"</span><span class="p">,</span>
       <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"FR"</span><span class="p">,</span>
@@ -3220,7 +3233,7 @@
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 9 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
-      <span class="s2">"downpayment"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
+      <span class="s2">"downpayment"</span><span class="o">:</span> <span class="mf">30</span><span class="p">,</span>
       <span class="s2">"final_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"floor"</span><span class="o">:</span> <span class="s2">"A"</span><span class="p">,</span>
       <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
@@ -3236,59 +3249,59 @@
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 2"</span><span class="p">,</span>
       <span class="s2">"nightly_rates_managed_externally"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">"Private comments."</span><span class="p">,</span>
-      <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"position"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"price_public_notes"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="kc">null</span>
       <span class="p">},</span>
       <span class="s2">"rental_type"</span><span class="o">:</span> <span class="s2">"villa"</span><span class="p">,</span>
       <span class="s2">"residency_category"</span><span class="o">:</span> <span class="s2">"primary_residence"</span><span class="p">,</span>
       <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="s2">"4.5"</span><span class="p">,</span>
-      <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
-      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mf">9</span><span class="p">,</span>
+      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"stories_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"stories_count"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
       <span class="p">},</span>
-      <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+      <span class="s2">"surface"</span><span class="o">:</span> <span class="mf">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span><span class="p">,</span>
       <span class="s2">"website_url"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"availability"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
         <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">5</span><span class="p">,</span>
-          <span class="mi">6</span><span class="p">,</span>
-          <span class="mi">7</span>
+          <span class="mf">5</span><span class="p">,</span>
+          <span class="mf">6</span><span class="p">,</span>
+          <span class="mf">7</span>
         <span class="p">],</span>
         <span class="s2">"bedrooms"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">8</span><span class="p">,</span>
-          <span class="mi">9</span><span class="p">,</span>
-          <span class="mi">10</span><span class="p">,</span>
-          <span class="mi">11</span><span class="p">,</span>
-          <span class="mi">12</span>
+          <span class="mf">8</span><span class="p">,</span>
+          <span class="mf">9</span><span class="p">,</span>
+          <span class="mf">10</span><span class="p">,</span>
+          <span class="mf">11</span><span class="p">,</span>
+          <span class="mf">12</span>
         <span class="p">],</span>
-        <span class="s2">"change_over"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"destination"</span><span class="o">:</span> <span class="mi">135</span><span class="p">,</span>
-        <span class="s2">"nightly_rate_map"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"change_over"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"destination"</span><span class="o">:</span> <span class="mf">135</span><span class="p">,</span>
+        <span class="s2">"nightly_rate_map"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
         <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">2</span>
+          <span class="mf">2</span>
         <span class="p">],</span>
         <span class="s2">"rates"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">3</span>
+          <span class="mf">3</span>
         <span class="p">],</span>
-        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"rental_cancelation_policy"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"rental_cancelation_policy"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
         <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">4</span>
+          <span class="mf">4</span>
         <span class="p">],</span>
         <span class="s2">"rentals_fees"</span><span class="o">:</span> <span class="p">[</span>
 
@@ -3297,10 +3310,10 @@
 
         <span class="p">],</span>
         <span class="s2">"reviews"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">2</span>
+          <span class="mf">2</span>
         <span class="p">],</span>
         <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">3</span>
+          <span class="mf">3</span>
         <span class="p">]</span>
       <span class="p">}</span>
     <span class="p">}</span>
@@ -3331,7 +3344,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#16222a21112frentals_write" role="tab" data-toggle="pill">
+        <a href="#277780610f4drentals_write" role="tab" data-toggle="pill">
           rentals_write
         </a>
       </li>
@@ -3344,10 +3357,10 @@
     <span class="p">{</span>
       <span class="s2">"absolute_min_price"</span><span class="o">:</span> <span class="s2">"300.0"</span><span class="p">,</span>
       <span class="s2">"amenity_ids"</span><span class="o">:</span> <span class="p">[</span>
-        <span class="mi">4</span>
+        <span class="mf">4</span>
       <span class="p">],</span>
-      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
+      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mf">5</span><span class="p">,</span>
       <span class="s2">"certifications"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"meubles_de_tourisme"</span><span class="o">:</span> <span class="p">[</span>
           <span class="s2">"1_etoile"</span><span class="p">,</span>
@@ -3360,9 +3373,9 @@
       <span class="s2">"lat"</span><span class="o">:</span> <span class="mf">45.02</span><span class="p">,</span>
       <span class="s2">"lng"</span><span class="o">:</span> <span class="mf">6.6</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 2"</span><span class="p">,</span>
-      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
-      <span class="s2">"stories_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mf">9</span><span class="p">,</span>
+      <span class="s2">"stories_count"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
+      <span class="s2">"surface"</span><span class="o">:</span> <span class="mf">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span>
     <span class="p">}</span>
   <span class="p">]</span>
@@ -3373,7 +3386,7 @@
   
   
     
-      <div class="tab-pane active" id="16222a21112frentals_write">
+      <div class="tab-pane active" id="277780610f4drentals_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"rentals.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{rentals.account}"</span><span class="p">,</span>
@@ -3396,14 +3409,14 @@
   <span class="p">},</span>
   <span class="s2">"rentals"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"absolute_min_price"</span><span class="o">:</span> <span class="s2">"300.0"</span><span class="p">,</span>
       <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"58 Ville Haute"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"base_rate"</span><span class="o">:</span> <span class="s2">"700.0"</span><span class="p">,</span>
       <span class="s2">"base_rate_kind"</span><span class="o">:</span> <span class="s2">"weekly"</span><span class="p">,</span>
-      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="s2">"bathrooms_count"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
+      <span class="s2">"bedrooms_count"</span><span class="o">:</span> <span class="mf">5</span><span class="p">,</span>
       <span class="s2">"bookable_online"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"certifications"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"meubles_de_tourisme"</span><span class="o">:</span> <span class="p">[</span>
@@ -3416,11 +3429,11 @@
       <span class="s2">"checkin_details"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Please call us 15 min before your arrival so we can welcome you at the villa."</span>
       <span class="p">},</span>
-      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mi">16</span><span class="p">,</span>
+      <span class="s2">"checkin_time"</span><span class="o">:</span> <span class="mf">16</span><span class="p">,</span>
       <span class="s2">"checkout_details"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Please confirm us your departure time the day before so we can wish you a good travel back in person."</span>
       <span class="p">},</span>
-      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"checkout_time"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"Nevache"</span><span class="p">,</span>
       <span class="s2">"contact_name"</span><span class="o">:</span> <span class="s2">"Betty Reichert"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"FR"</span><span class="p">,</span>
@@ -3428,7 +3441,7 @@
       <span class="s2">"description"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"First class Villa for 9 people with private pool. Situated in a pleasant residential area."</span>
       <span class="p">},</span>
-      <span class="s2">"downpayment"</span><span class="o">:</span> <span class="mi">30</span><span class="p">,</span>
+      <span class="s2">"downpayment"</span><span class="o">:</span> <span class="mf">30</span><span class="p">,</span>
       <span class="s2">"final_price"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"floor"</span><span class="o">:</span> <span class="s2">"A"</span><span class="p">,</span>
       <span class="s2">"headline"</span><span class="o">:</span> <span class="p">{</span>
@@ -3444,59 +3457,59 @@
       <span class="s2">"name"</span><span class="o">:</span> <span class="s2">"Cottage 2"</span><span class="p">,</span>
       <span class="s2">"nightly_rates_managed_externally"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"notes"</span><span class="o">:</span> <span class="s2">"Private comments."</span><span class="p">,</span>
-      <span class="s2">"position"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">"position"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
       <span class="s2">"price_public_notes"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="kc">null</span>
       <span class="p">},</span>
       <span class="s2">"rental_type"</span><span class="o">:</span> <span class="s2">"villa"</span><span class="p">,</span>
       <span class="s2">"residency_category"</span><span class="o">:</span> <span class="s2">"primary_residence"</span><span class="p">,</span>
       <span class="s2">"reviews_average_rating"</span><span class="o">:</span> <span class="s2">"4.5"</span><span class="p">,</span>
-      <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mi">9</span><span class="p">,</span>
-      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="s2">"reviews_count"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+      <span class="s2">"sleeps"</span><span class="o">:</span> <span class="mf">9</span><span class="p">,</span>
+      <span class="s2">"sleeps_max"</span><span class="o">:</span> <span class="mf">10</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"stories_count"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"stories_count"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"summary"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Great value. A place to enjoy peace and tranquility, away from mass tourism."</span>
       <span class="p">},</span>
-      <span class="s2">"surface"</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span>
+      <span class="s2">"surface"</span><span class="o">:</span> <span class="mf">120</span><span class="p">,</span>
       <span class="s2">"surface_unit"</span><span class="o">:</span> <span class="s2">"metric"</span><span class="p">,</span>
       <span class="s2">"website_url"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"https://example.com/en/rentals/123-rental-headline"</span>
       <span class="p">},</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"05100"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
-      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:13Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
+      <span class="s2">"published_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:14Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"availability"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"availability"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
         <span class="s2">"bathrooms"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">5</span><span class="p">,</span>
-          <span class="mi">6</span><span class="p">,</span>
-          <span class="mi">7</span>
+          <span class="mf">5</span><span class="p">,</span>
+          <span class="mf">6</span><span class="p">,</span>
+          <span class="mf">7</span>
         <span class="p">],</span>
         <span class="s2">"bedrooms"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">8</span><span class="p">,</span>
-          <span class="mi">9</span><span class="p">,</span>
-          <span class="mi">10</span><span class="p">,</span>
-          <span class="mi">11</span><span class="p">,</span>
-          <span class="mi">12</span>
+          <span class="mf">8</span><span class="p">,</span>
+          <span class="mf">9</span><span class="p">,</span>
+          <span class="mf">10</span><span class="p">,</span>
+          <span class="mf">11</span><span class="p">,</span>
+          <span class="mf">12</span>
         <span class="p">],</span>
-        <span class="s2">"change_over"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"destination"</span><span class="o">:</span> <span class="mi">135</span><span class="p">,</span>
-        <span class="s2">"nightly_rate_map"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"change_over"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"destination"</span><span class="o">:</span> <span class="mf">135</span><span class="p">,</span>
+        <span class="s2">"nightly_rate_map"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
         <span class="s2">"photos"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">2</span>
+          <span class="mf">2</span>
         <span class="p">],</span>
         <span class="s2">"rates"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">3</span>
+          <span class="mf">3</span>
         <span class="p">],</span>
-        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-        <span class="s2">"rental_cancelation_policy"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">"rates_table"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"rental_agreement"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="s2">"rental_cancelation_policy"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
         <span class="s2">"rentals_amenities"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">4</span>
+          <span class="mf">4</span>
         <span class="p">],</span>
         <span class="s2">"rentals_fees"</span><span class="o">:</span> <span class="p">[</span>
 
@@ -3505,10 +3518,10 @@
 
         <span class="p">],</span>
         <span class="s2">"reviews"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">2</span>
+          <span class="mf">2</span>
         <span class="p">],</span>
         <span class="s2">"special_offers"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">3</span>
+          <span class="mf">3</span>
         <span class="p">]</span>
       <span class="p">}</span>
     <span class="p">}</span>

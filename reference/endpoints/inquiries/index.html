@@ -109,7 +109,7 @@
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
-          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities <span class="badge">!</span></a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
           <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
@@ -123,12 +123,6 @@
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
           <a class="list-group-item" href="/reference/endpoints/taxes/">Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/tax_rules/">Tax Rules</a>
-        </div>
-        <div class="panel-heading">
-          <h3 class="panel-title">Deprecated APIs</h3>
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
         </div>
       </div>
     </div>
@@ -685,7 +679,7 @@ certain range.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#1e7cf52cda7binquiries_read-inquiries_write-inquiries_write_owned" role="tab" data-toggle="pill">
+        <a href="#c96cfa2b3724inquiries_read-inquiries_write-inquiries_write_owned" role="tab" data-toggle="pill">
           inquiries_read / inquiries_write / inquiries_write_owned
         </a>
       </li>
@@ -697,7 +691,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="1e7cf52cda7binquiries_read-inquiries_write-inquiries_write_owned">
+      <div class="tab-pane active" id="c96cfa2b3724inquiries_read-inquiries_write-inquiries_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"inquiries.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{inquiries.booking}"</span><span class="p">,</span>
@@ -706,23 +700,23 @@ certain range.</p>
   <span class="p">},</span>
   <span class="s2">"inquiries"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"adults"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
-      <span class="s2">"children"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+      <span class="s2">"adults"</span><span class="o">:</span> <span class="mf">4</span><span class="p">,</span>
+      <span class="s2">"children"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"GB"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
       <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
       <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"Smith"</span><span class="p">,</span>
       <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"message"</span><span class="o">:</span> <span class="s2">"Important message"</span><span class="p">,</span>
-      <span class="s2">"phone"</span><span class="o">:</span> <span class="mi">7273647616</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:10Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:10Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-02-08T10:39:10Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-02-15T10:39:10Z"</span><span class="p">,</span>
+      <span class="s2">"phone"</span><span class="o">:</span> <span class="mf">7273647616</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:12Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:12Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-03-16T09:02:12Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-03-23T09:02:12Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
         <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span>
       <span class="p">}</span>
     <span class="p">}</span>
@@ -744,7 +738,7 @@ certain range.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#5d7d06c6bec9inquiries_read-inquiries_write-inquiries_write_owned" role="tab" data-toggle="pill">
+        <a href="#d3b362e7f6b4inquiries_read-inquiries_write-inquiries_write_owned" role="tab" data-toggle="pill">
           inquiries_read / inquiries_write / inquiries_write_owned
         </a>
       </li>
@@ -756,7 +750,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="5d7d06c6bec9inquiries_read-inquiries_write-inquiries_write_owned">
+      <div class="tab-pane active" id="d3b362e7f6b4inquiries_read-inquiries_write-inquiries_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"inquiries.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{inquiries.booking}"</span><span class="p">,</span>
@@ -765,23 +759,23 @@ certain range.</p>
   <span class="p">},</span>
   <span class="s2">"inquiries"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"adults"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
-      <span class="s2">"children"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+      <span class="s2">"adults"</span><span class="o">:</span> <span class="mf">4</span><span class="p">,</span>
+      <span class="s2">"children"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"GB"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
       <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
       <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"Smith"</span><span class="p">,</span>
       <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"message"</span><span class="o">:</span> <span class="s2">"Important message"</span><span class="p">,</span>
-      <span class="s2">"phone"</span><span class="o">:</span> <span class="mi">7273647616</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-02-08T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-02-15T10:39:11Z"</span><span class="p">,</span>
+      <span class="s2">"phone"</span><span class="o">:</span> <span class="mf">7273647616</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:12Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:12Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-03-16T09:02:12Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-03-23T09:02:12Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
         <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span>
       <span class="p">}</span>
     <span class="p">}</span>
@@ -803,7 +797,7 @@ certain range.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#5bee75ba705cinquiries_write-inquiries_write_owned" role="tab" data-toggle="pill">
+        <a href="#16dc9ae418a7inquiries_write-inquiries_write_owned" role="tab" data-toggle="pill">
           inquiries_write / inquiries_write_owned
         </a>
       </li>
@@ -814,16 +808,16 @@ certain range.</p>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"inquiries"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"adults"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
-      <span class="s2">"children"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"adults"</span><span class="o">:</span> <span class="mf">4</span><span class="p">,</span>
+      <span class="s2">"children"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"GB"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
       <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
       <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"Smith"</span><span class="p">,</span>
       <span class="s2">"message"</span><span class="o">:</span> <span class="s2">"Important message"</span><span class="p">,</span>
-      <span class="s2">"phone"</span><span class="o">:</span> <span class="mi">7273647616</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-02-08T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-02-15T10:39:11Z"</span>
+      <span class="s2">"phone"</span><span class="o">:</span> <span class="mf">7273647616</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-03-16T09:02:12Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-03-23T09:02:12Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -833,7 +827,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="5bee75ba705cinquiries_write-inquiries_write_owned">
+      <div class="tab-pane active" id="16dc9ae418a7inquiries_write-inquiries_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"inquiries.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{inquiries.booking}"</span><span class="p">,</span>
@@ -842,23 +836,23 @@ certain range.</p>
   <span class="p">},</span>
   <span class="s2">"inquiries"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"adults"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
-      <span class="s2">"children"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+      <span class="s2">"adults"</span><span class="o">:</span> <span class="mf">4</span><span class="p">,</span>
+      <span class="s2">"children"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"GB"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
       <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
       <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"Smith"</span><span class="p">,</span>
       <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"message"</span><span class="o">:</span> <span class="s2">"Important message"</span><span class="p">,</span>
-      <span class="s2">"phone"</span><span class="o">:</span> <span class="mi">7273647616</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-02-08T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-02-15T10:39:11Z"</span><span class="p">,</span>
+      <span class="s2">"phone"</span><span class="o">:</span> <span class="mf">7273647616</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:12Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:12Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-03-16T09:02:12Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-03-23T09:02:12Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
         <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span>
       <span class="p">}</span>
     <span class="p">}</span>
@@ -880,7 +874,7 @@ certain range.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#96a3acb20561inquiries_write-inquiries_write_owned" role="tab" data-toggle="pill">
+        <a href="#bb04fe663758inquiries_write-inquiries_write_owned" role="tab" data-toggle="pill">
           inquiries_write / inquiries_write_owned
         </a>
       </li>
@@ -891,17 +885,17 @@ certain range.</p>
 <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"inquiries"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"adults"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
-      <span class="s2">"children"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"adults"</span><span class="o">:</span> <span class="mf">4</span><span class="p">,</span>
+      <span class="s2">"children"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"GB"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
       <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
       <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"Smith"</span><span class="p">,</span>
       <span class="s2">"message"</span><span class="o">:</span> <span class="s2">"Important message"</span><span class="p">,</span>
-      <span class="s2">"phone"</span><span class="o">:</span> <span class="mi">7273647616</span><span class="p">,</span>
-      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-02-08T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-02-15T10:39:11Z"</span>
+      <span class="s2">"phone"</span><span class="o">:</span> <span class="mf">7273647616</span><span class="p">,</span>
+      <span class="s2">"rental_id"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-03-16T09:02:12Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-03-23T09:02:12Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -911,7 +905,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="96a3acb20561inquiries_write-inquiries_write_owned">
+      <div class="tab-pane active" id="bb04fe663758inquiries_write-inquiries_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"inquiries.booking"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/bookings/{inquiries.booking}"</span><span class="p">,</span>
@@ -920,23 +914,23 @@ certain range.</p>
   <span class="p">},</span>
   <span class="s2">"inquiries"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">"adults"</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
-      <span class="s2">"children"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+      <span class="s2">"adults"</span><span class="o">:</span> <span class="mf">4</span><span class="p">,</span>
+      <span class="s2">"children"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"GB"</span><span class="p">,</span>
       <span class="s2">"email"</span><span class="o">:</span> <span class="s2">"john@example.com"</span><span class="p">,</span>
       <span class="s2">"firstname"</span><span class="o">:</span> <span class="s2">"John"</span><span class="p">,</span>
       <span class="s2">"lastname"</span><span class="o">:</span> <span class="s2">"Smith"</span><span class="p">,</span>
       <span class="s2">"locked"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"message"</span><span class="o">:</span> <span class="s2">"Important message"</span><span class="p">,</span>
-      <span class="s2">"phone"</span><span class="o">:</span> <span class="mi">7273647616</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-02-08T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-02-15T10:39:11Z"</span><span class="p">,</span>
+      <span class="s2">"phone"</span><span class="o">:</span> <span class="mf">7273647616</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:12Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:12Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-03-16T09:02:12Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-03-23T09:02:12Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"booking"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-        <span class="s2">"rental"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s2">"rental"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
         <span class="s2">"source"</span><span class="o">:</span> <span class="kc">null</span>
       <span class="p">}</span>
     <span class="p">}</span>

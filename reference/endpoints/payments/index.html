@@ -109,7 +109,7 @@
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
-          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities <span class="badge">!</span></a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
           <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
@@ -123,12 +123,6 @@
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
           <a class="list-group-item" href="/reference/endpoints/taxes/">Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/tax_rules/">Tax Rules</a>
-        </div>
-        <div class="panel-heading">
-          <h3 class="panel-title">Deprecated APIs</h3>
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
         </div>
       </div>
     </div>
@@ -1050,7 +1044,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#9056310f87c7payments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
+        <a href="#b3a2ce9bb129payments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
           payments_write_owned / payments_read / payments_write
         </a>
       </li>
@@ -1062,7 +1056,7 @@
   
   
     
-      <div class="tab-pane active" id="9056310f87c7payments_write_owned-payments_read-payments_write">
+      <div class="tab-pane active" id="b3a2ce9bb129payments_write_owned-payments_read-payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -1071,10 +1065,10 @@
   <span class="p">},</span>
   <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Bernhard Creek"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
+      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mf">100000</span><span class="p">,</span>
       <span class="s2">"card"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
@@ -1091,20 +1085,20 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"forget_me_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span><span class="p">,</span>
       <span class="s2">"processing_restricted_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">33</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">21</span>
+          <span class="mf">21</span>
         <span class="p">],</span>
         <span class="s2">"bookings_payments"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">3</span>
+          <span class="mf">3</span>
         <span class="p">]</span>
       <span class="p">}</span>
     <span class="p">}</span>
@@ -1154,7 +1148,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#32ad50cf888bpayments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
+        <a href="#b25046527b47payments_write_owned-payments_read-payments_write" role="tab" data-toggle="pill">
           payments_write_owned / payments_read / payments_write
         </a>
       </li>
@@ -1166,7 +1160,7 @@
   
   
     
-      <div class="tab-pane active" id="32ad50cf888bpayments_write_owned-payments_read-payments_write">
+      <div class="tab-pane active" id="b25046527b47payments_write_owned-payments_read-payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -1175,10 +1169,10 @@
   <span class="p">},</span>
   <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Bernhard Creek"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
+      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mf">100000</span><span class="p">,</span>
       <span class="s2">"card"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
@@ -1195,20 +1189,20 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"forget_me_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span><span class="p">,</span>
       <span class="s2">"processing_restricted_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">33</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">21</span>
+          <span class="mf">21</span>
         <span class="p">],</span>
         <span class="s2">"bookings_payments"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">3</span>
+          <span class="mf">3</span>
         <span class="p">]</span>
       <span class="p">}</span>
     <span class="p">}</span>
@@ -1230,7 +1224,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#e7cd813697d7payments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
+        <a href="#7eba6ebebe15payments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
           payments_write_owned / payments_write
         </a>
       </li>
@@ -1243,7 +1237,7 @@
     <span class="p">{</span>
       <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Bernhard Creek"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
+      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mf">100000</span><span class="p">,</span>
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"GBP"</span><span class="p">,</span>
@@ -1253,7 +1247,7 @@
       <span class="s2">"locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Monatana"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -1263,7 +1257,7 @@
   
   
     
-      <div class="tab-pane active" id="e7cd813697d7payments_write_owned / payments_write">
+      <div class="tab-pane active" id="7eba6ebebe15payments_write_owned / payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -1272,10 +1266,10 @@
   <span class="p">},</span>
   <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Bernhard Creek"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
+      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mf">100000</span><span class="p">,</span>
       <span class="s2">"card"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
@@ -1292,20 +1286,20 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"forget_me_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span><span class="p">,</span>
       <span class="s2">"processing_restricted_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">33</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">21</span>
+          <span class="mf">21</span>
         <span class="p">],</span>
         <span class="s2">"bookings_payments"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">3</span>
+          <span class="mf">3</span>
         <span class="p">]</span>
       <span class="p">}</span>
     <span class="p">}</span>
@@ -1327,7 +1321,7 @@
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#57063f108452payments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
+        <a href="#722164d42d7apayments_write_owned%20/%20payments_write" role="tab" data-toggle="pill">
           payments_write_owned / payments_write
         </a>
       </li>
@@ -1340,7 +1334,7 @@
     <span class="p">{</span>
       <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Bernhard Creek"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
+      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mf">100000</span><span class="p">,</span>
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
       <span class="s2">"currency"</span><span class="o">:</span> <span class="s2">"GBP"</span><span class="p">,</span>
@@ -1350,7 +1344,7 @@
       <span class="s2">"locale"</span><span class="o">:</span> <span class="s2">"en"</span><span class="p">,</span>
       <span class="s2">"state"</span><span class="o">:</span> <span class="s2">"Monatana"</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -1360,7 +1354,7 @@
   
   
     
-      <div class="tab-pane active" id="57063f108452payments_write_owned / payments_write">
+      <div class="tab-pane active" id="722164d42d7apayments_write_owned / payments_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"payments.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{payments.account}"</span><span class="p">,</span>
@@ -1369,10 +1363,10 @@
   <span class="p">},</span>
   <span class="s2">"payments"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span>
       <span class="s2">"address1"</span><span class="o">:</span> <span class="s2">"Bernhard Creek"</span><span class="p">,</span>
       <span class="s2">"address2"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mi">100000</span><span class="p">,</span>
+      <span class="s2">"amount_in_cents"</span><span class="o">:</span> <span class="mf">100000</span><span class="p">,</span>
       <span class="s2">"card"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"city"</span><span class="o">:</span> <span class="s2">"East Winifred"</span><span class="p">,</span>
       <span class="s2">"country_code"</span><span class="o">:</span> <span class="s2">"US"</span><span class="p">,</span>
@@ -1389,20 +1383,20 @@
       <span class="s2">"test"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"transaction_id"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"zip"</span><span class="o">:</span> <span class="s2">"07671-8254"</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span><span class="p">,</span>
       <span class="s2">"rejected_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"forget_me_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2023-02-01T10:39:11Z"</span><span class="p">,</span>
+      <span class="s2">"paid_at"</span><span class="o">:</span> <span class="s2">"2023-03-09T09:02:13Z"</span><span class="p">,</span>
       <span class="s2">"processing_restricted_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">33</span><span class="p">,</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">33</span><span class="p">,</span>
         <span class="s2">"bookings"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">21</span>
+          <span class="mf">21</span>
         <span class="p">],</span>
         <span class="s2">"bookings_payments"</span><span class="o">:</span> <span class="p">[</span>
-          <span class="mi">3</span>
+          <span class="mf">3</span>
         <span class="p">]</span>
       <span class="p">}</span>
     <span class="p">}</span>

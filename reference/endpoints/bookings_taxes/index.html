@@ -109,7 +109,7 @@
           <a class="list-group-item" href="/reference/endpoints/rental_agreements/">Rental Agreements</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policies/">Rental Cancelation Policies</a>
           <a class="list-group-item" href="/reference/endpoints/rental_cancelation_policy_items/">Rental Cancelation Policy Items</a>
-          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities</a>
+          <a class="list-group-item" href="/reference/endpoints/rentals_amenities/">Rentals Amenities <span class="badge">!</span></a>
           <a class="list-group-item" href="/reference/endpoints/rentals_contents_overrides/">Rentals Contents Overrides</a>
           <a class="list-group-item" href="/reference/endpoints/rentals_fees/">Rentals Fees</a>
           <a class="list-group-item" href="/reference/endpoints/rental_link_groups/">Rental Link Groups</a>
@@ -123,12 +123,6 @@
           <a class="list-group-item" href="/reference/endpoints/special_offers/">Special Offers</a>
           <a class="list-group-item" href="/reference/endpoints/taxes/">Taxes</a>
           <a class="list-group-item" href="/reference/endpoints/tax_rules/">Tax Rules</a>
-        </div>
-        <div class="panel-heading">
-          <h3 class="panel-title">Deprecated APIs</h3>
-        </div>
-        <div class="list-group">
-          <a class="list-group-item" href="https://www.bookingsync.com/en/documentation/api">BookingSync API v1</a>
         </div>
       </div>
     </div>
@@ -280,7 +274,7 @@ certain range.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#32bf2feab98ebookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#dcfdecef9b60bookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_read / bookings_write / bookings_write_owned
         </a>
       </li>
@@ -292,7 +286,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="32bf2feab98ebookings_read-bookings_write-bookings_write_owned">
+      <div class="tab-pane active" id="dcfdecef9b60bookings_read-bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_taxes.booking"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/bookings/{bookings_taxes.booking}"</span><span class="p">,</span>
@@ -302,7 +296,7 @@ certain range.</p>
   <span class="p">},</span>
   <span class="s2">"bookings_taxes"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">52</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">52</span><span class="p">,</span>
       <span class="s2">"amount"</span><span class="o">:</span> <span class="s2">"1565.2"</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Bookings Tax"</span>
@@ -310,11 +304,11 @@ certain range.</p>
       <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"455.0"</span><span class="p">,</span>
       <span class="s2">"tax_included_in_price"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-        <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">1382</span><span class="p">,</span>
-        <span class="s2">"tax"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
+        <span class="s2">"booking"</span><span class="o">:</span> <span class="mf">1382</span><span class="p">,</span>
+        <span class="s2">"tax"</span><span class="o">:</span> <span class="mf">7</span><span class="p">,</span>
         <span class="s2">"taxable"</span><span class="o">:</span> <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"Rental"</span>
         <span class="p">}</span>
       <span class="p">}</span>
@@ -339,7 +333,7 @@ certain range.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#943a786d00bbbookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#c80cbc9543d8bookings_read-bookings_write-bookings_write_owned" role="tab" data-toggle="pill">
           bookings_read / bookings_write / bookings_write_owned
         </a>
       </li>
@@ -351,7 +345,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="943a786d00bbbookings_read-bookings_write-bookings_write_owned">
+      <div class="tab-pane active" id="c80cbc9543d8bookings_read-bookings_write-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings_taxes.booking"</span><span class="o">:</span> <span class="s2">"http://www.bookingsync.com/api/v3/bookings/{bookings_taxes.booking}"</span><span class="p">,</span>
@@ -361,7 +355,7 @@ certain range.</p>
   <span class="p">},</span>
   <span class="s2">"bookings_taxes"</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="s2">"id"</span><span class="o">:</span> <span class="mi">52</span><span class="p">,</span>
+      <span class="s2">"id"</span><span class="o">:</span> <span class="mf">52</span><span class="p">,</span>
       <span class="s2">"amount"</span><span class="o">:</span> <span class="s2">"1565.2"</span><span class="p">,</span>
       <span class="s2">"name"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"en"</span><span class="o">:</span> <span class="s2">"Bookings Tax"</span>
@@ -369,11 +363,11 @@ certain range.</p>
       <span class="s2">"percentage"</span><span class="o">:</span> <span class="s2">"455.0"</span><span class="p">,</span>
       <span class="s2">"tax_included_in_price"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">"account"</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
-        <span class="s2">"booking"</span><span class="o">:</span> <span class="mi">1382</span><span class="p">,</span>
-        <span class="s2">"tax"</span><span class="o">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s2">"account"</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
+        <span class="s2">"booking"</span><span class="o">:</span> <span class="mf">1382</span><span class="p">,</span>
+        <span class="s2">"tax"</span><span class="o">:</span> <span class="mf">7</span><span class="p">,</span>
         <span class="s2">"taxable"</span><span class="o">:</span> <span class="p">{</span>
-          <span class="s2">"id"</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s2">"id"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
           <span class="s2">"type"</span><span class="o">:</span> <span class="s2">"Rental"</span>
         <span class="p">}</span>
       <span class="p">}</span>
