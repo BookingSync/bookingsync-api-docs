@@ -29,6 +29,7 @@
         "bookings_taxes": [],
         "bookings_tags": [1, 2],
         "booking_comments": [],
+        "conversations": [11],
         "payments": [23],
         "rentals_tags": [],
         "discount_code_usage": 12
