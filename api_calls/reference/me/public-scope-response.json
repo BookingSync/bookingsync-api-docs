@@ -1,0 +1,22 @@
+{
+    "links": {
+        "accounts_applications.account": "https://www.bookingsync.com/api/v3/accounts/{accounts_applications.account}"
+    },
+    "accounts_applications": [
+        {
+            "links": {
+                "account": 1
+            },
+            "partnership_invoice_recipient": "account"
+        }
+    ],
+    "meta": {
+        "Link": {
+            "first": "https://www.bookingsync.com/api/v3/me.json?page=1",
+            "last": "https://www.bookingsync.com/api/v3/me.json?page=1"
+        },
+        "X-Total-Pages": "1",
+        "X-Total-Count": "1",
+        "X-Per-Page": "100"
+    }
+}
