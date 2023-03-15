@@ -1,8 +1,8 @@
 # Changelog
 
-## [3.29.4](https://github.com/BookingSync/bookingsync-api-docs/tree/3.29.4) (2023-03-15)
+## [v3.29.4](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.29.4) (2023-03-15)
 
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.28.4...3.29.4)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.28.4...v3.29.4)
 
 **Merged pull requests:**
 
@@ -30,7 +30,6 @@
 **Merged pull requests:**
 
 - Update dependencies selectively for arm64 support [\#376](https://github.com/BookingSync/bookingsync-api-docs/pull/376) ([ston1x](https://github.com/ston1x))
-- \[CORE-5981\] Fix nested-hash translated attributes documentation mistakes [\#373](https://github.com/BookingSync/bookingsync-api-docs/pull/373) ([Kefa7y](https://github.com/Kefa7y))
 
 ## [v3.27.2](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.27.2) (2023-01-31)
 
@@ -39,6 +38,7 @@
 **Merged pull requests:**
 
 - \[CORE-5979\] Discount Codes docs [\#375](https://github.com/BookingSync/bookingsync-api-docs/pull/375) ([ARtoriouSs](https://github.com/ARtoriouSs))
+- \[CORE-5981\] Fix nested-hash translated attributes documentation mistakes [\#373](https://github.com/BookingSync/bookingsync-api-docs/pull/373) ([Kefa7y](https://github.com/Kefa7y))
 - add link to Channel API [\#370](https://github.com/BookingSync/bookingsync-api-docs/pull/370) ([Azdaroth](https://github.com/Azdaroth))
 - \[core-5497\] Add pet fee [\#367](https://github.com/BookingSync/bookingsync-api-docs/pull/367) ([radekzawada](https://github.com/radekzawada))
 - Bump nokogiri from 1.10.8 to 1.13.4 [\#361](https://github.com/BookingSync/bookingsync-api-docs/pull/361) ([dependabot[bot]](https://github.com/apps/dependabot))
@@ -133,7 +133,6 @@
 **Merged pull requests:**
 
 - \[core-3533\]update message endpoint documentation [\#328](https://github.com/BookingSync/bookingsync-api-docs/pull/328) ([radekzawada](https://github.com/radekzawada))
-- \[core-3582\] add mid term rate maps docs [\#327](https://github.com/BookingSync/bookingsync-api-docs/pull/327) ([radekzawada](https://github.com/radekzawada))
 
 ## [v3.19.1](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.19.1) (2020-06-03)
 
@@ -149,6 +148,7 @@
 
 **Merged pull requests:**
 
+- \[core-3582\] add mid term rate maps docs [\#327](https://github.com/BookingSync/bookingsync-api-docs/pull/327) ([radekzawada](https://github.com/radekzawada))
 - add 6 new rental types [\#323](https://github.com/BookingSync/bookingsync-api-docs/pull/323) ([adamgrad](https://github.com/adamgrad))
 - Bump rake from 11.1.2 to 12.3.3 [\#322](https://github.com/BookingSync/bookingsync-api-docs/pull/322) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump rack from 2.0.6 to 2.2.2 [\#321](https://github.com/BookingSync/bookingsync-api-docs/pull/321) ([dependabot[bot]](https://github.com/apps/dependabot))
@@ -257,6 +257,10 @@
 
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.8.0...v3.9.0)
 
+**Implemented enhancements:**
+
+- Add change over endpoint [\#262](https://github.com/BookingSync/bookingsync-api-docs/pull/262) ([JulienItard](https://github.com/JulienItard))
+
 **Merged pull requests:**
 
 - fix vulnerabilities by updating nokogiri and pygments [\#274](https://github.com/BookingSync/bookingsync-api-docs/pull/274) ([StoneFrog](https://github.com/StoneFrog))
@@ -306,7 +310,6 @@
 **Implemented enhancements:**
 
 - List of all current amenities in enums section. [\#94](https://github.com/BookingSync/bookingsync-api-docs/issues/94)
-- Add change over endpoint [\#262](https://github.com/BookingSync/bookingsync-api-docs/pull/262) ([JulienItard](https://github.com/JulienItard))
 
 **Closed issues:**
 
@@ -315,6 +318,7 @@
 **Merged pull requests:**
 
 - Fix changelog [\#263](https://github.com/BookingSync/bookingsync-api-docs/pull/263) ([JulienItard](https://github.com/JulienItard))
+- add docs for bookings\_fees [\#255](https://github.com/BookingSync/bookingsync-api-docs/pull/255) ([kaizencodes](https://github.com/kaizencodes))
 - Add webhook guide [\#254](https://github.com/BookingSync/bookingsync-api-docs/pull/254) ([BenjaminVanRyseghem](https://github.com/BenjaminVanRyseghem))
 
 ## [v3.4.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.4.0) (2017-09-19)
@@ -331,7 +335,6 @@
 
 **Merged pull requests:**
 
-- add docs for bookings\_fees [\#255](https://github.com/BookingSync/bookingsync-api-docs/pull/255) ([kaizencodes](https://github.com/kaizencodes))
 - Update Changelog [\#252](https://github.com/BookingSync/bookingsync-api-docs/pull/252) ([JulienItard](https://github.com/JulienItard))
 - Fix typo [\#251](https://github.com/BookingSync/bookingsync-api-docs/pull/251) ([JulienItard](https://github.com/JulienItard))
 - Bookings fees included in price [\#250](https://github.com/BookingSync/bookingsync-api-docs/pull/250) ([ZenCocoon](https://github.com/ZenCocoon))
