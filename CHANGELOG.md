@@ -1,8 +1,17 @@
 # Changelog
 
-## [3.28.4](https://github.com/BookingSync/bookingsync-api-docs/tree/3.28.4) (2023-03-09)
+## [3.29.4](https://github.com/BookingSync/bookingsync-api-docs/tree/3.29.4) (2023-03-15)
 
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.27.4...3.28.4)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.28.4...3.29.4)
+
+**Merged pull requests:**
+
+- CORE-6126 Followup: Add parameters descriptions and enum options [\#383](https://github.com/BookingSync/bookingsync-api-docs/pull/383) ([ston1x](https://github.com/ston1x))
+- CORE-6126 Add documentation for api/v3/me [\#382](https://github.com/BookingSync/bookingsync-api-docs/pull/382) ([ston1x](https://github.com/ston1x))
+
+## [v3.28.4](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.28.4) (2023-03-09)
+
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.27.4...v3.28.4)
 
 **Merged pull requests:**
 
@@ -306,7 +315,6 @@
 **Merged pull requests:**
 
 - Fix changelog [\#263](https://github.com/BookingSync/bookingsync-api-docs/pull/263) ([JulienItard](https://github.com/JulienItard))
-- add docs for bookings\_fees [\#255](https://github.com/BookingSync/bookingsync-api-docs/pull/255) ([kaizencodes](https://github.com/kaizencodes))
 - Add webhook guide [\#254](https://github.com/BookingSync/bookingsync-api-docs/pull/254) ([BenjaminVanRyseghem](https://github.com/BenjaminVanRyseghem))
 
 ## [v3.4.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.4.0) (2017-09-19)
@@ -323,6 +331,7 @@
 
 **Merged pull requests:**
 
+- add docs for bookings\_fees [\#255](https://github.com/BookingSync/bookingsync-api-docs/pull/255) ([kaizencodes](https://github.com/kaizencodes))
 - Update Changelog [\#252](https://github.com/BookingSync/bookingsync-api-docs/pull/252) ([JulienItard](https://github.com/JulienItard))
 - Fix typo [\#251](https://github.com/BookingSync/bookingsync-api-docs/pull/251) ([JulienItard](https://github.com/JulienItard))
 - Bookings fees included in price [\#250](https://github.com/BookingSync/bookingsync-api-docs/pull/250) ([ZenCocoon](https://github.com/ZenCocoon))
@@ -342,6 +351,10 @@
 ## [v3.1.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.1.0) (2017-07-13)
 
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.0.0...v3.1.0)
+
+**Merged pull requests:**
+
+- Add currency calculation to LOS records endpoint [\#234](https://github.com/BookingSync/bookingsync-api-docs/pull/234) ([Phazz](https://github.com/Phazz))
 
 ## [v3.0.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.0.0) (2017-07-11)
 
@@ -379,7 +392,6 @@
 - use :name\_en instead of :name param for bedrooms [\#237](https://github.com/BookingSync/bookingsync-api-docs/pull/237) ([Azdaroth](https://github.com/Azdaroth))
 - Ability to filter \# of results per page [\#236](https://github.com/BookingSync/bookingsync-api-docs/pull/236) ([FelixMalfait](https://github.com/FelixMalfait))
 - Add description of the Rentals content overrides endpoint [\#235](https://github.com/BookingSync/bookingsync-api-docs/pull/235) ([Phazz](https://github.com/Phazz))
-- Add currency calculation to LOS records endpoint [\#234](https://github.com/BookingSync/bookingsync-api-docs/pull/234) ([Phazz](https://github.com/Phazz))
 - Add docs for applications endpoint [\#233](https://github.com/BookingSync/bookingsync-api-docs/pull/233) ([Fredar](https://github.com/Fredar))
 - Secure Payments By BookingSync [\#231](https://github.com/BookingSync/bookingsync-api-docs/pull/231) ([Azdaroth](https://github.com/Azdaroth))
 - Add docs for rentals\_contents\_overrides endpoint [\#230](https://github.com/BookingSync/bookingsync-api-docs/pull/230) ([Fredar](https://github.com/Fredar))
