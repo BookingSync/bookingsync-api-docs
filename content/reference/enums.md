@@ -522,3 +522,11 @@ provincial_sales             | Provincial sales tax
 harmonized_sales             | Harmonized sales tax
 other                        | Other tax
 {: class="table table-bordered"}
+
+## Partnership Invoice Recipients
+
+Name                         | Description
+-----------------------------|------------
+account                      | Account owner will be getting invoices
+smily                        | Smily will be getting invoices
+{: class="table table-bordered"}
