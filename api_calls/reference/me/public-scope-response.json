@@ -12,8 +12,8 @@
     ],
     "meta": {
         "Link": {
-            "first": "https://www.bookingsync.com/api/v3/me.json?page=1",
-            "last": "https://www.bookingsync.com/api/v3/me.json?page=1"
+            "first": "https://www.bookingsync.com/api/v3/me?page=1",
+            "last": "https://www.bookingsync.com/api/v3/me?page=1"
         },
         "X-Total-Pages": "1",
         "X-Total-Count": "1",
