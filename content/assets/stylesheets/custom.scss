@@ -1,0 +1,22 @@
+#bookings_write table>tbody>tr>td:nth-child(4),
+  #bookings_write_owned table>tbody>tr>td:nth-child(4),
+  #bookings_read table>tbody>tr>td:nth-child(4),
+  #rentals_read table>tbody>tr>td:nth-child(4) {
+    word-break: break-word;
+}
+
+#bookings_write table>tbody>tr>td:nth-child(5),
+  #bookings_write_owned table>tbody>tr>td:nth-child(5),
+  #bookings_read table>tbody>tr>td:nth-child(5),
+    #rentals_read table>tbody>tr>td:nth-child(5) {
+    word-break: break-word;
+}
+
+
+#bookings_write table>tbody>tr>td:first-child,
+  #bookings_write_owned table>tbody>tr>td:first-child,
+  #bookings_read table>tbody>tr>td:first-child,
+  #rentals_read table>tbody>tr>td:first-child {
+    word-break: break-word;
+    width: 200px;
+}
