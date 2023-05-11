@@ -66,12 +66,12 @@ bookings_tag_ids                               | Array   | Write      | Array of
 adults                                         | Integer | Read/Write      | Booking's number of adults. |
 booked                                         | Boolean | Read/Write      | Booking's booked status, false by default. When set to true, marks a regular booking. |
 channel_price                                  | Integer | Read/Write      | Price accepted by the traveler on the channel site, excluding traveler's fees (eg: Airbnb). |
-charge_damage_deposit_on_arrival               | Boolean    | Read/Write | Defines if charge damage deposit will be charged on arrival. | Can be `true` or `false` for Pro subscriptions, only `false` allowed when `damage_deposit_collection_method` is `"smily_damage_deposit_with_swikly"` |
 children                                       | Integer | Read/Write      | Booking's number of children. |
 commission                                     | [Decimal](/reference/enums#formats) | Write | Booking's commission fee. | Requires `final_price` to be present
 currency                                       | String  | Read/Write      | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies). | Must be blank or included in [currencies list](/reference/enums#currencies)
-damage_deposit                                 | [Decimal](/reference/enums#formats) | Read/Write | Booking's damage deposit. | greater than or equal to: 0 |
-damage_deposit_collection_method               | [String](/reference/enums#formats) | Read/Write | Booking's damage deposit collection method. | Can be: `"with_smily"` (default), `"external"`, `"smily_damage_deposit_with_swikly"` (for non-Pro subscriptions) |
+damage_deposit                                 | [Decimal](/reference/enums#formats) | Read/Write | Booking's damage deposit. | greater than or equal to: 0. It is read-only and auto-generated in case `damage_deposit_collection_method` is `"smily_damage_deposit_with_swikly"` |
+charge_damage_deposit_on_arrival               | Boolean    | Read/Write | Defines if charge damage deposit will be charged on arrival. | Can be `true` or `false` for Pro subscriptions, only `false` allowed when `damage_deposit_collection_method` is `"smily_damage_deposit_with_swikly"` |
+damage_deposit_collection_method               | [String](/reference/enums#formats) | Read/Write | Booking's damage deposit collection method. | List of values described in [enums section](/reference/enums#damage-deposit-collection-methods). |
 damage_deposit_external_collection_method_name | [String](/reference/enums#formats) | Read/Write | Damage deposit collection method name (in case `damage_deposit_collection_method` is `"external"`). | Leave blank unless `damage_deposit_collection_method` is `"external"` |
 discount                                       | String  | Read/Write      | Booking's discount. (in percents e.g. 10%) | must blank or an absolute value (e.g. 100) or percentage value (e.g. 10%) |
 door_key_code                                  | String  | Read/Write      | Booking's rental door key code. |
@@ -130,12 +130,12 @@ adults                  | Integer | Read       | Booking's number of adults.
 booked                  | Boolean | Read       | Booking's booked status, false by default. When set to true, marks a regular booking.
 bookings_payments_count | Integer | Read       | Booking's number of payments.
 channel_price           | Integer | Read       | Price accepted by the traveler on the channel site, excluding traveler's fees (eg: Airbnb).
-charge_damage_deposit_on_arrival | Boolean    | Read | Defines if charge damage deposit will be charged on arrival.  Can be `true` or `false` for Pro subscriptions, only `false` allowed when `damage_deposit_collection_method` is `"smily_damage_deposit_with_swikly"`
 children                | Integer | Read       | Booking's number of children.
 commission              | [Decimal](/reference/enums#formats) | Read | Booking's commission fee.
 currency                | String  | Read       | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies).
 damage_deposit          | [Decimal](/reference/enums#formats) | Read | Booking's damage deposit.
-damage_deposit_collection_method | [String](/reference/enums#formats) | Read | Booking's damage deposit collection method. Can be: `"with_smily"` (default), `"external"`, `"smily_damage_deposit_with_swikly"` (for non-Pro subscriptions)
+charge_damage_deposit_on_arrival | Boolean    | Read | Defines if charge damage deposit will be charged on arrival.  Can be `true` or `false` for Pro subscriptions, only `false` allowed when `damage_deposit_collection_method` is `"smily_damage_deposit_with_swikly"`
+damage_deposit_collection_method | [String](/reference/enums#formats) | Read | Booking's damage deposit collection method. List of values described in [enums section](/reference/enums#damage-deposit-collection-methods).
 damage_deposit_external_collection_method_name | [String](/reference/enums#formats) | Read | Damage deposit collection method name (in case `damage_deposit_collection_method` is `"external"`).  Can be blank unless `damage_deposit_collection_method` is `"external"`
 discount                | String  | Read       | Booking's discount. (in percents e.g. 10%)
 door_key_code           | String  | Read       | Booking's rental door key code.
@@ -205,12 +205,12 @@ adults                  | Integer | Read/Write | Booking's number of adults. |
 booked                  | Boolean | Read/Write | Booking's booked status, false by default. When set to true, marks a regular booking. |
 bookings_payments_count | Integer | Read       | Booking's number of payments. |
 channel_price           | Integer | Read/Write | Price accepted by the traveler on the channel site, excluding traveler's fees (eg: Airbnb). |
-charge_damage_deposit_on_arrival | Boolean    | Read/Write | Defines if charge damage deposit will be charged on arrival. | Can be `true` or `false` for Pro subscriptions, only `false` allowed when `damage_deposit_collection_method` is `"smily_damage_deposit_with_swikly"` |
 children                | Integer | Read/Write | Booking's number of children. |
 commission               | [Decimal](/reference/enums#formats) | Read/Write | Booking's commission fee. | Requires `final_price` to be present
 currency                | String  | Read/Write      | Booking's currency code, list of codes described in [enums section](/reference/enums#currencies). | Must be blank or included in [currencies list](/reference/enums#currencies)
-damage_deposit          | [Decimal](/reference/enums#formats) | Read/Write | Booking's damage deposit. | greater than or equal to: 0
-damage_deposit_collection_method | [String](/reference/enums#formats) | Read/Write | Booking's damage deposit collection method. | Can be: `"with_smily"` (default), `"external"`, `"smily_damage_deposit_with_swikly"` (for non-Pro subscriptions) |
+damage_deposit          | [Decimal](/reference/enums#formats) | Read/Write | Booking's damage deposit. | greater than or equal to: 0. It is read-only and auto-generated in case `damage_deposit_collection_method` is `"smily_damage_deposit_with_swikly"`
+charge_damage_deposit_on_arrival | Boolean    | Read/Write | Defines if charge damage deposit will be charged on arrival. | Can be `true` or `false` for Pro subscriptions, only `false` allowed when `damage_deposit_collection_method` is `"smily_damage_deposit_with_swikly"` |
+damage_deposit_collection_method | [String](/reference/enums#formats) | Read/Write | Booking's damage deposit collection method. | List of values described in [enums section](/reference/enums#damage-deposit-collection-methods). |
 damage_deposit_external_collection_method_name | [String](/reference/enums#formats) | Read/Write | Damage deposit collection method name (in case `damage_deposit_collection_method` is `"external"`). | Leave blank unless `damage_deposit_collection_method` is `"external"` |
 discount                | String  | Read/Write      | Booking's discount. (in percents e.g. 10%) | must blank or an absolute value (e.g. 100) or percentage value (e.g. 10%)
 door_key_code           | String  | Read/Write | Booking's rental door key code. |
