@@ -537,5 +537,5 @@ Name                             | Description
 ---------------------------------|------------
 with_smily                       | Smily will handle the damage deposit
 external                         | Damage deposit is collected externally (outside Smily). This needs `damage_deposit_external_collection_method_name` to be filled in
-smily_damage_deposit_with_swikly | Smily will handle the damage deposit (with Swikly). Only available for non-Pro subscriptions
+smily_damage_deposit_with_swikly | Smily will handle the damage deposit (with Swikly). Only available for Service subscriptions
 {: class="table table-bordered"}
