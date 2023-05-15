@@ -10,12 +10,12 @@ This resource represents Rentals which are the actual properties that are the su
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
   <li class="disabled"><a>OAuth Scopes:</a></li>
-  <li class="active"><a href="#public" role="tab" data-toggle="pill">public</a></li>
+  <li class="active"><a href="#rentals_public" role="tab" data-toggle="pill">public</a></li>
   <li><a href="#rentals_read" role="tab" data-toggle="pill">rentals_read</a></li>
   <li><a href="#rentals_write" role="tab" data-toggle="pill">rentals_write</a></li>
 </ul>
 <div class="tab-content" markdown="1">
-  <div class="tab-pane active" id="public" markdown="1">
+  <div class="tab-pane active" id="rentals_public" markdown="1">
 Name                            | Type     | Read/Write | Description
 --------------------------------|----------|------------|------------
 account                         | Integer  | Read       | Account's ID related to the Rental
@@ -59,6 +59,9 @@ contact_name                    | String   | Read       | Rental's contact name.
 country_code                    | String   | Read       | Rental's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
 currency                        | String   | Read       | Rental's currency code, list of codes described in [enums section](/reference/enums#currencies).
 damage_deposit                  | [Decimal](/reference/enums#formats)    | Read       | Rental's required damage deposit.
+charge_damage_deposit_on_arrival | Boolean | Read       | Rental's charge damege deposit on arrival status. Can be `true` or `false` for Pro subscriptions, only `false` allowed for Service subscriptions when `damage_deposit_collection_method` is `"smily_damage_deposit_with_swikly"`, and only `true` allowed for Service subsriptions when `damage_deposit_collection_method` is `"with_smily"` |
+damage_deposit_collection_method | [String](/reference/enums/#damage-deposit-collection-methods) | Read | Rental's damage deposit collection method. List of values described in [enums section](/reference/enums#damage-deposit-collection-methods). |
+damage_deposit_external_collection_method_name | String | Read | Damage deposit collection method name (in case `damage_deposit_collection_method` is `"external"`).
 description                     | [Object](/reference/enums#formats)     | Read       | Rental's description, list of locales described in [enums section](/reference/enums#locales).
 downpayment                     | Integer  | Read       | Rental's default downpayment percentage. If none defined, the default downpayment percentage of the account will be used.
 final_price                     | Integer  | Read       | Rental's final price (after discount). Available only for a search query with valid dates, for other cases please refer to `base_rate` and `base_rate_kind`.
@@ -93,7 +96,6 @@ certifications                  | [Object](/reference/enums#formats) | Read | Re
 management_type                 | String   | Read       | Rental's management type. All types are described in [enums section](/reference/enums#rental-management-type)
 bookable_on_request             | Boolean  | Read       | Rental's Bookable on request status (requires Rental to be published and Account needs a configuration for contract management) |
 instantly_bookable              | Boolean  | Read       | Rental's instantly bookable status  (requires Rental to be bookable on request, `bookable_online` to be set to `true` and Rental needs to have a Payment Gateway configured) |
-charge_damage_deposit_on_arrival | Boolean | Read       | Rental's charge damage deposit in arrival status
 full_bathrooms_count            | Integer  | Read       | Rental's full bathrooms count
 standalone_toilets_count        | Integer  | Read       | Rental's standalone toilets count
 vr_bathrooms_count              | Float/Integer | Read  | Rental's VR bathrooms count (Float is possible only if there are standalone Bathrooms as the value equal to: bathrooms_count - standalone_toilets_count + 0.5 will be returned, otherwise `bathrooms_count` will be returned as an Integer)
@@ -154,6 +156,9 @@ contact_name                    | String   | Read       | Rental's contact name.
 country_code                    | String   | Read       | Rental's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
 currency                        | String   | Read       | Rental's currency code, list of codes described in [enums section](/reference/enums#currencies).
 damage_deposit                  | [Decimal](/reference/enums#formats)    | Read       | Rental's required damage deposit.
+charge_damage_deposit_on_arrival | Boolean | Read       | Rental's charge damege deposit on arrival status. Can be `true` or `false` for Pro subscriptions, only `false` allowed for Service subscriptions when `damage_deposit_collection_method` is `"smily_damage_deposit_with_swikly"`, and only `true` allowed for Service subsriptions when `damage_deposit_collection_method` is `"with_smily"`
+damage_deposit_collection_method | [String](/reference/enums/#damage-deposit-collection-methods) | Read | Rental's damage deposit collection method. List of options described in [enums section](/reference/enums/#partnership-invoice-recipients).
+damage_deposit_external_collection_method_name | String | Read | Damage deposit collection method name (in case `damage_deposit_collection_method` is `"external"`).
 description                     | [Object](/reference/enums#formats)     | Read       | Rental's description, list of locales described in [enums section](/reference/enums#locales).
 downpayment                     | Integer  | Read       | Rental's default downpayment percentage. If none defined, the default downpayment percentage of the account will be used.
 final_price                     | Integer  | Read       | Rental's final price (after discount). Available only for a search query with valid dates, for other cases please refer to `base_rate` and `base_rate_kind`.
@@ -193,7 +198,6 @@ instantly_bookable              | Boolean  | Read       | Rental's instantly boo
 owner_fullname                  | String   | Read       | Rental owner's fullname
 owner_email                     | String   | Read       | Rental owner's email
 owner_notes                     | String   | Read       | Rental owner's notes
-charge_damage_deposit_on_arrival | Boolean | Read       | Rental's charge damege deposit in arrival status
 full_bathrooms_count            | Integer  | Read       | Rental's full bathrooms count
 standalone_toilets_count        | Integer  | Read       | Rental's standalone toilets count
 vr_bathrooms_count              | Float/Integer | Read  | Rental's VR bathrooms count (Float is possible only if there are standalone Bathrooms as the value equal to: bathrooms_count - standalone_toilets_count + 0.5 will be returned, otherwise `bathrooms_count` will be returned as an Integer)
@@ -299,7 +303,7 @@ instantly_bookable              | Boolean  | Read       | Rental's instantly boo
 owner_fullname                  | String   | Read/Write | Rental owner's fullname | Maximum length: 100
 owner_email                     | String   | Read/Write | Rental owner's email | Must be a valid email format if present
 owner_notes                     | String   | Read/Write | Rental owner's notes | Maximum length: 2000
-charge_damage_deposit_on_arrival | Boolean | Read       | Rental's charge damege deposit in arrival status |
+charge_damage_deposit_on_arrival | Boolean | Read       | Rental's charge damege deposit in arrival status. Can be `true` or `false` for Pro subscriptions, only `false` allowed for Service subscriptions when `damage_deposit_collection_method` is `"smily_damage_deposit_with_swikly"`, and only `true` allowed for Service subsriptions when `damage_deposit_collection_method` is `"with_smily"` |
 full_bathrooms_count            | Integer  | Read       | Rental's full bathrooms count |
 standalone_toilets_count        | Integer  | Read       | Rental's standalone toilets count |
 vr_bathrooms_count              | Float/Integer | Read  | Rental's VR bathrooms count (Float is possible only if there are standalone Bathrooms as the value equal to: bathrooms_count - standalone_toilets_count + 0.5 will be returned, otherwise `bathrooms_count` will be returned as an Integer) |

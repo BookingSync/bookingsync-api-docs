@@ -530,3 +530,12 @@ Name                         | Description
 account                      | Account owner will be getting invoices
 smily                        | Smily will be getting invoices
 {: class="table table-bordered"}
+
+## Damage Deposit Collection Methods
+
+Name                             | Description
+---------------------------------|------------
+with_smily                       | Smily will handle the damage deposit
+external                         | Damage deposit is collected externally (outside Smily). This needs `damage_deposit_external_collection_method_name` to be filled in
+smily_damage_deposit_with_swikly | Smily will handle the damage deposit (with Swikly). Only available for Service subscriptions
+{: class="table table-bordered"}
