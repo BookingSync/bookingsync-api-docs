@@ -60,8 +60,8 @@ country_code                    | String   | Read       | Rental's country code,
 currency                        | String   | Read       | Rental's currency code, list of codes described in [enums section](/reference/enums#currencies).
 damage_deposit                  | [Decimal](/reference/enums#formats)    | Read       | Rental's required damage deposit.
 charge_damage_deposit_on_arrival | Boolean | Read       | Rental's charge damege deposit on arrival status. Can be `true` or `false` for Pro subscriptions, only `false` allowed for Service subscriptions when `damage_deposit_collection_method` is `"smily_damage_deposit_with_swikly"`, and only `true` allowed for Service subsriptions when `damage_deposit_collection_method` is `"with_smily"` |
-damage_deposit_collection_method | String | Read | Rental's damage deposit collection method. List of values described in [enums section](/reference/enums#damage-deposit-collection-methods). |
-damage_deposit_external_collection_method_name | [String](/reference/enums#formats) | Read | Damage deposit collection method name (in case `damage_deposit_collection_method` is `"external"`).
+damage_deposit_collection_method | [String](/reference/enums/#damage-deposit-collection-methods) | Read | Rental's damage deposit collection method. List of values described in [enums section](/reference/enums#damage-deposit-collection-methods). |
+damage_deposit_external_collection_method_name | String | Read | Damage deposit collection method name (in case `damage_deposit_collection_method` is `"external"`).
 description                     | [Object](/reference/enums#formats)     | Read       | Rental's description, list of locales described in [enums section](/reference/enums#locales).
 downpayment                     | Integer  | Read       | Rental's default downpayment percentage. If none defined, the default downpayment percentage of the account will be used.
 final_price                     | Integer  | Read       | Rental's final price (after discount). Available only for a search query with valid dates, for other cases please refer to `base_rate` and `base_rate_kind`.
@@ -156,10 +156,9 @@ contact_name                    | String   | Read       | Rental's contact name.
 country_code                    | String   | Read       | Rental's country code, list of codes is available at [wikipedia](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements).
 currency                        | String   | Read       | Rental's currency code, list of codes described in [enums section](/reference/enums#currencies).
 damage_deposit                  | [Decimal](/reference/enums#formats)    | Read       | Rental's required damage deposit.
-charge_damage_deposit_on_arrival | Boolean | Read       | Rental's charge damege deposit on arrival status. Can be `true` or `false` for Pro subscriptions, only `false` allowed for Service subscriptions when `damage_deposit_collection_method` is `"smily_damage_deposit_with_swikly"`, and only `true` allowed for Service subsriptions when `damage_deposit_collection_method` is `"with_smily"` |
-
-damage_deposit_collection_method | [String](/reference/enums#formats) | Read | Rental's damage deposit collection method. List of options described in [enums section](/reference/enums/#partnership-invoice-recipients). |
-damage_deposit_external_collection_method_name | [String](/reference/enums#formats) | Read | Damage deposit collection method name (in case `damage_deposit_collection_method` is `"external"`).
+charge_damage_deposit_on_arrival | Boolean | Read       | Rental's charge damege deposit on arrival status. Can be `true` or `false` for Pro subscriptions, only `false` allowed for Service subscriptions when `damage_deposit_collection_method` is `"smily_damage_deposit_with_swikly"`, and only `true` allowed for Service subsriptions when `damage_deposit_collection_method` is `"with_smily"`
+damage_deposit_collection_method | [String](/reference/enums/#damage-deposit-collection-methods) | Read | Rental's damage deposit collection method. List of options described in [enums section](/reference/enums/#partnership-invoice-recipients).
+damage_deposit_external_collection_method_name | String | Read | Damage deposit collection method name (in case `damage_deposit_collection_method` is `"external"`).
 description                     | [Object](/reference/enums#formats)     | Read       | Rental's description, list of locales described in [enums section](/reference/enums#locales).
 downpayment                     | Integer  | Read       | Rental's default downpayment percentage. If none defined, the default downpayment percentage of the account will be used.
 final_price                     | Integer  | Read       | Rental's final price (after discount). Available only for a search query with valid dates, for other cases please refer to `base_rate` and `base_rate_kind`.
