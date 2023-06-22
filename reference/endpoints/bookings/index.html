@@ -402,13 +402,6 @@
           <td> </td>
         </tr>
         <tr>
-          <td>charge_damage_deposit_on_arrival</td>
-          <td>Boolean</td>
-          <td>Read/Write</td>
-          <td>Defines if charge damage deposit will be charged on arrival.</td>
-          <td> </td>
-        </tr>
-        <tr>
           <td>children</td>
           <td>Integer</td>
           <td>Read/Write</td>
@@ -435,7 +428,31 @@
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read/Write</td>
           <td>Booking’s damage deposit.</td>
-          <td>greater than or equal to: 0</td>
+          <td>greater than or equal to: 0. It is read-only and auto-generated in case <code>damage_deposit_collection_method</code> is <code>"smily_damage_deposit_with_swikly"</code>
+</td>
+        </tr>
+        <tr>
+          <td>charge_damage_deposit_on_arrival</td>
+          <td>Boolean</td>
+          <td>Read/Write</td>
+          <td>Defines if charge damage deposit will be charged on arrival.</td>
+          <td>Can be <code>true</code> or <code>false</code> for Pro subscriptions, only <code>false</code> allowed for Service subscriptions when <code>damage_deposit_collection_method</code> is <code>"smily_damage_deposit_with_swikly"</code>, and only <code>true</code> allowed for Service subsriptions when <code>damage_deposit_collection_method</code> is <code>"with_smily"</code>
+</td>
+        </tr>
+        <tr>
+          <td>damage_deposit_collection_method</td>
+          <td><a href="/reference/enums/#damage-deposit-collection-methods">String</a></td>
+          <td>Read/Write</td>
+          <td>Booking’s damage deposit collection method.</td>
+          <td>List of values described in <a href="/reference/enums#damage-deposit-collection-methods">enums section</a>.</td>
+        </tr>
+        <tr>
+          <td>damage_deposit_external_collection_method_name</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Damage deposit collection method name (in case <code>damage_deposit_collection_method</code> is <code>"external"</code>).</td>
+          <td>Leave blank unless <code>damage_deposit_collection_method</code> is <code>"external"</code>
+</td>
         </tr>
         <tr>
           <td>discount</td>
@@ -581,21 +598,21 @@
         </tr>
         <tr>
           <td>reconciliation</td>
-          <td>[Decimal](/reference/enums#formats</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read/Write</td>
           <td>Booking’s reconciliation</td>
           <td> </td>
         </tr>
         <tr>
           <td>authorized_amount</td>
-          <td>[Decimal](/reference/enums#formats</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Booking’s authorized amount</td>
           <td> </td>
         </tr>
         <tr>
           <td>paid_or_authorized_amount</td>
-          <td>[Decimal](/reference/enums#formats</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Booking’s paid or authorized amount</td>
           <td> </td>
@@ -791,12 +808,6 @@
           <td>Price accepted by the traveler on the channel site, excluding traveler’s fees (eg: Airbnb).</td>
         </tr>
         <tr>
-          <td>charge_damage_deposit_on_arrival</td>
-          <td>Boolean</td>
-          <td>Read</td>
-          <td>Defines if charge damage deposit will be charged on arrival.</td>
-        </tr>
-        <tr>
           <td>children</td>
           <td>Integer</td>
           <td>Read</td>
@@ -819,6 +830,26 @@
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Booking’s damage deposit.</td>
+        </tr>
+        <tr>
+          <td>charge_damage_deposit_on_arrival</td>
+          <td>Boolean</td>
+          <td>Read</td>
+          <td>Defines if charge damage deposit will be charged on arrival.  Can be <code>true</code> or <code>false</code> for Pro subscriptions, only <code>false</code> allowed for Service subscriptions when <code>damage_deposit_collection_method</code> is <code>"smily_damage_deposit_with_swikly"</code>, and only <code>true</code> allowed for Service subsriptions when <code>damage_deposit_collection_method</code> is <code>"with_smily"</code>
+</td>
+        </tr>
+        <tr>
+          <td>damage_deposit_collection_method</td>
+          <td><a href="/reference/enums/#damage-deposit-collection-methods">String</a></td>
+          <td>Read</td>
+          <td>Booking’s damage deposit collection method. List of values described in <a href="/reference/enums#damage-deposit-collection-methods">enums section</a>.</td>
+        </tr>
+        <tr>
+          <td>damage_deposit_external_collection_method_name</td>
+          <td>String</td>
+          <td>Read</td>
+          <td>Damage deposit collection method name (in case <code>damage_deposit_collection_method</code> is <code>"external"</code>).  Can be blank unless <code>damage_deposit_collection_method</code> is <code>"external"</code>
+</td>
         </tr>
         <tr>
           <td>discount</td>
@@ -978,19 +1009,19 @@
         </tr>
         <tr>
           <td>reconciliation</td>
-          <td>[Decimal](/reference/enums#formats</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Booking’s reconciliation</td>
         </tr>
         <tr>
           <td>authorized_amount</td>
-          <td>[Decimal](/reference/enums#formats</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Booking’s authorized amount</td>
         </tr>
         <tr>
           <td>paid_or_authorized_amount</td>
-          <td>[Decimal](/reference/enums#formats</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Booking’s paid or authorized amount</td>
         </tr>
@@ -1230,13 +1261,6 @@
           <td> </td>
         </tr>
         <tr>
-          <td>charge_damage_deposit_on_arrival</td>
-          <td>Boolean</td>
-          <td>Read/Write</td>
-          <td>Defines if charge damage deposit will be charged on arrival.</td>
-          <td> </td>
-        </tr>
-        <tr>
           <td>children</td>
           <td>Integer</td>
           <td>Read/Write</td>
@@ -1263,7 +1287,31 @@
           <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read/Write</td>
           <td>Booking’s damage deposit.</td>
-          <td>greater than or equal to: 0</td>
+          <td>greater than or equal to: 0. It is read-only and auto-generated in case <code>damage_deposit_collection_method</code> is <code>"smily_damage_deposit_with_swikly"</code>
+</td>
+        </tr>
+        <tr>
+          <td>charge_damage_deposit_on_arrival</td>
+          <td>Boolean</td>
+          <td>Read/Write</td>
+          <td>Defines if charge damage deposit will be charged on arrival.</td>
+          <td>Can be <code>true</code> or <code>false</code> for Pro subscriptions, only <code>false</code> allowed for Service subscriptions when <code>damage_deposit_collection_method</code> is <code>"smily_damage_deposit_with_swikly"</code>, and only <code>true</code> allowed for Service subsriptions when <code>damage_deposit_collection_method</code> is <code>"with_smily"</code>
+</td>
+        </tr>
+        <tr>
+          <td>damage_deposit_collection_method</td>
+          <td><a href="/reference/enums/#damage-deposit-collection-methods">String</a></td>
+          <td>Read/Write</td>
+          <td>Booking’s damage deposit collection method.</td>
+          <td>List of values described in <a href="/reference/enums#damage-deposit-collection-methods">enums section</a>.</td>
+        </tr>
+        <tr>
+          <td>damage_deposit_external_collection_method_name</td>
+          <td>String</td>
+          <td>Read/Write</td>
+          <td>Damage deposit collection method name (in case <code>damage_deposit_collection_method</code> is <code>"external"</code>).</td>
+          <td>Leave blank unless <code>damage_deposit_collection_method</code> is <code>"external"</code>
+</td>
         </tr>
         <tr>
           <td>discount</td>
@@ -1451,21 +1499,21 @@
         </tr>
         <tr>
           <td>reconciliation</td>
-          <td>[Decimal](/reference/enums#formats</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read/Write</td>
           <td>Booking’s reconciliation</td>
           <td> </td>
         </tr>
         <tr>
           <td>authorized_amount</td>
-          <td>[Decimal](/reference/enums#formats</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Booking’s authorized amount</td>
           <td> </td>
         </tr>
         <tr>
           <td>paid_or_authorized_amount</td>
-          <td>[Decimal](/reference/enums#formats</td>
+          <td><a href="/reference/enums#formats">Decimal</a></td>
           <td>Read</td>
           <td>Booking’s paid or authorized amount</td>
           <td> </td>
@@ -1588,13 +1636,13 @@ certain range.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#b1f7b1621059public-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#0e99f68efd94public-bookings_write_owned" role="tab" data-toggle="pill">
           public / bookings_write_owned
         </a>
       </li>
     
       <li>
-        <a href="#c84c2bf96258bookings_read-bookings_write" role="tab" data-toggle="pill">
+        <a href="#8af9200a333ebookings_read-bookings_write" role="tab" data-toggle="pill">
           bookings_read / bookings_write
         </a>
       </li>
@@ -1606,7 +1654,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="b1f7b1621059public-bookings_write_owned">
+      <div class="tab-pane active" id="0e99f68efd94public-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
@@ -1619,9 +1667,9 @@ certain range.</p>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mf">203</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-15T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-03-22T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-03-29T14:33:02Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-06-22T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-06-29T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-07-06T07:54:04Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
         <span class="s2">"bookings_tags"</span><span class="o">:</span> <span class="p">[</span>
@@ -1641,7 +1689,7 @@ certain range.</p>
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="c84c2bf96258bookings_read-bookings_write">
+      <div class="tab-pane " id="8af9200a333ebookings_read-bookings_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
@@ -1692,13 +1740,13 @@ certain range.</p>
       <span class="s2">"review_requests_count"</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
       <span class="s2">"unavailable"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-15T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-15T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-03-22T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-03-29T14:33:02Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-06-22T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-06-22T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-06-29T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-07-06T07:54:04Z"</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"balance_due_at"</span><span class="o">:</span> <span class="s2">"BALANCE_DUE_AT"</span><span class="p">,</span>
-      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2023-03-15T14:33:02Z"</span><span class="p">,</span>
+      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2023-06-22T07:54:04Z"</span><span class="p">,</span>
       <span class="s2">"tentative_expires_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
@@ -1827,13 +1875,13 @@ certain range.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#d38113a8f3b3public-bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#2db062b88611public-bookings_write_owned" role="tab" data-toggle="pill">
           public / bookings_write_owned
         </a>
       </li>
     
       <li>
-        <a href="#20dd28064e2abookings_read-bookings_write" role="tab" data-toggle="pill">
+        <a href="#f16aaabb1aedbookings_read-bookings_write" role="tab" data-toggle="pill">
           bookings_read / bookings_write
         </a>
       </li>
@@ -1845,7 +1893,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="d38113a8f3b3public-bookings_write_owned">
+      <div class="tab-pane active" id="2db062b88611public-bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
@@ -1858,9 +1906,9 @@ certain range.</p>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mf">203</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-15T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-03-22T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-03-29T14:33:02Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-06-22T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-06-29T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-07-06T07:54:04Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
         <span class="s2">"bookings_tags"</span><span class="o">:</span> <span class="p">[</span>
@@ -1880,7 +1928,7 @@ certain range.</p>
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="20dd28064e2abookings_read-bookings_write">
+      <div class="tab-pane " id="f16aaabb1aedbookings_read-bookings_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
@@ -1931,13 +1979,13 @@ certain range.</p>
       <span class="s2">"review_requests_count"</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
       <span class="s2">"unavailable"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-15T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-15T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-03-22T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-03-29T14:33:02Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-06-22T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-06-22T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-06-29T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-07-06T07:54:04Z"</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"balance_due_at"</span><span class="o">:</span> <span class="s2">"BALANCE_DUE_AT"</span><span class="p">,</span>
-      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2023-03-15T14:33:02Z"</span><span class="p">,</span>
+      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2023-06-22T07:54:04Z"</span><span class="p">,</span>
       <span class="s2">"tentative_expires_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
@@ -1999,13 +2047,13 @@ certain range.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#c715167b380bbookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#24689dc78d93bookings_write_owned" role="tab" data-toggle="pill">
           bookings_write_owned
         </a>
       </li>
     
       <li>
-        <a href="#dfa86de78f72bookings_write" role="tab" data-toggle="pill">
+        <a href="#88de26e0d7e4bookings_write" role="tab" data-toggle="pill">
           bookings_write
         </a>
       </li>
@@ -2027,8 +2075,8 @@ certain range.</p>
       <span class="s2">"discount"</span><span class="o">:</span> <span class="s2">"10%"</span><span class="p">,</span>
       <span class="s2">"final_price"</span><span class="o">:</span> <span class="s2">"2700.0"</span><span class="p">,</span>
       <span class="s2">"initial_price"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-03-22T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-03-29T14:33:02Z"</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-06-29T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-07-06T07:54:04Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -2038,7 +2086,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="c715167b380bbookings_write_owned">
+      <div class="tab-pane active" id="24689dc78d93bookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
@@ -2089,13 +2137,13 @@ certain range.</p>
       <span class="s2">"review_requests_count"</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
       <span class="s2">"unavailable"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-15T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-15T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-03-22T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-03-29T14:33:02Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-06-22T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-06-22T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-06-29T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-07-06T07:54:04Z"</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"balance_due_at"</span><span class="o">:</span> <span class="s2">"BALANCE_DUE_AT"</span><span class="p">,</span>
-      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2023-03-15T14:33:02Z"</span><span class="p">,</span>
+      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2023-06-22T07:54:04Z"</span><span class="p">,</span>
       <span class="s2">"tentative_expires_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
@@ -2138,7 +2186,7 @@ certain range.</p>
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="dfa86de78f72bookings_write">
+      <div class="tab-pane " id="88de26e0d7e4bookings_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
@@ -2189,13 +2237,13 @@ certain range.</p>
       <span class="s2">"review_requests_count"</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
       <span class="s2">"unavailable"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-15T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-15T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-03-22T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-03-29T14:33:02Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-06-22T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-06-22T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-06-29T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-07-06T07:54:04Z"</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"balance_due_at"</span><span class="o">:</span> <span class="s2">"BALANCE_DUE_AT"</span><span class="p">,</span>
-      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2023-03-15T14:33:02Z"</span><span class="p">,</span>
+      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2023-06-22T07:54:04Z"</span><span class="p">,</span>
       <span class="s2">"tentative_expires_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
@@ -2250,13 +2298,13 @@ certain range.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#a689d0e0dd26bookings_write" role="tab" data-toggle="pill">
+        <a href="#9a5f3b1a121fbookings_write" role="tab" data-toggle="pill">
           bookings_write
         </a>
       </li>
     
       <li>
-        <a href="#9e3cd7bfdd81bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#aea89dad7ccfbookings_write_owned" role="tab" data-toggle="pill">
           bookings_write_owned
         </a>
       </li>
@@ -2323,8 +2371,8 @@ certain range.</p>
       <span class="s2">"discount"</span><span class="o">:</span> <span class="s2">"10%"</span><span class="p">,</span>
       <span class="s2">"final_price"</span><span class="o">:</span> <span class="s2">"2930.0"</span><span class="p">,</span>
       <span class="s2">"initial_price"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-03-22T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-03-29T14:33:02Z"</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-06-29T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-07-06T07:54:04Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -2334,7 +2382,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="a689d0e0dd26bookings_write">
+      <div class="tab-pane active" id="9a5f3b1a121fbookings_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
@@ -2483,13 +2531,13 @@ certain range.</p>
       <span class="s2">"review_requests_count"</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
       <span class="s2">"unavailable"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-15T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-15T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-03-22T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-03-29T14:33:02Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-06-22T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-06-22T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-06-29T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-07-06T07:54:04Z"</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"balance_due_at"</span><span class="o">:</span> <span class="s2">"BALANCE_DUE_AT"</span><span class="p">,</span>
-      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2023-03-15T14:33:02Z"</span><span class="p">,</span>
+      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2023-06-22T07:54:04Z"</span><span class="p">,</span>
       <span class="s2">"tentative_expires_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
@@ -2532,7 +2580,7 @@ certain range.</p>
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="9e3cd7bfdd81bookings_write_owned">
+      <div class="tab-pane " id="aea89dad7ccfbookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
@@ -2681,13 +2729,13 @@ certain range.</p>
       <span class="s2">"review_requests_count"</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
       <span class="s2">"unavailable"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-15T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-15T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-03-22T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-03-29T14:33:02Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-06-22T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-06-22T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-06-29T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-07-06T07:54:04Z"</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"balance_due_at"</span><span class="o">:</span> <span class="s2">"BALANCE_DUE_AT"</span><span class="p">,</span>
-      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2023-03-15T14:33:02Z"</span><span class="p">,</span>
+      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2023-06-22T07:54:04Z"</span><span class="p">,</span>
       <span class="s2">"tentative_expires_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
@@ -2744,13 +2792,13 @@ certain range.</p>
     <li class="disabled"><a>OAuth Scopes:</a></li>
     
       <li class="active">
-        <a href="#6e2fdbac13a4bookings_write_owned" role="tab" data-toggle="pill">
+        <a href="#0bca6a536a7dbookings_write_owned" role="tab" data-toggle="pill">
           bookings_write_owned
         </a>
       </li>
     
       <li>
-        <a href="#054931e16b62bookings_write" role="tab" data-toggle="pill">
+        <a href="#ebbfde1ddb09bookings_write" role="tab" data-toggle="pill">
           bookings_write
         </a>
       </li>
@@ -2768,8 +2816,8 @@ certain range.</p>
       <span class="s2">"discount"</span><span class="o">:</span> <span class="s2">"10%"</span><span class="p">,</span>
       <span class="s2">"final_price"</span><span class="o">:</span> <span class="s2">"2700.0"</span><span class="p">,</span>
       <span class="s2">"initial_price"</span><span class="o">:</span> <span class="s2">"3000.0"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-03-22T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-03-29T14:33:02Z"</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-06-29T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-07-06T07:54:04Z"</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre>
@@ -2779,7 +2827,7 @@ certain range.</p>
   
   
     
-      <div class="tab-pane active" id="6e2fdbac13a4bookings_write_owned">
+      <div class="tab-pane active" id="0bca6a536a7dbookings_write_owned">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
@@ -2792,9 +2840,9 @@ certain range.</p>
     <span class="p">{</span>
       <span class="s2">"id"</span><span class="o">:</span> <span class="mf">203</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-15T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-03-22T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-03-29T14:33:02Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-06-22T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-06-29T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-07-06T07:54:04Z"</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
         <span class="s2">"bookings_tags"</span><span class="o">:</span> <span class="p">[</span>
@@ -2814,7 +2862,7 @@ certain range.</p>
 <span class="p">}</span></code></pre>
       </div>
     
-      <div class="tab-pane " id="054931e16b62bookings_write">
+      <div class="tab-pane " id="ebbfde1ddb09bookings_write">
         <pre><code class="language-javascript"><span class="p">{</span>
   <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">"bookings.account"</span><span class="o">:</span> <span class="s2">"https://www.bookingsync.com/api/v3/accounts/{bookings.account}"</span><span class="p">,</span>
@@ -2865,13 +2913,13 @@ certain range.</p>
       <span class="s2">"review_requests_count"</span><span class="o">:</span> <span class="mf">0</span><span class="p">,</span>
       <span class="s2">"status"</span><span class="o">:</span> <span class="s2">"Booked"</span><span class="p">,</span>
       <span class="s2">"unavailable"</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-03-15T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-03-15T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-03-22T14:33:02Z"</span><span class="p">,</span>
-      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-03-29T14:33:02Z"</span><span class="p">,</span>
+      <span class="s2">"created_at"</span><span class="o">:</span> <span class="s2">"2023-06-22T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"updated_at"</span><span class="o">:</span> <span class="s2">"2023-06-22T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"start_at"</span><span class="o">:</span> <span class="s2">"2023-06-29T07:54:04Z"</span><span class="p">,</span>
+      <span class="s2">"end_at"</span><span class="o">:</span> <span class="s2">"2023-07-06T07:54:04Z"</span><span class="p">,</span>
       <span class="s2">"canceled_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"balance_due_at"</span><span class="o">:</span> <span class="s2">"BALANCE_DUE_AT"</span><span class="p">,</span>
-      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2023-03-15T14:33:02Z"</span><span class="p">,</span>
+      <span class="s2">"contract_updated_at"</span><span class="o">:</span> <span class="s2">"CONTRACT_2023-06-22T07:54:04Z"</span><span class="p">,</span>
       <span class="s2">"tentative_expires_at"</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
       <span class="s2">"links"</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">"account"</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>

@@ -169,6 +169,7 @@
   <li><a href="#rental-rounding-kinds" id="markdown-toc-rental-rounding-kinds">Rental Rounding kinds</a></li>
   <li><a href="#tax-kinds" id="markdown-toc-tax-kinds">Tax kinds</a></li>
   <li><a href="#partnership-invoice-recipients" id="markdown-toc-partnership-invoice-recipients">Partnership Invoice Recipients</a></li>
+  <li><a href="#damage-deposit-collection-methods" id="markdown-toc-damage-deposit-collection-methods">Damage Deposit Collection Methods</a></li>
 </ol>
 
 <h3 id="account-statuses">Account statuses</h3>
@@ -1878,6 +1879,31 @@
     <tr>
       <td>smily</td>
       <td>Smily will be getting invoices</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="damage-deposit-collection-methods">Damage Deposit Collection Methods</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>with_smily</td>
+      <td>Smily will handle the damage deposit</td>
+    </tr>
+    <tr>
+      <td>external</td>
+      <td>Damage deposit is collected externally (outside Smily). This needs <code>damage_deposit_external_collection_method_name</code> to be filled in</td>
+    </tr>
+    <tr>
+      <td>smily_damage_deposit_with_swikly</td>
+      <td>Smily will handle the damage deposit (with Swikly). Only available for Service subscriptions</td>
     </tr>
   </tbody>
 </table>
