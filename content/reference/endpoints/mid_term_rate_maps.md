@@ -22,7 +22,7 @@ account          | Integer | Read       | Account's ID related to the LOS record
 -----------------|---------|------------|------------
 id               | String[UUID]    | Read       | Mid Term Rate Map's id.
 map              | String  | Read       | Mid Term Rate Map's map of rates. There is a total of 1096 characters, each representing one day. `0` rate represents a day without rate assigned.
-map_with_price_variation | Array[[Decimal](/reference/enums#formats)] | Read       | Mid Term Rate Map's map of rates with price variation. There is a total of 1096 Decimal objects, each representing one day. `0` rate represents a day without rate assigned.
+map_with_price_variation | Array[[Decimal](/reference/enums#formats)] | Read       | Mid Term Rate Map's map of rates with price variation based on the application's price_increase. There is a total of 1096 Decimal objects, each representing one day. `0` rate represents a day without rate assigned.
 start_date       | [Date](/reference/enums#formats) | Read       | Mid Term Rate Map's start date.
 updated_at       | [Time](/reference/enums#formats) | Read       | Mid Term Rate Map's update time.
 created_at       | [Time](/reference/enums#formats) | Read       | Mid Term Rate Map's create time.
