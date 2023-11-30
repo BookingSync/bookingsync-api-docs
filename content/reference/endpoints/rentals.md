@@ -275,7 +275,7 @@ lng                             | Float    | Read/Write | Rental's longitude.  |
 max_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's maximum price. |
 mid_term_pricing_active         | Boolean  | Read/Write | Enable mid term pricing feature for the rental. |
 min_price                       | [Decimal](/reference/enums#formats)  | Read       | Rental's minimum price. |
-name                            | String   | Read/Write | Rental's name. | **Required**, Minimum length: 3, Maximum length: 30
+name                            | String   | Read/Write | Rental's name. | **Required**, Minimum length: 3, Maximum length: 40
 nightly_rates_managed_externally | Boolean  | Read/Write | Defines whether `nightly_rate_map` can be updated via API. Defaults to `false`. |
 notes                           | Text     | Read/Write | Rental's private notes | Maximum length: 1000
 permit_issue_date               | [Time](/reference/enums#formats)     | Read/Write | Rental's Registration/License/Permit number's issue date. |
