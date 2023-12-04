@@ -2,6 +2,7 @@
   "fees": [
     {
       "name_en": "Fee",
+      "headline_en": "Fee headline",
       "kind": "other",
       "rate": "12.0",
       "rate_kind": "fixed",
