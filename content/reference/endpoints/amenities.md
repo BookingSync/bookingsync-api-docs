@@ -30,8 +30,7 @@ updated_at       | [Time](/reference/enums#formats) | Read       | Amenity's upd
 
 ## List amenities
 
-List all amenities for a given account(s). Amenities can repeat because each
-rental has it's own set of amenities.
+List all the existing amenities.
 
 ~~~
 GET /amenities
