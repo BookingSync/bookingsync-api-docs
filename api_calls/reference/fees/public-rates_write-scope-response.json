@@ -9,6 +9,9 @@
       },
       "id": 9,
       "kind": "other",
+      "headline": {
+        "en": "Fee headline"
+      },
       "name": {
         "en": "Fee"
       },
