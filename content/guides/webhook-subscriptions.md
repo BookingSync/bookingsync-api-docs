@@ -45,39 +45,75 @@ The final step is to select the events to which you want to subscribe to.
 
 Here's the list of supported events:
 
-* account_destroyed
-* account_updated
-* amenity_created
-* amenity_destroyed
-* amenity_updated
-* availability_updated
-* booking_created
-* booking_destroyed
-* booking_updated
-* client_created
-* client_destroyed
-* client_updated
-* inquiry_created
-* inquiry_destroyed
-* inquiry_updated
-* photo_created
-* photo_destroyed
-* photo_updated
-* rental_created
-* rental_destroyed
-* rental_updated
-* rentals_amenity_created
-* rentals_amenity_destroyed
-* rentals_amenity_updated
-* payment_created
-* payment_destroyed
-* payment_updated
-* booking_discount_code_created
-* booking_discount_code_destroyed
-* booking_discount_code_updated
-* booking_discount_code_usage_created
-* booking_discount_code_usage_destroyed
-* booking_discount_code_usage_updated
+<div class="tab-content" markdown="1">
+Event name                              |Required scopes
+----------------------------------------|------------------------------------------------------------|
+account_destroyed                       |                                                            |
+account_updated                         |                                                            |
+accounts_application_created            |applications_read                                           |
+accounts_application_destroyed          |applications_read                                           |
+accounts_application_updated            |applications_read                                           |
+accounts_user_created                   |                                                            |
+accounts_user_destroyed                 |                                                            |
+accounts_user_updated                   |                                                            |
+amenity_created                         |                                                            |
+amenity_destroyed                       |                                                            |
+amenity_updated                         |                                                            |
+availability_updated                    |rentals_read, rentals_write                                 |
+booking_comment_created                 |bookings_read, bookings_write, bookings_write_owned         |
+booking_comment_destroyed               |bookings_read, bookings_write, bookings_write_owned         |
+booking_comment_updated                 |bookings_read, bookings_write, bookings_write_owned         |
+booking_created                         |                                                            |
+booking_destroyed                       |                                                            |
+booking_discount_code_created           |bookings_read, bookings_write                               |
+booking_discount_code_destroyed         |bookings_read, bookings_write                               |
+booking_discount_code_updated           |bookings_read, bookings_write                               |
+booking_discount_code_usage_created     |bookings_read, bookings_write                               |
+booking_discount_code_usage_destroyed   |bookings_read, bookings_write                               |
+booking_discount_code_usage_updated     |bookings_read, bookings_write                               |
+booking_updated                         |                                                            |
+bookings_fee_created                    |bookings_read, bookings_write, bookings_write_owned         |
+bookings_fee_destroyed                  |bookings_read, bookings_write, bookings_write_owned         |
+bookings_fee_updated                    |bookings_read, bookings_write, bookings_write_owned         |
+bookings_tags_item_created              |bookings_read, bookings_write, bookings_write_owned         |
+bookings_tags_item_destroyed            |bookings_read, bookings_write, bookings_write_owned         |
+client_created                          |clients_read, clients_write                                 |
+client_destroyed                        |clients_read, clients_write                                 |
+client_updated                          |clients_read, clients_write                                 |
+fee_created                             |                                                            |
+fee_destroyed                           |                                                            |
+fee_updated                             |                                                            |
+host_review_created                     |reviews_read, reviews_write                                 |
+host_review_updated                     |reviews_read, reviews_write                                 |
+inbox_conversation_created              |inbox_read, inbox_write                                     |
+inbox_conversation_updated              |inbox_read, inbox_write                                     |
+inbox_message_created                   |inbox_read, inbox_write                                     |
+inbox_message_updated                   |inbox_read, inbox_write                                     |
+inquiry_created                         |inquiries_read, inquiries_write, inquiries_write_owned      |
+inquiry_destroyed                       |inquiries_read, inquiries_write, inquiries_write_owned      |
+inquiry_updated                         |inquiries_read, inquiries_write, inquiries_write_owned      |
+payment_created                         |payments_read, payments_write                               |
+payment_destroyed                       |payments_read, payments_write                               |
+payment_updated                         |payments_read, payments_write                               |
+photo_created                           |                                                            |
+photo_destroyed                         |                                                            |
+photo_updated                           |                                                            |
+rental_created                          |                                                            |
+rental_destroyed                        |                                                            |
+rental_exposure_exception_created       |                                                            |
+rental_exposure_exception_destroyed     |                                                            |
+rental_updated                          |                                                            |
+rentals_amenity_created                 |                                                            |
+rentals_amenity_destroyed               |                                                            |
+rentals_amenity_updated                 |                                                            |
+review_created                          |reviews_read, reviews_write                                 |
+review_reply_created                    |reviews_read, reviews_write                                 |
+review_updated                          |reviews_read, reviews_write                                 |
+user_created                            |                                                            |
+user_destroyed                          |                                                            |
+user_updated                            |                                                            |
+{: class="table table-bordered"}
+</div>
 
 ## Payload content
 
