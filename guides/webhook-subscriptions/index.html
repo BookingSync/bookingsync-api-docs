@@ -125,41 +125,274 @@
 
 <p>Here’s the list of supported events:</p>
 
-<ul>
-  <li>account_destroyed</li>
-  <li>account_updated</li>
-  <li>amenity_created</li>
-  <li>amenity_destroyed</li>
-  <li>amenity_updated</li>
-  <li>availability_updated</li>
-  <li>booking_created</li>
-  <li>booking_destroyed</li>
-  <li>booking_updated</li>
-  <li>client_created</li>
-  <li>client_destroyed</li>
-  <li>client_updated</li>
-  <li>inquiry_created</li>
-  <li>inquiry_destroyed</li>
-  <li>inquiry_updated</li>
-  <li>photo_created</li>
-  <li>photo_destroyed</li>
-  <li>photo_updated</li>
-  <li>rental_created</li>
-  <li>rental_destroyed</li>
-  <li>rental_updated</li>
-  <li>rentals_amenity_created</li>
-  <li>rentals_amenity_destroyed</li>
-  <li>rentals_amenity_updated</li>
-  <li>payment_created</li>
-  <li>payment_destroyed</li>
-  <li>payment_updated</li>
-  <li>booking_discount_code_created</li>
-  <li>booking_discount_code_destroyed</li>
-  <li>booking_discount_code_updated</li>
-  <li>booking_discount_code_usage_created</li>
-  <li>booking_discount_code_usage_destroyed</li>
-  <li>booking_discount_code_usage_updated</li>
-</ul>
+<div class="tab-content">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Event name</th>
+        <th>Required scopes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>account_destroyed</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>account_updated</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>accounts_application_created</td>
+        <td>applications_read</td>
+      </tr>
+      <tr>
+        <td>accounts_application_destroyed</td>
+        <td>applications_read</td>
+      </tr>
+      <tr>
+        <td>accounts_application_updated</td>
+        <td>applications_read</td>
+      </tr>
+      <tr>
+        <td>accounts_user_created</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>accounts_user_destroyed</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>accounts_user_updated</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>amenity_created</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>amenity_destroyed</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>amenity_updated</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>availability_updated</td>
+        <td>rentals_read, rentals_write</td>
+      </tr>
+      <tr>
+        <td>booking_comment_created</td>
+        <td>bookings_read, bookings_write, bookings_write_owned</td>
+      </tr>
+      <tr>
+        <td>booking_comment_destroyed</td>
+        <td>bookings_read, bookings_write, bookings_write_owned</td>
+      </tr>
+      <tr>
+        <td>booking_comment_updated</td>
+        <td>bookings_read, bookings_write, bookings_write_owned</td>
+      </tr>
+      <tr>
+        <td>booking_created</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>booking_destroyed</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>booking_discount_code_created</td>
+        <td>bookings_read, bookings_write</td>
+      </tr>
+      <tr>
+        <td>booking_discount_code_destroyed</td>
+        <td>bookings_read, bookings_write</td>
+      </tr>
+      <tr>
+        <td>booking_discount_code_updated</td>
+        <td>bookings_read, bookings_write</td>
+      </tr>
+      <tr>
+        <td>booking_discount_code_usage_created</td>
+        <td>bookings_read, bookings_write</td>
+      </tr>
+      <tr>
+        <td>booking_discount_code_usage_destroyed</td>
+        <td>bookings_read, bookings_write</td>
+      </tr>
+      <tr>
+        <td>booking_discount_code_usage_updated</td>
+        <td>bookings_read, bookings_write</td>
+      </tr>
+      <tr>
+        <td>booking_updated</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>bookings_fee_created</td>
+        <td>bookings_read, bookings_write, bookings_write_owned</td>
+      </tr>
+      <tr>
+        <td>bookings_fee_destroyed</td>
+        <td>bookings_read, bookings_write, bookings_write_owned</td>
+      </tr>
+      <tr>
+        <td>bookings_fee_updated</td>
+        <td>bookings_read, bookings_write, bookings_write_owned</td>
+      </tr>
+      <tr>
+        <td>bookings_tags_item_created</td>
+        <td>bookings_read, bookings_write, bookings_write_owned</td>
+      </tr>
+      <tr>
+        <td>bookings_tags_item_destroyed</td>
+        <td>bookings_read, bookings_write, bookings_write_owned</td>
+      </tr>
+      <tr>
+        <td>client_created</td>
+        <td>clients_read, clients_write</td>
+      </tr>
+      <tr>
+        <td>client_destroyed</td>
+        <td>clients_read, clients_write</td>
+      </tr>
+      <tr>
+        <td>client_updated</td>
+        <td>clients_read, clients_write</td>
+      </tr>
+      <tr>
+        <td>fee_created</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>fee_destroyed</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>fee_updated</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>host_review_created</td>
+        <td>reviews_read, reviews_write</td>
+      </tr>
+      <tr>
+        <td>host_review_updated</td>
+        <td>reviews_read, reviews_write</td>
+      </tr>
+      <tr>
+        <td>inbox_conversation_created</td>
+        <td>inbox_read, inbox_write</td>
+      </tr>
+      <tr>
+        <td>inbox_conversation_updated</td>
+        <td>inbox_read, inbox_write</td>
+      </tr>
+      <tr>
+        <td>inbox_message_created</td>
+        <td>inbox_read, inbox_write</td>
+      </tr>
+      <tr>
+        <td>inbox_message_updated</td>
+        <td>inbox_read, inbox_write</td>
+      </tr>
+      <tr>
+        <td>inquiry_created</td>
+        <td>inquiries_read, inquiries_write, inquiries_write_owned</td>
+      </tr>
+      <tr>
+        <td>inquiry_destroyed</td>
+        <td>inquiries_read, inquiries_write, inquiries_write_owned</td>
+      </tr>
+      <tr>
+        <td>inquiry_updated</td>
+        <td>inquiries_read, inquiries_write, inquiries_write_owned</td>
+      </tr>
+      <tr>
+        <td>payment_created</td>
+        <td>payments_read, payments_write</td>
+      </tr>
+      <tr>
+        <td>payment_destroyed</td>
+        <td>payments_read, payments_write</td>
+      </tr>
+      <tr>
+        <td>payment_updated</td>
+        <td>payments_read, payments_write</td>
+      </tr>
+      <tr>
+        <td>photo_created</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>photo_destroyed</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>photo_updated</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>rental_created</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>rental_destroyed</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>rental_exposure_exception_created</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>rental_exposure_exception_destroyed</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>rental_updated</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>rentals_amenity_created</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>rentals_amenity_destroyed</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>rentals_amenity_updated</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>review_created</td>
+        <td>reviews_read, reviews_write</td>
+      </tr>
+      <tr>
+        <td>review_reply_created</td>
+        <td>reviews_read, reviews_write</td>
+      </tr>
+      <tr>
+        <td>review_updated</td>
+        <td>reviews_read, reviews_write</td>
+      </tr>
+      <tr>
+        <td>user_created</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>user_destroyed</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>user_updated</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <h3 id="payload-content">Payload content</h3>
 
