@@ -50,14 +50,14 @@ source            | Integer   | Read     | Source's ID related to the Booking |
 inquiry           | Integer   | Read     | Inquiry's ID related to the Booking |
 created_by_id     | Integer   | Read     | Created By's ID related to the Booking | (User, Booking or Application - this is a polymorphic association) |
 created_by_type   | String   | Read      | Created By's Type related to the Booking | (User, Booking or Application - this is a polymorphic association) |
-booking_comments  | Array    | Read      | Array of related Bookings Comments IDs |
-booking_fees      | Array    | Read      | Array of related Bookings Fees IDs |
-booking_taxes     | Array    | Read      | Array of related Bookings Taxes IDs |
-booking_payments  | Array    | Read      | Array of related Bookings Payments IDs |
-conversations     | Array    | Read      | Array of related Inbox Conversation IDs |
-payments          | Array    | Read      | Array of related Payments IDs |
-rentals_tags      | Array    | Read      | Array of related Rentals Tags IDs |
-bookings_tags     | Array    | Read      | Array of related Bookings Tags IDs |
+booking_comments  | Array    | Read      | Array of related Bookings Comments |
+booking_fees      | Array    | Read      | Array of related Bookings Fees |
+booking_taxes     | Array    | Read      | Array of related Bookings Taxes |
+booking_payments  | Array    | Read      | Array of related Bookings Payments |
+conversations     | Array    | Read      | Array of related Inbox Conversation |
+payments          | Array    | Read      | Array of related Payments |
+rentals_tags      | Array    | Read      | Array of related Rentals Tags |
+bookings_tags     | Array    | Read      | Array of related Bookings Tags |
 ------------------------|---------|------------|------------ |
 id                                             | Integer | Read       | Booking's id. |
 client_id                                      | Integer | Write      | Client id related to the Booking. |
@@ -116,14 +116,14 @@ source            | Integer   | Read     | Source's ID related to the Booking
 inquiry           | Integer   | Read     | Inquiry's ID related to the Booking
 created_by_id     | Integer   | Read     | Created By's ID related to the Booking
 created_by_type   | String   | Read      | Created By's Type related to the Booking
-booking_comments  | Array    | Read      | Array of related Bookings Comments IDs
-booking_fees      | Array    | Read      | Array of related Bookings Fees IDs
-booking_taxes     | Array    | Read      | Array of related Bookings Taxes IDs
-booking_payments  | Array    | Read      | Array of related Bookings Payments IDs
-conversations     | Array    | Read      | Array of related Inbox Conversation IDs
-payments          | Array    | Read      | Array of related Payments IDs
-rentals_tags      | Array    | Read      | Array of related Rentals Tags IDs
-bookings_tags     | Array    | Read      | Array of related Bookings Tags IDs
+booking_comments  | Array    | Read      | Array of related Bookings Comments
+booking_fees      | Array    | Read      | Array of related Bookings Fees
+booking_taxes     | Array    | Read      | Array of related Bookings Taxes
+booking_payments  | Array    | Read      | Array of related Bookings Payments
+conversations     | Array    | Read      | Array of related Inbox Conversation
+payments          | Array    | Read      | Array of related Payments
+rentals_tags      | Array    | Read      | Array of related Rentals Tags
+bookings_tags     | Array    | Read      | Array of related Bookings Tags
 ------------------------|---------|------------|------------
 id                      | Integer | Read       | Booking's id.
 adults                  | Integer | Read       | Booking's number of adults.
@@ -188,14 +188,14 @@ source            | Integer   | Read     | Source's ID related to the Booking |
 inquiry           | Integer   | Read     | Inquiry's ID related to the Booking |
 created_by_id     | Integer   | Read       | Created By's ID related to the Booking | (User, Booking or Application - this is a polymorphic association) |
 created_by_type   | String   | Read      | Created By's Type related to the Booking | (User, Booking or Application - this is a polymorphic association) |
-booking_comments  | Array    | Read      | Array of related Bookings Comments IDs |
-booking_fees      | Array    | Read      | Array of related Bookings Fees IDs |
-booking_taxes     | Array    | Read      | Array of related Bookings Taxes IDs |
-booking_payments  | Array    | Read      | Array of related Bookings Payments IDs |
-conversations     | Array    | Read      | Array of related Inbox Conversation IDs |
-payments          | Array    | Read      | Array of related Payments IDs |
-rentals_tags      | Array    | Read      | Array of related Rentals Tags IDs |
-bookings_tags     | Array    | Read      | Array of related Bookings Tags IDs |
+booking_comments  | Array    | Read      | Array of related Bookings Comments |
+booking_fees      | Array    | Read      | Array of related Bookings Fees |
+booking_taxes     | Array    | Read      | Array of related Bookings Taxes |
+booking_payments  | Array    | Read      | Array of related Bookings Payments |
+conversations     | Array    | Read      | Array of related Inbox Conversation |
+payments          | Array    | Read      | Array of related Payments |
+rentals_tags      | Array    | Read      | Array of related Rentals Tags |
+bookings_tags     | Array    | Read      | Array of related Bookings Tags |
 ------------------------|---------|------------|------------|
 id                      | Integer | Read       | Booking's id. |
 client_id               | Integer | Write      | Client id related to the Booking. |
