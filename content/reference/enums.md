@@ -435,6 +435,8 @@ airbnb           | Airbnb
 homeaway         | HomeAway
 email            | Email
 booking-com      | Booking.com
+vrbo             | Vrbo
+expedia          | Expedia
 {: class="table table-bordered"}
 
 ## Inbox Message Origins
@@ -446,6 +448,8 @@ airbnb_message    | Airbnb message
 airbnb_email      | Airbnb email
 booking-com       | Booking.com
 homeaway          | HomeAway
+vrbo              | Vrbo
+expedia           | Expedia
 tripadvisor       | TripAdvisor
 email             | Email
 messenger         | Messenger
