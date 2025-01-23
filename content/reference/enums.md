@@ -321,6 +321,8 @@ weekend_night                     | Rule applied for weekend night.             
 
 ## Rates Rules variables
 
+[Rates Rules explanation](https://manual.bookingsync.com/hc/en-us/articles/360005324073-All-our-Rates-Rules)
+
 
 Name                              | Description
 ----------------------------------|------------
@@ -331,11 +333,8 @@ until_unit                        | String, possible values: "days", "months", "
 occupation_less_than              | Number
 occupation_greater_than           | Number
 days                              | Array of integers between 0 and 6 (Sunday is 0, Saturday 6)
-
-
 {: class="table table-bordered"}
 
-[Rates Rules explanation](https://manual.bookingsync.com/hc/en-us/articles/360005324073-All-our-Rates-Rules)
 
 ## Rental types
 
