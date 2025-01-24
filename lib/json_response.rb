@@ -4,9 +4,12 @@ module JsonResponse
   def json_response(name, resource_name)
     response = File.read("api_calls/#{name}.json")
     vars = {
+      contract_updated_at: Time.now.utc,
       created_at: Time.now.utc,
       updated_at: Time.now.utc,
+      booked_at: Time.now.utc,
       published_at: Time.now.utc,
+      balance_due_at: days_from_now(3),
       start_at: days_from_now(7),
       end_at: days_from_now(14),
       start_date: days_from_now(7).strftime("%F"),

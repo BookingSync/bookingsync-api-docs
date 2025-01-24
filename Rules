@@ -15,8 +15,7 @@
 
 ignore '/assets/stylesheets/_*'
 
-compile '/static/*' do
-end
+passthrough '/assets/images/**/*'
 
 compile '/CNAME/' do
 end
@@ -53,17 +52,16 @@ compile '*' do
   layout item[:layout] || 'default'
 end
 
-route '/assets/*/' do
+route '/assets/stylesheets/*/' do
+  Nanoc::Sprockets::Helper.asset_path(item)
+end
+
+route '/assets/javascripts/*/' do
   Nanoc::Sprockets::Helper.asset_path(item)
 end
 
 route '/CNAME' do
   '/CNAME'
-end
-
-route '/static/*' do
-  # /static/foo.html/ → /foo.html
-  item.identifier[7..-2]
 end
 
 route '/highlight' do

@@ -135,7 +135,7 @@ Because of rule 4, the second Sunday is all zeroes - no check-in.
 
 Because of rule 5, you can see zero when length of stay is 17 and the day is Wed or Sat.
 
-<p><img src="/images/understanding-los/complex-example-1-1.png" alt="complex example 1-1" style="width:100%"></p>
+<p><img src="/assets/images/understanding-los/complex-example-1-1.png" alt="complex example 1-1" style="width:100%"></p>
 
 If today is Tuesday the 2nd:
 
@@ -143,4 +143,4 @@ Monday's record is in the past, it's obsolete.
 
 Because of rule 1, today (Tue) and tomorrow (Wed) check-in becomes not possible.
 
-<p><img src="/images/understanding-los/complex-example-1-2.png" alt="complex example 1-2" style="width:100%"></p>
+<p><img src="/assets/images/understanding-los/complex-example-1-2.png" alt="complex example 1-2" style="width:100%"></p>

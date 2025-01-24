@@ -13,6 +13,7 @@ gem "nokogiri"
 gem 'uglifier'
 gem "sass"
 gem 'nanoc-sprockets3'
-gem "bootstrap-bookingsync-sass"
+gem "bootstrap-bookingsync-sass", "0.0.13"
 gem "rake"
 gem "github_changelog_generator"
+gem "puma"

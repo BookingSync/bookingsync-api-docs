@@ -78,6 +78,7 @@ door_key_code                                  | String  | Read/Write      | Boo
 downpayment                                    | [Decimal](/reference/enums#formats) | Read/Write | Booking's downpayment. | Requires `final_price` to be present
 expected_checkin_time                          | String  | Read/Write      | Expected guest's checkin time. | must be blank or represent a time value (e.g. 12, 12:30)
 expected_checkout_time                         | String  | Read/Write      | Expected guest's checkout time. | must be blank or represent a time value (e.g. 12, 12:30)
+checkin_type                                   | String  | Read/Write      | Chosen checkin method | List of values described in [enums section](/reference/enums#rental-checkin-types)
 final_payback_to_owner                         | [Decimal](/reference/enums#formats) | Read/Write | Final payback to rental owner. | Must be lower than `final_price`
 final_price                                    | [Decimal](/reference/enums#formats) | Read/Write | Booking's final price. (after discount) |
 initial_price                                  | [Decimal](/reference/enums#formats) | Read/Write | Booking's initial price. |
@@ -97,12 +98,14 @@ reconciliation                                 | [Decimal](/reference/enums#form
 authorized_amount                              | [Decimal](/reference/enums#formats)  | Read | Booking's authorized amount |
 paid_or_authorized_amount                      | [Decimal](/reference/enums#formats)  | Read | Booking's paid or authorized amount |
 ------------------------|---------|------------|------------|
+balance_due_at          | [Time](/reference/enums#formats) | Read       | Booking's payment deadline.
 updated_at              | [Time](/reference/enums#formats) | Read       | Booking's update time. |
 start_at                | [Time](/reference/enums#formats) | Read/Write | Booking's start time. | **Required**, must be before `end_at`
 end_at                  | [Time](/reference/enums#formats) | Read/Write | Booking's end time. | **Required**, must be after `start_at`
 canceled_at             | [Time](/reference/enums#formats) | Write | Booking's cancel time. |
 tentative_expires_at    | [Time](/reference/enums#formats) | Write | Booking's tentative expiry time, null by default. When set, it will mark the period as "on hold" until the given date. Once this date is passed, the period will automatically become available again. | Must be in the future
-booked_at               | [Time](/reference/enums#formats) | Write      | Exact timestamp when a booking was booked |
+contract_updated_at     | [Time](/reference/enums#formats) | Read       | Booking's contract update time. |
+booked_at               | [Time](/reference/enums#formats) | Read/Write      | Exact timestamp when a booking was booked |
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="bookings_read" markdown="1">
@@ -142,6 +145,7 @@ door_key_code           | String  | Read       | Booking's rental door key code.
 downpayment             | [Decimal](/reference/enums#formats) | Read       | Booking's downpayment.
 expected_checkin_time   | String  | Read       | Expected guest's checkin time.
 expected_checkout_time  | String  | Read       | Expected guest's checkout time.
+checkin_type            | String  | Read       | Chosen checkin method. List of values described in [enums section](/reference/enums#rental-checkin-types)
 final_payback_to_owner  | [Decimal](/reference/enums#formats) | Read       | Final payback to rental owner.
 final_price             | [Decimal](/reference/enums#formats) | Read       | Booking's final price. (after discount)
 final_rental_price      | [Decimal](/reference/enums#formats) | Read       | initial_rental_price reduced by discount (taxes and fees not included).
@@ -162,7 +166,7 @@ external_reference      | String  | Read       | Booking's reference from the so
 cancelation_reason      | String  | Read | Booking's cancelation reason
 cancelation_message_to_guest      | String  | Read | Booking's cancelation message to guest
 cancelation_message_to_channel    | String  | Read | Booking's cancelation message to guest
-imported                | Boolean  | Read/Write | Whether this booking was imported from the external Channel or not
+imported                | Boolean | Read | Whether this booking was imported from the external Channel or not
 reconciliation          | [Decimal](/reference/enums#formats)  | Read | Booking's reconciliation
 authorized_amount       | [Decimal](/reference/enums#formats)  | Read | Booking's authorized amount
 paid_or_authorized_amount | [Decimal](/reference/enums#formats)  | Read | Booking's paid or authorized amount
@@ -175,6 +179,7 @@ end_at                  | [Time](/reference/enums#formats) | Read       | Bookin
 canceled_at             | [Time](/reference/enums#formats) | Read       | Booking's cancel time.
 tentative_expires_at    | [Time](/reference/enums#formats) | Read       | Booking's tentative expiry time, null by default. When set, it will mark the period as "on hold" until the given date. Once this date is passed, the period will automatically become available again.
 contract_updated_at     | [Time](/reference/enums#formats) | Read       | Booking's contract update time.
+booked_at               | [Time](/reference/enums#formats) | Read      | Exact timestamp when a booking was booked
 {: class="table table-bordered"}
   </div>
   <div class="tab-pane" id="bookings_write" markdown="1">
@@ -217,6 +222,7 @@ door_key_code           | String  | Read/Write | Booking's rental door key code.
 downpayment             | [Decimal](/reference/enums#formats) | Read/Write | Booking's downpayment. | Requires `final_price` to be present
 expected_checkin_time   | String  | Read/Write      | Expected guest's checkin time. | must be blank or represent a time value (e.g. 12, 12:30)
 expected_checkout_time  | String  | Read/Write      | Expected guest's checkout time. | must be blank or represent a time value (e.g. 12, 12:30)
+checkin_type            | String  | Read/Write      | Chosen checkin method | List of values described in [enums section](/reference/enums#rental-checkin-types)
 final_payback_to_owner  | [Decimal](/reference/enums#formats) | Read/Write | Final payback to rental owner. | Must be lower than `final_price`
 final_price             | [Decimal](/reference/enums#formats) | Read/Write | Booking's final price. (after discount) |
 final_rental_price      | [Decimal](/reference/enums#formats) | Read       | initial_rental_price reduced by discount (taxes and fees not included). |
@@ -250,7 +256,7 @@ end_at                  | [Time](/reference/enums#formats) | Read/Write | **Requ
 canceled_at             | [Time](/reference/enums#formats) | Read/Write | Booking's cancel time. |
 tentative_expires_at    | [Time](/reference/enums#formats) | Read/Write | Booking's tentative expiry time, null by default. When set, it will mark the period as "on hold" until the given date. Once this date is passed, the period will automatically become available again. |
 contract_updated_at     | [Time](/reference/enums#formats) | Read       | Booking's contract update time. |
-booked_at               | [Time](/reference/enums#formats) | Write      | Exact timestamp when a booking was booked |
+booked_at               | [Time](/reference/enums#formats) | Read/Write | Exact timestamp when a booking was booked |
 {: class="table table-bordered"}
   </div>
 </div>

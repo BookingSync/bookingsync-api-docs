@@ -25,13 +25,13 @@ Once you are logged in, locate the application where you want to subscribe to we
 
 You should see a "Webhooks" tab
 
-<img src="/images/webhook-subscriptions/webhooks-tab.png" alt="webhooks-tab" style="width:70%" />
+<img src="/assets/images/webhook-subscriptions/webhooks-tab.png" alt="webhooks-tab" style="width:70%" />
 
 Now, go to the "Webhook" section and click "New Webhook" to access the webhook subscriptions form.
 
 ### Webhook subscription form
 
-<img src="/images/webhook-subscriptions/webhooks-form.png" alt="webhooks-form" style="width:70%" />
+<img src="/assets/images/webhook-subscriptions/webhooks-form.png" alt="webhooks-form" style="width:70%" />
 
 ### URL
 
