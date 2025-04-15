@@ -78,7 +78,7 @@ POST /reviews/:review_id/review_replies
 Replies to a given host review
 
 ~~~
-POST /host_reviews/:host_review_id/review_replies
+POST /host_reviews/:host_review_id/reply
 ~~~
 
 <%= render 'json_response', endpoint: "review_replies", request: "create",
