@@ -67,7 +67,7 @@ GET /review_replies/:review_id
 Replies to a given guest review
 
 ~~~
-POST /reviews/:review_id/review_replies
+POST /reviews/:review_id/reply
 ~~~
 
 <%= render 'json_response', endpoint: "review_replies", request: "create",
