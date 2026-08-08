@@ -16,3 +16,4 @@ gem 'nanoc-sprockets3'
 gem "bootstrap-bookingsync-sass"
 gem "rake"
 gem "github_changelog_generator"
+gem "bigdecimal"

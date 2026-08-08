@@ -1,8 +1,23 @@
 # Changelog
 
-## [3.32.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.32.0) (2023-08-16)
+## [3.33.0](https://github.com/BookingSync/bookingsync-api-docs/tree/3.33.0) (2025-02-07)
 
-[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.31.4...3.32.0)
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.32.0...3.33.0)
+
+**Merged pull requests:**
+
+- remove secure payments by BookingSync [\#405](https://github.com/BookingSync/bookingsync-api-docs/pull/405) ([Azdaroth](https://github.com/Azdaroth))
+- Bump rack from 2.2.3 to 2.2.8 [\#395](https://github.com/BookingSync/bookingsync-api-docs/pull/395) ([dependabot[bot]](https://github.com/apps/dependabot))
+- \[PMS-419\] Fix amenities list docs [\#394](https://github.com/BookingSync/bookingsync-api-docs/pull/394) ([pyromaniac](https://github.com/pyromaniac))
+- \[PMS-480\] Update list of events [\#393](https://github.com/BookingSync/bookingsync-api-docs/pull/393) ([pankopiotr](https://github.com/pankopiotr))
+- \[PMS-471\] Add fee's headline [\#392](https://github.com/BookingSync/bookingsync-api-docs/pull/392) ([pankopiotr](https://github.com/pankopiotr))
+- \[PMS-497\] Update rental name length [\#391](https://github.com/BookingSync/bookingsync-api-docs/pull/391) ([pyromaniac](https://github.com/pyromaniac))
+- Add Partnerships link to header [\#390](https://github.com/BookingSync/bookingsync-api-docs/pull/390) ([Kefa7y](https://github.com/Kefa7y))
+- Bump nokogiri from 1.13.4 to 1.14.3 [\#386](https://github.com/BookingSync/bookingsync-api-docs/pull/386) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [v3.32.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.32.0) (2023-08-16)
+
+[Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.31.4...v3.32.0)
 
 **Merged pull requests:**
 
@@ -180,12 +195,14 @@
 - update rates rules docs [\#315](https://github.com/BookingSync/bookingsync-api-docs/pull/315) ([radekzawada](https://github.com/radekzawada))
 - Rz improve conversation attributes description [\#314](https://github.com/BookingSync/bookingsync-api-docs/pull/314) ([radekzawada](https://github.com/radekzawada))
 - Load dependencies urls over https [\#312](https://github.com/BookingSync/bookingsync-api-docs/pull/312) ([JovicaSusa](https://github.com/JovicaSusa))
-- Add 202 status description to secure payments guide [\#311](https://github.com/BookingSync/bookingsync-api-docs/pull/311) ([adamgrad](https://github.com/adamgrad))
-- fix create url for rental\_contacts [\#310](https://github.com/BookingSync/bookingsync-api-docs/pull/310) ([radekzawada](https://github.com/radekzawada))
 
 ## [v3.18.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.18.0) (2019-09-23)
 
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v.3.17.0...v3.18.0)
+
+**Merged pull requests:**
+
+- Add 202 status description to secure payments guide [\#311](https://github.com/BookingSync/bookingsync-api-docs/pull/311) ([adamgrad](https://github.com/adamgrad))
 
 ## [v.3.17.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v.3.17.0) (2019-09-19)
 
@@ -193,8 +210,10 @@
 
 **Merged pull requests:**
 
+- fix create url for rental\_contacts [\#310](https://github.com/BookingSync/bookingsync-api-docs/pull/310) ([radekzawada](https://github.com/radekzawada))
 - Add Payment Gateway docs, improve Secure Payments and enums [\#309](https://github.com/BookingSync/bookingsync-api-docs/pull/309) ([adamgrad](https://github.com/adamgrad))
 - Add new rental types [\#308](https://github.com/BookingSync/bookingsync-api-docs/pull/308) ([adamgrad](https://github.com/adamgrad))
+- docs new links for inbox [\#304](https://github.com/BookingSync/bookingsync-api-docs/pull/304) ([hauska7](https://github.com/hauska7))
 - update ffi [\#291](https://github.com/BookingSync/bookingsync-api-docs/pull/291) ([Azdaroth](https://github.com/Azdaroth))
 
 ## [v3.16.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.16.0) (2019-05-23)
@@ -213,11 +232,11 @@
 
 **Merged pull requests:**
 
-- docs new links for inbox [\#304](https://github.com/BookingSync/bookingsync-api-docs/pull/304) ([hauska7](https://github.com/hauska7))
 - change link to Changelog [\#303](https://github.com/BookingSync/bookingsync-api-docs/pull/303) ([Azdaroth](https://github.com/Azdaroth))
 - document missing scopes [\#302](https://github.com/BookingSync/bookingsync-api-docs/pull/302) ([Azdaroth](https://github.com/Azdaroth))
 - add rental contact [\#301](https://github.com/BookingSync/bookingsync-api-docs/pull/301) ([hauska7](https://github.com/hauska7))
 - security updates [\#299](https://github.com/BookingSync/bookingsync-api-docs/pull/299) ([Azdaroth](https://github.com/Azdaroth))
+- update clients samples [\#292](https://github.com/BookingSync/bookingsync-api-docs/pull/292) ([thilonel](https://github.com/thilonel))
 
 ## [v3.14.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.14.0) (2019-02-06)
 
@@ -245,7 +264,6 @@
 - Add inbox Attachment docs [\#295](https://github.com/BookingSync/bookingsync-api-docs/pull/295) ([adamgrad](https://github.com/adamgrad))
 - Add Rental's residency category docs [\#294](https://github.com/BookingSync/bookingsync-api-docs/pull/294) ([adamgrad](https://github.com/adamgrad))
 - Add booking's external reference doc [\#293](https://github.com/BookingSync/bookingsync-api-docs/pull/293) ([adamgrad](https://github.com/adamgrad))
-- update clients samples [\#292](https://github.com/BookingSync/bookingsync-api-docs/pull/292) ([thilonel](https://github.com/thilonel))
 - Fixed typo [\#290](https://github.com/BookingSync/bookingsync-api-docs/pull/290) ([samvaughton](https://github.com/samvaughton))
 - update vulnerable dependencies [\#289](https://github.com/BookingSync/bookingsync-api-docs/pull/289) ([Azdaroth](https://github.com/Azdaroth))
 - CORE-240 remove comment about bookings create validation [\#288](https://github.com/BookingSync/bookingsync-api-docs/pull/288) ([thilonel](https://github.com/thilonel))
@@ -274,10 +292,6 @@
 ## [v3.9.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.9.0) (2017-12-28)
 
 [Full Changelog](https://github.com/BookingSync/bookingsync-api-docs/compare/v3.8.0...v3.9.0)
-
-**Implemented enhancements:**
-
-- Add change over endpoint [\#262](https://github.com/BookingSync/bookingsync-api-docs/pull/262) ([JulienItard](https://github.com/JulienItard))
 
 **Merged pull requests:**
 
@@ -328,6 +342,7 @@
 **Implemented enhancements:**
 
 - List of all current amenities in enums section. [\#94](https://github.com/BookingSync/bookingsync-api-docs/issues/94)
+- Add change over endpoint [\#262](https://github.com/BookingSync/bookingsync-api-docs/pull/262) ([JulienItard](https://github.com/JulienItard))
 
 **Closed issues:**
 
@@ -368,7 +383,6 @@
 - fix changelog - add proper dates for the last release [\#242](https://github.com/BookingSync/bookingsync-api-docs/pull/242) ([Azdaroth](https://github.com/Azdaroth))
 - Update docs \#3 - c-p endpoints [\#227](https://github.com/BookingSync/bookingsync-api-docs/pull/227) ([StoneFrog](https://github.com/StoneFrog))
 - Update docs \#2 - letter "b" [\#226](https://github.com/BookingSync/bookingsync-api-docs/pull/226) ([StoneFrog](https://github.com/StoneFrog))
-- update response and account params [\#225](https://github.com/BookingSync/bookingsync-api-docs/pull/225) ([StoneFrog](https://github.com/StoneFrog))
 
 ## [v3.1.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.1.0) (2017-07-13)
 
@@ -376,7 +390,6 @@
 
 **Merged pull requests:**
 
-- Ability to filter \# of results per page [\#236](https://github.com/BookingSync/bookingsync-api-docs/pull/236) ([FelixMalfait](https://github.com/FelixMalfait))
 - Add currency calculation to LOS records endpoint [\#234](https://github.com/BookingSync/bookingsync-api-docs/pull/234) ([Phazz](https://github.com/Phazz))
 
 ## [v3.0.0](https://github.com/BookingSync/bookingsync-api-docs/tree/v3.0.0) (2017-07-11)
@@ -397,7 +410,11 @@
 - Document payments\_write\_owned scope [\#143](https://github.com/BookingSync/bookingsync-api-docs/pull/143) ([ZenCocoon](https://github.com/ZenCocoon))
 - Update Search rentals scope response [\#132](https://github.com/BookingSync/bookingsync-api-docs/pull/132) ([hash4di](https://github.com/hash4di))
 - Add absolute\_min\_price to rental when ready. [\#107](https://github.com/BookingSync/bookingsync-api-docs/pull/107) ([Fredar](https://github.com/Fredar))
-- Explain that `refresh\_token` is regenerated after each refresh. [\#97](https://github.com/BookingSync/bookingsync-api-docs/pull/97) ([Fredar](https://github.com/Fredar))
+- Explain that `refresh_token` is regenerated after each refresh. [\#97](https://github.com/BookingSync/bookingsync-api-docs/pull/97) ([Fredar](https://github.com/Fredar))
+- Add search description in the rentals endpoint [\#93](https://github.com/BookingSync/bookingsync-api-docs/pull/93) ([ZenCocoon](https://github.com/ZenCocoon))
+- On Rentals endpoint, add details about final\_price and initial\_price [\#92](https://github.com/BookingSync/bookingsync-api-docs/pull/92) ([ZenCocoon](https://github.com/ZenCocoon))
+- Update the account endpoint to include the status [\#86](https://github.com/BookingSync/bookingsync-api-docs/pull/86) ([ZenCocoon](https://github.com/ZenCocoon))
+- Explain Availability options [\#81](https://github.com/BookingSync/bookingsync-api-docs/pull/81) ([ZenCocoon](https://github.com/ZenCocoon))
 - Link to all our Open Source gems to connect with our API [\#75](https://github.com/BookingSync/bookingsync-api-docs/pull/75) ([ZenCocoon](https://github.com/ZenCocoon))
 
 **Closed issues:**
@@ -413,12 +430,14 @@
 
 - `LosRecord.id` is BigInt now [\#240](https://github.com/BookingSync/bookingsync-api-docs/pull/240) ([LeonidMorozov](https://github.com/LeonidMorozov))
 - use :name\_en instead of :name param for bedrooms [\#237](https://github.com/BookingSync/bookingsync-api-docs/pull/237) ([Azdaroth](https://github.com/Azdaroth))
+- Ability to filter \# of results per page [\#236](https://github.com/BookingSync/bookingsync-api-docs/pull/236) ([FelixMalfait](https://github.com/FelixMalfait))
 - Add description of the Rentals content overrides endpoint [\#235](https://github.com/BookingSync/bookingsync-api-docs/pull/235) ([Phazz](https://github.com/Phazz))
 - Add docs for applications endpoint [\#233](https://github.com/BookingSync/bookingsync-api-docs/pull/233) ([Fredar](https://github.com/Fredar))
 - Secure Payments By BookingSync [\#231](https://github.com/BookingSync/bookingsync-api-docs/pull/231) ([Azdaroth](https://github.com/Azdaroth))
 - Add docs for rentals\_contents\_overrides endpoint [\#230](https://github.com/BookingSync/bookingsync-api-docs/pull/230) ([Fredar](https://github.com/Fredar))
 - Add permit number to rentals endpoint [\#229](https://github.com/BookingSync/bookingsync-api-docs/pull/229) ([StoneFrog](https://github.com/StoneFrog))
 - Allow to assign payment\_gateway\_id to rental [\#228](https://github.com/BookingSync/bookingsync-api-docs/pull/228) ([Fredar](https://github.com/Fredar))
+- update response and account params [\#225](https://github.com/BookingSync/bookingsync-api-docs/pull/225) ([StoneFrog](https://github.com/StoneFrog))
 - Add docs for rental\_link\_groups and rental\_links endpoints [\#224](https://github.com/BookingSync/bookingsync-api-docs/pull/224) ([Azdaroth](https://github.com/Azdaroth))
 - Clearly mention bookings list default limitations and highlight searc… [\#223](https://github.com/BookingSync/bookingsync-api-docs/pull/223) ([ZenCocoon](https://github.com/ZenCocoon))
 - Allow to filter payments by order\_id [\#222](https://github.com/BookingSync/bookingsync-api-docs/pull/222) ([Fredar](https://github.com/Fredar))
@@ -505,7 +524,86 @@
 - Redesign [\#101](https://github.com/BookingSync/bookingsync-api-docs/pull/101) ([ZenCocoon](https://github.com/ZenCocoon))
 - Update changelog tags to be more clear [\#100](https://github.com/BookingSync/bookingsync-api-docs/pull/100) ([Fredar](https://github.com/Fredar))
 - Explain how to sideload associations [\#99](https://github.com/BookingSync/bookingsync-api-docs/pull/99) ([ZenCocoon](https://github.com/ZenCocoon))
+- Setting up applications info [\#96](https://github.com/BookingSync/bookingsync-api-docs/pull/96) ([ZenCocoon](https://github.com/ZenCocoon))
 - \[BREAKING-CHANGE\] Update docs for coming client endpoint change [\#95](https://github.com/BookingSync/bookingsync-api-docs/pull/95) ([Fredar](https://github.com/Fredar))
+- Add season names translations [\#91](https://github.com/BookingSync/bookingsync-api-docs/pull/91) ([Azdaroth](https://github.com/Azdaroth))
+- Include translations for amenities [\#89](https://github.com/BookingSync/bookingsync-api-docs/pull/89) ([Azdaroth](https://github.com/Azdaroth))
+- Update json response for photos endpoint - include more photo versions urls [\#88](https://github.com/BookingSync/bookingsync-api-docs/pull/88) ([Azdaroth](https://github.com/Azdaroth))
+- Rename bookings\_public\_write to bookings\_write\_owned [\#85](https://github.com/BookingSync/bookingsync-api-docs/pull/85) ([Fredar](https://github.com/Fredar))
+- Rename amenities title to key [\#83](https://github.com/BookingSync/bookingsync-api-docs/pull/83) ([Fredar](https://github.com/Fredar))
+- Do not require parent \_id params for nested POSTs [\#80](https://github.com/BookingSync/bookingsync-api-docs/pull/80) ([Fredar](https://github.com/Fredar))
+- Update the changelog [\#78](https://github.com/BookingSync/bookingsync-api-docs/pull/78) ([Fredar](https://github.com/Fredar))
+- Explain in the docs, how to assign a status to a booking. [\#77](https://github.com/BookingSync/bookingsync-api-docs/pull/77) ([ZenCocoon](https://github.com/ZenCocoon))
+- Get rid of billing\_address endpoint, update payments endpoint [\#76](https://github.com/BookingSync/bookingsync-api-docs/pull/76) ([wijet](https://github.com/wijet))
+- Add info about 403 [\#74](https://github.com/BookingSync/bookingsync-api-docs/pull/74) ([grk](https://github.com/grk))
+- Explain booking unavailable field [\#73](https://github.com/BookingSync/bookingsync-api-docs/pull/73) ([grk](https://github.com/grk))
+- Add booking.paid\_amount [\#72](https://github.com/BookingSync/bookingsync-api-docs/pull/72) ([ZenCocoon](https://github.com/ZenCocoon))
+- Add max length information to source name and rental\_agreement body [\#71](https://github.com/BookingSync/bookingsync-api-docs/pull/71) ([Fredar](https://github.com/Fredar))
+- Change rates\_rules percentage to decimal type [\#70](https://github.com/BookingSync/bookingsync-api-docs/pull/70) ([Fredar](https://github.com/Fredar))
+- Explain refresh token process [\#69](https://github.com/BookingSync/bookingsync-api-docs/pull/69) ([Fredar](https://github.com/Fredar))
+- Update list of currencies with THB Thai Baht [\#68](https://github.com/BookingSync/bookingsync-api-docs/pull/68) ([Fredar](https://github.com/Fredar))
+- Add sample curl requests [\#67](https://github.com/BookingSync/bookingsync-api-docs/pull/67) ([Fredar](https://github.com/Fredar))
+- Rename amount to amount\_in\_cents, fixes \#64 [\#66](https://github.com/BookingSync/bookingsync-api-docs/pull/66) ([Fredar](https://github.com/Fredar))
+- Update docs with rate-limit status error [\#63](https://github.com/BookingSync/bookingsync-api-docs/pull/63) ([Fredar](https://github.com/Fredar))
+- Update periods and rates tables with relations to each other [\#62](https://github.com/BookingSync/bookingsync-api-docs/pull/62) ([Fredar](https://github.com/Fredar))
+- Update rates tables docs with shared status [\#61](https://github.com/BookingSync/bookingsync-api-docs/pull/61) ([Fredar](https://github.com/Fredar))
+- Update payment kinds with bookingsync and credit-card [\#60](https://github.com/BookingSync/bookingsync-api-docs/pull/60) ([Fredar](https://github.com/Fredar))
+- Add preferred locale to clients docs [\#59](https://github.com/BookingSync/bookingsync-api-docs/pull/59) ([Fredar](https://github.com/Fredar))
+- Update rates rules endpoint with create, update and destroy actions [\#58](https://github.com/BookingSync/bookingsync-api-docs/pull/58) ([Fredar](https://github.com/Fredar))
+- Rename deposit to downpayment [\#57](https://github.com/BookingSync/bookingsync-api-docs/pull/57) ([Fredar](https://github.com/Fredar))
+- Apply correct order to Date/Time table parameters [\#56](https://github.com/BookingSync/bookingsync-api-docs/pull/56) ([Fredar](https://github.com/Fredar))
+- Mention that Reviews' name are cropped [\#55](https://github.com/BookingSync/bookingsync-api-docs/pull/55) ([ZenCocoon](https://github.com/ZenCocoon))
+- Clarification Payment's card value [\#54](https://github.com/BookingSync/bookingsync-api-docs/pull/54) ([ZenCocoon](https://github.com/ZenCocoon))
+- Sort api responses. Links, then id/attributes and inner links [\#53](https://github.com/BookingSync/bookingsync-api-docs/pull/53) ([Fredar](https://github.com/Fredar))
+- Add position attribute to source endpoint [\#52](https://github.com/BookingSync/bookingsync-api-docs/pull/52) ([Fredar](https://github.com/Fredar))
+- Update rentals amenities endpoint with create, update and destroy [\#51](https://github.com/BookingSync/bookingsync-api-docs/pull/51) ([Fredar](https://github.com/Fredar))
+- Change localized attributes type to object, add format description [\#50](https://github.com/BookingSync/bookingsync-api-docs/pull/50) ([Fredar](https://github.com/Fredar))
+- Add availability endpoint to docs [\#49](https://github.com/BookingSync/bookingsync-api-docs/pull/49) ([Fredar](https://github.com/Fredar))
+- Add parameters description to each endpoint [\#48](https://github.com/BookingSync/bookingsync-api-docs/pull/48) ([Fredar](https://github.com/Fredar))
+- Add bookings source association to API docs responses [\#47](https://github.com/BookingSync/bookingsync-api-docs/pull/47) ([Fredar](https://github.com/Fredar))
+- Add rentals position, update rental docs [\#46](https://github.com/BookingSync/bookingsync-api-docs/pull/46) ([Fredar](https://github.com/Fredar))
+- Add source endpoint to API docs [\#45](https://github.com/BookingSync/bookingsync-api-docs/pull/45) ([Fredar](https://github.com/Fredar))
+- Clarify payments and bookings\_payments docs that amount is given in cents. [\#44](https://github.com/BookingSync/bookingsync-api-docs/pull/44) ([Fredar](https://github.com/Fredar))
+- Add updated since [\#43](https://github.com/BookingSync/bookingsync-api-docs/pull/43) ([Fredar](https://github.com/Fredar))
+- Order enum entries alphabetically [\#42](https://github.com/BookingSync/bookingsync-api-docs/pull/42) ([Fredar](https://github.com/Fredar))
+- Add surface\_unit to rentals API [\#41](https://github.com/BookingSync/bookingsync-api-docs/pull/41) ([Fredar](https://github.com/Fredar))
+- Add docs for rentals amenities [\#40](https://github.com/BookingSync/bookingsync-api-docs/pull/40) ([Fredar](https://github.com/Fredar))
+- Finish rental docs [\#38](https://github.com/BookingSync/bookingsync-api-docs/pull/38) ([Fredar](https://github.com/Fredar))
+- Update json responses to new layout [\#37](https://github.com/BookingSync/bookingsync-api-docs/pull/37) ([Fredar](https://github.com/Fredar))
+- Add scope pills to switch through JSON responses [\#36](https://github.com/BookingSync/bookingsync-api-docs/pull/36) ([Fredar](https://github.com/Fredar))
+- Allow to scope bookings per rentals and/or clients [\#35](https://github.com/BookingSync/bookingsync-api-docs/pull/35) ([ZenCocoon](https://github.com/ZenCocoon))
+- Add documentation for testing with OAuth 2.0 [\#34](https://github.com/BookingSync/bookingsync-api-docs/pull/34) ([ZenCocoon](https://github.com/ZenCocoon))
+- Add public rates docs [\#33](https://github.com/BookingSync/bookingsync-api-docs/pull/33) ([wijet](https://github.com/wijet))
+- Fix model\_id to associations in API responses [\#32](https://github.com/BookingSync/bookingsync-api-docs/pull/32) ([wijet](https://github.com/wijet))
+- Fix create paths for resources with parent resource [\#31](https://github.com/BookingSync/bookingsync-api-docs/pull/31) ([wijet](https://github.com/wijet))
+- updated enums docs [\#30](https://github.com/BookingSync/bookingsync-api-docs/pull/30) ([aokon](https://github.com/aokon))
+- added docs for photos cud utils [\#29](https://github.com/BookingSync/bookingsync-api-docs/pull/29) ([aokon](https://github.com/aokon))
+- added docs for rental agreements create util [\#28](https://github.com/BookingSync/bookingsync-api-docs/pull/28) ([aokon](https://github.com/aokon))
+- added docs for reviews create util [\#26](https://github.com/BookingSync/bookingsync-api-docs/pull/26) ([aokon](https://github.com/aokon))
+- added docs for rates tables cud utils [\#25](https://github.com/BookingSync/bookingsync-api-docs/pull/25) ([aokon](https://github.com/aokon))
+- added docs for seasons cud utils [\#24](https://github.com/BookingSync/bookingsync-api-docs/pull/24) ([aokon](https://github.com/aokon))
+- added docs for periods cud utils [\#23](https://github.com/BookingSync/bookingsync-api-docs/pull/23) ([aokon](https://github.com/aokon))
+- added docs for special offers cud utils [\#22](https://github.com/BookingSync/bookingsync-api-docs/pull/22) ([aokon](https://github.com/aokon))
+- added docs for payments endpoint [\#21](https://github.com/BookingSync/bookingsync-api-docs/pull/21) ([aokon](https://github.com/aokon))
+- added docs for bookings payments endpoint [\#20](https://github.com/BookingSync/bookingsync-api-docs/pull/20) ([aokon](https://github.com/aokon))
+- added docs for billing addresses endpoint [\#19](https://github.com/BookingSync/bookingsync-api-docs/pull/19) ([aokon](https://github.com/aokon))
+- fixed info about access by scopes for seasons and periods endpoints [\#18](https://github.com/BookingSync/bookingsync-api-docs/pull/18) ([aokon](https://github.com/aokon))
+- updated seasons endpoint output [\#17](https://github.com/BookingSync/bookingsync-api-docs/pull/17) ([aokon](https://github.com/aokon))
+- added docs for rates rules endpoint [\#16](https://github.com/BookingSync/bookingsync-api-docs/pull/16) ([aokon](https://github.com/aokon))
+- added docs for rates tables endpoint [\#15](https://github.com/BookingSync/bookingsync-api-docs/pull/15) ([aokon](https://github.com/aokon))
+- Rentals agreements [\#14](https://github.com/BookingSync/bookingsync-api-docs/pull/14) ([wijet](https://github.com/wijet))
+- Added docs for periods endpoint [\#13](https://github.com/BookingSync/bookingsync-api-docs/pull/13) ([aokon](https://github.com/aokon))
+- replaced oauth scope for seasons from public to rates\_read [\#12](https://github.com/BookingSync/bookingsync-api-docs/pull/12) ([aokon](https://github.com/aokon))
+- added docs for seasons endpoint [\#11](https://github.com/BookingSync/bookingsync-api-docs/pull/11) ([aokon](https://github.com/aokon))
+- added info about destination endpoint and made tweeks for rental output [\#10](https://github.com/BookingSync/bookingsync-api-docs/pull/10) ([aokon](https://github.com/aokon))
+- Add Photos docs [\#9](https://github.com/BookingSync/bookingsync-api-docs/pull/9) ([ZenCocoon](https://github.com/ZenCocoon))
+- Added Amenities docs [\#8](https://github.com/BookingSync/bookingsync-api-docs/pull/8) ([ZenCocoon](https://github.com/ZenCocoon))
+- Renamed renatal atrributes: bedrooms to bedrooms\_count, bathrooms to bathrooms\_count [\#7](https://github.com/BookingSync/bookingsync-api-docs/pull/7) ([aokon](https://github.com/aokon))
+- Added Special Offers docs [\#6](https://github.com/BookingSync/bookingsync-api-docs/pull/6) ([aokon](https://github.com/aokon))
+- Fixed invalid endpoint url for single review [\#5](https://github.com/BookingSync/bookingsync-api-docs/pull/5) ([aokon](https://github.com/aokon))
+- Added Reviews docs [\#4](https://github.com/BookingSync/bookingsync-api-docs/pull/4) ([aokon](https://github.com/aokon))
+- Inquiries docs +  format fixes for other endpoints [\#3](https://github.com/BookingSync/bookingsync-api-docs/pull/3) ([wijet](https://github.com/wijet))
+- Bookings and Rentals public read scope [\#2](https://github.com/BookingSync/bookingsync-api-docs/pull/2) ([wijet](https://github.com/wijet))
 
 
 
