@@ -289,7 +289,7 @@ Search parameters allow to filter bookings by specified fields.
 Example:
 
 ~~~
-GET /bookings?status=booked,unavailable&from=20140324
+GET /bookings?status=booked,unavailable&from=2014-03-24T12:00:00Z
 ~~~
 
 ### Search Parameters

@@ -9,9 +9,9 @@ This resource represents the Availabilities for a given Rental. The `map` repres
 
 Availabilities are regenerated after creation of Bookings and at the beginning of each month and `start_date` always points to the beginning of current month.
 
-Particularly useful when implementing a UI containing calendar that allows to select dates for a Booking - using this map you can block unavailable dates. 
+Particularly useful when implementing a UI containing calendar that allows to select dates for a Booking - using this map you can block unavailable dates.
 
-However, this resource doesn't cover all cases why a given day might be unavailable (e.g. it doesn't cover [Rates Rules](/reference/endpoints/rates_rules/)). You might want to check [ChangeOvers](http://developers.bookingsync.com/reference/endpoints/change_overs/) to have a map covering these cases. 
+However, this resource doesn't cover all cases why a given day might be unavailable (e.g. it doesn't cover [Rates Rules](/reference/endpoints/rates_rules/)). You might want to check [ChangeOvers](http://developers.bookingsync.com/reference/endpoints/change_overs/) to have a map covering these cases.
 
 ### Parameters
 <ul class="nav nav-pills" role="tablist">
@@ -62,11 +62,11 @@ Mapping parameters allow to customize availability start point and status displa
 Examples:
 
 ~~~
-GET /availabilities?include_tentative=false&boolean=true&from=20140324
+GET /availabilities?include_tentative=false&boolean=true&from=2014-03-24
 ~~~
 
 ~~~
-GET /availabilities/1?include_tentative=false&boolean=true&from=20140324
+GET /availabilities/1?include_tentative=false&boolean=true&from=2014-03-24
 ~~~
 
 ### Mapping parameters
