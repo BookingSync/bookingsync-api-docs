@@ -1,0 +1,37 @@
+{
+  "links": {
+    "preferences_general_settings.account": "https://www.bookingsync.com/api/v3/accounts/{preferences_general_settings.account}"
+  },
+  "preferences_general_settings": [
+    {
+      "links": {
+       "account": 1059638631
+      },
+      "id": 1059638632,
+      "email": "email@email.com",
+      "default_arrival_time": 16,
+      "default_arrival_end_time": 18,
+      "default_departure_time": 10,
+      "selected_locales": ["en", "fr", "de"],
+      "business_name": "Business",
+      "website": "https://www.example.com",
+      "phone": "800 100 100",
+      "mobile": "800 200 200",
+      "fax": "800 300 300",
+      "address1": "Behind the corner 2",
+      "address2": "",
+      "city": "Capital",
+      "state": "Main",
+      "zip": "91-123",
+      "country": "Poland",
+      "country_code": "PL",
+      "full_address": "Behind the corner 2\n91-123 Capital\nMain\nPoland",
+      "default_communication_locale": "en",
+      "created_at": "2021-02-01T06:59:36Z",
+      "updated_at": "2021-02-01T06:59:36Z",
+      "rounding_percentage_up": "1.0",
+      "rounding_percentage_down": "1.0"
+    }
+  ],
+  "meta": {}
+}
